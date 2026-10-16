@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalForge R1 research plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["company_name", "candidate_id", "hypothesis", "research_questions", "evidence_ledger", "checklist", "alternative_explanation", "falsification_test", "retrieval_performed"],
+  "properties": {
+    "company_name": {"type": "string", "minLength": 1},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "hypothesis": {"type": "string", "minLength": 1},
+    "retrieval_performed": {"type": "boolean", "const": false},
+    "research_questions": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+      "required": ["question", "metrics", "periods", "supported_by_dataset", "missing"],
+      "properties": {"question": {"type": "string", "minLength": 1}, "metrics": {"type": "array", "items": {"type": "string"}},
+        "periods": {"type": "array", "items": {"type": "string"}}, "supported_by_dataset": {"type": "boolean"},
+        "missing": {"type": "array", "items": {"type": "string"}}}}},
+    "evidence_ledger": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+      "required": ["evidence_id", "source_type", "source_url", "publication_date", "excerpt_or_data_point", "claim_supported", "kind", "status"],
+      "properties": {"evidence_id": {"type": ["string", "null"]}, "source_type": {"type": "string"},
+        "source_url": {"type": ["string", "null"]}, "publication_date": {"type": ["string", "null"]},
+        "excerpt_or_data_point": {"type": ["string", "null"]}, "claim_supported": {"type": "string"},
+        "kind": {"type": "string", "enum": ["reported_fact", "calculation", "inference", "unverified_hypothesis"]},
+        "status": {"type": "string", "enum": ["planned_lookup", "supplied", "contradictory"]}}}},
+    "checklist": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+      "required": ["step", "expected_evidence", "cross_validation_sources", "completion_criteria"],
+      "properties": {"step": {"type": "string", "minLength": 1}, "expected_evidence": {"type": "string"},
+        "cross_validation_sources": {"type": "array", "items": {"type": "string"}},
+        "calculation": {"type": ["string", "null"]}, "completion_criteria": {"type": "string"}}}},
+    "alternative_explanation": {"type": "string", "minLength": 1},
+    "falsification_test": {"type": "string", "minLength": 1}
+  }
+}

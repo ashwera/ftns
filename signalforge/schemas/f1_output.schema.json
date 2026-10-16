@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalForge F1 Research Angle Selector output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["company_name", "dataset_summary", "ranking_reliable", "ranking_limitation", "ranked_candidates", "recommended_candidate_id"],
+  "properties": {
+    "company_name": {"type": "string", "minLength": 1},
+    "dataset_summary": {"type": "object", "required": ["row_count", "columns", "date_coverage", "missing_information", "data_limitations"], "properties": {
+      "row_count": {"type": "integer", "minimum": 0}, "columns": {"type": "array", "items": {"type": "string"}},
+      "date_coverage": {"type": ["object", "null"], "properties": {"start": {"type": "string"}, "end": {"type": "string"}}, "required": ["start", "end"], "additionalProperties": false},
+      "missing_information": {"type": "array", "items": {"type": "string"}}, "data_limitations": {"type": "array", "items": {"type": "string"}}
+    }, "additionalProperties": false},
+    "ranking_reliable": {"type": "boolean"}, "ranking_limitation": {"type": ["string", "null"]},
+    "ranked_candidates": {"type": "array", "items": {"$ref": "#/$defs/candidate"}},
+    "recommended_candidate_id": {"type": ["string", "null"]}
+  },
+  "$defs": {"evidence": {"type": "object", "required": ["statement", "source_type", "source_url", "date", "row_identifier", "status"], "properties": {
+    "statement": {"type": "string"}, "source_type": {"type": "string"}, "source_url": {"type": ["string", "null"], "format": "uri"}, "date": {"type": ["string", "null"]}, "row_identifier": {"type": ["string", "null"]}, "evidence_id": {"type": ["string", "null"]}, "status": {"enum": ["observed_in_csv", "observed_in_ingested_source", "planned_lookup"]}
+  }, "additionalProperties": false}, "scores": {"type": "object", "required": ["financial_significance", "evidence_availability", "testability", "non_obviousness", "cross_validation_potential"], "properties": {
+    "financial_significance": {"$ref": "#/$defs/score"}, "evidence_availability": {"$ref": "#/$defs/score"}, "testability": {"$ref": "#/$defs/score"}, "non_obviousness": {"$ref": "#/$defs/score"}, "cross_validation_potential": {"$ref": "#/$defs/score"}
+  }, "additionalProperties": false}, "score": {"type": "object", "required": ["score", "rationale"], "properties": {"score": {"type": "integer", "minimum": 0, "maximum": 5}, "rationale": {"type": "string"}}, "additionalProperties": false}, "candidate": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "rank", "category", "hypothesis", "financial_importance", "metrics_and_periods", "evidence_found", "additional_evidence_needed", "alternative_explanation", "falsification_condition", "data_risks_and_limitations", "scores", "weighted_score", "weighted_score_rationale", "next_research_action"], "properties": {
+    "candidate_id": {"type": "string"}, "rank": {"type": "integer", "minimum": 1}, "category": {"enum": ["renewable_transition", "capacity_conversion", "hidden_relationships"]}, "hypothesis": {"type": "string"}, "financial_importance": {"type": "string"}, "metrics_and_periods": {"type": "array", "items": {"type": "string"}}, "evidence_found": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}, "additional_evidence_needed": {"type": "array", "items": {"type": "string"}}, "alternative_explanation": {"type": "string"}, "falsification_condition": {"type": "string"}, "data_risks_and_limitations": {"type": "array", "items": {"type": "string"}}, "scores": {"$ref": "#/$defs/scores"}, "weighted_score": {"type": "number", "minimum": 0, "maximum": 100}, "weighted_score_rationale": {"type": "string"}, "next_research_action": {"type": "string"}
+  }}}
+}

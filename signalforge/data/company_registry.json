@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "companies": [
+    {
+      "canonical_name": "NTPC Limited",
+      "verified_identifier": "INE733E01010",
+      "identifiers": ["NTPC", "532555", "INE733E01010"],
+      "aliases": ["NTPC"],
+      "verification_source": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_GOVERNANCE_152692_24042026170150_iXBRL_WEB.html",
+      "verification_source_type": "exchange_filing",
+      "verification_status": "verified",
+      "verification_retrieval_date": "2026-10-16",
+      "verification_publication_date": null,
+      "verification_excerpt": "Scrip Code 532555; NSE Symbol NTPC; ISIN INE733E01010; Name of the entity NTPC LIMITED.",
+      "note": "Verified from an NSE-hosted integrated governance filing. This verification does not identify the issuer of the repository CSV rows, which contain no row-level company identifier."
+    }
+  ]
+}

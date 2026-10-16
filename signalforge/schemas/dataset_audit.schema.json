@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalForge dataset audit",
+  "type": "object",
+  "required": ["dataset_filename", "file_path", "file_format", "audit_timestamp", "row_count", "column_count", "column_names", "inferred_types", "field_statistics", "sample_records", "exact_duplicate_rows", "date_columns", "numeric_columns", "quality_warnings", "limitations"],
+  "properties": {
+    "dataset_filename": {"type":"string"}, "file_path":{"type":"string"}, "file_format":{"type":"string"}, "audit_timestamp":{"type":"string"},
+    "row_count":{"type":"integer","minimum":0}, "column_count":{"type":"integer","minimum":0}, "column_names":{"type":"array","items":{"type":"string"}},
+    "inferred_types":{"type":"object"}, "field_statistics":{"type":"object"}, "sample_records":{"type":"array","items":{"type":"object"}},
+    "sample_excluded_sensitive_fields":{"type":"array","items":{"type":"string"}}, "exact_duplicate_rows":{"type":"integer","minimum":0},
+    "potential_duplicate_business_records":{"type":"object"}, "date_columns":{"type":"array","items":{"type":"string"}}, "date_coverage":{"type":"object"},
+    "numeric_columns":{"type":"array","items":{"type":"string"}}, "categorical_values":{"type":"object"}, "company_identifier_columns":{"type":"array","items":{"type":"string"}},
+    "distinct_companies":{"type":"array","items":{"type":"string"}}, "distinct_tickers":{"type":"array","items":{"type":"string"}}, "source_url_columns":{"type":"array","items":{"type":"string"}}, "document_identifier_columns":{"type":"array","items":{"type":"string"}},
+    "filing_or_publication_date_columns":{"type":"array","items":{"type":"string"}}, "currency_columns":{"type":"array","items":{"type":"string"}}, "unit_columns":{"type":"array","items":{"type":"string"}}, "financial_period_columns":{"type":"array","items":{"type":"string"}},
+    "quality_warnings":{"type":"array","items":{"type":"string"}}, "temporal_assessment":{"type":"object"}, "malformed_records":{"type":"object"}, "limitations":{"type":"array","items":{"type":"string"}}
+  },
+  "additionalProperties":true
+}

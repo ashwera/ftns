@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.py[cod]
+.venv/
+outputs/*.json
+outputs/*.jsonl
+data/processed/
+!outputs/.gitkeep

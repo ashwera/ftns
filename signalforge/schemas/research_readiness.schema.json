@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"SignalForge research readiness matrix",
+  "type":"object",
+  "required":["dataset_filename","audit_timestamp","candidate_categories","f1_weights","overall_readiness","overall_rationale"],
+  "properties":{
+    "dataset_filename":{"type":"string"},"audit_timestamp":{"type":"string"},"company_filter":{"type":["string","null"]},"company_filter_applied":{"type":"boolean"},
+    "candidate_categories":{"type":"array","items":{"type":"object","required":["category","evidence_available","evidence_missing","data_quality","relevant_metrics_calculable","external_verification_requirements","readiness_rating","readiness_rationale","recommended_next_action"],"properties":{
+      "category":{"enum":["renewable_transition","capacity_conversion","hidden_relationships"]},"evidence_available":{"type":"object"},"evidence_missing":{"type":"array","items":{"type":"string"}},"data_quality":{"type":"object"},"relevant_metrics_calculable":{"type":"array"},"external_verification_requirements":{"type":"array"},"readiness_rating":{"enum":["not_ready","limited_screening","preliminary_analysis","defensible_conclusion"]},"readiness_rationale":{"type":"string"},"recommended_next_action":{"type":"string"},"claims_not_supported_by_this_dataset":{"type":"array"}
+    }}},"f1_weights":{"type":"object","required":["financial_significance","evidence_availability","testability","non_obviousness","cross_validation_potential","total"],"properties":{"financial_significance":{"const":30},"evidence_availability":{"const":25},"testability":{"const":20},"non_obviousness":{"const":7.5},"cross_validation_potential":{"const":17.5},"total":{"const":100}}},
+    "overall_readiness":{"enum":["not_ready","limited_screening","preliminary_analysis","defensible_conclusion"]},"overall_rationale":{"type":"string"}
+  },"additionalProperties":true
+}

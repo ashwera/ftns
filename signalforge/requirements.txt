@@ -1,0 +1,2 @@
+# Optional model integration: install openai>=1.30,<3 only when making model calls.
+pypdf>=4,<6
