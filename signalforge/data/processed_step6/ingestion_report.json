@@ -1,0 +1,785 @@
+{
+  "generated_at": "2026-10-17T17:46:39.811779+00:00",
+  "company_under_test": "NTPC Limited",
+  "document_count": 30,
+  "evidence_record_count": 8241,
+  "schema_validated_records": 8241,
+  "verified_record_count": 5902,
+  "unresolved_record_count": 2339,
+  "empty_or_fragment_records": 1494,
+  "duplicate_documents": [],
+  "manual_review_evidence_ids_count": 8241,
+  "auto_approved_records": 0,
+  "metrics_extracted": 0,
+  "notes": [
+    "Every record carries warnings and stays unverified; no numeric metric was extracted.",
+    "Association is document-level and only on exchange identifiers (ISIN, scrip code, NSE symbol label)."
+  ],
+  "documents": [
+    {
+      "source_path": "CSV/annual reports/2017-18.csv",
+      "source_sha256": "28c42eb0244545aadf6e8af1cdfd7db624fe8883043486bca6d73ffdca2fdb3a",
+      "size_bytes": 269654,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 541,
+      "distinct_pages": 297,
+      "first_page": 1,
+      "last_page": 452,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 155,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b']",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 17,
+        "capacity_pipeline": 23,
+        "relationships": 98,
+        "financial_statements": 22
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+      "source_sha256": "cbbd847680c78734962a80198fe244377df09340e5cd7c0a320cebd6db1fc793",
+      "size_bytes": 361186,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 677,
+      "distinct_pages": 356,
+      "first_page": 9,
+      "last_page": 531,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 167,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b']",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 26,
+        "capacity_pipeline": 33,
+        "relationships": 112,
+        "financial_statements": 23
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+      "source_sha256": "de77ba88e8bd8c60bc0a517042b1c190ea15fa36b15f1dd94ee6c110dd9e75ff",
+      "size_bytes": 205758,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 942,
+      "distinct_pages": 468,
+      "first_page": 4,
+      "last_page": 684,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 213,
+      "identity_status": "unresolved",
+      "identity_basis": "name appears but no ISIN/scrip code/NSE symbol label; may be a parent/subsidiary mention",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 3,
+        "capacity_pipeline": 7,
+        "relationships": 45,
+        "financial_statements": 13
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/Annual Report 2023-24.csv",
+      "source_sha256": "9a43e136f7e6d8c938169875304f9cf1ad13e915456b099587e4dd1827efa843",
+      "size_bytes": 145150,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 527,
+      "distinct_pages": 200,
+      "first_page": 2,
+      "last_page": 352,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 151,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 8,
+        "capacity_pipeline": 14,
+        "relationships": 12,
+        "financial_statements": 7
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "source_sha256": "5809342c19be79d1fc3fda70d39389af5e4972b3afb71eb4e489d234e4fdd41d",
+      "size_bytes": 1898535,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 1166,
+      "distinct_pages": 322,
+      "first_page": 5,
+      "last_page": 373,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 47,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\bINE733E01010\\\\b', '\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 106,
+        "capacity_pipeline": 77,
+        "relationships": 258,
+        "financial_statements": 127
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/Annual Report 2025-26 (3).csv",
+      "source_sha256": "ae3f0bafc1d6e9d11837070f6a2d78d44eb7da0a38a8aa01b3bf9055f9e7a816",
+      "size_bytes": 187845,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 753,
+      "distinct_pages": 206,
+      "first_page": 3,
+      "last_page": 268,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 60,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 16,
+        "capacity_pipeline": 17,
+        "relationships": 42,
+        "financial_statements": 18
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/Annual-Report-2021-22.csv",
+      "source_sha256": "3024a2e1a9438277f7278be0b996df4726eb4db923cf030bbc8ee479a55bf843",
+      "size_bytes": 487463,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 1421,
+      "distinct_pages": 642,
+      "first_page": 1,
+      "last_page": 644,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 2,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b']",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 63,
+        "capacity_pipeline": 55,
+        "relationships": 132,
+        "financial_statements": 25
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/NTPC_Annual Report_20-21.csv",
+      "source_sha256": "7a92ed833822aea32ec603427f1e196ca90ea8972d1ac8b5c2b3856e0ed8da55",
+      "size_bytes": 398345,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 1282,
+      "distinct_pages": 583,
+      "first_page": 1,
+      "last_page": 584,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 1,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b']",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 57,
+        "capacity_pipeline": 49,
+        "relationships": 126,
+        "financial_statements": 24
+      }
+    },
+    {
+      "source_path": "CSV/annual reports/annual-report-2018-19.csv",
+      "source_sha256": "ea6c9c3928afc455b0b73c4c3917a0cb644b1dd4ac1eab1d2235acd0a53249f6",
+      "size_bytes": 299504,
+      "folder_hint": "annual reports",
+      "document_type": "annual_report_text_extract",
+      "block_count": 555,
+      "distinct_pages": 307,
+      "first_page": 7,
+      "last_page": 470,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 157,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b']",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 11,
+        "capacity_pipeline": 21,
+        "relationships": 105,
+        "financial_statements": 23
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/AFRFY23.csv",
+      "source_sha256": "2e79e8343e55a160a55f8e15afc91cfabc4e3f94936622b4f63ed6ead4036aa6",
+      "size_bytes": 13948,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 8,
+      "distinct_pages": 5,
+      "first_page": 28,
+      "last_page": 34,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 2,
+      "identity_status": "unresolved",
+      "identity_basis": "name appears but no ISIN/scrip code/NSE symbol label; may be a parent/subsidiary mention",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 5,
+        "financial_statements": 0
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/AFRQ4FY24.csv",
+      "source_sha256": "ff57cdb921773d4e5c45a213fda29f3f9015455a831bf9064abb45bee79980cf",
+      "size_bytes": 41654,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 24,
+      "distinct_pages": 20,
+      "first_page": 1,
+      "last_page": 37,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 17,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n31.03.2023",
+        "Quarter ended\n31.03.2024",
+        "Quarter ended\n31.12.2023",
+        "quarter ended 31 March 2024",
+        "Year\nended\n31.03.2023",
+        "Year\nended\n31.03.2024"
+      ],
+      "tag_counts": {
+        "renewable_transition": 2,
+        "capacity_pipeline": 0,
+        "relationships": 12,
+        "financial_statements": 8
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/NTPCAFR26.csv",
+      "source_sha256": "6e9a2d45f6806305c95f6d6376ecce68a4b86f1d5fe60af1d836feafef99d341",
+      "size_bytes": 46319,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 28,
+      "distinct_pages": 23,
+      "first_page": 1,
+      "last_page": 40,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 17,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n31.03.2025",
+        "Quarter ended\n31.03.2026",
+        "Quarter ended\n31.12.2025",
+        "Year\nended\n31.03.2025",
+        "Year\nended\n31.03.2026",
+        "Year ended\n31.03.2025"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 12,
+        "financial_statements": 9
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/NTPCQ2FY24-25.csv",
+      "source_sha256": "968573125232c7e476c9661eac312eb9930c3c4b9d4dae81e47c4e3f9e16912c",
+      "size_bytes": 42636,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 24,
+      "distinct_pages": 20,
+      "first_page": 1,
+      "last_page": 31,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 11,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "half-year ended 30 September 2024",
+        "Quarter ended\n30.06.2024",
+        "Quarter ended\n30.09.2023",
+        "Quarter ended\n30.09.2024",
+        "quarter ended 30 September 2024",
+        "Six months\nended\n30.09.2023"
+      ],
+      "tag_counts": {
+        "renewable_transition": 2,
+        "capacity_pipeline": 0,
+        "relationships": 9,
+        "financial_statements": 7
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/NTPCQ2FY26 (1).csv",
+      "source_sha256": "9b710ad0921cd3eb1f1c0b53c76ba110940f00558ee198f544463e5a4cb517a3",
+      "size_bytes": 35708,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 27,
+      "distinct_pages": 22,
+      "first_page": 1,
+      "last_page": 32,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 10,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n30.06.2025",
+        "Quarter ended\n30.09.2024",
+        "Quarter ended\n30.09.2025",
+        "Six months\nended\n30.09.2024",
+        "Six months\nended\n30.09.2025",
+        "Year ended\n31.03.2025"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 8,
+        "financial_statements": 5
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/NTPCQ4FY24-25.csv",
+      "source_sha256": "4b3a95b20db57c9cb7c7757dd6e762e8958e245421fb3ee35bd37a4221dd5a28",
+      "size_bytes": 47644,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 27,
+      "distinct_pages": 23,
+      "first_page": 1,
+      "last_page": 36,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 13,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n31.03.2024",
+        "Quarter ended\n31.03.2025",
+        "Quarter ended\n31.12.2024",
+        "quarter ended 31 March 2025",
+        "Year\nended\n31.03.2024",
+        "Year\nended\n31.03.2025"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 15,
+        "financial_statements": 9
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/Q3FY24NTPC_29012024203155.csv",
+      "source_sha256": "b6679ec32c6e382901d0b170670659c8d5dd214a105b8569c2df36cd739c0c2c",
+      "size_bytes": 30580,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 19,
+      "distinct_pages": 15,
+      "first_page": 1,
+      "last_page": 27,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 12,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n30.09.2023",
+        "Quarter ended\n31.12.2022",
+        "Quarter ended\n31.12.2023",
+        "quarter ended 31 December 2023",
+        "Year ended\n31.03.2023"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 6,
+        "financial_statements": 6
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/Q3FY26.csv",
+      "source_sha256": "57e07ca09d4007a2cf8215f73c59dbad099a6e65dac775b267b42310340caa1b",
+      "size_bytes": 2143,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 6,
+      "distinct_pages": 2,
+      "first_page": 21,
+      "last_page": 22,
+      "page_numbers_contiguous": true,
+      "pages_missing_between_first_and_last": 0,
+      "identity_status": "unresolved",
+      "identity_basis": "name appears but no ISIN/scrip code/NSE symbol label; may be a parent/subsidiary mention",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 0,
+        "financial_statements": 0
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/QFR30062023.csv",
+      "source_sha256": "3c345c3f6f13972e7e0e4f409bc02c3084532d0e894f35aec1305cfc4cb84173",
+      "size_bytes": 28353,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 19,
+      "distinct_pages": 15,
+      "first_page": 1,
+      "last_page": 24,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 9,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n30.06.2022",
+        "Quarter ended\n30.06.2023",
+        "Quarter ended\n31.03.2023",
+        "quarter ended 30 June 2023",
+        "Year ended\n31.03.2023"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 10,
+        "financial_statements": 6
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/QFRNTPCQ1FY26.csv",
+      "source_sha256": "77bf8c75d0496166e9fb05f146f6ac82b8dc631d943d6c8b6b3531429d63ea4d",
+      "size_bytes": 30951,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 24,
+      "distinct_pages": 18,
+      "first_page": 1,
+      "last_page": 28,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 10,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter\nended\n30.06.2024",
+        "Quarter\nended\n30.06.2025",
+        "Quarter ended\n30.06.2024",
+        "Quarter ended\n30.06.2025",
+        "Quarter ended\n31.03.2025",
+        "Year ended\n31.03.2025"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 7,
+        "financial_statements": 7
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/QFRQ1FY27_0.csv",
+      "source_sha256": "7397e7d44c21a4b153bc47ae7adea99e9a5c2a995091f47e5abeedef3dc134b5",
+      "size_bytes": 24386,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 24,
+      "distinct_pages": 19,
+      "first_page": 1,
+      "last_page": 25,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 6,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter ended\n30.06.2025",
+        "Quarter ended\n30.06.2026",
+        "Quarter ended\n31.03.2026",
+        "quarter ended 30 June 2026",
+        "Year ended\n31.03.2026",
+        "Year ended 31.03.2026"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 6,
+        "financial_statements": 5
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/QFR_30092023.csv",
+      "source_sha256": "a41fa383ef95c2d49c641601695873ecdb94fd43ef04c2a7db9bf2c1e7686a49",
+      "size_bytes": 32707,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 24,
+      "distinct_pages": 17,
+      "first_page": 1,
+      "last_page": 29,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 12,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "half-year ended 30 September 2023",
+        "Quarter ended\n30.06.2023",
+        "Quarter ended\n30.09.2022",
+        "Quarter ended\n30.09.2023",
+        "quarter ended 30 September 2023",
+        "Six months\nended\n30.09.2022"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 5,
+        "financial_statements": 6
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/QFR_Q1FY24-25.csv",
+      "source_sha256": "edc17a629f911813a23cdc3c747786a9dfefcdda4da3f802def2eb37d64772ce",
+      "size_bytes": 32009,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 20,
+      "distinct_pages": 16,
+      "first_page": 1,
+      "last_page": 27,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 11,
+      "identity_status": "verified",
+      "identity_basis": "document text contains exchange identifier pattern(s) ['\\\\b532555\\\\b', 'Scrip Code\\\\W{0,5}NTPC\\\\b']",
+      "period_candidates_from_text": [
+        "Quarter\nended\n30.06.2023",
+        "Quarter\nended\n30.06.2024",
+        "Quarter ended\n30.06.2023",
+        "Quarter ended\n30.06.2024",
+        "Quarter ended\n31.03.2024",
+        "quarter ended 30 June 2024"
+      ],
+      "tag_counts": {
+        "renewable_transition": 2,
+        "capacity_pipeline": 0,
+        "relationships": 9,
+        "financial_statements": 7
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/QFR_Q3FY24-25.csv",
+      "source_sha256": "6cf4a548ca3b9cde1d05b98f2ec484052044e5a4ccf0ce94dd43f243393b54ab",
+      "size_bytes": 36467,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 21,
+      "distinct_pages": 18,
+      "first_page": 2,
+      "last_page": 29,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 10,
+      "identity_status": "unresolved",
+      "identity_basis": "name appears but no ISIN/scrip code/NSE symbol label; may be a parent/subsidiary mention",
+      "period_candidates_from_text": [
+        "Quarter\nended\n31.12.2023",
+        "Quarter\nended\n31.12.2024",
+        "Quarter ended\n30.09.2024",
+        "Quarter ended\n31.12.2023",
+        "Quarter ended\n31.12.2024",
+        "Year ended\n31.03.2024"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 9,
+        "financial_statements": 7
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/ntpcfy22afr.csv",
+      "source_sha256": "f1ec94b1ee79358908738620c1d67fb8ac5b7d960d3f74b7b0295817f3f25117",
+      "size_bytes": 12180,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 19,
+      "distinct_pages": 16,
+      "first_page": 1,
+      "last_page": 40,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 24,
+      "identity_status": "unresolved",
+      "identity_basis": "name appears but no ISIN/scrip code/NSE symbol label; may be a parent/subsidiary mention",
+      "period_candidates_from_text": [
+        "Quarter ended\n31.03.2021",
+        "Quarter ended\n31.03.2022",
+        "Year\nended\n31.03.2021",
+        "Year\nended\n31.03.2022",
+        "year ended March 31, 2022"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 3,
+        "financial_statements": 0
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/published-results.csv",
+      "source_sha256": "ca628e2a8cff847cbab2794a051769137db87b6950a60d9e9a0a30586d52728f",
+      "size_bytes": 8823,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 10,
+      "distinct_pages": 8,
+      "first_page": 21,
+      "last_page": 29,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 1,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 3,
+        "financial_statements": 0
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/q1-fy-2021-22 (1).csv",
+      "source_sha256": "20ce89695cef693e4265e810e3e74ca8212b4f73b5780597fb6a059a9744e119",
+      "size_bytes": 238,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 2,
+      "distinct_pages": 2,
+      "first_page": 3,
+      "last_page": 10,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 6,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [
+        "Quarter\nended\n30.06.2020",
+        "Quarter\nended\n30.06.2021",
+        "Year\nended\n31.03.2021"
+      ],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 0,
+        "financial_statements": 0
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/q2-fy-2022-23.csv",
+      "source_sha256": "d17ba161c7d1239424e38c6aa15fc66ff24689918a474f152f2717638e748016",
+      "size_bytes": 7861,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 14,
+      "distinct_pages": 13,
+      "first_page": 3,
+      "last_page": 28,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 13,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [
+        "Quarter ended\n30.06.2022",
+        "Quarter ended\n30.09.2021",
+        "Quarter ended\n30.09.2022",
+        "Quarter ended\n31.03.2022",
+        "Six months\nended\n30.09.202",
+        "Six months\nended\n30.09.2021"
+      ],
+      "tag_counts": {
+        "renewable_transition": 1,
+        "capacity_pipeline": 0,
+        "relationships": 2,
+        "financial_statements": 1
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/q22021.csv",
+      "source_sha256": "565c527ffed5bef2e65b4b45ace756de332ee545594e419f9c49a16ae6fb5ca4",
+      "size_bytes": 10015,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 19,
+      "distinct_pages": 13,
+      "first_page": 4,
+      "last_page": 33,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 17,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [
+        "Quarter\nended\n30.09.2020",
+        "Quarter\nended\n30.09.2021",
+        "Six months\nended\n30.09.2020",
+        "Six months\nended\n30.09.2021",
+        "Year\nended\n31.03.2021"
+      ],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 3,
+        "financial_statements": 1
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/q3-2023.csv",
+      "source_sha256": "3d368302b294b7b840ff2b5d35813b6c5f578570bd374e0a5fce0c3ea40fab98",
+      "size_bytes": 1259,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 5,
+      "distinct_pages": 5,
+      "first_page": 1,
+      "last_page": 23,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 18,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 0,
+        "financial_statements": 0
+      }
+    },
+    {
+      "source_path": "CSV/quarterly reports/q3fy22frntpc.csv",
+      "source_sha256": "1070bd8a75344c1c34c5573d614fe896e2a0d75cea394182fd82aad28c270f15",
+      "size_bytes": 18898,
+      "folder_hint": "quarterly reports",
+      "document_type": "quarterly_results_filing_text_extract",
+      "block_count": 13,
+      "distinct_pages": 10,
+      "first_page": 1,
+      "last_page": 39,
+      "page_numbers_contiguous": false,
+      "pages_missing_between_first_and_last": 29,
+      "identity_status": "unresolved",
+      "identity_basis": "no canonical name or exchange identifier in document text",
+      "period_candidates_from_text": [],
+      "tag_counts": {
+        "renewable_transition": 0,
+        "capacity_pipeline": 0,
+        "relationships": 3,
+        "financial_statements": 0
+      }
+    }
+  ]
+}

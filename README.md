@@ -7,8 +7,8 @@ SignalForge is an initial research workflow foundation for the Energy, Power & R
 - F1 loader, metadata inspection, optional model client, prompt, JSON Schema validation and CLI are implemented.
 - The available CSV has no company/ticker column and is not joined to NTPC based on its filename. NTPC Limited's canonical identity, NSE symbol, ISIN, and BSE scrip code are verified from an NSE-hosted filing; that does not identify the CSV rows.
 - Bounded public URL retrieval and local document parsing are implemented. Retrieval is caller-directed, respects robots policy and rate limits, and does not discover sources or perform broad web research.
-- Company-specific F1 can use registry-verified ingested disclosures or rows with a verified identifier. The current CSV alone is insufficient, and no F1 result has been generated.
-- R1 remains a research-plan prompt only. It does not perform external research.
+- Company-specific F1 can use registry-verified ingested disclosures or rows with a verified identifier. The current quote CSV alone is insufficient, and no F1 result has been generated. Do not point F1 at `processed_step6` until a review gate excludes unreviewed page fragments; those records are not approved evidence.
+- R1 is a research-plan runner only. It does not perform external research.
 - No genuine F1 model result is included. Output JSON files and credentials are ignored by Git.
 
 ## Structure
@@ -57,7 +57,7 @@ PYTHONPATH=signalforge/src python -m signalforge.dataset_audit --csv-path "/path
 
 The command writes `dataset_audit.json` (file/field profile, quality checks, safe sample rows, and limitations) and `research_readiness.json` (category-by-category evidence matrix and current F1 weights). Their schemas are in `signalforge/schemas/`. Readiness levels progress from `not_ready` to `limited_screening`, `preliminary_analysis`, and `defensible_conclusion`; a field-name match alone cannot establish substantive evidence. The audit currently assigns no higher level than the actual records and fields support.
 
-F1 includes company-filtered rows, data-quality warnings, the readiness matrix, and the configured weights in its model input. Dataset-wide statistics are explicitly labeled context and cannot be presented as company-specific evidence. The current quote CSV has no company column, so company-filtered F1 and company-scoped readiness cannot run on it. R1 will require company filings/annual reports, exchange disclosures, investor materials, regulatory/project commissioning records, and credible independent reporting as relevant; no external research is performed by the current prompt.
+F1 includes company-filtered rows, data-quality warnings, the readiness matrix, and configured weights in its model input. Dataset-wide statistics are explicitly labeled context and cannot be presented as company-specific evidence. The current quote CSV has no company column, so company-filtered F1 and company-scoped readiness cannot run on it. R1 requires a reliable F1 recommendation and supplied evidence IDs; it prepares a research plan and performs no retrieval.
 
 ## Evidence ingestion
 
@@ -79,7 +79,15 @@ PYTHONPATH=signalforge/src python -m signalforge.evidence_ingestion --inspect --
 PYTHONPATH=signalforge/src python -m signalforge.evidence_ingestion --inspect --company "Verified Company Name" --output-dir signalforge/data/processed
 ```
 
-Only entries marked verified in the registry and backed by a verification source are joinable. F1 reads company-matching verified ingested evidence from this store and keeps it separate from dataset-level context. R1 can cite supplied evidence IDs; it remains a plan-only prompt without live source discovery.
+Only entries marked verified in the registry and backed by a verification source are joinable. F1 reads company-matching verified ingested evidence from this store and keeps it separate from dataset-level context. R1 can cite supplied evidence IDs; it remains plan-only without live source discovery.
+
+For the preserved PDF-to-CSV text extracts in `signalforge/data/intake/CSV/`, use the page-marker-aware Step 6 parser rather than the generic CSV evidence loader:
+
+```bash
+PYTHONPATH=signalforge/src python -m signalforge.document_text_ingestion --input-dir signalforge/data/intake/CSV --output-dir signalforge/data/processed_step6
+```
+
+These outputs retain document and page-block identity for review. All current Step 6 records require manual review and none are approved; they must not be treated as F1-eligible evidence until a reviewed/approved gate is implemented.
 
 ## Public source retrieval and identity verification
 
@@ -134,4 +142,32 @@ Tests use synthetic CSV fixtures and do not need paid API access.
 
 ## R1 and next steps
 
-`signalforge/prompts/r1_research_investigator.md` turns an F1 recommendation and evidence IDs into a testable research checklist and evidence ledger requirements. It is a prompt specification only. Live claim research still requires choosing and retrieving relevant primary disclosures, reviewing extracted evidence and table structure, then independently corroborating claims. For renewable mix, commissioned capacity, supplier/customer relationships, and financial statements, the currently available market quote export provides no substantive evidence.
+`signalforge/src/signalforge/r1_research_investigator.py` turns a reliable F1 recommendation and supplied evidence IDs into a testable research checklist and evidence ledger. It remains a plan-only runner and does not retrieve sources. Run it with:
+
+```bash
+PYTHONPATH=signalforge/src python -m signalforge.r1_research_investigator --f1 signalforge/outputs/f1_output.json --output signalforge/outputs/r1_plan.json
+```
+
+Live claim research still requires choosing and retrieving relevant primary disclosures, reviewing extracted evidence and table structure, then independently corroborating claims. The current quote dataset cannot support operating or company-specific claims by itself.
+
+## SignalForge research dashboard
+
+The frontend is a separate React + TypeScript application in `signalforge/web/`, built with Vite. Its read-only Vite development middleware serves a fixed allowlist of local audit, readiness, ingestion, evidence, F1, and R1 outputs; it does not execute shell commands or expose credentials. Evidence is read from `signalforge/data/processed_step6/evidence.jsonl` when present. The dashboard labels unavailable outputs, shows extraction warnings, and refuses to present a discovery while the current research remains blocked. No demo finding is mixed with real evidence.
+
+Start the dashboard from the repository root:
+
+```bash
+cd signalforge/web
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite (normally `http://127.0.0.1:5173`). The server binds to localhost. To create a static production bundle, run `npm run build` from `signalforge/web`; the read-only local output middleware is development-only, so deploy a separately secured data API before serving real local research files in production.
+
+Frontend checks:
+
+```bash
+cd signalforge/web
+npm test
+npm run build
+```
