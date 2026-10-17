@@ -1,0 +1,56 @@
+{
+  "run_id": "run_20261018_second_company_nodata",
+  "company": {
+    "name": "Power Grid Corporation of India Limited",
+    "aliases": [],
+    "identity_status": "config_only"
+  },
+  "stages": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "0 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "0 claims / 0 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "blocked",
+      "detail": "SIGNALFORGE_API_KEY not configured; live F1 not attempted"
+    },
+    {
+      "stage": "R1",
+      "execution": "not_executed",
+      "detail": "F1 not run"
+    },
+    {
+      "stage": "source_retrieval",
+      "execution": "not_executed",
+      "detail": "no operator catalog and/or network not allowed; the adapter is implemented and fixture-tested only"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "0 assertions checked against the cited chunk text at level extracted_text_review (not primary-source); outcomes {}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "0 of 0 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=no_defensible_signal strength=None (provisional rubric)"
+    }
+  ],
+  "traceability_problems": [],
+  "claims_path": "signalforge/data/pipeline_inputs/second_company_nodata/claims.jsonl",
+  "evidence_path": "signalforge/data/pipeline_inputs/second_company_nodata/evidence.jsonl",
+  "inputs_path": "signalforge/data/pipeline_inputs/second_company_nodata/inputs.json",
+  "network_used": false,
+  "model_used": false
+}

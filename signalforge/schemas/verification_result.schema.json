@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalForge verification result (separate from claim extraction status)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "verification_id", "input_name", "claim_id", "assertion", "outcome", "verification_level", "source", "checks", "cross_checks", "discrepancies", "rationale", "reviewer", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "verification_id": {"type": "string", "minLength": 1},
+    "input_name": {"type": "string"},
+    "claim_id": {"type": ["string", "null"]},
+    "assertion": {"type": "object", "additionalProperties": false, "required": ["value", "unit", "period_type", "as_of_date", "period_text", "basis", "statement_status", "label_terms", "entity"], "properties": {
+      "value": {"type": "number"}, "unit": {"type": ["string", "null"]}, "period_type": {"type": ["string", "null"]}, "as_of_date": {"type": ["string", "null"]}, "period_text": {"type": ["string", "null"]},
+      "basis": {"enum": ["standalone", "consolidated", "group", "jv_subsidiary_part", "not_applicable", null]}, "statement_status": {"enum": ["actual", "under_implementation", "awarded", "commissioned", "target", "forecast", null]},
+      "label_terms": {"type": "array", "items": {"type": "string"}}, "entity": {"type": ["string", "null"]}}},
+    "outcome": {"enum": ["confirmed", "contradicted", "partially_supported", "unresolved", "unable_to_verify"]},
+    "verification_level": {"enum": ["extracted_text_review", "primary_source"]},
+    "source": {"type": "object", "additionalProperties": false, "required": ["source_chunk_id", "source_path", "page", "passage", "passage_sha256", "url", "publisher", "publication_date", "retrieved_at", "document_family"], "properties": {
+      "source_chunk_id": {"type": ["string", "null"]}, "source_path": {"type": ["string", "null"]}, "page": {"type": ["integer", "null"]}, "passage": {"type": "string"}, "passage_sha256": {"type": "string"},
+      "url": {"type": ["string", "null"]}, "publisher": {"type": ["string", "null"]}, "publication_date": {"type": ["string", "null"]}, "retrieved_at": {"type": ["string", "null"]}, "document_family": {"type": ["string", "null"]}}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["entity", "value", "unit_scale", "metric_definition", "period", "basis", "statement_status"], "properties": {
+      "entity": {"$ref": "#/$defs/check"}, "value": {"$ref": "#/$defs/check"}, "unit_scale": {"$ref": "#/$defs/check"}, "metric_definition": {"$ref": "#/$defs/check"},
+      "period": {"$ref": "#/$defs/check"}, "basis": {"$ref": "#/$defs/check"}, "statement_status": {"$ref": "#/$defs/check"}}},
+    "cross_checks": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["description", "expected_value", "found_value", "ok", "independent"], "properties": {
+      "description": {"type": "string"}, "expected_value": {"type": "number"}, "found_value": {"type": ["number", "null"]}, "ok": {"type": "boolean"}, "independent": {"type": "boolean"}}}},
+    "discrepancies": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string", "minLength": 1},
+    "reviewer": {"type": "object", "additionalProperties": false, "required": ["kind", "id", "note"], "properties": {"kind": {"enum": ["automated_passage_check", "ai_assisted_analyst"]}, "id": {"type": "string"}, "note": {"type": ["string", "null"]}}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {"check": {"type": "object", "additionalProperties": false, "required": ["result", "detail"], "properties": {"result": {"enum": ["match", "mismatch", "unresolved", "not_applicable"]}, "detail": {"type": "string"}}}}
+}

@@ -1,0 +1,128 @@
+{
+  "schema": "pipeline_inputs/1.0",
+  "company": "NTPC Limited",
+  "reference_year": 2026,
+  "hypothesis_id": "H1_renewable_pipeline_location",
+  "reviewer": {
+    "kind": "ai_assisted_analyst",
+    "id": "claude-sonnet-5-5",
+    "note": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+  },
+  "inputs": [
+    {
+      "role": "installed_total_group",
+      "name": "group_installed_capacity",
+      "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "consolidated",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "commercial capacity"
+      ],
+      "rounding_uncertainty": null
+    },
+    {
+      "role": "re_installed_group",
+      "name": "re_installed_capacity_group",
+      "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "commissioned RE capacity"
+      ],
+      "rounding_uncertainty": 0.05
+    },
+    {
+      "role": "re_pipeline_group",
+      "name": "re_under_implementation_group",
+      "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "RE capacity"
+      ],
+      "rounding_uncertainty": 0.05
+    },
+    {
+      "role": "pipeline_total_group",
+      "name": "total_under_implementation_group",
+      "claim_id": "cl1_09d1b0c61a44466b711c57e9",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "total capacity"
+      ],
+      "rounding_uncertainty": null,
+      "cross_checks": [
+        {
+          "description": "Total (II) JV/subsidiary projects table cell",
+          "label_regex": "Total \\(II\\)",
+          "expected_value": 18295
+        },
+        {
+          "description": "Total (I) parent-owned projects table cell",
+          "label_regex": "Total \\(I\\)",
+          "expected_value": 15376
+        },
+        {
+          "description": "Total On-Going Projects table cell",
+          "label_regex": "Total On-Going Projects as on 31",
+          "expected_value": 33671
+        }
+      ]
+    },
+    {
+      "role": "pipeline_jv_sub",
+      "name": "jv_subsidiary_under_implementation",
+      "claim_id": "cl1_1528c13ba76ba39d8d47a510",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "being developed"
+      ],
+      "rounding_uncertainty": null
+    },
+    {
+      "role": "re_pipeline_jv_sub",
+      "name": "re_under_implementation_jv_subsidiary",
+      "claim_id": "cl1_7904a68ca446b6be755a6e95",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Renewable"
+      ],
+      "rounding_uncertainty": null,
+      "cross_checks": [
+        {
+          "description": "Renewable (Including Singrauli small hydro) parent-owned table cell",
+          "label_regex": "c\\) Renewable Energy Projects",
+          "expected_value": 725
+        }
+      ]
+    },
+    {
+      "role": "re_target",
+      "name": "re_capacity_target_2032",
+      "claim_id": "cl1_4bad374a50229c566a48d913",
+      "as_of_date": null,
+      "period_text": "2032",
+      "basis": "group",
+      "statement_status": "target",
+      "label_terms": [
+        "target"
+      ],
+      "rounding_uncertainty": null
+    }
+  ]
+}

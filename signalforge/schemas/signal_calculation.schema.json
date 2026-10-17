@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalForge deterministic signal calculation with trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "calculation_id", "signal_family", "name", "status", "formula", "inputs", "result", "compatibility_checks", "assumptions", "missing_inputs", "counterargument", "falsification_test", "trace", "synthetic"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "calculation_id": {"type": "string"}, "signal_family": {"enum": ["capacity_pipeline_conversion", "renewable_transition", "financial_performance", "subsidiary_jv_exposure"]},
+    "name": {"type": "string"}, "status": {"enum": ["computed", "not_computable"]}, "formula": {"type": "string"},
+    "inputs": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["name", "value", "unit", "as_of_date", "period_text", "basis", "statement_status", "claim_ids", "verification_ids", "verification_outcome", "rounding_uncertainty"], "properties": {
+      "name": {"type": "string"}, "value": {"type": "number"}, "unit": {"type": ["string", "null"]}, "as_of_date": {"type": ["string", "null"]}, "period_text": {"type": ["string", "null"]}, "basis": {"type": ["string", "null"]},
+      "statement_status": {"type": ["string", "null"]}, "claim_ids": {"type": "array", "items": {"type": "string"}}, "verification_ids": {"type": "array", "items": {"type": "string"}}, "verification_outcome": {"type": "string"}, "rounding_uncertainty": {"type": ["number", "null"]}}}},
+    "result": {"type": ["object", "null"], "additionalProperties": false, "required": ["value", "unit", "lower_bound", "upper_bound"], "properties": {"value": {"type": "number"}, "unit": {"type": "string"}, "lower_bound": {"type": ["number", "null"]}, "upper_bound": {"type": ["number", "null"]}}},
+    "compatibility_checks": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["check", "ok", "detail"], "properties": {"check": {"type": "string"}, "ok": {"type": "boolean"}, "detail": {"type": "string"}}}},
+    "assumptions": {"type": "array", "items": {"type": "string"}}, "missing_inputs": {"type": "array", "items": {"type": "string"}},
+    "counterargument": {"type": "string"}, "falsification_test": {"type": "string"}, "trace": {"type": "string"}, "synthetic": {"type": "boolean"}
+  }
+}

@@ -89,6 +89,23 @@ PYTHONPATH=signalforge/src python -m signalforge.document_text_ingestion --input
 
 These outputs retain document and page-block identity for review. All current Step 6 records require manual review and none are approved; they must not be treated as F1-eligible evidence until a reviewed/approved gate is implemented.
 
+## Experimental table-aware extraction
+
+The optional Layer 1.5 extractor parses table-shaped records from Step 6 and can carry a uniquely supported table header into a nearby continuation chunk in the same source document. It checks page/order, source path, column width, period columns, row structure, and label similarity; ambiguous matches stay under review. Every output claim remains `unverified`. This is an experimental extraction path, not a review or approval step, and it does not change F1/R1 eligibility.
+
+Run it separately from the preserved Layer 1.5 baseline:
+
+```bash
+PYTHONPATH=signalforge/src python3 -m signalforge.table_extraction \
+  --input-dir signalforge/data/processed_step6 \
+  --output-dir signalforge/data/claims_table_xy \
+  --baseline-dir signalforge/data/claims_step1
+```
+
+The default output is `signalforge/data/claims_table_xy`; the earlier `claims_table_step1` output is not replaced. The command refuses to replace an existing output directory unless `--overwrite` is supplied. Inspect `extraction_report.json` for continuation matches and rejected candidates, plus the individual claim row/header text and review status. A continuation match recovers structural context only; it does not itself establish the entity, unit, reporting basis, or claim validity.
+
+The shared hand-verified cases live in `signalforge/tests/fixtures/golden_claims/`. Cross-chunk table cases are exercised by `test_table_extraction.py`; the fixture's prose cases are owned by the prose-extractor tests.
+
 ## Public source retrieval and identity verification
 
 The retrieval client accepts a bounded set of caller-supplied public URLs; it does not search the web. It checks `robots.txt`, fails closed if the policy cannot be established, honors crawl delays, limits each response to 15 MB and ten URLs per run, and saves source snapshots under `signalforge/data/processed/sources/`. Redirect targets are checked against their own robots policy before retrieval. Use only sources you are permitted to access. `--company` associates records only when the company is verified in the registry and the document text contains the canonical name or verified identifier; `--source-relationship` is an explicit operator classification and defaults to `unknown`.

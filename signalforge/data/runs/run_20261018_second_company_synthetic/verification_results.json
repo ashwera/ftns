@@ -1,0 +1,520 @@
+[
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_installed_total_group_ad65cf6a",
+    "input_name": "installed_total_group",
+    "claim_id": "cl1_e050795c5f2ac513ad65cf6a",
+    "assertion": {
+      "value": 12000,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "installed capacity"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "confirmed",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "12000 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['installed capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "'consolidated' is the nearest basis word"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "commissioned/commercial wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value, unit/scale, label terms, period, basis, status and entity are each supported by the cited passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_installed_group_cbe83f46",
+    "input_name": "re_installed_group",
+    "claim_id": "cl1_c1b7a152c4abdb33cbe83f46",
+    "assertion": {
+      "value": 900,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "renewable capacity"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "900 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['renewable capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "commissioned/commercial wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_group_6a98b23a",
+    "input_name": "re_pipeline_group",
+    "claim_id": "cl1_c8d92da20bd3fb596a98b23a",
+    "assertion": {
+      "value": 2000,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "renewable capacity"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "2000 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['renewable capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "under implementation/construction wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_total_group_002438ff",
+    "input_name": "pipeline_total_group",
+    "claim_id": "cl1_76746b021cc3deae002438ff",
+    "assertion": {
+      "value": 4000,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "total capacity"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "4000 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['total capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "under implementation/construction wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_jv_sub_fc36990f",
+    "input_name": "pipeline_jv_sub",
+    "claim_id": "cl1_1efdb0ea77101177fc36990f",
+    "assertion": {
+      "value": 3000,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "being developed"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "confirmed",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "3000 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['being developed'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "'joint venture' wording near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "under implementation/construction wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value, unit/scale, label terms, period, basis, status and entity are each supported by the cited passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_jv_sub_d09fb12a",
+    "input_name": "re_pipeline_jv_sub",
+    "claim_id": "cl1_c64ff088d18dce67d09fb12a",
+    "assertion": {
+      "value": 1800,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "renewable projects"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "confirmed",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "1800 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['renewable projects'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "'joint venture' wording near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "under implementation/construction wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value, unit/scale, label terms, period, basis, status and entity are each supported by the cited passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_target_2929c146",
+    "input_name": "re_target",
+    "claim_id": "cl1_a6ebbb26586a20b02929c146",
+    "assertion": {
+      "value": 5000,
+      "unit": "MW",
+      "period_type": "unknown",
+      "as_of_date": null,
+      "period_text": "2032",
+      "basis": "group",
+      "statement_status": "target",
+      "label_terms": [
+        "renewable capacity"
+      ],
+      "entity": "Meridian Power Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_111111111111111111111111",
+      "source_path": "SYNTHETIC/meridian.txt",
+      "page": 3,
+      "url": null,
+      "publisher": "Meridian (synthetic)",
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "synthetic",
+      "passage": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies. • As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW. • Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+      "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "5000 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['renewable capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2032 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "forward-looking wording 'target'"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "test",
+      "note": "SYNTHETIC"
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  }
+]

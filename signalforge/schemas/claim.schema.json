@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalForge Layer 1 extracted claim (candidate, unverified)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "claim_id",
+    "entity",
+    "entity_identity_status",
+    "metric",
+    "raw_metric_text",
+    "value",
+    "raw_value_text",
+    "unit",
+    "raw_unit_text",
+    "period_type",
+    "period_start",
+    "period_end",
+    "as_of_date",
+    "raw_period_text",
+    "source_document_id",
+    "source_path",
+    "source_page",
+    "source_chunk_id",
+    "source_excerpt",
+    "extraction_status",
+    "ambiguity_notes",
+    "claim_verification_status",
+    "parser_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
+    },
+    "claim_id": {
+      "type": "string",
+      "pattern": "^cl1_[a-f0-9]{24}$"
+    },
+    "entity": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "entity_identity_status": {
+      "enum": [
+        "verified",
+        "unresolved"
+      ]
+    },
+    "metric": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "raw_metric_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "raw_value_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "raw_unit_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "period_type": {
+      "enum": [
+        "as_of",
+        "quarter",
+        "financial_year",
+        "duration",
+        "point_in_time",
+        "unknown"
+      ]
+    },
+    "period_start": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "period_end": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "as_of_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "raw_period_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_document_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_page": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "source_chunk_id": {
+      "type": "string",
+      "pattern": "^ev_[a-f0-9]{24}$"
+    },
+    "source_excerpt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "extraction_status": {
+      "enum": [
+        "extracted",
+        "ambiguous",
+        "needs_review"
+      ]
+    },
+    "ambiguity_notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "claim_verification_status": {
+      "const": "unverified"
+    },
+    "parser_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "extraction_method": {
+      "enum": [
+        "prose_regex",
+        "table_row"
+      ]
+    },
+    "chunk_class": {
+      "enum": [
+        "tabular",
+        "prose",
+        "uncertain"
+      ]
+    },
+    "source_row_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_header_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "row_index": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "column_index": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "reversal_applied": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

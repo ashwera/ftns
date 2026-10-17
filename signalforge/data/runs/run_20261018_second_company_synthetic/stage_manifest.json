@@ -1,0 +1,58 @@
+{
+  "run_id": "run_20261018_second_company_synthetic",
+  "company": {
+    "name": "Meridian Power Limited",
+    "aliases": [
+      "Meridian"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "stages": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "7 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "7 claims / 1 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "simulated",
+      "detail": "deterministic stand-in, no model call"
+    },
+    {
+      "stage": "R1",
+      "execution": "simulated",
+      "detail": "deterministic stand-in, no model call"
+    },
+    {
+      "stage": "source_retrieval",
+      "execution": "not_executed",
+      "detail": "no operator catalog and/or network not allowed; the adapter is implemented and fixture-tested only"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "7 assertions checked against the cited chunk text at level extracted_text_review (not primary-source); outcomes {\"confirmed\": 3, \"partially_supported\": 4}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "5 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "traceability_problems": [],
+  "claims_path": "signalforge/data/pipeline_inputs/second_company_synthetic/claims.jsonl",
+  "evidence_path": "signalforge/data/pipeline_inputs/second_company_synthetic/evidence.jsonl",
+  "inputs_path": "signalforge/data/pipeline_inputs/second_company_synthetic/inputs.json",
+  "network_used": false,
+  "model_used": false
+}
