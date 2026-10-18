@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { categoryLabels, loadResearchData, safeSourceUrl, type Claim, type Evidence, type ResearchData } from './types'
+import { loadFindingBundle, type FindingBundle } from './finding'
+import Signal from './signal'
 
-type View = 'overview' | 'claims' | 'evidence' | 'angles'
+type View = 'signal' | 'overview' | 'claims' | 'evidence' | 'angles'
 const initial: ResearchData = { audit: null, readiness: null, evidence: [], ingestion: null, f1: null, r1: null, companies: [], claims: [], claimReport: null, unavailable: [] }
 const fmtDate = (value?: string | null) => { if (!value) return null; const date = new Date(value); return Number.isNaN(date.valueOf()) ? null : date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }) }
 const titleCase = (s?: string | null) => (s || 'unknown').replaceAll('_', ' ').replace(/\b\w/g, c => c.toUpperCase())
@@ -9,7 +11,9 @@ const titleCase = (s?: string | null) => (s || 'unknown').replaceAll('_', ' ').r
 export default function App() {
   const [data, setData] = useState(initial)
   const [loading, setLoading] = useState(true)
-  const [view, setView] = useState<View>('overview')
+  const [view, setView] = useState<View>('signal')
+  const [bundle, setBundle] = useState<FindingBundle | null>(null)
+  const [findingError, setFindingError] = useState<string | null>(null)
   const [selected, setSelected] = useState<Evidence | null>(null)
   const [query, setQuery] = useState('')
   const [kind, setKind] = useState('all')
@@ -22,6 +26,8 @@ export default function App() {
   const [runNotice, setRunNotice] = useState(false)
 
   useEffect(() => { loadResearchData().then(setData).finally(() => setLoading(false)) }, [])
+  useEffect(() => { loadFindingBundle().then(r => 'error' in r ? setFindingError(r.error) : setBundle(r)) }, [])
+  const evidenceIds = useMemo(() => new Set(data.evidence.map(e => e.evidence_id)), [data.evidence])
   useEffect(() => { if (location.hash.startsWith('#evidence=')) { setView('evidence'); setSelected(data.evidence.find(e => e.evidence_id === location.hash.slice(10)) ?? null) } }, [data.evidence])
   const docs = useMemo(() => [...new Set(data.evidence.map(e => e.document_title))], [data.evidence])
   const companyClaims = useMemo(() => data.claims.filter(claim => claim.entity === companyName), [data.claims, companyName])
@@ -34,7 +40,7 @@ export default function App() {
     return search.includes(query.toLowerCase()) && (kind === 'all' || e.information_type === kind) && (verified === 'all' || e.claim_verification_status === verified) && (!sourceFilter || e.document_title === sourceFilter) && (!dateFilter || [e.event_date, e.publication_date, e.reporting_period].some(d => d?.includes(dateFilter)))
   }).slice(0, 100), [data.evidence, query, kind, verified, sourceFilter, dateFilter])
   const selectEvidence = (e: Evidence) => { setSelected(e); setView('evidence'); location.hash = `evidence=${e.evidence_id}` }
-  const tabs: [View, string][] = [['overview', 'Overview'], ['claims', 'Claim review'], ['evidence', 'Evidence library'], ['angles', 'Research angles']]
+  const tabs: [View, string][] = [['signal', 'Signal'], ['overview', 'Overview'], ['claims', 'Claim review'], ['evidence', 'Evidence library'], ['angles', 'Research angles']]
   const ingestion = data.ingestion ?? {}
   const counts = { total: Number(ingestion.evidence_record_count ?? data.evidence.length), verified: Number(ingestion.verified_record_count ?? 0), unresolved: Number(ingestion.unresolved_record_count ?? 0), metrics: Number(ingestion.metrics_extracted ?? 0), review: Number(ingestion.manual_review_evidence_ids_count ?? 0) }
 
@@ -42,15 +48,16 @@ export default function App() {
     <aside className="rail">
       <a className="brand" href="#top" aria-label="SignalForge home"><span className="brand-mark">S<span>F</span></span><span className="brand-copy"><strong>SignalForge</strong><small>RESEARCH SYSTEM</small></span></a>
       <div className="rail-label">WORKSPACE</div>
-      <nav aria-label="Main navigation" className="nav-list">{tabs.map(([id, label], i) => <button key={id} className={`nav-item ${view === id ? 'active' : ''}`} onClick={() => { setView(id); setSelected(null); location.hash = id === 'overview' ? 'top' : id }}><span className="nav-index">0{i + 1}</span>{label}{id === 'evidence' && <span className="nav-count">{counts.total.toLocaleString()}</span>}{id === 'claims' && <span className="nav-count">{data.claimReport?.total_claims.toLocaleString() ?? '—'}</span>}</button>)}</nav>
+      <nav aria-label="Main navigation" className="nav-list">{tabs.map(([id, label], i) => <button key={id} className={`nav-item ${view === id ? 'active' : ''}`} onClick={() => { setView(id); setSelected(null); location.hash = id === 'signal' || id === 'overview' ? 'top' : id }}><span className="nav-index">0{i + 1}</span>{label}{id === 'evidence' && <span className="nav-count">{counts.total.toLocaleString()}</span>}{id === 'claims' && <span className="nav-count">{data.claimReport?.total_claims.toLocaleString() ?? '—'}</span>}</button>)}</nav>
       <div className="rail-bottom"><div className="rail-label">SYSTEM</div><div className="system-row"><span className="status-dot amber"/><span>Claims under review</span></div><div className="rail-note">Candidate claims are not verified findings.</div><div className="rail-version">LOCAL WORKSPACE <span>v0.1</span></div></div>
     </aside>
     <main id="top" className="main">
       <header className="topbar"><div className="breadcrumb">Energy, Power & Renewables <span>/</span> Research workspace</div><div className="top-actions"><span className="local-tag"><i/> Local data</span><button className="avatar" aria-label="Research analyst">A</button></div></header>
       <div className="content">
         {loading ? <div className="loading-state"><span className="spinner"/>Reading local research outputs…</div> : <>
-      <div className="page-head"><div><h1>{view === 'overview' ? `${companyName.replace(/ Limited$/, '')} investigation` : view === 'claims' ? 'Claim review' : view === 'evidence' ? 'Evidence library' : 'Research angles'}</h1>{view !== 'overview' && <p className="subhead">{view === 'claims' ? 'Extracted candidates remain unverified until reviewed against their source.' : view === 'evidence' ? 'Source records, provenance and extraction warnings.' : 'Compare the three configured hypotheses against available evidence.'}</p>}</div><div className="run-control"><label htmlFor="company-select">Company</label><select id="company-select" aria-label="Company" value={companyName} onChange={e => setCompanyName(e.target.value)}>{data.companies.map(company => <option key={company.verified_identifier} value={company.canonical_name}>{company.canonical_name} · {company.aliases?.[0] ?? company.verified_identifier}</option>)}</select><button className="run-button" onClick={() => setRunNotice(true)}>Run research <span>↗</span></button></div></div>
+      <div className="page-head"><div><h1>{view === 'signal' ? 'Signal' : view === 'overview' ? `${companyName.replace(/ Limited$/, '')} investigation` : view === 'claims' ? 'Claim review' : view === 'evidence' ? 'Evidence library' : 'Research angles'}</h1>{view !== 'overview' && <p className="subhead">{view === 'signal' ? 'The best-supported hypothesis the pipeline produced, with its evidence and verification state.' : view === 'claims' ? 'Extracted candidates remain unverified until reviewed against their source.' : view === 'evidence' ? 'Source records, provenance and extraction warnings.' : 'Compare the three configured hypotheses against available evidence.'}</p>}</div><div className="run-control"><label htmlFor="company-select">Company</label><select id="company-select" aria-label="Company" value={companyName} onChange={e => setCompanyName(e.target.value)}>{data.companies.map(company => <option key={company.verified_identifier} value={company.canonical_name}>{company.canonical_name} · {company.aliases?.[0] ?? company.verified_identifier}</option>)}</select><button className="run-button" onClick={() => setRunNotice(true)}>Run research <span>↗</span></button></div></div>
           {runNotice && <div className="run-notice" role="status"><p><b>No research run was started.</b> The current workspace has no run API; F1 remains gated while candidate claims are unverified.</p><button onClick={() => { setRunNotice(false); setView('claims') }}>Review claims</button><button className="notice-close" aria-label="Dismiss run status" onClick={() => setRunNotice(false)}>×</button></div>}
+          {view === 'signal' && <Signal bundle={bundle} error={findingError} evidenceIds={evidenceIds} onEvidence={id => { const e = data.evidence.find(x => x.evidence_id === id); if (e) selectEvidence(e) }} />}
           {view === 'overview' && <Overview data={data} companyName={companyName} counts={counts} claims={companyClaims} onEvidence={selectEvidence} onViewClaims={() => setView('claims')} />}
           {view === 'claims' && <ClaimReview claims={filteredClaims} total={companyClaims.length} report={data.claimReport} query={claimQuery} setQuery={setClaimQuery} status={claimStatus} setStatus={setClaimStatus} onEvidence={claim => { const source = data.evidence.find(e => e.evidence_id === claim.source_chunk_id); if (source) selectEvidence(source) }} />}
           {view === 'evidence' && <EvidenceView records={displayEvidence} total={data.evidence.length} docs={docs} selected={selected} onSelect={selectEvidence} onClose={() => { setSelected(null); location.hash = 'evidence' }} query={query} setQuery={setQuery} kind={kind} setKind={setKind} verified={verified} setVerified={setVerified} dateFilter={dateFilter} setDateFilter={setDateFilter} sourceFilter={sourceFilter} setSourceFilter={setSourceFilter} />}

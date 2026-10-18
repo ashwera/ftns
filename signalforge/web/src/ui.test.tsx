@@ -39,19 +39,25 @@ function mockOutputs(record = evidence, candidateClaims = [claim]) {
   }))
 }
 
+async function renderApp() {
+  const user = userEvent.setup(); render(<App />)
+  await user.click(await screen.findByRole('button', { name: /^0\d\s?Overview/ }))
+  return user
+}
+
 describe('SignalForge dashboard interactions', () => {
   beforeEach(() => { location.hash = ''; mockOutputs() })
   afterEach(() => { cleanup(); vi.unstubAllGlobals() })
 
   it('shows a blocked, non-discovery state when real F1 and R1 outputs are absent', async () => {
-    render(<App />)
+    await renderApp()
     expect(await screen.findByRole('heading', { name: /Evidence is assembled/ })).toBeTruthy()
     expect(screen.getByText(/not been reviewed and validated sufficiently for F1/)).toBeTruthy()
     expect(screen.getByText(/1 candidate needs attention/)).toBeTruthy()
   })
 
   it('opens a candidate claim through to its source record', async () => {
-    const user = userEvent.setup(); render(<App />)
+    const user = await renderApp()
     await user.click(await screen.findByRole('button', { name: /installed capacity 250 MW/ }))
     expect(await screen.findByText('EVIDENCE RECORD')).toBeTruthy()
     expect(screen.getByText('Test record remains under manual review.')).toBeTruthy()
@@ -59,7 +65,7 @@ describe('SignalForge dashboard interactions', () => {
   })
 
   it('opens the evidence library source link safely and rejects unsafe protocols', async () => {
-    const user = userEvent.setup(); render(<App />)
+    const user = await renderApp()
     await user.click(await screen.findByRole('button', { name: /Evidence library/ }))
     await user.click(await screen.findByRole('button', { name: /NTPC annual report extract/ }))
     expect(await screen.findByText('EVIDENCE RECORD')).toBeTruthy()
@@ -75,7 +81,7 @@ describe('SignalForge dashboard interactions', () => {
   })
 
   it('supports workspace navigation and evidence filtering', async () => {
-    const user = userEvent.setup(); render(<App />)
+    const user = await renderApp()
     await user.click(await screen.findByRole('button', { name: /Claim review/ }))
     expect(await screen.findByText(/candidate claims · all unverified/)).toBeTruthy()
     await user.type(screen.getByRole('textbox', { name: 'Search claims' }), 'no match')
@@ -86,14 +92,14 @@ describe('SignalForge dashboard interactions', () => {
 
   it('renders honest empty states for unavailable evidence and dates', async () => {
     mockOutputs(evidence, [])
-    const user = userEvent.setup(); render(<App />)
+    const user = await renderApp()
     expect(await screen.findByText('No candidate claims match this company.')).toBeTruthy()
     await user.click(screen.getByRole('button', { name: /Claim review/ }))
     expect(await screen.findByText('No claims match these filters.')).toBeTruthy()
   })
 
   it('keeps Run Research honest and points to the review step without claiming a run started', async () => {
-    const user = userEvent.setup(); render(<App />)
+    const user = await renderApp()
     await user.click(await screen.findByRole('button', { name: /Run research/ }))
     expect(await screen.findByText(/No research run was started/)).toBeTruthy()
     await user.click(screen.getByRole('button', { name: 'Review claims' }))

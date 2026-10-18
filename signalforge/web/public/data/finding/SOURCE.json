@@ -1,0 +1,38 @@
+{
+  "source_run": "run_offline_pdf_verify_context_fix_20261019",
+  "source_dir": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/run_offline_pdf_verify_context_fix_20261019",
+  "finding_id": "find_run_offline_pdf_verify_context_fix_20261019_H1_renewable_pipeline_location",
+  "files": [
+    {
+      "name": "finding_bundle.json",
+      "bytes": 46665,
+      "sha256": "6b6eb1b594c717d2f39af027c6db16520be82e2c7141b9cbb2418223a8f8d688"
+    },
+    {
+      "name": "calculations.json",
+      "bytes": 20545,
+      "sha256": "e56109e4bc306840b5fd9ac8cc45fa6f51bbd1e357fbe798f37fb7f6282c98ab"
+    },
+    {
+      "name": "verification_results.json",
+      "bytes": 67184,
+      "sha256": "90f4338e1cd18d95d15bdf646e8cac9fb68fdb0c081a0024cd64fab03ea04db4"
+    },
+    {
+      "name": "audit_trail.json",
+      "bytes": 19177,
+      "sha256": "4b1831cdc5009491a6b31a80a6847e300603b7363cdd960504ff45fd91974c55"
+    },
+    {
+      "name": "stage_manifest.json",
+      "bytes": 1898,
+      "sha256": "763b0440e4220b48f80e43e4f39bde81065ce0da43708c2f122622c94d4700a9"
+    },
+    {
+      "name": "source_catalog_status.json",
+      "bytes": 3472,
+      "sha256": "c55916222b47f98c777f2b2ead08f6d0fef48712a5067ca4ab472683c8b6acc2"
+    }
+  ],
+  "note": "Verbatim copies of the listed run files; do not edit. Regenerate with npm run sync-data."
+}

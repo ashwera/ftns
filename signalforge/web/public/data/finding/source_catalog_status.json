@@ -1,0 +1,88 @@
+[
+  {
+    "source_id": "ntpc_ar_fy2024_25",
+    "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+    "title": "Integrated Annual Report 2024-25",
+    "publisher": "NTPC Limited",
+    "source_class": "official_filing",
+    "publication_date": "2025-08-07",
+    "sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+    "status": "available",
+    "error": null,
+    "issuer_submitted": true,
+    "derived_from": [],
+    "verification_level": "primary_source"
+  },
+  {
+    "source_id": "ntpc_fy25_results_concall_transcript",
+    "url": "https://ntpc.co.in/sites/default/files/inline-files/REVTranscriptConcall24052025.pdf",
+    "title": "Transcript of Conference Call on Audited Financial Results for FY 2024-25",
+    "publisher": "NTPC Limited",
+    "source_class": "official_filing",
+    "publication_date": "2025-05-24",
+    "sha256": null,
+    "status": "not_retrieved",
+    "error": null,
+    "issuer_submitted": true,
+    "derived_from": [],
+    "verification_level": "extracted_text_review"
+  },
+  {
+    "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+    "url": "https://ntpc.co.in/index.php/investors/disclosures-announcements/corporate-announcements?field_financial_year_target_id=10",
+    "title": "Submission of Integrated Annual Report for Financial Year 2024-25",
+    "publisher": "NTPC Limited; filing submitted to stock exchanges",
+    "source_class": "exchange_announcement",
+    "publication_date": "2025-08-07",
+    "sha256": null,
+    "status": "not_retrieved",
+    "error": null,
+    "issuer_submitted": true,
+    "derived_from": [
+      "ntpc_ar_fy2024_25"
+    ],
+    "verification_level": "extracted_text_review"
+  },
+  {
+    "source_id": "ntpc_21st_annual_analysts_presentation",
+    "url": "https://ntpc.co.in/sites/default/files/annual_meet/2026/2ea7ff14-0ada-4016-a07a-64c09ab62b14.pdf",
+    "title": "Investor Presentation to 21st Annual Analysts and Institutional Investors Meet",
+    "publisher": "NTPC Limited; submitted to NSE and BSE",
+    "source_class": "official_filing",
+    "publication_date": "2025-08-18",
+    "sha256": null,
+    "status": "not_retrieved",
+    "error": null,
+    "issuer_submitted": true,
+    "derived_from": [],
+    "verification_level": "extracted_text_review"
+  },
+  {
+    "source_id": "cea_under_construction_re_projects_mar2025",
+    "url": "https://cea.nic.in/rpm-division-annual/?lang=en",
+    "title": "Quarterly Report on Under-construction Renewable Energy Projects, March 2025",
+    "publisher": "Central Electricity Authority, Ministry of Power, Government of India",
+    "source_class": "regulator",
+    "publication_date": "2025-05-02",
+    "sha256": null,
+    "status": "not_retrieved",
+    "error": null,
+    "issuer_submitted": false,
+    "derived_from": [],
+    "verification_level": "extracted_text_review"
+  },
+  {
+    "source_id": "cea_installed_capacity_reports",
+    "url": "https://cea.nic.in/reports/dashboardView?headingId=107&lang=en&subHeadingId=1003&subSubHeadingId=10014&title=Installed+Capacity",
+    "title": "CEA Monthly Installed Capacity Reports",
+    "publisher": "Central Electricity Authority, Ministry of Power, Government of India",
+    "source_class": "regulator",
+    "publication_date": null,
+    "sha256": null,
+    "status": "not_retrieved",
+    "error": null,
+    "issuer_submitted": false,
+    "derived_from": [],
+    "verification_level": "extracted_text_review"
+  }
+]

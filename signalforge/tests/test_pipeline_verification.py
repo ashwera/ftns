@@ -1,6 +1,6 @@
 import unittest
 
-from signalforge.claim_verification import assess_independence, assertion_from_claim, verify_assertion
+from signalforge.claim_verification import assess_independence, assertion_from_claim, locate_passages, verify_assertion
 from signalforge.pipeline_contract import ClaimStore, validate_against
 
 P = "As on 31 March 2025, the total commercial capacity stood at 79,930 MW on a consolidated basis and 59,413 MW on a standalone basis. Your Company reported it. Targets: your Company aims to reach 130 GW by 2032."
@@ -25,6 +25,28 @@ class VerificationTests(unittest.TestCase):
         r = ver("As on 31 March 2025, NEEPCO Limited reported commercial capacity of 59,413 MW on a standalone basis."); self.assertEqual("mismatch", r["checks"]["entity"]["result"]); self.assertEqual("contradicted", r["outcome"])
     def test_other_organization_next_to_the_target_is_unresolved_not_contradicted(self):
         r = ver("As on 31 March 2025, Your Company's commercial capacity was 59,413 MW on a standalone basis, while NGEL Limited is separate."); self.assertEqual("unresolved", r["checks"]["entity"]["result"]); self.assertEqual("partially_supported", r["outcome"])
+    def test_group_re_pipeline_uses_value_sentence_not_nearby_dvc_umrepp_sentence(self):
+        assertion = {"value": 14.5, "unit": "GW", "period_type": "as_of", "as_of_date": "2025-03-31",
+                     "period_text": "As on 31 March 2025", "basis": "group", "statement_status": "under_implementation",
+                     "label_terms": ["RE capacity"], "entity": "NTPC Limited", "entity_names": ["NTPC"]}
+        passage = ("As on 31 March 2025, RE capacity of NTPC under various stages of implementation totals up to 14.5 GW. "
+                   "RE projects with a cumulative capacity of 14.5 GW are under execution which includes Solar, Wind and energy storage projects. "
+                   "UMREPP at Gujarat (4.75 GW), DVC (0.7 GW), and Madhya Pradesh (0.6 GW).")
+        r = verify_assertion(assertion, passage, verification_id="v_group", input_name="re_under_implementation_group")
+        self.assertEqual("match", r["checks"]["metric_definition"]["result"])
+        self.assertEqual("match", r["checks"]["entity"]["result"])
+        self.assertEqual("match", r["checks"]["period"]["result"])
+        self.assertEqual("match", r["checks"]["unit_scale"]["result"])
+        hits = locate_passages([{"page": 112, "text": passage}], 14.5, ["RE capacity"])
+        self.assertIn("RE capacity of NTPC", hits[0]["passage"])
+    def test_group_re_pipeline_still_rejects_genuine_dvc_entity_mismatch(self):
+        assertion = {"value": 14.5, "unit": "GW", "period_type": "as_of", "as_of_date": "2025-03-31",
+                     "period_text": "As on 31 March 2025", "basis": "group", "statement_status": "under_implementation",
+                     "label_terms": ["RE capacity"], "entity": "NTPC Limited", "entity_names": ["NTPC"]}
+        r = verify_assertion(assertion, "As on 31 March 2025, DVC's RE capacity under implementation is 14.5 GW.",
+                             verification_id="v_dvc", input_name="re_under_implementation_group")
+        self.assertEqual("mismatch", r["checks"]["entity"]["result"])
+        self.assertEqual("contradicted", r["outcome"])
     def test_consolidated_versus_standalone_mismatch_both_ways(self):
         self.assertEqual("mismatch", ver(basis="consolidated")["checks"]["basis"]["result"])
         r = ver(value=79930, basis="standalone"); self.assertEqual(("contradicted", "mismatch"), (r["outcome"], r["checks"]["basis"]["result"]))

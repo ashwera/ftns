@@ -33,6 +33,31 @@ def _unit_matches(want, raw_unit, cur):
         return True if scale is None else raw.lower().rstrip("s") == scale
     return norm == want or raw == want
 
+def _sentence_span(text, position):
+    """Return the sentence and its bounds for a character position in collapsed text."""
+    cursor = 0
+    for sentence in L1._sentences(text):
+        start = text.find(sentence, cursor)
+        if start < 0:
+            continue
+        end = start + len(sentence)
+        if start <= position < end:
+            return start, end, sentence
+        cursor = end
+    start = max(0, position - 160); end = min(len(text), position + 160)
+    return start, end, text[start:end]
+
+def _label_proximity(sentence, number_pos, label_terms):
+    """Rank sentence-local value hits by label coverage, then nearest label distance."""
+    distances = []
+    low = sentence.lower()
+    for term in label_terms:
+        term_low = term.lower()
+        positions = [m.start() for m in re.finditer(re.escape(term_low), low)]
+        if positions:
+            distances.append(min(abs(p - number_pos) for p in positions))
+    return (-len(distances), min(distances, default=float("inf")))
+
 def verify_assertion(assertion, passage, *, source=None, level="extracted_text_review", verification_id, input_name, claim_id=None, reviewer=None, cross_checks=()):
     """Check an assertion against passage text. Returns a verification_result dict (schema-validated)."""
     text = collapse(passage); a = assertion
@@ -53,12 +78,16 @@ def verify_assertion(assertion, passage, *, source=None, level="extracted_text_r
         else:
             checks["value"] = _blank("unresolved", "asserted value not found in the passage"); outcome, why = "unable_to_verify", f"The value {a['value']} does not appear with a unit in the cited passage."
         return _finish(a, src, checks, discrepancies, outcome, why, level, verification_id, input_name, claim_id, reviewer, [])
-    # choose the hit with the best local support
-    best, best_score, best_ctx = None, -1, ""
+    # Select within each value's own sentence so names and labels in adjacent
+    # sentences cannot change entity attribution. Prefer label coverage, then
+    # the occurrence closest to the asserted metric label.
+    best, best_rank, best_ctx, best_sentence = None, None, "", ""
     for pos, end, v, unit, m in hits:
+        sentence_start, _, sentence = _sentence_span(text, pos)
         ctx = text[max(0, pos - 160):end + 160]
-        score = sum(t.lower() in ctx.lower() for t in a["label_terms"]) + (2 if unit else 0) + (1 if (a["period_text"] and a["period_text"].lower() in ctx.lower()) else 0)
-        if score > best_score: best, best_score, best_ctx = (pos, end, v, unit, m), score, ctx
+        rank = _label_proximity(sentence, pos - sentence_start, a["label_terms"])
+        if best_rank is None or rank < best_rank:
+            best, best_rank, best_ctx, best_sentence = (pos, end, v, unit, m), rank, ctx, sentence
     pos, end, v, unit, m = best; before, after = text[max(0, pos - 160):pos], text[end:end + 160]
     checks["value"] = _blank("match", f"{a['value']} found in the passage")
     # unit/scale
@@ -70,7 +99,7 @@ def verify_assertion(assertion, passage, *, source=None, level="extracted_text_r
         else: checks["unit_scale"] = _blank("unresolved", "no unit evaluated")
     # metric definition: asserted label terms must appear near the number
     if a["label_terms"]:
-        missing = [t for t in a["label_terms"] if t.lower() not in best_ctx.lower()]
+        missing = [t for t in a["label_terms"] if t.lower() not in best_sentence.lower()]
         checks["metric_definition"] = _blank("match", f"label terms {a['label_terms']} appear near the figure") if not missing else _blank("mismatch", f"label terms {missing} not found near the figure"); 
         if missing: discrepancies.append(f"label terms missing near value: {missing}")
     # period
@@ -123,8 +152,14 @@ def verify_assertion(assertion, passage, *, source=None, level="extracted_text_r
     if not ent: checks["entity"] = _blank("not_applicable", "no entity asserted")
     else:
         own = {re.sub(r"[^a-z0-9]+", " ", n.lower()).strip() for n in a.get("entity_names", [ent])}
-        others = [p for _, p in L1.named_other_entities(best_ctx, L1.TargetCompany(ent, tuple(a.get("entity_names", ()))))]
-        has_self = bool(L1._self_ref_regex(L1.TargetCompany(ent, tuple(a.get("entity_names", ())))).search(best_ctx))
+        target = L1.TargetCompany(ent, tuple(a.get("entity_names", ())))
+        entity_ctx = best_sentence
+        # Keep the existing nearby self-reference behavior where the value
+        # sentence names no organization; explicit attribution stays sentence-local.
+        if not L1.named_other_entities(entity_ctx, target) and not L1._self_ref_regex(target).search(entity_ctx):
+            entity_ctx = best_ctx
+        others = [p for _, p in L1.named_other_entities(entity_ctx, target)]
+        has_self = bool(L1._self_ref_regex(target).search(entity_ctx))
         if others and not has_self: checks["entity"] = _blank("mismatch", f"other organization(s) named near the figure and no reference to the target: {sorted(set(others))[:4]}"); discrepancies.append("entity: other organization near figure")
         elif others: checks["entity"] = _blank("unresolved", f"both the target and other organization(s) {sorted(set(others))[:4]} are named near the figure; whose figure it is is not settled")
         elif has_self: checks["entity"] = _blank("match", "target/self-reference near the figure")
@@ -176,20 +211,21 @@ def value_variants(value):
     return sorted(out, key=len, reverse=True)
 
 def locate_passages(pages, value, label_terms, window=1200):
-    """Pages that contain the value (any printed form) with the label terms nearby, best first. Each hit is a bounded window of the page."""
+    """Sentence passages containing the value, ranked by label proximity."""
     hits = []
     for pg in pages:
         text = collapse(pg["text"])
         for v in value_variants(value):
             for m in re.finditer(r"(?<![\d,.])" + re.escape(v) + r"(?![\d]|,\d)", text):
-                ctx = text[max(0, m.start() - window // 2):m.end() + window // 2]
-                score = sum(t.lower() in ctx.lower() for t in label_terms)
-                hits.append((score, -m.start(), pg["page"], ctx))
-    hits.sort(key=lambda h: (-h[0], h[1]))
+                sentence_start, _, ctx = _sentence_span(text, m.start())
+                number_pos = m.start() - sentence_start
+                coverage, distance = _label_proximity(ctx, number_pos, label_terms)
+                hits.append((coverage, distance, m.start(), pg["page"], ctx))
+    hits.sort(key=lambda h: (h[0], h[1], h[2]))
     seen, out = set(), []
-    for sc, _, page, ctx in hits:
+    for coverage, distance, _, page, ctx in hits:
         if (page, ctx[:80]) in seen: continue
-        seen.add((page, ctx[:80])); out.append({"page": page, "passage": ctx, "label_score": sc})
+        seen.add((page, ctx[:80])); out.append({"page": page, "passage": ctx, "label_score": -coverage, "label_distance": distance})
     return out
 
 def label_windows(pages, label_terms, window=700):
