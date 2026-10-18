@@ -85,7 +85,7 @@ npm exec vite -- build --outDir /private/tmp/signalforge_review_build_20261018
 # Vite production build passed, exit 0; existing dist/ was not touched
 ```
 
-The Vite build warned that the external output directory is outside the project root and will not be emptied. No frontend browser visual test was performed. Final `git diff --check` passed before staging; it will be rerun against both unstaged and staged changes during review.
+The Vite build warned that the external output directory is outside the project root and will not be emptied. No frontend browser visual test was performed. Final `git diff --check` and `git diff --cached --check` both passed after the commits; the index is empty.
 
 ## Publication
 
