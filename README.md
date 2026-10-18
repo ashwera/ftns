@@ -23,6 +23,23 @@ signalforge/
   outputs/              Generated local results (ignored)
 ```
 
+## Data files that are not in the repository
+
+Large source and generated data are deliberately not committed (GitHub rejects files over 100 MB and the outputs are reproducible). If you clone this repository, **ask the maintainer for the source archive**, or regenerate the outputs from it.
+
+| Missing path | What it is | How to get it |
+|---|---|---|
+| `signalforge/data/CSV.zip` | Source archive: 30 PDF-to-text CSVs (9 NTPC annual reports FY2017-18 to FY2025-26 and 21 quarterly/results filings). About 2 MB. | Ask the maintainer. It is the only input the rest depends on. Do not edit it. |
+| `signalforge/data/intake/CSV/` | The same files, unzipped (macOS `__MACOSX` and `.DS_Store` removed). | `unzip signalforge/data/CSV.zip -x "__MACOSX/*" "*.DS_Store" -d signalforge/data/intake` |
+| `signalforge/data/processed_step6/` | 8,241 page-block evidence records (`evidence.jsonl`, `source_records.jsonl`, reports). Some of its files may be absent from a clone. | `PYTHONPATH=signalforge/src python3 -m signalforge.document_text_ingestion --input-dir signalforge/data/intake/CSV --output-dir signalforge/data/processed_step6` |
+| `signalforge/data/claims_step1/`, `claims_table_step1/`, `claims_table_xy/` | Historical claim outputs from earlier extractor versions (about 8 MB, 72 MB, 84 MB). | Ask the maintainer, or regenerate with the extraction commands above. Counts will differ if extractor versions differ. |
+| `signalforge/data/runs/*/prose_only/` and `table_aware/` | Full claim files from the archive evaluation run. | `PYTHONPATH=signalforge/src python3 -m signalforge.archive_evaluation --run-dir signalforge/data/runs/<new_run_id>` (the run directory must not already exist). |
+| `signalforge/web/node_modules/`, `web/dist/` | Frontend dependencies and build output. | `cd signalforge/web && npm install && npm run build` |
+
+The repository does contain the code, schemas, tests, the golden fixtures (`signalforge/tests/fixtures/golden_claims/`), the reviewed-input specs (`signalforge/data/pipeline_inputs/`), and the small run artifacts (reports, manifests, audit sample, findings). Some tests skip themselves when the large files are absent (for example the real-NTPC end-to-end test).
+
+Without `CSV.zip` you can still run the unit tests, the golden harness and the synthetic-company pipeline run, but you cannot reproduce the NTPC archive results. Model credentials (`SIGNALFORGE_API_KEY`) are also not included; see "Model provider".
+
 ## Setup
 
 Run these commands from the repository root:
