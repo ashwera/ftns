@@ -21,10 +21,35 @@ ROLES = {"installed_total_group": (12000, "group", "commissioned", ["installed c
          "pipeline_total_group": (4000, "group", "under_implementation", ["total capacity"]), "pipeline_jv_sub": (3000, "jv_subsidiary_part", "under_implementation", ["being developed"]),
          "re_pipeline_jv_sub": (1800, "jv_subsidiary_part", "under_implementation", ["renewable projects"]), "re_target": (5000, "group", "target", ["renewable capacity"])}
 
+def canonical_pending_record(source):
+    """Map saved real-text fixture records to the canonical, explicitly pending schema."""
+    return {
+        "evidence_id": source["evidence_id"], "company_name": "NTPC Limited", "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified", "source_organization": "NTPC Limited", "document_title": str(source.get("document_title") or "NTPC annual report fixture"),
+        "document_type": "annual_report", "source_url": None, "source_path": source.get("source_path"),
+        "source_locator": str(source.get("source_locator") or f"page:{source.get('page_number')}"),
+        "source_identifier_status": "repository_path_only", "publication_date": None, "event_date": None,
+        "retrieval_date": "2026-10-18", "excerpt_or_fact": str(source.get("excerpt_or_fact") or source.get("text") or ""),
+        "metric_name": None, "metric_value": None, "unit": None, "currency": None, "reporting_period": None,
+        "evidence_category": "annual_report_text", "related_claim": None, "claim_key": None,
+        "source_relationship": "original_disclosure", "claim_verification_status": "unverified",
+        "information_type": "reported_fact", "parsing_status": "parsed", "extraction_warnings": [],
+        "page_number": source.get("page_number"), "table_identifier": None, "review_status": "pending_review",
+        "reviewed_by": None, "reviewed_at": None, "review_note": None,
+    }
+
 def synthetic_company(tmp, drop=()):
     """SYNTHETIC company 'Meridian Power Limited': evidence, claims extracted by the real extractor, registry entry and reviewed inputs."""
-    rec = {"evidence_id": "ev_" + "1" * 24, "source_path": "SYNTHETIC/meridian.txt", "source_locator": "page:3:block:1", "page_number": 3, "company_name": "Meridian Power Limited", "company_identity_status": "verified", "excerpt_or_fact": SYN_TEXT,
-           "parsing_status": "parsed", "document_title": "synthetic", "source_organization": "Meridian (synthetic)", "source_sha256": "synthetic-sha"}
+    rec = {"evidence_id": "ev_" + "1" * 24, "company_name": "Meridian Power Limited", "verified_identifier": None,
+           "company_identity_status": "verified", "source_organization": "Meridian (synthetic)", "document_title": "synthetic",
+           "document_type": "synthetic test fixture", "source_url": None, "source_path": "SYNTHETIC/meridian.txt",
+           "source_locator": "page:3:block:1", "source_identifier_status": "repository_path_only",
+           "publication_date": None, "event_date": None, "retrieval_date": "2026-10-18", "excerpt_or_fact": SYN_TEXT,
+           "metric_name": None, "metric_value": None, "unit": None, "currency": None, "reporting_period": None,
+           "evidence_category": "synthetic_test_fixture", "related_claim": None, "claim_key": None,
+           "source_relationship": "unknown", "claim_verification_status": "unverified", "information_type": "reported_fact",
+           "parsing_status": "parsed", "extraction_warnings": [], "page_number": 3, "table_identifier": None,
+           "review_status": "approved", "reviewed_by": "test-fixture", "reviewed_at": "2026-10-18T00:00:00Z", "review_note": "Synthetic test evidence explicitly approved for offline integration coverage."}
     claims = L1.extract_claims(rec, "doc_syn", target=L1.TargetCompany("Meridian Power Limited", ("Meridian",)))
     tmp = Path(tmp); (tmp / "evidence.jsonl").write_text(json.dumps(rec) + "\n"); (tmp / "claims.jsonl").write_text("".join(json.dumps(c) + "\n" for c in claims))
     (tmp / "registry.json").write_text(json.dumps({"version": 1, "companies": [{"canonical_name": "Meridian Power Limited", "verified_identifier": None, "identifiers": ["Meridian"], "aliases": ["Meridian"], "verification_source": "synthetic://fixture-only",
@@ -41,20 +66,18 @@ class BridgeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls): cls.chunks, cls.cases = G.load()
     def real_claims(self):
-        recs = [self.chunks[i] for i in ("ev_252ddc5ca75aa6a8bc871cb1", "ev_2484a0e981c95b1829d91ac3", "ev_fcde1c84df4f8b650bb1afdd")]
+        source_records = [self.chunks[i] for i in ("ev_252ddc5ca75aa6a8bc871cb1", "ev_2484a0e981c95b1829d91ac3", "ev_fcde1c84df4f8b650bb1afdd")]
+        recs = [canonical_pending_record(r) for r in source_records]
         claims = [c for r in recs for c in L1.extract_claims(r, "d", target=L1.TargetCompany("NTPC Limited", ("NTPC",)))]
         return claims, {r["evidence_id"]: r for r in recs}
-    def test_eligible_claims_produce_valid_offline_f1_and_r1_that_reference_only_supplied_ids(self):
+    def test_unreviewed_real_claims_are_blocked_even_when_simulation_is_requested(self):
         claims, by_id = self.real_claims(); bundle = RB.select_bundle(claims, by_id, max_claims=15)
         self.assertTrue(0 < len(bundle["claims"]) <= 15); self.assertTrue(all(c["claim_verification_status"] == "unverified" for c in bundle["claims"]))
         with tempfile.TemporaryDirectory() as d:
             RB.write_bundle(bundle, Path(d) / "b"); st = RB.run_f1_r1("NTPC Limited", Path(d) / "b", Path(d) / "o", simulate=True)
-            self.assertEqual(("simulated", "simulated"), (st["f1"]["execution"], st["r1"]["execution"]))
-            f1 = json.loads((Path(d) / "o" / "f1_output.json").read_text()); r1 = json.loads((Path(d) / "o" / "r1_plan.json").read_text())
-            self.assertIn("SIMULATED", f1["ranking_limitation"]); self.assertFalse(r1["retrieval_performed"])
-            known = {r["evidence_id"] for r in bundle["evidence_records"]}
-            self.assertTrue({e["evidence_id"] for e in r1["evidence_ledger"] if e["evidence_id"]} <= known)
-            self.assertTrue(any(e["status"] == "planned_lookup" and e["source_url"] is None for e in r1["evidence_ledger"]))
+            self.assertEqual(("blocked", "not_executed"), (st["f1"]["execution"], st["r1"]["execution"]))
+            self.assertIn("human-reviewed, approved", st["f1"]["error"])
+            self.assertFalse((Path(d) / "o" / "f1_output.json").exists())
     def test_ineligible_inputs_are_rejected(self):
         unresolved = self.chunks["ev_7b29bace955f23aa73e02e78"]; claims = L1.extract_claims(unresolved, "d", target=None)
         bundle = RB.select_bundle(claims, {unresolved["evidence_id"]: unresolved}); self.assertEqual([], bundle["claims"])   # identity unresolved => not eligible
@@ -63,9 +86,9 @@ class BridgeTests(unittest.TestCase):
             self.assertEqual("blocked", st["f1"]["execution"]); self.assertEqual("not_executed", st["r1"]["execution"])
             st2 = RB.run_f1_r1("Unregistered Example Limited", Path(d) / "b", Path(d) / "o2", simulate=True); self.assertEqual("blocked", st2["f1"]["execution"]); self.assertIn("unresolved", st2["f1"]["error"])
     def test_missing_credentials_are_not_bypassed(self):
-        claims, by_id = self.real_claims(); bundle = RB.select_bundle(claims, by_id, max_claims=5)
         with tempfile.TemporaryDirectory() as d:
-            RB.write_bundle(bundle, Path(d) / "b"); st = RB.run_f1_r1("NTPC Limited", Path(d) / "b", Path(d) / "o", config=dataclasses.replace(Config(), api_key=""), simulate=False)
+            src=synthetic_company(d); claims=read_jsonl(src/"claims.jsonl"); records=read_jsonl(src/"evidence.jsonl"); bundle=RB.select_bundle(claims,{r["evidence_id"]:r for r in records},max_claims=5)
+            RB.write_bundle(bundle, Path(d) / "b"); st = RB.run_f1_r1("Meridian Power Limited", Path(d) / "b", Path(d) / "o", config=dataclasses.replace(Config(), api_key="", registry_path=src/"registry.json"), simulate=False)
             self.assertEqual("blocked", st["f1"]["execution"]); self.assertIn("SIGNALFORGE_API_KEY", st["f1"]["error"]); self.assertFalse((Path(d) / "o" / "f1_output.json").exists())
 
 def fake_fetcher(report):

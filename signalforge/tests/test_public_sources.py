@@ -35,9 +35,35 @@ class PublicSourcesTests(unittest.TestCase):
         conflict=registry_mapping_conflicts({"companies":[{"canonical_name":"Other Corp","verified_identifier":"OTHER","aliases":["NTPC"],"verification_status":"verified"}]},"NTPC","NTPC Limited","INE733E01010")
         self.assertEqual(1,len(conflict))
         self.assertEqual([],eligible_ingested_evidence([{"company_identity_status":"unresolved","company_name":"NTPC Limited"}],"NTPC Limited","INE733E01010"))
-        matching={"company_identity_status":"verified","company_name":"NTPC Limited","verified_identifier":"INE733E01010","evidence_id":"ev_123"}
+        matching={"company_identity_status":"verified","company_name":"NTPC Limited","verified_identifier":"INE733E01010","evidence_id":"ev_123","parsing_status":"parsed","excerpt_or_fact":"Reviewed filing passage.",
+                  "review_status":"approved","reviewed_by":"reviewer-1","reviewed_at":"2026-10-18T12:00:00Z","review_note":"Checked against the original filing page."}
         wrong_company={**matching,"company_name":"Other Limited","verified_identifier":"OTHER"}
-        self.assertEqual([matching],eligible_ingested_evidence([matching,wrong_company],"NTPC Limited","INE733E01010"))
+        pending={**matching,"review_status":"pending_review"}
+        missing_review={k:v for k,v in matching.items() if k not in {"reviewed_by","reviewed_at","review_note"}}
+        unparsed={**matching,"parsing_status":"ocr_required"}
+        empty={**matching,"excerpt_or_fact":"  "}
+        self.assertEqual([matching],eligible_ingested_evidence([matching,wrong_company,pending,missing_review,unparsed,empty],"NTPC Limited","INE733E01010"))
+    def test_f1_approval_requires_exact_identity_and_a_timezone_aware_review_record(self):
+        matching={"company_identity_status":"verified","company_name":"NTPC Limited","verified_identifier":"INE733E01010","parsing_status":"parsed","excerpt_or_fact":"Reviewed filing passage.",
+                  "review_status":"approved","reviewed_by":"reviewer-1","reviewed_at":"2026-10-18T12:00:00Z","review_note":"Checked against the original filing page."}
+        cases=[
+            {**matching,"company_name":"NTPC Corporation"},
+            {**matching,"verified_identifier":"INE000000000"},
+            {**matching,"reviewed_at":"not-a-timestamp"},
+            {**matching,"reviewed_at":"2026-10-18T12:00:00"},
+            {**matching,"reviewed_by":"  "},
+            {**matching,"review_note":None},
+        ]
+        for record in cases:
+            with self.subTest(record=record):
+                self.assertEqual([],eligible_ingested_evidence([record],"NTPC Limited","INE733E01010"))
+        self.assertEqual([matching],eligible_ingested_evidence([matching],"NTPC Limited","INE733E01010"))
+    def test_f1_rejects_each_nonparsed_and_fragment_status(self):
+        matching={"company_identity_status":"verified","company_name":"NTPC Limited","verified_identifier":"INE733E01010","parsing_status":"parsed","excerpt_or_fact":"Reviewed filing passage.",
+                  "review_status":"approved","reviewed_by":"reviewer-1","reviewed_at":"2026-10-18T12:00:00Z","review_note":"Checked against the original filing page."}
+        for status in ("empty","failed","ocr_required"):
+            with self.subTest(parsing_status=status):
+                self.assertEqual([],eligible_ingested_evidence([{**matching,"parsing_status":status}],"NTPC Limited","INE733E01010"))
     def test_inaccessible_source_and_missing_metadata(self):
         bad=retrieve_urls(["https://example.test/a"],self.root/"bad",opener=FakeOpener(b"",failure=urllib.error.URLError("blocked")),robots_checker=lambda u:(True,0,"robots ok"),sleep_fn=lambda _:None)
         self.assertEqual(1,bad["failed_count"])
@@ -46,6 +72,7 @@ class PublicSourcesTests(unittest.TestCase):
         self.assertEqual(1,good["retrieved_count"])
         rec=json.loads((self.root/"ok/evidence.jsonl").read_text().splitlines()[0])
         self.assertIsNone(rec["publication_date"]); self.assertEqual("https://example.test/report",rec["source_url"])
+        self.assertEqual("pending_review",rec["review_status"]); self.assertIsNone(rec["reviewed_by"])
         self.assertTrue(any("Publication date" in w for w in rec["extraction_warnings"]))
         validate_output(rec,Path(__file__).resolve().parents[1]/"schemas/evidence_record.schema.json")
     def test_duplicate_source_and_independence_classification(self):

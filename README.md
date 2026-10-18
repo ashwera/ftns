@@ -104,7 +104,9 @@ For the preserved PDF-to-CSV text extracts in `signalforge/data/intake/CSV/`, us
 PYTHONPATH=signalforge/src python -m signalforge.document_text_ingestion --input-dir signalforge/data/intake/CSV --output-dir signalforge/data/processed_step6
 ```
 
-These outputs retain document and page-block identity for review. All current Step 6 records require manual review and none are approved; they must not be treated as F1-eligible evidence until a reviewed/approved gate is implemented.
+These outputs retain document and page-block identity for review. All current Step 6 records require manual review and none are approved; they are not F1-eligible evidence.
+
+F1 now enforces that gate: ingested records must be identity-verified, parsed, non-empty, and explicitly marked `review_status: "approved"` with `reviewed_by`, `reviewed_at`, and `review_note`. Ingestion defaults to `pending_review`; it never marks records approved. F1 fails before a model call when no eligible evidence is available, and limits a request to 40 evidence records and 250,000 UTF-8 bytes. The current Step 6 store has no human approvals, so adding `SIGNALFORGE_API_KEY` alone will not make F1 eligible. The documented configuration remains to export `SIGNALFORGE_API_KEY` and, if needed, `SIGNALFORGE_PROVIDER`, `SIGNALFORGE_MODEL`, and `SIGNALFORGE_BASE_URL` in the environment; `.env` is not loaded implicitly.
 
 ## Experimental table-aware extraction
 
@@ -164,7 +166,7 @@ PYTHONPATH=signalforge/src python -m signalforge.f1_research_angle_selector --co
 
 ## Model provider
 
-Copy `signalforge/.env.example` to `signalforge/.env`, set `SIGNALFORGE_API_KEY`, and optionally set `SIGNALFORGE_PROVIDER`, `SIGNALFORGE_MODEL`, and `SIGNALFORGE_BASE_URL`. Export those variables in your shell or load the file with your preferred environment manager; the app does not implicitly load `.env`. The current client supports an OpenAI-compatible chat completions endpoint. No model call occurs without a configured API key. With the current CSV, F1 reports that no company-specific verified evidence is available unless disclosures have been retrieved and ingested.
+The default provider is Gemini through Google's official OpenAI-compatible chat completions endpoint, using the OpenAI SDK already declared as an optional dependency. Defaults are `SIGNALFORGE_PROVIDER=gemini`, `SIGNALFORGE_MODEL=gemini-3.8-flash`, and the official Gemini compatibility URL. `SIGNALFORGE_API_KEY` is the Gemini API key. You may override provider/model/base URL explicitly; `.env` is not loaded implicitly. No model call occurs without the key, and F1 still requires human-reviewed, approved evidence before making a request. With the current quote CSV alone, F1 cannot run without eligible company-specific evidence.
 
 ## Tests
 
