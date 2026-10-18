@@ -110,7 +110,7 @@ class EndToEndTests(unittest.TestCase):
             names = {c["name"]: c["result"]["value"] for c in f["calculations"]}
             self.assertAlmostEqual(20.0, names["re_share_of_parent_own_pipeline"]); self.assertAlmostEqual(60.0, names["re_share_of_jv_subsidiary_pipeline"]); self.assertAlmostEqual(58.0, names["re_installed_plus_pipeline_vs_target"])
             prov = {s["stage"]: s["execution"] for s in f["stage_provenance"]}
-            self.assertEqual(("simulated", "simulated", "not_executed"), (prov["F1"], prov["R1"], prov["source_retrieval"])); self.assertEqual("real", prov["source_verification"])
+            self.assertEqual(("simulated", "simulated", "not_executed"), (prov["F1"], prov["R1"], prov["source_catalog"])); self.assertEqual("real", prov["source_verification"])
             self.assertTrue(all(c["claim_verification_status"] == "unverified" for c in read_jsonl(t / "claims.jsonl")))
             f2, _ = P.run_pipeline("Meridian Power Limited", t / "claims.jsonl", t / "evidence.jsonl", t / "inputs.json", t / "run2", registry_path=t / "registry.json", simulate_llm=True, synthetic=True)
             norm = lambda x: {**x, "run_id": "r", "finding_id": "f"}

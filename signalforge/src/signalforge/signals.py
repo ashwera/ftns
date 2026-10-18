@@ -14,7 +14,7 @@ UNIT_TO_BASE = {"MW": ("MW", 1.0), "GW": ("MW", 1000.0), "MWh": ("MWh", 1.0), "G
 def make_input(name, value, unit, *, as_of=None, period_text=None, basis=None, status=None, claim_ids=(), verification=None, rounding=None):
     """verification: a verification_result dict (or None). rounding: half-unit of the last reported digit, in `unit`."""
     return {"name": name, "value": float(value), "unit": unit, "as_of_date": as_of, "period_text": period_text, "basis": basis, "statement_status": status,
-            "claim_ids": list(claim_ids), "verification_ids": [verification["verification_id"]] if verification else [], "verification_outcome": verification["outcome"] if verification else "unverified",
+            "claim_ids": list(claim_ids), "verification_ids": (verification.get("verification_ids") or [verification["verification_id"]]) if verification else [], "verification_outcome": verification["outcome"] if verification else "unverified",
             "rounding_uncertainty": rounding}
 
 def to_base(inp):

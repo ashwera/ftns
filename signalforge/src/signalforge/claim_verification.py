@@ -155,15 +155,81 @@ def assertion_from_claim(claim, *, basis=None, statement_status=None, label_term
     return {"value": claim["value"], "unit": claim["unit"], "period_type": claim["period_type"], "as_of_date": claim["as_of_date"], "period_text": claim["raw_period_text"], "basis": basis,
             "statement_status": statement_status, "label_terms": list(label_terms if label_terms is not None else ([claim["raw_metric_text"]] if claim.get("raw_metric_text") else [])), "entity": claim["entity"], "entity_names": list(entity_names)}
 
+# ---------- locating the passage for an assertion inside a source document
+def _indian(n):
+    s = f"{int(n)}"
+    if len(s) <= 3: return s
+    head, tail = s[:-3], s[-3:]; parts = []
+    while len(head) > 2: parts.insert(0, head[-2:]); head = head[:-2]
+    if head: parts.insert(0, head)
+    return ",".join(parts + [tail])
+
+def value_variants(value):
+    """Textual forms of a number as filings print it (western or Indian grouping, with/without trailing zeros)."""
+    out = set()
+    if float(value).is_integer():
+        n = int(value); out |= {f"{n:,}", _indian(n), str(n)}
+    else:
+        for d in (1, 2, 3):
+            out.add(f"{value:,.{d}f}".rstrip("0").rstrip(".") if f"{value:.{d}f}".rstrip("0") != f"{value:.{d}f}" else f"{value:,.{d}f}"); out.add(f"{value:.{d}f}")
+        out.add(str(value))
+    return sorted(out, key=len, reverse=True)
+
+def locate_passages(pages, value, label_terms, window=1200):
+    """Pages that contain the value (any printed form) with the label terms nearby, best first. Each hit is a bounded window of the page."""
+    hits = []
+    for pg in pages:
+        text = collapse(pg["text"])
+        for v in value_variants(value):
+            for m in re.finditer(r"(?<![\d,.])" + re.escape(v) + r"(?![\d]|,\d)", text):
+                ctx = text[max(0, m.start() - window // 2):m.end() + window // 2]
+                score = sum(t.lower() in ctx.lower() for t in label_terms)
+                hits.append((score, -m.start(), pg["page"], ctx))
+    hits.sort(key=lambda h: (-h[0], h[1]))
+    seen, out = set(), []
+    for sc, _, page, ctx in hits:
+        if (page, ctx[:80]) in seen: continue
+        seen.add((page, ctx[:80])); out.append({"page": page, "passage": ctx, "label_score": sc})
+    return out
+
+def label_windows(pages, label_terms, window=700):
+    """Windows around occurrences of ALL label terms (used when the asserted value is absent, to detect a different value for the same label)."""
+    out = []
+    if not label_terms: return out
+    for pg in pages:
+        text = collapse(pg["text"]); low = text.lower()
+        for m in re.finditer(re.escape(label_terms[0].lower()), low):
+            ctx = text[max(0, m.start() - window // 2):m.end() + window // 2]
+            if all(t.lower() in ctx.lower() for t in label_terms): out.append({"page": pg["page"], "passage": ctx})
+    return out
+
+# ---------- combining per-source results for one input
+def combine_results(results):
+    """results: verification_result dicts for ONE input (one per source, plus the extracted-text-review baseline).
+    Primary-source results decide; a primary confirmation next to a primary contradiction is a conflict (never averaged)."""
+    prim = [r for r in results if r["verification_level"] == "primary_source"]
+    base = [r for r in results if r["verification_level"] != "primary_source"]
+    conf = [r for r in prim if r["outcome"] == "confirmed"]; contra = [r for r in prim if r["outcome"] == "contradicted"]
+    part = [r for r in prim if r["outcome"] == "partially_supported"]
+    if conf and contra: outcome, level, conflict, why = "partially_supported", "primary_source", True, "primary sources disagree: confirmed by " + ", ".join(r["source"]["document_family"] or "?" for r in conf) + "; contradicted by " + ", ".join(r["source"]["document_family"] or "?" for r in contra)
+    elif conf: outcome, level, conflict, why = "confirmed", "primary_source", False, f"confirmed against {len(conf)} primary-source document(s)"
+    elif contra: outcome, level, conflict, why = "contradicted", "primary_source", False, "contradicted by a primary source: " + "; ".join(contra[0]["discrepancies"])
+    elif part: outcome, level, conflict, why = "partially_supported", "primary_source", False, "primary source supports the value but not every check"
+    elif base: outcome, level, conflict, why = base[0]["outcome"], "extracted_text_review", False, "no primary source located the value; only the project's text extraction was reviewed"
+    else: outcome, level, conflict, why = "unable_to_verify", "extracted_text_review", False, "no verification result"
+    rep = (conf or contra or part or base or [None])[0]
+    return {"outcome": outcome, "level": level, "conflict": conflict, "reason": why, "representative": rep, "confirming": [r["verification_id"] for r in conf], "contradicting": [r["verification_id"] for r in contra]}
+
 # ---------- independence and corroboration
 def assess_independence(sources):
-    """sources: dicts with publisher, document_family, sha256, derived_from (list of document_family). Returns groups; mirrors and same-issuer repeats are never independent."""
+    """sources: dicts with publisher, document_family, sha256, derived_from, optional issuer_submitted (exchange/regulator-hosted copies of the issuer's own filing).
+    Mirrors (same hash), same publisher, issuer-submitted filings and derived-from relationships count once."""
     unique = {}
     for s in sources: unique.setdefault(s.get("sha256") or s.get("document_family") or id(s), s)
     items = list(unique.values()); dropped_mirrors = len(sources) - len(items)
-    independent_sets = []
+    def group(s): return "__issuer__" if s.get("issuer_submitted") else s.get("publisher")
+    chosen = []
     for s in items:
-        if not any(s["publisher"] == t["publisher"] or s.get("document_family") in (t.get("derived_from") or []) or t.get("document_family") in (s.get("derived_from") or []) for t in independent_sets):
-            independent_sets.append(s)
-    return {"distinct_documents": len(items), "mirror_copies_removed": dropped_mirrors, "independent_source_count": len(independent_sets),
-            "note": "Same publisher or derived-from relationships (e.g. a presentation quoting an annual report) count once; this is not statistical independence."}
+        if not any(group(s) == group(t) or s.get("document_family") in (t.get("derived_from") or []) or t.get("document_family") in (s.get("derived_from") or []) for t in chosen): chosen.append(s)
+    return {"distinct_documents": len(items), "mirror_copies_removed": dropped_mirrors, "independent_source_count": len(chosen),
+            "note": "Same publisher, issuer-submitted copies and derived-from relationships count once; this is not statistical independence."}

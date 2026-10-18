@@ -1,0 +1,215 @@
+[
+  {
+    "role": "installed_total_group",
+    "input_name": "group_installed_capacity",
+    "key": false,
+    "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "confirmed",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_installed_total_group_1543b65f_text",
+        "level": "extracted_text_review",
+        "outcome": "confirmed",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 90,
+        "url": null,
+        "passage_sha256": "7074c05795cbfe5267ad2709fbdb42d791c01c383945f5d33bd81f3be9246015",
+        "failed_or_open_checks": {},
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  },
+  {
+    "role": "re_installed_group",
+    "input_name": "re_installed_capacity_group",
+    "key": false,
+    "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_re_installed_group_0b93c941_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 112,
+        "url": null,
+        "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+        "failed_or_open_checks": {
+          "entity": "unresolved",
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  },
+  {
+    "role": "re_pipeline_group",
+    "input_name": "re_under_implementation_group",
+    "key": true,
+    "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_re_pipeline_group_cc88f4b8_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 112,
+        "url": null,
+        "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+        "failed_or_open_checks": {
+          "basis": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  },
+  {
+    "role": "pipeline_total_group",
+    "input_name": "total_under_implementation_group",
+    "key": true,
+    "claim_id": "cl1_09d1b0c61a44466b711c57e9",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_pipeline_total_group_711c57e9_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 91,
+        "url": null,
+        "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+        "failed_or_open_checks": {
+          "basis": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  },
+  {
+    "role": "pipeline_jv_sub",
+    "input_name": "jv_subsidiary_under_implementation",
+    "key": true,
+    "claim_id": "cl1_1528c13ba76ba39d8d47a510",
+    "claim_extraction_status": "needs_review",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_pipeline_jv_sub_8d47a510_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 91,
+        "url": null,
+        "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+        "failed_or_open_checks": {
+          "period": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  },
+  {
+    "role": "re_pipeline_jv_sub",
+    "input_name": "re_under_implementation_jv_subsidiary",
+    "key": true,
+    "claim_id": "cl1_7904a68ca446b6be755a6e95",
+    "claim_extraction_status": "needs_review",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_re_pipeline_jv_sub_755a6e95_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 91,
+        "url": null,
+        "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+        "failed_or_open_checks": {
+          "period": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  },
+  {
+    "role": "re_target",
+    "input_name": "re_capacity_target_2032",
+    "key": false,
+    "claim_id": "cl1_4bad374a50229c566a48d913",
+    "claim_extraction_status": "needs_review",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [],
+    "results": [
+      {
+        "verification_id": "ver_re_target_6a48d913_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 112,
+        "url": null,
+        "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+        "failed_or_open_checks": {
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      }
+    ]
+  }
+]

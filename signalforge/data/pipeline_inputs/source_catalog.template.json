@@ -1,0 +1,27 @@
+{
+  "_template": true,
+  "_instructions": "Replace every FILL value. The URL (or local_path snapshot) comes from the verified catalog; nothing in the code names a document. Pin sha256 of the snapshot where known. Set issuer_submitted true for exchange/regulator-hosted copies of the issuer's own filing and list derived_from for documents that quote another catalog source. Run: python -m signalforge.pipeline --catalog <this file> ...",
+  "catalog_version": "1.0",
+  "company": "FILL: registry canonical name",
+  "official_domains": [
+    "FILL: official domains permitted for primary sources"
+  ],
+  "sources": [
+    {
+      "source_id": "FILL: unique id",
+      "url": "FILL: https URL or null",
+      "local_path": "FILL: snapshot path relative to this file, or null",
+      "sha256": "FILL: optional pin",
+      "title": "FILL",
+      "publisher": "FILL",
+      "source_class": "official_filing | exchange_announcement | government_data | regulator | third_party",
+      "source_type": "annual_report",
+      "publication_date": "YYYY-MM-DD",
+      "reporting_period": "FY2024-25",
+      "issuer_submitted": true,
+      "derived_from": [],
+      "verified_by": "FILL: reviewer who attested authenticity",
+      "verified_on": "YYYY-MM-DD"
+    }
+  ]
+}

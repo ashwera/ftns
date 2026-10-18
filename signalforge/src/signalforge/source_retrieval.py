@@ -50,7 +50,7 @@ def execute(requests, run_dir, *, fetcher=None, registry_path=None, company=None
             if s.get("retrieval_status") != "retrieved": out.update(status="failed", error=s.get("error", "unknown"))
             else:
                 pub = s.get("publication_date"); stale = bool(pub) and (today - dt.date.fromisoformat(pub[:10])).days > max_age_days
-                out.update(status="stale" if stale else "retrieved", source_url=s.get("canonical_url") or r["url"], source_sha256=s.get("source_sha256"), publication_date=pub, retrieved_at=s.get("retrieved_at"), document_title=s.get("document_title"),
+                out.update(status="stale" if stale else "retrieved", source_url=s.get("canonical_url") or r["url"], source_sha256=s.get("source_sha256"), saved_path=s.get("saved_path"), publication_date=pub, retrieved_at=s.get("retrieved_at"), document_title=s.get("document_title"),
                            company_association=s.get("company_association_status"), warnings=s.get("warnings", []), is_primary=r["source_class"] in PRIMARY_CLASSES)
                 if not pub: out["warnings"] = out["warnings"] + ["publication date unknown; cannot be used as a dated primary source until established"]
             results.append(out)

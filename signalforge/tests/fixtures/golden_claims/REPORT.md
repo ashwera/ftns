@@ -200,11 +200,15 @@
 | schema_unverified_provenance | ok | valid, unverified, provenance preserved | 6 claims |
 | expected[189798.56] | ok | status in ['ambiguous', 'needs_review'], INR crore FY 2025–26 | ambiguous |
 
-### GC-27 · table_label_lacks_parent · table extractor · **XFAIL (accepted gap: Known table-extractor gap: it currently marks these rows `extracted`; the section-row context is not modelled (Layer 1.5, accepted).)**
+### GC-27 · table_label_lacks_parent · table extractor · **PASS**
 | Check | Result | Expected | Actual |
 |---|---|---|---|
 | schema_unverified_provenance | ok | valid, unverified, provenance preserved | 10 claims |
-| expected[94.02] | FAIL | status in ['ambiguous', 'needs_review'], percent FY 2017-18 | extracted |
+| forbidden_extracted[94.02] | ok | never `extracted` | [('ambiguous', 'coal')] |
+| forbidden_extracted[5.28] | ok | never `extracted` | [('ambiguous', 'gas')] |
+| forbidden_extracted[0.66] | ok | never `extracted` | [('ambiguous', 'oil')] |
+| forbidden_extracted[0.04] | ok | never `extracted` | [('ambiguous', 'naphtha')] |
+| expected[94.02] | ok | status in ['ambiguous', 'needs_review'], percent FY 2017-18 | ambiguous |
 
 ### GC-30 · synthetic_other_company_historical · prose extractor · **PASS** · synthetic
 | Check | Result | Expected | Actual |
@@ -270,4 +274,4 @@
 | exact_claim_set | ok | [('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 3.67, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 8.64, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 30.43, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 55.73, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 98.47, None, 'unknown', None, None)] | [('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 3.67, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 8.64, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 30.43, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 55.73, None, 'unknown', None, None), ('ev_a346a8aab8eb8a1acea574e1', 'projects_in_progress', 98.47, None, 'unknown', None, None)] |
 
 
-34/35 case x extractor runs passed
+35/35 case x extractor runs passed

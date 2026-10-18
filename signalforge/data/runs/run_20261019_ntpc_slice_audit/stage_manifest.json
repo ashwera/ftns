@@ -1,0 +1,59 @@
+{
+  "run_id": "run_20261019_ntpc_slice_audit",
+  "company": {
+    "name": "NTPC Limited",
+    "aliases": [
+      "NTPC"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "stages": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "40942 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "43 claims / 21 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "simulated",
+      "detail": "deterministic stand-in, no model call"
+    },
+    {
+      "stage": "R1",
+      "execution": "simulated",
+      "detail": "deterministic stand-in, no model call"
+    },
+    {
+      "stage": "source_catalog",
+      "execution": "not_executed",
+      "detail": "no --catalog supplied; verification limited to the project's text extraction"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "7 inputs verified; 0 at primary_source level, 7 at extracted_text_review only; effective outcomes {\"confirmed\": 1, \"partially_supported\": 6}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "6 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "traceability_problems": [],
+  "claims_path": "signalforge/data/runs/run_20261018_archive/table_aware/claims.jsonl",
+  "evidence_path": "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/evidence.jsonl",
+  "inputs_path": "signalforge/data/pipeline_inputs/ntpc_renewable_pipeline_reviewed_inputs.json",
+  "network_used": false,
+  "catalog_path": null,
+  "model_used": false
+}

@@ -62,6 +62,25 @@ class TableClaimTests(unittest.TestCase):
         cs, _ = table_claims("Particulars,Unit,FY 2024-25,FY 2023-24\nNo. of Employees,Number,16798,17398\nGross generation,Million Units,259618,274454\n")
         self.assertEqual([("count", "Number"), ("count", "Number"), ("MU", "Million Units"), ("MU", "Million Units")], [(c["unit"], c["raw_unit_text"]) for c in cs])
         self.assertEqual({"extracted"}, {c["extraction_status"] for c in cs})
+    def test_explicit_million_units_label_overrides_unrelated_crore_declaration(self):
+        text = "Particulars,FY 2020-21,FY 2019-20\nFuel cost (` Crore),100.00,90.00\nUnits of electricity sold (MUs),251649,240204\nOther income (` Crore),5.00,4.00\n"
+        cs, _ = table_claims(text)
+        units = [c for c in cs if c["raw_metric_text"].startswith("Units of electricity")]
+        self.assertEqual(["MU", "MU"], [c["unit"] for c in units])
+    def test_per_share_column_overrides_chunk_crore_declaration(self):
+        text = 'Particulars,"Total equity (` crore)","Book value per share (`)*"\nProfit for the year,11749.89,11.88\nOther income,5.00,2.00\nTax expense,4.00,1.00\n'
+        cs, _ = table_claims(text)
+        claim = next(c for c in cs if c["raw_metric_text"] == "Profit for the year" and c["value"] == 11.88)
+        self.assertEqual("per share", claim["unit"])
+        self.assertNotEqual("INR crore", claim["unit"])
+        self.assertIn("per-share unit", claim["ambiguity_notes"])
+    def test_section_parent_keeps_fuel_mix_rows_from_extracted_status(self):
+        text = "Particulars,FY 2017-18,FY 2016-17\nFuel cost (` Crore),48315.47,47572.19\n% break-up,,\nCoal,94.02%,95.09%\nGas,5.28%,4.29%\nOil,0.66%,0.60%\nNaphtha,0.04%,0.02%\n"
+        cs, _ = table_claims(text)
+        fuel_mix = [c for c in cs if c["raw_metric_text"] in {"Coal", "Gas", "Oil", "Naphtha"}]
+        self.assertEqual(8, len(fuel_mix))
+        self.assertTrue(all(c["extraction_status"] == "ambiguous" for c in fuel_mix))
+        self.assertTrue(all("section context" in c["ambiguity_notes"] for c in fuel_mix))
     def test_label_starting_with_value_and_rupee_crore_unit_cell(self):
         cs, _ = table_claims("Particulars,,FY 2018-19,FY 2017-18\nValue added per employee,Rs. Crore,1.83,1.58\nTurnover per employee,Rs. Crore,2.00,1.90\n")
         self.assertEqual(("Value added per employee", "INR crore", "Rs. Crore"), (cs[0]["raw_metric_text"], cs[0]["unit"], cs[0]["raw_unit_text"]))

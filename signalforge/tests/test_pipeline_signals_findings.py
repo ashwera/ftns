@@ -5,7 +5,8 @@ from signalforge import signals as S
 from signalforge.pipeline_contract import ClaimStore
 
 def ver(outcome="confirmed", level="extracted_text_review", vid="v", cross=()):
-    return {"verification_id": vid, "outcome": outcome, "verification_level": level, "cross_checks": list(cross), "claim_id": "cl1_" + "a" * 24}
+    return {"verification_id": vid, "input_name": "in_" + vid, "outcome": outcome, "verification_level": level, "cross_checks": list(cross), "claim_id": "cl1_" + "a" * 24, "discrepancies": ["value differs"] if outcome == "contradicted" else [],
+            "source": {"source_chunk_id": "ev_" + "a" * 24, "source_path": "x", "page": 1, "passage": "p", "url": None}}
 
 def inp(name, value, unit="MW", asof="2025-03-31", basis="group", status="under_implementation", outcome="confirmed", rounding=None):
     return S.make_input(name, value, unit, as_of=asof, period_text=asof, basis=basis, status=status, claim_ids=["cl1_" + name.encode().hex()[:24].ljust(24, "0")], verification=ver(outcome, vid="v_" + name), rounding=rounding)

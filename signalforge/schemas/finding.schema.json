@@ -3,30 +3,394 @@
   "title": "SignalForge research finding (frontend contract)",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "finding_id", "run_id", "company", "finding_status", "evidence_strength", "headline", "why_it_matters", "periods", "rank_score", "rank_components", "inputs", "calculations", "supporting_evidence", "contradictory_evidence", "alternative_explanations", "falsification_conditions", "missing_evidence", "limitations", "stage_provenance", "all_claims_unverified", "synthetic", "provisional_rubric"],
+  "required": [
+    "schema_version",
+    "finding_id",
+    "run_id",
+    "company",
+    "finding_status",
+    "evidence_strength",
+    "headline",
+    "why_it_matters",
+    "periods",
+    "rank_score",
+    "rank_components",
+    "inputs",
+    "calculations",
+    "supporting_evidence",
+    "contradictory_evidence",
+    "alternative_explanations",
+    "falsification_conditions",
+    "missing_evidence",
+    "limitations",
+    "stage_provenance",
+    "all_claims_unverified",
+    "synthetic",
+    "provisional_rubric"
+  ],
   "properties": {
-    "schema_version": {"const": "1.0"}, "finding_id": {"type": "string"}, "run_id": {"type": "string"},
-    "company": {"type": "object", "additionalProperties": false, "required": ["name", "aliases", "identity_status"], "properties": {"name": {"type": "string"}, "aliases": {"type": "array", "items": {"type": "string"}}, "identity_status": {"enum": ["registry_verified", "config_only"]}}},
-    "finding_status": {"enum": ["supported_finding", "provisional_hypothesis", "no_defensible_signal"]},
-    "evidence_strength": {"enum": ["Strong", "Moderate", "Weak", "None"]},
-    "headline": {"type": "string"}, "why_it_matters": {"type": "string"}, "periods": {"type": "array", "items": {"type": "string"}},
-    "rank_score": {"type": "number", "minimum": 0, "maximum": 100},
-    "rank_components": {"type": "object", "additionalProperties": {"type": "number"}},
-    "inputs": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["name", "value", "unit", "as_of_date", "basis", "statement_status", "claim_ids", "verification_ids", "verification_outcome", "verification_level", "citation"], "properties": {
-      "name": {"type": "string"}, "value": {"type": "number"}, "unit": {"type": ["string", "null"]}, "as_of_date": {"type": ["string", "null"]}, "basis": {"type": ["string", "null"]}, "statement_status": {"type": ["string", "null"]},
-      "claim_ids": {"type": "array", "items": {"type": "string"}}, "verification_ids": {"type": "array", "items": {"type": "string"}}, "verification_outcome": {"type": "string"}, "verification_level": {"type": "string"}, "citation": {"$ref": "#/$defs/citation"}}}},
-    "calculations": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["calculation_id", "name", "formula", "result", "input_names", "trace"], "properties": {
-      "calculation_id": {"type": "string"}, "name": {"type": "string"}, "formula": {"type": "string"}, "result": {"type": ["object", "null"]}, "input_names": {"type": "array", "items": {"type": "string"}}, "trace": {"type": "string"}}}},
-    "supporting_evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence_item"}},
-    "contradictory_evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence_item"}},
-    "alternative_explanations": {"type": "array", "items": {"type": "string"}}, "falsification_conditions": {"type": "array", "items": {"type": "string"}},
-    "missing_evidence": {"type": "array", "items": {"type": "string"}}, "limitations": {"type": "array", "items": {"type": "string"}},
-    "stage_provenance": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["stage", "execution", "detail"], "properties": {"stage": {"type": "string"}, "execution": {"enum": ["real", "simulated", "not_executed", "blocked"]}, "detail": {"type": "string"}}}},
-    "all_claims_unverified": {"type": "boolean"}, "synthetic": {"type": "boolean"},
-    "provisional_rubric": {"type": "object"}
+    "schema_version": {
+      "const": "1.0"
+    },
+    "finding_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "company": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "aliases",
+        "identity_status"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "identity_status": {
+          "enum": [
+            "registry_verified",
+            "config_only"
+          ]
+        }
+      }
+    },
+    "finding_status": {
+      "enum": [
+        "supported_finding",
+        "provisional_hypothesis",
+        "no_defensible_signal"
+      ]
+    },
+    "evidence_strength": {
+      "enum": [
+        "Strong",
+        "Moderate",
+        "Weak",
+        "None"
+      ]
+    },
+    "headline": {
+      "type": "string"
+    },
+    "why_it_matters": {
+      "type": "string"
+    },
+    "periods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rank_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "rank_components": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "value",
+          "unit",
+          "as_of_date",
+          "basis",
+          "statement_status",
+          "claim_ids",
+          "verification_ids",
+          "verification_outcome",
+          "verification_level",
+          "citation"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "as_of_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "basis": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "statement_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_outcome": {
+            "type": "string"
+          },
+          "verification_level": {
+            "type": "string"
+          },
+          "citation": {
+            "$ref": "#/$defs/citation"
+          }
+        }
+      }
+    },
+    "calculations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "calculation_id",
+          "name",
+          "formula",
+          "result",
+          "input_names",
+          "trace"
+        ],
+        "properties": {
+          "calculation_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "formula": {
+            "type": "string"
+          },
+          "result": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "input_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_item"
+      }
+    },
+    "contradictory_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_item"
+      }
+    },
+    "alternative_explanations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "falsification_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stage_provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage",
+          "execution",
+          "detail"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string"
+          },
+          "execution": {
+            "enum": [
+              "real",
+              "simulated",
+              "not_executed",
+              "blocked"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "all_claims_unverified": {
+      "type": "boolean"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "provisional_rubric": {
+      "type": "object"
+    },
+    "audit_trail": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "decision_log": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "downgrade_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rejected_hypothesis": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "verification_summary": {
+      "type": "object"
+    }
   },
   "$defs": {
-    "citation": {"type": "object", "additionalProperties": false, "required": ["source_chunk_id", "source_path", "page", "locator", "excerpt", "url"], "properties": {"source_chunk_id": {"type": ["string", "null"]}, "source_path": {"type": ["string", "null"]}, "page": {"type": ["integer", "null"]}, "locator": {"type": ["string", "null"]}, "excerpt": {"type": "string"}, "url": {"type": ["string", "null"]}}},
-    "evidence_item": {"type": "object", "additionalProperties": false, "required": ["statement", "claim_ids", "citation", "independent"], "properties": {"statement": {"type": "string"}, "claim_ids": {"type": "array", "items": {"type": "string"}}, "citation": {"$ref": "#/$defs/citation"}, "independent": {"type": "boolean"}}}
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_chunk_id",
+        "source_path",
+        "page",
+        "locator",
+        "excerpt",
+        "url"
+      ],
+      "properties": {
+        "source_chunk_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "excerpt": {
+          "type": "string"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "evidence_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "claim_ids",
+        "citation",
+        "independent"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "citation": {
+          "$ref": "#/$defs/citation"
+        },
+        "independent": {
+          "type": "boolean"
+        }
+      }
+    }
   }
 }

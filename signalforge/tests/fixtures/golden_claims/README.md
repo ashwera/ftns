@@ -48,7 +48,7 @@ Cases were chosen from the failure patterns found in manual review (`signalforge
 ## Known limits
 - One reviewer, not independent; expected values were derived from the extracted text only, so a "correct" label does not mean the figure is true.
 - GC-04/13 deliberately allow downgrades (`status_allowed` includes `ambiguous`/`needs_review`) because a conservative extractor is acceptable there; only fully explicit statements (GC-01 59,413 MW, GC-02 77.44%, GC-20 percent rows, GC-30) require `extracted`.
-- GC-27 is an accepted table-extractor gap (section-row context not modelled).
+- GC-27 checks that fuel-mix component percentages remain review-only when their `% break-up` section parent supplies the missing measure context.
 - GC-34/35 use real source text whose Step 6 records have unresolved company identity and no explicit unit; expected values and periods are recovered only as unverified, review-only candidates.
 - GC-36 is synthetic because a clean page-boundary continuation with unambiguous table identity was not available in the preserved real chunks. It is not an NTPC fact.
 - GC-37 deliberately shares a six-column shape across two adjacent-page tables. The first is a project completion schedule; the next is an intangible-asset CWIP aging table. The prior header must not be reused.

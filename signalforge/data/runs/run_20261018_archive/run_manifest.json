@@ -1,0 +1,64 @@
+{
+  "run_id": "run_20261018_archive",
+  "generated_at": "2026-10-17T21:26:38.458659+00:00",
+  "inputs": {
+    "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/evidence.jsonl": "d7a4808c829e7d19620324df0c9ed4b23f588d4e9948da17119e7ef339447c84",
+    "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/source_records.jsonl": "7dfe2357e8f1b1cbcd738b397d58f58eeaea887a60122e9ca27479ab5cd9a9a2",
+    "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/ingestion_report.json": "b720760090b76ccdc45d6b77dd8a0efe05f95d002af48724e77722e813a76208"
+  },
+  "versions": {
+    "claim_extraction": "layer1-deterministic-0.2.0",
+    "table_extraction": "layer1.5-table-0.2.0",
+    "claim_schema_version": "1.1",
+    "claim_schema_sha256": "5f3e63c93029c5163041536744ab37cc781ddc8be172b08014c0606105fce706"
+  },
+  "commands": [
+    {
+      "command": "python3 -m signalforge.claim_extraction --input-dir /Users/ashwera/Documents/ftns/signalforge/data/processed_step6 --output-dir signalforge/data/runs/run_20261018_archive/prose_only",
+      "exit_code": 0,
+      "seconds": 2.35,
+      "stdout_tail": [
+        "completed: 8241 chunks, 4423 claims ({'extracted': 6, 'ambiguous': 100, 'needs_review': 4317}), 7662 zero-claim chunks, 0 failed, 0 schema failures. Report: signalforge/data/runs/run_20261018_archive/prose_only/extraction_report.json"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "command": "python3 -m signalforge.table_extraction --input-dir /Users/ashwera/Documents/ftns/signalforge/data/processed_step6 --output-dir signalforge/data/runs/run_20261018_archive/table_aware --baseline-dir /Users/ashwera/Documents/ftns/signalforge/data/claims_step1",
+      "exit_code": 0,
+      "seconds": 7.93,
+      "stdout_tail": [
+        "completed: 8241 chunks {'uncertain': 1826, 'prose': 2036, 'tabular': 4379}, 40942 claims {'extracted': 15, 'ambiguous': 15791, 'needs_review': 25136}, 0 schema failures, 0 failed. Report: signalforge/data/runs/run_20261018_archive/table_aware/extraction_report.json"
+      ],
+      "stderr_tail": []
+    }
+  ],
+  "outputs_dir": "signalforge/data/runs/run_20261018_archive",
+  "parameters": {
+    "audit_seed": 20261018,
+    "table_thresholds": {
+      "min_rows": 3,
+      "min_width": 3,
+      "width_consistency": 0.6,
+      "numeric_frac": 0.25,
+      "long_cell": 120,
+      "tabular_max_long_frac": 0.3,
+      "prose_min_long_frac": 0.5,
+      "reversal_min_evidence": 2,
+      "reversal_ratio": 3.0,
+      "max_excerpt": 800
+    }
+  },
+  "network_used": false,
+  "model_used": false,
+  "outputs": {
+    "archive_evaluation_summary.json": "9a0dc0c7ed591b906418be3669e7d0177dd88649ab9e7449e1b6b9aacd548f13",
+    "claim_audit_sample.jsonl": "965140aa78b42dfdba632ec545090bae019054578ba725a47e87f6c8ff9fd47b",
+    "duplicate_claim_groups.jsonl": "23918b2ef9ed3562ab69a0a3f45f86914b90a035081139bf4c9031a800d7f344",
+    "prose_only/claims.jsonl": "58c86aa56c45790bc1f298fc3e55a8582d2e7d72f5e08a8995faa88394972925",
+    "prose_only/extraction_report.json": "f2d488d94a63b3986f2da60a9ce338d77660635db27a9a905c222d727b43c262",
+    "prose_only/review_queue.jsonl": "672e9dd5003c135a8493c475d1312058a69dd688ac4b40ff6e8af8928dd572d0",
+    "table_aware/claims.jsonl": "7e164a82bead3dcb489124c99f674a704205d96bda333551b24cdb247d6808e7",
+    "table_aware/extraction_report.json": "a799da0b44a8460d7a2a02175959ccb123297024aca0be6985f17a4f7b41d837",
+    "table_aware/review_queue.jsonl": "ed664cc106f214a92d9182a69638309e7d64a177e8028f86654853dc64419ed2"
+  }
+}

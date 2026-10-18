@@ -1,0 +1,1140 @@
+{
+  "run_id": "run_20261018_archive",
+  "input_record_count": 8241,
+  "prose_only": {
+    "total_claims": 4423,
+    "status_by_method": {
+      "prose_regex": {
+        "needs_review": 4317,
+        "ambiguous": 100,
+        "extracted": 6
+      }
+    },
+    "status_total": {
+      "needs_review": 4317,
+      "ambiguous": 100,
+      "extracted": 6
+    },
+    "missing_counts": {
+      "metric": 3491,
+      "unit": 114,
+      "period": 2627,
+      "entity": 4417,
+      "source_page": 0,
+      "source_chunk_id": 0,
+      "source_excerpt": 0
+    },
+    "missing_rates": {
+      "metric": 0.7893,
+      "unit": 0.0258,
+      "period": 0.5939,
+      "entity": 0.9986,
+      "source_page": 0.0,
+      "source_chunk_id": 0.0,
+      "source_excerpt": 0.0
+    },
+    "verification_status_values": [
+      "unverified"
+    ]
+  },
+  "table_aware": {
+    "total_claims": 40942,
+    "status_by_method": {
+      "table_row": {
+        "needs_review": 22102,
+        "ambiguous": 15730,
+        "extracted": 11
+      },
+      "prose_regex": {
+        "needs_review": 3034,
+        "ambiguous": 61,
+        "extracted": 4
+      }
+    },
+    "status_total": {
+      "needs_review": 25136,
+      "ambiguous": 15791,
+      "extracted": 15
+    },
+    "missing_counts": {
+      "metric": 2545,
+      "unit": 33269,
+      "period": 28012,
+      "entity": 15762,
+      "source_page": 0,
+      "source_chunk_id": 0,
+      "source_excerpt": 0
+    },
+    "missing_rates": {
+      "metric": 0.0622,
+      "unit": 0.8126,
+      "period": 0.6842,
+      "entity": 0.385,
+      "source_page": 0.0,
+      "source_chunk_id": 0.0,
+      "source_excerpt": 0.0
+    },
+    "verification_status_values": [
+      "unverified"
+    ]
+  },
+  "reports": {
+    "prose_only": {
+      "run_status": "completed",
+      "failed_chunk_count": 0,
+      "schema_validation_failures": 0
+    },
+    "table_aware": {
+      "run_status": "completed",
+      "failed_chunk_count": 0,
+      "schema_validation_failures": 0,
+      "chunk_classification": {
+        "counts": {
+          "uncertain": 1826,
+          "prose": 2036,
+          "tabular": 4379
+        },
+        "extraction_path_counts": {
+          "table_parser": 4379,
+          "prose_regex": 2036,
+          "prose_regex_flagged_uncertain": 1826,
+          "skipped_empty": 0
+        },
+        "reason_summary_counts": {
+          "no non-blank rows": 1339,
+          "narrow rows or long text cells dominate": 2036,
+          "consistent multi-column rows with numeric cells or header signal": 3293,
+          "local table header detected": 898,
+          "signals conflict or too little structure": 487,
+          "headerless rows match a recent table structure; continuation review attempted": 188
+        }
+      },
+      "table_rows": {
+        "rows_seen": 34612,
+        "header_rows": 4562,
+        "repeated_headers": 80,
+        "blank_rows": 1325,
+        "outcomes": {
+          "label_only_row": 3226,
+          "row_flagged_only": 11126,
+          "rejected_no_label": 14322,
+          "row_with_extracted_claim": 5,
+          "row_no_claim": 46
+        },
+        "rows_with_extracted_claim": 5,
+        "rows_flagged_only": 11126,
+        "rows_rejected_or_without_claim": 17594,
+        "tabular_chunks_without_header": 701,
+        "malformed_numeric_cells_skipped": 0,
+        "note_reference_columns_skipped": 111,
+        "reject_examples": {
+          "rejected_no_label": {
+            "evidence_id": "ev_86dc304049f145cf4640c6a0",
+            "row": "\"Total Capacity declared\ncommercial during 2017-18\n(I)+(II)+(III)+(IV)+(V)\",\"4,423\","
+          }
+        }
+      },
+      "reversal": {
+        "rows_reversed": 1398,
+        "rows_with_some_reverse_evidence_kept_forward": 326,
+        "diagnostics_sample": [
+          {
+            "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+            "row_index": 0,
+            "original": "\"tnuomA\nlatoT )\n`\nni(\",,,,\"260,00,52,5\",\"316,72,43\",,,,,,\"576,72,95,5\"",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 1,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+            "row_index": 1,
+            "original": "\"reganaM/\nDTW/\nDM\nfo\nemaN\",DTW,\"5artapahoM\n.K.P\n.hS\",,\"560,47,45\",\"493,80,1\",00.0,,,,,\"954,28,55\"",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 2,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+            "row_index": 11,
+            "original": "\"noitarenumeR\nfo\nsralucitraP\",,,\"yralas\nssorG\",\"eht\nfo\nsnoisivorp )1(71\n1691\nnoitces\nrep ,tcA\nsa ni deniatnoc xat-emocnI\nyralaS\n)a(\",\")2(71\n1691\ns/u\nsetisiuqrep ,tcA\nxat-emocnI\nfo\neulaV\neht\n)b( fo\",\"rednu xat\n-emocnI\nyralas\neht\nfo\nueil fo\n)3(71\nni\nstiforP 1691\nnoitces\n,tcA\n)c(\",\"noitpO\nkcotS\",\"ytiuq",
+            "reconstructed": "Particulars\nof\nRemuneration,,,Gross\nsalary,(a)\nSalary\nIncome-tax contained in as\nAct, per\nsection\n1961\n17(1) provisions\nof\nthe,of (b)\nthe\nValue\nof\nIncome-tax\nAct, perquisites\nu/s\n1961\n17(2),(c)\nAct,\nsection\n1961 Profits\nin\n17(3)\nof lieu\nof\nthe\nsalary\nIncome-\ntax under,Stock\nOption,Sweat\nEquity,-\nas\n",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_010d0ec5cb90298906de2eb2",
+            "row_index": 0,
+            "original": "\"64.542,8\",-,\"64.542,8\"",
+            "reconstructed": "8,245.46,-,8,245.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_010d0ec5cb90298906de2eb2",
+            "row_index": 1,
+            "original": "\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"8102\nhcraM\n13\nta\nsa\necnalaB\"",
+            "reconstructed": "Balance\nas\nat\n1\nApril\n2017,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2018",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_8da023cf8c6c007a65ba96ca",
+            "row_index": 0,
+            "original": "\"64.542,8\",-,\"64.542,8\"",
+            "reconstructed": "8,245.46,-,8,245.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_8da023cf8c6c007a65ba96ca",
+            "row_index": 1,
+            "original": "\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"7102\nhcraM\n13\nta\nsa\necnalaB\"",
+            "reconstructed": "Balance\nas\nat\n1\nApril\n2016,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2017",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 0,
+            "original": "latoT,,\"77.589,78\",\"71.343,01\",)84.41(,\"96.823,01\",-,-,35.47,\")72.987,1(\",)51.853(,\")10.152,2(\",)52.854(,\"13.235,39\"",
+            "reconstructed": "Total,,87,985.77,10,343.17,(14.48),10,328.69,-,-,74.53,(1,789.27),(358.15),(2,251.01),(458.25),93,532.31",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 1,
+            "original": "\"stnemurtsni\nhguorht\nytiuqE\nICO\",,00.51,,)02.7(,)02.7(,,,,,,,,08.7",
+            "reconstructed": "OCI\nEquity\nthrough\ninstruments,,15.00,,(7.20),(7.20),,,,,,,,7.80",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 2,
+            "original": "\"sulprus\n&\nsevreseR\",deniateR sgninrae,\"11.243,2\",\"71.343,01\",)82.7(,\"98.533,01\",00.523,\")57.736,5(\",,\")72.987,1(\",)51.853(,\")10.152,2(\",)52.854(,\"75.805,2\"",
+            "reconstructed": "Reserves\n&\nsurplus,earnings Retained,2,342.11,10,343.17,(7.28),10,335.89,325.00,(5,637.75),,(1,789.27),(358.15),(2,251.01),(458.25),2,508.57",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 14
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 3,
+            "original": ",lareneG evreser,\"36.138,67\",,,-,,\"00.000,4\",,,,,,\"36.138,08\"",
+            "reconstructed": ",reserve General,76,831.63,,,-,,4,000.00,,,,,,80,831.63",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 4,
+            "original": ",\"dnuf\nnoitasilitu\nhsa\nevreser\nylF\",86.655,,,-,,,35.47,,,,,12.136",
+            "reconstructed": ",Fly\nreserve\nash\nutilisation\nfund,556.68,,,-,,,74.53,,,,,631.21",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 5,
+            "original": ",\"serutnebeD noitpmeder\n/sdnoB evreser\",\"18.169,5\",,,-,)00.523(,\"57.736,1\",,,,,,\"65.472,7\"",
+            "reconstructed": ",reserve Bonds/\nredemption Debentures,5,961.81,,,-,(325.00),1,637.75,,,,,,7,274.56",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 6,
+            "original": ",seitiruceS muimerp tnuocca,\"64.822,2\",,,-,,,,,,,,\"64.822,2\"",
+            "reconstructed": ",account premium Securities,2,228.46,,,-,,,,,,,,2,228.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 7,
+            "original": ",latipaC evreser,80.05,,,-,,,,,,,,80.05",
+            "reconstructed": ",reserve Capital,50.08,,,-,,,,,,,,50.08",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_44357a4c08746106ab32fdbe",
+            "row_index": 8,
+            "original": "sralucitraP,,\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"sgninrae\ndeniater\not\nrefsnarT\",\"sgninrae\ndeniater\nmorf\nrefsnarT\",\"noitasilitu\nhsa\nylf\ndnuf\not\nrefsnarT evreser\",\"rof\n)02\ndiap\netoN(\ndnedivid\n71-6102\nlaniF\nYF\",\"dnediv",
+            "reconstructed": "Particulars,,Balance\nas\nat\n1\nApril\n2017,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Transfer\nto\nretained\nearnings,Transfer\nfrom\nretained\nearnings,reserve Transfer\nto\nfund\nfly\nash\nutilisation,FY\nFinal\n2016-17\ndividend\n(Note\npaid\n20)\nfor,Tax\non\nfinal\ndividend,I",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 28
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 0,
+            "original": "latoT,,\"42.840,38\",\"62.583,9\",)83.302(,\"88.181,9\",-,-,74.87,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"77.589,78\"",
+            "reconstructed": "Total,,83,048.24,9,385.26,(203.38),9,181.88,-,-,78.47,(1,442.96),(289.68),(2,152.07),(438.11),87,985.77",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 1,
+            "original": "\"stnemurtsni\nhguorht\nytiuqE\nICO\",,)82.02(,,82.53,82.53,,,,,,,,00.51",
+            "reconstructed": "OCI\nEquity\nthrough\ninstruments,,(20.28),,35.28,35.28,,,,,,,,15.00",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 2,
+            "original": "\"sulprus\n&\nsevreseR\",deniateR sgninrae,\"14.173,3\",\"62.583,9\",)66.832(,\"06.641,9\",00.413,\")80.761,6(\",,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"11.243,2\"",
+            "reconstructed": "Reserves\n&\nsurplus,earnings Retained,3,371.41,9,385.26,(238.66),9,146.60,314.00,(6,167.08),,(1,442.96),(289.68),(2,152.07),(438.11),2,342.11",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 14
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 3,
+            "original": ",\"evreser\nlareneG\",\"36.133,27\",,,-,,\"00.005,4\",,,,,,\"36.138,67\"",
+            "reconstructed": ",General\nreserve,72,331.63,,,-,,4,500.00,,,,,,76,831.63",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 4,
+            "original": ",\"dnuf\nnoitasilitu\nhsa\nevreser\nylF\",12.874,,,-,,,74.87,,,,,86.655",
+            "reconstructed": ",Fly\nreserve\nash\nutilisation\nfund,478.21,,,-,,,78.47,,,,,556.68",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 5,
+            "original": ",\"serutnebeD noitpmeder\n/sdnoB evreser\",\"37.806,4\",,,-,)00.413(,\"80.766,1\",,,,,,\"18.169,5\"",
+            "reconstructed": ",reserve Bonds/\nredemption Debentures,4,608.73,,,-,(314.00),1,667.08,,,,,,5,961.81",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 6,
+            "original": ",seitiruceS muimerp tnuocca,\"64.822,2\",,,-,,,,,,,,\"64.822,2\"",
+            "reconstructed": ",account premium Securities,2,228.46,,,-,,,,,,,,2,228.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 7,
+            "original": ",latipaC evreser,80.05,,,-,,,,,,,,80.05",
+            "reconstructed": ",reserve Capital,50.08,,,-,,,,,,,,50.08",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_70e8384f976daf0602276a06",
+            "row_index": 8,
+            "original": "sralucitraP,,\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"sgninrae\ndeniater\not\nrefsnarT\",\"sgninrae\ndeniater\nmorf\nrefsnarT\",\"noitasilitu\nhsa\nylf\ndnuf\not\nrefsnarT evreser\",\"-5102\nYF\nrof\ndiap\ndnedivid\n)02\netoN(\nlaniF\n61\",\"dnedi",
+            "reconstructed": "Particulars,,Balance\nas\nat\n1\nApril\n2016,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Transfer\nto\nretained\nearnings,Transfer\nfrom\nretained\nearnings,reserve Transfer\nto\nfund\nfly\nash\nutilisation,16\nFinal\n(Note\n20)\ndividend\npaid\nfor\nFY\n2015-,Tax\non\nfinal\ndividend,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 28
+          },
+          {
+            "evidence_id": "ev_dc1c94aa0b40482536acd5f0",
+            "row_index": 0,
+            "original": "\"64.542,8\",-,\"64.542,8\"",
+            "reconstructed": "8,245.46,-,8,245.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_dc1c94aa0b40482536acd5f0",
+            "row_index": 1,
+            "original": "\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"8102\nhcraM\n13\nta\nsa\necnalaB\"",
+            "reconstructed": "Balance\nas\nat\n1\nApril\n2017,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2018",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_d6892542e47ba18d49cb46be",
+            "row_index": 0,
+            "original": "\"64.542,8\",-,\"64.542,8\"",
+            "reconstructed": "8,245.46,-,8,245.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_d6892542e47ba18d49cb46be",
+            "row_index": 1,
+            "original": "\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"7102\nhcraM\n13\nta\nsa\necnalaB\"",
+            "reconstructed": "Balance\nas\nat\n1\nApril\n2016,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2017",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 0,
+            "original": "latoT,,,,\"28.593,09\",\"05.105,01\",)96.02(,\"18.084,01\",74.181,-,,-,-,35.47,\")72.987,1(\",)52.463(,\")10.152,2(\",)23.264(,\"87.562,69\"",
+            "reconstructed": "Total,,,,90,395.82,10,501.50,(20.69),10,480.81,181.47,-,,-,-,74.53,(1,789.27),(364.25),(2,251.01),(462.32),96,265.78",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 1,
+            "original": "\"gnillortnoc\nstseretni\n-noN\",,,,62.308,)54.24(,-,)54.24(,74.181,94.5,,,,,,,,,77.749",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 1,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 2,
+            "original": "\"ytiuqe elbatubirtta fo tnerap\nsrenwo\nrehtO\neht\not\",,,,\"65.295,98\",\"59.345,01\",)96.02(,\"62.325,01\",,)94.5(,,-,-,35.47,\")72.987,1(\",)52.463(,\")10.152,2(\",)23.264(,\"10.813,59\"",
+            "reconstructed": "to\nthe\nOther\nowners\nparent of attributable equity,,,,89,592.56,10,543.95,(20.69),10,523.26,,(5.49),,-,-,74.53,(1,789.27),(364.25),(2,251.01),(462.32),95,318.01",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 12
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 3,
+            "original": "\"tnerap\neht\nfo\nsrenwo\not\nelbatubirttA\",\"emocni\nrehto\nevisneherpmoc\nfo\nsmetI\",ngieroF ycnerruc noitalsnart evreser,,)40.4(,,)50.6(,)50.6(,,,,,,,,,,,)90.01(",
+            "reconstructed": "Attributable\nto\nowners\nof\nthe\nparent,Items\nof\ncomprehensive\nother\nincome,reserve translation currency Foreign,,(4.04),,(6.05),(6.05),,,,,,,,,,,(10.09)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 9
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 4,
+            "original": ",,\"stnemurtsni\nytiuqE hguorht\nICO\",,00.51,,)02.7(,)02.7(,,,,,,,,,,,08.7",
+            "reconstructed": ",,OCI\nthrough Equity\ninstruments,,15.00,,(7.20),(7.20),,,,,,,,,,,7.80",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 5,
+            "original": ",\"sulprus\n&\nsevreseR\",deniateR sgninrae,,\"27.356,3\",\"59.345,01\",)44.7(,\"15.635,01\",,)94.5(,,22.523,\")91.936,5(\",,\")72.987,1(\",)52.463(,\")10.152,2(\",)23.264(,\"29.300,4\"",
+            "reconstructed": ",Reserves\n&\nsurplus,earnings Retained,,3,653.72,10,543.95,(7.44),10,536.51,,(5.49),,325.22,(5,639.19),,(1,789.27),(364.25),(2,251.01),(462.32),4,003.92",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 15
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 6,
+            "original": ",,lareneG evreser,,\"36.031,77\",,,-,,,,,\"02.100,4\",,,,,,\"38.131,18\"",
+            "reconstructed": ",,reserve General,,77,130.63,,,-,,,,,4,001.20,,,,,,81,131.83",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 7,
+            "original": ",,\"laicoS\nytilibisnopseR\nevreser\netaroproC\",,22.0,,,-,,,,)22.0(,42.0,,,,,,42.0",
+            "reconstructed": ",,Corporate\nreserve\nResponsibility\nSocial,,0.22,,,-,,,,(0.22),0.24,,,,,,0.24",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 8,
+            "original": ",,\"noitasilitu\nhsa evreser\ndnuf\nylF\",,86.655,,,-,,,,,,35.47,,,,,12.136",
+            "reconstructed": ",,Fly\nfund\nreserve ash\nutilisation,,556.68,,,-,,,,,,74.53,,,,,631.21",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 9,
+            "original": ",,\"serutnebeD noitpmeder\n/sdnoB evreser\",,\"18.169,5\",,,-,,,,)00.523(,\"57.736,1\",,,,,,\"65.472,7\"",
+            "reconstructed": ",,reserve Bonds/\nredemption Debentures,,5,961.81,,,-,,,,(325.00),1,637.75,,,,,,7,274.56",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 10,
+            "original": ",,seitiruceS muimerp tnuocca,,\"64.822,2\",,,-,,,,,,,,,,,\"64.822,2\"",
+            "reconstructed": ",,account premium Securities,,2,228.46,,,-,,,,,,,,,,,2,228.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 11,
+            "original": ",,latipaC evreser,,80.05,,,-,,,,,,,,,,,80.05",
+            "reconstructed": ",,reserve Capital,,50.08,,,-,,,,,,,,,,,50.08",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+            "row_index": 12,
+            "original": "sralucitraP,,,,\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"noN\nyb\nnoitubirtnoc tseretnI\ngnillortnoC\nytiuqE\",\"pihsrenwo\nni yraidisbuS\n])d(\negnahc\n96\netoN\nfo ni\ntcapmI tseretni\nrefeR[\",\"ni\nsrenwo :srenwo\nhtiw sa\nyticapac\nsnoi",
+            "reconstructed": "Particulars,,,,Balance\nas\nat\n1\nApril\n2017,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Equity\nControlling\nInterest contribution\nby\nNon,[Refer\ninterest Impact\nin of\nNote\n69\nchange\n(d)]\nSubsidiary in\nownership,their\nTransactions\ncapacity\nas with\nowners: owners\ni",
+            "reversed": true,
+            "forward_evidence": 1,
+            "reverse_evidence": 37
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 0,
+            "original": "latoT,,,\"24.321,48\",\"49.317,01\",)58.212(,\"90.105,01\",66.51,,-,-,74.87,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"28.593,09\"",
+            "reconstructed": "Total,,,84,123.42,10,713.94,(212.85),10,501.09,15.66,,-,-,78.47,(1,442.96),(289.68),(2,152.07),(438.11),90,395.82",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 1,
+            "original": "\"gnillortnoc\nstseretni\n-noN\",,,03.397,)07.5(,,)07.5(,66.51,,,,,,,,,62.308",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 1,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 2,
+            "original": "\"ytiuqe ot eht\nelbatubirtta\nfo tnerap\nsrenwo\nrehtO\",,,\"21.033,38\",\"46.917,01\",)58.212(,\"97.605,01\",,,-,-,74.87,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"65.295,98\"",
+            "reconstructed": "Other\nowners\nparent of\nattributable\nthe to equity,,,83,330.12,10,719.64,(212.85),10,506.79,,,-,-,78.47,(1,442.96),(289.68),(2,152.07),(438.11),89,592.56",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 11
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 3,
+            "original": "\"tnerap\neht\nfo\nsrenwo\not\nelbatubirttA\",\"emocni\nrehto\nevisneherpmoc\nfo\nsmetI\",ngieroF ycnerruc noitalsnart evreser,20.4,,)60.8(,)60.8(,,,,,,,,,,)40.4(",
+            "reconstructed": "Attributable\nto\nowners\nof\nthe\nparent,Items\nof\ncomprehensive\nother\nincome,reserve translation currency Foreign,4.02,,(8.06),(8.06),,,,,,,,,,(4.04)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 8
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 4,
+            "original": ",,\"stnemurtsni\nytiuqE hguorht\nICO\",)82.02(,,82.53,82.53,,,,,,,,,,00.51",
+            "reconstructed": ",,OCI\nthrough Equity\ninstruments,(20.28),,35.28,35.28,,,,,,,,,,15.00",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 5,
+            "original": ",\"sulprus\n&\nsevreseR\",deniateR sgninrae,\"35.824,3\",\"46.917,01\",)70.042(,\"75.974,01\",,,36.413,\")91.642,6(\",,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"27.356,3\"",
+            "reconstructed": ",Reserves\n&\nsurplus,earnings Retained,3,428.53,10,719.64,(240.07),10,479.57,,,314.63,(6,246.19),,(1,442.96),(289.68),(2,152.07),(438.11),3,653.72",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 14
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 6,
+            "original": ",,lareneG evreser,\"36.155,27\",,,-,,,,\"00.975,4\",,,,,,\"36.031,77\"",
+            "reconstructed": ",,reserve General,72,551.63,,,-,,,,4,579.00,,,,,,77,130.63",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 7,
+            "original": ",,\"laicoS\nytilibisnopseR\nevreser\netaroproC\",47.0,,,-,,,)36.0(,11.0,,,,,,22.0",
+            "reconstructed": ",,Corporate\nreserve\nResponsibility\nSocial,0.74,,,-,,,(0.63),0.11,,,,,,0.22",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 8,
+            "original": ",,\"dnuf\nnoitasilitu\nhsa\nevreser\nylF\",12.874,,,-,,,,,74.87,,,,,86.655",
+            "reconstructed": ",,Fly\nreserve\nash\nutilisation\nfund,478.21,,,-,,,,,78.47,,,,,556.68",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 9,
+            "original": ",,\"serutnebeD noitpmeder\n/sdnoB evreser\",\"37.806,4\",,,-,,,)00.413(,\"80.766,1\",,,,,,\"18.169,5\"",
+            "reconstructed": ",,reserve Bonds/\nredemption Debentures,4,608.73,,,-,,,(314.00),1,667.08,,,,,,5,961.81",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 10,
+            "original": ",,seitiruceS muimerp tnuocca,\"64.822,2\",,,-,,,,,,,,,,\"64.822,2\"",
+            "reconstructed": ",,account premium Securities,2,228.46,,,-,,,,,,,,,,2,228.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 11,
+            "original": ",,latipaC evreser,80.05,,,-,,,,,,,,,,80.05",
+            "reconstructed": ",,reserve Capital,50.08,,,-,,,,,,,,,,50.08",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_5130322709b2130c5367f931",
+            "row_index": 12,
+            "original": "sralucitraP,,,\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"noN\nyb\nnoitubirtnoc tseretnI\ngnillortnoC\nytiuqE\",\"ni\nsrenwo :srenwo\nhtiw sa\nyticapac\nsnoitcasnarT\nrieht\",\"sgninrae\ndeniater\not\nrefsnarT\",\"sgninrae\ndeniater\nmorf\nrefs",
+            "reconstructed": "Particulars,,,Balance\nas\nat\n1\nApril\n2016,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Equity\nControlling\nInterest contribution\nby\nNon,their\nTransactions\ncapacity\nas with\nowners: owners\nin,Transfer\nto\nretained\nearnings,Transfer\nfrom\nretained\nearnings,reserve Tr",
+            "reversed": true,
+            "forward_evidence": 1,
+            "reverse_evidence": 35
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 0,
+            "original": "latoT,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,\"92.442,18\",-,\"92.442,18\",\"77.816,1\",\"60.368,28\",52.641,\"13.900,38\",,\"08.568,71\",52.641,\"12.678,4\",\"48.531,31\",17.426,\"55.067,31\",\"16.640,3\",\"49.317,01\"",
+            "reconstructed": "Total,For\nthe\nyear\nended,31\nMarch\n2017,,81,244.29,-,81,244.29,1,618.77,82,863.06,146.25,83,009.31,,17,865.80,146.25,4,876.21,13,135.84,624.71,13,760.55,3,046.61,10,713.94",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 15
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 1,
+            "original": ",,\"8102\nhcraM\n13\",,\"07.951,68\",-,\"07.951,68\",\"95.608,2\",\"92.669,88\",03.576,\"95.146,98\",,\"24.473,81\",03.576,\"90.352,6\",\"36.697,21\",50.544,\"86.142,31\",\"81.047,2\",\"05.105,01\"",
+            "reconstructed": ",,31\nMarch\n2018,,86,159.70,-,86,159.70,2,806.59,88,966.29,675.30,89,641.59,,18,374.42,675.30,6,253.09,12,796.63,445.05,13,241.68,2,740.18,10,501.50",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 12
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 2,
+            "original": "\"snoitanimile\ntnemges-retnI\",\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,-,\")00.211,2(\",\")00.211,2(\",-,\")00.211,2(\",,\")00.211,2(\",,-,,,,,,,",
+            "reconstructed": "Inter-segment\neliminations,For\nthe\nyear\nended,31\nMarch\n2017,,-,(2,112.00),(2,112.00),-,(2,112.00),,(2,112.00),,-,,,,,,,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 3,
+            "original": ",,\"8102\nhcraM\n13\",,-,\")01.349,1(\",\")01.349,1(\",-,\")01.349,1(\",,\")01.349,1(\",,-,,,,,,,",
+            "reconstructed": ",,31\nMarch\n2018,,-,(1,943.10),(1,943.10),-,(1,943.10),,(1,943.10),,-,,,,,,,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 4,
+            "original": "srehtO,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,\"12.943,5\",33.83,\"45.783,5\",06.93,\"41.724,5\",,\"41.724,5\",,60.06,,,,,,,",
+            "reconstructed": "Others,For\nthe\nyear\nended,31\nMarch\n2017,,5,349.21,38.33,5,387.54,39.60,5,427.14,,5,427.14,,60.06,,,,,,,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 5,
+            "original": ",,\"8102\nhcraM\n13\",,\"40.785,6\",16.05,\"56.736,6\",54.42,\"01.266,6\",,\"01.266,6\",,97.252,,,,,,,",
+            "reconstructed": ",,31\nMarch\n2018,,6,587.04,50.61,6,637.65,24.45,6,662.10,,6,662.10,,252.79,,,,,,,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 6,
+            "original": "\"ygrene\nfo\nnoitareneG\",\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,\"80.598,57\",\"76.370,2\",\"57.869,77\",\"71.975,1\",\"29.745,97\",,\"29.745,97\",,\"47.508,71\",,,,,,,",
+            "reconstructed": "Generation\nof\nenergy,For\nthe\nyear\nended,31\nMarch\n2017,,75,895.08,2,073.67,77,968.75,1,579.17,79,547.92,,79,547.92,,17,805.74,,,,,,,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 12
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 7,
+            "original": ",,\"8102\nhcraM\n13\",,\"66.275,97\",\"94.298,1\",\"51.564,18\",\"41.287,2\",\"92.742,48\",,\"92.742,48\",,\"36.121,81\",,,,,,,",
+            "reconstructed": ",,31\nMarch\n2018,,79,572.66,1,892.49,81,465.15,2,782.14,84,247.29,,84,247.29,,18,121.63,,,,,,,",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 8
+          },
+          {
+            "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+            "row_index": 8,
+            "original": "sralucitraP,,,\"eunever\ntnemgeS\",\"*sremotsuc\nlanretxe\nmorf\neuneveR\",\"eunever\ntnemges-retnI\",,\"emocni\nrehtO\",,\"dna\ntseretni\netaroproc\nemocni\ndetacollanU\nrehto\",latoT,,\"larrefed\nten\ngnidulcni( yrotaluger\n**)secnalab\ntluser\nni\nstnemevom\ntnemgeS tnuocca\",\"dna\ntseretni\netaroproc\nemocni\ndetacollanU\nrehto\",",
+            "reconstructed": "Particulars,,,Segment\nrevenue,Revenue\nfrom\nexternal\ncustomers*,Inter-segment\nrevenue,,Other\nincome,,other\nUnallocated\nincome\ncorporate\ninterest\nand,Total,,account Segment\nmovements\nin\nresult\nbalances)**\nregulatory (including\nnet\ndeferral,other\nUnallocated\nincome\ncorporate\ninterest\nand,interest\nand U",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 31
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 0,
+            "original": "latoT,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",\"37.759,5\",44.931,\"33.587,92\"",
+            "reconstructed": "Total,For\nthe\nyear\nended,31\nMarch\n2017,5,957.73,139.44,29,785.33",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 6
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 1,
+            "original": ",,\"8102\nhcraM\n13\",\"49.893,7\",19.664,\"50.574,62\"",
+            "reconstructed": ",,31\nMarch\n2018,7,398.94,466.91,26,475.05",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 2,
+            "original": "srehtO,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",63.0,40.3,\"39.022,1\"",
+            "reconstructed": "Others,For\nthe\nyear\nended,31\nMarch\n2017,0.36,3.04,1,220.93",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 4
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 3,
+            "original": ",,\"8102\nhcraM\n13\",43.0,31.23,\"95.246,1\"",
+            "reconstructed": ",,31\nMarch\n2018,0.34,32.13,1,642.59",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 4,
+            "original": "\"ygrene\nfo\nnoitareneG\",\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",\"73.759,5\",04.631,\"04.465,82\"",
+            "reconstructed": "Generation\nof\nenergy,For\nthe\nyear\nended,31\nMarch\n2017,5,957.37,136.40,28,564.40",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 5,
+            "original": ",,\"8102\nhcraM\n13\",\"06.893,7\",87.434,\"64.238,42\"",
+            "reconstructed": ",,31\nMarch\n2018,7,398.60,434.78,24,832.46",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_c6483c09195141c0663e7cd0",
+            "row_index": 6,
+            "original": "sralucitraP,,,\"***tnemriapmi\ndna\nnoitazitroma\n,noitaicerpeD\",\"noitaicerped\nnaht\nrehto\nsesnepxe\nhsac-noN\",\"erutidnepxe\nlatipaC\"",
+            "reconstructed": "Particulars,,,Depreciation,\namortization\nand\nimpairment***,Non-cash\nexpenses\nother\nthan\ndepreciation,Capital\nexpenditure",
+            "reversed": true,
+            "forward_evidence": 1,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 0,
+            "original": "latoT,\"ta\nsA\",\"7102\nhcraM\n13\",\"27.452,73,1\",\"46.242,11,1\",\"63.794,84,2\",\"52.953,91\",\"90.003,13,1\",\"43.956,05,1\"",
+            "reconstructed": "Total,As\nat,31\nMarch\n2017,1,37,254.72,1,11,242.64,2,48,497.36,19,359.25,1,31,300.09,1,50,659.34",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 8
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 1,
+            "original": ",,\"8102\nhcraM\n13\",\"53.965,56,1\",\"17.897,80,1\",\"60.863,47,2\",\"68.919,02\",\"37.488,94,1\",\"95.408,07,1\"",
+            "reconstructed": ",,31\nMarch\n2018,1,65,569.35,1,08,798.71,2,74,368.06,20,919.86,1,49,884.73,1,70,804.59",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 2,
+            "original": "\"snoitanimile\ntnemges-retnI\",\"ta\nsA\",\"7102\nhcraM\n13\",)72.924(,,)72.924(,)72.924(,,)72.924(",
+            "reconstructed": "Inter-segment\neliminations,As\nat,31\nMarch\n2017,(429.27),,(429.27),(429.27),,(429.27)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 3,
+            "original": ",,\"8102\nhcraM\n13\",)31.952(,,)31.952(,)31.952(,,)31.952(",
+            "reconstructed": ",,31\nMarch\n2018,(259.13),,(259.13),(259.13),,(259.13)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 4,
+            "original": "srehtO,\"ta\nsA\",\"7102\nhcraM\n13\",\"02.100,5\",,\"02.100,5\",\"38.723,3\",,\"38.723,3\"",
+            "reconstructed": "Others,As\nat,31\nMarch\n2017,5,001.20,,5,001.20,3,327.83,,3,327.83",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 5,
+            "original": ",,\"8102\nhcraM\n13\",\"70.517,6\",,\"70.517,6\",\"05.559,3\",,\"05.559,3\"",
+            "reconstructed": ",,31\nMarch\n2018,6,715.07,,6,715.07,3,955.50,,3,955.50",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 6,
+            "original": "\"ygrene\nfo\nnoitareneG\",\"ta\nsA\",\"7102\nhcraM\n13\",\"97.286,23,1\",,\"97.286,23,1\",\"96.064,61\",,\"96.064,61\"",
+            "reconstructed": "Generation\nof\nenergy,As\nat,31\nMarch\n2017,1,32,682.79,,1,32,682.79,16,460.69,,16,460.69",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 7,
+            "original": ",,\"8102\nhcraM\n13\",\"14.311,95,1\",,\"14.311,95,1\",\"94.322,71\",,\"94.322,71\"",
+            "reconstructed": ",,31\nMarch\n2018,1,59,113.41,,1,59,113.41,17,223.49,,17,223.49",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_06f56bb985347c23627fda8d",
+            "row_index": 8,
+            "original": "sralucitraP,,,\"stessa\ntnemgeS\",\"stessa\nrehto\ndna\netaroproc\ndetacollanU\",\"stessa\nlatoT\",\"seitilibail\ntnemgeS\",\"rehto\ndna\netaroproc\ndetacollanU\nseitilibail\",\"seitilibail\nlatoT\"",
+            "reconstructed": "Particulars,,,Segment\nassets,Unallocated\ncorporate\nand\nother\nassets,Total\nassets,Segment\nliabilities,liabilities\nUnallocated\ncorporate\nand\nother,Total\nliabilities",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 11
+          },
+          {
+            "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+            "row_index": 0,
+            "original": "\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",ega%,11.01,09.01",
+            "reconstructed": "For\nthe\nyear\nended,31\nMarch\n2017,%age,10.11,10.90",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+            "row_index": 1,
+            "original": ",,\")erorC\n`(\ntnuomA\",\"72.492,8\",\"34.349,8\"",
+            "reconstructed": ",,Amount\n(`\nCrore),8,294.27,8,943.43",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+            "row_index": 2,
+            "original": ",\"8102\nhcraM\n13\",ega%,12.01,29.8",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 0,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+            "row_index": 3,
+            "original": ",,\")erorC\n`(\ntnuomA\",\"10.399,8\",\"46.658,7\"",
+            "reconstructed": ",,Amount\n(`\nCrore),8,993.01,7,856.64",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+            "row_index": 4,
+            "original": "\"remotsuc\neht\nfo\nemaN\",,,\".dtL\nynapmoC\nnoitubirtsiD\nyticirtcelE\netatS\narthsarahaM\n.1\",\".dtL\nnoitaroproC\nrewoP\nhsedarP\nrattU\n.2\"",
+            "reconstructed": "Name\nof\nthe\ncustomer,,,1.\nMaharashtra\nState\nElectricity\nDistribution\nCompany\nLtd.,2.\nUttar\nPradesh\nPower\nCorporation\nLtd.",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 0,
+            "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",,-,-,-,-,,-,-,-,,-,-,-,,-,-,-",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 0,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 1,
+            "original": ",\"8102\nta hcraM\nsA\n13\",,01.001,79.642,70.743,\"98.739,2\",,23.932,86.001,00.043,,\"86.996,3\",10.0,\"96.996,3\",,-,-,)37.457(",
+            "reconstructed": ",31\nAs\nMarch at\n2018,,100.10,246.97,347.07,2,937.89,,239.32,100.68,340.00,,3,699.68,0.01,3,699.69,,-,-,(754.73)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 5
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 2,
+            "original": "\"etavirP\nrewoP\n.dtL\n&\nsaG\nirigantaR\",\"7102\nta hcraM\nsA\n13\",,76.053,53.786,\"20.830,1\",\"81.794,6\",,\"18.343,4\",98.955,\"07.309,4\",,\"91.915,5\",90.9,\"82.825,5\",,-,-,\")87.698,2(\"",
+            "reconstructed": "Ratnagiri\nGas\n&\nLtd.\nPower\nPrivate,31\nAs\nMarch at\n2017,,350.67,687.35,1,038.02,6,497.18,,4,343.81,559.89,4,903.70,,5,519.19,9.09,5,528.28,,-,-,(2,896.78)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 9
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 3,
+            "original": ",\"8102\nta hcraM\nsA\n13\",,60.134,72.344,33.478,\"34.033,2\",,\"35.230,4\",22.134,\"57.364,4\",,\"60.336,1\",18.7,\"78.046,1\",,-,-,\")68.998,2(\"",
+            "reconstructed": ",31\nAs\nMarch at\n2018,,431.06,443.27,874.33,2,330.43,,4,032.53,431.22,4,463.75,,1,633.06,7.81,1,640.87,,-,-,(2,899.86)",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 7
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 4,
+            "original": "\"ygrenE\n.dtL\nudaN\nynapmoC\nlimaT-CPTN\",\"7102\nta hcraM\nsA\n13\",,84.17,\"36.092,2\",\"11.263,2\",\"24.402,8\",,\"75.615,2\",70.594,\"46.110,3\",,\"25.499,4\",91.0,\"17.499,4\",00.3,-,93.42,\"97.835,2\"",
+            "reconstructed": "NTPC-Tamil\nCompany\nNadu\nLtd.\nEnergy,31\nAs\nMarch at\n2017,,71.48,2,290.63,2,362.11,8,204.42,,2,516.57,495.07,3,011.64,,4,994.52,0.19,4,994.71,3.00,-,24.39,2,538.79",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 10
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 5,
+            "original": ",\"8102\nta hcraM\nsA\n13\",,95.6,\"72.028,1\",\"68.628,1\",\"71.000,8\",,\"26.463,2\",38.672,\"54.146,2\",,\"70.265,4\",91.0,\"62.265,4\",96.5,-,16.5,\"04.326,2\"",
+            "reconstructed": ",31\nAs\nMarch at\n2018,,6.59,1,820.27,1,826.86,8,000.17,,2,364.62,276.83,2,641.45,,4,562.07,0.19,4,562.26,5.69,-,5.61,2,623.40",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 9
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 6,
+            "original": "\"ynapmoC\nrewoP\n.dtL\nLIAS-CPTN\",\"7102\nta hcraM\nsA\n13\",,41.5,25.029,66.529,\"16.202,2\",,79.613,22.301,91.024,,21.075,44.461,65.437,-,-,-,\"25.379,1\"",
+            "reconstructed": "NTPC-SAIL\nLtd.\nPower\nCompany,31\nAs\nMarch at\n2017,,5.14,920.52,925.66,2,202.61,,316.97,103.22,420.19,,570.12,164.44,734.56,-,-,-,1,973.52",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 4
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 7,
+            "original": ",\"8102\nta hcraM\nsA\n13\",,44.34,71.467,16.708,\"91.987,2\",,88.193,27.991,06.195,,62.437,37.68,99.028,-,-,-,\"12.481,2\"",
+            "reconstructed": ",31\nAs\nMarch at\n2018,,43.44,764.17,807.61,2,789.19,,391.88,199.72,591.60,,734.26,86.73,820.99,-,-,-,2,184.21",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 8,
+            "original": "\".tvP\nsecivreS\nrewoP .dtL\nEG-CPTN\",\"7102\nta hcraM\nsA\n13\",,25.2,85.081,01.381,46.2,,10.0,88.161,98.161,,61.0,02.0,63.0,-,-,-,94.32",
+            "reconstructed": "NTPC-GE\nLtd. Power\nServices\nPvt.,31\nAs\nMarch at\n2017,,2.52,180.58,183.10,2.64,,0.01,161.88,161.89,,0.16,0.20,0.36,-,-,-,23.49",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 2
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 9,
+            "original": ",\"8102\nta hcraM\nsA\n13\",,94.4,44.841,39.251,16.3,,10.0,53.741,63.741,,-,02.0,02.0,-,-,-,89.8",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 0,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 10,
+            "original": "\".dtL\nhcetrewoP\nytilitU\",\"7102\nta hcraM\nsA\n13\",,37.93,94.372,22.313,02.73,,73.601,68.341,32.052,,14.5,31.31,45.81,-,-,-,56.18",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 0,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 11,
+            "original": ",\"8102\nta hcraM\nsA\n13\",,17.14,92.253,00.493,11.93,,00.421,88.191,88.513,,77.3,54.51,22.91,-,-,-,10.89",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 0,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_d045e25440fdad3f68f60966",
+            "row_index": 12,
+            "original": "sralucitraP,,\"stessa\ntnerruC\",\"stnelaviuqe\nhsac\ndna\nhsaC\",\"stessa\nrehtO\",\"stessa\ntnerruc\nlatoT\",\"stessa\ntnerruc-non\nlatoT\",\"seitilibail\ntnerruC\",\"selbayap\nseitilibail\nedart )snoisivorp\ngnidulcxe(\nlaicnaniF\ndna\",\"seitilibail\nrehtO\",\"seitilibail\ntnerruc\nlatoT\",\"seitilibail\ntnerruc-noN\",\"selbayap\nseiti",
+            "reconstructed": "Particulars,,Current\nassets,Cash\nand\ncash\nequivalents,Other\nassets,Total\ncurrent\nassets,Total\nnon-current\nassets,Current\nliabilities,and\nFinancial\n(excluding\nprovisions) trade\nliabilities\npayables,Other\nliabilities,Total\ncurrent\nliabilities,Non-current\nliabilities,and\nFinancial\n(excluding\nprovisions",
+            "reversed": true,
+            "forward_evidence": 3,
+            "reverse_evidence": 39
+          },
+          {
+            "evidence_id": "ev_92911e7388a55f784df2b146",
+            "row_index": 0,
+            "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",-,-,-,-,-,-,-,-,-,-",
+            "reconstructed": null,
+            "reversed": false,
+            "forward_evidence": 0,
+            "reverse_evidence": 1
+          },
+          {
+            "evidence_id": "ev_92911e7388a55f784df2b146",
+            "row_index": 1,
+            "original": ",\"8102\nta hcraM\nsA\n13\",-,)12.767(,-,-,84.21,)37.457(,15.52,-,-,-",
+            "reconstructed": ",31\nAs\nMarch at\n2018,-,(767.21),-,-,12.48,(754.73),25.51,-,-,-",
+            "reversed": true,
+            "forward_evidence": 0,
+            "reverse_evidence": 3
+          }
+        ],
+        "diagnostics_total": 1724
+      },
+      "claims_by_method": {
+        "table_row": 37843,
+        "prose_regex": 3099
+      },
+      "top_review_reasons": [
+        [
+          "no unit stated for this value in the row, header, or chunk",
+          32496
+        ],
+        [
+          "column meaning and period are unknown",
+          15095
+        ],
+        [
+          "no header row precedes this row in the chunk",
+          15095
+        ],
+        [
+          "reporting basis # not stated for this column, and the document contains both",
+          13580
+        ],
+        [
+          "row text was reconstructed from reversed characters",
+          7164
+        ],
+        [
+          "original preserved in source_row_text",
+          7164
+        ],
+        [
+          "column header carries no recognizable period",
+          6818
+        ],
+        [
+          "entity not attributed: table context names a different or unresolved entity",
+          6589
+        ],
+        [
+          "table context names other legal entity or entity-like acronym #",
+          6589
+        ],
+        [
+          "parent-company attribution is not established",
+          6589
+        ],
+        [
+          "word order is unreliable",
+          6552
+        ],
+        [
+          "label comes from a multi-line reversed cell",
+          6552
+        ],
+        [
+          "entity not associated: evidence record has no verified company identity",
+          6138
+        ],
+        [
+          "label looks like an entity name",
+          5823
+        ],
+        [
+          "row may describe a counterparty or subsidiary, not a metric",
+          5823
+        ]
+      ],
+      "claims_missing": {
+        "metric": 2545,
+        "value": 0,
+        "unit": 33269,
+        "period": 28012,
+        "entity": 15762
+      }
+    }
+  },
+  "duplicate_groups": {
+    "groups": 5629,
+    "groups_spanning_multiple_documents": 3063,
+    "independent_corroboration_claimed": 0
+  },
+  "audit_sample": {
+    "size": 64,
+    "by_stratum": {
+      "table_extracted": 11,
+      "prose_extracted": 4,
+      "table_ambiguous_period_unit": 8,
+      "table_ambiguous_other": 5,
+      "prose_ambiguous": 8,
+      "high_risk_subsidiary_jv": 6,
+      "high_risk_forward_looking": 6,
+      "high_risk_reversed_text": 6,
+      "high_risk_national_scope": 4,
+      "high_risk_scale_or_glyph": 6
+    },
+    "note": "Audit results are recorded separately in claim_audit_results.csv and never change production claims."
+  }
+}

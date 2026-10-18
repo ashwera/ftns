@@ -20,7 +20,8 @@
       "label_terms": [
         "commercial capacity"
       ],
-      "rounding_uncertainty": null
+      "rounding_uncertainty": null,
+      "key": false
     },
     {
       "role": "re_installed_group",
@@ -33,7 +34,8 @@
       "label_terms": [
         "commissioned RE capacity"
       ],
-      "rounding_uncertainty": 0.05
+      "rounding_uncertainty": 0.05,
+      "key": false
     },
     {
       "role": "re_pipeline_group",
@@ -46,7 +48,8 @@
       "label_terms": [
         "RE capacity"
       ],
-      "rounding_uncertainty": 0.05
+      "rounding_uncertainty": 0.05,
+      "key": true
     },
     {
       "role": "pipeline_total_group",
@@ -76,7 +79,8 @@
           "label_regex": "Total On-Going Projects as on 31",
           "expected_value": 33671
         }
-      ]
+      ],
+      "key": true
     },
     {
       "role": "pipeline_jv_sub",
@@ -89,7 +93,8 @@
       "label_terms": [
         "being developed"
       ],
-      "rounding_uncertainty": null
+      "rounding_uncertainty": null,
+      "key": true
     },
     {
       "role": "re_pipeline_jv_sub",
@@ -109,7 +114,8 @@
           "label_regex": "c\\) Renewable Energy Projects",
           "expected_value": 725
         }
-      ]
+      ],
+      "key": true
     },
     {
       "role": "re_target",
@@ -122,7 +128,9 @@
       "label_terms": [
         "target"
       ],
-      "rounding_uncertainty": null
+      "rounding_uncertainty": null,
+      "key": false
     }
-  ]
+  ],
+  "key_note": "key=true inputs decide the verdict (headline shares); key=false inputs feed secondary signals and can only add qualifications."
 }

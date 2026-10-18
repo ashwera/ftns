@@ -48,7 +48,7 @@ GENERIC_LABEL = re.compile(r"(?i)^\s*(?:grand\s+|sub[- ]?)?total\.?\s*$|^\s*net\
 DECL = re.compile(r"(?i)(?P<cur>₹|`|rs\.?|inr)\s*(?:in\s+)?(?P<scale>crores?|lakhs?|millions?|billions?|cr\b)|\bin\s+(?P<cur2>₹|`|rs\.?|inr)(?!\w)\s*(?P<scale2>crores?|lakhs?|millions?|billions?)?|\b(?P<scale3>crores?|lakhs?)\b")
 UNIT_CELL = re.compile(r"(?i)^\s*(MW|GW|kW|MWh|GWh|MU|BU|MMT|million units|numbers?|nos\.?|no\.|%|per ?cent)\s*$")
 UNIT_CELL_CANON = {"million units": "MU", "mu": "MU", "number": "count", "numbers": "count", "nos": "count", "nos.": "count", "no.": "count", "%": "percent", "percent": "percent", "per cent": "percent", "percent ": "percent"}
-LABEL_UNIT = re.compile(r"\(\s*(?:in\s+)?(MW|GW|kW|MWh|GWh|MU|BU|MMT|%|per cent|percent)\s*\)|\b(MW|GW|MU|BU)\b")
+LABEL_UNIT = re.compile(r"\(\s*(?:in\s+)?(MW|GW|kW|MWh|GWh|MUs?|BU|MMT|%|per cent|percent)\s*\)|\b(MW|GW|MU|BU)\b", re.I)
 LEXICON = frozenset("""total balance year ended march particulars amount revenue income expenses profit loss tax equity share shares capital reserves reserve
 surplus liabilities liability assets asset current non borrowings financial interest depreciation dividend cash flow flows operations operating other comprehensive
 retained earnings general bonds debentures payable receivable trade employee benefit benefits finance cost costs fuel power generation sales energy capacity notes note
@@ -370,9 +370,11 @@ def extract_table_claims(record, document_id, ctx, prior_header=None):
         cols = [collapse(" ".join(r["cells"][j] for r in pend if j < len(r["cells"]) and r["cells"][j].strip())) for j in range(width)]
         unreliable = [any(r["reversed"] and j < len(r["cells"]) and "\n" in r["cells"][j] for r in pend) for j in range(width)]
         return {"cols": cols, "width": width, "raw": "\n".join(r["raw"] for r in pend), "unreliable": unreliable}
+    section_context = None
     for pos, (r, (kind, nums)) in enumerate(zip(rows, kinds)):
         cells = r["cells"]; ctx.diag["table_rows_seen"] += 1
         if kind == "header":
+            section_context = None
             if not (pos > 0 and kinds[pos - 1][0] == "header"):
                 if seen_header: ctx.diag["repeated_headers"] += 1
                 pending = []
@@ -380,6 +382,8 @@ def extract_table_claims(record, document_id, ctx, prior_header=None):
         if pending and header is None: header = finalize(pending); pending = []
         if kind == "blank": ctx.diag["blank_rows"] += 1; continue
         if kind == "text":
+            text_label = collapse(" ".join(c for c in cells if c.strip()))
+            section_context = text_label if re.search(r"(?i)(?:break[- ]?up|composition|mix)", text_label) else None
             prev_label_row = r; ctx.diag["label_only_rows"] += 1; ctx.row_outcomes["label_only_row"] += 1; continue
         # data row: label = first text cell left of the first numeric cell, skipping serial/index cells
         first_num = nums[0]; label_idx = next((j for j in range(first_num) if re.search(r"[A-Za-z]{3,}", cells[j]) and not SERIAL.match(cells[j]) and not _header_like(cells[j])), None)
@@ -397,6 +401,8 @@ def extract_table_claims(record, document_id, ctx, prior_header=None):
         row_flags = []   # (level, text)
         def flag(level, text): row_flags.append((level, text))
         if wrapped: flag("needs_review", "label taken from the preceding label-only row (wrapped label or continuation); pairing is a guess and may be column captions")
+        if section_context and re.search(r"(?i)(?:%|percent|break[- ]?up|composition|mix)", section_context):
+            flag("ambiguous", f"row label is scoped by section context ({section_context}); metric meaning is incomplete in the row")
         if header is None: flag("needs_review", "no header row precedes this row in the chunk; column meaning and period are unknown")
         elif len(cells) != len(header["cols"]): flag("needs_review", f"column count mismatch (row has {len(cells)} cells, header has {len(header['cols'])}); index alignment not guaranteed")
         if r["reversed"]: flag("ambiguous", "row text was reconstructed from reversed characters; original preserved in source_row_text")
@@ -418,6 +424,7 @@ def extract_table_claims(record, document_id, ctx, prior_header=None):
             cell = cells[j].strip(); pv = parse_cell_value(cell)
             if pv is None: ctx.diag["malformed_numeric_cells"] += 1; continue
             col_text = header["cols"][j] if header and j < len(header["cols"]) else None
+            per_share = re.search(r"(?i)\bper\s+share\b", col_text or "")
             if col_text is not None and NOTE_COL.match(col_text): ctx.diag["note_reference_columns_skipped"] += 1; continue
             flags = list(row_flags); notes = [t for t in pv["notes"]]
             period, pnotes = (header_period(col_text) if col_text else (None, []))
@@ -436,13 +443,17 @@ def extract_table_claims(record, document_id, ctx, prior_header=None):
             # unit: cell % > label unit > label declaration > single chunk declaration; never guessed
             unit = raw_unit = None
             if pv["percent"]: unit, raw_unit = "percent", "%"
+            elif label_unit:
+                raw_unit = label_unit.group(1) or label_unit.group(2)
+                unit = {"mus": "MU", "mu": "MU", "%": "percent", "per cent": "percent", "percent": "percent"}.get(raw_unit.lower(), raw_unit)
+            elif per_share:
+                unit, raw_unit = "per share", "per share"
+                flags.append(("ambiguous", "per-share unit is stated in the column header; currency symbol is unresolved"))
             elif cell_unit:
                 raw_unit = cell_unit.group(1); unit = UNIT_CELL_CANON.get(raw_unit.lower(), raw_unit)
             elif len(cell_decl) == 1 and next(iter(cell_decl))[0]:
                 (unit, kind), raw_unit = next(iter(cell_decl.items()))
                 if kind == "backtick": flags.append(("ambiguous", "currency glyph is a backtick (likely PDF rupee-symbol substitution); INR is not confirmed by the source text"))
-            elif label_unit:
-                raw_unit = label_unit.group(0).strip("() ").strip(); tok = (label_unit.group(1) or label_unit.group(2)); unit = {"%": "percent", "per cent": "percent", "percent": "percent"}.get(tok, tok)
             elif pv["cur"]:
                 unit, raw_unit = "INR", pv["cur"]
                 if pv["cur"] == "`": flags.append(("ambiguous", "currency glyph is a backtick (likely PDF rupee-symbol substitution); INR is not confirmed by the source text"))
