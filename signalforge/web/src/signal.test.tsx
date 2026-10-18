@@ -9,7 +9,7 @@ import { parseFinding, parseSourceCatalog, parseVerifications } from './finding'
 
 const read = (name: string) => readFileSync(resolve(process.cwd(), 'public/data/finding', name), 'utf8')
 const real = JSON.parse(read('finding_bundle.json'))
-const headline = /total group renewable pipeline/
+const headline = /Renewable pipeline:/
 function serve(overrides: Record<string, unknown> = {}, missing: string[] = []) {
   vi.stubGlobal('fetch', vi.fn(async (input: RequestInfo | URL) => {
     const url = String(input), name = url.split('/').pop() ?? ''
@@ -63,7 +63,7 @@ describe('Signal view', () => {
     expect(document.querySelector('.sg-two .sg-big')?.textContent).toBe('709 MW')
     expect(document.body.textContent).toMatch(/5\.0% parent-owned/)
     expect(document.body.textContent).toContain('original pipeline-run calculations')
-    expect(document.body.textContent).toContain('not NTPC’s economic ownership share')
+    expect(document.body.textContent).toContain('does not represent the parent company’s economic ownership share')
   })
   it('keeps all seven support outcomes partial and exposes catalog not-retrieved states and the report hash', async () => {
     serve(); const user = userEvent.setup(); render(<App />); await screen.findByRole('heading', { name: headline })
@@ -95,6 +95,10 @@ describe('Signal view', () => {
     expect(title.textContent).toContain('5.0% parent-owned')
     expect(title.textContent).toContain('95.0% JV/subsidiary')
     expect(document.body.textContent).toContain('Share of total group renewable pipeline (14,516 MW)')
+    expect(document.body.textContent).toContain('Original pipeline-run headline')
+    expect(document.body.textContent).toContain(real.headline)
+    expect(document.body.textContent).toContain('Parent-owned 725 / 14,516 MW = 5.0%')
+    expect(document.body.textContent).toContain('JV/subsidiary 13,791 / 14,516 MW = 95.0%')
     const section = screen.getByRole('heading', { name: 'Ratios and their denominators' }).closest('section')!
     const rows = [...section.querySelectorAll('tbody tr')].map(row => row.textContent ?? '')
     expect(rows).toHaveLength(4)
@@ -104,12 +108,56 @@ describe('Signal view', () => {
     expect(rows[3]).toContain('725 MW'); expect(rows[3]).toContain('14,516 MW'); expect(rows[3]).toContain('5.0%')
     expect(section.textContent).toMatch(/different denominators and are not directly comparable/)
   })
-  it('hides headline ratios when direct MW inputs are missing or inconsistent', async () => {
-    const inconsistent = { ...real, inputs: real.inputs.map((input: any) => input.name === 're_under_implementation_jv_subsidiary' ? { ...input, unit: 'GW' } : input) }
-    serve({ 'finding_bundle.json': inconsistent }); render(<App />)
-    expect(await screen.findByRole('heading', { name: 'Renewable pipeline shares unavailable' })).toBeTruthy()
-    expect(screen.getByRole('status').textContent).toMatch(/missing or inconsistent/)
-    expect(screen.queryByRole('heading', { name: headline })).toBeNull()
+  it('retains the stored target headline and shows a separate warning for missing, inconsistent, or wrong-unit values', async () => {
+    const cases = [
+      { ...real, inputs: real.inputs.filter((input: any) => input.name !== 're_under_implementation_jv_subsidiary') },
+      { ...real, inputs: real.inputs.map((input: any) => input.name === 'parent_under_implementation' ? { ...input, value: 16000 } : input) },
+      { ...real, inputs: real.inputs.map((input: any) => input.name === 're_under_implementation_jv_subsidiary' ? { ...input, unit: 'GW' } : input) },
+    ]
+    for (const finding of cases) {
+      serve({ 'finding_bundle.json': finding }); render(<App />)
+      expect(await screen.findByRole('heading', { name: real.headline })).toBeTruthy()
+      expect(screen.getByRole('status').textContent).toMatch(/Recomputed renewable ratios unavailable/)
+      expect(screen.queryByRole('heading', { name: headline })).toBeNull()
+      expect(screen.queryByRole('heading', { name: 'Ratios and their denominators' })).toBeNull()
+      cleanup(); vi.unstubAllGlobals()
+    }
+  })
+  it('keeps the original headline and omits the renewable panel for a different hypothesis with the same inputs', async () => {
+    const otherHypothesis = { ...real, finding_id: 'find_run_other_H2_different_hypothesis' }
+    serve({ 'finding_bundle.json': otherHypothesis }); render(<App />)
+    expect(await screen.findByRole('heading', { name: real.headline })).toBeTruthy()
+    expect(screen.queryByRole('heading', { name: 'Ratios and their denominators' })).toBeNull()
+    expect(document.body.textContent).not.toContain('Original pipeline-run headline')
+    expect(document.body.textContent).not.toContain('Share of total group renewable pipeline (14,516 MW)')
+  })
+  it('preserves stored headlines and rejection or no-signal messaging without applying ratios', async () => {
+    const rejected = { ...real, finding_status: 'provisional_hypothesis', rejected_hypothesis: { headline_if_inputs_held: 'Would have been X', failed_inputs: ['input_x'] } }
+    serve({ 'finding_bundle.json': rejected }); render(<App />)
+    expect(await screen.findByRole('heading', { name: real.headline })).toBeTruthy()
+    expect(screen.getByText('Hypothesis rejected.')).toBeTruthy()
+    expect(screen.queryByRole('heading', { name: 'Ratios and their denominators' })).toBeNull()
+    cleanup(); vi.unstubAllGlobals()
+    const noSignal = { ...real, finding_status: 'no_defensible_signal', evidence_strength: 'None' }
+    serve({ 'finding_bundle.json': noSignal }); render(<App />)
+    expect(await screen.findByRole('heading', { name: real.headline })).toBeTruthy()
+    expect(screen.getByText(/Nothing is claimed here/)).toBeTruthy()
+    expect(screen.queryByRole('heading', { name: 'Ratios and their denominators' })).toBeNull()
+  })
+  it('does not leak the NTPC renewable headline or labels into synthetic or second-company findings', async () => {
+    serve({ 'finding_bundle.json': { ...real, synthetic: true } }); render(<App />)
+    expect(await screen.findByRole('heading', { name: real.headline })).toBeTruthy()
+    expect(screen.queryByRole('heading', { name: 'Ratios and their denominators' })).toBeNull()
+    expect(document.body.textContent).not.toContain('Original pipeline-run headline')
+    cleanup(); vi.unstubAllGlobals()
+    const otherCompany = { ...real, company: { ...real.company, name: 'Meridian Power Limited' }, headline: 'Meridian Power Limited: pipeline composition hypothesis' }
+    serve({ 'finding_bundle.json': otherCompany }); render(<App />)
+    expect(await screen.findByRole('heading', { name: otherCompany.headline })).toBeTruthy()
+    expect(screen.queryByRole('heading', { name: 'Ratios and their denominators' })).toBeNull()
+    expect(document.body.textContent).not.toContain('NTPC Limited:')
+    expect(document.body.textContent).not.toContain('NTPC’s economic ownership')
+    expect(document.body.textContent).not.toContain('Share of total group renewable pipeline')
+    expect(document.body.textContent).not.toContain('Original pipeline-run headline')
   })
   it('expands an input to its source citation and verification results', async () => {
     serve(); const user = userEvent.setup(); render(<App />); await screen.findByRole('heading', { name: headline })

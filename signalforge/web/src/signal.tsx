@@ -54,32 +54,47 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
   const independent = audit.reduce((m, a) => Math.max(m, a.independent_confirming_groups), 0)
   const simulated = f.stage_provenance.filter(s => s.execution === 'simulated').map(s => s.stage)
   const crossChecks = verifications.flatMap(v => v.cross_checks.map(c => ({ ...c, input: v.input_name })))
-  const directParent = crossChecks.find(c => /parent-owned/i.test(c.description) && c.found_value !== null && /renewable/i.test(c.description))
-  const direct = (name: string) => { const i = f.inputs.find(x => x.name === name); return i?.unit === 'MW' && Number.isFinite(i.value) ? i.value : null }
-  const parentTotal = crossChecks.find(c => /^Total \(I\)/.test(c.description) && c.found_value !== null)?.found_value ?? null
-  const parentRe = directParent?.found_value ?? null
+  const renewableLocation = f.finding_id.endsWith('_H1_renewable_pipeline_location') &&
+    f.company.name === 'NTPC Limited' && f.company.identity_status === 'registry_verified' && !f.synthetic &&
+    f.finding_status === 'provisional_hypothesis' && !f.rejected_hypothesis
+  const direct = (name: string) => {
+    const matches = f.inputs.filter(i => i.name === name)
+    return matches.length === 1 && matches[0].unit === 'MW' && Number.isFinite(matches[0].value) && matches[0].value > 0 ? matches[0].value : null
+  }
+  const parentTotal = direct('parent_under_implementation')
   const jvTotal = direct('jv_subsidiary_under_implementation')
+  const parentReChecks = crossChecks.filter(c => c.expected_value === 725 && c.found_value === c.expected_value)
+  const parentRe = parentReChecks.length === 1 ? parentReChecks[0].found_value : null
   const jvRe = direct('re_under_implementation_jv_subsidiary')
+  const matchedDenominators = new Set(crossChecks.filter(c => c.input === 'total_under_implementation_group' && c.found_value !== null && c.found_value === c.expected_value).map(c => c.found_value))
   const groupRe = parentRe !== null && jvRe !== null ? parentRe + jvRe : null
-  const validInputs = parentRe !== null && parentTotal !== null && jvRe !== null && jvTotal !== null &&
+  const validInputs = renewableLocation && parentRe !== null && parentTotal !== null && jvRe !== null && jvTotal !== null &&
     [parentRe, parentTotal, jvRe, jvTotal].every(v => Number.isFinite(v) && v > 0) &&
-    parentTotal >= parentRe && jvTotal >= jvRe && groupRe !== null && Number.isFinite(groupRe) && groupRe > 0
+    parentTotal >= parentRe && jvTotal >= jvRe && matchedDenominators.has(parentTotal) && matchedDenominators.has(jvTotal) &&
+    groupRe !== null && Number.isFinite(groupRe) && groupRe > 0
   const headlineShares = validInputs ? { parent: parentRe / groupRe * 100, jv: jvRe / groupRe * 100, total: groupRe } : null
+  const showRenewableRatios = renewableLocation && !!headlineShares
+  const showRenewableUnavailable = renewableLocation && !headlineShares
   const pct = (a: number, b: number) => `${(a / b * 100).toFixed(1)}%`
-  const ratios = validInputs && groupRe !== null ? [
+  const ratios = showRenewableRatios && groupRe !== null ? [
     { k: 'Parent renewable ÷ parent all-technology pipeline', n: parentRe!, d: parentTotal!, dn: 'Parent-owned pipeline, all technologies (table Total (I))' },
     { k: 'Renewable ÷ JV/subsidiary all-technology pipeline', n: jvRe!, d: jvTotal!, dn: 'Combined JV and subsidiary pipeline, all technologies (table Total (II))' },
     { k: 'JV/subsidiary renewable ÷ group renewable pipeline', n: jvRe!, d: groupRe, dn: 'Group renewable pipeline (sum of direct parent and JV/subsidiary renewable values)' },
     { k: 'Parent renewable ÷ group renewable pipeline', n: parentRe!, d: groupRe, dn: 'Group renewable pipeline (as above)' },
   ] : null
-  const derivedResidual = derived.find(i => i.name === 'parent_re_under_implementation' && i.citation.locator?.startsWith('derived'))
+  const directParent = parentReChecks[0]
+  const derivedResidual = renewableLocation ? derived.find(i => i.name === 'parent_re_under_implementation' && i.citation.locator?.startsWith('derived')) : undefined
   const tone = f.finding_status === 'supported_finding' ? 'good' : f.finding_status === 'provisional_hypothesis' ? 'caution' : 'stop'
   return <article className="sg">
     {f.synthetic && <div className="sg-banner bad" role="note"><b>SYNTHETIC EXAMPLE.</b> This run uses invented data and says nothing about any real company.</div>}
     <header className={`sg-hero ${tone}`}>
       <div className="sg-eyebrow"><span className={`sg-status ${tone}`}>{STATUS[f.finding_status]}</span><span className="sg-strength">Evidence strength: <b>{f.evidence_strength}</b></span><span>{f.company.name}{f.periods.length ? ` · as of ${f.periods.join(', ')}` : ''}</span></div>
-      <h2 className="sg-headline">{headlineShares ? `${f.company.name}: ${headlineShares.parent.toFixed(1)}% parent-owned and ${headlineShares.jv.toFixed(1)}% JV/subsidiary share of total group renewable pipeline` : 'Renewable pipeline shares unavailable'}</h2>
-      {headlineShares ? <p className="sg-sub">Share of total group renewable pipeline ({num(headlineShares.total)} MW). Based on directly reported {num(parentRe!)} MW parent-owned and {num(jvRe!)} MW JV/subsidiary values; JV/subsidiary capacity is not NTPC’s economic ownership share.</p> : <p role="status" className="sg-warn-text">Required direct MW values are missing or inconsistent. No headline percentages are shown.</p>}
+      <h2 className="sg-headline">{showRenewableRatios ? `Renewable pipeline: ${headlineShares!.parent.toFixed(1)}% parent-owned · ${headlineShares!.jv.toFixed(1)}% JV/subsidiary` : f.headline}</h2>
+      {showRenewableRatios && <div className="sg-sub sg-renewable-comparison">
+        <p>Share of total group renewable pipeline ({num(headlineShares!.total)} MW). Parent-owned {num(parentRe!)} / {num(headlineShares!.total)} MW = {pct(parentRe!, headlineShares!.total)}; JV/subsidiary {num(jvRe!)} / {num(headlineShares!.total)} MW = {pct(jvRe!, headlineShares!.total)}. JV/subsidiary pipeline capacity is not equivalent to the parent company’s economic ownership share.</p>
+        <p><b>Original pipeline-run headline</b>: {f.headline} The original uses the rounded 14.5 GW figure and derived 709 MW residual.</p>
+      </div>}
+      {showRenewableUnavailable && <p role="status" className="sg-warn-text"><b>Recomputed renewable ratios unavailable.</b> Required direct MW values or matching denominator checks are missing or inconsistent; the stored headline is retained.</p>}
       <p className="sg-why">{f.why_it_matters}</p>
       {f.finding_status !== 'supported_finding' && <p className="sg-caveat"><b>{f.finding_status === 'provisional_hypothesis' ? 'Not a verified conclusion.' : 'Nothing is claimed here.'}</b> {f.finding_status === 'provisional_hypothesis' ? 'This is a hypothesis the evidence points toward but does not yet establish.' : 'The evidence available does not support a finding.'}</p>}
     </header>
@@ -93,7 +108,7 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
     {f.rejected_hypothesis && <div className="sg-banner bad"><b>Hypothesis rejected.</b> Key input(s) {f.rejected_hypothesis.failed_inputs.join(', ')} failed verification. The hypothesis was: “{f.rejected_hypothesis.headline_if_inputs_held}”.</div>}
 
     <section aria-labelledby="sg-calc"><h3 id="sg-calc">What was calculated</h3>
-      <p className="sg-sub">These are the original pipeline-run calculations and are preserved as reported. The parent renewable calculation uses the derived 709 MW residual and the group renewable calculation uses the rounded 14.5 GW; the headline above uses direct table values instead.</p>
+      <p className="sg-sub">{showRenewableRatios ? 'These are the original pipeline-run calculations and are preserved as reported. The parent renewable calculation uses the derived 709 MW residual and the group renewable calculation uses the rounded 14.5 GW; the headline above uses direct table values instead.' : 'Deterministic arithmetic on the inputs below. Ranges reflect rounding in the source figures.'}</p>
       <div className="sg-calcs">{f.calculations.map(c => <div className="sg-calc" key={c.calculation_id}>
         <div className="sg-calc-name">{label(c.name)}</div>
         {c.result ? <div className="sg-calc-value">{num(c.result.value, 1)}<small>{c.result.unit === 'percent' ? '%' : ` ${c.result.unit}`}</small></div> : <div className="sg-calc-value muted">not computed</div>}
@@ -105,11 +120,11 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
 
     {derivedResidual && directParent && <section aria-labelledby="sg-dd" className="sg-panel"><h3 id="sg-dd">Derived value versus direct source value</h3>
       <div className="sg-two"><div><div className="sg-k">Derived residual</div><div className="sg-big">{withUnit(derivedResidual.value, derivedResidual.unit)}</div><p>{label(derivedResidual.name)}, obtained by subtracting two cited inputs. The original pipeline calculations retain this derived value.</p></div>
-        <div><div className="sg-k">Direct table value</div><div className="sg-big">{num(directParent.found_value!)} MW</div><p>Found in the same text chunk by the check “{directParent.description}” on {label(directParent.input)}. The headline share uses this directly reported value.</p></div></div>
+        <div><div className="sg-k">Direct table value</div><div className="sg-big">{num(directParent.found_value!)} MW</div><p>The matching source check confirms this directly reported renewable table value, which is used in the recomputed headline.</p></div></div>
     </section>}
 
     {ratios && <section aria-labelledby="sg-ratio" className="sg-panel"><h3 id="sg-ratio">Ratios and their denominators</h3>
-      <p className="sg-sub">These four ratios answer different questions because they use different denominators and are not directly comparable. All use directly reported table values; none uses the derived 709 MW residual or rounded 14.5 GW. JV/subsidiary capacity does not equal NTPC’s economic ownership share.</p>
+      <p className="sg-sub">These four ratios answer different questions because they use different denominators and are not directly comparable. All use directly reported table values; none uses the derived 709 MW residual or rounded 14.5 GW. JV/subsidiary project pipeline capacity does not represent the parent company’s economic ownership share.</p>
       <div className="sg-scroll"><table className="sg-table sg-ratios"><thead><tr><th>Ratio</th><th>Numerator</th><th>Denominator</th><th>Value</th></tr></thead>
         <tbody>{ratios.map(r => <tr key={r.k}><td>{r.k}</td><td className="sg-num">{num(r.n)} MW</td><td>{num(r.d)} MW<br /><small>{r.dn}</small></td><td className="sg-num"><b>{pct(r.n, r.d)}</b></td></tr>)}</tbody></table></div>
     </section>}
