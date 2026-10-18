@@ -53,6 +53,10 @@ class EvidenceRecord:
     extraction_warnings: list[str]
     page_number: int | None = None
     table_identifier: str | None = None
+    review_status: str = "pending_review"
+    reviewed_by: str | None = None
+    reviewed_at: str | None = None
+    review_note: str | None = None
 
 def _stable_id(source_key, locator, content):
     raw="\x1f".join((source_key, str(locator), content))
@@ -94,7 +98,8 @@ def _record(source_key, locator, content, **kwargs):
         source_identifier_status="repository_path_only",publication_date=None,event_date=None,
         retrieval_date=dt.datetime.now(dt.timezone.utc).date().isoformat(),excerpt_or_fact=content,metric_name=None,
         metric_value=None,unit=None,currency=None,reporting_period=None,evidence_category="unclassified",
-        related_claim=None,claim_key=None,source_relationship="unknown",claim_verification_status="unverified",information_type="reported_fact",parsing_status="parsed",extraction_warnings=[],page_number=None,table_identifier=None)
+        related_claim=None,claim_key=None,source_relationship="unknown",claim_verification_status="unverified",information_type="reported_fact",parsing_status="parsed",extraction_warnings=[],page_number=None,table_identifier=None,
+        review_status="pending_review",reviewed_by=None,reviewed_at=None,review_note=None)
     defaults.update(kwargs)
     return EvidenceRecord(evidence_id=_stable_id(source_key,locator,content),**defaults)
 

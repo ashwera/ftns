@@ -1,11 +1,13 @@
 """R1 research-plan runner. Consumes F1 output and supplied evidence IDs; performs no retrieval."""
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
 from .config import Config
-from .f1_research_angle_selector import _validate
+from .evidence_ingestion import load_registry, verify_company
+from .f1_research_angle_selector import MAX_F1_EVIDENCE_RECORDS, _validate, eligible_ingested_evidence
 from .llm_client import LLMError, generate_json
 
 def validate_plan(plan, schema_path, supplied_ids=()):
@@ -27,18 +29,34 @@ def select_candidate(f1):
     if cand is None: raise ValueError(f"Recommended candidate {cid!r} not found in F1 output")
     return cand
 
-def load_evidence_ids(path, company):
+def load_evidence_ids(path, company, config=None):
+    """Evidence IDs R1 may be given or cite. Same gate as F1: schema-valid, verified identity (canonical name and identifier),
+    parsed non-empty text, and human-approved with complete review metadata. Anything else, including malformed lines, is excluded.
+    Fails closed: an unresolved company yields no IDs."""
+    config = config or Config()
     p = Path(path)
-    if not p.exists(): return []
-    rows = [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
-    return [r["evidence_id"] for r in rows if r.get("company_identity_status") == "verified" and str(r.get("company_name") or "").casefold() == company.casefold()]
+    if not p.is_file(): return []
+    canonical, identifier, status = verify_company(company, load_registry(config.registry_path))
+    if status != "verified" or not canonical: return []
+    schema = json.loads((config.schema_path.parent / "evidence_record.schema.json").read_text(encoding="utf-8"))
+    ids = []
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if not line.strip(): continue
+        try: record = json.loads(line)
+        except json.JSONDecodeError: continue
+        if not isinstance(record, dict) or _validate(record, schema, root=schema): continue
+        eid = record.get("evidence_id")
+        if not isinstance(eid, str) or not re.fullmatch(r"ev_[a-f0-9]{24}", eid) or eid in ids or not eligible_ingested_evidence([record], canonical, identifier): continue
+        ids.append(eid)
+        if len(ids) > MAX_F1_EVIDENCE_RECORDS: raise ValueError(f"R1 evidence allowlist has more than {MAX_F1_EVIDENCE_RECORDS} approved records")
+    return ids
 
 def run(f1_path, output_path, config=None):
     config = config or Config()
     f1 = json.loads(Path(f1_path).read_text(encoding="utf-8"))
     if not f1.get("ranking_reliable"): raise ValueError("F1 ranking is not reliable; R1 will not plan from it")
     cand = select_candidate(f1)
-    ids = load_evidence_ids(config.evidence_dir / "evidence.jsonl", f1["company_name"])
+    ids = load_evidence_ids(config.evidence_dir / "evidence.jsonl", f1["company_name"], config)
     prompt = (config.prompt_dir / "r1_research_investigator.md").read_text(encoding="utf-8")
     payload = {"company_name": f1["company_name"], "candidate": cand, "dataset_summary": f1.get("dataset_summary"), "supplied_evidence_ids": ids}
     plan = generate_json(prompt, payload, config)
