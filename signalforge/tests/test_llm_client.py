@@ -2,6 +2,7 @@ import dataclasses
 import sys
 import types
 import unittest
+import traceback
 from unittest.mock import patch
 
 from signalforge.config import Config
@@ -66,6 +67,9 @@ class LlmClientTests(unittest.TestCase):
                 generate_json("prompt", {}, cfg)
         self.assertNotIn(secret, str(caught.exception))
         self.assertIn("[redacted]", str(caught.exception))
+        formatted_traceback = "".join(traceback.format_exception(caught.exception))
+        self.assertNotIn(secret, formatted_traceback)
+        self.assertIn("[redacted]", formatted_traceback)
 
     def test_empty_and_non_json_responses_fail_closed(self):
         cfg = dataclasses.replace(Config(), provider="gemini", api_key="fixture-secret", base_url="")

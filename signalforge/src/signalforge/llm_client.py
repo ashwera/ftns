@@ -30,4 +30,4 @@ def generate_json(prompt, payload, config):
     except LLMError: raise
     except Exception as e:
         detail = str(e).replace(config.api_key, "[redacted]")
-        raise LLMError(f"Model request failed ({type(e).__name__}): {detail}") from e
+        raise LLMError(f"Model request failed ({type(e).__name__}): {detail}") from None
