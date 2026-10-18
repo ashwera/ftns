@@ -1,0 +1,1209 @@
+{
+  "schema_version": "1.0",
+  "finding_id": "find_run_20261019_pdfnative_after_H1_renewable_pipeline_location",
+  "run_id": "run_20261019_pdfnative_after",
+  "company": {
+    "name": "NTPC Limited",
+    "aliases": [
+      "NTPC"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "finding_status": "provisional_hypothesis",
+  "evidence_strength": "Weak",
+  "headline": "NTPC Limited: 4.7% of its own under-implementation pipeline is renewable versus 75.4% of the joint-venture and subsidiary pipeline; 95.1% of the group's renewable pipeline sits in joint ventures and subsidiaries.",
+  "why_it_matters": "Renewable growth is concentrated in joint ventures and subsidiaries, so parent-only metrics and the parent's own capital plan can mis-describe the group's renewable transition, and exposure to those entities' financing and minority interests matters for valuation.",
+  "periods": [
+    "2025-03-31"
+  ],
+  "rank_score": 49.0,
+  "rank_components": {
+    "strength": 16.0,
+    "materiality": 25.0,
+    "corroboration": 0.0,
+    "recency": 10.0,
+    "consistency": 10.0,
+    "contradiction_penalty": -0.0
+  },
+  "inputs": [
+    {
+      "name": "group_installed_capacity",
+      "value": 79930.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "consolidated",
+      "statement_status": "commissioned",
+      "claim_ids": [
+        "cl1_5b1e9c502b174acc1543b65f"
+      ],
+      "verification_ids": [
+        "ver_installed_total_group_1543b65f_text",
+        "ver_installed_total_group_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_252ddc5ca75aa6a8bc871cb1",
+        "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+        "page": 90,
+        "locator": "page:90:block:1",
+        "excerpt": "As on 31 March 2025, the total commercial capacity stood at 79,930 MW on a consolidated basis and 59,413 MW on a standalone basis.",
+        "url": null
+      }
+    },
+    {
+      "name": "re_installed_capacity_group",
+      "value": 6.8,
+      "unit": "GW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "claim_ids": [
+        "cl1_264d9fe1ce46595b0b93c941"
+      ],
+      "verification_ids": [
+        "ver_re_installed_group_0b93c941_text",
+        "ver_re_installed_group_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_fcde1c84df4f8b650bb1afdd",
+        "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+        "page": 112,
+        "locator": "page:112:block:1",
+        "excerpt": "Further 11 As on 31 March 2025, Your Company has a cumulative GW of RE projects are in pipeline under various mode of commissioned RE capacity of 6.8 GW.",
+        "url": null
+      }
+    },
+    {
+      "name": "re_under_implementation_group",
+      "value": 14.5,
+      "unit": "GW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_0f2c466c2859d4c9cc88f4b8"
+      ],
+      "verification_ids": [
+        "ver_re_pipeline_group_cc88f4b8_text",
+        "ver_re_pipeline_group_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_fcde1c84df4f8b650bb1afdd",
+        "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+        "page": 112,
+        "locator": "page:112:block:1",
+        "excerpt": "Organic Growth As on 31 March 2025, RE capacity of NTPC under various stages of implementation totals up to 14.5 GW.",
+        "url": null
+      }
+    },
+    {
+      "name": "total_under_implementation_group",
+      "value": 33671.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "pdfn_ac835b0493bc7cc37cd8f550"
+      ],
+      "verification_ids": [
+        "ver_pipeline_total_group_7cd8f550_text",
+        "ver_pipeline_total_group_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+        "source_path": "Annual Report 2024-25_1.pdf",
+        "page": 91,
+        "locator": "page:91:block:1",
+        "excerpt": "Total On-Going Projects as on 31 33,671",
+        "url": null
+      }
+    },
+    {
+      "name": "jv_subsidiary_under_implementation",
+      "value": 18295.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "pdfn_b7aa459b3f974ff5834a1893"
+      ],
+      "verification_ids": [
+        "ver_pipeline_jv_sub_834a1893_text",
+        "ver_pipeline_jv_sub_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+        "source_path": "Annual Report 2024-25_1.pdf",
+        "page": 91,
+        "locator": "page:91:block:1",
+        "excerpt": "Total (II) 18,295",
+        "url": null
+      }
+    },
+    {
+      "name": "re_under_implementation_jv_subsidiary",
+      "value": 13791.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "pdfn_8b1fc767a630c90d4f71893a"
+      ],
+      "verification_ids": [
+        "ver_re_pipeline_jv_sub_4f71893a_text",
+        "ver_re_pipeline_jv_sub_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+        "source_path": "Annual Report 2024-25_1.pdf",
+        "page": 91,
+        "locator": "page:91:block:1",
+        "excerpt": "c) Renewable Projects 13,791",
+        "url": null
+      }
+    },
+    {
+      "name": "re_capacity_target_2032",
+      "value": 60.0,
+      "unit": "GW",
+      "as_of_date": null,
+      "basis": "group",
+      "statement_status": "target",
+      "claim_ids": [
+        "cl1_4bad374a50229c566a48d913"
+      ],
+      "verification_ids": [
+        "ver_re_target_6a48d913_text",
+        "ver_re_target_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_fcde1c84df4f8b650bb1afdd",
+        "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+        "page": 112,
+        "locator": "page:112:block:1",
+        "excerpt": "In Renewable space, the target is to achieve 60 GW by 2032.",
+        "url": null
+      }
+    },
+    {
+      "name": "parent_under_implementation_direct",
+      "value": 15376.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "parent_own",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "pdfn_9621dcd15e3fdc9a20eda573"
+      ],
+      "verification_ids": [
+        "ver_pipeline_parent_20eda573_text",
+        "ver_pipeline_parent_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+        "source_path": "Annual Report 2024-25_1.pdf",
+        "page": 91,
+        "locator": "page:91:block:1",
+        "excerpt": "Total (I) 15,376",
+        "url": null
+      }
+    },
+    {
+      "name": "parent_re_under_implementation_direct",
+      "value": 725.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "parent_own",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "pdfn_17db1ba3f1f9054e09576cc3"
+      ],
+      "verification_ids": [
+        "ver_re_pipeline_parent_09576cc3_text",
+        "ver_re_pipeline_parent_ntpc_ar_fy2024_25"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "primary_source",
+      "citation": {
+        "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+        "source_path": "Annual Report 2024-25_1.pdf",
+        "page": 91,
+        "locator": "page:91:block:1",
+        "excerpt": "c) Renewable Energy Projects 725",
+        "url": null
+      }
+    }
+  ],
+  "calculations": [
+    {
+      "calculation_id": "calc_91f2abfb0dcef2eb",
+      "name": "re_share_of_group_pipeline",
+      "formula": "re_under_implementation_group / total_under_implementation_group x 100",
+      "result": {
+        "value": 43.063764,
+        "unit": "percent",
+        "lower_bound": 42.915268,
+        "upper_bound": 43.21226
+      },
+      "input_names": [
+        "re_under_implementation_group",
+        "total_under_implementation_group"
+      ],
+      "trace": "re_under_implementation_group = 14500 MW (14.5 GW); total_under_implementation_group = 33671 MW; 100 x 14500 / 33671 = 43.0638%; rounding bounds [42.9153%, 43.2123%]"
+    },
+    {
+      "calculation_id": "calc_ad5f039d711c3112",
+      "name": "jv_subsidiary_share_of_re_pipeline",
+      "formula": "re_under_implementation_jv_subsidiary / re_under_implementation_group x 100",
+      "result": {
+        "value": 95.110345,
+        "unit": "percent",
+        "lower_bound": 94.783505,
+        "upper_bound": 95.439446
+      },
+      "input_names": [
+        "re_under_implementation_jv_subsidiary",
+        "re_under_implementation_group"
+      ],
+      "trace": "re_under_implementation_jv_subsidiary = 13791 MW (13791 MW); re_under_implementation_group = 14500 MW; 100 x 13791 / 14500 = 95.1103%; rounding bounds [94.7835%, 95.4394%]"
+    },
+    {
+      "calculation_id": "calc_715c3de3b8b300bd",
+      "name": "re_share_of_parent_own_pipeline",
+      "formula": "parent_re_under_implementation_direct / parent_under_implementation_direct x 100",
+      "result": {
+        "value": 4.71514,
+        "unit": "percent",
+        "lower_bound": 4.71514,
+        "upper_bound": 4.71514
+      },
+      "input_names": [
+        "parent_re_under_implementation_direct",
+        "parent_under_implementation_direct"
+      ],
+      "trace": "parent_re_under_implementation_direct = 725 MW (725 MW); parent_under_implementation_direct = 15376 MW; 100 x 725 / 15376 = 4.7151%; rounding bounds [4.7151%, 4.7151%]"
+    },
+    {
+      "calculation_id": "calc_5ce6c661581af178",
+      "name": "re_share_of_jv_subsidiary_pipeline",
+      "formula": "re_under_implementation_jv_subsidiary / jv_subsidiary_under_implementation x 100",
+      "result": {
+        "value": 75.381252,
+        "unit": "percent",
+        "lower_bound": 75.381252,
+        "upper_bound": 75.381252
+      },
+      "input_names": [
+        "re_under_implementation_jv_subsidiary",
+        "jv_subsidiary_under_implementation"
+      ],
+      "trace": "re_under_implementation_jv_subsidiary = 13791 MW (13791 MW); jv_subsidiary_under_implementation = 18295 MW; 100 x 13791 / 18295 = 75.3813%; rounding bounds [75.3813%, 75.3813%]"
+    },
+    {
+      "calculation_id": "calc_c34db8ef4d0c7389",
+      "name": "pipeline_relative_to_installed_base",
+      "formula": "total_under_implementation_group / group_installed_capacity x 100",
+      "result": {
+        "value": 42.12561,
+        "unit": "percent",
+        "lower_bound": 42.12561,
+        "upper_bound": 42.12561
+      },
+      "input_names": [
+        "total_under_implementation_group",
+        "group_installed_capacity"
+      ],
+      "trace": "total_under_implementation_group = 33671 MW (33671 MW); group_installed_capacity = 79930 MW; 100 x 33671 / 79930 = 42.1256%; rounding bounds [42.1256%, 42.1256%]"
+    },
+    {
+      "calculation_id": "calc_50b461ff0526b38d",
+      "name": "re_installed_plus_pipeline_vs_target",
+      "formula": "(sum(achieved + under implementation)) / target x 100",
+      "result": {
+        "value": 35.5,
+        "unit": "percent",
+        "lower_bound": 35.333333,
+        "upper_bound": 35.666667
+      },
+      "input_names": [
+        "re_installed_capacity_group",
+        "re_under_implementation_group",
+        "re_capacity_target_2032"
+      ],
+      "trace": "6800 + 14500 = 21300 MW; / target 60000 = 35.5000% (bounds [35.3333%, 35.6667%])"
+    }
+  ],
+  "supporting_evidence": [
+    {
+      "statement": "re_share_of_group_pipeline: re_under_implementation_group = 14500 MW (14.5 GW); total_under_implementation_group = 33671 MW; 100 x 14500 / 33671 = 43.0638%; rounding bounds [42.9153%, 43.2123%]",
+      "claim_ids": [
+        "cl1_0f2c466c2859d4c9cc88f4b8",
+        "pdfn_ac835b0493bc7cc37cd8f550"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_91f2abfb0dcef2eb",
+        "excerpt": "re_under_implementation_group / total_under_implementation_group x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "jv_subsidiary_share_of_re_pipeline: re_under_implementation_jv_subsidiary = 13791 MW (13791 MW); re_under_implementation_group = 14500 MW; 100 x 13791 / 14500 = 95.1103%; rounding bounds [94.7835%, 95.4394%]",
+      "claim_ids": [
+        "cl1_0f2c466c2859d4c9cc88f4b8",
+        "pdfn_8b1fc767a630c90d4f71893a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_ad5f039d711c3112",
+        "excerpt": "re_under_implementation_jv_subsidiary / re_under_implementation_group x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "re_share_of_parent_own_pipeline: parent_re_under_implementation_direct = 725 MW (725 MW); parent_under_implementation_direct = 15376 MW; 100 x 725 / 15376 = 4.7151%; rounding bounds [4.7151%, 4.7151%]",
+      "claim_ids": [
+        "pdfn_17db1ba3f1f9054e09576cc3",
+        "pdfn_9621dcd15e3fdc9a20eda573"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_715c3de3b8b300bd",
+        "excerpt": "parent_re_under_implementation_direct / parent_under_implementation_direct x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "re_share_of_jv_subsidiary_pipeline: re_under_implementation_jv_subsidiary = 13791 MW (13791 MW); jv_subsidiary_under_implementation = 18295 MW; 100 x 13791 / 18295 = 75.3813%; rounding bounds [75.3813%, 75.3813%]",
+      "claim_ids": [
+        "pdfn_8b1fc767a630c90d4f71893a",
+        "pdfn_b7aa459b3f974ff5834a1893"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_5ce6c661581af178",
+        "excerpt": "re_under_implementation_jv_subsidiary / jv_subsidiary_under_implementation x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "pipeline_relative_to_installed_base: total_under_implementation_group = 33671 MW (33671 MW); group_installed_capacity = 79930 MW; 100 x 33671 / 79930 = 42.1256%; rounding bounds [42.1256%, 42.1256%]",
+      "claim_ids": [
+        "cl1_5b1e9c502b174acc1543b65f",
+        "pdfn_ac835b0493bc7cc37cd8f550"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_c34db8ef4d0c7389",
+        "excerpt": "total_under_implementation_group / group_installed_capacity x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "re_installed_plus_pipeline_vs_target: 6800 + 14500 = 21300 MW; / target 60000 = 35.5000% (bounds [35.3333%, 35.6667%])",
+      "claim_ids": [
+        "cl1_0f2c466c2859d4c9cc88f4b8",
+        "cl1_264d9fe1ce46595b0b93c941",
+        "cl1_4bad374a50229c566a48d913"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_50b461ff0526b38d",
+        "excerpt": "(sum(achieved + under implementation)) / target x 100",
+        "url": null
+      },
+      "independent": false
+    }
+  ],
+  "contradictory_evidence": [],
+  "alternative_explanations": [
+    "Group (consolidated) reporting already includes these entities, so the split may be organisational rather than economic.",
+    "Under-implementation capacity may slip or be re-scoped; the pipeline is not commissioned capacity.",
+    "The parent may hold economic interests in the subsidiaries that offset the apparent concentration."
+  ],
+  "falsification_conditions": [
+    "The component table in the primary filing does not match the extracted text, so the parent and JV/subsidiary shares differ from those computed here.",
+    "A different boundary or date is used for the renewable total than for the pipeline total.",
+    "Prior-year disclosures show the same split, implying a structural reporting convention rather than a change."
+  ],
+  "missing_evidence": [
+    "Primary-source check of the page 91 table and sentences in the original filing or exchange submission.",
+    "Independent corroboration (regulator or third-party data) of subsidiary renewable pipeline.",
+    "Prior-year pipeline composition to test conversion and trend.",
+    "Ownership percentage and consolidation treatment of each subsidiary/JV."
+  ],
+  "limitations": [
+    "All inputs are from the project's own text extraction; none was checked against the original PDF.",
+    "The 14.5 GW and 6.8 GW figures are rounded in the source; bounds are carried through the calculations.",
+    "Claims remain unverified; verification results are separate records.",
+    "Provisional: not every key input is confirmed against a primary source; do not treat as a supported finding."
+  ],
+  "stage_provenance": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "40959 claims loaded; all unverified (including 17 additive PDF-native claims; 3 more skipped for lacking a linked evidence chunk)"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "44 claims / 21 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "blocked",
+      "detail": "SIGNALFORGE_API_KEY not configured; live F1 not attempted"
+    },
+    {
+      "stage": "R1",
+      "execution": "not_executed",
+      "detail": "F1 not run"
+    },
+    {
+      "stage": "source_catalog",
+      "execution": "real",
+      "detail": "6 catalog sources: {\"available\": 1, \"not_retrieved\": 5}; network not used"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "9 inputs verified; 9 at primary_source level, 0 at extracted_text_review only; effective outcomes {\"partially_supported\": 9}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "6 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "all_claims_unverified": true,
+  "synthetic": false,
+  "provisional_rubric": {
+    "status": "PROVISIONAL - transparent initial weights, no calibration data",
+    "weights": {
+      "strength": 40,
+      "materiality": 25,
+      "corroboration": 15,
+      "recency": 10,
+      "consistency": 10
+    },
+    "materiality_threshold_pp": 10.0,
+    "strength_rules": {
+      "None": "no computed calculation, or any key input contradicted/unresolved/unverified",
+      "Weak": "all key inputs at least partially_supported, but verification is extracted_text_review only (no primary-source check) or some input is partial",
+      "Moderate": "all key inputs confirmed at primary_source level, no contradiction",
+      "Strong": "Moderate plus >=2 independent sources, passing cross-checks and no missing inputs"
+    }
+  },
+  "audit_trail": [
+    {
+      "role": "installed_total_group",
+      "input_name": "group_installed_capacity",
+      "key": false,
+      "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+      "claim_extraction_status": "ambiguous",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_installed_total_group_1543b65f_text",
+          "level": "extracted_text_review",
+          "outcome": "confirmed",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 90,
+          "url": null,
+          "passage_sha256": "7074c05795cbfe5267ad2709fbdb42d791c01c383945f5d33bd81f3be9246015",
+          "failed_or_open_checks": {},
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_installed_total_group_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 91,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "8b8e11ae334e29fd3b4d4f81345ae071491587f245745ed678a2d4487bbb462e",
+          "failed_or_open_checks": {
+            "entity": "unresolved",
+            "period": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "as asserted"
+        }
+      ]
+    },
+    {
+      "role": "re_installed_group",
+      "input_name": "re_installed_capacity_group",
+      "key": false,
+      "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+      "claim_extraction_status": "ambiguous",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_re_installed_group_0b93c941_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 112,
+          "url": null,
+          "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_re_installed_group_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 112,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "50dab78b7b615bf8284138bab76779059dda1a7d3ec878435d28fd32e0c12dc7",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "as asserted"
+        }
+      ]
+    },
+    {
+      "role": "re_pipeline_group",
+      "input_name": "re_under_implementation_group",
+      "key": true,
+      "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+      "claim_extraction_status": "ambiguous",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_re_pipeline_group_cc88f4b8_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 112,
+          "url": null,
+          "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+          "failed_or_open_checks": {
+            "basis": "unresolved",
+            "statement_status": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_re_pipeline_group_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 112,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "49347955cf5b64d778b091bdd60960ee8571529f0778b57498aa518256ab4d9e",
+          "failed_or_open_checks": {
+            "basis": "unresolved",
+            "statement_status": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "as asserted"
+        }
+      ]
+    },
+    {
+      "role": "pipeline_total_group",
+      "input_name": "total_under_implementation_group",
+      "key": true,
+      "claim_id": "pdfn_ac835b0493bc7cc37cd8f550",
+      "claim_extraction_status": "extracted",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_pipeline_total_group_7cd8f550_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 91,
+          "url": null,
+          "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_pipeline_total_group_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 91,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "table-cell check in reading order"
+        }
+      ]
+    },
+    {
+      "role": "pipeline_jv_sub",
+      "input_name": "jv_subsidiary_under_implementation",
+      "key": true,
+      "claim_id": "pdfn_b7aa459b3f974ff5834a1893",
+      "claim_extraction_status": "extracted",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_pipeline_jv_sub_834a1893_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 91,
+          "url": null,
+          "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_pipeline_jv_sub_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 91,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "table-cell check in reading order"
+        }
+      ]
+    },
+    {
+      "role": "re_pipeline_jv_sub",
+      "input_name": "re_under_implementation_jv_subsidiary",
+      "key": true,
+      "claim_id": "pdfn_8b1fc767a630c90d4f71893a",
+      "claim_extraction_status": "extracted",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_re_pipeline_jv_sub_4f71893a_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 91,
+          "url": null,
+          "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_re_pipeline_jv_sub_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 91,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "table-cell check in reading order"
+        }
+      ]
+    },
+    {
+      "role": "re_target",
+      "input_name": "re_capacity_target_2032",
+      "key": false,
+      "claim_id": "cl1_4bad374a50229c566a48d913",
+      "claim_extraction_status": "needs_review",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_re_target_6a48d913_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 112,
+          "url": null,
+          "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_re_target_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 19,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "27ec52fcb85c9d50ca3da991f22ccf9e717619cfd0811818087e35bde4944df6",
+          "failed_or_open_checks": {
+            "entity": "unresolved",
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "as asserted"
+        }
+      ]
+    },
+    {
+      "role": "pipeline_parent",
+      "input_name": "parent_under_implementation_direct",
+      "key": true,
+      "claim_id": "pdfn_9621dcd15e3fdc9a20eda573",
+      "claim_extraction_status": "extracted",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_pipeline_parent_20eda573_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 91,
+          "url": null,
+          "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_pipeline_parent_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 91,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "table-cell check in reading order"
+        }
+      ]
+    },
+    {
+      "role": "re_pipeline_parent",
+      "input_name": "parent_re_under_implementation_direct",
+      "key": true,
+      "claim_id": "pdfn_17db1ba3f1f9054e09576cc3",
+      "claim_extraction_status": "extracted",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "primary_source",
+      "conflict": false,
+      "reason": "primary source supports the value but not every check",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [
+        {
+          "source_id": "ntpc_fy25_results_concall_transcript",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "ntpc_21st_annual_analysts_presentation",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_under_construction_re_projects_mar2025",
+          "status": "not_retrieved",
+          "error": null
+        },
+        {
+          "source_id": "cea_installed_capacity_reports",
+          "status": "not_retrieved",
+          "error": null
+        }
+      ],
+      "results": [
+        {
+          "verification_id": "ver_re_pipeline_parent_09576cc3_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "Annual Report 2024-25_1.csv",
+          "page": 91,
+          "url": null,
+          "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+        },
+        {
+          "verification_id": "ver_re_pipeline_parent_ntpc_ar_fy2024_25",
+          "level": "primary_source",
+          "outcome": "partially_supported",
+          "source": "ntpc_ar_fy2024_25",
+          "page": 91,
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a",
+          "failed_or_open_checks": {
+            "entity": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "table-cell check in reading order"
+        }
+      ]
+    }
+  ],
+  "decision_log": [
+    "source ntpc_ar_fy2024_25: available, level primary_source",
+    "source ntpc_fy25_results_concall_transcript: not_retrieved, level extracted_text_review",
+    "source ntpc_fy2024_25_annual_report_exchange_filing: not_retrieved, level extracted_text_review",
+    "source ntpc_21st_annual_analysts_presentation: not_retrieved, level extracted_text_review",
+    "source cea_under_construction_re_projects_mar2025: not_retrieved, level extracted_text_review",
+    "source cea_installed_capacity_reports: not_retrieved, level extracted_text_review",
+    "input installed_total_group: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input re_installed_group: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input re_pipeline_group [key]: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input pipeline_total_group [key]: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input pipeline_jv_sub [key]: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input re_pipeline_jv_sub [key]: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input re_target: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input pipeline_parent [key]: partially_supported at primary_source; 0 independent confirming group(s)",
+    "input re_pipeline_parent [key]: partially_supported at primary_source; 0 independent confirming group(s)",
+    "strength=Weak; materiality=70.7 pp (threshold 10.0); independent groups=0; status=provisional_hypothesis"
+  ],
+  "downgrade_reasons": [
+    "key input 're_under_implementation_group' is partially_supported",
+    "key input 'total_under_implementation_group' is partially_supported",
+    "key input 'jv_subsidiary_under_implementation' is partially_supported",
+    "key input 're_under_implementation_jv_subsidiary' is partially_supported",
+    "key input 'parent_under_implementation_direct' is partially_supported",
+    "key input 'parent_re_under_implementation_direct' is partially_supported",
+    "only 0 independent source group(s) back the key inputs; Strong needs at least 2"
+  ],
+  "rejected_hypothesis": null,
+  "verification_summary": {
+    "key_inputs": 6,
+    "confirmed_primary": 0,
+    "confirmed_text_only": 0,
+    "partial": 6,
+    "unresolved_or_unverifiable": 0,
+    "contradicted": 0,
+    "conflicts": 0,
+    "min_independent_groups": 0
+  }
+}

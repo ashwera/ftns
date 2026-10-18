@@ -41,12 +41,22 @@ def verify_inputs(spec, store, evidence_by_id, target, sources=None):
         reviewer = spec["reviewer"] | {"kind": "ai_assisted_analyst"}
         base_src = {"source_chunk_id": rec["evidence_id"], "source_path": rec["source_path"], "page": rec.get("page_number"), "url": rec.get("source_url"), "publisher": rec.get("source_organization"),
                     "publication_date": rec.get("publication_date"), "retrieved_at": None, "document_family": rec.get("document_title")}
-        results = [V.verify_assertion(a, rec["excerpt_or_fact"], source=base_src, level="extracted_text_review", verification_id=f"ver_{item['role']}_{claim['claim_id'][-8:]}_text", input_name=item["name"],
-                                      claim_id=claim["claim_id"], reviewer=reviewer, cross_checks=item.get("cross_checks", []))]
+        table_cell = claim.get("extraction_method") == "pdf_native_table"
+        if table_cell:
+            results = [V.verify_table_cell(a, claim, rec["excerpt_or_fact"], source=base_src, level="extracted_text_review", verification_id=f"ver_{item['role']}_{claim['claim_id'][-8:]}_text", input_name=item["name"], claim_id=claim["claim_id"], reviewer=reviewer)]
+        else:
+            results = [V.verify_assertion(a, rec["excerpt_or_fact"], source=base_src, level="extracted_text_review", verification_id=f"ver_{item['role']}_{claim['claim_id'][-8:]}_text", input_name=item["name"],
+                                          claim_id=claim["claim_id"], reviewer=reviewer, cross_checks=item.get("cross_checks", []))]
         notes = []
         for src in sources:
             if src["status"] != "available": notes.append({"source_id": src["source_id"], "status": src["status"], "error": src["error"]}); continue
-            level = SC.level_for(src); hits = V.locate_passages(src["pages"], a["value"], item["label_terms"])
+            level = SC.level_for(src)
+            if table_cell:  # row label followed by the value, on any page of the source; the verifier then checks header, heading, period and status in reading order
+                pg = next((p for p in src["pages"] if any(abs((v or 0) - a["value"]) < 1e-9 for _, v in V.table_cell_candidates(V.collapse(p["text"]), claim))), None)
+                results.append(V.verify_table_cell(a, claim, pg["text"] if pg else "", source=_src_meta(src, pg["page"] if pg else None), level=level, verification_id=f"ver_{item['role']}_{src['source_id']}", input_name=item["name"], claim_id=claim["claim_id"],
+                                                   reviewer={"kind": "automated_passage_check", "id": "claim_verification.verify_table_cell", "note": "table-cell check in reading order" if pg else "row and value not found in this source"}))
+                continue
+            hits = V.locate_passages(src["pages"], a["value"], item["label_terms"])
             variant, vlabel = a, "as asserted"
             if not hits and a["unit"] == "GW" and item.get("rounding_uncertainty") is not None:
                 lo, hi = (a["value"] - item["rounding_uncertainty"]) * 1000, (a["value"] + item["rounding_uncertainty"]) * 1000
@@ -86,16 +96,18 @@ def verify_inputs(spec, store, evidence_by_id, target, sources=None):
 
 def _inp(role, verified, unit_of_claim=True):
     item, claim, rec, r = verified[role]
-    return S.make_input(item["name"], claim["value"], claim["unit"], as_of=item.get("as_of_date"), period_text=item.get("period_text"), basis=item["basis"], status=item["statement_status"], claim_ids=[claim["claim_id"]], verification=r, rounding=item.get("rounding_uncertainty"))
+    basis = "parent_own" if role in ("pipeline_parent", "re_pipeline_parent") and item["basis"] == "standalone" else item["basis"]  # verification says 'standalone', signals say 'parent_own'; the table heading is 'Owned by your Company'
+    return S.make_input(item["name"], claim["value"], claim["unit"], as_of=item.get("as_of_date"), period_text=item.get("period_text"), basis=basis, status=item["statement_status"], claim_ids=[claim["claim_id"]], verification=r, rounding=item.get("rounding_uncertainty"))
 
 def compute_signals(verified, synthetic=False):
     """Role-based signals, company-agnostic. Missing roles yield not_computable calculations instead of guesses."""
     calcs, derived = [], {}
     have = lambda *rs: all(r in verified for r in rs)
     I = {r: _inp(r, verified) for r in verified}
-    if have("pipeline_total_group", "pipeline_jv_sub"):
+    # A directly reported parent figure (roles pipeline_parent / re_pipeline_parent) is used as is; the whole-minus-part residual is only a fallback.
+    if have("pipeline_total_group", "pipeline_jv_sub") and not have("pipeline_parent"):
         derived["parent_pipeline_total"] = S.difference_input("parent_under_implementation", I["pipeline_total_group"], I["pipeline_jv_sub"], basis="parent_own", status="under_implementation")
-    if have("re_pipeline_group", "re_pipeline_jv_sub"):
+    if have("re_pipeline_group", "re_pipeline_jv_sub") and not have("re_pipeline_parent"):
         derived["parent_re_pipeline"] = S.difference_input("parent_re_under_implementation", I["re_pipeline_group"], I["re_pipeline_jv_sub"], basis="parent_own", status="under_implementation")
     def add(c): calcs.append(c)
     ctr = "Reporting boundaries differ by company; a parent/subsidiary split may reflect legal structure rather than economics, since subsidiaries are consolidated."
@@ -103,8 +115,9 @@ def compute_signals(verified, synthetic=False):
         add(S.ratio_signal("renewable_transition", "re_share_of_group_pipeline", I["re_pipeline_group"], I["pipeline_total_group"], counterargument="Pipeline entries may be at different stages and can slip or be cancelled.", falsification_test="The filing's component table does not sum to the total, or the renewable total is defined differently from the pipeline total.", synthetic=synthetic, basis_relation={("group", "group")}, status_pairs={("under_implementation", "under_implementation")}))
     if have("re_pipeline_jv_sub", "re_pipeline_group"):
         add(S.ratio_signal("subsidiary_jv_exposure", "jv_subsidiary_share_of_re_pipeline", I["re_pipeline_jv_sub"], I["re_pipeline_group"], counterargument=ctr, falsification_test="The JV/subsidiary renewable amount is shown to be a subset of a different denominator or a different date.", synthetic=synthetic, basis_relation={("jv_subsidiary_part", "group")}, status_pairs={("under_implementation", "under_implementation")}))
-    if "parent_re_pipeline" in derived and "parent_pipeline_total" in derived:
-        add(S.ratio_signal("renewable_transition", "re_share_of_parent_own_pipeline", derived["parent_re_pipeline"], derived["parent_pipeline_total"], counterargument=ctr, falsification_test="The parent's own table reports a materially different renewable share than the subtraction implies.", synthetic=synthetic, basis_relation={("parent_own", "parent_own")}, status_pairs={("under_implementation", "under_implementation")}))
+    parent_re = I.get("re_pipeline_parent") or derived.get("parent_re_pipeline"); parent_total = I.get("pipeline_parent") or derived.get("parent_pipeline_total")
+    if parent_re and parent_total:
+        add(S.ratio_signal("renewable_transition", "re_share_of_parent_own_pipeline", parent_re, parent_total, counterargument=ctr, falsification_test="The parent's own table reports a materially different renewable share than the subtraction implies.", synthetic=synthetic, basis_relation={("parent_own", "parent_own")}, status_pairs={("under_implementation", "under_implementation")}))
     if have("re_pipeline_jv_sub", "pipeline_jv_sub"):
         add(S.ratio_signal("renewable_transition", "re_share_of_jv_subsidiary_pipeline", I["re_pipeline_jv_sub"], I["pipeline_jv_sub"], counterargument=ctr, falsification_test="The JV/subsidiary table totals are not the same population as the renewable subset.", synthetic=synthetic, basis_relation={("jv_subsidiary_part", "jv_subsidiary_part")}, status_pairs={("under_implementation", "under_implementation")}))
     if have("pipeline_total_group", "installed_total_group"):
@@ -163,13 +176,29 @@ def build_finding(run_id, company, identity, calcs, derived, I, verifications, v
         key_verifications=list(key_eff.values()), independence_by_input={a['input_name']: a['independent_confirming_groups'] for a in audit if a['key']} or None,
         audit_trail=list(audit), decision_log=list(decision_log), conflicts=sum(bool(e.get('conflict')) for e in key_eff.values()), qualifying_evidence_count=len(contradictory))
 
-def run_pipeline(company, claims_path, evidence_path, inputs_path, run_dir, *, registry_path=None, simulate_llm=False, catalog_path=None, allow_network=False, synthetic=False, fetcher=None):
+def load_claim_store(claims_path, extra_claims_path=None):
+    """Baseline claims plus, optionally, an additive set (for example PDF-native table claims). Extra claims never replace baseline claims,
+    must be unverified, and must be linked to an evidence chunk so every downstream citation resolves; a duplicate claim_id is an error."""
+    claims, skipped = read_jsonl(claims_path), []
+    orphan = [c["claim_id"] for c in claims if not c.get("source_chunk_id")]  # only pdf_native_table claims may lack a chunk, and they are never baseline claims
+    if orphan: raise ValueError(f"baseline claims must carry a source_chunk_id; offending ids: {orphan[:3]}")
+    if extra_claims_path:
+        extra = read_jsonl(extra_claims_path)
+        skipped = [c["claim_id"] for c in extra if not c.get("source_chunk_id")]  # cannot be cited downstream; a spec that names one fails with an unknown-claim error
+        extra = [c for c in extra if c.get("source_chunk_id")]
+        dup = {c["claim_id"] for c in claims} & {c["claim_id"] for c in extra}
+        if dup: raise ValueError(f"extra claims duplicate baseline claim ids: {sorted(dup)[:3]}")
+        claims = claims + extra
+    store = ClaimStore(claims); store.extra_loaded, store.extra_skipped = (len(extra) if extra_claims_path else 0), skipped
+    return store
+
+def run_pipeline(company, claims_path, evidence_path, inputs_path, run_dir, *, registry_path=None, simulate_llm=False, catalog_path=None, allow_network=False, synthetic=False, fetcher=None, extra_claims_path=None):
     run = Path(run_dir); run.mkdir(parents=True, exist_ok=False); run_id = run.name; stages = []
     registry_path = registry_path or Config().registry_path
     target, identity = target_from_registry(registry_path, company)
-    store = ClaimStore.load(claims_path); evidence = read_jsonl(evidence_path); by_id = {r["evidence_id"]: r for r in evidence}
+    store = load_claim_store(claims_path, extra_claims_path); evidence = read_jsonl(evidence_path); by_id = {r["evidence_id"]: r for r in evidence}
     spec = json.loads(Path(inputs_path).read_text(encoding="utf-8"))
-    _stage(stages, "claims_load", "real", f"{len(store.claims)} claims loaded; all unverified")
+    _stage(stages, "claims_load", "real", f"{len(store.claims)} claims loaded; all unverified" + (f" (including {store.extra_loaded} additive PDF-native claims; {len(store.extra_skipped)} more skipped for lacking a linked evidence chunk)" if extra_claims_path else ""))
     wanted = {i["claim_id"] for i in spec["inputs"]}
     bundle = RB.select_bundle(store.claims, by_id, max_claims=40)
     bundle["claims"] = bundle["claims"] + [dict(store.get(c), _families=["spec"]) for c in wanted if c not in {x["claim_id"] for x in bundle["claims"]}]
@@ -227,9 +256,9 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--company", required=True); ap.add_argument("--claims", required=True); ap.add_argument("--evidence", default=str(ROOT / "data" / "processed_step6" / "evidence.jsonl"))
     ap.add_argument("--inputs", required=True); ap.add_argument("--run-dir", required=True); ap.add_argument("--registry"); ap.add_argument("--simulate-llm", action="store_true")
-    ap.add_argument("--catalog"); ap.add_argument("--allow-network", action="store_true"); ap.add_argument("--synthetic", action="store_true")
+    ap.add_argument("--catalog"); ap.add_argument("--allow-network", action="store_true"); ap.add_argument("--synthetic", action="store_true"); ap.add_argument("--extra-claims", help="additive claims.jsonl (e.g. from pdf_table_extraction); never replaces baseline claims")
     a = ap.parse_args(argv)
-    try: f, problems = run_pipeline(a.company, a.claims, a.evidence, a.inputs, a.run_dir, registry_path=a.registry, simulate_llm=a.simulate_llm, catalog_path=a.catalog, allow_network=a.allow_network, synthetic=a.synthetic)
+    try: f, problems = run_pipeline(a.company, a.claims, a.evidence, a.inputs, a.run_dir, registry_path=a.registry, simulate_llm=a.simulate_llm, catalog_path=a.catalog, allow_network=a.allow_network, synthetic=a.synthetic, extra_claims_path=a.extra_claims)
     except (OSError, ValueError, KeyError) as e:
         print(f"Pipeline error: {type(e).__name__}: {e}", file=sys.stderr); return 2
     print(verification_table(f))

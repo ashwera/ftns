@@ -1,0 +1,1316 @@
+[
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_installed_total_group_1543b65f_text",
+    "input_name": "group_installed_capacity",
+    "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+    "assertion": {
+      "value": 79930,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "consolidated",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "commercial capacity"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "confirmed",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_252ddc5ca75aa6a8bc871cb1",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 90,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"DIRECTORS’ REPORT Dear Members, Financial Year ended 31 March 2025, the Auditors’ report, and comments of the Comptroller and Auditor General On behalf of the Board of Directors, it is our privilege to (CAG) of India on the financial statements thereon. present the 49th Annual Report and 6th Integrated Annual Report of NTPC Limited (‘NTPC” or Your Company) for the NTPC’s unwavering commitment to drive Nation’s energy Financial Year ended 31 March 2025 along with Audited transition remained at the core of its operations and Standalone and Consolidated Financial Statements for the strategic initiatives during the FY 2024-25. Major Highlights of your Company for the financial year 2024-25 are outlined below, providing a brief overview of accomplishments across all operational and strategic fronts: • At the group level, your Company added 3,972 MW of commercial capacity during the year. As on 31 March 2025, the total commercial capacity stood at 79,930 MW on a consolidated basis and 59,413 MW on a standalone basis. • Power generation recorded a growth of 3.08% on a standalone basis and 3.90% at the group level. • Your Company achieved a remarkable average Plant Load Factor (PLF) of 77.44% in FY25, significantly higher than the national average of 69.96% for coal-based plants. This marked the highest PLF recorded by the Company in the past seven years. • Notably, seven of your Company’s stations ranked among the top 15 performers in the All-India PLF rankings. • The captive coal production witnessed a steep year-on-year growth of 29%, increasing from 35.64 MMT in FY24 to 45.82 MMT in FY25. This significant rise has strengthened long-term fuel security for the Company’s operations. • Your Company at group level has made significant progress in strengthening fuel security. In FY25, a total of 282.80 MMT of coal was received, reflecting a 5.2% increase over the 268.70 MMT received in the previous year. Notably, only 2.53 MMT of this was imported coal, resulting a substantial reduction compared to 10.50 MMT imported in the previous year, underscoring the Company’s continued focus on enhancing domestic coal sourcing and reducing dependence on imports. • The successful listing of NTPC Green Energy Limited (NGEL) on 27th November 2024 through its initial public offer (IPO) of ` 10,000 crore marked a significant milestone, positioning NGEL as a prominent player in India’s renewable energy sector. • In line with NTPC’s broader vision to accelerate its renewable energy expansion and strengthen its sustainability commitment, ONGC NTPC Green Private Limited (ONGPL) - a 50:50 joint venture of NTPC Green Energy Limited and ONGC Green Limited has acquired 100% equity stake in Ayana Renewable Power (P) Limited, having an enterpise value of ` 19,500 crore. It has 2,123 MW operational and 1,989.7 MW under construction capacity. • Govt. of India has approved transfer of Mahi Banswara Rajasthan Atomic Power Project (MBRAPP) 4x700 MWe based on indigenous PHWR technology, from Nuclear Power Corporation of India Limited (NPCIL) to the JV Company i.e. Anushakti Vidhyut Nigam Ltd (ASHVINI). • Your Company’s group Level total income for FY25 increased by 5%, amounting to ` 190,862 crore compared to ` 1,81,166 crore in FY24. • The Group CAPEX for FY25 rose to ` 48,594.59 crore, making a notable increase from ` 35,385 crore in FY24. On a standalone basis, CAPEX recorded strong growth reaching ` 23,664.59 crore from ` 19,444 crore in the previous year. • The Dividend income of ` 2,101.48 crore recognized from its subsidiaries, joint venture companies, and others in FY25, as compared to ` 1,639.08 crore recognized in FY24, reflecting a healthy growth in returns from strategic investments. • Your Company triumphed again at the ‘ATD BEST Awards 2025’, marking its eighth win in talent development excellence. Your Company is also certified as a “Top Employer 2025” in India by Brandon Hall Group. 176 | INTEGRATED ANNUAL REPORT - 2024-25\",\"The following is a summary",
+      "passage_sha256": "7074c05795cbfe5267ad2709fbdb42d791c01c383945f5d33bd81f3be9246015"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "79930 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['commercial capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "'consolidated' is the nearest basis word"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "commissioned/commercial wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value, unit/scale, label terms, period, basis, status and entity are each supported by the cited passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_installed_total_group_ntpc_ar_fy2024_25",
+    "input_name": "group_installed_capacity",
+    "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+    "assertion": {
+      "value": 79930,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "consolidated",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "commercial capacity"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 91,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "Additionally, when considering the collective efforts of your Company and its joint ventures & subsidiaries, the aggregate group level commercial capacity was further augmented by 3,972 MW resulting in an overall group level commercial capacity of 79,930 MW as per detail given below: - Description Capacity (MW) Owned by your Company Coal based projects 53,850 Gas based projects 4,017 Hydro Projects 800 Renewable Energy Projects (Including Singrauli small hydro) 746 Sub-total 59,413 Joint Ventures & Subsidiaries Coal based projects 9,004 Gas based projects (Including NEEPCO-527 MW) 2,494 Hydro Projects of THDCL (1,424 MW) & NEEPCO (1525 MW) 2,925 Renewable Energy Projects including THDCL (163 MW) & NEEPCO (5 MW) & Ayana Power -ONGPL (2123 MW) 6,094 Sub-total 20,517 Total 79,930 9.",
+      "passage_sha256": "8b8e11ae334e29fd3b4d4f81345ae071491587f245745ed678a2d4487bbb462e"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "both the target and other organization(s) ['NEEPCO', 'ONGPL', 'THDCL'] are named near the figure; whose figure it is is not settled"
+      },
+      "value": {
+        "result": "match",
+        "detail": "79930 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'MW' next to the number supports MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['commercial capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "unresolved",
+        "detail": "no period phrase near the figure"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "'group level' is the nearest basis word"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "commissioned/commercial wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['entity', 'period'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_assertion",
+      "note": "as asserted"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_installed_group_0b93c941_text",
+    "input_name": "re_installed_capacity_group",
+    "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+    "assertion": {
+      "value": 6.8,
+      "unit": "GW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "commissioned RE capacity"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_fcde1c84df4f8b650bb1afdd",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 112,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"forecasting have been deployed across organization, and Mahatma Phule Renewable Energy and efforts for integrating the various use cases will intensify Infrastructure Technology Limited (MAHAPREIT) in the coming year to maximize the productivity and will be engaged in the business of developing, operating and maintaining RE Parks including efficiency gains. UMREPP/RE Projects. Renewables Growth 3 JV Agreement (74:26) with Chhattisgarh State While continuing the capacity expansion, to meet the Power Generation Company Limited (CSPGCL) for growth aspirations of Indian economy, it is of cardinal development of RE Projects up to 2 GW capacities. importance to be a major contributor in the energy These partnerships will accelerate the RE capacity addition transition fostering the achievement of net zero through facilitation of land acquisition, obtaining grid milestone. Your Company, therefore, is also focusing on connectivity and other clearances. These partnerships will reducing the carbon footprint through a steady growth also help in mitigating risks by distributing financial and in green business. Your Company has an ambitious plan operational burdens. to reach a total installed capacity of 130 GW by 2032. In Renewable space, the target is to achieve 60 GW by 2032. Organic Growth As on 31 March 2025, RE capacity of NTPC under various stages of implementation totals up to 14.5 GW. Further 11 As on 31 March 2025, Your Company has a cumulative GW of RE projects are in pipeline under various mode of commissioned RE capacity of 6.8 GW. This portfolio includes some of the country’s biggest ground mounted tendering/award. NGEL, which was incorporated to focus solar projects of capacity 320 MW and 300 MW located in on the green business is spearheading these efforts and Rajasthan and the country’s second largest floating solar has undertaken several initiatives for aggressively adding capacity. project of 100 MW at Ramagundam. RE projects with a cumulative capacity of 14.5 GW are • Initial public offer (IPO): NGEL raised ` 10,000 crore under execution which includes Solar, Wind and energy through an IPO in November 2024. The IPO had received storage projects. UMREPP at Gujarat (4.75 GW), DVC (0.7 an overall subscription of 2.55 times, reflecting investor GW), and Madhya Pradesh (0.6 GW) are being developed interest. IPO marked a significant milestone in NGEL’s by NTPC along with a green Hydrogen Hub at Pudimadaka, growth journey and bolstered its financial capacity to Andhra Pradesh. accelerate green energy projects. MOU has been inked with Madhya Pradesh Power • Strategic Partnerships: NGEL has entered in strategic Generating Company Limited (MPPGCL) for setting up partnerships with State Governments and other of Projects comprising of Solar/Wind/Hybrid with or companies through formation of Joint ventures for without storage up to 20 GW. MOUs have also been facilitating the capacity addition, some of them are: signed with other state governments to undertake more 3 NTPC Rajasthan Green Energy Limited (NRGEL), UMREP projects accounting cumulatively to over 50 GW. a 74:26 JV with RVUNL, to develop RE Parks and Also, MNRE has accorded approval to NTPC to act as a Green Hydrogen Projects up to 25 GW capacity. Renewable Energy Implementing Agency (REIA) and issue tenders for setting up renewable power projects (wind and 3 AP NGEL HARIT AMRIT LIMITED (APNHAL), a 50:50 solar) under developer mode. As on 31 March 2025, 5.27 joint venture with New & Renewable Energy GW of RE projects has been commissioned in this mode Development Corporation of Andhra Pradesh and 16.13 GW of RE projects are under implementation. Limited (NREDCAP) to develop RE Projects up to In FY25, RE capacity of 12 GW, comprising vanilla solar and 25 GW capacities, PSP up to 10 GW capacity and wind, hybrid and FDRE (Firm and Dispatchable Renewable Green Hydrogen Projects. Energy) have been tendered out. 3 NTPC UP Green Energy Limited (NUGEL), a 51:49 JV Inorganic Growth ",
+      "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "6.8 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'GW' next to the number supports GW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['commissioned RE capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "commissioned/commercial wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_installed_group_ntpc_ar_fy2024_25",
+    "input_name": "re_installed_capacity_group",
+    "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+    "assertion": {
+      "value": 6.8,
+      "unit": "GW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "label_terms": [
+        "commissioned RE capacity"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 112,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "Organic Growth As on 31 March 2025, Your Company has a cumulative commissioned RE capacity of 6.8 GW.",
+      "passage_sha256": "50dab78b7b615bf8284138bab76779059dda1a7d3ec878435d28fd32e0c12dc7"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "6.8 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'GW' next to the number supports GW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['commissioned RE capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "commissioned/commercial wording present"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_assertion",
+      "note": "as asserted"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_group_cc88f4b8_text",
+    "input_name": "re_under_implementation_group",
+    "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+    "assertion": {
+      "value": 14.5,
+      "unit": "GW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "RE capacity"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_fcde1c84df4f8b650bb1afdd",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 112,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"forecasting have been deployed across organization, and Mahatma Phule Renewable Energy and efforts for integrating the various use cases will intensify Infrastructure Technology Limited (MAHAPREIT) in the coming year to maximize the productivity and will be engaged in the business of developing, operating and maintaining RE Parks including efficiency gains. UMREPP/RE Projects. Renewables Growth 3 JV Agreement (74:26) with Chhattisgarh State While continuing the capacity expansion, to meet the Power Generation Company Limited (CSPGCL) for growth aspirations of Indian economy, it is of cardinal development of RE Projects up to 2 GW capacities. importance to be a major contributor in the energy These partnerships will accelerate the RE capacity addition transition fostering the achievement of net zero through facilitation of land acquisition, obtaining grid milestone. Your Company, therefore, is also focusing on connectivity and other clearances. These partnerships will reducing the carbon footprint through a steady growth also help in mitigating risks by distributing financial and in green business. Your Company has an ambitious plan operational burdens. to reach a total installed capacity of 130 GW by 2032. In Renewable space, the target is to achieve 60 GW by 2032. Organic Growth As on 31 March 2025, RE capacity of NTPC under various stages of implementation totals up to 14.5 GW. Further 11 As on 31 March 2025, Your Company has a cumulative GW of RE projects are in pipeline under various mode of commissioned RE capacity of 6.8 GW. This portfolio includes some of the country’s biggest ground mounted tendering/award. NGEL, which was incorporated to focus solar projects of capacity 320 MW and 300 MW located in on the green business is spearheading these efforts and Rajasthan and the country’s second largest floating solar has undertaken several initiatives for aggressively adding capacity. project of 100 MW at Ramagundam. RE projects with a cumulative capacity of 14.5 GW are • Initial public offer (IPO): NGEL raised ` 10,000 crore under execution which includes Solar, Wind and energy through an IPO in November 2024. The IPO had received storage projects. UMREPP at Gujarat (4.75 GW), DVC (0.7 an overall subscription of 2.55 times, reflecting investor GW), and Madhya Pradesh (0.6 GW) are being developed interest. IPO marked a significant milestone in NGEL’s by NTPC along with a green Hydrogen Hub at Pudimadaka, growth journey and bolstered its financial capacity to Andhra Pradesh. accelerate green energy projects. MOU has been inked with Madhya Pradesh Power • Strategic Partnerships: NGEL has entered in strategic Generating Company Limited (MPPGCL) for setting up partnerships with State Governments and other of Projects comprising of Solar/Wind/Hybrid with or companies through formation of Joint ventures for without storage up to 20 GW. MOUs have also been facilitating the capacity addition, some of them are: signed with other state governments to undertake more 3 NTPC Rajasthan Green Energy Limited (NRGEL), UMREP projects accounting cumulatively to over 50 GW. a 74:26 JV with RVUNL, to develop RE Parks and Also, MNRE has accorded approval to NTPC to act as a Green Hydrogen Projects up to 25 GW capacity. Renewable Energy Implementing Agency (REIA) and issue tenders for setting up renewable power projects (wind and 3 AP NGEL HARIT AMRIT LIMITED (APNHAL), a 50:50 solar) under developer mode. As on 31 March 2025, 5.27 joint venture with New & Renewable Energy GW of RE projects has been commissioned in this mode Development Corporation of Andhra Pradesh and 16.13 GW of RE projects are under implementation. Limited (NREDCAP) to develop RE Projects up to In FY25, RE capacity of 12 GW, comprising vanilla solar and 25 GW capacities, PSP up to 10 GW capacity and wind, hybrid and FDRE (Firm and Dispatchable Renewable Green Hydrogen Projects. Energy) have been tendered out. 3 NTPC UP Green Energy Limited (NUGEL), a 51:49 JV Inorganic Growth ",
+      "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "14.5 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'GW' next to the number supports GW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['RE capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "unresolved",
+        "detail": "no implementation-status wording near the figure"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis', 'statement_status'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_group_ntpc_ar_fy2024_25",
+    "input_name": "re_under_implementation_group",
+    "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+    "assertion": {
+      "value": 14.5,
+      "unit": "GW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "RE capacity"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 112,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "As on 31 March 2025, RE capacity of NTPC under various stages of implementation totals up to 14.5 GW.",
+      "passage_sha256": "49347955cf5b64d778b091bdd60960ee8571529f0778b57498aa518256ab4d9e"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "14.5 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'GW' next to the number supports GW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['RE capacity'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2025-03-31 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "unresolved",
+        "detail": "no implementation-status wording near the figure"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis', 'statement_status'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_assertion",
+      "note": "as asserted"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_total_group_7cd8f550_text",
+    "input_name": "total_under_implementation_group",
+    "claim_id": "pdfn_ac835b0493bc7cc37cd8f550",
+    "assertion": {
+      "value": 33671.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Total On-Going Projects"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 91,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which 8.1 Billing and Realization encompasses both financial and non-financial information to enable the Members to take well informed decisions During FY 2024-25, your Company has realized 100% of its and have a better understanding of the Company’s long- bills due for realisation. The target set by the Government term perspective. This Report also touches upon aspects of India (GoI), for realization of dues for energy supply in such as organization’s strategy, governance framework, FY25 has also been achieved. Most of the beneficiaries performance and prospects of value creation based on have made timely payments and availed the applicable the six forms of capital viz. financial capital, manufactured rebates. capital, intellectual capital, human capital, social and Your Company has in place a robust payment security relationship capital, and natural capital. mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, 6. Group Companies: Subsidiaries and payment is secured by the Tri-Partite Agreements (TPAs) Joint Ventures signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the Your Company is one of India’s largest energy TPA, any default in payment by the State owned Discoms conglomerates, established with the objective of can be recovered directly from the State’s account in RBI. accelerating the development of the power sector in the The TPAs signed during the FY 2000-01 were valid up to country. Over the years, it has emerged as a dominant 31st October 2016. Subsequently, these TPAs have been player in the energy industry, with a robust presence extended for a further period of 10 to 15 years. As of across the entire energy value chain. The Company has now, 29 out of total 31 States/UTs have signed the TPAs also strategically diversified its operations through its extension documents. The signing of TPAs extension by subsidiaries, joint ventures, and associate companies, remaining States is being taken up. thereby strengthening its position at the group level. 8.2 Power Trading in Power Exchange As on 31 March 2025, Your Company has total 11 subsidiary Your Company has been participating in both the companies and 16 joint venture companies, including 2 Integrated Day Ahead Market (I-DAM), Term Ahead international joint ventures, engaged in various business Market (TAM) and the Real Time Market (RTM) for selling activities. any un-requisitioned surplus (URS) in the Power Exchange In addition, Your Company has 7 step-down subsidiary through its trading arm- NTPC Vidyut Vyapar Nigam Limited companies under its direct subsidiary companies. Further, (NVVN). Besides selling the URS power, it has also been details of aforesaid entities are provided in Para no. 11.1 selling any regulated power, merchant power, relinquished of this Report. gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 7. Operational Performance crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this Your Company achieved a record power generation of sale have been shared with the beneficiaries as per the 372.83 billion units (BUs) on a standalone basis and 438.68 extant regulatory provisions. BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to 8.3 Strengthening Customer Relationship a year-on-year (Y-o-Y) growth of 3.08% on a standalone Customer Focus is one of the core values of your Company basis and 3.90% at the Group level. Out of the total 438.68 (ICOMIT). In line with this, your Company has taken up BUs generated, thermal power stations contributed 417.08 several initiatives targeted towards the",
+      "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "33671.0 follows the row label 'Total On-Going Projects as on 31 March 2025 (I)+(II)'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "total row names both sections"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_total_group_ntpc_ar_fy2024_25",
+    "input_name": "total_under_implementation_group",
+    "claim_id": "pdfn_ac835b0493bc7cc37cd8f550",
+    "assertion": {
+      "value": 33671.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Total On-Going Projects"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 91,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "NTPC LIMITED | 179178 | INTEGRATED ANNUAL REPORT - 2024-25 Your Company being one of the top 500 listed companies in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which encompasses both financial and non-financial information to enable the Members to take well informed decisions and have a better understanding of the Company’s long- term perspective. This Report also touches upon aspects such as organization’s strategy, governance framework, performance and prospects of value creation based on the six forms of capital viz. financial capital, manufactured capital, intellectual capital, human capital, social and relationship capital, and natural capital. 6. Group Companies: Subsidiaries and Joint Ventures Your Company is one of India’s largest energy conglomerates, established with the objective of accelerating the development of the power sector in the country. Over the years, it has emerged as a dominant player in the energy industry, with a robust presence across the entire energy value chain. The Company has also strategically diversified its operations through its subsidiaries, joint ventures, and associate companies, thereby strengthening its position at the group level. As on 31 March 2025, Your Company has total 11 subsidiary companies and 16 joint venture companies, including 2 international joint ventures, engaged in various business activities. In addition, Your Company has 7 step-down subsidiary companies under its direct subsidiary companies. Further, details of aforesaid entities are provided in Para no. 11.1 of this Report. 7. Operational Performance Your Company achieved a record power generation of 372.83 billion units (BUs) on a standalone basis and 438.68 BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to a year-on-year (Y-o-Y) growth of 3.08% on a standalone basis and 3.90% at the Group level. Out of the total 438.68 BUs generated, thermal power stations contributed 417.08 BUs, while hydro and renewable sources contributed 13.39 BUs and 8.21 BUs, respectively. During FY 2024-25, average Plant Load Factor (PLF) of NTPC coal stations was 77.44% as against the National Average of 69.96%. 8. Commercial Performance 8.1 Billing and Realization During FY 2024-25, your Company has realized 100% of its bills due for realisation. The target set by the Government of India (GoI), for realization of dues for energy supply in FY25 has also been achieved. Most of the beneficiaries have made timely payments and availed the applicable rebates. Your Company has in place a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, payment is secured by the Tri-Partite Agreements (TPAs) signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the TPA, any default in payment by the State owned Discoms can be recovered directly from the State’s account in RBI. The TPAs signed during the FY 2000-01 were valid up to 31st October 2016. Subsequently, these TPAs have been extended for a further period of 10 to 15 years. As of now, 29 out of total 31 States/UTs have signed the TPAs extension documents. The signing of TPAs extension by remaining States is being taken up. 8.2 Power Trading in Power Exchange Your Company has been participating in both the Integrated Day Ahead Market (I-DAM), Term Ahead Market (TAM) and the Real Time Market (RTM) for selling any un-requisitioned surplus (URS) in the Power Exchange through its trading arm- NTPC Vidyut Vyapar Nigam Limited (NVVN). Besides selling the URS power, it has also been selling any regulated power, merchant power, relinquished gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this sale",
+      "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "33671.0 follows the row label 'Total On-Going Projects as on 31 March 2025 (I)+(II)'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "total row names both sections"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_table_cell",
+      "note": "table-cell check in reading order"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_jv_sub_834a1893_text",
+    "input_name": "jv_subsidiary_under_implementation",
+    "claim_id": "pdfn_b7aa459b3f974ff5834a1893",
+    "assertion": {
+      "value": 18295.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Total (II)"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 91,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which 8.1 Billing and Realization encompasses both financial and non-financial information to enable the Members to take well informed decisions During FY 2024-25, your Company has realized 100% of its and have a better understanding of the Company’s long- bills due for realisation. The target set by the Government term perspective. This Report also touches upon aspects of India (GoI), for realization of dues for energy supply in such as organization’s strategy, governance framework, FY25 has also been achieved. Most of the beneficiaries performance and prospects of value creation based on have made timely payments and availed the applicable the six forms of capital viz. financial capital, manufactured rebates. capital, intellectual capital, human capital, social and Your Company has in place a robust payment security relationship capital, and natural capital. mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, 6. Group Companies: Subsidiaries and payment is secured by the Tri-Partite Agreements (TPAs) Joint Ventures signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the Your Company is one of India’s largest energy TPA, any default in payment by the State owned Discoms conglomerates, established with the objective of can be recovered directly from the State’s account in RBI. accelerating the development of the power sector in the The TPAs signed during the FY 2000-01 were valid up to country. Over the years, it has emerged as a dominant 31st October 2016. Subsequently, these TPAs have been player in the energy industry, with a robust presence extended for a further period of 10 to 15 years. As of across the entire energy value chain. The Company has now, 29 out of total 31 States/UTs have signed the TPAs also strategically diversified its operations through its extension documents. The signing of TPAs extension by subsidiaries, joint ventures, and associate companies, remaining States is being taken up. thereby strengthening its position at the group level. 8.2 Power Trading in Power Exchange As on 31 March 2025, Your Company has total 11 subsidiary Your Company has been participating in both the companies and 16 joint venture companies, including 2 Integrated Day Ahead Market (I-DAM), Term Ahead international joint ventures, engaged in various business Market (TAM) and the Real Time Market (RTM) for selling activities. any un-requisitioned surplus (URS) in the Power Exchange In addition, Your Company has 7 step-down subsidiary through its trading arm- NTPC Vidyut Vyapar Nigam Limited companies under its direct subsidiary companies. Further, (NVVN). Besides selling the URS power, it has also been details of aforesaid entities are provided in Para no. 11.1 selling any regulated power, merchant power, relinquished of this Report. gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 7. Operational Performance crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this Your Company achieved a record power generation of sale have been shared with the beneficiaries as per the 372.83 billion units (BUs) on a standalone basis and 438.68 extant regulatory provisions. BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to 8.3 Strengthening Customer Relationship a year-on-year (Y-o-Y) growth of 3.08% on a standalone Customer Focus is one of the core values of your Company basis and 3.90% at the Group level. Out of the total 438.68 (ICOMIT). In line with this, your Company has taken up BUs generated, thermal power stations contributed 417.08 several initiatives targeted towards the",
+      "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "18295.0 follows the row label 'Total (II)'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'II Projects under JVs & Subsidiaries'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_jv_sub_ntpc_ar_fy2024_25",
+    "input_name": "jv_subsidiary_under_implementation",
+    "claim_id": "pdfn_b7aa459b3f974ff5834a1893",
+    "assertion": {
+      "value": 18295.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Total (II)"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 91,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "NTPC LIMITED | 179178 | INTEGRATED ANNUAL REPORT - 2024-25 Your Company being one of the top 500 listed companies in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which encompasses both financial and non-financial information to enable the Members to take well informed decisions and have a better understanding of the Company’s long- term perspective. This Report also touches upon aspects such as organization’s strategy, governance framework, performance and prospects of value creation based on the six forms of capital viz. financial capital, manufactured capital, intellectual capital, human capital, social and relationship capital, and natural capital. 6. Group Companies: Subsidiaries and Joint Ventures Your Company is one of India’s largest energy conglomerates, established with the objective of accelerating the development of the power sector in the country. Over the years, it has emerged as a dominant player in the energy industry, with a robust presence across the entire energy value chain. The Company has also strategically diversified its operations through its subsidiaries, joint ventures, and associate companies, thereby strengthening its position at the group level. As on 31 March 2025, Your Company has total 11 subsidiary companies and 16 joint venture companies, including 2 international joint ventures, engaged in various business activities. In addition, Your Company has 7 step-down subsidiary companies under its direct subsidiary companies. Further, details of aforesaid entities are provided in Para no. 11.1 of this Report. 7. Operational Performance Your Company achieved a record power generation of 372.83 billion units (BUs) on a standalone basis and 438.68 BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to a year-on-year (Y-o-Y) growth of 3.08% on a standalone basis and 3.90% at the Group level. Out of the total 438.68 BUs generated, thermal power stations contributed 417.08 BUs, while hydro and renewable sources contributed 13.39 BUs and 8.21 BUs, respectively. During FY 2024-25, average Plant Load Factor (PLF) of NTPC coal stations was 77.44% as against the National Average of 69.96%. 8. Commercial Performance 8.1 Billing and Realization During FY 2024-25, your Company has realized 100% of its bills due for realisation. The target set by the Government of India (GoI), for realization of dues for energy supply in FY25 has also been achieved. Most of the beneficiaries have made timely payments and availed the applicable rebates. Your Company has in place a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, payment is secured by the Tri-Partite Agreements (TPAs) signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the TPA, any default in payment by the State owned Discoms can be recovered directly from the State’s account in RBI. The TPAs signed during the FY 2000-01 were valid up to 31st October 2016. Subsequently, these TPAs have been extended for a further period of 10 to 15 years. As of now, 29 out of total 31 States/UTs have signed the TPAs extension documents. The signing of TPAs extension by remaining States is being taken up. 8.2 Power Trading in Power Exchange Your Company has been participating in both the Integrated Day Ahead Market (I-DAM), Term Ahead Market (TAM) and the Real Time Market (RTM) for selling any un-requisitioned surplus (URS) in the Power Exchange through its trading arm- NTPC Vidyut Vyapar Nigam Limited (NVVN). Besides selling the URS power, it has also been selling any regulated power, merchant power, relinquished gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this sale",
+      "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "18295.0 follows the row label 'Total (II)'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'II Projects under JVs & Subsidiaries'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_table_cell",
+      "note": "table-cell check in reading order"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_jv_sub_4f71893a_text",
+    "input_name": "re_under_implementation_jv_subsidiary",
+    "claim_id": "pdfn_8b1fc767a630c90d4f71893a",
+    "assertion": {
+      "value": 13791.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Renewable Projects"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 91,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which 8.1 Billing and Realization encompasses both financial and non-financial information to enable the Members to take well informed decisions During FY 2024-25, your Company has realized 100% of its and have a better understanding of the Company’s long- bills due for realisation. The target set by the Government term perspective. This Report also touches upon aspects of India (GoI), for realization of dues for energy supply in such as organization’s strategy, governance framework, FY25 has also been achieved. Most of the beneficiaries performance and prospects of value creation based on have made timely payments and availed the applicable the six forms of capital viz. financial capital, manufactured rebates. capital, intellectual capital, human capital, social and Your Company has in place a robust payment security relationship capital, and natural capital. mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, 6. Group Companies: Subsidiaries and payment is secured by the Tri-Partite Agreements (TPAs) Joint Ventures signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the Your Company is one of India’s largest energy TPA, any default in payment by the State owned Discoms conglomerates, established with the objective of can be recovered directly from the State’s account in RBI. accelerating the development of the power sector in the The TPAs signed during the FY 2000-01 were valid up to country. Over the years, it has emerged as a dominant 31st October 2016. Subsequently, these TPAs have been player in the energy industry, with a robust presence extended for a further period of 10 to 15 years. As of across the entire energy value chain. The Company has now, 29 out of total 31 States/UTs have signed the TPAs also strategically diversified its operations through its extension documents. The signing of TPAs extension by subsidiaries, joint ventures, and associate companies, remaining States is being taken up. thereby strengthening its position at the group level. 8.2 Power Trading in Power Exchange As on 31 March 2025, Your Company has total 11 subsidiary Your Company has been participating in both the companies and 16 joint venture companies, including 2 Integrated Day Ahead Market (I-DAM), Term Ahead international joint ventures, engaged in various business Market (TAM) and the Real Time Market (RTM) for selling activities. any un-requisitioned surplus (URS) in the Power Exchange In addition, Your Company has 7 step-down subsidiary through its trading arm- NTPC Vidyut Vyapar Nigam Limited companies under its direct subsidiary companies. Further, (NVVN). Besides selling the URS power, it has also been details of aforesaid entities are provided in Para no. 11.1 selling any regulated power, merchant power, relinquished of this Report. gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 7. Operational Performance crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this Your Company achieved a record power generation of sale have been shared with the beneficiaries as per the 372.83 billion units (BUs) on a standalone basis and 438.68 extant regulatory provisions. BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to 8.3 Strengthening Customer Relationship a year-on-year (Y-o-Y) growth of 3.08% on a standalone Customer Focus is one of the core values of your Company basis and 3.90% at the Group level. Out of the total 438.68 (ICOMIT). In line with this, your Company has taken up BUs generated, thermal power stations contributed 417.08 several initiatives targeted towards the",
+      "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "13791.0 follows the row label 'c) Renewable Projects'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'II Projects under JVs & Subsidiaries'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_jv_sub_ntpc_ar_fy2024_25",
+    "input_name": "re_under_implementation_jv_subsidiary",
+    "claim_id": "pdfn_8b1fc767a630c90d4f71893a",
+    "assertion": {
+      "value": 13791.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Renewable Projects"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 91,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "NTPC LIMITED | 179178 | INTEGRATED ANNUAL REPORT - 2024-25 Your Company being one of the top 500 listed companies in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which encompasses both financial and non-financial information to enable the Members to take well informed decisions and have a better understanding of the Company’s long- term perspective. This Report also touches upon aspects such as organization’s strategy, governance framework, performance and prospects of value creation based on the six forms of capital viz. financial capital, manufactured capital, intellectual capital, human capital, social and relationship capital, and natural capital. 6. Group Companies: Subsidiaries and Joint Ventures Your Company is one of India’s largest energy conglomerates, established with the objective of accelerating the development of the power sector in the country. Over the years, it has emerged as a dominant player in the energy industry, with a robust presence across the entire energy value chain. The Company has also strategically diversified its operations through its subsidiaries, joint ventures, and associate companies, thereby strengthening its position at the group level. As on 31 March 2025, Your Company has total 11 subsidiary companies and 16 joint venture companies, including 2 international joint ventures, engaged in various business activities. In addition, Your Company has 7 step-down subsidiary companies under its direct subsidiary companies. Further, details of aforesaid entities are provided in Para no. 11.1 of this Report. 7. Operational Performance Your Company achieved a record power generation of 372.83 billion units (BUs) on a standalone basis and 438.68 BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to a year-on-year (Y-o-Y) growth of 3.08% on a standalone basis and 3.90% at the Group level. Out of the total 438.68 BUs generated, thermal power stations contributed 417.08 BUs, while hydro and renewable sources contributed 13.39 BUs and 8.21 BUs, respectively. During FY 2024-25, average Plant Load Factor (PLF) of NTPC coal stations was 77.44% as against the National Average of 69.96%. 8. Commercial Performance 8.1 Billing and Realization During FY 2024-25, your Company has realized 100% of its bills due for realisation. The target set by the Government of India (GoI), for realization of dues for energy supply in FY25 has also been achieved. Most of the beneficiaries have made timely payments and availed the applicable rebates. Your Company has in place a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, payment is secured by the Tri-Partite Agreements (TPAs) signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the TPA, any default in payment by the State owned Discoms can be recovered directly from the State’s account in RBI. The TPAs signed during the FY 2000-01 were valid up to 31st October 2016. Subsequently, these TPAs have been extended for a further period of 10 to 15 years. As of now, 29 out of total 31 States/UTs have signed the TPAs extension documents. The signing of TPAs extension by remaining States is being taken up. 8.2 Power Trading in Power Exchange Your Company has been participating in both the Integrated Day Ahead Market (I-DAM), Term Ahead Market (TAM) and the Real Time Market (RTM) for selling any un-requisitioned surplus (URS) in the Power Exchange through its trading arm- NTPC Vidyut Vyapar Nigam Limited (NVVN). Besides selling the URS power, it has also been selling any regulated power, merchant power, relinquished gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this sale",
+      "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "13791.0 follows the row label 'c) Renewable Projects'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'II Projects under JVs & Subsidiaries'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_table_cell",
+      "note": "table-cell check in reading order"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_target_6a48d913_text",
+    "input_name": "re_capacity_target_2032",
+    "claim_id": "cl1_4bad374a50229c566a48d913",
+    "assertion": {
+      "value": 60,
+      "unit": "GW",
+      "period_type": "unknown",
+      "as_of_date": null,
+      "period_text": "2032",
+      "basis": "group",
+      "statement_status": "target",
+      "label_terms": [
+        "target"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_fcde1c84df4f8b650bb1afdd",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 112,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"forecasting have been deployed across organization, and Mahatma Phule Renewable Energy and efforts for integrating the various use cases will intensify Infrastructure Technology Limited (MAHAPREIT) in the coming year to maximize the productivity and will be engaged in the business of developing, operating and maintaining RE Parks including efficiency gains. UMREPP/RE Projects. Renewables Growth 3 JV Agreement (74:26) with Chhattisgarh State While continuing the capacity expansion, to meet the Power Generation Company Limited (CSPGCL) for growth aspirations of Indian economy, it is of cardinal development of RE Projects up to 2 GW capacities. importance to be a major contributor in the energy These partnerships will accelerate the RE capacity addition transition fostering the achievement of net zero through facilitation of land acquisition, obtaining grid milestone. Your Company, therefore, is also focusing on connectivity and other clearances. These partnerships will reducing the carbon footprint through a steady growth also help in mitigating risks by distributing financial and in green business. Your Company has an ambitious plan operational burdens. to reach a total installed capacity of 130 GW by 2032. In Renewable space, the target is to achieve 60 GW by 2032. Organic Growth As on 31 March 2025, RE capacity of NTPC under various stages of implementation totals up to 14.5 GW. Further 11 As on 31 March 2025, Your Company has a cumulative GW of RE projects are in pipeline under various mode of commissioned RE capacity of 6.8 GW. This portfolio includes some of the country’s biggest ground mounted tendering/award. NGEL, which was incorporated to focus solar projects of capacity 320 MW and 300 MW located in on the green business is spearheading these efforts and Rajasthan and the country’s second largest floating solar has undertaken several initiatives for aggressively adding capacity. project of 100 MW at Ramagundam. RE projects with a cumulative capacity of 14.5 GW are • Initial public offer (IPO): NGEL raised ` 10,000 crore under execution which includes Solar, Wind and energy through an IPO in November 2024. The IPO had received storage projects. UMREPP at Gujarat (4.75 GW), DVC (0.7 an overall subscription of 2.55 times, reflecting investor GW), and Madhya Pradesh (0.6 GW) are being developed interest. IPO marked a significant milestone in NGEL’s by NTPC along with a green Hydrogen Hub at Pudimadaka, growth journey and bolstered its financial capacity to Andhra Pradesh. accelerate green energy projects. MOU has been inked with Madhya Pradesh Power • Strategic Partnerships: NGEL has entered in strategic Generating Company Limited (MPPGCL) for setting up partnerships with State Governments and other of Projects comprising of Solar/Wind/Hybrid with or companies through formation of Joint ventures for without storage up to 20 GW. MOUs have also been facilitating the capacity addition, some of them are: signed with other state governments to undertake more 3 NTPC Rajasthan Green Energy Limited (NRGEL), UMREP projects accounting cumulatively to over 50 GW. a 74:26 JV with RVUNL, to develop RE Parks and Also, MNRE has accorded approval to NTPC to act as a Green Hydrogen Projects up to 25 GW capacity. Renewable Energy Implementing Agency (REIA) and issue tenders for setting up renewable power projects (wind and 3 AP NGEL HARIT AMRIT LIMITED (APNHAL), a 50:50 solar) under developer mode. As on 31 March 2025, 5.27 joint venture with New & Renewable Energy GW of RE projects has been commissioned in this mode Development Corporation of Andhra Pradesh and 16.13 GW of RE projects are under implementation. Limited (NREDCAP) to develop RE Projects up to In FY25, RE capacity of 12 GW, comprising vanilla solar and 25 GW capacities, PSP up to 10 GW capacity and wind, hybrid and FDRE (Firm and Dispatchable Renewable Green Hydrogen Projects. Energy) have been tendered out. 3 NTPC UP Green Energy Limited (NUGEL), a 51:49 JV Inorganic Growth ",
+      "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c"
+    },
+    "checks": {
+      "entity": {
+        "result": "match",
+        "detail": "target/self-reference near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "60 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'GW' next to the number supports GW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['target'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2032 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "forward-looking wording 'target'"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_target_ntpc_ar_fy2024_25",
+    "input_name": "re_capacity_target_2032",
+    "claim_id": "cl1_4bad374a50229c566a48d913",
+    "assertion": {
+      "value": 60,
+      "unit": "GW",
+      "period_type": "unknown",
+      "as_of_date": null,
+      "period_text": "2032",
+      "basis": "group",
+      "statement_status": "target",
+      "label_terms": [
+        "target"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 19,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "• Decommissioning of old thermal plants and a revised target of 60 GW of RE capacity by 2032",
+      "passage_sha256": "27ec52fcb85c9d50ca3da991f22ccf9e717619cfd0811818087e35bde4944df6"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "no explicit subject near the figure"
+      },
+      "value": {
+        "result": "match",
+        "detail": "60 found in the passage"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "unit 'GW' next to the number supports GW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "label terms ['target'] appear near the figure"
+      },
+      "period": {
+        "result": "match",
+        "detail": "period 2032 appears with the figure"
+      },
+      "basis": {
+        "result": "unresolved",
+        "detail": "no basis word near the figure"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "forward-looking wording 'target'"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Value found, but ['entity', 'basis'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_assertion",
+      "note": "as asserted"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_parent_20eda573_text",
+    "input_name": "parent_under_implementation_direct",
+    "claim_id": "pdfn_9621dcd15e3fdc9a20eda573",
+    "assertion": {
+      "value": 15376.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "standalone",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Total (I)"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 91,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which 8.1 Billing and Realization encompasses both financial and non-financial information to enable the Members to take well informed decisions During FY 2024-25, your Company has realized 100% of its and have a better understanding of the Company’s long- bills due for realisation. The target set by the Government term perspective. This Report also touches upon aspects of India (GoI), for realization of dues for energy supply in such as organization’s strategy, governance framework, FY25 has also been achieved. Most of the beneficiaries performance and prospects of value creation based on have made timely payments and availed the applicable the six forms of capital viz. financial capital, manufactured rebates. capital, intellectual capital, human capital, social and Your Company has in place a robust payment security relationship capital, and natural capital. mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, 6. Group Companies: Subsidiaries and payment is secured by the Tri-Partite Agreements (TPAs) Joint Ventures signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the Your Company is one of India’s largest energy TPA, any default in payment by the State owned Discoms conglomerates, established with the objective of can be recovered directly from the State’s account in RBI. accelerating the development of the power sector in the The TPAs signed during the FY 2000-01 were valid up to country. Over the years, it has emerged as a dominant 31st October 2016. Subsequently, these TPAs have been player in the energy industry, with a robust presence extended for a further period of 10 to 15 years. As of across the entire energy value chain. The Company has now, 29 out of total 31 States/UTs have signed the TPAs also strategically diversified its operations through its extension documents. The signing of TPAs extension by subsidiaries, joint ventures, and associate companies, remaining States is being taken up. thereby strengthening its position at the group level. 8.2 Power Trading in Power Exchange As on 31 March 2025, Your Company has total 11 subsidiary Your Company has been participating in both the companies and 16 joint venture companies, including 2 Integrated Day Ahead Market (I-DAM), Term Ahead international joint ventures, engaged in various business Market (TAM) and the Real Time Market (RTM) for selling activities. any un-requisitioned surplus (URS) in the Power Exchange In addition, Your Company has 7 step-down subsidiary through its trading arm- NTPC Vidyut Vyapar Nigam Limited companies under its direct subsidiary companies. Further, (NVVN). Besides selling the URS power, it has also been details of aforesaid entities are provided in Para no. 11.1 selling any regulated power, merchant power, relinquished of this Report. gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 7. Operational Performance crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this Your Company achieved a record power generation of sale have been shared with the beneficiaries as per the 372.83 billion units (BUs) on a standalone basis and 438.68 extant regulatory provisions. BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to 8.3 Strengthening Customer Relationship a year-on-year (Y-o-Y) growth of 3.08% on a standalone Customer Focus is one of the core values of your Company basis and 3.90% at the Group level. Out of the total 438.68 (ICOMIT). In line with this, your Company has taken up BUs generated, thermal power stations contributed 417.08 several initiatives targeted towards the",
+      "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "15376.0 follows the row label 'Total (I)'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'I Owned by your Company'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_pipeline_parent_ntpc_ar_fy2024_25",
+    "input_name": "parent_under_implementation_direct",
+    "claim_id": "pdfn_9621dcd15e3fdc9a20eda573",
+    "assertion": {
+      "value": 15376.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "standalone",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Total (I)"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 91,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "NTPC LIMITED | 179178 | INTEGRATED ANNUAL REPORT - 2024-25 Your Company being one of the top 500 listed companies in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which encompasses both financial and non-financial information to enable the Members to take well informed decisions and have a better understanding of the Company’s long- term perspective. This Report also touches upon aspects such as organization’s strategy, governance framework, performance and prospects of value creation based on the six forms of capital viz. financial capital, manufactured capital, intellectual capital, human capital, social and relationship capital, and natural capital. 6. Group Companies: Subsidiaries and Joint Ventures Your Company is one of India’s largest energy conglomerates, established with the objective of accelerating the development of the power sector in the country. Over the years, it has emerged as a dominant player in the energy industry, with a robust presence across the entire energy value chain. The Company has also strategically diversified its operations through its subsidiaries, joint ventures, and associate companies, thereby strengthening its position at the group level. As on 31 March 2025, Your Company has total 11 subsidiary companies and 16 joint venture companies, including 2 international joint ventures, engaged in various business activities. In addition, Your Company has 7 step-down subsidiary companies under its direct subsidiary companies. Further, details of aforesaid entities are provided in Para no. 11.1 of this Report. 7. Operational Performance Your Company achieved a record power generation of 372.83 billion units (BUs) on a standalone basis and 438.68 BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to a year-on-year (Y-o-Y) growth of 3.08% on a standalone basis and 3.90% at the Group level. Out of the total 438.68 BUs generated, thermal power stations contributed 417.08 BUs, while hydro and renewable sources contributed 13.39 BUs and 8.21 BUs, respectively. During FY 2024-25, average Plant Load Factor (PLF) of NTPC coal stations was 77.44% as against the National Average of 69.96%. 8. Commercial Performance 8.1 Billing and Realization During FY 2024-25, your Company has realized 100% of its bills due for realisation. The target set by the Government of India (GoI), for realization of dues for energy supply in FY25 has also been achieved. Most of the beneficiaries have made timely payments and availed the applicable rebates. Your Company has in place a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, payment is secured by the Tri-Partite Agreements (TPAs) signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the TPA, any default in payment by the State owned Discoms can be recovered directly from the State’s account in RBI. The TPAs signed during the FY 2000-01 were valid up to 31st October 2016. Subsequently, these TPAs have been extended for a further period of 10 to 15 years. As of now, 29 out of total 31 States/UTs have signed the TPAs extension documents. The signing of TPAs extension by remaining States is being taken up. 8.2 Power Trading in Power Exchange Your Company has been participating in both the Integrated Day Ahead Market (I-DAM), Term Ahead Market (TAM) and the Real Time Market (RTM) for selling any un-requisitioned surplus (URS) in the Power Exchange through its trading arm- NTPC Vidyut Vyapar Nigam Limited (NVVN). Besides selling the URS power, it has also been selling any regulated power, merchant power, relinquished gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this sale",
+      "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "15376.0 follows the row label 'Total (I)'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'I Owned by your Company'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_table_cell",
+      "note": "table-cell check in reading order"
+    },
+    "limitations": []
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_parent_09576cc3_text",
+    "input_name": "parent_re_under_implementation_direct",
+    "claim_id": "pdfn_17db1ba3f1f9054e09576cc3",
+    "assertion": {
+      "value": 725.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "standalone",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Renewable Energy Projects"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "extracted_text_review",
+    "source": {
+      "source_chunk_id": "ev_2484a0e981c95b1829d91ac3",
+      "source_path": "CSV/annual reports/Annual Report 2024-25_1.csv",
+      "page": 91,
+      "url": null,
+      "publisher": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "document_family": "Annual Report 2024-25_1.csv",
+      "passage": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which 8.1 Billing and Realization encompasses both financial and non-financial information to enable the Members to take well informed decisions During FY 2024-25, your Company has realized 100% of its and have a better understanding of the Company’s long- bills due for realisation. The target set by the Government term perspective. This Report also touches upon aspects of India (GoI), for realization of dues for energy supply in such as organization’s strategy, governance framework, FY25 has also been achieved. Most of the beneficiaries performance and prospects of value creation based on have made timely payments and availed the applicable the six forms of capital viz. financial capital, manufactured rebates. capital, intellectual capital, human capital, social and Your Company has in place a robust payment security relationship capital, and natural capital. mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, 6. Group Companies: Subsidiaries and payment is secured by the Tri-Partite Agreements (TPAs) Joint Ventures signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the Your Company is one of India’s largest energy TPA, any default in payment by the State owned Discoms conglomerates, established with the objective of can be recovered directly from the State’s account in RBI. accelerating the development of the power sector in the The TPAs signed during the FY 2000-01 were valid up to country. Over the years, it has emerged as a dominant 31st October 2016. Subsequently, these TPAs have been player in the energy industry, with a robust presence extended for a further period of 10 to 15 years. As of across the entire energy value chain. The Company has now, 29 out of total 31 States/UTs have signed the TPAs also strategically diversified its operations through its extension documents. The signing of TPAs extension by subsidiaries, joint ventures, and associate companies, remaining States is being taken up. thereby strengthening its position at the group level. 8.2 Power Trading in Power Exchange As on 31 March 2025, Your Company has total 11 subsidiary Your Company has been participating in both the companies and 16 joint venture companies, including 2 Integrated Day Ahead Market (I-DAM), Term Ahead international joint ventures, engaged in various business Market (TAM) and the Real Time Market (RTM) for selling activities. any un-requisitioned surplus (URS) in the Power Exchange In addition, Your Company has 7 step-down subsidiary through its trading arm- NTPC Vidyut Vyapar Nigam Limited companies under its direct subsidiary companies. Further, (NVVN). Besides selling the URS power, it has also been details of aforesaid entities are provided in Para no. 11.1 selling any regulated power, merchant power, relinquished of this Report. gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 7. Operational Performance crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this Your Company achieved a record power generation of sale have been shared with the beneficiaries as per the 372.83 billion units (BUs) on a standalone basis and 438.68 extant regulatory provisions. BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to 8.3 Strengthening Customer Relationship a year-on-year (Y-o-Y) growth of 3.08% on a standalone Customer Focus is one of the core values of your Company basis and 3.90% at the Group level. Out of the total 438.68 (ICOMIT). In line with this, your Company has taken up BUs generated, thermal power stations contributed 417.08 several initiatives targeted towards the",
+      "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "725.0 follows the row label 'c) Renewable Energy Projects'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'I Owned by your Company'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "ai_assisted_analyst",
+      "id": "claude-sonnet-5-5",
+      "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+    },
+    "limitations": [
+      "The passage is the project's own text extraction of the filing; the original PDF/official URL was not checked. This is not primary-source verification."
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "verification_id": "ver_re_pipeline_parent_ntpc_ar_fy2024_25",
+    "input_name": "parent_re_under_implementation_direct",
+    "claim_id": "pdfn_17db1ba3f1f9054e09576cc3",
+    "assertion": {
+      "value": 725.0,
+      "unit": "MW",
+      "period_type": "as_of",
+      "as_of_date": "2025-03-31",
+      "period_text": "As on 31 March 2025",
+      "basis": "standalone",
+      "statement_status": "under_implementation",
+      "label_terms": [
+        "Renewable Energy Projects"
+      ],
+      "entity": "NTPC Limited"
+    },
+    "outcome": "partially_supported",
+    "verification_level": "primary_source",
+    "source": {
+      "source_chunk_id": null,
+      "source_path": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "page": 91,
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "publisher": "NTPC Limited",
+      "publication_date": "2025-08-07",
+      "retrieved_at": null,
+      "document_family": "ntpc_ar_fy2024_25",
+      "passage": "NTPC LIMITED | 179178 | INTEGRATED ANNUAL REPORT - 2024-25 Your Company being one of the top 500 listed companies in the Country in terms of market capitalization, has voluntarily provided Integrated Report, which encompasses both financial and non-financial information to enable the Members to take well informed decisions and have a better understanding of the Company’s long- term perspective. This Report also touches upon aspects such as organization’s strategy, governance framework, performance and prospects of value creation based on the six forms of capital viz. financial capital, manufactured capital, intellectual capital, human capital, social and relationship capital, and natural capital. 6. Group Companies: Subsidiaries and Joint Ventures Your Company is one of India’s largest energy conglomerates, established with the objective of accelerating the development of the power sector in the country. Over the years, it has emerged as a dominant player in the energy industry, with a robust presence across the entire energy value chain. The Company has also strategically diversified its operations through its subsidiaries, joint ventures, and associate companies, thereby strengthening its position at the group level. As on 31 March 2025, Your Company has total 11 subsidiary companies and 16 joint venture companies, including 2 international joint ventures, engaged in various business activities. In addition, Your Company has 7 step-down subsidiary companies under its direct subsidiary companies. Further, details of aforesaid entities are provided in Para no. 11.1 of this Report. 7. Operational Performance Your Company achieved a record power generation of 372.83 billion units (BUs) on a standalone basis and 438.68 BUs at the Group level (i.e., including joint ventures (JVs) and subsidiaries) during the FY 2024-25. This translates to a year-on-year (Y-o-Y) growth of 3.08% on a standalone basis and 3.90% at the Group level. Out of the total 438.68 BUs generated, thermal power stations contributed 417.08 BUs, while hydro and renewable sources contributed 13.39 BUs and 8.21 BUs, respectively. During FY 2024-25, average Plant Load Factor (PLF) of NTPC coal stations was 77.44% as against the National Average of 69.96%. 8. Commercial Performance 8.1 Billing and Realization During FY 2024-25, your Company has realized 100% of its bills due for realisation. The target set by the Government of India (GoI), for realization of dues for energy supply in FY25 has also been achieved. Most of the beneficiaries have made timely payments and availed the applicable rebates. Your Company has in place a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite Agreement (TPA). Apart from the LCs, payment is secured by the Tri-Partite Agreements (TPAs) signed amongst the State Government(s), Government of India (GoI) and Reserve Bank of India (RBI). As per the TPA, any default in payment by the State owned Discoms can be recovered directly from the State’s account in RBI. The TPAs signed during the FY 2000-01 were valid up to 31st October 2016. Subsequently, these TPAs have been extended for a further period of 10 to 15 years. As of now, 29 out of total 31 States/UTs have signed the TPAs extension documents. The signing of TPAs extension by remaining States is being taken up. 8.2 Power Trading in Power Exchange Your Company has been participating in both the Integrated Day Ahead Market (I-DAM), Term Ahead Market (TAM) and the Real Time Market (RTM) for selling any un-requisitioned surplus (URS) in the Power Exchange through its trading arm- NTPC Vidyut Vyapar Nigam Limited (NVVN). Besides selling the URS power, it has also been selling any regulated power, merchant power, relinquished gas power, infirm power in the Power Exchanges. In the FY25, record 6,392 million units of power worth of ` 2,984 crore has been sold in the various segment of power exchanges by your Company. Corresponding gains for this sale",
+      "passage_sha256": "e0a11c6a56e34d0a3c1fe87ccf039f3837cb37348f7f6c958798682f1163e97a"
+    },
+    "checks": {
+      "entity": {
+        "result": "unresolved",
+        "detail": "a table row carries no explicit entity statement; the reporting entity is only implied by the document"
+      },
+      "value": {
+        "result": "match",
+        "detail": "725.0 follows the row label 'c) Renewable Energy Projects'"
+      },
+      "unit_scale": {
+        "result": "match",
+        "detail": "column header 'Ongoing Projects Capacity (MW)' precedes the value and declares MW"
+      },
+      "metric_definition": {
+        "result": "match",
+        "detail": "the asserted row label is immediately followed by the value"
+      },
+      "period": {
+        "result": "match",
+        "detail": "'as on' date 2025-03-31 precedes the table"
+      },
+      "basis": {
+        "result": "match",
+        "detail": "nearest preceding section heading is 'I Owned by your Company'"
+      },
+      "statement_status": {
+        "result": "match",
+        "detail": "'under implementation' wording precedes the table"
+      }
+    },
+    "cross_checks": [],
+    "discrepancies": [],
+    "rationale": "Row, value and unit found, but ['entity'] could not be established from the passage.",
+    "reviewer": {
+      "kind": "automated_passage_check",
+      "id": "claim_verification.verify_table_cell",
+      "note": "table-cell check in reading order"
+    },
+    "limitations": []
+  }
+]
