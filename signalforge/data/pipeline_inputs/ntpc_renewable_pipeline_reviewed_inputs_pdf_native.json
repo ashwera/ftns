@@ -1,0 +1,164 @@
+{
+ "schema": "pipeline_inputs/1.0",
+ "company": "NTPC Limited",
+ "reference_year": 2026,
+ "hypothesis_id": "H1_renewable_pipeline_location",
+ "reviewer": {
+  "kind": "ai_assisted_analyst",
+  "id": "claude-sonnet-5-5",
+  "note": "Variant of ntpc_renewable_pipeline_reviewed_inputs.json (left unchanged) that takes the page-91 table values from PDF-native table claims (pdf_table_extraction, original PDF sha256 28f32ae3...) instead of the interleaved-text narrative claims, and adds the parent's directly reported figures (Total (I) 15,376 MW; renewable 725 MW) so the parent shares use direct values, not the 709 MW residual. Ownership scope is the table's own section heading; basis/status fields below are analyst assertions that the verifier re-checks mechanically against the cited chunk."
+ },
+ "inputs": [
+  {
+   "role": "installed_total_group",
+   "name": "group_installed_capacity",
+   "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "consolidated",
+   "statement_status": "commissioned",
+   "label_terms": [
+    "commercial capacity"
+   ],
+   "rounding_uncertainty": null,
+   "key": false
+  },
+  {
+   "role": "re_installed_group",
+   "name": "re_installed_capacity_group",
+   "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "group",
+   "statement_status": "commissioned",
+   "label_terms": [
+    "commissioned RE capacity"
+   ],
+   "rounding_uncertainty": 0.05,
+   "key": false
+  },
+  {
+   "role": "re_pipeline_group",
+   "name": "re_under_implementation_group",
+   "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "group",
+   "statement_status": "under_implementation",
+   "label_terms": [
+    "RE capacity"
+   ],
+   "rounding_uncertainty": 0.05,
+   "key": true
+  },
+  {
+   "role": "pipeline_total_group",
+   "name": "total_under_implementation_group",
+   "claim_id": "pdfn_ac835b0493bc7cc37cd8f550",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "group",
+   "statement_status": "under_implementation",
+   "label_terms": [
+    "Total On-Going Projects"
+   ],
+   "rounding_uncertainty": null,
+   "cross_checks": [
+    {
+     "description": "Total (II) JV/subsidiary projects table cell",
+     "label_regex": "Total \\(II\\)",
+     "expected_value": 18295
+    },
+    {
+     "description": "Total (I) parent-owned projects table cell",
+     "label_regex": "Total \\(I\\)",
+     "expected_value": 15376
+    },
+    {
+     "description": "Total On-Going Projects table cell",
+     "label_regex": "Total On-Going Projects as on 31",
+     "expected_value": 33671
+    }
+   ],
+   "key": true
+  },
+  {
+   "role": "pipeline_jv_sub",
+   "name": "jv_subsidiary_under_implementation",
+   "claim_id": "pdfn_b7aa459b3f974ff5834a1893",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "jv_subsidiary_part",
+   "statement_status": "under_implementation",
+   "label_terms": [
+    "Total (II)"
+   ],
+   "rounding_uncertainty": null,
+   "key": true
+  },
+  {
+   "role": "re_pipeline_jv_sub",
+   "name": "re_under_implementation_jv_subsidiary",
+   "claim_id": "pdfn_8b1fc767a630c90d4f71893a",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "jv_subsidiary_part",
+   "statement_status": "under_implementation",
+   "label_terms": [
+    "Renewable Projects"
+   ],
+   "rounding_uncertainty": null,
+   "cross_checks": [
+    {
+     "description": "Renewable (Including Singrauli small hydro) parent-owned table cell",
+     "label_regex": "c\\) Renewable Energy Projects",
+     "expected_value": 725
+    }
+   ],
+   "key": true
+  },
+  {
+   "role": "re_target",
+   "name": "re_capacity_target_2032",
+   "claim_id": "cl1_4bad374a50229c566a48d913",
+   "as_of_date": null,
+   "period_text": "2032",
+   "basis": "group",
+   "statement_status": "target",
+   "label_terms": [
+    "target"
+   ],
+   "rounding_uncertainty": null,
+   "key": false
+  },
+  {
+   "role": "pipeline_parent",
+   "name": "parent_under_implementation_direct",
+   "claim_id": "pdfn_9621dcd15e3fdc9a20eda573",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "standalone",
+   "statement_status": "under_implementation",
+   "label_terms": [
+    "Total (I)"
+   ],
+   "rounding_uncertainty": null,
+   "key": true
+  },
+  {
+   "role": "re_pipeline_parent",
+   "name": "parent_re_under_implementation_direct",
+   "claim_id": "pdfn_17db1ba3f1f9054e09576cc3",
+   "as_of_date": "2025-03-31",
+   "period_text": "As on 31 March 2025",
+   "basis": "standalone",
+   "statement_status": "under_implementation",
+   "label_terms": [
+    "Renewable Energy Projects"
+   ],
+   "rounding_uncertainty": null,
+   "key": true
+  }
+ ],
+ "key_note": "Key inputs: group RE and total pipeline, the JV/subsidiary figures, and the parent's direct figures. 725 MW is the directly reported parent-owned renewable value; the 709 MW residual is not used when it is available."
+}

@@ -1,0 +1,257 @@
+{
+ "catalog_version": "1.0",
+ "company": "NTPC Limited",
+ "official_domains": [
+  "ntpc.co.in",
+  "cea.nic.in"
+ ],
+ "sources": [
+  {
+   "source_id": "ntpc_ar_fy2024_25",
+   "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+   "publisher_page": "https://ntpc.co.in/investors/annual-reports/2024-25",
+   "publisher": "NTPC Limited",
+   "source_class": "official_filing",
+   "publication_date": "2025-08-07",
+   "reporting_period": "FY 2024-25; capacity as of 2025-03-31",
+   "verified_by": "Codex (AI-assisted analyst)",
+   "issuer_submitted": true,
+   "derived_from": [],
+   "independence_group": "ntpc_issuer_disclosure_fy2024_25",
+   "verification_method": "Official NTPC-hosted original PDF checked against its Directors' Report and capacity tables; publisher listing and exchange filing date checked.",
+   "claims": [
+    {
+     "claim_id": "crosscheck_parent_re_725",
+     "input_name": "parent_re_under_implementation",
+     "status": "confirms",
+     "exact_value": "725 MW",
+     "metric_label": "Renewable Energy Projects, owned by your Company",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Limited parent-owned projects (standalone project scope)",
+     "page": "91, section 9.1 Ongoing Projects table",
+     "passage": "Under \u2018I Owned by your Company\u2019, row \u2018c) Renewable Energy Projects\u2019 = 725 MW.",
+     "caveat": "This exact table value is not a standalone claim in the reviewed-inputs list; it is a table cross-check. It differs from the 709 MW residual formed by subtracting 13,791 MW from rounded 14,500 MW."
+    },
+    {
+     "claim_id": "crosscheck_parent_total_15376",
+     "input_name": "parent_under_implementation",
+     "status": "confirms",
+     "exact_value": "15,376 MW",
+     "metric_label": "Total (I), projects owned by your Company",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Limited parent-owned projects (standalone project scope)",
+     "page": "91, section 9.1 Ongoing Projects table",
+     "passage": "Owned project components are coal 13,840 MW, hydro 811 MW, renewable 725 MW; \u2018Total (I)\u2019 = 15,376 MW.",
+     "caveat": "Exact table total; components sum exactly."
+    },
+    {
+     "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+     "input_name": "group_installed_capacity",
+     "status": "partially_supports",
+     "exact_value": "79,930 MW",
+     "metric_label": "total commercial capacity / cumulative installed capacity",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Group, consolidated; not NTPC Limited standalone",
+     "page": "90 (Directors' Report highlights; section 9, Installed Capacity)",
+     "passage": "As on 31 March 2025, the total commercial capacity stood at 79,930 MW on a consolidated basis and 59,413 MW on a standalone basis. Section 9 also says NTPC Group's cumulative installed capacity was 79,930 MW.",
+     "caveat": "The reviewed input says commissioned commercial capacity, which is supported; the annual report uses both commercial and installed labels for the same group figure. This should not be relabelled as renewable capacity."
+    },
+    {
+     "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+     "input_name": "re_under_implementation_group",
+     "status": "partially_supports",
+     "exact_value": "14,516 MW in the component breakdown; 14.5 GW in narrative",
+     "metric_label": "Renewable projects under implementation / ongoing projects",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Group: NTPC-owned and JV/subsidiary projects combined",
+     "page": "91 (section 9.1, Capacity Expansion Program, narrative and Ongoing Projects table); Organic Growth discussion prints rounded 14.5 GW on printed page 220 (reviewed claim chunk locator says page 112)",
+     "passage": "Narrative: \u201814,516 MW of Renewable projects (Including 13,791 MW being undertaken by joint venture and subsidiary company).\u2019 Table: \u2018c) Renewable Energy Projects\u2019 under \u2018I Owned by your Company\u2019 = 725 MW; \u2018c) Renewable Projects\u2019 under \u2018II Projects under JVs & Subsidiaries\u2019 = 13,791 MW.",
+     "caveat": "Reviewed input value 14.5 GW is a one-decimal rounded narrative number (= 14,500 MW); exact table/narrative breakdown is 14,516 MW. The 16 MW difference is material for precise ratios and must not be treated as exact equality. \u2018Under implementation\u2019 is the report's wording; the table heading calls these ongoing projects."
+    },
+    {
+     "claim_id": "cl1_09d1b0c61a44466b711c57e9",
+     "input_name": "total_under_implementation_group",
+     "status": "confirms",
+     "exact_value": "33,671 MW",
+     "metric_label": "Total On-Going Projects as on 31 March 2025 (I)+(II)",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Group: owned projects plus JV/subsidiary projects",
+     "page": "91, section 9.1 Ongoing Projects table",
+     "passage": "\u2018Total (I)\u2019 parent-owned projects = 15,376 MW; \u2018Total (II)\u2019 projects under JVs & Subsidiaries = 18,295 MW; \u2018Total On-Going Projects as on 31 March 2025 (I)+(II)\u2019 = 33,671 MW.",
+     "caveat": "The source has separate rows for NTPC-owned and JV/subsidiary projects. 33,671 MW is their aggregate, not a standalone NTPC-only pipeline. The component totals sum exactly."
+    },
+    {
+     "claim_id": "cl1_1528c13ba76ba39d8d47a510",
+     "input_name": "jv_subsidiary_under_implementation",
+     "status": "confirms",
+     "exact_value": "18,295 MW",
+     "metric_label": "Total (II), Projects under JVs & Subsidiaries",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "JV/subsidiary component of NTPC Group ongoing projects",
+     "page": "91, section 9.1 Ongoing Projects table",
+     "passage": "Under \u2018II Projects under JVs & Subsidiaries\u2019: coal 3,060 MW; hydro 1,444 MW; renewable 13,791 MW; \u2018Total (II)\u2019 = 18,295 MW.",
+     "caveat": "This is all technology capacity (coal, hydro and renewable), not a renewable-only denominator. Its components sum exactly."
+    },
+    {
+     "claim_id": "cl1_7904a68ca446b6be755a6e95",
+     "input_name": "re_under_implementation_jv_subsidiary",
+     "status": "confirms",
+     "exact_value": "13,791 MW",
+     "metric_label": "Renewable Projects under JVs & Subsidiaries",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "JV/subsidiary component of NTPC Group ongoing projects",
+     "page": "91, section 9.1 Ongoing Projects table",
+     "passage": "Table row \u2018c) Renewable Projects\u2019 within \u2018II Projects under JVs & Subsidiaries\u2019 = 13,791 MW. Narrative says 14,516 MW total renewable projects, including 13,791 MW undertaken by JV and subsidiary companies.",
+     "caveat": "The extracted claim is unresolved in its source chunk, but the original table resolves the amount and scope. It is a JV/subsidiary subset of the 14,516 MW exact renewable total, rather than an amount to compare against rounded 14.5 GW as if the latter were exact. The annual report does not split JV versus subsidiary amounts individually."
+    },
+    {
+     "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+     "input_name": "re_installed_capacity_group",
+     "status": "partially_supports",
+     "exact_value": "6.8 GW",
+     "metric_label": "cumulative commissioned RE capacity",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Group / company-wide RE capacity statement; report does not specify standalone vs consolidated in this sentence",
+     "page": "220, Organic Growth discussion (reviewed claim chunk locator says page 112)",
+     "passage": "\u2018As on 31 March 2025, Your Company has a cumulative commissioned RE capacity of 6.8 GW.\u2019",
+     "caveat": "The sentence uses \u2018Your Company\u2019 without stating consolidated/group basis. The annual report separately discusses NTPC and JV/subsidiary renewable projects, and the August 2025 presentation says present RE capacity is 8 GW. The 6.8 GW value therefore cannot be confirmed as a group metric; entity-scope mismatch remains unresolved."
+    }
+   ],
+   "source_type": "annual_report_or_exchange_filing",
+   "title": "Integrated Annual Report 2024-25",
+   "local_path": "../../Annual Report 2024-25_1.pdf",
+   "sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd"
+  },
+  {
+   "source_id": "ntpc_fy25_results_concall_transcript",
+   "url": "https://ntpc.co.in/sites/default/files/inline-files/REVTranscriptConcall24052025.pdf",
+   "publisher_page": "https://ntpc.co.in/investors/disclosures-announcements/corporate-announcements?field_financial_year_target_id=10",
+   "publisher": "NTPC Limited",
+   "source_class": "official_filing",
+   "publication_date": "2025-05-24",
+   "reporting_period": "FY 2024-25; year-end 2025-03-31",
+   "verified_by": "Codex (AI-assisted analyst)",
+   "issuer_submitted": true,
+   "derived_from": [],
+   "independence_group": "ntpc_issuer_disclosure_fy2024_25",
+   "claims": [
+    {
+     "status": "partially_supports",
+     "exact_value": "33.7 GW total; 16.9 GW coal; 2.2 GW hydro; 14.6 GW renewable",
+     "metric_label": "capacity under construction",
+     "as_of_date": "2025-05-24 (current status stated during results call; not explicitly 2025-03-31)",
+     "entity_scope": "NTPC Group",
+     "page": "5 of 17",
+     "passage": "\u2018Currently, 33.7 GW of capacity is under construction, comprising 16.9 GW of coal, 2.2 GW of hydro, and 14.6 GW of renewable energy projects.\u2019",
+     "caveat": "Rounded to 0.1 GW, said as \u2018currently\u2019 on 24 May 2025 rather than explicitly as at 31 March. It is same-issuer repetition, not an independent corroborating source, and does not split parent vs JV/subsidiary."
+    },
+    {
+     "status": "partial_context",
+     "exact_value": "17,277 MW contracted and awarded; 5,902 MW commercial capacity",
+     "metric_label": "NGEL contracted/awarded capacity and commercial capacity",
+     "as_of_date": "2025-03-31",
+     "entity_scope": "NTPC Green Energy Limited (subsidiary), not full NTPC Group",
+     "page": "7 of 17",
+     "passage": "NGEL total commercial capacity 5,902 MW as of March 31, 2025; its total contracted and awarded capacity stands at 17,277 MW as at 31 March 2025.",
+     "caveat": "\u2018Contracted and awarded\u2019 is a different project stage/metric from \u2018under implementation\u2019; not directly comparable to the pipeline values under review."
+    }
+   ],
+   "source_type": "results_call_transcript",
+   "title": "Transcript of Conference Call on Audited Financial Results for FY 2024-25",
+   "local_path": null,
+   "lineage_note": "Existing narrative (not validated as source lineage): NTPC FY 2024-25 financial and operating results; same issuer disclosure family"
+  },
+  {
+   "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+   "url": "https://ntpc.co.in/index.php/investors/disclosures-announcements/corporate-announcements?field_financial_year_target_id=10",
+   "publisher": "NTPC Limited; filing submitted to stock exchanges",
+   "source_class": "exchange_announcement",
+   "publication_date": "2025-08-07",
+   "reporting_period": "FY 2024-25",
+   "verified_by": "Codex (AI-assisted analyst)",
+   "issuer_submitted": true,
+   "derived_from": [
+    "ntpc_ar_fy2024_25"
+   ],
+   "independence_group": "ntpc_issuer_disclosure_fy2024_25",
+   "note": "The exchange filing and issuer-hosted annual report are one disclosure lineage. They must not be counted as independent corroboration. NTPC's filing locator lists the annual report submission on 2025-08-07.",
+   "source_type": "annual_report_or_exchange_filing",
+   "title": "Submission of Integrated Annual Report for Financial Year 2024-25",
+   "local_path": null
+  },
+  {
+   "source_id": "ntpc_21st_annual_analysts_presentation",
+   "url": "https://ntpc.co.in/sites/default/files/annual_meet/2026/2ea7ff14-0ada-4016-a07a-64c09ab62b14.pdf",
+   "publisher_page": "https://ntpc.co.in/investors/confrence-call-analyst-meet-investors/annual-analysts-institutional-investors-meet",
+   "publisher": "NTPC Limited; submitted to NSE and BSE",
+   "source_class": "official_filing",
+   "publication_date": "2025-08-18",
+   "reporting_period": "Capacity breakdown as on 2025-06-30; selected installed-capacity chart as on 2025-03-31",
+   "verified_by": "Codex (AI-assisted analyst)",
+   "issuer_submitted": true,
+   "derived_from": [],
+   "independence_group": "ntpc_issuer_disclosure_fy2024_25",
+   "claims": [
+    {
+     "status": "not_comparable_date_or_definition",
+     "exact_value": "30,853 MW construction; 82,646 MW operation; 113,499 MW portfolio",
+     "metric_label": "Operation, Construction, Portfolio",
+     "as_of_date": "2025-06-30",
+     "entity_scope": "NTPC Group, with separate subsidiary/JV rows",
+     "page": "6 of 32 (slide number 6)",
+     "passage": "Slide heading \u2018Overview - Operation and Under Construction Capacity (in MW)\u2019; source \u2018as on June 30, 2025\u2019; NTPC Group operation 82,646 MW, construction 30,853 MW, portfolio 113,499 MW.",
+     "caveat": "Different date and total than March 31 annual report (33,671 MW ongoing). Do not call this a contradiction; the later-date/current construction metric can change. Slide 6 also provides technology/entity subrows, but it does not reproduce the March 31 JV project table."
+    },
+    {
+     "status": "context_only",
+     "exact_value": "60 GW+ RE capacity target by 2032; visible RE pipeline 24 GW+",
+     "metric_label": "Renewable target and visible pipeline",
+     "as_of_date": "2025-08-18 presentation",
+     "entity_scope": "NTPC Group / strategy scope; detailed pipeline basis not defined on slide",
+     "page": "7 of 32 (slide number 7)",
+     "passage": "\u2018Plan to have 60 GW+ RE Capacity by 2032\u2019 and \u2018Visible RE pipeline of 24 GW+.\u2019",
+     "caveat": "\u2018Visible RE pipeline\u2019 is broader and not labelled under implementation, and it is later than the reviewed as-of date. It cannot substitute for the 14,516 MW as-of-March 31 under-implementation amount."
+    }
+   ],
+   "source_type": "investor_presentation",
+   "title": "Investor Presentation to 21st Annual Analysts and Institutional Investors Meet",
+   "local_path": null,
+   "lineage_note": "Existing narrative (not validated as source lineage): NTPC FY 2024-25 operating data; NTPC issuer disclosure family"
+  },
+  {
+   "source_id": "cea_under_construction_re_projects_mar2025",
+   "url": "https://cea.nic.in/wp-content/uploads/rpm_division/2025/05/Under_Construction_Projects_March_2025_M-1.pdf",
+   "publisher": "Central Electricity Authority, Ministry of Power, Government of India",
+   "source_class": "regulator",
+   "publication_date": "2025-05-02",
+   "reporting_period": "March 2025",
+   "verified_by": "Codex (AI-assisted analyst)",
+   "issuer_submitted": false,
+   "derived_from": [],
+   "independence_group": "cea_government_regulatory_reporting",
+   "verification_status": "retrieved_via_internet_archive_copy",
+   "note": "Local copy is the Internet Archive snapshot (20251112061833) of the CEA URL; the CEA URL itself redirects to a login page. The report lists NTPC, NTPC REL, NGEL, INGEL and Ayana projects but prints none of NTPC's annual-report totals, so it is not used for value-location verification here; see regulator_crosscheck.json (analyst-classified aggregate comparison, renewables only).",
+   "source_type": "renewable_projects_report",
+   "title": "Quarterly Report on Under-construction Renewable Energy Projects, March 2025",
+   "local_path": null,
+   "sha256": null
+  },
+  {
+   "source_id": "cea_installed_capacity_reports",
+   "url": "https://cea.nic.in/reports/dashboardView?headingId=107&lang=en&subHeadingId=1003&subSubHeadingId=10014&title=Installed+Capacity",
+   "publisher": "Central Electricity Authority, Ministry of Power, Government of India",
+   "source_class": "regulator",
+   "publication_date": null,
+   "reporting_period": "Monthly; report month varies",
+   "verified_by": "Codex (AI-assisted analyst)",
+   "issuer_submitted": false,
+   "derived_from": [],
+   "independence_group": "cea_government_regulatory_reporting",
+   "verification_status": "not_confirmed_for_claim_values",
+   "note": "Independent source family relevant to operating installed capacity, but the public page currently lists newer months and this review did not retrieve a March 2025 company-wise table. It cannot corroborate 79,930 MW on the evidence inspected here and does not measure under-implementation pipeline.",
+   "source_type": "installed_capacity_report",
+   "title": "CEA Monthly Installed Capacity Reports",
+   "local_path": null
+  }
+ ]
+}

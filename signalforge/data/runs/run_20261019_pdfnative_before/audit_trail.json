@@ -1,0 +1,505 @@
+[
+  {
+    "role": "installed_total_group",
+    "input_name": "group_installed_capacity",
+    "key": false,
+    "claim_id": "cl1_5b1e9c502b174acc1543b65f",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "primary_source",
+    "conflict": false,
+    "reason": "primary source supports the value but not every check",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_installed_total_group_1543b65f_text",
+        "level": "extracted_text_review",
+        "outcome": "confirmed",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 90,
+        "url": null,
+        "passage_sha256": "7074c05795cbfe5267ad2709fbdb42d791c01c383945f5d33bd81f3be9246015",
+        "failed_or_open_checks": {},
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_installed_total_group_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "partially_supported",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 91,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "8b8e11ae334e29fd3b4d4f81345ae071491587f245745ed678a2d4487bbb462e",
+        "failed_or_open_checks": {
+          "entity": "unresolved",
+          "period": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  },
+  {
+    "role": "re_installed_group",
+    "input_name": "re_installed_capacity_group",
+    "key": false,
+    "claim_id": "cl1_264d9fe1ce46595b0b93c941",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "primary_source",
+    "conflict": false,
+    "reason": "primary source supports the value but not every check",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_re_installed_group_0b93c941_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 112,
+        "url": null,
+        "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+        "failed_or_open_checks": {
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_re_installed_group_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "partially_supported",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 112,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "50dab78b7b615bf8284138bab76779059dda1a7d3ec878435d28fd32e0c12dc7",
+        "failed_or_open_checks": {
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  },
+  {
+    "role": "re_pipeline_group",
+    "input_name": "re_under_implementation_group",
+    "key": true,
+    "claim_id": "cl1_0f2c466c2859d4c9cc88f4b8",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "primary_source",
+    "conflict": false,
+    "reason": "primary source supports the value but not every check",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_re_pipeline_group_cc88f4b8_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 112,
+        "url": null,
+        "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+        "failed_or_open_checks": {
+          "basis": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_re_pipeline_group_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "partially_supported",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 112,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "49347955cf5b64d778b091bdd60960ee8571529f0778b57498aa518256ab4d9e",
+        "failed_or_open_checks": {
+          "basis": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  },
+  {
+    "role": "pipeline_total_group",
+    "input_name": "total_under_implementation_group",
+    "key": true,
+    "claim_id": "cl1_09d1b0c61a44466b711c57e9",
+    "claim_extraction_status": "ambiguous",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "primary_source",
+    "conflict": false,
+    "reason": "primary source supports the value but not every check",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_pipeline_total_group_711c57e9_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 91,
+        "url": null,
+        "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+        "failed_or_open_checks": {
+          "basis": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_pipeline_total_group_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "partially_supported",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 91,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "ffa4c13ba15c6387bcbc5aeda8511c788b2368d6e9566c7c4887ae95f66b3d91",
+        "failed_or_open_checks": {
+          "entity": "unresolved",
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  },
+  {
+    "role": "pipeline_jv_sub",
+    "input_name": "jv_subsidiary_under_implementation",
+    "key": true,
+    "claim_id": "cl1_1528c13ba76ba39d8d47a510",
+    "claim_extraction_status": "needs_review",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "primary_source",
+    "conflict": false,
+    "reason": "primary source supports the value but not every check",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_pipeline_jv_sub_8d47a510_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 91,
+        "url": null,
+        "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+        "failed_or_open_checks": {
+          "period": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_pipeline_jv_sub_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "partially_supported",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 91,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "ffa4c13ba15c6387bcbc5aeda8511c788b2368d6e9566c7c4887ae95f66b3d91",
+        "failed_or_open_checks": {
+          "entity": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  },
+  {
+    "role": "re_pipeline_jv_sub",
+    "input_name": "re_under_implementation_jv_subsidiary",
+    "key": true,
+    "claim_id": "cl1_7904a68ca446b6be755a6e95",
+    "claim_extraction_status": "needs_review",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "extracted_text_review",
+    "conflict": false,
+    "reason": "no primary source located the value; only the project's text extraction was reviewed",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_re_pipeline_jv_sub_755a6e95_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 91,
+        "url": null,
+        "passage_sha256": "bc6867952de1786916cd2e4190406f9976d085c222652124921ec5f88c6758d3",
+        "failed_or_open_checks": {
+          "entity": "unresolved",
+          "period": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_re_pipeline_jv_sub_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "unable_to_verify",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 91,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "d85e1cf361c93441da0c6b29d92fa5f505551d86ea70051b713830972eef9d22",
+        "failed_or_open_checks": {
+          "entity": "unresolved",
+          "value": "unresolved",
+          "unit_scale": "unresolved",
+          "metric_definition": "unresolved",
+          "period": "unresolved",
+          "basis": "unresolved",
+          "statement_status": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  },
+  {
+    "role": "re_target",
+    "input_name": "re_capacity_target_2032",
+    "key": false,
+    "claim_id": "cl1_4bad374a50229c566a48d913",
+    "claim_extraction_status": "needs_review",
+    "claim_verification_status": "unverified",
+    "effective_outcome": "partially_supported",
+    "effective_level": "primary_source",
+    "conflict": false,
+    "reason": "primary source supports the value but not every check",
+    "independent_confirming_groups": 0,
+    "unavailable_sources": [
+      {
+        "source_id": "ntpc_fy25_results_concall_transcript",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "ntpc_21st_annual_analysts_presentation",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_under_construction_re_projects_mar2025",
+        "status": "not_retrieved",
+        "error": null
+      },
+      {
+        "source_id": "cea_installed_capacity_reports",
+        "status": "not_retrieved",
+        "error": null
+      }
+    ],
+    "results": [
+      {
+        "verification_id": "ver_re_target_6a48d913_text",
+        "level": "extracted_text_review",
+        "outcome": "partially_supported",
+        "source": "Annual Report 2024-25_1.csv",
+        "page": 112,
+        "url": null,
+        "passage_sha256": "a432451d2d8b3f4f2841d497a8591132dc73cd34580d8f599424a1568fca944c",
+        "failed_or_open_checks": {
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "Analyst assertions chosen by reading the extracted text of the FY2024-25 annual report (pages 90, 91, 112). Each assertion is re-checked mechanically against the cited chunk by claim_verification; the original PDF was not available. The assertions add semantic fields (basis, statement status, label terms) that the extractor left ambiguous; values and units must equal the claim's."
+      },
+      {
+        "verification_id": "ver_re_target_ntpc_ar_fy2024_25",
+        "level": "primary_source",
+        "outcome": "partially_supported",
+        "source": "ntpc_ar_fy2024_25",
+        "page": 19,
+        "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+        "passage_sha256": "27ec52fcb85c9d50ca3da991f22ccf9e717619cfd0811818087e35bde4944df6",
+        "failed_or_open_checks": {
+          "entity": "unresolved",
+          "basis": "unresolved"
+        },
+        "discrepancies": [],
+        "reviewer": "as asserted"
+      }
+    ]
+  }
+]

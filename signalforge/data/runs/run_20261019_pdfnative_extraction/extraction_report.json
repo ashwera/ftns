@@ -1,0 +1,62 @@
+{
+ "pdf": "Annual Report 2024-25_1.pdf",
+ "sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+ "pages": [
+  {
+   "pdf_page_index": 90,
+   "printed_labels": {
+    "right": "177",
+    "left": "176"
+   },
+   "tables": [],
+   "linked_evidence_id": null
+  },
+  {
+   "pdf_page_index": 91,
+   "printed_labels": {
+    "right": "179",
+    "left": "178"
+   },
+   "tables": [
+    {
+     "title": "Ongoing Projects",
+     "headers": [
+      "Capacity (MW)"
+     ],
+     "rows": 11,
+     "sections": 2,
+     "printed_page_label": "179",
+     "warnings": []
+    },
+    {
+     "title": "Description",
+     "headers": [
+      "Capacity (MW)"
+     ],
+     "rows": 13,
+     "sections": 2,
+     "printed_page_label": "179",
+     "warnings": []
+    }
+   ],
+   "linked_evidence_id": null
+  },
+  {
+   "pdf_page_index": 112,
+   "printed_labels": {
+    "right": "221",
+    "left": "220"
+   },
+   "tables": [],
+   "linked_evidence_id": "ev_fcde1c84df4f8b650bb1afdd"
+  }
+ ],
+ "claims_linked_to_evidence": 17,
+ "claims": 20,
+ "duplicates_dropped": 0,
+ "status_counts": {
+  "extracted": 9,
+  "ambiguous": 11,
+  "needs_review": 0
+ }
+}

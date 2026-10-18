@@ -1,0 +1,190 @@
+{
+ "scope": "NTPC Integrated Annual Report 2024-25, PDF page 91 (printed pp. 178-179), table 'Ongoing Projects / Capacity (MW)' on printed page 179 (9 value cells). Ground truth: values, section headings, units and 'as on' date read from the rendered page image and the PDF text, 2026-10-19.",
+ "pdf_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+ "cells_recovered": {
+  "before_table_aware": 5,
+  "before_prose": 5,
+  "after_pdf_native": 9,
+  "of": 9
+ },
+ "cells_with_ownership_scope": {
+  "before": 0,
+  "after": 9,
+  "of": 9
+ },
+ "cells_with_correct_row_label": {
+  "before": 0,
+  "after": 9,
+  "of": 9
+ },
+ "cells_with_unit_MW_from_header": {
+  "before": 5,
+  "after": 9,
+  "of": 9
+ },
+ "cells_with_as_of_2025_03_31": {
+  "before": 2,
+  "after": 9,
+  "of": 9
+ },
+ "before_detail_table_aware_baseline": {
+  "13840": [],
+  "811": [],
+  "725": [],
+  "15376": [],
+  "3060": [
+   {
+    "claim_id": "cl1_d66133e85e90cfb970994b05",
+    "status": "needs_review",
+    "metric": null,
+    "period_type": "financial_year",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "1444": [
+   {
+    "claim_id": "cl1_11fbbb75e3261c0dd9fe4507",
+    "status": "needs_review",
+    "metric": "commercial_capacity",
+    "period_type": "financial_year",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "13791": [
+   {
+    "claim_id": "cl1_7904a68ca446b6be755a6e95",
+    "status": "needs_review",
+    "metric": null,
+    "period_type": "unknown",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "18295": [
+   {
+    "claim_id": "cl1_1528c13ba76ba39d8d47a510",
+    "status": "needs_review",
+    "metric": null,
+    "period_type": "as_of",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "33671": [
+   {
+    "claim_id": "cl1_09d1b0c61a44466b711c57e9",
+    "status": "ambiguous",
+    "metric": "capacity",
+    "period_type": "as_of",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ]
+ },
+ "before_detail_prose_baseline": {
+  "13840": [],
+  "811": [],
+  "725": [],
+  "15376": [],
+  "3060": [
+   {
+    "claim_id": "cl1_d66133e85e90cfb970994b05",
+    "status": "needs_review",
+    "metric": "capacity",
+    "period_type": "financial_year",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "1444": [
+   {
+    "claim_id": "cl1_11fbbb75e3261c0dd9fe4507",
+    "status": "needs_review",
+    "metric": "capacity",
+    "period_type": "financial_year",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "13791": [
+   {
+    "claim_id": "cl1_7904a68ca446b6be755a6e95",
+    "status": "needs_review",
+    "metric": null,
+    "period_type": "unknown",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "18295": [
+   {
+    "claim_id": "cl1_1528c13ba76ba39d8d47a510",
+    "status": "ambiguous",
+    "metric": "capacity",
+    "period_type": "as_of",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ],
+  "33671": [
+   {
+    "claim_id": "cl1_09d1b0c61a44466b711c57e9",
+    "status": "ambiguous",
+    "metric": "capacity",
+    "period_type": "as_of",
+    "has_ownership_scope": false,
+    "has_section_or_row_label": false
+   }
+  ]
+ },
+ "before_wrongly_attributed": [
+  "1,444 MW (hydro under implementation, JV/subsidiary) is labelled metric 'commercial_capacity' with period_type 'financial_year' in the table-aware baseline",
+  "3,060 MW (JV/subsidiary coal) is period_type 'financial_year' with no metric",
+  "59,413 MW (standalone commercial capacity, table 8.4) is `extracted` as 'installed_capacity' in the prose baseline with entity NTPC Limited and no standalone/group scope"
+ ],
+ "after_wrongly_attributed": 0,
+ "after_hand_check": "9/9 cells in the 'Ongoing Projects' table and 11/11 in the 'Description' table match the rendered page: value, row label, section heading, unit, and tie-outs (15,376 = 13,840+811+725; 18,295 = 3,060+1,444+13,791; 33,671 = 15,376+18,295; 59,413; 20,517; 79,930 = 59,413+20,517).",
+ "new_output_counts": {
+  "claims": 20,
+  "extracted": 9,
+  "ambiguous": 11,
+  "needs_review": 0,
+  "duplicate_claim_ids": 0,
+  "schema_failures": 0,
+  "linked_to_evidence": 17,
+  "unlinked": 3
+ },
+ "baseline_counts_unchanged": {
+  "table_aware_claims": 40942,
+  "prose_claims": 4423,
+  "note": "baseline outputs and golden fixtures were not modified; PDF-native claims are a separate additive file"
+ },
+ "refusals": {
+  "description_table_all_ambiguous": "the 8.4 'Description / Capacity (MW)' table has no 'as on' date in its rows or the paragraph above it, so its 11 claims stay ambiguous although their section scope and arithmetic tie out"
+ },
+ "downstream_consumption": {
+  "evidence_id": "ev_2484a0e981c95b1829d91ac3",
+  "locator": "page:91:block:1 (human-approved, PR #2)",
+  "claim_ids": {
+   "13840": "pdfn_a52ab5d799d6c5dcd9f11720",
+   "811": "pdfn_edc86a77cce8a67827064713",
+   "725": "pdfn_17db1ba3f1f9054e09576cc3",
+   "15376": "pdfn_9621dcd15e3fdc9a20eda573",
+   "3060": "pdfn_171b21f18d773b6a1197749f",
+   "1444": "pdfn_d8b21a323814d812467fee0d",
+   "13791": "pdfn_8b1fc767a630c90d4f71893a",
+   "18295": "pdfn_b7aa459b3f974ff5834a1893",
+   "33671": "pdfn_ac835b0493bc7cc37cd8f550"
+  },
+  "roles": {
+   "pipeline_total_group": "33671",
+   "pipeline_jv_sub": "18295",
+   "re_pipeline_jv_sub": "13791",
+   "pipeline_parent": "15376",
+   "re_pipeline_parent": "725"
+  }
+ },
+ "not_resolved_by_this_work": "The CEA-based estimate for parent-owned renewable under construction (415 MW, from the earlier sprint) is a different measure from NTPC's directly reported 725 MW. This extraction establishes what NTPC reported and where; it does not explain or reconcile the CEA figure."
+}

@@ -1,0 +1,1623 @@
+{
+"provenance": {
+"document": "NTPC Integrated Annual Report 2024-25 (Annual Report 2024-25_1.pdf)",
+"pdf_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+"pdf_page_index": 91,
+"printed_pages": "178-179 (spread)",
+"captured_with": "PyMuPDF 1.28.2 page.get_text('dict') reduced by layout_from_page; blocks left of x=640 omitted except footers",
+"hand_checked_against": "rendered page image of PDF page 91, 2026-10-19"
+},
+"layout": {
+"width": 1188.0,
+"height": 774.0,
+"blocks": [
+{
+"id": 0,
+"bbox": [
+54.0,
+729.7,
+1134.0,
+741.6
+],
+"lines": [
+{
+"text": "NTPC LIMITED | 179",
+"bbox": [
+1052.9,
+729.7,
+1134.0,
+741.6
+],
+"bold": false
+},
+{
+"text": "178 |  INTEGRATED ANNUAL REPORT - 2024-25",
+"bbox": [
+54.0,
+729.7,
+242.9,
+741.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 24,
+"bbox": [
+648.0,
+69.2,
+884.8,
+118.6
+],
+"lines": [
+{
+"text": "objective of sharing its experiences and best practices",
+"bbox": [
+648.0,
+69.2,
+884.8,
+82.6
+],
+"bold": false
+},
+{
+"text": "with the customers, capturing their feedbacks and",
+"bbox": [
+648.0,
+81.2,
+884.7,
+94.6
+],
+"bold": false
+},
+{
+"text": "expectations, and also addressing their concerns. Some of",
+"bbox": [
+648.0,
+93.2,
+884.8,
+106.6
+],
+"bold": false
+},
+{
+"text": "these activities are described below:",
+"bbox": [
+648.0,
+105.2,
+795.7,
+118.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 25,
+"bbox": [
+648.0,
+125.2,
+884.8,
+183.0
+],
+"lines": [
+{
+"text": "•\t Your Company has put in place Customer Satisfaction",
+"bbox": [
+648.0,
+125.2,
+884.7,
+138.6
+],
+"bold": false
+},
+{
+"text": "Index (CSI) Survey scheme, to gather the feedback",
+"bbox": [
+661.0,
+136.2,
+884.8,
+149.6
+],
+"bold": false
+},
+{
+"text": "from customer through a survey and respond to their",
+"bbox": [
+661.0,
+147.2,
+884.8,
+160.6
+],
+"bold": false
+},
+{
+"text": "requirements. This CSI survey has been conducted",
+"bbox": [
+661.0,
+158.2,
+884.8,
+171.6
+],
+"bold": false
+},
+{
+"text": "during FY25 and the score fall under Excellent Category.",
+"bbox": [
+661.0,
+169.1,
+882.5,
+183.0
+],
+"bold": false
+}
+]
+},
+{
+"id": 26,
+"bbox": [
+648.0,
+187.4,
+884.8,
+277.8
+],
+"lines": [
+{
+"text": "•\t Your Company offers training programs to the",
+"bbox": [
+648.0,
+187.4,
+884.8,
+200.8
+],
+"bold": false
+},
+{
+"text": "representatives",
+"bbox": [
+661.0,
+198.4,
+726.0,
+211.8
+],
+"bold": false
+},
+{
+"text": "of",
+"bbox": [
+736.7,
+198.4,
+747.3,
+211.8
+],
+"bold": false
+},
+{
+"text": "beneficiary",
+"bbox": [
+758.0,
+198.4,
+805.3,
+211.8
+],
+"bold": false
+},
+{
+"text": "companies",
+"bbox": [
+815.9,
+198.4,
+862.1,
+211.8
+],
+"bold": false
+},
+{
+"text": "by",
+"bbox": [
+872.8,
+198.4,
+884.8,
+211.8
+],
+"bold": false
+},
+{
+"text": "conducting dedicated workshops for Discom officials.",
+"bbox": [
+661.0,
+209.4,
+884.7,
+222.8
+],
+"bold": false
+},
+{
+"text": "Your Company also offers training programs for Discom",
+"bbox": [
+661.0,
+220.4,
+884.8,
+233.8
+],
+"bold": false
+},
+{
+"text": "officials through Power Management Institute (PMI)",
+"bbox": [
+661.0,
+231.4,
+884.8,
+244.8
+],
+"bold": false
+},
+{
+"text": "of NTPC, a capacity building initiative of power sector",
+"bbox": [
+661.0,
+242.4,
+884.8,
+255.8
+],
+"bold": false
+},
+{
+"text": "personnel for equipping them with managerial and",
+"bbox": [
+661.0,
+253.4,
+884.8,
+266.8
+],
+"bold": false
+},
+{
+"text": "leadership skills.",
+"bbox": [
+661.0,
+264.4,
+727.3,
+277.8
+],
+"bold": false
+}
+]
+},
+{
+"id": 27,
+"bbox": [
+648.0,
+283.6,
+884.8,
+321.0
+],
+"lines": [
+{
+"text": "The details of the various initiatives taken by your company",
+"bbox": [
+648.0,
+283.6,
+884.8,
+297.0
+],
+"bold": false
+},
+{
+"text": "for strengthening its customer relationships is available in",
+"bbox": [
+648.0,
+295.6,
+884.8,
+309.0
+],
+"bold": false
+},
+{
+"text": "the Social Capital section of the report.",
+"bbox": [
+648.0,
+307.6,
+808.2,
+321.0
+],
+"bold": false
+}
+]
+},
+{
+"id": 28,
+"bbox": [
+648.0,
+328.7,
+768.8,
+343.9
+],
+"lines": [
+{
+"text": "8.4\t Commercial Capacity",
+"bbox": [
+648.0,
+328.7,
+768.8,
+343.9
+],
+"bold": true
+}
+]
+},
+{
+"id": 29,
+"bbox": [
+648.0,
+350.8,
+884.8,
+436.2
+],
+"lines": [
+{
+"text": "During the financial year 2024-25, your Company’s total",
+"bbox": [
+648.0,
+350.8,
+884.8,
+364.2
+],
+"bold": false
+},
+{
+"text": "commercial capacity was 59,413 MW. Additionally, when",
+"bbox": [
+648.0,
+362.8,
+884.8,
+376.2
+],
+"bold": false
+},
+{
+"text": "considering the collective efforts of your Company and its",
+"bbox": [
+648.0,
+374.8,
+884.7,
+388.2
+],
+"bold": false
+},
+{
+"text": "joint ventures & subsidiaries, the aggregate group level",
+"bbox": [
+648.0,
+386.8,
+884.8,
+400.2
+],
+"bold": false
+},
+{
+"text": "commercial capacity was further augmented by 3,972 MW",
+"bbox": [
+648.0,
+398.8,
+884.8,
+412.2
+],
+"bold": false
+},
+{
+"text": "resulting in an overall group level commercial capacity of",
+"bbox": [
+648.0,
+410.8,
+884.8,
+424.2
+],
+"bold": false
+},
+{
+"text": "79,930 MW as per detail given below: -",
+"bbox": [
+648.0,
+422.8,
+806.6,
+436.2
+],
+"bold": false
+}
+]
+},
+{
+"id": 30,
+"bbox": [
+652.0,
+447.2,
+878.5,
+546.6
+],
+"lines": [
+{
+"text": "Description",
+"bbox": [
+652.0,
+447.2,
+699.4,
+461.1
+],
+"bold": true
+},
+{
+"text": "Capacity (MW)",
+"bbox": [
+816.8,
+447.2,
+878.5,
+461.1
+],
+"bold": true
+},
+{
+"text": "Owned by your Company",
+"bbox": [
+652.0,
+462.0,
+759.0,
+475.9
+],
+"bold": true
+},
+{
+"text": "Coal based projects",
+"bbox": [
+652.0,
+476.9,
+731.1,
+490.3
+],
+"bold": false
+},
+{
+"text": "53,850",
+"bbox": [
+850.7,
+476.9,
+878.5,
+490.3
+],
+"bold": false
+},
+{
+"text": "Gas based projects",
+"bbox": [
+652.0,
+491.7,
+728.4,
+505.1
+],
+"bold": false
+},
+{
+"text": "4,017",
+"bbox": [
+855.7,
+491.7,
+878.5,
+505.1
+],
+"bold": false
+},
+{
+"text": "Hydro Projects",
+"bbox": [
+652.0,
+506.5,
+711.4,
+519.8
+],
+"bold": false
+},
+{
+"text": "800",
+"bbox": [
+863.3,
+506.5,
+878.5,
+519.8
+],
+"bold": false
+},
+{
+"text": "Renewable Energy Projects (Including",
+"bbox": [
+652.0,
+521.2,
+806.2,
+534.6
+],
+"bold": false
+},
+{
+"text": "Singrauli small hydro)",
+"bbox": [
+652.0,
+533.2,
+738.9,
+546.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 31,
+"bbox": [
+863.3,
+521.2,
+878.5,
+534.6
+],
+"lines": [
+{
+"text": "746",
+"bbox": [
+863.3,
+521.2,
+878.5,
+534.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 32,
+"bbox": [
+652.0,
+547.9,
+878.5,
+617.7
+],
+"lines": [
+{
+"text": "Sub-total",
+"bbox": [
+652.0,
+547.9,
+690.0,
+561.8
+],
+"bold": true
+},
+{
+"text": "59,413",
+"bbox": [
+850.6,
+547.9,
+878.5,
+561.8
+],
+"bold": true
+},
+{
+"text": "Joint Ventures & Subsidiaries",
+"bbox": [
+652.0,
+562.7,
+772.4,
+576.5
+],
+"bold": true
+},
+{
+"text": "Coal based projects",
+"bbox": [
+652.0,
+577.6,
+731.1,
+591.0
+],
+"bold": false
+},
+{
+"text": "9,004",
+"bbox": [
+855.7,
+577.6,
+878.5,
+591.0
+],
+"bold": false
+},
+{
+"text": "Gas based projects (Including",
+"bbox": [
+652.0,
+592.4,
+773.0,
+605.7
+],
+"bold": false
+},
+{
+"text": "NEEPCO-527 MW)",
+"bbox": [
+652.0,
+604.4,
+726.3,
+617.7
+],
+"bold": false
+}
+]
+},
+{
+"id": 33,
+"bbox": [
+855.7,
+592.4,
+878.5,
+605.7
+],
+"lines": [
+{
+"text": "2,494",
+"bbox": [
+855.7,
+592.4,
+878.5,
+605.7
+],
+"bold": false
+}
+]
+},
+{
+"id": 34,
+"bbox": [
+652.0,
+619.1,
+804.1,
+644.5
+],
+"lines": [
+{
+"text": "Hydro Projects of THDCL (1,424 MW)",
+"bbox": [
+652.0,
+619.1,
+804.1,
+632.5
+],
+"bold": false
+},
+{
+"text": "& NEEPCO (1525 MW)",
+"bbox": [
+652.0,
+631.1,
+742.6,
+644.5
+],
+"bold": false
+}
+]
+},
+{
+"id": 35,
+"bbox": [
+855.7,
+619.1,
+878.5,
+632.5
+],
+"lines": [
+{
+"text": "2,925",
+"bbox": [
+855.7,
+619.1,
+878.5,
+632.5
+],
+"bold": false
+}
+]
+},
+{
+"id": 36,
+"bbox": [
+652.0,
+645.9,
+802.9,
+683.3
+],
+"lines": [
+{
+"text": "Renewable Energy Projects including",
+"bbox": [
+652.0,
+645.9,
+802.9,
+659.3
+],
+"bold": false
+},
+{
+"text": "THDCL (163 MW) & NEEPCO (5 MW)",
+"bbox": [
+652.0,
+657.9,
+802.0,
+671.3
+],
+"bold": false
+},
+{
+"text": "& Ayana Power -ONGPL (2123 MW)",
+"bbox": [
+652.0,
+669.9,
+796.3,
+683.3
+],
+"bold": false
+}
+]
+},
+{
+"id": 37,
+"bbox": [
+855.7,
+645.9,
+878.5,
+659.3
+],
+"lines": [
+{
+"text": "6,094",
+"bbox": [
+855.7,
+645.9,
+878.5,
+659.3
+],
+"bold": false
+}
+]
+},
+{
+"id": 38,
+"bbox": [
+652.0,
+684.6,
+878.5,
+713.2
+],
+"lines": [
+{
+"text": "Sub-total",
+"bbox": [
+652.0,
+684.6,
+690.0,
+698.4
+],
+"bold": true
+},
+{
+"text": "20,517",
+"bbox": [
+850.6,
+684.6,
+878.5,
+698.4
+],
+"bold": true
+},
+{
+"text": "Total",
+"bbox": [
+652.0,
+699.3,
+672.2,
+713.2
+],
+"bold": true
+},
+{
+"text": "79,930",
+"bbox": [
+850.6,
+699.3,
+878.5,
+713.2
+],
+"bold": true
+}
+]
+},
+{
+"id": 39,
+"bbox": [
+899.5,
+68.2,
+1019.6,
+86.3
+],
+"lines": [
+{
+"text": "9.",
+"bbox": [
+899.5,
+68.2,
+912.5,
+86.3
+],
+"bold": true
+},
+{
+"text": "Installed Capacity",
+"bbox": [
+924.5,
+68.2,
+1019.6,
+86.3
+],
+"bold": true
+}
+]
+},
+{
+"id": 40,
+"bbox": [
+899.5,
+92.5,
+1136.3,
+189.9
+],
+"lines": [
+{
+"text": "During the financial year 2024-25, your Company added 335",
+"bbox": [
+899.5,
+92.5,
+1136.3,
+105.9
+],
+"bold": false
+},
+{
+"text": "MW to its installed capacity and reached to 59,413 MW as on",
+"bbox": [
+899.5,
+104.5,
+1136.3,
+117.9
+],
+"bold": false
+},
+{
+"text": "31 March 2025 against 59,078 MW as on 31 March 2024.",
+"bbox": [
+899.5,
+116.5,
+1136.3,
+129.9
+],
+"bold": false
+},
+{
+"text": "In addition to this, NTPC Group made significant strides",
+"bbox": [
+899.5,
+128.5,
+1136.3,
+141.9
+],
+"bold": false
+},
+{
+"text": "in expanding its installed capacity. During FY25, Your",
+"bbox": [
+899.5,
+140.5,
+1136.2,
+153.9
+],
+"bold": false
+},
+{
+"text": "Company at Group Level successfully added 3,972 MW",
+"bbox": [
+899.5,
+152.5,
+1136.3,
+165.9
+],
+"bold": false
+},
+{
+"text": "of capacity, bringing its cumulative installed capacity to",
+"bbox": [
+899.5,
+164.5,
+1136.3,
+177.9
+],
+"bold": false
+},
+{
+"text": "79,930 MW (75,958 MW as on 31 March 2024).",
+"bbox": [
+899.5,
+176.5,
+1094.8,
+189.9
+],
+"bold": false
+}
+]
+},
+{
+"id": 41,
+"bbox": [
+899.5,
+197.5,
+1053.8,
+212.8
+],
+"lines": [
+{
+"text": "9.1\t Capacity Expansion Program",
+"bbox": [
+899.5,
+197.5,
+1053.8,
+212.8
+],
+"bold": true
+}
+]
+},
+{
+"id": 42,
+"bbox": [
+899.5,
+219.7,
+1136.3,
+413.1
+],
+"lines": [
+{
+"text": "Your Company has formulated a long-term Corporate Plan",
+"bbox": [
+899.5,
+219.7,
+1136.2,
+233.1
+],
+"bold": false
+},
+{
+"text": "which aims to have 60 GW of Renewable Energy capacity",
+"bbox": [
+899.5,
+231.7,
+1136.2,
+245.1
+],
+"bold": false
+},
+{
+"text": "by 2032. While continuing to add capacity through coal-",
+"bbox": [
+899.5,
+243.7,
+1134.0,
+257.1
+],
+"bold": false
+},
+{
+"text": "based power projects, your Company is actively expanding",
+"bbox": [
+899.5,
+255.7,
+1136.2,
+269.1
+],
+"bold": false
+},
+{
+"text": "its power generation portfolio through hydro, renewable",
+"bbox": [
+899.5,
+267.7,
+1136.3,
+281.1
+],
+"bold": false
+},
+{
+"text": "energy sources & nuclear. As on 31 March 2025,",
+"bbox": [
+899.5,
+279.7,
+1136.3,
+293.1
+],
+"bold": false
+},
+{
+"text": "projects with a total capacity of 33,671 MW are under",
+"bbox": [
+899.5,
+291.7,
+1136.3,
+305.1
+],
+"bold": false
+},
+{
+"text": "implementation, including 18,295 MW being developed",
+"bbox": [
+899.5,
+303.7,
+1136.3,
+317.1
+],
+"bold": false
+},
+{
+"text": "by joint venture and subsidiary companies. It comprises of",
+"bbox": [
+899.5,
+315.7,
+1136.3,
+329.1
+],
+"bold": false
+},
+{
+"text": "16,900 MW of Coal (Including 3,060 MW being undertaken",
+"bbox": [
+899.5,
+327.7,
+1136.3,
+341.1
+],
+"bold": false
+},
+{
+"text": "by joint venture and subsidiary companies), 2,255 MW",
+"bbox": [
+899.5,
+339.7,
+1136.3,
+353.1
+],
+"bold": false
+},
+{
+"text": "of Hydro (Including 1,444 MW being undertaken by",
+"bbox": [
+899.5,
+351.7,
+1136.3,
+365.1
+],
+"bold": false
+},
+{
+"text": "joint venture and subsidiary companies) and 14,516",
+"bbox": [
+899.5,
+363.7,
+1136.3,
+377.1
+],
+"bold": false
+},
+{
+"text": "MW of Renewable projects (Including 13,791 MW being",
+"bbox": [
+899.5,
+375.7,
+1136.3,
+389.1
+],
+"bold": false
+},
+{
+"text": "undertaken by joint venture and subsidiary company).",
+"bbox": [
+899.5,
+387.7,
+1136.3,
+401.1
+],
+"bold": false
+},
+{
+"text": "The details are as under:",
+"bbox": [
+899.5,
+399.7,
+999.1,
+413.1
+],
+"bold": false
+}
+]
+},
+{
+"id": 43,
+"bbox": [
+903.5,
+424.1,
+1127.7,
+437.9
+],
+"lines": [
+{
+"text": "Ongoing Projects",
+"bbox": [
+903.5,
+424.1,
+973.8,
+437.9
+],
+"bold": true
+},
+{
+"text": "Capacity (MW)",
+"bbox": [
+1066.0,
+424.1,
+1127.7,
+437.9
+],
+"bold": true
+}
+]
+},
+{
+"id": 44,
+"bbox": [
+903.5,
+439.6,
+1015.5,
+453.4
+],
+"lines": [
+{
+"text": "I  Owned by your Company",
+"bbox": [
+903.5,
+439.6,
+1015.5,
+453.4
+],
+"bold": true
+}
+]
+},
+{
+"id": 45,
+"bbox": [
+903.5,
+455.1,
+1130.0,
+468.9
+],
+"lines": [
+{
+"text": "a)  Coal Based Projects",
+"bbox": [
+903.5,
+455.1,
+995.0,
+468.9
+],
+"bold": false
+},
+{
+"text": "13,840",
+"bbox": [
+1102.2,
+455.2,
+1130.0,
+468.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 46,
+"bbox": [
+903.5,
+470.6,
+1040.2,
+484.4
+],
+"lines": [
+{
+"text": "b)  Hydro Electric Power Projects",
+"bbox": [
+903.5,
+470.6,
+1040.2,
+484.4
+],
+"bold": false
+}
+]
+},
+{
+"id": 47,
+"bbox": [
+917.5,
+482.7,
+945.0,
+496.1
+],
+"lines": [
+{
+"text": "(HEPP)",
+"bbox": [
+917.5,
+482.7,
+945.0,
+496.1
+],
+"bold": false
+}
+]
+},
+{
+"id": 48,
+"bbox": [
+1114.8,
+470.7,
+1130.0,
+484.1
+],
+"lines": [
+{
+"text": "811",
+"bbox": [
+1114.8,
+470.7,
+1130.0,
+484.1
+],
+"bold": false
+}
+]
+},
+{
+"id": 49,
+"bbox": [
+903.5,
+498.1,
+1130.0,
+511.9
+],
+"lines": [
+{
+"text": "c)  Renewable Energy Projects",
+"bbox": [
+903.5,
+498.1,
+1024.9,
+511.9
+],
+"bold": false
+},
+{
+"text": "725",
+"bbox": [
+1114.8,
+498.2,
+1130.0,
+511.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 50,
+"bbox": [
+903.5,
+513.6,
+1130.0,
+527.4
+],
+"lines": [
+{
+"text": "Total (I)",
+"bbox": [
+903.5,
+513.6,
+934.9,
+527.4
+],
+"bold": true
+},
+{
+"text": "15,376",
+"bbox": [
+1102.1,
+513.6,
+1130.0,
+527.4
+],
+"bold": true
+}
+]
+},
+{
+"id": 51,
+"bbox": [
+903.5,
+529.1,
+1049.9,
+542.9
+],
+"lines": [
+{
+"text": "II  Projects under JVs & Subsidiaries",
+"bbox": [
+903.5,
+529.1,
+1049.9,
+542.9
+],
+"bold": true
+}
+]
+},
+{
+"id": 52,
+"bbox": [
+903.5,
+544.6,
+1130.0,
+558.4
+],
+"lines": [
+{
+"text": "a)  Coal Based Projects",
+"bbox": [
+903.5,
+544.6,
+995.0,
+558.4
+],
+"bold": false
+},
+{
+"text": "3,060",
+"bbox": [
+1107.2,
+544.7,
+1130.0,
+558.1
+],
+"bold": false
+}
+]
+},
+{
+"id": 53,
+"bbox": [
+903.5,
+560.1,
+1130.0,
+573.9
+],
+"lines": [
+{
+"text": "b)  Hydro Projects",
+"bbox": [
+903.5,
+560.1,
+975.7,
+573.9
+],
+"bold": false
+},
+{
+"text": "1,444",
+"bbox": [
+1107.2,
+560.2,
+1130.0,
+573.6
+],
+"bold": false
+}
+]
+},
+{
+"id": 54,
+"bbox": [
+903.5,
+575.6,
+1130.0,
+589.4
+],
+"lines": [
+{
+"text": "c)  Renewable Projects",
+"bbox": [
+903.5,
+575.6,
+994.9,
+589.4
+],
+"bold": false
+},
+{
+"text": "13,791",
+"bbox": [
+1102.2,
+575.7,
+1130.0,
+589.1
+],
+"bold": false
+}
+]
+},
+{
+"id": 55,
+"bbox": [
+903.5,
+591.1,
+1130.0,
+604.9
+],
+"lines": [
+{
+"text": "Total (II)",
+"bbox": [
+903.5,
+591.1,
+937.6,
+604.9
+],
+"bold": true
+},
+{
+"text": "18,295",
+"bbox": [
+1102.1,
+591.1,
+1130.0,
+604.9
+],
+"bold": true
+}
+]
+},
+{
+"id": 56,
+"bbox": [
+903.5,
+606.6,
+1040.0,
+632.4
+],
+"lines": [
+{
+"text": "Total On-Going Projects as on 31",
+"bbox": [
+903.5,
+606.6,
+1040.0,
+620.4
+],
+"bold": true
+},
+{
+"text": "March 2025 (I)+(II)",
+"bbox": [
+903.5,
+618.6,
+980.4,
+632.4
+],
+"bold": true
+}
+]
+},
+{
+"id": 57,
+"bbox": [
+1102.1,
+606.6,
+1130.0,
+620.4
+],
+"lines": [
+{
+"text": "33,671",
+"bbox": [
+1102.1,
+606.6,
+1130.0,
+620.4
+],
+"bold": true
+}
+]
+},
+{
+"id": 58,
+"bbox": [
+899.5,
+639.9,
+1136.3,
+665.3
+],
+"lines": [
+{
+"text": "The details of the same is available in the Manufacturing",
+"bbox": [
+899.5,
+639.9,
+1136.3,
+653.3
+],
+"bold": false
+},
+{
+"text": "Capital and Intellectual capital section of the report.",
+"bbox": [
+899.5,
+651.9,
+1112.4,
+665.3
+],
+"bold": false
+}
+]
+},
+{
+"id": 59,
+"bbox": [
+899.5,
+672.9,
+1136.3,
+698.3
+],
+"lines": [
+{
+"text": "The environmental clearance in respect of Darlipalli-II and",
+"bbox": [
+899.5,
+672.9,
+1136.3,
+686.3
+],
+"bold": false
+},
+{
+"text": "Telengana-II is yet to be received.",
+"bbox": [
+899.5,
+684.9,
+1036.6,
+698.3
+],
+"bold": false
+}
+]
+}
+]
+}
+}
