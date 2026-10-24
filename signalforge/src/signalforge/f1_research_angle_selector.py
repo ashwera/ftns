@@ -45,6 +45,21 @@ def normalize_f1_scores(output):
                                 "formula": "sum((score / 5) * weight * 100)"})
     return corrections
 
+def slim_for_local_model(records, config):
+    """Small local context windows: send only fields the model reasons over.
+
+    Applies to the Ollama provider only; stored records, eligibility gates and
+    ID validation still use the full records. Hashes, paths and the duplicated
+    issuer passage stay in the audit trail, not in the prompt.
+    """
+    if getattr(config, "provider", "").strip().lower() != "ollama":
+        return records
+    keep = ("evidence_id", "company_name", "document_title", "source_url", "source_locator", "page_number",
+            "publication_date", "reporting_period", "metric_name", "metric_value", "unit", "excerpt_or_fact",
+            "source_relationship", "claim_verification_status", "review_status", "extraction_warnings")
+    return [{k: r[k] for k in keep if r.get(k) not in (None, "", [])} for r in records]
+
+
 def f1_conclusions(output):
     """Existing decisions and scoring inputs a schema repair may not rewrite."""
     if not isinstance(output, dict): return {}
@@ -54,6 +69,87 @@ def f1_conclusions(output):
         result["candidates"] = [{key: c[key] for key in
             ("candidate_id", "rank", "category", "hypothesis", "scores") if key in c} for c in candidates]
     return result
+
+
+ANGLE_RULES = {
+    "renewable_transition": {
+        "terms": ("renewable", "solar", "wind", "green energy", "renewable energy", "mix", "generation", "revenue"),
+        "question": "Do issuer disclosures on renewable capacity and revenue or generation mix support the stated transition trajectory?",
+        "metrics": ["renewable capacity and commissioned capacity by reporting period", "revenue or generation mix by source and reporting period"],
+        "retrieve": ["Dated annual report and investor presentation with renewable capacity, generation or revenue mix", "Independent operating or regulatory data for the same periods"],
+    },
+    "capacity_conversion": {
+        "terms": ("announced", "commission", "commissioned", "capacity", "project", "under implementation", "commercial operation", "cod", "trial operation"),
+        "question": "Do dated project disclosures distinguish announced capacity from capacity that reached commissioning or commercial operation?",
+        "metrics": ["announced, under-implementation and commissioned capacity on a consistent unit and period basis", "target, trial operation and commercial operation dates"],
+        "retrieve": ["Project level issuer filings with dated status and capacity", "Independent regulator or system operator records confirming commissioning milestones"],
+    },
+    "hidden_relationships": {
+        "terms": ("related party", "subsidiary", "joint venture", "counterparty", "supplier", "customer", "loan", "guarantee", "transaction", "investment"),
+        "question": "Do disclosures identify financially material relationships whose terms or exposure merit independent checking?",
+        "metrics": ["related party transaction value and period", "counterparty exposure, guarantees, loans or investment balance"],
+        "retrieve": ["Related party and subsidiary disclosures with transaction values and periods", "Independent registry, regulator or counterparty records to test the relationship and terms"],
+    },
+}
+
+
+def deterministic_angle_fallback(company, dataset_summary, records, failure_reason):
+    """Rank research questions using eligible company evidence; never assert findings.
+
+    Rule: each category gets up to 5 points for matching eligible records (one
+    point per distinct evidence ID, capped at five), plus a small 0-2 score for
+    explicit cross-checkability. Weighted scores use the published F1 weights.
+    Categories with no matching evidence remain visible as unranked (score 0)
+    research possibilities; if no eligible company evidence exists, stop.
+    """
+    valid_records = [r for r in records if r.get("evidence_id") and r.get("excerpt_or_fact") and
+                     r.get("company_identity_status") == "verified" and r.get("parsing_status") == "parsed"
+                     and str(r.get("company_name", "")).casefold() == company.casefold()]
+    if not valid_records:
+        return None
+    candidates = []
+    for category, rule in ANGLE_RULES.items():
+        matches = []
+        for r in valid_records:
+            text = " ".join(str(r.get(k) or "") for k in ("excerpt_or_fact", "metric_name", "document_title")).lower()
+            if any(term in text for term in rule["terms"]):
+                matches.append(r)
+        distinct = {r["evidence_id"]: r for r in matches}
+        matching = list(distinct.values())[:5]
+        availability = min(5, len(distinct))
+        cross_check = 2 if availability >= 2 else (1 if availability == 1 else 0)
+        scores = {
+            "financial_significance": {"score": 4, "rationale": "Contest angle concerns potentially financially material disclosures; this is a prioritization rule, not a finding."},
+            "evidence_availability": {"score": availability, "rationale": f"{len(distinct)} distinct eligible company evidence records matched the category terms; capped at 5."},
+            "testability": {"score": 4 if availability else 2, "rationale": "The stated period and metric comparisons are directly retrievable; matching issuer evidence exists." if availability else "The defined comparison is testable through retrieval, but no supplied record matched this angle."},
+            "non_obviousness": {"score": 3, "rationale": "Fixed neutral baseline applied equally to all contest-defined angles."},
+            "cross_validation_potential": {"score": cross_check, "rationale": "Two points for at least two distinct matching records, one for one record, zero for none; independent sources are still required."},
+        }
+        ids = [r["evidence_id"] for r in matching]
+        found = [{"statement": str(r["excerpt_or_fact"]), "source_type": str(r.get("document_type") or "issuer disclosure"),
+                  "source_url": r.get("source_url"), "date": r.get("publication_date"),
+                  "row_identifier": str(r.get("source_locator") or r.get("page_number") or r["evidence_id"]),
+                  "evidence_id": r["evidence_id"], "status": "observed_in_ingested_source"} for r in matching]
+        score_values = {k: v["score"] for k, v in scores.items()}
+        candidates.append({"candidate_id": "fallback_" + category, "rank": 1, "category": category,
+            "hypothesis": rule["question"], "financial_importance": "Investigate whether verified disclosures support or contradict a potentially material issue; no financial discovery is asserted.",
+            "metrics_and_periods": rule["metrics"], "evidence_found": found,
+            "additional_evidence_needed": rule["retrieve"],
+            "alternative_explanation": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+            "falsification_condition": "The defined comparison is reconciled on a consistent period, entity, unit and reporting basis, with independent records supporting the disclosed position.",
+            "data_risks_and_limitations": ["This is research planning, not a verified financial finding.", "Issuer-only evidence is not independent corroboration.", "The NTPC quote CSV has no verified company join and is dataset context only."],
+            "scores": scores, "weighted_score": round(weighted_score(score_values), 10),
+            "weighted_score_rationale": "Deterministic score from the declared counts and fixed baseline rules; see manifest fallback method.",
+            "next_research_action": "Retrieve the listed dated issuer and independent records, then verify company identity, exact passages, metric basis and counterevidence."})
+    candidates.sort(key=lambda c: (-c["weighted_score"], c["category"]))
+    for rank, candidate in enumerate(candidates, 1):
+        candidate["rank"] = rank
+    recommended = next((c for c in candidates if c["evidence_found"]), None)
+    if not recommended:
+        return None
+    return {"company_name": company, "dataset_summary": dataset_summary, "ranking_reliable": True,
+            "ranking_limitation": "Deterministic planning fallback used because the schema-valid model ranking was unusable or unreliable. Ranking prioritizes eligible company evidence matches; no verified financial finding is implied.",
+            "ranked_candidates": candidates, "recommended_candidate_id": recommended["candidate_id"]}
 
 def eligible_ingested_evidence(records, canonical_name, verified_identifier):
     """Shared F1/R1 gate: human approval OR independently rechecked PDF passages.
@@ -178,7 +274,7 @@ def run(company, csv_path, output_path, config=None, *, research_question=None):
     payload = {"company": company, "company_records": company_rows,
         "dataset_level_profile_not_company_evidence": {"row_count": audit["row_count"], "columns": audit["column_names"], "quality_warnings": audit["quality_warnings"], "limitations": audit["limitations"]},
         "research_readiness_matrix": readiness["candidate_categories"],
-        "verified_ingested_evidence": ingested_evidence,
+        "verified_ingested_evidence": slim_for_local_model(ingested_evidence, config),
         "ingested_evidence_quality_warnings": evidence_warnings,
         "f1_scoring_weights_percent": {"financial_significance":30,"evidence_availability":25,"testability":20,"non_obviousness":7.5,"cross_validation_potential":17.5},
         "evidence_boundary": "Only company_records and verified_ingested_evidence contain selected-company evidence. Dataset profile values are dataset-level context, never company-specific evidence. automatically_cross_checked records passed deterministic original-PDF identity/hash/page/passage checks, not human approval or claim verification. Neither approval state establishes independent corroboration or justifies Strong/Moderate evidence strength.",
@@ -209,6 +305,27 @@ def run(company, csv_path, output_path, config=None, *, research_question=None):
         output_path=output_path, generate=generate_json, validate=validate_f1,
         normalize=normalize_f1_scores, preserve=f1_conclusions, stage="f1")
     out = Path(output_path); out.parent.mkdir(parents=True, exist_ok=True)
+    rec_id = output.get("recommended_candidate_id")
+    usable = output.get("ranking_reliable") and rec_id and any(c.get("candidate_id") == rec_id for c in output.get("ranked_candidates", []))
+    if not usable:
+        reason = ("model returned ranking_reliable=false" if not output.get("ranking_reliable") else
+                  "model returned no recommendation or recommendation did not identify a candidate")
+        model_output_path = out.with_name(out.stem + "_model_output.json")
+        model_output_path.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        fallback = deterministic_angle_fallback(canonical, output.get("dataset_summary", {}), ingested_evidence, reason)
+        if fallback is not None:
+            validate_output(fallback, config.schema_path)
+            output = fallback
+            (out.parent / "f1_fallback.json").write_text(json.dumps({"used": True, "reason": reason,
+                "method": "For each contest angle, count distinct eligible company evidence IDs whose excerpt, metric name or title contains its fixed keyword list (0-5). Fixed scores: financial significance 4, testability 4 with a match or 2 without, non-obviousness 3; cross-validation potential 0/1/2 for zero/one/two-or-more distinct matching IDs. Apply existing F1 weights and sort by weighted score, then category. At least one angle must cite an eligible record.",
+                "evidence_ids_by_category": {c["category"]: [e["evidence_id"] for e in c["evidence_found"]] for c in output["ranked_candidates"]},
+                "ranking_type": "deterministic_research_planning_fallback", "financial_finding": False}, indent=2) + "\n", encoding="utf-8")
+        else:
+            (out.parent / "f1_fallback.json").write_text(json.dumps({"used": False, "reason": reason,
+                "blocked": "No eligible company-specific evidence matched; no generic candidates were manufactured."}, indent=2) + "\n", encoding="utf-8")
+    else:
+        (out.parent / "f1_fallback.json").write_text(json.dumps({"used": False, "reason": None,
+            "ranking_type": "model_generated", "financial_finding": False}, indent=2) + "\n", encoding="utf-8")
     out.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     recommendation = output.get("recommended_candidate_id")
     rec = next((x for x in output["ranked_candidates"] if x["candidate_id"] == recommendation), None)

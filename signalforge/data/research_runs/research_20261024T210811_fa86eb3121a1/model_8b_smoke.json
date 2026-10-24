@@ -1,0 +1,12 @@
+{
+  "provider": "ollama",
+  "model": "signalforge-qwen8b",
+  "context": 32768,
+  "status": "passed",
+  "elapsed_seconds": 11.13,
+  "response": {
+    "evidence_id": "ev_smoke",
+    "passage": "The project is expected to commission in FY2027; this is a target, not commercial operation.",
+    "ok": true
+  }
+}

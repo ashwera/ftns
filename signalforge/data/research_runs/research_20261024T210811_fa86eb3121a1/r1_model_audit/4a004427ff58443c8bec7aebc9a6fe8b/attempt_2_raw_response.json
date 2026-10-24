@@ -1,0 +1,287 @@
+{
+  "company_name": "Hindalco Industries Limited",
+  "candidate_id": "fallback_capacity_conversion",
+  "hypothesis": "Do dated project disclosures distinguish announced capacity from capacity that reached commissioning or commercial operation?",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the announced, under-implementation, and commissioned capacity for aluminium and copper-related projects at Hindalco Industries Limited, broken down by project type and on a consistent unit and period basis?",
+      "metrics": [
+        "announced capacity",
+        "under-implementation capacity",
+        "commissioned capacity"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25",
+        "Q2 FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Explicit metric definitions for 'announced' vs 'commissioned'",
+        "Consistent unit of measurement (e.g., KT, KTPA)",
+        "Period-aligned project status progression data",
+        "Project-level breakdown by material and technology (e.g., downstream, specialty alumina)",
+        "Announced capacity with start date and timeline"
+      ]
+    },
+    {
+      "question": "What are the target, trial operation, and commercial operation dates for key projects such as the copper and e-waste recycling project, greenfield alumina refinery, and battery foil plants?",
+      "metrics": [
+        "target operation date",
+        "trial operation date",
+        "commercial operation date"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25",
+        "FY 2025-26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Specific start, trial, and commercial operation dates",
+        "Source of date assignment (e.g., project plan, regulatory approval, commissioning report)",
+        "Project status as of current date",
+        "Official timeline documentation from project management or investor presentation"
+      ]
+    },
+    {
+      "question": "How do the reported project timelines and milestones in disclosures align with actual commissioning or commercial operations, as verified by independent operational or regulatory records?",
+      "metrics": [
+        "commissioning milestone",
+        "commercial operation milestone"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Independent records from energy or infrastructure regulators",
+        "Operational status from independent operators or system operators",
+        "Third-party reports or audits confirming plant operations",
+        "Actual operational outputs (e.g., power generation, metal production) by plant"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_b4b16e736883ef0de560ba0d",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "India is a fast-growing economy with rising consumption. In aluminium, current per capita consumption stands at 3.1 kg against the global average of 12.2 kg. Similarly, the per capita consumption of copper is 0.7 kg in India, while the global average is 3.9 kg. In China, per capita consumption is 34.9 kg for aluminium and 11.8 kg for copper. This provides significant headroom for growth and an increased demand for our products and solutions across all segments.",
+      "claim_supported": "India's per capita consumption of aluminium and copper provides market demand for downstream expansion.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_f6bf8fc87e968143f61c184e",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Copper and E-waste recycling project with a capacity of 50 KTPA to be commissioned at Pakhajan, Bharuch District, Gujarat by 2026. Greenfield alumina refinery with a capacity of 850 KTPA to be commissioned at Kansariguda, Rayagada, Odisha by 2027. Commissioned state-of-the-art extrusion facility at Silvassa in FY 2023-24. Downstream capacity to increase from 430 KT to more than 600 KT with commissioning of 170 KT FRP by the end of FY 2026.",
+      "claim_supported": "Hindalco has announced downstream capacity expansion with target commissioning dates for specific projects.",
+      "kind": "reported_fact",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_157588baa44fe21c7d244306",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Our ERM follows a scalable and flexible approach... key risks identified through this comprehensive process are then presented to the leadership, including Board and executive committee, on a periodic basis for continuous oversight.",
+      "claim_supported": "Risk management process includes monitoring project execution timelines and operational milestones.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_836e5c74111ba3cda78bda80",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "We are in process of commissioning a precipitate (PPT) hydrate plant with a capacity of 20 KT and aim to start production in FY 2024-25. The state-of-the-art extrusion facility at Silvassa was successfully commissioned with a capacity of 34 KT, adding to our overall downstream capacity. We have also commissioned a state-of-the-art Vertical Powder Coating facility, a first of its kind in India.",
+      "claim_supported": "Specific projects have milestone dates, including production timelines for specialty alumina and downstream operations.",
+      "kind": "reported_fact",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_f4a003fa4a60009b1018f261",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "We conducted a total of 5 familiarisation programmes and other awareness sessions for the Board of Directors and key managerial personnel, covering topics such as overview of company landscape, investment opportunities in sustainability, revised board evaluation framework, statutory and non-statutory policies. 90% of the BoDs and KMPs were covered under the programmes and awareness sessions.",
+      "claim_supported": "Internal training programs reflect project rollout schedules and operational planning.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_dd54912f60e5319f278cdd44",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Announced capacity for downstream expansion (e.g. battery foil, FRP) with timeline (e.g. FY 2024-25) specified.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_89a3c0da5b4119a3ad90bf1a",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Target operation date for greenfield alumina refinery in Odisha specified as 2027.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_24f65cfcb51b0b8059510d0b",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Commissioning of new downstream facilities such as battery foil and extrusion plants at specific locations and timelines.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_b78f1f2be0597c4b9edeef26",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Project timeline data for downstream products is stated but not aligned with operational outputs.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_9d0caaf9f68e19f138bdbc43",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Announced capacity for aluminum battery foil to be 25 KT at Aditya plant.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_925778119ac92976d727ed24",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Battery enclosures for EVs to be produced at Chakan plant, operational by Q2 FY 2024-25.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_c794e8a585f1f427fb5f7e5f",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Greenfield project for white fused alumina planned for FY 2026-27.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_2bb1df47d1c25f2e7b353677",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Commissioning of battery foil plant at Aditya planned, with 25 KT initial capacity.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_77ac31547230f9162f4c34d9",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Operational status of downstream projects confirmed to be in progress with milestones.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_d88979f05ff6a63183348a8f",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No formal operational verification of commissioning for all plant facilities.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_3193e95f1b356d7907290939",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Project execution includes training and operational readiness plans.",
+      "kind": "inference",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Identify and retrieve project-level annual reports of Hindalco Industries Limited for FY 2023-24 and FY 2024-25",
+      "expected_evidence": "Official annual reports, financial statements, or investor presentations disclosing project timelines, capacity announcements, and operational milestones.",
+      "cross_validation_sources": [
+        "Hindalco annual report 2023-24",
+        "Hindalco investor presentation FY 2024-25",
+        "Hindalco board report on capital expenditures"
+      ],
+      "calculation": null,
+      "completion_criteria": "Obtain a copy of the annual report for FY 2023-24 and FY 2024-25 with section on capital expenditures and project status."
+    },
+    {
+      "step": "Retrieve and examine the company's filings with the Securities and Exchange Board of India (SEBI) or the India Depository Receipts (IDR) registry for disclosures related to project commissioning milestones",
+      "expected_evidence": "SEBI filings, disclosures, or circulars with dated status for planned and completed projects.",
+      "cross_validation_sources": [
+        "SEBI filing portal under 'Corporate Governance' or 'Project Updates'",
+        "Hindalco's official website — 'Investors' or 'Projects' section"
+      ],
+      "calculation": null,
+      "completion_criteria": "Obtain at least three dated disclosures from Hindalco's official filings that specify the announced, under-implementation, and commissioned capacity status for any project."
+    },
+    {
+      "step": "Search for independent operational records from energy or infrastructure regulators confirming the commissioning of facilities such as greenfield alumina refinery or copper recycling plant",
+      "expected_evidence": "Regulatory approval, operational permits, or system operator logs confirming actual commissioning date and commercial operations.",
+      "cross_validation_sources": [
+        "Central Electricity Regulatory Commission (CERC)",
+        "Ministry of Power, India — facility commissioning database",
+        "National Thermal Power Corporation (NTPC) operational status logs"
+      ],
+      "calculation": null,
+      "completion_criteria": "Find at least one independent source that confirms the actual commissioning date of any project mentioned in the disclosures."
+    },
+    {
+      "step": "Verify the technical specifications and operational data for downstream projects such as the battery foil plant and extrusion facility with output data or capacity utilization reports",
+      "expected_evidence": "Operational data or output reports from Hindalco or third-party operators indicating actual usage or production levels of the plants.",
+      "cross_validation_sources": [
+        "Production reports from Mouda and Chakan plants",
+        "Third-party supply chain or end-user reports"
+      ],
+      "calculation": null,
+      "completion_criteria": "Obtain a data point showing actual production or utilization of capacity for any plant at a specific time."
+    },
+    {
+      "step": "Cross-check reported timelines with project status to assess consistency between announced capacity and actual commissioning",
+      "expected_evidence": "A time-series comparison of announced, under-implementation, and commissioned capacity per facility over FY 2023-24 to FY 2025-26.",
+      "cross_validation_sources": [
+        "Project timeline from investor slides",
+        "Operational data from project site",
+        "Board-level operational review reports"
+      ],
+      "calculation": null,
+      "completion_criteria": "Establish whether all announced capacity milestones have been verified with physical or operational data."
+    }
+  ],
+  "alternative_explanation": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+  "falsification_test": "The defined comparison is reconciled on a consistent period, entity, unit and reporting basis, with independent records supporting the disclosed position.",
+  "data_risks_and_limitations": null
+}

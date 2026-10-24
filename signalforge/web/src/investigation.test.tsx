@@ -16,6 +16,12 @@ const investigation: Investigation = {
 afterEach(() => { cleanup(); localStorage.clear(); vi.restoreAllMocks(); vi.unstubAllGlobals() })
 
 describe('completed investigation', () => {
+  it('labels a terminal evidence gap without claiming that model review ran', () => {
+    render(<InvestigationView investigation={{...investigation, report_type:'evidence_gap', claims:[], sources:[], model_review_execution:'not_executed'}} runId="gap-run" />)
+    expect(screen.getByText('Evidence-gap report · inconclusive')).toBeTruthy()
+    expect(screen.getByText(/No financial conclusion accepted. Model review: not_executed/)).toBeTruthy()
+    expect(screen.queryByText('Completed investigation · inconclusive')).toBeNull()
+  })
   it('shows exact quotes, challenge reasons and backend corroboration without inferring independence', () => {
     const expanded: Investigation = { ...investigation, company: 'Test Company', run_id: 'test-run', prompt: 'Assigned test question', novelty_established: false, source_scope: 'Bounded search', claims: [{ ...investigation.claims[0], verification_reason: 'Issuer statement only', independently_corroborated: false, independent_groups: ['issuer:canonical'], citations: [{ evidence_id: 'passage1', quote: 'Exact synthetic test quote' }] }] }
     render(<InvestigationView investigation={expanded} runId="test-run" />)

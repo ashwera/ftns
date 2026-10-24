@@ -1,0 +1,1128 @@
+{
+  "run_status": "completed",
+  "generated_at": "2026-10-17T18:48:38.892545+00:00",
+  "parser_version": "layer1.5-table-0.1.0+layer1-deterministic-0.1.0",
+  "schema_version": "1.1",
+  "extractor": "deterministic rules; no model, no network",
+  "input": {
+    "evidence_path": "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/evidence.jsonl",
+    "evidence_sha256": "d7a4808c829e7d19620324df0c9ed4b23f588d4e9948da17119e7ef339447c84",
+    "source_records_path": "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/source_records.jsonl"
+  },
+  "output_dir": "/Users/ashwera/Documents/ftns/signalforge/data/claims_table_step1",
+  "input_record_count": 8241,
+  "processed_chunk_count": 8241,
+  "failed_chunk_count": 0,
+  "chunks_with_claims": 2738,
+  "chunks_with_zero_claims": 5503,
+  "zero_claims_empty_or_unparsed": 1494,
+  "zero_claims_no_extractable_claim": 4009,
+  "total_claims": 37881,
+  "claims_by_status": {
+    "extracted": 31,
+    "ambiguous": 18325,
+    "needs_review": 19525
+  },
+  "claims_needing_attention": 37850,
+  "schema_validation_failures": 0,
+  "chunks_with_rejected_claims": 0,
+  "duplicate_claims_skipped": 0,
+  "review_queue_entries": 37850,
+  "error_summary": [],
+  "error_summary_truncated": false,
+  "notes": [
+    "Claims are extracted candidates and carry claim_verification_status 'unverified'; extraction is not verification.",
+    "Entity is copied from the evidence record and not independently certified."
+  ],
+  "pipeline": "table-aware (Layer 1.5)",
+  "thresholds": {
+    "min_rows": 3,
+    "min_width": 3,
+    "width_consistency": 0.6,
+    "numeric_frac": 0.25,
+    "long_cell": 120,
+    "tabular_max_long_frac": 0.3,
+    "prose_min_long_frac": 0.5,
+    "reversal_min_evidence": 2,
+    "reversal_ratio": 3.0,
+    "max_excerpt": 800
+  },
+  "chunk_classification": {
+    "counts": {
+      "uncertain": 2903,
+      "prose": 2045,
+      "tabular": 3293
+    },
+    "extraction_path_counts": {
+      "table_parser": 3293,
+      "prose_regex": 2045,
+      "prose_regex_flagged_uncertain": 2903,
+      "skipped_empty": 0
+    },
+    "reason_summary_counts": {
+      "no non-blank rows": 1339,
+      "narrow rows or long text cells dominate": 2045,
+      "consistent multi-column rows with numeric cells or header signal": 3293,
+      "signals conflict or too little structure": 1564
+    }
+  },
+  "claims_by_method": {
+    "table_row": 34547,
+    "prose_regex": 3334
+  },
+  "claims_flagged_for_review": 37850,
+  "table_rows": {
+    "rows_seen": 32321,
+    "header_rows": 3595,
+    "repeated_headers": 75,
+    "blank_rows": 1251,
+    "outcomes": {
+      "label_only_row": 2994,
+      "row_flagged_only": 10424,
+      "rejected_no_label": 14006,
+      "row_with_extracted_claim": 5,
+      "row_no_claim": 46
+    },
+    "rows_with_extracted_claim": 5,
+    "rows_flagged_only": 10424,
+    "rows_rejected_or_without_claim": 17046,
+    "tabular_chunks_without_header": 513,
+    "malformed_numeric_cells_skipped": 0,
+    "note_reference_columns_skipped": 111,
+    "reject_examples": {
+      "rejected_no_label": {
+        "evidence_id": "ev_86dc304049f145cf4640c6a0",
+        "row": "\"Total Capacity declared\ncommercial during 2017-18\n(I)+(II)+(III)+(IV)+(V)\",\"4,423\","
+      }
+    }
+  },
+  "reversal": {
+    "rows_reversed": 789,
+    "rows_with_some_reverse_evidence_kept_forward": 251,
+    "diagnostics_sample": [
+      {
+        "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+        "row_index": 0,
+        "original": "\"tnuomA\nlatoT )\n`\nni(\",,,,\"260,00,52,5\",\"316,72,43\",,,,,,\"576,72,95,5\"",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 1,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+        "row_index": 1,
+        "original": "\"reganaM/\nDTW/\nDM\nfo\nemaN\",DTW,\"5artapahoM\n.K.P\n.hS\",,\"560,47,45\",\"493,80,1\",00.0,,,,,\"954,28,55\"",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 2,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+        "row_index": 11,
+        "original": "\"noitarenumeR\nfo\nsralucitraP\",,,\"yralas\nssorG\",\"eht\nfo\nsnoisivorp )1(71\n1691\nnoitces\nrep ,tcA\nsa ni deniatnoc xat-emocnI\nyralaS\n)a(\",\")2(71\n1691\ns/u\nsetisiuqrep ,tcA\nxat-emocnI\nfo\neulaV\neht\n)b( fo\",\"rednu xat\n-emocnI\nyralas\neht\nfo\nueil fo\n)3(71\nni\nstiforP 1691\nnoitces\n,tcA\n)c(\",\"noitpO\nkcotS\",\"ytiuq",
+        "reconstructed": "Particulars\nof\nRemuneration,,,Gross\nsalary,(a)\nSalary\nIncome-tax contained in as\nAct, per\nsection\n1961\n17(1) provisions\nof\nthe,of (b)\nthe\nValue\nof\nIncome-tax\nAct, perquisites\nu/s\n1961\n17(2),(c)\nAct,\nsection\n1961 Profits\nin\n17(3)\nof lieu\nof\nthe\nsalary\nIncome-\ntax under,Stock\nOption,Sweat\nEquity,-\nas\n",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 0,
+        "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",,-,-,-,-,,-,-,-,,-,-,-,,-,-,-",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,01.001,79.642,70.743,\"98.739,2\",,23.932,86.001,00.043,,\"86.996,3\",10.0,\"96.996,3\",,-,-,)37.457(",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,100.10,246.97,347.07,2,937.89,,239.32,100.68,340.00,,3,699.68,0.01,3,699.69,,-,-,(754.73)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 2,
+        "original": "\"etavirP\nrewoP\n.dtL\n&\nsaG\nirigantaR\",\"7102\nta hcraM\nsA\n13\",,76.053,53.786,\"20.830,1\",\"81.794,6\",,\"18.343,4\",98.955,\"07.309,4\",,\"91.915,5\",90.9,\"82.825,5\",,-,-,\")87.698,2(\"",
+        "reconstructed": "Ratnagiri\nGas\n&\nLtd.\nPower\nPrivate,31\nAs\nMarch at\n2017,,350.67,687.35,1,038.02,6,497.18,,4,343.81,559.89,4,903.70,,5,519.19,9.09,5,528.28,,-,-,(2,896.78)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 9
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 3,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,60.134,72.344,33.478,\"34.033,2\",,\"35.230,4\",22.134,\"57.364,4\",,\"60.336,1\",18.7,\"78.046,1\",,-,-,\")68.998,2(\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,431.06,443.27,874.33,2,330.43,,4,032.53,431.22,4,463.75,,1,633.06,7.81,1,640.87,,-,-,(2,899.86)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 4,
+        "original": "\"ygrenE\n.dtL\nudaN\nynapmoC\nlimaT-CPTN\",\"7102\nta hcraM\nsA\n13\",,84.17,\"36.092,2\",\"11.263,2\",\"24.402,8\",,\"75.615,2\",70.594,\"46.110,3\",,\"25.499,4\",91.0,\"17.499,4\",00.3,-,93.42,\"97.835,2\"",
+        "reconstructed": "NTPC-Tamil\nCompany\nNadu\nLtd.\nEnergy,31\nAs\nMarch at\n2017,,71.48,2,290.63,2,362.11,8,204.42,,2,516.57,495.07,3,011.64,,4,994.52,0.19,4,994.71,3.00,-,24.39,2,538.79",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 5,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,95.6,\"72.028,1\",\"68.628,1\",\"71.000,8\",,\"26.463,2\",38.672,\"54.146,2\",,\"70.265,4\",91.0,\"62.265,4\",96.5,-,16.5,\"04.326,2\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,6.59,1,820.27,1,826.86,8,000.17,,2,364.62,276.83,2,641.45,,4,562.07,0.19,4,562.26,5.69,-,5.61,2,623.40",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 9
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 6,
+        "original": "\"ynapmoC\nrewoP\n.dtL\nLIAS-CPTN\",\"7102\nta hcraM\nsA\n13\",,41.5,25.029,66.529,\"16.202,2\",,79.613,22.301,91.024,,21.075,44.461,65.437,-,-,-,\"25.379,1\"",
+        "reconstructed": "NTPC-SAIL\nLtd.\nPower\nCompany,31\nAs\nMarch at\n2017,,5.14,920.52,925.66,2,202.61,,316.97,103.22,420.19,,570.12,164.44,734.56,-,-,-,1,973.52",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 7,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,44.34,71.467,16.708,\"91.987,2\",,88.193,27.991,06.195,,62.437,37.68,99.028,-,-,-,\"12.481,2\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,43.44,764.17,807.61,2,789.19,,391.88,199.72,591.60,,734.26,86.73,820.99,-,-,-,2,184.21",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 8,
+        "original": "\".tvP\nsecivreS\nrewoP .dtL\nEG-CPTN\",\"7102\nta hcraM\nsA\n13\",,25.2,85.081,01.381,46.2,,10.0,88.161,98.161,,61.0,02.0,63.0,-,-,-,94.32",
+        "reconstructed": "NTPC-GE\nLtd. Power\nServices\nPvt.,31\nAs\nMarch at\n2017,,2.52,180.58,183.10,2.64,,0.01,161.88,161.89,,0.16,0.20,0.36,-,-,-,23.49",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 9,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,94.4,44.841,39.251,16.3,,10.0,53.741,63.741,,-,02.0,02.0,-,-,-,89.8",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 10,
+        "original": "\".dtL\nhcetrewoP\nytilitU\",\"7102\nta hcraM\nsA\n13\",,37.93,94.372,22.313,02.73,,73.601,68.341,32.052,,14.5,31.31,45.81,-,-,-,56.18",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 11,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,17.14,92.253,00.493,11.93,,00.421,88.191,88.513,,77.3,54.51,22.91,-,-,-,10.89",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 12,
+        "original": "sralucitraP,,\"stessa\ntnerruC\",\"stnelaviuqe\nhsac\ndna\nhsaC\",\"stessa\nrehtO\",\"stessa\ntnerruc\nlatoT\",\"stessa\ntnerruc-non\nlatoT\",\"seitilibail\ntnerruC\",\"selbayap\nseitilibail\nedart )snoisivorp\ngnidulcxe(\nlaicnaniF\ndna\",\"seitilibail\nrehtO\",\"seitilibail\ntnerruc\nlatoT\",\"seitilibail\ntnerruc-noN\",\"selbayap\nseiti",
+        "reconstructed": "Particulars,,Current\nassets,Cash\nand\ncash\nequivalents,Other\nassets,Total\ncurrent\nassets,Total\nnon-current\nassets,Current\nliabilities,and\nFinancial\n(excluding\nprovisions) trade\nliabilities\npayables,Other\nliabilities,Total\ncurrent\nliabilities,Non-current\nliabilities,and\nFinancial\n(excluding\nprovisions",
+        "reversed": true,
+        "forward_evidence": 3,
+        "reverse_evidence": 39
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 0,
+        "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",-,-,-,-,-,-,-,-,-,-",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",-,)12.767(,-,-,84.21,)37.457(,15.52,-,-,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,-,(767.21),-,-,12.48,(754.73),25.51,-,-,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 2,
+        "original": "\"etavirP\nrewoP\n.dtL\n&\nsaG\nirigantaR\",\"7102\nta hcraM\nsA\n13\",53.481,\")31.180,3(\",-,-,-,\")87.698,2(\",15.52,-,-,-",
+        "reconstructed": "Ratnagiri\nGas\n&\nLtd.\nPower\nPrivate,31\nAs\nMarch at\n2017,184.35,(3,081.13),-,-,-,(2,896.78),25.51,-,-,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 3,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\")87.698,2(\",47.46,-,-,)28.76(,\")68.998,2(\",15.52,-,-,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,(2,896.78),64.74,-,-,(67.82),(2,899.86),25.51,-,-,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 4,
+        "original": "\"ygrenE\n.dtL\nudaN\nynapmoC\nlimaT-CPTN\",\"7102\nta hcraM\nsA\n13\",\"07.952,2\",49.791,-,-,51.18,\"97.835,2\",00.05,\"93.962,1\",-,\"93.962,1\"",
+        "reconstructed": "NTPC-Tamil\nCompany\nNadu\nLtd.\nEnergy,31\nAs\nMarch at\n2017,2,259.70,197.94,-,-,81.15,2,538.79,50.00,1,269.39,-,1,269.39",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 5,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"97.835,2\",44.33,10.0,-,61.15,\"04.326,2\",00.05,\"07.113,1\",-,\"07.113,1\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,2,538.79,33.44,0.01,-,51.16,2,623.40,50.00,1,311.70,-,1,311.70",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 6,
+        "original": "\"ynapmoC\nrewoP\n.dtL\nLIAS-CPTN\",\"7102\nta hcraM\nsA\n13\",\"32.557,1\",78.883,)80.2(,)05.861(,-,\"25.379,1\",00.05,67.689,-,67.689",
+        "reconstructed": "NTPC-SAIL\nLtd.\nPower\nCompany,31\nAs\nMarch at\n2017,1,755.23,388.87,(2.08),(168.50),-,1,973.52,50.00,986.76,-,986.76",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 7,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"25.379,1\",27.133,)96.0(,)53.021(,-,\"02.481,2\",00.05,\"11.290,1\",-,\"11.290,1\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,1,973.52,331.72,(0.69),(120.35),-,2,184.20,50.00,1,092.11,-,1,092.11",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 8,
+        "original": "\".tvP\nsecivreS\nrewoP .dtL\nEG-CPTN\",\"7102\nta hcraM\nsA\n13\",04.42,35.0,-,)44.1(,-,94.32,00.05,57.11,-,57.11",
+        "reconstructed": "NTPC-GE\nLtd. Power\nServices\nPvt.,31\nAs\nMarch at\n2017,24.40,0.53,-,(1.44),-,23.49,50.00,11.75,-,11.75",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 9,
+        "original": ",\"8102\nta hcraM\nsA\n13\",94.32,)40.51(,-,-,35.0,89.8,00.05,94.4,-,94.4",
+        "reconstructed": ",31\nAs\nMarch at\n2018,23.49,(15.04),-,-,0.53,8.98,50.00,4.49,-,4.49",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 10,
+        "original": "\".dtL\nhcetrewoP\nytilitU\",\"7102\nta hcraM\nsA\n13\",28.86,54.91,)06.0(,)20.6(,-,56.18,00.05,38.04,-,38.04",
+        "reconstructed": "Utility\nPowertech\nLtd.,31\nAs\nMarch at\n2017,68.82,19.45,(0.60),(6.02),-,81.65,50.00,40.83,-,40.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 11,
+        "original": ",\"8102\nta hcraM\nsA\n13\",56.18,20.12,63.1,)20.6(,-,10.89,00.05,10.94,-,10.94",
+        "reconstructed": ",31\nAs\nMarch at\n2018,81.65,21.02,1.36,(6.02),-,98.01,50.00,49.01,-,49.01",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 12,
+        "original": "sralucitraP,,\"stessa\nten\ngninepO\",\"raey\neht\nrof\n)ssol(/tiforP\",\"evisneherpmoc\n)esnepxe(/emocni\nrehtO\",\"diap\nsdnediviD\",\"*stnemtsujda\nrehtO\",\"stessa\nten\ngnisolC\",\"%\nni\nerahs\ns’puorG\",\"RNI\nni\nerahs\ns’puorG\",lliwdooG,\"tnuoma\ngniyrraC\"",
+        "reconstructed": "Particulars,,Opening\nnet\nassets,Profit/(loss)\nfor\nthe\nyear,Other\nincome/(expense)\ncomprehensive,Dividends\npaid,Other\nadjustments*,Closing\nnet\nassets,Group’s\nshare\nin\n%,Group’s\nshare\nin\nINR,Goodwill,Carrying\namount",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 14
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 0,
+        "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",-,-,-,-,-,-,-,-,-",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",01.713,51.0,05.011,78.892,-,)12.767(,-,)12.767(,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,317.10,0.15,110.50,298.87,-,(767.21),-,(767.21),-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 2,
+        "original": "\"etavirP\nrewoP\n.dtL\n&\nsaG\nirigantaR\",\"7102\nta hcraM\nsA\n13\",\"00.863,2\",96.71,33.785,03.947,-,\")31.180,3(\",-,\")31.180,3(\",-",
+        "reconstructed": "Ratnagiri\nGas\n&\nLtd.\nPower\nPrivate,31\nAs\nMarch at\n2017,2,368.00,17.69,587.33,749.30,-,(3,081.13),-,(3,081.13),-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 3,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"86.203,2\",03.02,11.294,61.161,-,47.46,-,47.46,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,2,302.68,20.30,492.11,161.16,-,64.74,-,64.74,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 4,
+        "original": "\"ygrenE\n.dtL\nudaN\nynapmoC\nlimaT-CPTN\",\"7102\nta hcraM\nsA\n13\",\"26.997,3\",80.7,22.554,95.246,33.65,49.791,-,49.791,-",
+        "reconstructed": "NTPC-Tamil\nCompany\nNadu\nLtd.\nEnergy,31\nAs\nMarch at\n2017,3,799.62,7.08,455.22,642.59,56.33,197.94,-,197.94,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 5,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"72.045,3\",88.53,17.784,54.995,32.41,44.33,10.0,54.33,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,3,540.27,35.88,487.71,599.45,14.23,33.44,0.01,33.45,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 6,
+        "original": "\"ynapmoC\nrewoP\n.dtL\nLIAS-CPTN\",\"7102\nta hcraM\nsA\n13\",\"13.625,2\",90.401,02.741,25.67,37.64,78.883,)80.2(,97.683,-",
+        "reconstructed": "NTPC-SAIL\nLtd.\nPower\nCompany,31\nAs\nMarch at\n2017,2,526.31,104.09,147.20,76.52,46.73,388.87,(2.08),386.79,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 7,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"71.206,2\",82.24,83.051,91.14,49.21,27.133,)96.0(,30.133,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,2,602.17,42.28,150.38,41.19,12.94,331.72,(0.69),331.03,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 8,
+        "original": "\".tvP\nsecivreS\nrewoP .dtL\nEG-CPTN\",\"7102\nta hcraM\nsA\n13\",74.632,12.5,21.0,41.3,70.0,35.0,-,35.0,-",
+        "reconstructed": "NTPC-GE\nLtd. Power\nServices\nPvt.,31\nAs\nMarch at\n2017,236.47,5.21,0.12,3.14,0.07,0.53,-,0.53,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 9,
+        "original": ",\"8102\nta hcraM\nsA\n13\",89.66,00.1,81.0,-,-,)40.51(,-,)40.51(,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,66.98,1.00,0.18,-,-,(15.04),-,(15.04),-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 10,
+        "original": "\".dtL\nhcetrewoP\nytilitU\",\"7102\nta hcraM\nsA\n13\",71.537,17.7,11.1,99.0,86.7,54.91,)06.0(,58.81,-",
+        "reconstructed": "Utility\nPowertech\nLtd.,31\nAs\nMarch at\n2017,735.17,7.71,1.11,0.99,7.68,19.45,(0.60),18.85,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 11,
+        "original": ",\"8102\nta hcraM\nsA\n13\",58.459,27.7,72.1,77.2,71.61,20.12,63.1,83.22,-",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_eaf1427f70cdf5f6146e3097",
+        "row_index": 12,
+        "original": "sralucitraP,,\"snoitarepo\nmorf\neuneveR\",\"emocni\nrehtO\",\"dna\nnoitaicerpeD noitazitroma\",\"esnepxe\ntseretnI\",\"/esnepxe\nxat\n)emocni(\nemocnI\",\"raey\neht\nrof\n)ssol(/tiforP\",\"evisneherpmoc\n)esnepxe(/emocni\nrehtO\",\"evisneherpmoc\n)esnepxe(/emocni\nlatoT\",\"deviecer\nsdnediviD\"",
+        "reconstructed": "Particulars,,Revenue\nfrom\noperations,Other\nincome,amortization Depreciation\nand,Interest\nexpense,Income\n(income)\ntax\nexpense/,Profit/(loss)\nfor\nthe\nyear,Other\nincome/(expense)\ncomprehensive,Total\nincome/(expense)\ncomprehensive,Dividends\nreceived",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 19
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 0,
+        "original": "\"slacirtcelE\n.dtL\ndna\nalareK\nsremrofsnarT\",\"7102\nta hcraM\nsA\n13\",,65.8,55.041,11.941,20.71,,73.12,44.27,18.39,,-,)30.51(,)30.51(,-,-,-,53.78",
+        "reconstructed": "Transformers\nKerala\nand\nLtd.\nElectricals,31\nAs\nMarch at\n2017,,8.56,140.55,149.11,17.02,,21.37,72.44,93.81,,-,(15.03),(15.03),-,-,-,87.35",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,73.5,21.851,94.361,97.82,,52.65,60.94,13.501,,-,32.4,32.4,-,-,-,47.28",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 2,
+        "original": "\"gnitareneG\n.dtL\netavirP\nrewoP\nynapmoC\nraganibaN\",\"7102\nta hcraM\nsA\n13\",,34.464,10.25,44.615,\"71.081,01\",,28.084,54.37,72.455,,\"21.983,7\",-,\"21.983,7\",-,62.0,76.823,\"92.424,2\"",
+        "reconstructed": "Nabinagar\nCompany\nPower\nPrivate\nLtd.\nGenerating,31\nAs\nMarch at\n2017,,464.43,52.01,516.44,10,180.17,,480.82,73.45,554.27,,7,389.12,-,7,389.12,-,0.26,328.67,2,424.29",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 3,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,69.37,62.33,22.701,\"24.865,21\",,29.688,63.29,82.979,,\"07.641,8\",-,\"07.641,8\",37.31,-,39.791,\"64.563,3\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,73.96,33.26,107.22,12,568.42,,886.92,92.36,979.28,,8,146.70,-,8,146.70,13.73,-,197.93,3,365.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 4,
+        "original": "\".dtL\nsmetsyS\nygrenE\nCPTN-FB\",\"7102\nta hcraM\nsA\n13\",,30.0,-,30.0,79.5,,-,12.0,12.0,,-,10.0,10.0,-,-,-,87.5",
+        "reconstructed": "BF-NTPC\nEnergy\nSystems\nLtd.,31\nAs\nMarch at\n2017,,0.03,-,0.03,5.97,,-,0.21,0.21,,-,0.01,0.01,-,-,-,5.78",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 5,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,12.0,48.4,50.5,-,,-,90.0,90.0,,-,-,-,-,-,-,69.4",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 6,
+        "original": "\".dtL\netavirP\nmagiN\najrU\najeM\",\"7102\nta hcraM\nsA\n13\",,19.59,42.3,51.99,\"21.923,7\",,58.403,30.15,88.553,,\"42.676,4\",-,\"42.676,4\",-,90.01,-,\"60.683,2\"",
+        "reconstructed": "Meja\nUrja\nNigam\nPrivate\nLtd.,31\nAs\nMarch at\n2017,,95.91,3.24,99.15,7,329.12,,304.85,51.03,355.88,,4,676.24,-,4,676.24,-,10.09,-,2,386.06",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 7,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,21.25,30.33,51.58,\"14.718,8\",,40.388,38.76,78.059,,\"75.674,5\",-,\"75.674,5\",-,74.3,-,\"56.174,2\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,52.12,33.03,85.15,8,817.41,,883.04,67.83,950.87,,5,476.57,-,5,476.57,-,3.47,-,2,471.65",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 8,
+        "original": "\"stcejorP\nrewoP .dtL\netavirP\nLEHB\nCPTN\",\"7102\nta hcraM\nsA\n13\",,26.7,89.005,06.805,87.681,,50.121,88.894,39.916,,-,18.23,18.23,-,-,-,46.24",
+        "reconstructed": "NTPC\nBHEL\nPrivate\nLtd. Power\nProjects,31\nAs\nMarch at\n2017,,7.62,500.98,508.60,186.78,,121.05,498.88,619.93,,-,32.81,32.81,-,-,-,42.64",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 9,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,32.1,42.333,74.433,41.093,,68.57,91.123,50.793,,-,57.813,57.813,-,-,-,18.8",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 10,
+        "original": "\"ynapmoC\n.dtL\nrewoP\netavirP\nilavarA\",\"7102\nta hcraM\nsA\n13\",,10.0,\"90.363,3\",\"01.363,3\",\"52.254,7\",,\"77.715,1\",51.271,\"29.986,1\",,\"01.012,4\",03.781,\"04.793,4\",61.1,-,-,\"91.927,4\"",
+        "reconstructed": "Aravali\nPrivate\nPower\nLtd.\nCompany,31\nAs\nMarch at\n2017,,0.01,3,363.09,3,363.10,7,452.25,,1,517.77,172.15,1,689.92,,4,210.10,187.30,4,397.40,1.16,-,-,4,729.19",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 11,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,51.1,\"30.052,3\",\"81.152,3\",\"93.010,7\",,42.228,15.901,57.139,,\"12.319,3\",59.381,\"61.790,4\",64.3,-,-,\"21.632,5\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,1.15,3,250.03,3,251.18,7,010.39,,822.24,109.51,931.75,,3,913.21,183.95,4,097.16,3.46,-,-,5,236.12",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_49ec1216e6129bc1ce3da783",
+        "row_index": 12,
+        "original": "sralucitraP,,\"stessa\ntnerruC\",\"stnelaviuqe\nhsac\ndna\nhsaC\",\"stessa\nrehtO\",\"stessa\ntnerruc\nlatoT\",\"stessa\ntnerruc-non\nlatoT\",\"seitilibail\ntnerruC\",\"selbayap\nseitilibail\nedart )snoisivorp\ngnidulcxe(\nlaicnaniF\ndna\",\"seitilibail\nrehtO\",\"seitilibail\ntnerruc\nlatoT\",\"seitilibail\ntnerruc-noN\",\"selbayap\nseiti",
+        "reconstructed": "Particulars,,Current\nassets,Cash\nand\ncash\nequivalents,Other\nassets,Total\ncurrent\nassets,Total\nnon-current\nassets,Current\nliabilities,and\nFinancial\n(excluding\nprovisions) trade\nliabilities\npayables,Other\nliabilities,Total\ncurrent\nliabilities,Non-current\nliabilities,and\nFinancial\n(excluding\nprovisions",
+        "reversed": true,
+        "forward_evidence": 3,
+        "reverse_evidence": 39
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 0,
+        "original": "\"slacirtcelE\n.dtL\ndna\nalareK\nsremrofsnarT\",\"7102\nta hcraM\nsA\n13\",92.68,60.1,-,-,-,53.78,06.44,69.83,-,69.83",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",53.78,22.4,)00.1(,-,)38.7(,47.28,06.44,09.63,-,09.63",
+        "reconstructed": ",31\nAs\nMarch at\n2018,87.35,4.22,(1.00),-,(7.83),82.74,44.60,36.90,-,36.90",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 2,
+        "original": "\"gnitareneG\n.dtL\netavirP\nrewoP\nynapmoC\nraganibaN\",\"7102\nta hcraM\nsA\n13\",\"85.274,1\",)92.0(,-,-,00.259,\"92.424,2\",00.05,\"51.212,1\",-,\"51.212,1\"",
+        "reconstructed": "Nabinagar\nCompany\nPower\nPrivate\nLtd.\nGenerating,31\nAs\nMarch at\n2017,1,472.58,(0.29),-,-,952.00,2,424.29,50.00,1,212.15,-,1,212.15",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 3,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"92.424,2\",)01.0(,-,-,72.149,\"64.563,3\",00.05,\"37.286,1\",-,\"37.286,1\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,2,424.29,(0.10),-,-,941.27,3,365.46,50.00,1,682.73,-,1,682.73",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 4,
+        "original": "\".dtL\nsmetsyS\nygrenE\nCPTN-FB\",\"7102\nta hcraM\nsA\n13\",16.4,)42.0(,-,-,14.1,87.5,00.94,38.2,-,38.2",
+        "reconstructed": "BF-NTPC\nEnergy\nSystems\nLtd.,31\nAs\nMarch at\n2017,4.61,(0.24),-,-,1.41,5.78,49.00,2.83,-,2.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 5,
+        "original": ",\"8102\nta hcraM\nsA\n13\",87.5,)83.1(,-,-,65.0,69.4,00.94,34.2,-,34.2",
+        "reconstructed": ",31\nAs\nMarch at\n2018,5.78,(1.38),-,-,0.56,4.96,49.00,2.43,-,2.43",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 6,
+        "original": "\".dtL\netavirP\nmagiN\najrU\najeM\",\"7102\nta hcraM\nsA\n13\",\"51.637,1\",)90.0(,-,-,00.056,\"60.683,2\",00.05,\"40.391,1\",-,\"40.391,1\"",
+        "reconstructed": "Meja\nUrja\nNigam\nPrivate\nLtd.,31\nAs\nMarch at\n2017,1,736.15,(0.09),-,-,650.00,2,386.06,50.00,1,193.04,-,1,193.04",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 7,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"60.683,2\",)91.0(,-,-,87.58,\"56.174,2\",00.05,\"38.532,1\",-,\"38.532,1\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,2,386.06,(0.19),-,-,85.78,2,471.65,50.00,1,235.83,-,1,235.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 8,
+        "original": "\"stcejorP\nrewoP .dtL\netavirP\nLEHB\nCPTN\",\"7102\nta hcraM\nsA\n13\",65.911,)29.67(,-,-,-,46.24,00.05,23.12,-,23.12",
+        "reconstructed": "NTPC\nBHEL\nPrivate\nLtd. Power\nProjects,31\nAs\nMarch at\n2017,119.56,(76.92),-,-,-,42.64,50.00,21.32,-,21.32",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 9,
+        "original": ",\"8102\nta hcraM\nsA\n13\",46.24,)96.67(,-,-,68.24,18.8,00.05,14.4,-,14.4",
+        "reconstructed": ",31\nAs\nMarch at\n2018,42.64,(76.69),-,-,42.86,8.81,50.00,4.41,-,4.41",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 10,
+        "original": "\"ynapmoC\n.dtL\nrewoP\netavirP\nilavarA\",\"7102\nta hcraM\nsA\n13\",\"45.149,3\",02.787,)51.0(,)23.061(,29.061,\"91.927,4\",00.05,\"16.463,2\",-,\"16.463,2\"",
+        "reconstructed": "Aravali\nPrivate\nPower\nLtd.\nCompany,31\nAs\nMarch at\n2017,3,941.54,787.20,(0.15),(160.32),160.92,4,729.19,50.00,2,364.61,-,2,364.61",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 8
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 11,
+        "original": ",\"8102\nta hcraM\nsA\n13\",\"91.927,4\",57.775,)70.0(,)23.861(,75.79,\"21.632,5\",00.05,\"60.816,2\",-,\"60.816,2\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,4,729.19,577.75,(0.07),(168.32),97.57,5,236.12,50.00,2,618.06,-,2,618.06",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_7b8116b726a9e8747c023d97",
+        "row_index": 12,
+        "original": "sralucitraP,,\"stessa\nten\ngninepO\",\"raey\neht\nrof\n)ssol(/tiforP\",\"evisneherpmoc\n)esnepxe(/emocni\nrehtO\",\"diap\nsdnediviD\",\"*stnemtsujda\nrehtO\",\"stessa\nten\ngnisolC\",\"%\nni\nerahs\ns’puorG\",\"RNI\nni\nerahs\ns’puorG\",lliwdooG,\"tnuoma\ngniyrraC\"",
+        "reconstructed": "Particulars,,Opening\nnet\nassets,Profit/(loss)\nfor\nthe\nyear,Other\nincome/(expense)\ncomprehensive,Dividends\npaid,Other\nadjustments*,Closing\nnet\nassets,Group’s\nshare\nin\n%,Group’s\nshare\nin\nINR,Goodwill,Carrying\namount",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 14
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 0,
+        "original": "\"pihsdneirF\n.dtL\n.tvP\naidnI-hsedalgnaB ynapmoC\nrewoP\",\"hcraM\nta 7102\nsA\n13\",,71.241,82.0,54.241,93.383,,23.941,36.0,59.941,,73.111,-,73.111,-,-,-,25.462",
+        "reconstructed": "Power\nCompany Bangladesh-India\nPvt.\nLtd.\nFriendship,31\nAs\n2017 at\nMarch,,142.17,0.28,142.45,383.39,,149.32,0.63,149.95,,111.37,-,111.37,-,-,-,264.52",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 1,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,97.542,27.0,15.642,\"01.499,1\",,25.62,31.5,56.13,,\"73.176,1\",-,\"73.176,1\",-,-,69.651,36.083",
+        "reconstructed": ",31\nAs\n2018 at\nMarch,,245.79,0.72,246.51,1,994.10,,26.52,5.13,31.65,,1,671.37,-,1,671.37,-,-,156.96,380.63",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 2,
+        "original": "\"rewoP\n.dtL\neelamocnirT ynapmoC\",\"hcraM\nta 7102\nsA\n13\",,02.4,13.0,15.4,37.61,,-,72.3,72.3,,-,-,-,-,-,-,79.71",
+        "reconstructed": "Company Trincomalee\nLtd.\nPower,31\nAs\n2017 at\nMarch,,4.20,0.31,4.51,16.73,,-,3.27,3.27,,-,-,-,-,-,-,17.97",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 3,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,38.1,13.0,41.2,60.2,,-,45.0,45.0,,-,-,-,-,-,-,66.3",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 4,
+        "original": "\"&\nkaravrU\n.dtL\nnayasaR\nnatsudniH\",\"hcraM\nta 7102\nsA\n13\",,77.8,-,77.8,03.4,,95.0,02.2,97.2,,-,-,-,-,-,-,82.01",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 5,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,39.786,61.072,90.859,77.16,,11.91,26.4,37.32,,-,30.0,30.0,-,-,-,01.699",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 6,
+        "original": "\"magiN\ntuyhdiV\n.dtL\nitkahsunA\",\"hcraM\nta 7102\nsA\n13\",,30.0,-,30.0,-,,-,-,-,,-,-,-,-,-,-,30.0",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 7,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,20.0,-,20.0,-,,-,-,-,,-,-,-,-,-,-,20.0",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 8,
+        "original": "\".dtL\netavirP\najrU\nCPTN\nLIC\",\"hcraM\nta 7102\nsA\n13\",,60.0,-,60.0,-,,-,10.0,10.0,,-,-,-,-,-,-,50.0",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 9,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,60.0,-,60.0,-,,-,10.0,10.0,,-,-,-,-,-,-,50.0",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 10,
+        "original": "\"ycneiciffE\n.dtL\nsecivreS\nygrenE\",\"hcraM\nta 7102\nsA\n13\",,46.963,\"92.932,1\",\"39.806,1\",\"44.260,1\",,00.053,03.909,\"03.952,1\",,42.628,00.5,42.138,-,-,-,38.085",
+        "reconstructed": "Energy\nServices\nLtd.\nEfficiency,31\nAs\n2017 at\nMarch,,369.64,1,239.29,1,608.93,1,062.44,,350.00,909.30,1,259.30,,826.24,5.00,831.24,-,-,-,580.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 11,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,79.115,\"62.927,2\",\"32.142,3\",\"63.977,1\",,63.558,\"90.616,1\",\"54.174,2\",,\"57.378,1\",17.9,\"64.388,1\",-,-,00.99,86.665",
+        "reconstructed": ",31\nAs\n2018 at\nMarch,,511.97,2,729.26,3,241.23,1,779.36,,855.36,1,616.09,2,471.45,,1,873.75,9.71,1,883.46,-,-,99.00,566.68",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 8
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 12,
+        "original": "\"tseT\n.dtL\nrewoP\netavirP\nhgiH\nyrotarobaL\nlanoitaN\",\"hcraM\nta 7102\nsA\n13\",,03.24,55.1,58.34,89.623,,-,65.74,65.74,,13.371,31.0,44.371,-,-,-,38.941",
+        "reconstructed": "National\nLaboratory\nHigh\nPrivate\nPower\nLtd.\nTest,31\nAs\n2017 at\nMarch,,42.30,1.55,43.85,326.98,,-,47.56,47.56,,173.31,0.13,173.44,-,-,-,149.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 13,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",,50.6,34.4,84.01,90.933,,00.42,86.35,86.77,,18.231,31.0,49.231,-,-,-,59.831",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_2c8c4283f2cd4346d8a34e00",
+        "row_index": 14,
+        "original": "sralucitraP,,\"stessa\ntnerruC\",\"stnelaviuqe\nhsac\ndna\nhsaC\",\"stessa\nrehtO\",\"stessa\ntnerruc\nlatoT\",\"stessa\ntnerruc-non\nlatoT\",\"seitilibail\ntnerruC\",\")snoisivorp\nseitilibail\nedart\ndna\ngnidulcxe(\nlaicnaniF selbayap\",\"seitilibail\nrehtO\",\"seitilibail\ntnerruc\nlatoT\",\"seitilibail\ntnerruc-noN\",\")snoisivorp\nse",
+        "reconstructed": "Particulars,,Current\nassets,Cash\nand\ncash\nequivalents,Other\nassets,Total\ncurrent\nassets,Total\nnon-current\nassets,Current\nliabilities,payables Financial\n(excluding\nand\ntrade\nliabilities\nprovisions),Other\nliabilities,Total\ncurrent\nliabilities,Non-current\nliabilities,payables Financial\n(excluding\nand\nt",
+        "reversed": true,
+        "forward_evidence": 3,
+        "reverse_evidence": 39
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 0,
+        "original": "\"pihsdneirF\n.dtL\n.tvP\naidnI-hsedalgnaB ynapmoC\nrewoP\",\"hcraM\nta 7102\nsA\n13\",31.841,-,-,-,93.611,25.462,00.05,72.231,-,72.231",
+        "reconstructed": "Power\nCompany Bangladesh-India\nPvt.\nLtd.\nFriendship,31\nAs\n2017 at\nMarch,148.13,-,-,-,116.39,264.52,50.00,132.27,-,132.27",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 1,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",25.462,-,-,-,11.611,36.083,00.05,23.091,-,23.091",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 2,
+        "original": "\"rewoP\n.dtL\neelamocnirT ynapmoC\",\"hcraM\nta 7102\nsA\n13\",16.12,42.0,-,-,)88.3(,79.71,00.05,99.8,-,99.8",
+        "reconstructed": "Company Trincomalee\nLtd.\nPower,31\nAs\n2017 at\nMarch,21.61,0.24,-,-,(3.88),17.97,50.00,8.99,-,8.99",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 3,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",79.71,)50.51(,-,-,47.0,66.3,00.05,38.1,-,38.1",
+        "reconstructed": ",31\nAs\n2018 at\nMarch,17.97,(15.05),-,-,0.74,3.66,50.00,1.83,-,1.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 4,
+        "original": "\"&\nkaravrU\n.dtL\nnayasaR\nnatsudniH\",\"hcraM\nta 7102\nsA\n13\",-,)28.4(,-,-,01.51,82.01,82.33,24.3,-,24.3",
+        "reconstructed": "Hindustan\nRasayan\nLtd.\nUrvarak\n&,31\nAs\n2017 at\nMarch,-,(4.82),-,-,15.10,10.28,33.28,3.42,-,3.42",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 5,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",82.01,51.1,-,-,76.489,01.699,33.33,00.233,-,00.233",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 6,
+        "original": "\"magiN\ntuyhdiV\n.dtL\nitkahsunA\",\"hcraM\nta 7102\nsA\n13\",30.0,-,-,-,-,30.0,00.94,10.0,-,10.0",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 7,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",30.0,)10.0(,-,-,-,20.0,00.94,10.0,-,10.0",
+        "reconstructed": ",31\nAs\n2018 at\nMarch,0.03,(0.01),-,-,-,0.02,49.00,0.01,-,0.01",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 8,
+        "original": "\"etavirP\najrU\n.dtL\nCPTN\nLIC\",\"hcraM\nta 7102\nsA\n13\",60.0,)10.0(,-,-,-,50.0,00.05,20.0,-,20.0",
+        "reconstructed": "CIL\nNTPC\nLtd.\nUrja\nPrivate,31\nAs\n2017 at\nMarch,0.06,(0.01),-,-,-,0.05,50.00,0.02,-,0.02",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 9,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",50.0,-,-,-,-,50.0,00.05,20.0,-,20.0",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 10,
+        "original": "\"ycneiciffE\n.dtL\nsecivreS\nygrenE\",\"hcraM\nta 7102\nsA\n13\",30.604,42.16,-,)19.21(,74.621,38.085,17.13,21.481,-,21.481",
+        "reconstructed": "Energy\nServices\nLtd.\nEfficiency,31\nAs\n2017 at\nMarch,406.03,61.24,-,(12.91),126.47,580.83,31.71,184.12,-,184.12",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 11,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",38.085,34.45,)70.0(,)50.94(,)64.91(,86.665,17.13,96.971,-,96.971",
+        "reconstructed": ",31\nAs\n2018 at\nMarch,580.83,54.43,(0.07),(49.05),(19.46),566.68,31.71,179.69,-,179.69",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 12,
+        "original": "\"tseT\n.dtL\nrewoP\netavirP\nhgiH\nyrotarobaL\nlanoitaN\",\"hcraM\nta 7102\nsA\n13\",13.801,-,-,-,25.14,38.941,00.02,79.92,-,79.92",
+        "reconstructed": "National\nLaboratory\nHigh\nPrivate\nPower\nLtd.\nTest,31\nAs\n2017 at\nMarch,108.31,-,-,-,41.52,149.83,20.00,29.97,-,29.97",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 13,
+        "original": ",\"hcraM\nta 8102\nsA\n13\",38.941,)39.01(,50.0,-,-,59.831,00.02,97.72,-,97.72",
+        "reconstructed": ",31\nAs\n2018 at\nMarch,149.83,(10.93),0.05,-,-,138.95,20.00,27.79,-,27.79",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_54424ee9c44fb361aff953d0",
+        "row_index": 14,
+        "original": "sralucitraP,,\"stessa\nten\ngninepO\",\"raey\neht\nrof\n)ssol(/tiforP\",\"evisneherpmoc\n)esnepxe(/emocni\nrehtO\",\"diap\nsdnediviD\",\"*stnemtsujda\nrehtO\",\"stessa\nten\ngnisolC\",\"%\nni\nerahs\ns’puorG\",\"RNI\nni\nerahs\ns’puorG\",lliwdooG,\"tnuoma\ngniyrraC\"",
+        "reconstructed": "Particulars,,Opening\nnet\nassets,Profit/(loss)\nfor\nthe\nyear,Other\nincome/(expense)\ncomprehensive,Dividends\npaid,Other\nadjustments*,Closing\nnet\nassets,Group’s\nshare\nin\n%,Group’s\nshare\nin\nINR,Goodwill,Carrying\namount",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 14
+      },
+      {
+        "evidence_id": "ev_ff20e90d3b8f6594de3bf4a2",
+        "row_index": 0,
+        "original": "\"S.\nNo.\",Names of Directors,Designation,\"gnireenignE\n/lacinhceT\",\"rotceS\n&\nygrenE rewoP\",\"&\necnaniF gniknaB\",scimonocE,\"secruoseR\ntnemeganaM\nnamuH\",yrotalugeR krowemarF,tnemeganaM,tnemnorivnE,scimedacA,\"dna tnempoleveD\nhcraeseR\"",
+        "reconstructed": ".oN\n.S,srotceriD fo semaN,noitangiseD,Technical/\nEngineering,Power Energy\n&\nSector,Banking Finance\n&,Economics,Human\nManagement\nResources,Framework Regulatory,Management,Environment,Academics,Research\nDevelopment and",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_9eea937e08eda6dad929cb7a",
+        "row_index": 0,
+        "original": "\"raey dedne 9102\neht hcraM\nroF\n13\",\"41.076,61\",,18.991,18.991,,\"56.406,5\",92.348,93.37,73.877,\"07.992,7\",\"52.075,9\",71.276,\"24.242,01\",\")70.297,3(\",\"94.430,41\"",
+        "reconstructed": "31\nFor\nMarch the\n2019 ended year,16,670.14,,199.81,199.81,,5,604.65,843.29,73.39,778.37,7,299.70,9,570.25,672.17,10,242.42,(3,792.07),14,034.49",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      }
+    ],
+    "diagnostics_total": 1040
+  },
+  "claims_missing": {
+    "metric": 2587,
+    "value": 0,
+    "unit": 30110,
+    "period": 25041,
+    "entity": 5965
+  },
+  "top_review_reasons": [
+    [
+      "no unit stated for this value in the row, header, or chunk",
+      29650
+    ],
+    [
+      "reporting basis # not stated for this column, and the document contains both",
+      13369
+    ],
+    [
+      "column meaning and period are unknown",
+      12221
+    ],
+    [
+      "no header row precedes this row in the chunk",
+      12221
+    ],
+    [
+      "column header carries no recognizable period",
+      6710
+    ],
+    [
+      "entity not associated: evidence record has no verified company identity",
+      5963
+    ],
+    [
+      "label looks like an entity name",
+      5358
+    ],
+    [
+      "row may describe a counterparty or subsidiary, not a metric",
+      5358
+    ],
+    [
+      "original preserved in source_row_text",
+      4858
+    ],
+    [
+      "row text was reconstructed from reversed characters",
+      4858
+    ],
+    [
+      "word order is unreliable",
+      4852
+    ],
+    [
+      "label comes from a multi-line reversed cell",
+      4852
+    ],
+    [
+      "no header text above this column",
+      4167
+    ],
+    [
+      "what it totals is not stated in this row",
+      3364
+    ],
+    [
+      "generic total/subtotal/other label",
+      3364
+    ]
+  ],
+  "counting_notes": "claims_flagged_for_review counts each non-extracted claim once. top_review_reasons counts each distinct normalized reason once per non-extracted claim, so one claim can appear under several reasons and the reason counts sum to more than the flagged-claim count. Digits are normalized to '#'.",
+  "comparison_to_baseline": {
+    "baseline_claims": 4423,
+    "baseline_status": {
+      "needs_review": 4242,
+      "ambiguous": 130,
+      "extracted": 51
+    },
+    "baseline_indicators": {
+      "claims": 4423,
+      "metric_null_rate": 0.76,
+      "unit_null_rate": 0.026,
+      "period_unknown_rate": 0.594
+    },
+    "new_claims": 37881,
+    "new_status": {
+      "needs_review": 19525,
+      "ambiguous": 18325,
+      "extracted": 31
+    },
+    "new_indicators": {
+      "claims": 37881,
+      "metric_null_rate": 0.068,
+      "unit_null_rate": 0.795,
+      "period_unknown_rate": 0.661
+    },
+    "table_claims": 34547,
+    "table_status": {
+      "needs_review": 16320,
+      "ambiguous": 18216,
+      "extracted": 11
+    },
+    "table_indicators": {
+      "claims": 34547,
+      "metric_null_rate": 0.0,
+      "unit_null_rate": 0.869,
+      "period_unknown_rate": 0.672
+    },
+    "baseline_claims_retained_same_id": 3334,
+    "baseline_status_changes_among_retained": {
+      "extracted->ambiguous": 14
+    },
+    "baseline_claims_not_reproduced": 1089,
+    "baseline_not_reproduced_by_status": {
+      "needs_review": 1037,
+      "extracted": 17,
+      "ambiguous": 35
+    },
+    "baseline_not_reproduced_chunk_class": {
+      "tabular": 1089
+    },
+    "note": "Yield is not accuracy. Baseline claims from chunks now routed through the table parser are replaced, not carried over; correctness must be judged on the manual sample, not on counts."
+  }
+}

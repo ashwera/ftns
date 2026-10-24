@@ -1,0 +1,15 @@
+{
+  "stage": "investigation_initial",
+  "provider": "ollama",
+  "model": "signalforge-qwen8b",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "provider_error",
+      "error_type": "LLMError",
+      "error_detail": "Model request failed (NotFoundError): 404 page not found"
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts"
+}

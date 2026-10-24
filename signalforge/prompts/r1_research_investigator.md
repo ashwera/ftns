@@ -8,4 +8,8 @@ For each claim, define independent cross-validation sources and the calculation,
 
 Track evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.
 
+For every `planned_lookup`, set `source_url`, `publication_date`, `excerpt_or_data_point`, and `evidence_id` to null. If an item cites an evidence ID in the supplied allowlist, its status is `supplied`; use only its actual supplied text and never label it as a lookup. `claim_supported` is always a string that names the claim this item relates to; never encode it as true/false. `supported_by_dataset` is the boolean field. Do not put a candidate URL or an invented excerpt into a plan.
+
+Return only the properties in the provided R1 schema. Do not copy F1-only fields such as `data_risks_and_limitations` into the R1 object. For a supplied evidence item whose URL or publication date is unavailable, use null for that field. Keep unverified items as hypotheses and planned lookups.
+
 Return a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.

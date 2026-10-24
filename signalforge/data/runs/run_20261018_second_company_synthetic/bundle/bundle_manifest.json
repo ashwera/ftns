@@ -1,0 +1,23 @@
+{
+  "claim_ids": [
+    "cl1_c1b7a152c4abdb33cbe83f46",
+    "cl1_e050795c5f2ac513ad65cf6a",
+    "cl1_a6ebbb26586a20b02929c146",
+    "cl1_c64ff088d18dce67d09fb12a",
+    "cl1_1efdb0ea77101177fc36990f",
+    "cl1_c8d92da20bd3fb596a98b23a",
+    "cl1_76746b021cc3deae002438ff"
+  ],
+  "evidence_ids": [
+    "ev_111111111111111111111111"
+  ],
+  "limits": {
+    "max_claims": 40,
+    "per_chunk": 4,
+    "statuses": [
+      "extracted",
+      "ambiguous"
+    ]
+  },
+  "note": "Claims remain unverified; the bundle is a bounded, traceable selection, not an approval."
+}

@@ -1,0 +1,545 @@
+{
+  "generated_at": "2026-10-17T17:46:39.912175+00:00",
+  "approval_policy": "No record is approved; candidates require manual page review against original filings.",
+  "categories": {
+    "renewable_transition_and_revenue_mix": {
+      "readiness": "candidate_review_queue_only",
+      "verified_association_candidate_count": 294,
+      "candidate_evidence_ids_by_document": {
+        "CSV/annual reports/2017-18.csv": [
+          "ev_d8ef4c54facf84fd527a4913",
+          "ev_1fcb95e19b5b41741c402574",
+          "ev_2d57e6c10938db1fc1a00ac9",
+          "ev_647335c3dcdbbc47eb3846b3",
+          "ev_f15418d9b31ff7af73eed93c",
+          "ev_86dc304049f145cf4640c6a0",
+          "ev_337f3f64818470d8b29a763b",
+          "ev_dfb9afd72ea485798707e592",
+          "ev_d59be76b63adf782ca163787",
+          "ev_3c1ba5658282a68ed9870de4",
+          "ev_ed188b2e0bff2e2c818bc56f",
+          "ev_4bfcaad6184270bbbab8664c",
+          "ev_c5428b84ed74e0b371b89a3a",
+          "ev_07b092d1814b9efb29ea879a",
+          "ev_38f98aa6072e394dfa699d21"
+        ],
+        "CSV/annual reports/44-final-NTPC-AR-30082020.csv": [
+          "ev_5dc80ad1822e3d5ae5e30da9",
+          "ev_580005453e9932661563929d",
+          "ev_82608e26f03e2ee42b64d5fb",
+          "ev_e63faf0585a2ecb7a52de2c0",
+          "ev_03923c01a79b068801817164",
+          "ev_3078cbe24ecef6921c32e9ee",
+          "ev_98449351027b555eb4db3dab",
+          "ev_c62cd068cdfde272c963b276",
+          "ev_05364547259ee6f572bb7269",
+          "ev_cafc1b2b052edd5726a05b26",
+          "ev_28ad52a34f36102c3df5032e",
+          "ev_1194fcc4f6c5d2f4f82e44ac",
+          "ev_397def3f8a0c6d80cedec064",
+          "ev_2d2a4eba07712e18060da84d",
+          "ev_d24083e629b85571cf28db49"
+        ],
+        "CSV/annual reports/Annual Report 2024-25_1.csv": [
+          "ev_2c28cce2140b6fab9b317d97",
+          "ev_252ddc5ca75aa6a8bc871cb1",
+          "ev_2484a0e981c95b1829d91ac3",
+          "ev_f2c3ef5ad641d0474805e655",
+          "ev_e714e9f674969c8c4fa3d5b7",
+          "ev_b2e5173d73ed33e3a9238915",
+          "ev_a5e1cb6d8cd60df970029413",
+          "ev_2c3e774aa453ea57f9d1d357",
+          "ev_6ad5e5f46bded275fb81295b",
+          "ev_5b64e49cfdd53c6a00a3fd44",
+          "ev_875511a95ef1f0e0aa7b42c9",
+          "ev_f41252e3bb0f315b374ae616",
+          "ev_1baf2a130c762e33469e0596",
+          "ev_2290d627862c86e95c46dff7",
+          "ev_b092224493d605248eb16e11"
+        ],
+        "CSV/annual reports/Annual-Report-2021-22.csv": [
+          "ev_9843a10df9e16af7bb7f144b",
+          "ev_526abe6027bde307cfaaa2d6",
+          "ev_9c3266ef75527da87ac0cb25",
+          "ev_287c65c7a7e817dd19ba9c98",
+          "ev_a3464a5f7f38dd55d52f03d8",
+          "ev_3b9a19abb170b17ee4d9d0d7",
+          "ev_613cc696d2ffe4e7979dc719",
+          "ev_3f0c94a1ef2011b8a99c5cdf",
+          "ev_ef08a5cc9307708dd6f49eab",
+          "ev_5ba07051f28c73c5c61e9db6",
+          "ev_0e9f9aa7210cc1afa6e91b40",
+          "ev_83dce7c1cb95700afdbd8ba2",
+          "ev_73071e831c289b5fd4f84746",
+          "ev_bf6a8c77da47f9f133ef55ef",
+          "ev_fb4549450332d783fe0fd1a4"
+        ],
+        "CSV/annual reports/NTPC_Annual Report_20-21.csv": [
+          "ev_20588570e5758c4fad314a78",
+          "ev_ef840fb9a697fefe198922cc",
+          "ev_350ca800ea33742a3ecb55e0",
+          "ev_2e90954322d6647255c48120",
+          "ev_602a8bcc31667d678b033b00",
+          "ev_9d86513b14e8dbe36ba4f3ea",
+          "ev_795123b33f139b777f899056",
+          "ev_64559e5f473ecbc4eb7a5906",
+          "ev_1f5911fe64256a1d2d4e8f75",
+          "ev_d81b5e12875db876b8bb8d01",
+          "ev_b011e45513bcd6add8346b53",
+          "ev_3c0da8fe94de65c603d7d0e9",
+          "ev_1b3eda3871f783bfe87d15c5",
+          "ev_0e09893a88238b9749b8002b",
+          "ev_8d6bcae650a5beedf979a763"
+        ],
+        "CSV/annual reports/annual-report-2018-19.csv": [
+          "ev_34b68dec4f8835a4acf40f5a",
+          "ev_7de30ae93392352ebeb08f86",
+          "ev_7cda0660f26454cdc1a9d7d8",
+          "ev_aa145150c359f2151f507310",
+          "ev_fbdb8c1c41ec6bc8e3c40ca0",
+          "ev_a077e19a4cc49e9c14b57e28",
+          "ev_2d3dc2ac2b7afc9a16ab2941",
+          "ev_f70deb2f94e9a6b6ed071446",
+          "ev_0a48908f26fd2fec2e440539",
+          "ev_4ccc579cefa7c7bce5537053",
+          "ev_a424cebb13ad2ea32103fa0e"
+        ],
+        "CSV/quarterly reports/AFRQ4FY24.csv": [
+          "ev_939a247d99ed47a5928b998f",
+          "ev_f06341ab9a32ae68673dad38"
+        ],
+        "CSV/quarterly reports/NTPCAFR26.csv": [
+          "ev_23ad0c9354475bd7298873d4"
+        ],
+        "CSV/quarterly reports/NTPCQ2FY24-25.csv": [
+          "ev_81162d3476c3f408f49fb676",
+          "ev_c828ec8e16876d9b6186694c"
+        ],
+        "CSV/quarterly reports/NTPCQ2FY26 (1).csv": [
+          "ev_5fee39a98700f750a4b3f6a9"
+        ],
+        "CSV/quarterly reports/NTPCQ4FY24-25.csv": [
+          "ev_6680bdb7e3eb89f7917a4ef9"
+        ],
+        "CSV/quarterly reports/Q3FY24NTPC_29012024203155.csv": [
+          "ev_2e5c4773d34514565be80045"
+        ],
+        "CSV/quarterly reports/QFR30062023.csv": [
+          "ev_e4ad805e3fc7083cb95785cf"
+        ],
+        "CSV/quarterly reports/QFRNTPCQ1FY26.csv": [
+          "ev_2dd6894d6535aae7cffbdc90"
+        ],
+        "CSV/quarterly reports/QFRQ1FY27_0.csv": [
+          "ev_58f27f791a5d9539eb9b6455"
+        ],
+        "CSV/quarterly reports/QFR_30092023.csv": [
+          "ev_4761a60730dd70192ea4ce58"
+        ],
+        "CSV/quarterly reports/QFR_Q1FY24-25.csv": [
+          "ev_e41054bbd812d2d5ffba13a3",
+          "ev_ecadfcbdcbff30907cbecd45"
+        ]
+      },
+      "usable_validated_evidence_ids": [],
+      "missing_evidence": [
+        "Machine-reliable segment/energy-source revenue split (segment tables have labels detached from figures)",
+        "Operating capacity and generation by fuel type for the same period",
+        "Stated reporting basis (standalone vs consolidated) per figure"
+      ],
+      "calculations_possible_after_review": [
+        "Renewable share of installed capacity (MW) once a fuel-wise capacity table is manually transcribed",
+        "Renewable share of generation (MU)",
+        "Year-over-year change using FY annual reports (FY18-FY25) after unit and basis alignment"
+      ],
+      "quality_concerns": [
+        "No URL, publisher, or publication date for any file",
+        "Partial page coverage in most files",
+        "Detached table labels and values",
+        "Associations are document-level"
+      ],
+      "external_verification_needed": [
+        "Original annual report/results PDFs from NTPC or NSE/BSE",
+        "NGEL filings for subsidiary-level renewable data"
+      ]
+    },
+    "announced_awarded_under_implementation_commissioned_capacity": {
+      "readiness": "candidate_review_queue_only",
+      "verified_association_candidate_count": 258,
+      "candidate_evidence_ids_by_document": {
+        "CSV/annual reports/2017-18.csv": [
+          "ev_d8ef4c54facf84fd527a4913",
+          "ev_2d57e6c10938db1fc1a00ac9",
+          "ev_f15418d9b31ff7af73eed93c",
+          "ev_86dc304049f145cf4640c6a0",
+          "ev_337f3f64818470d8b29a763b",
+          "ev_dfb9afd72ea485798707e592",
+          "ev_d59be76b63adf782ca163787",
+          "ev_fdaf6925bf9c7335c034a1c7",
+          "ev_3c1ba5658282a68ed9870de4",
+          "ev_fdc31f65627aadcfe66c617a",
+          "ev_ed188b2e0bff2e2c818bc56f",
+          "ev_99f3489e1f0a7a14590ba5c6",
+          "ev_612c893e2eff69884a89de55",
+          "ev_d08076d96d8be11dd1e6f9b5",
+          "ev_c5428b84ed74e0b371b89a3a"
+        ],
+        "CSV/annual reports/44-final-NTPC-AR-30082020.csv": [
+          "ev_5dc80ad1822e3d5ae5e30da9",
+          "ev_580005453e9932661563929d",
+          "ev_82608e26f03e2ee42b64d5fb",
+          "ev_7ef98b3ba6d3425d49fd4e5d",
+          "ev_e63faf0585a2ecb7a52de2c0",
+          "ev_f6844b90785dc2d95bf5d4c8",
+          "ev_03923c01a79b068801817164",
+          "ev_3078cbe24ecef6921c32e9ee",
+          "ev_98449351027b555eb4db3dab",
+          "ev_c62cd068cdfde272c963b276",
+          "ev_090e46ae7aaceb331364681b",
+          "ev_eabaf617c547b5f005f046e0",
+          "ev_05364547259ee6f572bb7269",
+          "ev_c4a2f487ebbfb618cc048397",
+          "ev_cafc1b2b052edd5726a05b26"
+        ],
+        "CSV/annual reports/Annual Report 2024-25_1.csv": [
+          "ev_26176f0abb295804582f818d",
+          "ev_6a310e3a2d38118a8e652689",
+          "ev_15e32b37dd91ef3b5053f153",
+          "ev_39ebabf294c7bce37604ef02",
+          "ev_3917d65e29a8739a2083941e",
+          "ev_d15b615f8522e8591c971c6e",
+          "ev_695be112feb8288220cf6ec4",
+          "ev_01df0f542b1eba0c315cf8e0",
+          "ev_bc17af1e57e7b7331b8fe9e4",
+          "ev_252ddc5ca75aa6a8bc871cb1",
+          "ev_2484a0e981c95b1829d91ac3",
+          "ev_f01b556b41f0e586fe8d201c",
+          "ev_69c1c0edd6cd9bf4ec8d0908",
+          "ev_f2c3ef5ad641d0474805e655",
+          "ev_e714e9f674969c8c4fa3d5b7"
+        ],
+        "CSV/annual reports/Annual-Report-2021-22.csv": [
+          "ev_9843a10df9e16af7bb7f144b",
+          "ev_526abe6027bde307cfaaa2d6",
+          "ev_68cd48d2fc2f4bf16e23e141",
+          "ev_9c3266ef75527da87ac0cb25",
+          "ev_a3464a5f7f38dd55d52f03d8",
+          "ev_3b9a19abb170b17ee4d9d0d7",
+          "ev_613cc696d2ffe4e7979dc719",
+          "ev_3f0c94a1ef2011b8a99c5cdf",
+          "ev_ef08a5cc9307708dd6f49eab",
+          "ev_5ba07051f28c73c5c61e9db6",
+          "ev_640362d2c17a24f9f98ee1e8",
+          "ev_761bc8a4e667868e4629a78f",
+          "ev_b7aa7228be9f433281407d41",
+          "ev_0e9f9aa7210cc1afa6e91b40",
+          "ev_83dce7c1cb95700afdbd8ba2"
+        ],
+        "CSV/annual reports/NTPC_Annual Report_20-21.csv": [
+          "ev_ef840fb9a697fefe198922cc",
+          "ev_350ca800ea33742a3ecb55e0",
+          "ev_c89c745e2e371ac6da75c266",
+          "ev_2e90954322d6647255c48120",
+          "ev_602a8bcc31667d678b033b00",
+          "ev_9d86513b14e8dbe36ba4f3ea",
+          "ev_795123b33f139b777f899056",
+          "ev_64559e5f473ecbc4eb7a5906",
+          "ev_1f5911fe64256a1d2d4e8f75",
+          "ev_d81b5e12875db876b8bb8d01",
+          "ev_483bb6222e09588d2ec6c795",
+          "ev_b98965b8f8e681752f9b0d9c",
+          "ev_a7e9991a5620c2c0d3ab0941",
+          "ev_b011e45513bcd6add8346b53",
+          "ev_3c0da8fe94de65c603d7d0e9"
+        ],
+        "CSV/annual reports/annual-report-2018-19.csv": [
+          "ev_0b734dd7ef5ff116b1b1a023",
+          "ev_7de30ae93392352ebeb08f86",
+          "ev_7cda0660f26454cdc1a9d7d8",
+          "ev_d54de3cffb09f57552da1fbf",
+          "ev_aa145150c359f2151f507310",
+          "ev_dd4d11352f90d6766b6ed59d",
+          "ev_84c01330b9a5c927cd8c0613",
+          "ev_fbdb8c1c41ec6bc8e3c40ca0",
+          "ev_31b0dcfae46f244db8fa5b31",
+          "ev_a077e19a4cc49e9c14b57e28",
+          "ev_2d3dc2ac2b7afc9a16ab2941",
+          "ev_556100ff435a796a5aa8ad80",
+          "ev_f70deb2f94e9a6b6ed071446",
+          "ev_221da484983d3935af925d79",
+          "ev_022a05129e7d934057762cda"
+        ]
+      },
+      "usable_validated_evidence_ids": [],
+      "missing_evidence": [
+        "Dated project-level pipeline (announced vs awarded vs under implementation vs commissioned) from a single basis",
+        "Quarterly capacity-addition disclosures: quarterly filings contain no capacity-tagged pages",
+        "Award/LoA dates and commissioning dates"
+      ],
+      "calculations_possible_after_review": [
+        "Pipeline conversion ratios (awarded/announced, commissioned/awarded) only after project lists are transcribed",
+        "Year-end installed capacity change from board-report statements, e.g. the FY2024-25 annual report capacity paragraph"
+      ],
+      "quality_concerns": [
+        "No URL, publisher, or publication date for any file",
+        "Partial page coverage in most files",
+        "Detached table labels and values",
+        "Associations are document-level"
+      ],
+      "external_verification_needed": [
+        "CEA/MNRE capacity records",
+        "NTPC press releases and stock exchange commercial-operation intimations"
+      ]
+    },
+    "subsidiary_jv_related_party_supplier_customer_financing": {
+      "readiness": "candidate_review_queue_only",
+      "verified_association_candidate_count": 930,
+      "candidate_evidence_ids_by_document": {
+        "CSV/annual reports/2017-18.csv": [
+          "ev_e93a1eb2987041ef9bf3a3c9",
+          "ev_f15418d9b31ff7af73eed93c",
+          "ev_86dc304049f145cf4640c6a0",
+          "ev_337f3f64818470d8b29a763b",
+          "ev_dfb9afd72ea485798707e592",
+          "ev_d59be76b63adf782ca163787",
+          "ev_fdaf6925bf9c7335c034a1c7",
+          "ev_3c1ba5658282a68ed9870de4",
+          "ev_fdc31f65627aadcfe66c617a",
+          "ev_ed188b2e0bff2e2c818bc56f",
+          "ev_99f3489e1f0a7a14590ba5c6",
+          "ev_3ff4b98b21b69783df86563d",
+          "ev_4bfcaad6184270bbbab8664c",
+          "ev_612c893e2eff69884a89de55",
+          "ev_855b71a0b0befcef35599100"
+        ],
+        "CSV/annual reports/44-final-NTPC-AR-30082020.csv": [
+          "ev_57a6f154df52f3a49f05b650",
+          "ev_f982e7c5803b6229c2ad4a59",
+          "ev_5dc80ad1822e3d5ae5e30da9",
+          "ev_752e588cb2d79aae3f4bf49d",
+          "ev_e63faf0585a2ecb7a52de2c0",
+          "ev_f6844b90785dc2d95bf5d4c8",
+          "ev_03923c01a79b068801817164",
+          "ev_3078cbe24ecef6921c32e9ee",
+          "ev_98449351027b555eb4db3dab",
+          "ev_c62cd068cdfde272c963b276",
+          "ev_090e46ae7aaceb331364681b",
+          "ev_eabaf617c547b5f005f046e0",
+          "ev_05364547259ee6f572bb7269",
+          "ev_c4a2f487ebbfb618cc048397",
+          "ev_cafc1b2b052edd5726a05b26"
+        ],
+        "CSV/annual reports/Annual Report 2024-25_1.csv": [
+          "ev_d86154121b39bdf80bb0c813",
+          "ev_1fdcce2a30805fe2cb8cc52e",
+          "ev_252ddc5ca75aa6a8bc871cb1",
+          "ev_2484a0e981c95b1829d91ac3",
+          "ev_f2c3ef5ad641d0474805e655",
+          "ev_11b9b8db0d930fb7c2d2ae80",
+          "ev_e714e9f674969c8c4fa3d5b7",
+          "ev_7ce2f54a6ec217ca9749221e",
+          "ev_a48fb4e552bdb572e93c3939",
+          "ev_66fb96e4a4a366e22f9b5ca2",
+          "ev_b2e5173d73ed33e3a9238915",
+          "ev_512b596fac836f96ed852287",
+          "ev_dde5cbb48ec183e073eebab7",
+          "ev_a94617891f4da6d9d56c2768",
+          "ev_a5e1cb6d8cd60df970029413"
+        ],
+        "CSV/annual reports/Annual-Report-2021-22.csv": [
+          "ev_84ffbafc47c4494585afc42d",
+          "ev_a5b236cee71c5a33e981297c",
+          "ev_9c3266ef75527da87ac0cb25",
+          "ev_287c65c7a7e817dd19ba9c98",
+          "ev_3b9a19abb170b17ee4d9d0d7",
+          "ev_613cc696d2ffe4e7979dc719",
+          "ev_5ba07051f28c73c5c61e9db6",
+          "ev_640362d2c17a24f9f98ee1e8",
+          "ev_761bc8a4e667868e4629a78f",
+          "ev_b7aa7228be9f433281407d41",
+          "ev_0e9f9aa7210cc1afa6e91b40",
+          "ev_83dce7c1cb95700afdbd8ba2",
+          "ev_73071e831c289b5fd4f84746",
+          "ev_fb4549450332d783fe0fd1a4",
+          "ev_ffe8e45bbdd23896b5672c61"
+        ],
+        "CSV/annual reports/NTPC_Annual Report_20-21.csv": [
+          "ev_290f3ddf911676e16d0205c0",
+          "ev_89108444d5d974a4fc11eaf9",
+          "ev_2e90954322d6647255c48120",
+          "ev_9d86513b14e8dbe36ba4f3ea",
+          "ev_795123b33f139b777f899056",
+          "ev_64559e5f473ecbc4eb7a5906",
+          "ev_1f5911fe64256a1d2d4e8f75",
+          "ev_d81b5e12875db876b8bb8d01",
+          "ev_483bb6222e09588d2ec6c795",
+          "ev_b98965b8f8e681752f9b0d9c",
+          "ev_a7e9991a5620c2c0d3ab0941",
+          "ev_b011e45513bcd6add8346b53",
+          "ev_3c0da8fe94de65c603d7d0e9",
+          "ev_1b3eda3871f783bfe87d15c5",
+          "ev_0e09893a88238b9749b8002b"
+        ],
+        "CSV/annual reports/annual-report-2018-19.csv": [
+          "ev_2832cb49d5baa9a5efef67e2",
+          "ev_1e5e8ef7a73297d2358b4ee2",
+          "ev_0b734dd7ef5ff116b1b1a023",
+          "ev_7de30ae93392352ebeb08f86",
+          "ev_7cda0660f26454cdc1a9d7d8",
+          "ev_d54de3cffb09f57552da1fbf",
+          "ev_aa145150c359f2151f507310",
+          "ev_dd4d11352f90d6766b6ed59d",
+          "ev_84c01330b9a5c927cd8c0613",
+          "ev_fbdb8c1c41ec6bc8e3c40ca0",
+          "ev_31b0dcfae46f244db8fa5b31",
+          "ev_a077e19a4cc49e9c14b57e28",
+          "ev_66194a5058bde25f8ca34900",
+          "ev_2d3dc2ac2b7afc9a16ab2941",
+          "ev_f6651bd6d71450ccf262a37f"
+        ],
+        "CSV/quarterly reports/AFRQ4FY24.csv": [
+          "ev_6ae08b660921cb34c755a38a",
+          "ev_c42403d5077f5f24e287f39e",
+          "ev_0f548687d9bcc2f0ba8ae372",
+          "ev_2e1c2f1b0705da60e8bce40f",
+          "ev_621815c005abdeff93c89461",
+          "ev_939a247d99ed47a5928b998f",
+          "ev_2eedb183197e7a06c6977ada",
+          "ev_05c4921f391e4625ac46af58",
+          "ev_e93e58663d6a19a22d0c4032",
+          "ev_8beeb43e69bb8d2d10469d0f",
+          "ev_4bd05bec38dd6a5cb4d5041d",
+          "ev_a6e3d007ce10882c3d456f8d"
+        ],
+        "CSV/quarterly reports/NTPCAFR26.csv": [
+          "ev_6d98424cf3bf376acebb87a7",
+          "ev_9cde94acb99e63950b9ade51",
+          "ev_b2ebf4adfbd07c307941862a",
+          "ev_3a17c260ffe7156c16eaec96",
+          "ev_a01dc81a6a956290e8652ce8",
+          "ev_5d78d9666656b6ff6d509f8a",
+          "ev_22219b60b61a4245fb15d93c",
+          "ev_23ad0c9354475bd7298873d4",
+          "ev_f72f35338af2b194c845f791",
+          "ev_72b17ea238da6581802f6988",
+          "ev_6bbe7559b9d0c869a4a5c4ce",
+          "ev_df0303d167648019988e5742"
+        ],
+        "CSV/quarterly reports/NTPCQ2FY24-25.csv": [
+          "ev_16e1cd79a61659732dadfac4",
+          "ev_c168d91defcd8dba6802ad10",
+          "ev_db4adacecae86307fcab2a4e",
+          "ev_1a64a8463b2506d600dbdbc5",
+          "ev_63ddfbe170798eb3a07d6b72",
+          "ev_81162d3476c3f408f49fb676",
+          "ev_a1e1479765486523c5e68256",
+          "ev_c828ec8e16876d9b6186694c",
+          "ev_f0a8da1ff3f9a399d914d37f"
+        ],
+        "CSV/quarterly reports/NTPCQ2FY26 (1).csv": [
+          "ev_db174bdef3d2a0a2ab106037",
+          "ev_3f668e319d60eb7e5bb62bfd",
+          "ev_8c425ccdd93ad8b6384313eb",
+          "ev_36fd12f4d7e8145e50af8335",
+          "ev_5fee39a98700f750a4b3f6a9",
+          "ev_5acc91b187af7ef05c9ba21a",
+          "ev_cec4092123b4398168abc168",
+          "ev_c5895e296f0cbc31ece2d2aa"
+        ],
+        "CSV/quarterly reports/NTPCQ4FY24-25.csv": [
+          "ev_400033b9243d108ad7edd4b1",
+          "ev_d4f28fb00e879c7b35689724",
+          "ev_2d83ba2392aa33aec11d468c",
+          "ev_61c89ef3d64445345781e6fe",
+          "ev_8c27b96acc2efeecb873f684",
+          "ev_2fc94e534267c053292a2031",
+          "ev_cbdf44d6614dae6df62f682e",
+          "ev_c6a105171eea57e5d4bdb239",
+          "ev_1bd452cfca637da9ab6e88b9",
+          "ev_6680bdb7e3eb89f7917a4ef9",
+          "ev_74595c7c7bf8967cb53e8e76",
+          "ev_829647038a87d882ac23b5e0",
+          "ev_778f43151ad3f41e69ed02c5",
+          "ev_fc687f2176a447c7d11cb631",
+          "ev_9e6f2574c5b8cdb482eb1d68"
+        ],
+        "CSV/quarterly reports/Q3FY24NTPC_29012024203155.csv": [
+          "ev_b40dad45ffed56694596ae09",
+          "ev_37bbfe8e3c0018e93794ff5f",
+          "ev_c640def25c87ed600f138325",
+          "ev_2e5c4773d34514565be80045",
+          "ev_594383d445050396f097093e",
+          "ev_038506b0244e565fa6ce9116"
+        ],
+        "CSV/quarterly reports/QFR30062023.csv": [
+          "ev_42920c9aafb06ab8ff112b12",
+          "ev_2450bb38ed299ef47882e029",
+          "ev_4a805499677b147ffb969ef4",
+          "ev_532a4515978df1ec1d785ebf",
+          "ev_e4ad805e3fc7083cb95785cf",
+          "ev_c98f111bd7bc4391d7812510",
+          "ev_dedf97a191c06eb43ec05e69",
+          "ev_b1bdfbf69098c8118b187372",
+          "ev_64d05e5e6643e6bdea572d97",
+          "ev_aa52bfac4f1c43c45355f61b"
+        ],
+        "CSV/quarterly reports/QFRNTPCQ1FY26.csv": [
+          "ev_312937d8d38dfee2b8f80432",
+          "ev_be1a6ddeeb21fb44c254be5d",
+          "ev_d1cb3f6972379c4725afd67b",
+          "ev_2dd6894d6535aae7cffbdc90",
+          "ev_e3c18370e00fe37207171a97",
+          "ev_b5ea1c5d52f1fd67dcaddec6",
+          "ev_16f8cd57599f9eba561b1eb0"
+        ],
+        "CSV/quarterly reports/QFRQ1FY27_0.csv": [
+          "ev_5594392b59ffbe1c15da7307",
+          "ev_62685aff947f9581b436c1f3",
+          "ev_4a94ed6f97dc49bad75636ad",
+          "ev_58f27f791a5d9539eb9b6455",
+          "ev_4fd3bfa348cde08236af57a4",
+          "ev_4287bc6b8966324d36f3ee3c"
+        ],
+        "CSV/quarterly reports/QFR_30092023.csv": [
+          "ev_4b3f5d923402d8628d2be5cd",
+          "ev_263c8467c673a6c8099546eb",
+          "ev_d5bb8479e7c1c834629700f4",
+          "ev_0ff4446ec8bc7e11a9a85cbc",
+          "ev_4761a60730dd70192ea4ce58"
+        ],
+        "CSV/quarterly reports/QFR_Q1FY24-25.csv": [
+          "ev_a0a500b68b1ce8420d5e6de0",
+          "ev_49ca96e79bd09feffbf765ca",
+          "ev_f00d177ea154806e86b42cb6",
+          "ev_e41054bbd812d2d5ffba13a3",
+          "ev_ecadfcbdcbff30907cbecd45",
+          "ev_0c34aa8d4931cce6f64d3bd0",
+          "ev_714b626934de37b3bb08215c",
+          "ev_9bd61b216cb65acd75b9b5d4",
+          "ev_a80a2e128a4feb1959411bb4"
+        ]
+      },
+      "usable_validated_evidence_ids": [],
+      "missing_evidence": [
+        "Related-party transaction note tables with values (labels and values are separated or absent in extraction)",
+        "Counterparty-level supplier/customer concentration",
+        "Borrowing/guarantee schedules with maturity and counterparty"
+      ],
+      "calculations_possible_after_review": [
+        "Count and classification of subsidiaries/JVs per year from list pages",
+        "Leverage and borrowing trends from debt-security disclosures after manual transcription"
+      ],
+      "quality_concerns": [
+        "No URL, publisher, or publication date for any file",
+        "Partial page coverage in most files",
+        "Detached table labels and values",
+        "Associations are document-level"
+      ],
+      "external_verification_needed": [
+        "Ind AS 24 note in original audited statements",
+        "MCA filings for subsidiaries/JVs",
+        "Rating agency reports for financing"
+      ]
+    }
+  }
+}

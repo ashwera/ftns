@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T22:15:34.567204+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/3e9f1a9e119e_7a211c58.html",
+      "source_sha256": "3e9f1a9e119eb65075851b1c1ba0dc3ff3db0ee19fa65082b373907fcb6d7881",
+      "file_format": "html",
+      "source_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+      "retrieved_at": "2026-10-24T22:15:34.559690+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_a8e4bf5a070ffca7784bc38e"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_a8e4bf5a070ffca7784bc38e",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_a8e4bf5a070ffca7784bc38e",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

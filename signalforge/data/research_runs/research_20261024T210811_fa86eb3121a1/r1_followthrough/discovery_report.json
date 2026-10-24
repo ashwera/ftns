@@ -1,0 +1,661 @@
+{
+  "company": "Hindalco Industries Limited",
+  "topic": "What is the status (announced, under-implementation, commissioned, commercially operational) of downstream capacity expansions by Hindalco as of specific dates, and how do these status classifications evolve over time?",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf"
+  ],
+  "search_results": [
+    {
+      "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+      "title": "Hindalco Industries - Wikipedia",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": 16,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T21:44:55.187192+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T21:44:54.977820+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+                "status": "robots.txt returned HTTP 301; fail closed"
+              }
+            ],
+            "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+      "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": 16,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T21:44:55.415330+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T21:44:55.405081+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "redirect_chain": [],
+            "source_sha256": "8636e77e1bc788b7d65476d834bdce7804779a09a0a3464e859e97966dccd3b2",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/r1_followthrough/retrieved/sources/8636e77e1bc7_7a211c58.html",
+            "document_title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": 16,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T21:44:55.644099+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T21:44:55.635923+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "redirect_chain": [],
+            "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/r1_followthrough/retrieved/sources/44665fd75ebf_e87f0164.html",
+            "document_title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+      "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": 16,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+      "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": 16,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+      "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "issuer_copy_or_derived_third_party_host",
+      "independent_candidate": false,
+      "rank_score": 6,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://onehindalco.adityabirla.com/",
+      "title": "Aditya Birla Group - Hindalco Business Application Portal",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": -4,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.hindalco.com/",
+      "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": -4,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    }
+  ],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T21:44:54.585184+00:00",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:44:54.963329+00:00",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:44:54.963842+00:00",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:44:54.965519+00:00",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "result": {
+        "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+        "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "copied_search_snippet_not_a_document"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:44:54.965965+00:00",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "result": {
+        "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+        "title": "Hindalco CRM | Login",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T21:44:54.967774+00:00",
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "results": [
+        {
+          "url": "https://www.hindalco.com/",
+          "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+          "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+          "title": "Hindalco Industries - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+          "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+          "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+          "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://onehindalco.adityabirla.com/",
+          "title": "Aditya Birla Group - Hindalco Business Application Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+          "title": "Hindalco CRM | Login",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+          "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+          "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 8,
+      "rejected_count": 2,
+      "executed_queries": [
+        "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T21:44:54.968362+00:00",
+      "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T21:44:55.187893+00:00",
+      "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+      "report": {
+        "generated_at": "2026-10-24T21:44:55.187192+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T21:44:54.977820+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+                "status": "robots.txt returned HTTP 301; fail closed"
+              }
+            ],
+            "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T21:44:55.188461+00:00",
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T21:44:55.415629+00:00",
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+      "report": {
+        "generated_at": "2026-10-24T21:44:55.415330+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T21:44:55.405081+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "redirect_chain": [],
+            "source_sha256": "8636e77e1bc788b7d65476d834bdce7804779a09a0a3464e859e97966dccd3b2",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/r1_followthrough/retrieved/sources/8636e77e1bc7_7a211c58.html",
+            "document_title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T21:44:55.415888+00:00",
+      "url": "https://www.adityabirla.com/businesses/innovation/aluminium/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T21:44:55.644287+00:00",
+      "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "report": {
+        "generated_at": "2026-10-24T21:44:55.644099+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T21:44:55.635923+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "redirect_chain": [],
+            "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/r1_followthrough/retrieved/sources/44665fd75ebf_e87f0164.html",
+            "document_title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T21:44:55.644641+00:00",
+      "reason": "result_budget"
+    }
+  ],
+  "errors": [
+    {
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    }
+  ],
+  "returned_result_count": 10,
+  "relevant_returned_count": 8,
+  "relevant_result_count": 8,
+  "rejected_result_count": 2,
+  "rejected_results": [
+    {
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "result": {
+        "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+        "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "copied_search_snippet_not_a_document"
+    },
+    {
+      "query": "\"Hindalco Industries\" status announced under-implementation commissioned commercially operational downstream capacity expansions Hindalco as specific dates do these status classifications evolve over time filetype:pdf",
+      "result": {
+        "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+        "title": "Hindalco CRM | Login",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+status+announced+under-implementation+commissioned+commercially+operational+downstream+capacity+expansions+Hindalco+as+specific+dates+do+these+status+classifications+evolve+over+time+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    }
+  ],
+  "discovery_status": "unverified_relevant_candidates",
+  "retrieval_status": "retrieved",
+  "budget": {
+    "max_queries": 2,
+    "max_results": 8,
+    "max_fetches": 3,
+    "max_seconds": 65,
+    "request_timeout": 20,
+    "max_response_bytes": 2097152,
+    "max_site_pages": 3
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "evidence_gaps": [
+    "What is the status (announced, under-implementation, commissioned, commercially operational) of downstream capacity expansions by Hindalco as of specific dates, and how do these status classifications evolve over time?"
+  ],
+  "research_document_count": 0,
+  "site_seeds": [],
+  "site_discovered_count": 0,
+  "site_rejected_results": [],
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "result_budget"
+}

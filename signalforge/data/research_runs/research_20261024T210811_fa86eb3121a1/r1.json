@@ -1,0 +1,273 @@
+{
+  "company_name": "Hindalco Industries Limited",
+  "candidate_id": "fallback_capacity_conversion",
+  "hypothesis": "Do dated project disclosures distinguish announced capacity from capacity that reached commissioning or commercial operation?",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the status (announced, under-implementation, commissioned, commercially operational) of downstream capacity expansions by Hindalco as of specific dates, and how do these status classifications evolve over time?",
+      "metrics": [
+        "announced capacity",
+        "under-implementation capacity",
+        "commissioned capacity",
+        "commercially operational capacity"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25",
+        "Q2 FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "detailed project-level status by date",
+        "official commissioning dates per facility",
+        "third-party validation of operational status"
+      ]
+    },
+    {
+      "question": "What are the target, trial, and commercial operation dates for specific downstream projects such as battery foil, aluminum extrusion, and copper recycling plants?",
+      "metrics": [
+        "target operation date",
+        "trial operation date",
+        "commercial operation date"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25",
+        "FY 2025-26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "officially published trial and commercial operation dates",
+        "verified project timelines from independent sources"
+      ]
+    },
+    {
+      "question": "How does the status of capacity changes for greenfield projects (e.g., alumina refineries, recycling) align with publicly disclosed timelines and milestone reports?",
+      "metrics": [
+        "project announcement date",
+        "commissioning date",
+        "commercial operation date"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25",
+        "FY 2025-26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "official milestone reports or commissioning documents",
+        "project-specific timelines from issuer filings"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_b4b16e736883ef0de560ba0d",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Commissioned in 2022, Silvassa is the country's first fully automated extrusions plant.",
+      "claim_supported": "Silvassa extrusion plant was commissioned in 2022 and is operational.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_f6bf8fc87e968143f61c184e",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "The largest project is a $4.1 billion integrated greenfield rolling and recycling center in Bay Minette to commission by the second half of CY 2026.",
+      "claim_supported": "A $4.1 billion greenfield rolling and recycling center is scheduled to be commissioned by the second half of CY 2026.",
+      "kind": "calculation",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_157588baa44fe21c7d244306",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "We are in process of commissioning a precipitate (PPT) hydrate plant with a capacity of 20 KT and aim to start production in FY 2024–25.",
+      "claim_supported": "A 20 KT precipitate hydrate plant is planned to start production in FY 2024–25.",
+      "kind": "inference",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_836e5c74111ba3cda78bda80",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "The state-of-the-art extrusion facility at Silvassa was successfully commissioned with a capacity of 34 KT, adding to our overall downstream capacity.",
+      "claim_supported": "The Silvassa extrusion facility has a 34 KT capacity and was successfully commissioned.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_f4a003fa4a60009b1018f261",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "We are also setting up an automated robotics facility in Chakan, Pune, Maharashtra to produce battery enclosures for the EV segment and will also manufacture other automotive components such as crash management system. The plant is set to be operational by Q2 of FY 2024–25.",
+      "claim_supported": "The Chakan battery enclosures plant is set to be operational by Q2 FY 2024–25.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_dd54912f60e5319f278cdd44",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Commissioning dates for greenfield projects not explicitly stated.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_89a3c0da5b4119a3ad90bf1a",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No direct mention of commercial operation date for copper recycling project.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_24f65cfcb51b0b8059510d0b",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No project-specific commissioning or commercial operation date provided.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_b78f1f2be0597c4b9edeef26",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No timeline data for new alumina refinery or downstream capacity expansion.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_9d0caaf9f68e19f138bdbc43",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No official milestones or dates reported for specific projects.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_925778119ac92976d727ed24",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No commissioning or operational status defined for any project beyond general statements.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_c794e8a585f1f427fb5f7e5f",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No specific operational status timeline provided.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_2bb1df47d1c25f2e7b353677",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No direct project commissioning or operational date.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_77ac31547230f9162f4c34d9",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No explicit timeline for commissioning or commercial operation of project.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_d88979f05ff6a63183348a8f",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No milestone dates for greenfield capacity expansion.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_3193e95f1b356d7907290939",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "No official status classification for capacity beyond 'in progress' or 'planned'.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Locate and extract all project disclosures with explicit dates from Hindalco’s annual reports, investor presentations, and regulatory filings (e.g., form 20, 21, 23, or 26).",
+      "expected_evidence": "Publicly filed reports with dated disclosures of project status (announced, commissioning, commercial operation).",
+      "cross_validation_sources": [
+        "Hindalco's annual report for FY 2023-24",
+        "Hindalco's quarterly investor updates (Q1–Q4 FY 2024)",
+        "Form 20/21/23/26 filings with ESG disclosures or capital allocation updates"
+      ],
+      "calculation": null,
+      "completion_criteria": "All project-level disclosures with dated status must be cataloged and verified for consistency with public timelines."
+    },
+    {
+      "step": "Retrieve independent records from regulatory bodies (e.g., Ministry of Power, Ministry of Mines, or energy sector regulators) confirming commissioning or operational milestones for relevant facilities.",
+      "expected_evidence": "Official commissioning or operational certification documents from government or state regulatory authorities.",
+      "cross_validation_sources": [
+        "Ministry of Power, Government of India – Operation certification records",
+        "Ministry of Mines – Mining and infrastructure milestones",
+        "State-level energy authorities for infrastructure projects"
+      ],
+      "calculation": null,
+      "completion_criteria": "At least one independent source must confirm operational status for each major project mentioned in the disclosure."
+    },
+    {
+      "step": "Map the status of each project (announced, under-implementation, commissioned, operational) to specific dates and verify alignment with the company’s stated milestones.",
+      "expected_evidence": "Chronological timeline of project status for each facility, with dates and definitions of 'commissioning' and 'commercial operation'.",
+      "cross_validation_sources": [
+        "Hindalco’s investor presentations",
+        "Publicly available project fact sheets",
+        "Press releases with timelines"
+      ],
+      "calculation": "Map project status to a consistent period and unit (e.g., KT of capacity, MW of power).",
+      "completion_criteria": "A full, period-aligned timeline must be established with a consistent metric and definition of operational status."
+    },
+    {
+      "step": "Identify and verify any contradictory evidence in disclosures (e.g., stated capacity vs. reported production or timeline inconsistencies).",
+      "expected_evidence": "Discrepancies between announced capacity and actual operational capacity or timeline.",
+      "cross_validation_sources": [
+        "Third-party industry reports on aluminum or copper capacity usage",
+        "Industry benchmarks or market data from S&P Global or IHS Markit"
+      ],
+      "calculation": null,
+      "completion_criteria": "All contradictory evidence must be explicitly noted and documented in a separate log with a source and rationale."
+    }
+  ],
+  "alternative_explanation": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+  "falsification_test": "The defined comparison is reconciled on a consistent period, entity, unit and reporting basis, with independent records supporting the disclosed position."
+}

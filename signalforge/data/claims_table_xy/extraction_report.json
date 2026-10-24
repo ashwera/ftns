@@ -1,0 +1,2491 @@
+{
+  "run_status": "completed",
+  "generated_at": "2026-10-17T20:11:44.457016+00:00",
+  "parser_version": "layer1.5-table-0.2.0+layer1-deterministic-0.2.0",
+  "schema_version": "1.1",
+  "extractor": "deterministic rules; no model, no network",
+  "input": {
+    "evidence_path": "signalforge/data/processed_step6/evidence.jsonl",
+    "evidence_sha256": "d7a4808c829e7d19620324df0c9ed4b23f588d4e9948da17119e7ef339447c84",
+    "source_records_path": "signalforge/data/processed_step6/source_records.jsonl"
+  },
+  "output_dir": "signalforge/data/claims_table_xy",
+  "input_record_count": 8241,
+  "processed_chunk_count": 8241,
+  "failed_chunk_count": 0,
+  "chunks_with_claims": 2951,
+  "chunks_with_zero_claims": 5290,
+  "zero_claims_empty_or_unparsed": 1486,
+  "zero_claims_no_extractable_claim": 3804,
+  "total_claims": 40942,
+  "claims_by_status": {
+    "extracted": 15,
+    "ambiguous": 15791,
+    "needs_review": 25136
+  },
+  "claims_needing_attention": 40927,
+  "schema_validation_failures": 0,
+  "chunks_with_rejected_claims": 0,
+  "duplicate_claims_skipped": 0,
+  "review_queue_entries": 40927,
+  "error_summary": [],
+  "error_summary_truncated": false,
+  "notes": [
+    "Claims are extracted candidates and carry claim_verification_status 'unverified'; extraction is not verification.",
+    "Entity is copied from the evidence record and not independently certified."
+  ],
+  "pipeline": "table-aware with experimental cross-chunk continuation",
+  "thresholds": {
+    "min_rows": 3,
+    "min_width": 3,
+    "width_consistency": 0.6,
+    "numeric_frac": 0.25,
+    "long_cell": 120,
+    "tabular_max_long_frac": 0.3,
+    "prose_min_long_frac": 0.5,
+    "reversal_min_evidence": 2,
+    "reversal_ratio": 3.0,
+    "max_excerpt": 800
+  },
+  "chunk_classification": {
+    "counts": {
+      "uncertain": 1826,
+      "prose": 2036,
+      "tabular": 4379
+    },
+    "extraction_path_counts": {
+      "table_parser": 4379,
+      "prose_regex": 2036,
+      "prose_regex_flagged_uncertain": 1826,
+      "skipped_empty": 0
+    },
+    "reason_summary_counts": {
+      "no non-blank rows": 1339,
+      "narrow rows or long text cells dominate": 2036,
+      "consistent multi-column rows with numeric cells or header signal": 3293,
+      "local table header detected": 898,
+      "signals conflict or too little structure": 487,
+      "headerless rows match a recent table structure; continuation review attempted": 188
+    }
+  },
+  "claims_by_method": {
+    "table_row": 37843,
+    "prose_regex": 3099
+  },
+  "claims_flagged_for_review": 40927,
+  "table_rows": {
+    "rows_seen": 34612,
+    "header_rows": 4562,
+    "repeated_headers": 80,
+    "blank_rows": 1325,
+    "outcomes": {
+      "label_only_row": 3226,
+      "row_flagged_only": 11126,
+      "rejected_no_label": 14322,
+      "row_with_extracted_claim": 5,
+      "row_no_claim": 46
+    },
+    "rows_with_extracted_claim": 5,
+    "rows_flagged_only": 11126,
+    "rows_rejected_or_without_claim": 17594,
+    "tabular_chunks_without_header": 701,
+    "malformed_numeric_cells_skipped": 0,
+    "note_reference_columns_skipped": 111,
+    "reject_examples": {
+      "rejected_no_label": {
+        "evidence_id": "ev_86dc304049f145cf4640c6a0",
+        "row": "\"Total Capacity declared\ncommercial during 2017-18\n(I)+(II)+(III)+(IV)+(V)\",\"4,423\","
+      }
+    }
+  },
+  "cross_chunk_continuation": {
+    "matched_pairs": 33,
+    "matched_pair_count": 33,
+    "rejected_candidate_count": 582,
+    "matches": [
+      {
+        "header_chunk_id": "ev_4e4c1c7978cb30ede45ff16e",
+        "header_page": 147,
+        "row_chunk_id": "ev_f46a6038ea2514eca778a454",
+        "row_page": 148,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_c02836dcf8fd2f97adfc8d6b",
+          "cl1_d36c6e18ca35910bbd88fb3e",
+          "cl1_1f687c984918fe898eb1c8df",
+          "cl1_c6a9c1b786497069d4350f9f",
+          "cl1_6b81cd142992bc4c330e481d",
+          "cl1_8d59c8064338ac4fffe1440b",
+          "cl1_35f906d5cc7feefd5acb3840",
+          "cl1_ff0875f1ade05f4f1ded1d66",
+          "cl1_bddef199ed45e55c09ae80b9",
+          "cl1_f2e31b623f79c020a083ca12",
+          "cl1_810983ec7cdc1194924b5a8a",
+          "cl1_ee08fba6ed1bd8e9c2575d5c",
+          "cl1_1f659965c78621ca96675fe0",
+          "cl1_8079148cda390fc04092e9d4",
+          "cl1_8639e383dc14a35f87ab5e84",
+          "cl1_bff882e3f6894be99d8acf9f",
+          "cl1_e53735418b5457ae5fdba196",
+          "cl1_9ac1e467b15608c8167ff5e0",
+          "cl1_96a74ca68cfaafa4f55302fe",
+          "cl1_500034df617c9333dcf07830",
+          "cl1_ff459d0fea5eaddfcb5a26f3",
+          "cl1_0b271a6ffa552c781ae71b77",
+          "cl1_40fadbeb6fabe3ad9477e701",
+          "cl1_3d64abd86f9382ba041d4574",
+          "cl1_eca6f8ef2c5fa007731d8dda",
+          "cl1_4be858c90a597bdb2a157de8",
+          "cl1_58384760dc1bcbc02c026357",
+          "cl1_8a888ef320aa5bac5817adf6",
+          "cl1_dd86ca5f2cd2fabc81faf60d",
+          "cl1_27c22e1e31af4e5273361338",
+          "cl1_d661eb19c71b492f75a3ea22",
+          "cl1_ed68dc8571fec7325f947ca8",
+          "cl1_484b2bb9bc025a1d270a5dfa",
+          "cl1_f6ea73c2a45e63d062e85e2f",
+          "cl1_43de23d2b9e78b1120a2322a",
+          "cl1_ef291b289e10acbdce4d44f9",
+          "cl1_43d17a83bd674cd3ab43131c",
+          "cl1_ade2956c0adbbffb31454384",
+          "cl1_2bf6394aeb926d007883ae3b",
+          "cl1_d2baaa10d3d86af618b2eff4",
+          "cl1_d14182cae1c95076a02a3ca4",
+          "cl1_a232fb64ec8c6b4fcada9fee",
+          "cl1_fd60d6fef8b65fd476c2dfc8",
+          "cl1_2e1f386fb2177b97ef96da1a",
+          "cl1_2d1464e88d2ba6c896a544b9",
+          "cl1_6d4d48e580200f5d83fc1ed2",
+          "cl1_858140619cbd04e4c97a6c12",
+          "cl1_27ce050fee904d104524863f",
+          "cl1_a597a2c2b3fe53bee8002c1d",
+          "cl1_a7d2a9792bc67cb7f0747224",
+          "cl1_5de34510d73009a036133553",
+          "cl1_18c89cebba3d8d4b856b546d",
+          "cl1_e71d69bd549f0aaf9e44de5d",
+          "cl1_f9df1a1e630376259762ae68",
+          "cl1_296b6be30cde6f73d88a1f6f",
+          "cl1_ac97f6e6ae8a60756c3de688",
+          "cl1_51be2c8ffe15d544ffd7865f",
+          "cl1_ebf38fac39ca27d3e15c2d6b",
+          "cl1_3897c4c5d20fd9460f3acbb8",
+          "cl1_2cca4aec2c819b84084210b9",
+          "cl1_11a09b286f3689c3e0540d01",
+          "cl1_ecb6f9cc9f8eb0f0b014a0bd",
+          "cl1_d08d6fff2aa7e5f51de58f8f",
+          "cl1_3a3f7d9d2691f58196358c43"
+        ],
+        "header_text": "\"S.\nNo.\",For Each of the Top 10 Shareholders*,\"Shareholding at the beginning of the\nyear\",,Cumulative Shareholding during the year,",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_46aac3cb559805b192b60715",
+        "header_page": 145,
+        "row_chunk_id": "ev_7d33ae504d0706d6d4229cd0",
+        "row_page": 146,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_de273c9f2993951ca2a45c2c",
+          "cl1_49c1b5362db7ee80f205b93d",
+          "cl1_7cffdfe5cd09fcfb9cc70048",
+          "cl1_fa35008f8c8db67d3ba6cea0",
+          "cl1_5a38e52d7ceb287ebe0e285c",
+          "cl1_d0e73871018db6cfa15d0508",
+          "cl1_9aed73da07271fa17ed748e1",
+          "cl1_893141324ffecc94542e3185",
+          "cl1_4fc4f2d4055485e084486bab",
+          "cl1_96c2e4b9ffa8dc4a47ae910f",
+          "cl1_bd333f43c6de1837a21ba8be",
+          "cl1_c6101eac307887292db7bb3c",
+          "cl1_e228c0ac1ce94c7ffc8c0413",
+          "cl1_0311b0dce250c03b6e6ee54d",
+          "cl1_9d9e2b0f99feac1fb2799ae6",
+          "cl1_d9e65e2ac39460387368499a",
+          "cl1_1cb687de57bf26489013c994",
+          "cl1_ab386cdba604bb27e19fe0ff",
+          "cl1_0eb96cac2965e115555ad346",
+          "cl1_1bc820aec078f0025ea8a6f2",
+          "cl1_13a38b5b20e0229ca3df9d90",
+          "cl1_cf32d5a09d2184958ea55b6a",
+          "cl1_4db76a3d09f35bf7e1924061",
+          "cl1_70ce5f7c1872937d8738a06e",
+          "cl1_5543e1c28eec86adbfa68f15",
+          "cl1_f7e318b8694628c571a781ef",
+          "cl1_720c2f0916015136c5dcd80f",
+          "cl1_e53fe691f35b2ce87040e0dc",
+          "cl1_160240a3bd9eccaa28b93228",
+          "cl1_a1580e8311e9be9f2cb8e35d",
+          "cl1_807cdf1787c11d484f43a9b6",
+          "cl1_08c2f3347b0645aeeeea3234",
+          "cl1_a7e15464c025d57e0c169c4a",
+          "cl1_cba42db1da9577ea15d73b03",
+          "cl1_6e197c480e01e010b8807b14",
+          "cl1_831def6f08011369f8d5b362",
+          "cl1_0f51990b0826af81b8df43c5",
+          "cl1_e97ba48807a7762f554da77b",
+          "cl1_b18f5683cffb4bbb9b236453",
+          "cl1_fe16b0cd60e583bde1172093",
+          "cl1_3ba06c2f74dfeb25f89653cc",
+          "cl1_38ec4407dbd7ab3af3bd456a",
+          "cl1_eab2cb6334ad17c4350749fa",
+          "cl1_2b53027b1902103b05c54400",
+          "cl1_41ddae5903b692fdda5707e3",
+          "cl1_b4280bccd82ce4b0a31ae7b4",
+          "cl1_71abc09c6594e37c2417d5d9",
+          "cl1_5eb26b8d90dd65310490b8f4",
+          "cl1_e520578e51095d55bc07a4ff",
+          "cl1_85e3500a3da76ab42c5b90b3",
+          "cl1_2ef5df782572ba2df45a0d19",
+          "cl1_b39f7efc43c5c1e3d5d2a291",
+          "cl1_5d1e566f301feaf4d5fcb682",
+          "cl1_fbde5e4439bff4ed326e1ae4",
+          "cl1_a44525c40eee3b66394c9da7",
+          "cl1_044a601e1a68188e89c1044c",
+          "cl1_bde2cf89462fa733360c2021",
+          "cl1_a6fce720257e7a1a7a8fb5c9",
+          "cl1_b26009ee8fd282ff8d59686b",
+          "cl1_c219f792f0e76354d95abef9",
+          "cl1_a1cf32e4d0ab7c85b2990852",
+          "cl1_4e4c7643125af6d5432bdb2f"
+        ],
+        "header_text": "\"S.\nNo.\",For Each of the Top 10 Shareholders*,\"Shareholding at the beginning of the\nyear i.e 1/4/2019\",,\"Cumulative Shareholding during the year\ni.e 31/3/2020\",",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_99a964cd8f3b2abc9a96b9b3",
+        "header_page": 471,
+        "row_chunk_id": "ev_3129ad51ba4c66002a5d75d3",
+        "row_page": 471,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_68d27c26214652486c1c1160",
+          "cl1_444d93504c8c2480a4590397",
+          "cl1_a0e4371a73b97c8c6a5d370f",
+          "cl1_be146587f53ba1a75c4329d5",
+          "cl1_386ec738910a3846bb11d742",
+          "cl1_d427d0de5c0bf89f35f29e5c"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,\"Fair value of plan\nassets\",,\"Net defined benefit\n(asset)/liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2020\",\"31 March\n2019\",\"31 March\n2020\",\"31 March\n2019\",\"31 March\n2020\",\"31 March\n2019\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_39ec420d5b384fea93f0ca66",
+        "header_page": 163,
+        "row_chunk_id": "ev_19267309c8cb902c1f172ba6",
+        "row_page": 163,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_4f57122a239e5f3a2d89c8ce",
+          "cl1_b0a1537fb083600369b2b4e0"
+        ],
+        "header_text": "Sector,2022-23,2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_a020b3642cb21f82ec9be8c7",
+        "header_page": 180,
+        "row_chunk_id": "ev_07c5266a5b94fca68cbd9402",
+        "row_page": 180,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_85395a4a817a95511b6e5dc2",
+          "cl1_4739256bd3c7976f2598e613"
+        ],
+        "header_text": "Particulars,As at March 31,",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_7e336a437ce433bca4ccf72a",
+        "header_page": 182,
+        "row_chunk_id": "ev_e4b4d83099f8099b0d1a9d6f",
+        "row_page": 182,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_ef76682264517667612cd847",
+          "cl1_e56c99663cb50368d1ff4791",
+          "cl1_4620d840757d8a45da7635ca"
+        ],
+        "header_text": "Particulars,As at March 31,,\"%\nChange\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_58a4b1cced7d1d0bb6e49bbc",
+        "header_page": 183,
+        "row_chunk_id": "ev_5ff5bcf8aae092319ffaa80c",
+        "row_page": 183,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_ee87fb81cfca1b434e93f795",
+          "cl1_93588ec6ad8910f35ea04df3"
+        ],
+        "header_text": "Particulars,As at March 31,",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_58ed6a437cbefe2af03aa19e",
+        "header_page": 185,
+        "row_chunk_id": "ev_a1600f593a653371c40338da",
+        "row_page": 185,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_e513f503232ebb0cac1ee33b",
+          "cl1_1ae602fe9ddeccbf3b471071",
+          "cl1_8fd14023654417391f1f85e8",
+          "cl1_ecba16266da2c3bb4c6ab6a4"
+        ],
+        "header_text": "Particulars,As at March 31,,\"Y o Y\nChange\",\"%\nChange\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_dc2aee4cb2f90acc6ed324f2",
+        "header_page": 189,
+        "row_chunk_id": "ev_1fe8cca04346fecb5c8325e6",
+        "row_page": 189,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_4546d599e45f9f500fc546d2",
+          "cl1_a7d1b724f59ddfc2af7fce20"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_5e77b87ccfe98bfc4d58a17f",
+        "header_page": 191,
+        "row_chunk_id": "ev_53a534d42eb085990f1cda3f",
+        "row_page": 191,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_547caca22a5c629a61a6f788",
+          "cl1_518f398276d43cb30c01d9cb"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_5e77b87ccfe98bfc4d58a17f",
+        "header_page": 191,
+        "row_chunk_id": "ev_c9f1d452749e43a50e184ce9",
+        "row_page": 191,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_c03bad780d5048258fe094ee",
+          "cl1_5866f4036793cae74ced5a20"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_551f38f7050004409ba9c032",
+        "header_page": 192,
+        "row_chunk_id": "ev_2df886b6dc22963ae87740ba",
+        "row_page": 192,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_2b64c6f95418a7d2b6bd6e0f",
+          "cl1_e4e18ddff474692ebfdf7bea"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_551f38f7050004409ba9c032",
+        "header_page": 192,
+        "row_chunk_id": "ev_f1cb6aea189c3290f51e92c3",
+        "row_page": 192,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_935eae192cc5bc6daa6c5856",
+          "cl1_668b573da717c4b49ebc4583"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_27a9615711346cbf79e4a69a",
+        "header_page": 192,
+        "row_chunk_id": "ev_bf58c5e6bd1c044baa47d1dc",
+        "row_page": 192,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_0f85948fedb414e1975e125d",
+          "cl1_d2879d3a335dc1532729073c"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_27a9615711346cbf79e4a69a",
+        "header_page": 192,
+        "row_chunk_id": "ev_c17f56de6dc68bd1794718e5",
+        "row_page": 192,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_6f708debe245537270493f03",
+          "cl1_4a56f987df9b670209d0b14a"
+        ],
+        "header_text": "Particulars,FY 2022-23,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_a9274be782f8f0a14304f757",
+        "header_page": 346,
+        "row_chunk_id": "ev_d8f136ae625999d6d3224298",
+        "row_page": 346,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_b0cbf032b530988094cd2ebf",
+          "cl1_542de9f8411629d9832c88d6"
+        ],
+        "header_text": "Particulars,\"As at\n1 April 2021\",\"As at\n31 March 2022\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_3763999d6159a653c047aa78",
+        "header_page": 387,
+        "row_chunk_id": "ev_44d04cbd664f69bf218125e8",
+        "row_page": 388,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_7f43934dd513f1b41b7e813c",
+          "cl1_a69c7f8699cdc5c6a013f76a"
+        ],
+        "header_text": "Particulars,,\"For the year\nended\n31 March 2023\",\"For the year\nended\n31 March 2022\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_d72ebda1b692f520d484f463",
+        "header_page": 398,
+        "row_chunk_id": "ev_3c21242eaec394c47e3972d4",
+        "row_page": 398,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_a746165971d9a04ea2108cf8",
+          "cl1_c3e2675d34f71bd00284949c",
+          "cl1_5845880ceae6d1c9fe8fafa4",
+          "cl1_1aa9991026c553ccae33a9cd",
+          "cl1_54583d46666532d7337177b5",
+          "cl1_b85ad50d645e80928e9e5bc7"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,\"Fair value of plan\nassets\",,\"Net defined benefit\n(asset) liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_e8bd399764e78caeb701c9c3",
+        "header_page": 399,
+        "row_chunk_id": "ev_90bee63f87cbaabe66d9d470",
+        "row_page": 399,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_25be2a8508de6bcccf0c56a9",
+          "cl1_b9048e5eafc92b623eae7dcf",
+          "cl1_83d3e448cd9a1c29aec8fb1c",
+          "cl1_493d8a8bdb61560105d0bc09",
+          "cl1_6d2eb57638d7cd48fe067f16",
+          "cl1_1cad384675a4fa6254fa0e55"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,\"Fair value of plan\nassets\",,\"Net defined benefit\n(asset) liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_f6aa9241a461d3da0e456faa",
+        "header_page": 446,
+        "row_chunk_id": "ev_54592d6426796999e8256da2",
+        "row_page": 446,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_4793baf534d1d6641fc1ad9a",
+          "cl1_5db51c0f4ecfc00d307a4b9a"
+        ],
+        "header_text": "Name of the Company,\"Period of restrictions for disposal of investments as\nper related agreements\",Amount invested as at,\n,,31 March 2023,31 March 2022",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_41565703223f156090a4a845",
+        "header_page": 572,
+        "row_chunk_id": "ev_3d06e0dc64632acf7b015fc1",
+        "row_page": 572,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_1ed3e4a2841a96291c97af6c",
+          "cl1_bbac8f0221a3a9d52ea6221f",
+          "cl1_a661c3c7c8faf68f3210ec27",
+          "cl1_f671fd8fd41646a3611f118d",
+          "cl1_e795f76dbd6692da8fbbcef3",
+          "cl1_636efbbb1cc4ed9a22d39fbf"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,Fair value of plan assets,,\"Net defined benefit\n(asset)/liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_2012e89badf25121f118f60d",
+        "header_page": 573,
+        "row_chunk_id": "ev_002921fca048ae0f6f152af5",
+        "row_page": 573,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_11bae8dd706a7139e1f64be5",
+          "cl1_167e2a20e539ed0d972bcb02",
+          "cl1_e1d79982c8467ca7c49b7f87",
+          "cl1_21862b5f535305da53ce6baa",
+          "cl1_50f8d751455eca37f4d16a79",
+          "cl1_72b4e243ac869202c8328ca0"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,Fair value of plan assets,,\"Net defined benefit\n(asset) liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\",\"31 March\n2023\",\"31 March\n2022\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_273c45334f14047e46fb2fca",
+        "header_page": 150,
+        "row_chunk_id": "ev_1a89510b92b7ffe0ceb6bd9c",
+        "row_page": 150,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_b6da08a52e4077335eaf1ba9",
+          "cl1_b820ef445b688492c55e28c6",
+          "cl1_611da0930aa973132482da0d",
+          "cl1_99b6be6218d2cfda5d09685c"
+        ],
+        "header_text": "\"Particulars Note As at As at* As at*\n31 March 2024 31 March 2023 1 April 2022\",,",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_c0edd1124d5085e6ea62b218",
+        "header_page": 312,
+        "row_chunk_id": "ev_31f7201e3b3ac9957846643d",
+        "row_page": 312,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_dd82847d81abe2b785a6648c",
+          "cl1_2841d8fe56a2a9ee63471e5e",
+          "cl1_cec900dbaadf5af3a104e19f",
+          "cl1_14696e3e27f1473855c0484d",
+          "cl1_a63813be3ccbad7d6eac7257",
+          "cl1_71f2237646b0e44c8b76fbfe"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,\"Fair value of plan\nassets\",,\"Net defined benefit\n(asset)/liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2025\",\"31 March\n2024\",\"31 March\n2025\",\"31 March\n2024\",\"31 March\n2025\",\"31 March\n2024\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_c0edd1124d5085e6ea62b218",
+        "header_page": 312,
+        "row_chunk_id": "ev_a9aeee67b8b2722064999074",
+        "row_page": 313,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_106f5f08118ba7b844d96070",
+          "cl1_a81cb4eb1ad6a204fdc2e82a",
+          "cl1_8a1e16c7d7301697782e9dc5",
+          "cl1_53a97ebc2597d7c2152a0bf0",
+          "cl1_82ce5b60d34cd36b39530a7c",
+          "cl1_6b6d1cc287c8867a72ac4039"
+        ],
+        "header_text": "Particulars,\"Defined benefit\nobligation\",,\"Fair value of plan\nassets\",,\"Net defined benefit\n(asset)/liability\",\n,For the year ended,,For the year ended,,For the year ended,\n,\"31 March\n2025\",\"31 March\n2024\",\"31 March\n2025\",\"31 March\n2024\",\"31 March\n2025\",\"31 March\n2024\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_b6835addba616d32ba4c3e75",
+        "header_page": 119,
+        "row_chunk_id": "ev_72e0d107015fd19a8156da21",
+        "row_page": 119,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_0ffe059f2d07e87c30e10925",
+          "cl1_cf0960d3cc5bf2d8fbc32176"
+        ],
+        "header_text": "Particulars,\"Number of\ninstruments\nCurrent year/\n(previous year)\",\"Face value per\ninstrument in ₹\nCurrent year/\n(previous year)\",\"As at\n31 March\n2026\",\"As at\n31 March\n2025\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_d763a37785304773304ad44d",
+        "header_page": 140,
+        "row_chunk_id": "ev_68a9581be541f242947c31df",
+        "row_page": 140,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_fce3dce54a313225be84c646",
+          "cl1_22ff9614b0ebcba2db69732c",
+          "cl1_26b5957e5c1168e7d4b674bc",
+          "cl1_63fb82cfd6baf2de340ea25b"
+        ],
+        "header_text": "Particulars,For the year ended,",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_1a49ce8ac7de5d34acc8561f",
+        "header_page": 140,
+        "row_chunk_id": "ev_8a8a296a081a5c969b02799a",
+        "row_page": 140,
+        "reason": "unique structural match (score 7)",
+        "claim_ids": [
+          "cl1_dfba6ba6e2bdd353e46d0834",
+          "cl1_c1c759b6252d466c82093e73"
+        ],
+        "header_text": "Particulars,For the year ended,",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_55af43192f057974e831fb7d",
+        "header_page": 158,
+        "row_chunk_id": "ev_2140c595f7718069b76106ae",
+        "row_page": 158,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_d707f1a65f28090d204f38f2",
+          "cl1_5471a693ee9096173852a0a0"
+        ],
+        "header_text": "Particulars,\"As at\n31 March 2026\",\"As at\n31 March 2025\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_958742408833e766cf7622bc",
+        "header_page": 167,
+        "row_chunk_id": "ev_7f7d9f2e10f682c8632895f2",
+        "row_page": 167,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_ebb7166379d3e1559835ab74",
+          "cl1_de31e1aa212afa5f71926dd5"
+        ],
+        "header_text": "Name of the Company,\"Period of restrictions for disposal of investments as\nper related agreements\",Amount invested as at,\n,,31 March 2026,31 March 2025",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_8aec7d5ee464cf93d6965eeb",
+        "header_page": 202,
+        "row_chunk_id": "ev_120e526030d639e0aa07bb2f",
+        "row_page": 202,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_f873da900701be7cd74ef7f2",
+          "cl1_beb0fda8391a80c2737b6679"
+        ],
+        "header_text": "Particulars,\"As at\n31 March 2026\",\"As at\n31 March 2025\"",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_6ecc3c18f974fe40f70dfe0a",
+        "header_page": 245,
+        "row_chunk_id": "ev_f96fc0cdaeedba833b40e3b0",
+        "row_page": 245,
+        "reason": "unique structural match (score 9)",
+        "claim_ids": [
+          "cl1_b8613cd77c7af335ec43dccc",
+          "cl1_2e1dbd811e73753a4f74c344"
+        ],
+        "header_text": "KPI,Unit,FY 2021-22",
+        "header_context_sources": []
+      },
+      {
+        "header_chunk_id": "ev_f6bd7d01d5c9b89e6539f188",
+        "header_page": 128,
+        "row_chunk_id": "ev_e48344d8e77f2298ca1cc618",
+        "row_page": 129,
+        "reason": "unique structural match (score 8)",
+        "claim_ids": [
+          "cl1_f27378afd4c3bb6668d4e8f4",
+          "cl1_c89fc4259dfdd46d69f1321f",
+          "cl1_77e92e65191213d874a2989d",
+          "cl1_a91b8bca84d01500de5f5cae",
+          "cl1_ed19092ead1b68a67f997f60",
+          "cl1_5d1b6ea9ae54e1a29e4e89d6",
+          "cl1_a0a96525833f6443fadeab18",
+          "cl1_df99791c4764fe419d4774f2",
+          "cl1_ae01b9744c56585bd0f495a8",
+          "cl1_7c21163c4bcf5384a02b10e3",
+          "cl1_a33083b4b58e301dda05d367",
+          "cl1_cb6f38143c7f3e14ae8a4f30",
+          "cl1_0eb4923c8517c940be945a0f",
+          "cl1_2d15a8015dd433369f965c66",
+          "cl1_957890ce9c77d432ebc4e278",
+          "cl1_6f59ec5b6df78d5a9fa6fa57",
+          "cl1_c880a3d1799aff40339fbdb6",
+          "cl1_49d77701eb835fa5fcc5fd1c",
+          "cl1_cbb0501eef1bd89c2fe6ea9d",
+          "cl1_a4f1505200a54557a65634a0",
+          "cl1_2c869ad90d9a512383357b7a",
+          "cl1_07ac594b62ae1851921a21fc",
+          "cl1_7fca3b5a583fc054f52efdbc",
+          "cl1_90363ad17236920bb4265f4c",
+          "cl1_582a0df9821011559fb70f5e",
+          "cl1_2c15faf50db1dd3db6ce1dc4",
+          "cl1_b74163b3722d05a94eb582be",
+          "cl1_1770245382669bf3f17357a0",
+          "cl1_f10a94d1eb97f620c9054b8d",
+          "cl1_05faf7d53a6ec3d67ed247ba",
+          "cl1_77332b23ca6105ebc7c9e69f",
+          "cl1_212e66ba903dedd466982bb2",
+          "cl1_607444b9a81ad8665bc58a68",
+          "cl1_5fdf2ca214a251b449fda923",
+          "cl1_a730f39f3eea6249c0498f30",
+          "cl1_13e2a1a850043f1fb59cffa6",
+          "cl1_5eaae973f96a59f683f7343e",
+          "cl1_556aa83a718042ea5755af70",
+          "cl1_88cc4e0a86d5e9d2ed50decb",
+          "cl1_f63cace09e46a52b9bf2ea08",
+          "cl1_a1a97b76116beb4f5485da0a",
+          "cl1_e4964b2237e3c9b71dac587a",
+          "cl1_303616a324199ab27a5fa6bb",
+          "cl1_c449c6e8cc373c0f78a0783b",
+          "cl1_23c596f8a6a09b91031926d9",
+          "cl1_fcf8cbef4af2ac748c3cde2a",
+          "cl1_328a932bb0f9d6346f19fc02",
+          "cl1_108cd90c3f5bb667300c2431",
+          "cl1_a9997631eb50532994636c17",
+          "cl1_3bbfce391c58594e9141822a",
+          "cl1_84a07cc475cccbf69d89452a",
+          "cl1_aaad934d7c928406e841b5f3",
+          "cl1_2e7ca20e37ec96b1fea38eb7",
+          "cl1_d81ccdb24a0653163d894e96",
+          "cl1_cd7193a0a1cc04f4ef20ce1c",
+          "cl1_641437851df848a78778aba7",
+          "cl1_495328876cc8afe1a2577860",
+          "cl1_09e3f3f60b38f8df79af634a",
+          "cl1_2ce1da4aa3fad7d55de8b930",
+          "cl1_fbf2f5a34ddfc494d1261bd2",
+          "cl1_e465c5b635735c66f06c05cd",
+          "cl1_2e4120fd490d398e12599859",
+          "cl1_1b39c0597318c8cae92d4930",
+          "cl1_a362064dd9bcc6aacfc7c81f"
+        ],
+        "header_text": "\"s.\nno.\",for each of the top 10 shareholders*,\"shareholding at the beginning of the\nyear\",,Cumulative shareholding during the year,",
+        "header_context_sources": []
+      }
+    ],
+    "rejects": [
+      {
+        "row_chunk_id": "ev_647335c3dcdbbc47eb3846b3",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 33,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_86dc304049f145cf4640c6a0",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 48,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_d08076d96d8be11dd1e6f9b5",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 77,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_c5428b84ed74e0b371b89a3a",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 78,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_07b092d1814b9efb29ea879a",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 78,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_17217c088fe3fb910aa49f93",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 90,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_38f98aa6072e394dfa699d21",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 95,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_f0f66618b06c253764e96cb5",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 102,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_824a9e2a0f182e8987aea0f6",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 103,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_254bda0da13166cf8e58b990",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 108,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2732c0c5ef46d6c552c9d148",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 125,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_7df1e9d409a5cf9d2182efd3",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 128,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_c86a21d2c38c4db67187f9c0",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 140,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_e47bb625b384423e8904e8f3",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 140,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_201f3f30813d4242f046f7c4",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 140,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2cf80b7a22e05684ab522d7d",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 167,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_163c153e2ca9a5f34a57941c",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 276,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_ad9b74beb3b8be874849f514",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 277,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_0e5677894e800bbc19a8fbfa",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 278,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_c9443c20ade8eb9c522f0f2c",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 408,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_7903727477f419fcb9110131",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 409,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_61af647cdd77e8d95fdcd7f7",
+        "document_id": "doc_28c42eb0244545aa",
+        "source_path": "CSV/annual reports/2017-18.csv",
+        "page": 410,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_580005453e9932661563929d",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 33,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_82608e26f03e2ee42b64d5fb",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 33,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_f6844b90785dc2d95bf5d4c8",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 46,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_a027f709ed5c9f98cb322988",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 80,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_397def3f8a0c6d80cedec064",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 81,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2284a1ffe2ae515373f914c3",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 81,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2d2a4eba07712e18060da84d",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 81,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_a602eb04802e82a7af32a786",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 93,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2930db118119604524b220dd",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 97,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_22539b975a1754d364e5a58b",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 103,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_7667389590f34f473fe51d54",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 104,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_cf916f130af50838786486ed",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 123,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_8fd0f5486563ad1a9613d41d",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 126,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_682923dd9d41a59cc736871f",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 138,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_ea10de18fddd3b980613b57e",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 138,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_56c667e9aaf19f39ff270f47",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 138,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_913dd553de9bcd3af356d7a2",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 166,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_9d02f5917331396688b4849a",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 172,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_c311de9f43768bf6caa6160f",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 209,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_c3d3db11a98f2d56ce36111f",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 222,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_e1639ce602aef935bfeb194e",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 229,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_85a6c25d928aa4be747035c1",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 347,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_38cf9c7b65a2df21025e78bb",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 349,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_bc80fb985679671884e2462a",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 349,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_ae14ced9522f45b854fe365d",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 493,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_e44db60ad29da7aedef222a0",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 494,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_e7970c31ab1348a0f55e747e",
+        "document_id": "doc_cbbd847680c78734",
+        "source_path": "CSV/annual reports/44-final-NTPC-AR-30082020.csv",
+        "page": 495,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_0e5d7fbdc6ac8ffa02827625",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 133,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_9c156c1402bd06c7834ae8f7",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 133,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_a0b41c60b349fabac917ddc0",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 134,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_230044eb22b1c249fba954a1",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 134,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_cb8d183454af8b525630aa35",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 134,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_1c004a52f01cb1f745beff34",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 163,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_183d41d0b12b51891a22f59e",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 163,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_870992e738cbc0b7c6455bed",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 163,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_a1d04a0a59e7fe542577ca00",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 181,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_709e8132d77ce3aeb576ef9f",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 181,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_58fa36d47e5d0a0d03b61eb7",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 181,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_8976c6ac5b2959ce1918be3b",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 182,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2aeb000e93a758c0c06983d1",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 184,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_f4443c6ff28425735f8a338f",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 184,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_35eb5e72d8e68822d34857dd",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 186,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_764bd7d250fcc9f975d52c2b",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 186,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_75440a1bfc2f3e0e5ee84b5e",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 189,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_0ebc0aae8bff31392d7452fb",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 190,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_9c913f8c8f8545d457eb5b84",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 193,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_e519a2153d716e7e3cbc35a2",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 194,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_5b57aa9bff74f013082994ab",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 315,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_c20a2a9e07e6dc6cbcf9bf14",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 316,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_fdcef50299be93fd65a1f9b4",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 338,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_ada073ed1e73f072eeb319a4",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 339,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_2c46bd6cf4871ed2c77046a3",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 343,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_32e6f3c2924708522b02d472",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 345,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_f33e20dc355b88a10c56bf1f",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 345,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_bb253567635a899bb514f46e",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 347,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_dda708d6da81c3b2bfa2b368",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 349,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_3e24ac9eb0a4135903aebfcd",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 353,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_338e20ebd887c6a59ce77f6f",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 359,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_c098078fa011959a0037a06f",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 359,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_3a0c17d1f4fe608c3dd8e15d",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 377,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_4927c2c30adf0f70fc4eb94e",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 379,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_7087b68cc0373e38b9693b79",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 402,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_aeca62ee34360fda29cd213b",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 428,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_f6f5733376b23efef6adacf8",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 428,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_d83e1ca568c559b6914a0bc2",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 447,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_7e68242faf6db90bd7b74c64",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 448,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_68055c43ba09e6c32076c5f3",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 465,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_865c1c7ba2d3a71861115f68",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 467,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_4eb270592f35dd34834e5004",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 468,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_2906d075f5356ed6915badff",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 469,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_5a65ca217be0d183ec712abe",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 485,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_d37304eab157ca73ca38bbd0",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 486,
+        "reason": "header match is weak (structural score 6)"
+      },
+      {
+        "row_chunk_id": "ev_2d0f6172b81d6c966783ca52",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 510,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_338f33cd4c6f2b19b1463af2",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 515,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_faebad5743233fea07a5be46",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 516,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_48faf17cad5b6cc68e51d2fd",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 517,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_b676e1948a5233e067788630",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 520,
+        "reason": "no recent header has compatible provenance and row structure"
+      },
+      {
+        "row_chunk_id": "ev_5bb0409d5910febe5e824f02",
+        "document_id": "doc_de77ba88e8bd8c60",
+        "source_path": "CSV/annual reports/47th Annual Report of NTPC 2022-2023 New.csv",
+        "page": 527,
+        "reason": "header match is weak (structural score 6)"
+      }
+    ]
+  },
+  "reversal": {
+    "rows_reversed": 1398,
+    "rows_with_some_reverse_evidence_kept_forward": 326,
+    "diagnostics_sample": [
+      {
+        "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+        "row_index": 0,
+        "original": "\"tnuomA\nlatoT )\n`\nni(\",,,,\"260,00,52,5\",\"316,72,43\",,,,,,\"576,72,95,5\"",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 1,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+        "row_index": 1,
+        "original": "\"reganaM/\nDTW/\nDM\nfo\nemaN\",DTW,\"5artapahoM\n.K.P\n.hS\",,\"560,47,45\",\"493,80,1\",00.0,,,,,\"954,28,55\"",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 2,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_25eb1af2882c0000cde7e6d0",
+        "row_index": 11,
+        "original": "\"noitarenumeR\nfo\nsralucitraP\",,,\"yralas\nssorG\",\"eht\nfo\nsnoisivorp )1(71\n1691\nnoitces\nrep ,tcA\nsa ni deniatnoc xat-emocnI\nyralaS\n)a(\",\")2(71\n1691\ns/u\nsetisiuqrep ,tcA\nxat-emocnI\nfo\neulaV\neht\n)b( fo\",\"rednu xat\n-emocnI\nyralas\neht\nfo\nueil fo\n)3(71\nni\nstiforP 1691\nnoitces\n,tcA\n)c(\",\"noitpO\nkcotS\",\"ytiuq",
+        "reconstructed": "Particulars\nof\nRemuneration,,,Gross\nsalary,(a)\nSalary\nIncome-tax contained in as\nAct, per\nsection\n1961\n17(1) provisions\nof\nthe,of (b)\nthe\nValue\nof\nIncome-tax\nAct, perquisites\nu/s\n1961\n17(2),(c)\nAct,\nsection\n1961 Profits\nin\n17(3)\nof lieu\nof\nthe\nsalary\nIncome-\ntax under,Stock\nOption,Sweat\nEquity,-\nas\n",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_010d0ec5cb90298906de2eb2",
+        "row_index": 0,
+        "original": "\"64.542,8\",-,\"64.542,8\"",
+        "reconstructed": "8,245.46,-,8,245.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_010d0ec5cb90298906de2eb2",
+        "row_index": 1,
+        "original": "\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"8102\nhcraM\n13\nta\nsa\necnalaB\"",
+        "reconstructed": "Balance\nas\nat\n1\nApril\n2017,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2018",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_8da023cf8c6c007a65ba96ca",
+        "row_index": 0,
+        "original": "\"64.542,8\",-,\"64.542,8\"",
+        "reconstructed": "8,245.46,-,8,245.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_8da023cf8c6c007a65ba96ca",
+        "row_index": 1,
+        "original": "\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"7102\nhcraM\n13\nta\nsa\necnalaB\"",
+        "reconstructed": "Balance\nas\nat\n1\nApril\n2016,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2017",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 0,
+        "original": "latoT,,\"77.589,78\",\"71.343,01\",)84.41(,\"96.823,01\",-,-,35.47,\")72.987,1(\",)51.853(,\")10.152,2(\",)52.854(,\"13.235,39\"",
+        "reconstructed": "Total,,87,985.77,10,343.17,(14.48),10,328.69,-,-,74.53,(1,789.27),(358.15),(2,251.01),(458.25),93,532.31",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 1,
+        "original": "\"stnemurtsni\nhguorht\nytiuqE\nICO\",,00.51,,)02.7(,)02.7(,,,,,,,,08.7",
+        "reconstructed": "OCI\nEquity\nthrough\ninstruments,,15.00,,(7.20),(7.20),,,,,,,,7.80",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 2,
+        "original": "\"sulprus\n&\nsevreseR\",deniateR sgninrae,\"11.243,2\",\"71.343,01\",)82.7(,\"98.533,01\",00.523,\")57.736,5(\",,\")72.987,1(\",)51.853(,\")10.152,2(\",)52.854(,\"75.805,2\"",
+        "reconstructed": "Reserves\n&\nsurplus,earnings Retained,2,342.11,10,343.17,(7.28),10,335.89,325.00,(5,637.75),,(1,789.27),(358.15),(2,251.01),(458.25),2,508.57",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 14
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 3,
+        "original": ",lareneG evreser,\"36.138,67\",,,-,,\"00.000,4\",,,,,,\"36.138,08\"",
+        "reconstructed": ",reserve General,76,831.63,,,-,,4,000.00,,,,,,80,831.63",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 4,
+        "original": ",\"dnuf\nnoitasilitu\nhsa\nevreser\nylF\",86.655,,,-,,,35.47,,,,,12.136",
+        "reconstructed": ",Fly\nreserve\nash\nutilisation\nfund,556.68,,,-,,,74.53,,,,,631.21",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 5,
+        "original": ",\"serutnebeD noitpmeder\n/sdnoB evreser\",\"18.169,5\",,,-,)00.523(,\"57.736,1\",,,,,,\"65.472,7\"",
+        "reconstructed": ",reserve Bonds/\nredemption Debentures,5,961.81,,,-,(325.00),1,637.75,,,,,,7,274.56",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 6,
+        "original": ",seitiruceS muimerp tnuocca,\"64.822,2\",,,-,,,,,,,,\"64.822,2\"",
+        "reconstructed": ",account premium Securities,2,228.46,,,-,,,,,,,,2,228.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 7,
+        "original": ",latipaC evreser,80.05,,,-,,,,,,,,80.05",
+        "reconstructed": ",reserve Capital,50.08,,,-,,,,,,,,50.08",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_44357a4c08746106ab32fdbe",
+        "row_index": 8,
+        "original": "sralucitraP,,\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"sgninrae\ndeniater\not\nrefsnarT\",\"sgninrae\ndeniater\nmorf\nrefsnarT\",\"noitasilitu\nhsa\nylf\ndnuf\not\nrefsnarT evreser\",\"rof\n)02\ndiap\netoN(\ndnedivid\n71-6102\nlaniF\nYF\",\"dnediv",
+        "reconstructed": "Particulars,,Balance\nas\nat\n1\nApril\n2017,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Transfer\nto\nretained\nearnings,Transfer\nfrom\nretained\nearnings,reserve Transfer\nto\nfund\nfly\nash\nutilisation,FY\nFinal\n2016-17\ndividend\n(Note\npaid\n20)\nfor,Tax\non\nfinal\ndividend,I",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 28
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 0,
+        "original": "latoT,,\"42.840,38\",\"62.583,9\",)83.302(,\"88.181,9\",-,-,74.87,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"77.589,78\"",
+        "reconstructed": "Total,,83,048.24,9,385.26,(203.38),9,181.88,-,-,78.47,(1,442.96),(289.68),(2,152.07),(438.11),87,985.77",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 1,
+        "original": "\"stnemurtsni\nhguorht\nytiuqE\nICO\",,)82.02(,,82.53,82.53,,,,,,,,00.51",
+        "reconstructed": "OCI\nEquity\nthrough\ninstruments,,(20.28),,35.28,35.28,,,,,,,,15.00",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 2,
+        "original": "\"sulprus\n&\nsevreseR\",deniateR sgninrae,\"14.173,3\",\"62.583,9\",)66.832(,\"06.641,9\",00.413,\")80.761,6(\",,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"11.243,2\"",
+        "reconstructed": "Reserves\n&\nsurplus,earnings Retained,3,371.41,9,385.26,(238.66),9,146.60,314.00,(6,167.08),,(1,442.96),(289.68),(2,152.07),(438.11),2,342.11",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 14
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 3,
+        "original": ",\"evreser\nlareneG\",\"36.133,27\",,,-,,\"00.005,4\",,,,,,\"36.138,67\"",
+        "reconstructed": ",General\nreserve,72,331.63,,,-,,4,500.00,,,,,,76,831.63",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 4,
+        "original": ",\"dnuf\nnoitasilitu\nhsa\nevreser\nylF\",12.874,,,-,,,74.87,,,,,86.655",
+        "reconstructed": ",Fly\nreserve\nash\nutilisation\nfund,478.21,,,-,,,78.47,,,,,556.68",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 5,
+        "original": ",\"serutnebeD noitpmeder\n/sdnoB evreser\",\"37.806,4\",,,-,)00.413(,\"80.766,1\",,,,,,\"18.169,5\"",
+        "reconstructed": ",reserve Bonds/\nredemption Debentures,4,608.73,,,-,(314.00),1,667.08,,,,,,5,961.81",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 6,
+        "original": ",seitiruceS muimerp tnuocca,\"64.822,2\",,,-,,,,,,,,\"64.822,2\"",
+        "reconstructed": ",account premium Securities,2,228.46,,,-,,,,,,,,2,228.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 7,
+        "original": ",latipaC evreser,80.05,,,-,,,,,,,,80.05",
+        "reconstructed": ",reserve Capital,50.08,,,-,,,,,,,,50.08",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_70e8384f976daf0602276a06",
+        "row_index": 8,
+        "original": "sralucitraP,,\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"sgninrae\ndeniater\not\nrefsnarT\",\"sgninrae\ndeniater\nmorf\nrefsnarT\",\"noitasilitu\nhsa\nylf\ndnuf\not\nrefsnarT evreser\",\"-5102\nYF\nrof\ndiap\ndnedivid\n)02\netoN(\nlaniF\n61\",\"dnedi",
+        "reconstructed": "Particulars,,Balance\nas\nat\n1\nApril\n2016,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Transfer\nto\nretained\nearnings,Transfer\nfrom\nretained\nearnings,reserve Transfer\nto\nfund\nfly\nash\nutilisation,16\nFinal\n(Note\n20)\ndividend\npaid\nfor\nFY\n2015-,Tax\non\nfinal\ndividend,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 28
+      },
+      {
+        "evidence_id": "ev_dc1c94aa0b40482536acd5f0",
+        "row_index": 0,
+        "original": "\"64.542,8\",-,\"64.542,8\"",
+        "reconstructed": "8,245.46,-,8,245.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_dc1c94aa0b40482536acd5f0",
+        "row_index": 1,
+        "original": "\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"8102\nhcraM\n13\nta\nsa\necnalaB\"",
+        "reconstructed": "Balance\nas\nat\n1\nApril\n2017,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2018",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_d6892542e47ba18d49cb46be",
+        "row_index": 0,
+        "original": "\"64.542,8\",-,\"64.542,8\"",
+        "reconstructed": "8,245.46,-,8,245.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_d6892542e47ba18d49cb46be",
+        "row_index": 1,
+        "original": "\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\ngnirud\nlatipac\nerahs\nytiuqe\nni\nsegnahC\",\"7102\nhcraM\n13\nta\nsa\necnalaB\"",
+        "reconstructed": "Balance\nas\nat\n1\nApril\n2016,Changes\nin\nequity\nshare\ncapital\nduring\nthe\nyear,Balance\nas\nat\n31\nMarch\n2017",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 0,
+        "original": "latoT,,,,\"28.593,09\",\"05.105,01\",)96.02(,\"18.084,01\",74.181,-,,-,-,35.47,\")72.987,1(\",)52.463(,\")10.152,2(\",)23.264(,\"87.562,69\"",
+        "reconstructed": "Total,,,,90,395.82,10,501.50,(20.69),10,480.81,181.47,-,,-,-,74.53,(1,789.27),(364.25),(2,251.01),(462.32),96,265.78",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 1,
+        "original": "\"gnillortnoc\nstseretni\n-noN\",,,,62.308,)54.24(,-,)54.24(,74.181,94.5,,,,,,,,,77.749",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 1,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 2,
+        "original": "\"ytiuqe elbatubirtta fo tnerap\nsrenwo\nrehtO\neht\not\",,,,\"65.295,98\",\"59.345,01\",)96.02(,\"62.325,01\",,)94.5(,,-,-,35.47,\")72.987,1(\",)52.463(,\")10.152,2(\",)23.264(,\"10.813,59\"",
+        "reconstructed": "to\nthe\nOther\nowners\nparent of attributable equity,,,,89,592.56,10,543.95,(20.69),10,523.26,,(5.49),,-,-,74.53,(1,789.27),(364.25),(2,251.01),(462.32),95,318.01",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 12
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 3,
+        "original": "\"tnerap\neht\nfo\nsrenwo\not\nelbatubirttA\",\"emocni\nrehto\nevisneherpmoc\nfo\nsmetI\",ngieroF ycnerruc noitalsnart evreser,,)40.4(,,)50.6(,)50.6(,,,,,,,,,,,)90.01(",
+        "reconstructed": "Attributable\nto\nowners\nof\nthe\nparent,Items\nof\ncomprehensive\nother\nincome,reserve translation currency Foreign,,(4.04),,(6.05),(6.05),,,,,,,,,,,(10.09)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 9
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 4,
+        "original": ",,\"stnemurtsni\nytiuqE hguorht\nICO\",,00.51,,)02.7(,)02.7(,,,,,,,,,,,08.7",
+        "reconstructed": ",,OCI\nthrough Equity\ninstruments,,15.00,,(7.20),(7.20),,,,,,,,,,,7.80",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 5,
+        "original": ",\"sulprus\n&\nsevreseR\",deniateR sgninrae,,\"27.356,3\",\"59.345,01\",)44.7(,\"15.635,01\",,)94.5(,,22.523,\")91.936,5(\",,\")72.987,1(\",)52.463(,\")10.152,2(\",)23.264(,\"29.300,4\"",
+        "reconstructed": ",Reserves\n&\nsurplus,earnings Retained,,3,653.72,10,543.95,(7.44),10,536.51,,(5.49),,325.22,(5,639.19),,(1,789.27),(364.25),(2,251.01),(462.32),4,003.92",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 15
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 6,
+        "original": ",,lareneG evreser,,\"36.031,77\",,,-,,,,,\"02.100,4\",,,,,,\"38.131,18\"",
+        "reconstructed": ",,reserve General,,77,130.63,,,-,,,,,4,001.20,,,,,,81,131.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 7,
+        "original": ",,\"laicoS\nytilibisnopseR\nevreser\netaroproC\",,22.0,,,-,,,,)22.0(,42.0,,,,,,42.0",
+        "reconstructed": ",,Corporate\nreserve\nResponsibility\nSocial,,0.22,,,-,,,,(0.22),0.24,,,,,,0.24",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 8,
+        "original": ",,\"noitasilitu\nhsa evreser\ndnuf\nylF\",,86.655,,,-,,,,,,35.47,,,,,12.136",
+        "reconstructed": ",,Fly\nfund\nreserve ash\nutilisation,,556.68,,,-,,,,,,74.53,,,,,631.21",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 9,
+        "original": ",,\"serutnebeD noitpmeder\n/sdnoB evreser\",,\"18.169,5\",,,-,,,,)00.523(,\"57.736,1\",,,,,,\"65.472,7\"",
+        "reconstructed": ",,reserve Bonds/\nredemption Debentures,,5,961.81,,,-,,,,(325.00),1,637.75,,,,,,7,274.56",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 10,
+        "original": ",,seitiruceS muimerp tnuocca,,\"64.822,2\",,,-,,,,,,,,,,,\"64.822,2\"",
+        "reconstructed": ",,account premium Securities,,2,228.46,,,-,,,,,,,,,,,2,228.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 11,
+        "original": ",,latipaC evreser,,80.05,,,-,,,,,,,,,,,80.05",
+        "reconstructed": ",,reserve Capital,,50.08,,,-,,,,,,,,,,,50.08",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5885b14b157ac165c0cd8f81",
+        "row_index": 12,
+        "original": "sralucitraP,,,,\"7102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"noN\nyb\nnoitubirtnoc tseretnI\ngnillortnoC\nytiuqE\",\"pihsrenwo\nni yraidisbuS\n])d(\negnahc\n96\netoN\nfo ni\ntcapmI tseretni\nrefeR[\",\"ni\nsrenwo :srenwo\nhtiw sa\nyticapac\nsnoi",
+        "reconstructed": "Particulars,,,,Balance\nas\nat\n1\nApril\n2017,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Equity\nControlling\nInterest contribution\nby\nNon,[Refer\ninterest Impact\nin of\nNote\n69\nchange\n(d)]\nSubsidiary in\nownership,their\nTransactions\ncapacity\nas with\nowners: owners\ni",
+        "reversed": true,
+        "forward_evidence": 1,
+        "reverse_evidence": 37
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 0,
+        "original": "latoT,,,\"24.321,48\",\"49.317,01\",)58.212(,\"90.105,01\",66.51,,-,-,74.87,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"28.593,09\"",
+        "reconstructed": "Total,,,84,123.42,10,713.94,(212.85),10,501.09,15.66,,-,-,78.47,(1,442.96),(289.68),(2,152.07),(438.11),90,395.82",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 1,
+        "original": "\"gnillortnoc\nstseretni\n-noN\",,,03.397,)07.5(,,)07.5(,66.51,,,,,,,,,62.308",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 1,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 2,
+        "original": "\"ytiuqe ot eht\nelbatubirtta\nfo tnerap\nsrenwo\nrehtO\",,,\"21.033,38\",\"46.917,01\",)58.212(,\"97.605,01\",,,-,-,74.87,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"65.295,98\"",
+        "reconstructed": "Other\nowners\nparent of\nattributable\nthe to equity,,,83,330.12,10,719.64,(212.85),10,506.79,,,-,-,78.47,(1,442.96),(289.68),(2,152.07),(438.11),89,592.56",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 11
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 3,
+        "original": "\"tnerap\neht\nfo\nsrenwo\not\nelbatubirttA\",\"emocni\nrehto\nevisneherpmoc\nfo\nsmetI\",ngieroF ycnerruc noitalsnart evreser,20.4,,)60.8(,)60.8(,,,,,,,,,,)40.4(",
+        "reconstructed": "Attributable\nto\nowners\nof\nthe\nparent,Items\nof\ncomprehensive\nother\nincome,reserve translation currency Foreign,4.02,,(8.06),(8.06),,,,,,,,,,(4.04)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 8
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 4,
+        "original": ",,\"stnemurtsni\nytiuqE hguorht\nICO\",)82.02(,,82.53,82.53,,,,,,,,,,00.51",
+        "reconstructed": ",,OCI\nthrough Equity\ninstruments,(20.28),,35.28,35.28,,,,,,,,,,15.00",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 5,
+        "original": ",\"sulprus\n&\nsevreseR\",deniateR sgninrae,\"35.824,3\",\"46.917,01\",)70.042(,\"75.974,01\",,,36.413,\")91.642,6(\",,\")69.244,1(\",)86.982(,\")70.251,2(\",)11.834(,\"27.356,3\"",
+        "reconstructed": ",Reserves\n&\nsurplus,earnings Retained,3,428.53,10,719.64,(240.07),10,479.57,,,314.63,(6,246.19),,(1,442.96),(289.68),(2,152.07),(438.11),3,653.72",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 14
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 6,
+        "original": ",,lareneG evreser,\"36.155,27\",,,-,,,,\"00.975,4\",,,,,,\"36.031,77\"",
+        "reconstructed": ",,reserve General,72,551.63,,,-,,,,4,579.00,,,,,,77,130.63",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 7,
+        "original": ",,\"laicoS\nytilibisnopseR\nevreser\netaroproC\",47.0,,,-,,,)36.0(,11.0,,,,,,22.0",
+        "reconstructed": ",,Corporate\nreserve\nResponsibility\nSocial,0.74,,,-,,,(0.63),0.11,,,,,,0.22",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 8,
+        "original": ",,\"dnuf\nnoitasilitu\nhsa\nevreser\nylF\",12.874,,,-,,,,,74.87,,,,,86.655",
+        "reconstructed": ",,Fly\nreserve\nash\nutilisation\nfund,478.21,,,-,,,,,78.47,,,,,556.68",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 9,
+        "original": ",,\"serutnebeD noitpmeder\n/sdnoB evreser\",\"37.806,4\",,,-,,,)00.413(,\"80.766,1\",,,,,,\"18.169,5\"",
+        "reconstructed": ",,reserve Bonds/\nredemption Debentures,4,608.73,,,-,,,(314.00),1,667.08,,,,,,5,961.81",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 10,
+        "original": ",,seitiruceS muimerp tnuocca,\"64.822,2\",,,-,,,,,,,,,,\"64.822,2\"",
+        "reconstructed": ",,account premium Securities,2,228.46,,,-,,,,,,,,,,2,228.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 11,
+        "original": ",,latipaC evreser,80.05,,,-,,,,,,,,,,80.05",
+        "reconstructed": ",,reserve Capital,50.08,,,-,,,,,,,,,,50.08",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_5130322709b2130c5367f931",
+        "row_index": 12,
+        "original": "sralucitraP,,,\"6102\nlirpA\n1\nta\nsa\necnalaB\",\"raey\neht\nrof\ntiforP\",\"/emocni\nevisneherpmoc\n)esnepxe(\nrehtO\",\"emocni\nevisneherpmoc\nlatoT\",\"noN\nyb\nnoitubirtnoc tseretnI\ngnillortnoC\nytiuqE\",\"ni\nsrenwo :srenwo\nhtiw sa\nyticapac\nsnoitcasnarT\nrieht\",\"sgninrae\ndeniater\not\nrefsnarT\",\"sgninrae\ndeniater\nmorf\nrefs",
+        "reconstructed": "Particulars,,,Balance\nas\nat\n1\nApril\n2016,Profit\nfor\nthe\nyear,Other\n(expense)\ncomprehensive\nincome/,Total\ncomprehensive\nincome,Equity\nControlling\nInterest contribution\nby\nNon,their\nTransactions\ncapacity\nas with\nowners: owners\nin,Transfer\nto\nretained\nearnings,Transfer\nfrom\nretained\nearnings,reserve Tr",
+        "reversed": true,
+        "forward_evidence": 1,
+        "reverse_evidence": 35
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 0,
+        "original": "latoT,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,\"92.442,18\",-,\"92.442,18\",\"77.816,1\",\"60.368,28\",52.641,\"13.900,38\",,\"08.568,71\",52.641,\"12.678,4\",\"48.531,31\",17.426,\"55.067,31\",\"16.640,3\",\"49.317,01\"",
+        "reconstructed": "Total,For\nthe\nyear\nended,31\nMarch\n2017,,81,244.29,-,81,244.29,1,618.77,82,863.06,146.25,83,009.31,,17,865.80,146.25,4,876.21,13,135.84,624.71,13,760.55,3,046.61,10,713.94",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 15
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 1,
+        "original": ",,\"8102\nhcraM\n13\",,\"07.951,68\",-,\"07.951,68\",\"95.608,2\",\"92.669,88\",03.576,\"95.146,98\",,\"24.473,81\",03.576,\"90.352,6\",\"36.697,21\",50.544,\"86.142,31\",\"81.047,2\",\"05.105,01\"",
+        "reconstructed": ",,31\nMarch\n2018,,86,159.70,-,86,159.70,2,806.59,88,966.29,675.30,89,641.59,,18,374.42,675.30,6,253.09,12,796.63,445.05,13,241.68,2,740.18,10,501.50",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 12
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 2,
+        "original": "\"snoitanimile\ntnemges-retnI\",\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,-,\")00.211,2(\",\")00.211,2(\",-,\")00.211,2(\",,\")00.211,2(\",,-,,,,,,,",
+        "reconstructed": "Inter-segment\neliminations,For\nthe\nyear\nended,31\nMarch\n2017,,-,(2,112.00),(2,112.00),-,(2,112.00),,(2,112.00),,-,,,,,,,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 3,
+        "original": ",,\"8102\nhcraM\n13\",,-,\")01.349,1(\",\")01.349,1(\",-,\")01.349,1(\",,\")01.349,1(\",,-,,,,,,,",
+        "reconstructed": ",,31\nMarch\n2018,,-,(1,943.10),(1,943.10),-,(1,943.10),,(1,943.10),,-,,,,,,,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 4,
+        "original": "srehtO,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,\"12.943,5\",33.83,\"45.783,5\",06.93,\"41.724,5\",,\"41.724,5\",,60.06,,,,,,,",
+        "reconstructed": "Others,For\nthe\nyear\nended,31\nMarch\n2017,,5,349.21,38.33,5,387.54,39.60,5,427.14,,5,427.14,,60.06,,,,,,,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 5,
+        "original": ",,\"8102\nhcraM\n13\",,\"40.785,6\",16.05,\"56.736,6\",54.42,\"01.266,6\",,\"01.266,6\",,97.252,,,,,,,",
+        "reconstructed": ",,31\nMarch\n2018,,6,587.04,50.61,6,637.65,24.45,6,662.10,,6,662.10,,252.79,,,,,,,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 6,
+        "original": "\"ygrene\nfo\nnoitareneG\",\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",,\"80.598,57\",\"76.370,2\",\"57.869,77\",\"71.975,1\",\"29.745,97\",,\"29.745,97\",,\"47.508,71\",,,,,,,",
+        "reconstructed": "Generation\nof\nenergy,For\nthe\nyear\nended,31\nMarch\n2017,,75,895.08,2,073.67,77,968.75,1,579.17,79,547.92,,79,547.92,,17,805.74,,,,,,,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 12
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 7,
+        "original": ",,\"8102\nhcraM\n13\",,\"66.275,97\",\"94.298,1\",\"51.564,18\",\"41.287,2\",\"92.742,48\",,\"92.742,48\",,\"36.121,81\",,,,,,,",
+        "reconstructed": ",,31\nMarch\n2018,,79,572.66,1,892.49,81,465.15,2,782.14,84,247.29,,84,247.29,,18,121.63,,,,,,,",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 8
+      },
+      {
+        "evidence_id": "ev_1bdeee3d6ec53065c5254389",
+        "row_index": 8,
+        "original": "sralucitraP,,,\"eunever\ntnemgeS\",\"*sremotsuc\nlanretxe\nmorf\neuneveR\",\"eunever\ntnemges-retnI\",,\"emocni\nrehtO\",,\"dna\ntseretni\netaroproc\nemocni\ndetacollanU\nrehto\",latoT,,\"larrefed\nten\ngnidulcni( yrotaluger\n**)secnalab\ntluser\nni\nstnemevom\ntnemgeS tnuocca\",\"dna\ntseretni\netaroproc\nemocni\ndetacollanU\nrehto\",",
+        "reconstructed": "Particulars,,,Segment\nrevenue,Revenue\nfrom\nexternal\ncustomers*,Inter-segment\nrevenue,,Other\nincome,,other\nUnallocated\nincome\ncorporate\ninterest\nand,Total,,account Segment\nmovements\nin\nresult\nbalances)**\nregulatory (including\nnet\ndeferral,other\nUnallocated\nincome\ncorporate\ninterest\nand,interest\nand U",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 31
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 0,
+        "original": "latoT,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",\"37.759,5\",44.931,\"33.587,92\"",
+        "reconstructed": "Total,For\nthe\nyear\nended,31\nMarch\n2017,5,957.73,139.44,29,785.33",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 6
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 1,
+        "original": ",,\"8102\nhcraM\n13\",\"49.893,7\",19.664,\"50.574,62\"",
+        "reconstructed": ",,31\nMarch\n2018,7,398.94,466.91,26,475.05",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 2,
+        "original": "srehtO,\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",63.0,40.3,\"39.022,1\"",
+        "reconstructed": "Others,For\nthe\nyear\nended,31\nMarch\n2017,0.36,3.04,1,220.93",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 3,
+        "original": ",,\"8102\nhcraM\n13\",43.0,31.23,\"95.246,1\"",
+        "reconstructed": ",,31\nMarch\n2018,0.34,32.13,1,642.59",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 4,
+        "original": "\"ygrene\nfo\nnoitareneG\",\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",\"73.759,5\",04.631,\"04.465,82\"",
+        "reconstructed": "Generation\nof\nenergy,For\nthe\nyear\nended,31\nMarch\n2017,5,957.37,136.40,28,564.40",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 5,
+        "original": ",,\"8102\nhcraM\n13\",\"06.893,7\",87.434,\"64.238,42\"",
+        "reconstructed": ",,31\nMarch\n2018,7,398.60,434.78,24,832.46",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_c6483c09195141c0663e7cd0",
+        "row_index": 6,
+        "original": "sralucitraP,,,\"***tnemriapmi\ndna\nnoitazitroma\n,noitaicerpeD\",\"noitaicerped\nnaht\nrehto\nsesnepxe\nhsac-noN\",\"erutidnepxe\nlatipaC\"",
+        "reconstructed": "Particulars,,,Depreciation,\namortization\nand\nimpairment***,Non-cash\nexpenses\nother\nthan\ndepreciation,Capital\nexpenditure",
+        "reversed": true,
+        "forward_evidence": 1,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 0,
+        "original": "latoT,\"ta\nsA\",\"7102\nhcraM\n13\",\"27.452,73,1\",\"46.242,11,1\",\"63.794,84,2\",\"52.953,91\",\"90.003,13,1\",\"43.956,05,1\"",
+        "reconstructed": "Total,As\nat,31\nMarch\n2017,1,37,254.72,1,11,242.64,2,48,497.36,19,359.25,1,31,300.09,1,50,659.34",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 8
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 1,
+        "original": ",,\"8102\nhcraM\n13\",\"53.965,56,1\",\"17.897,80,1\",\"60.863,47,2\",\"68.919,02\",\"37.488,94,1\",\"95.408,07,1\"",
+        "reconstructed": ",,31\nMarch\n2018,1,65,569.35,1,08,798.71,2,74,368.06,20,919.86,1,49,884.73,1,70,804.59",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 2,
+        "original": "\"snoitanimile\ntnemges-retnI\",\"ta\nsA\",\"7102\nhcraM\n13\",)72.924(,,)72.924(,)72.924(,,)72.924(",
+        "reconstructed": "Inter-segment\neliminations,As\nat,31\nMarch\n2017,(429.27),,(429.27),(429.27),,(429.27)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 3,
+        "original": ",,\"8102\nhcraM\n13\",)31.952(,,)31.952(,)31.952(,,)31.952(",
+        "reconstructed": ",,31\nMarch\n2018,(259.13),,(259.13),(259.13),,(259.13)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 4,
+        "original": "srehtO,\"ta\nsA\",\"7102\nhcraM\n13\",\"02.100,5\",,\"02.100,5\",\"38.723,3\",,\"38.723,3\"",
+        "reconstructed": "Others,As\nat,31\nMarch\n2017,5,001.20,,5,001.20,3,327.83,,3,327.83",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 5,
+        "original": ",,\"8102\nhcraM\n13\",\"70.517,6\",,\"70.517,6\",\"05.559,3\",,\"05.559,3\"",
+        "reconstructed": ",,31\nMarch\n2018,6,715.07,,6,715.07,3,955.50,,3,955.50",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 6,
+        "original": "\"ygrene\nfo\nnoitareneG\",\"ta\nsA\",\"7102\nhcraM\n13\",\"97.286,23,1\",,\"97.286,23,1\",\"96.064,61\",,\"96.064,61\"",
+        "reconstructed": "Generation\nof\nenergy,As\nat,31\nMarch\n2017,1,32,682.79,,1,32,682.79,16,460.69,,16,460.69",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 7,
+        "original": ",,\"8102\nhcraM\n13\",\"14.311,95,1\",,\"14.311,95,1\",\"94.322,71\",,\"94.322,71\"",
+        "reconstructed": ",,31\nMarch\n2018,1,59,113.41,,1,59,113.41,17,223.49,,17,223.49",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_06f56bb985347c23627fda8d",
+        "row_index": 8,
+        "original": "sralucitraP,,,\"stessa\ntnemgeS\",\"stessa\nrehto\ndna\netaroproc\ndetacollanU\",\"stessa\nlatoT\",\"seitilibail\ntnemgeS\",\"rehto\ndna\netaroproc\ndetacollanU\nseitilibail\",\"seitilibail\nlatoT\"",
+        "reconstructed": "Particulars,,,Segment\nassets,Unallocated\ncorporate\nand\nother\nassets,Total\nassets,Segment\nliabilities,liabilities\nUnallocated\ncorporate\nand\nother,Total\nliabilities",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 11
+      },
+      {
+        "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+        "row_index": 0,
+        "original": "\"dedne\nraey\neht\nroF\",\"7102\nhcraM\n13\",ega%,11.01,09.01",
+        "reconstructed": "For\nthe\nyear\nended,31\nMarch\n2017,%age,10.11,10.90",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+        "row_index": 1,
+        "original": ",,\")erorC\n`(\ntnuomA\",\"72.492,8\",\"34.349,8\"",
+        "reconstructed": ",,Amount\n(`\nCrore),8,294.27,8,943.43",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+        "row_index": 2,
+        "original": ",\"8102\nhcraM\n13\",ega%,12.01,29.8",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+        "row_index": 3,
+        "original": ",,\")erorC\n`(\ntnuomA\",\"10.399,8\",\"46.658,7\"",
+        "reconstructed": ",,Amount\n(`\nCrore),8,993.01,7,856.64",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_1de180c48c869a34a0aa15ff",
+        "row_index": 4,
+        "original": "\"remotsuc\neht\nfo\nemaN\",,,\".dtL\nynapmoC\nnoitubirtsiD\nyticirtcelE\netatS\narthsarahaM\n.1\",\".dtL\nnoitaroproC\nrewoP\nhsedarP\nrattU\n.2\"",
+        "reconstructed": "Name\nof\nthe\ncustomer,,,1.\nMaharashtra\nState\nElectricity\nDistribution\nCompany\nLtd.,2.\nUttar\nPradesh\nPower\nCorporation\nLtd.",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 0,
+        "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",,-,-,-,-,,-,-,-,,-,-,-,,-,-,-",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,01.001,79.642,70.743,\"98.739,2\",,23.932,86.001,00.043,,\"86.996,3\",10.0,\"96.996,3\",,-,-,)37.457(",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,100.10,246.97,347.07,2,937.89,,239.32,100.68,340.00,,3,699.68,0.01,3,699.69,,-,-,(754.73)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 5
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 2,
+        "original": "\"etavirP\nrewoP\n.dtL\n&\nsaG\nirigantaR\",\"7102\nta hcraM\nsA\n13\",,76.053,53.786,\"20.830,1\",\"81.794,6\",,\"18.343,4\",98.955,\"07.309,4\",,\"91.915,5\",90.9,\"82.825,5\",,-,-,\")87.698,2(\"",
+        "reconstructed": "Ratnagiri\nGas\n&\nLtd.\nPower\nPrivate,31\nAs\nMarch at\n2017,,350.67,687.35,1,038.02,6,497.18,,4,343.81,559.89,4,903.70,,5,519.19,9.09,5,528.28,,-,-,(2,896.78)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 9
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 3,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,60.134,72.344,33.478,\"34.033,2\",,\"35.230,4\",22.134,\"57.364,4\",,\"60.336,1\",18.7,\"78.046,1\",,-,-,\")68.998,2(\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,431.06,443.27,874.33,2,330.43,,4,032.53,431.22,4,463.75,,1,633.06,7.81,1,640.87,,-,-,(2,899.86)",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 7
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 4,
+        "original": "\"ygrenE\n.dtL\nudaN\nynapmoC\nlimaT-CPTN\",\"7102\nta hcraM\nsA\n13\",,84.17,\"36.092,2\",\"11.263,2\",\"24.402,8\",,\"75.615,2\",70.594,\"46.110,3\",,\"25.499,4\",91.0,\"17.499,4\",00.3,-,93.42,\"97.835,2\"",
+        "reconstructed": "NTPC-Tamil\nCompany\nNadu\nLtd.\nEnergy,31\nAs\nMarch at\n2017,,71.48,2,290.63,2,362.11,8,204.42,,2,516.57,495.07,3,011.64,,4,994.52,0.19,4,994.71,3.00,-,24.39,2,538.79",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 10
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 5,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,95.6,\"72.028,1\",\"68.628,1\",\"71.000,8\",,\"26.463,2\",38.672,\"54.146,2\",,\"70.265,4\",91.0,\"62.265,4\",96.5,-,16.5,\"04.326,2\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,6.59,1,820.27,1,826.86,8,000.17,,2,364.62,276.83,2,641.45,,4,562.07,0.19,4,562.26,5.69,-,5.61,2,623.40",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 9
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 6,
+        "original": "\"ynapmoC\nrewoP\n.dtL\nLIAS-CPTN\",\"7102\nta hcraM\nsA\n13\",,41.5,25.029,66.529,\"16.202,2\",,79.613,22.301,91.024,,21.075,44.461,65.437,-,-,-,\"25.379,1\"",
+        "reconstructed": "NTPC-SAIL\nLtd.\nPower\nCompany,31\nAs\nMarch at\n2017,,5.14,920.52,925.66,2,202.61,,316.97,103.22,420.19,,570.12,164.44,734.56,-,-,-,1,973.52",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 4
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 7,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,44.34,71.467,16.708,\"91.987,2\",,88.193,27.991,06.195,,62.437,37.68,99.028,-,-,-,\"12.481,2\"",
+        "reconstructed": ",31\nAs\nMarch at\n2018,,43.44,764.17,807.61,2,789.19,,391.88,199.72,591.60,,734.26,86.73,820.99,-,-,-,2,184.21",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 8,
+        "original": "\".tvP\nsecivreS\nrewoP .dtL\nEG-CPTN\",\"7102\nta hcraM\nsA\n13\",,25.2,85.081,01.381,46.2,,10.0,88.161,98.161,,61.0,02.0,63.0,-,-,-,94.32",
+        "reconstructed": "NTPC-GE\nLtd. Power\nServices\nPvt.,31\nAs\nMarch at\n2017,,2.52,180.58,183.10,2.64,,0.01,161.88,161.89,,0.16,0.20,0.36,-,-,-,23.49",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 2
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 9,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,94.4,44.841,39.251,16.3,,10.0,53.741,63.741,,-,02.0,02.0,-,-,-,89.8",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 10,
+        "original": "\".dtL\nhcetrewoP\nytilitU\",\"7102\nta hcraM\nsA\n13\",,37.93,94.372,22.313,02.73,,73.601,68.341,32.052,,14.5,31.31,45.81,-,-,-,56.18",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 11,
+        "original": ",\"8102\nta hcraM\nsA\n13\",,17.14,92.253,00.493,11.93,,00.421,88.191,88.513,,77.3,54.51,22.91,-,-,-,10.89",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_d045e25440fdad3f68f60966",
+        "row_index": 12,
+        "original": "sralucitraP,,\"stessa\ntnerruC\",\"stnelaviuqe\nhsac\ndna\nhsaC\",\"stessa\nrehtO\",\"stessa\ntnerruc\nlatoT\",\"stessa\ntnerruc-non\nlatoT\",\"seitilibail\ntnerruC\",\"selbayap\nseitilibail\nedart )snoisivorp\ngnidulcxe(\nlaicnaniF\ndna\",\"seitilibail\nrehtO\",\"seitilibail\ntnerruc\nlatoT\",\"seitilibail\ntnerruc-noN\",\"selbayap\nseiti",
+        "reconstructed": "Particulars,,Current\nassets,Cash\nand\ncash\nequivalents,Other\nassets,Total\ncurrent\nassets,Total\nnon-current\nassets,Current\nliabilities,and\nFinancial\n(excluding\nprovisions) trade\nliabilities\npayables,Other\nliabilities,Total\ncurrent\nliabilities,Non-current\nliabilities,and\nFinancial\n(excluding\nprovisions",
+        "reversed": true,
+        "forward_evidence": 3,
+        "reverse_evidence": 39
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 0,
+        "original": "\".dtL\netavirP\nGNL\nnaknoK\",\"7102\nta hcraM\nsA\n13\",-,-,-,-,-,-,-,-,-,-",
+        "reconstructed": null,
+        "reversed": false,
+        "forward_evidence": 0,
+        "reverse_evidence": 1
+      },
+      {
+        "evidence_id": "ev_92911e7388a55f784df2b146",
+        "row_index": 1,
+        "original": ",\"8102\nta hcraM\nsA\n13\",-,)12.767(,-,-,84.21,)37.457(,15.52,-,-,-",
+        "reconstructed": ",31\nAs\nMarch at\n2018,-,(767.21),-,-,12.48,(754.73),25.51,-,-,-",
+        "reversed": true,
+        "forward_evidence": 0,
+        "reverse_evidence": 3
+      }
+    ],
+    "diagnostics_total": 1724
+  },
+  "claims_missing": {
+    "metric": 2545,
+    "value": 0,
+    "unit": 33269,
+    "period": 28012,
+    "entity": 15762
+  },
+  "top_review_reasons": [
+    [
+      "no unit stated for this value in the row, header, or chunk",
+      32496
+    ],
+    [
+      "no header row precedes this row in the chunk",
+      15095
+    ],
+    [
+      "column meaning and period are unknown",
+      15095
+    ],
+    [
+      "reporting basis # not stated for this column, and the document contains both",
+      13580
+    ],
+    [
+      "original preserved in source_row_text",
+      7164
+    ],
+    [
+      "row text was reconstructed from reversed characters",
+      7164
+    ],
+    [
+      "column header carries no recognizable period",
+      6818
+    ],
+    [
+      "entity not attributed: table context names a different or unresolved entity",
+      6589
+    ],
+    [
+      "table context names other legal entity or entity-like acronym #",
+      6589
+    ],
+    [
+      "parent-company attribution is not established",
+      6589
+    ],
+    [
+      "word order is unreliable",
+      6552
+    ],
+    [
+      "label comes from a multi-line reversed cell",
+      6552
+    ],
+    [
+      "entity not associated: evidence record has no verified company identity",
+      6138
+    ],
+    [
+      "label looks like an entity name",
+      5823
+    ],
+    [
+      "row may describe a counterparty or subsidiary, not a metric",
+      5823
+    ]
+  ],
+  "counting_notes": "claims_flagged_for_review counts each non-extracted claim once. top_review_reasons counts each distinct normalized reason once per non-extracted claim, so one claim can appear under several reasons and the reason counts sum to more than the flagged-claim count. Digits are normalized to '#'.",
+  "comparison_to_baseline": {
+    "baseline_claims": 4423,
+    "baseline_status": {
+      "needs_review": 4242,
+      "ambiguous": 130,
+      "extracted": 51
+    },
+    "baseline_indicators": {
+      "claims": 4423,
+      "metric_null_rate": 0.76,
+      "unit_null_rate": 0.026,
+      "period_unknown_rate": 0.594
+    },
+    "new_claims": 40942,
+    "new_status": {
+      "needs_review": 25136,
+      "ambiguous": 15791,
+      "extracted": 15
+    },
+    "new_indicators": {
+      "claims": 40942,
+      "metric_null_rate": 0.062,
+      "unit_null_rate": 0.813,
+      "period_unknown_rate": 0.684
+    },
+    "table_claims": 37843,
+    "table_status": {
+      "needs_review": 22102,
+      "ambiguous": 15730,
+      "extracted": 11
+    },
+    "table_indicators": {
+      "claims": 37843,
+      "metric_null_rate": 0.0,
+      "unit_null_rate": 0.877,
+      "period_unknown_rate": 0.695
+    },
+    "baseline_claims_retained_same_id": 3099,
+    "baseline_status_changes_among_retained": {
+      "ambiguous->needs_review": 40,
+      "extracted->ambiguous": 25,
+      "extracted->needs_review": 6,
+      "ambiguous->extracted": 2,
+      "needs_review->ambiguous": 3
+    },
+    "baseline_claims_not_reproduced": 1324,
+    "baseline_not_reproduced_by_status": {
+      "needs_review": 1251,
+      "ambiguous": 55,
+      "extracted": 18
+    },
+    "baseline_not_reproduced_chunk_class": {
+      "tabular": 1324
+    },
+    "note": "Yield is not accuracy. Baseline claims from chunks now routed through the table parser are replaced, not carried over; correctness must be judged on the manual sample, not on counts."
+  }
+}

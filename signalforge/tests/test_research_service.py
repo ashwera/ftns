@@ -83,7 +83,10 @@ class ServiceTests(unittest.TestCase):
         while self.sessions.active and time.monotonic() < deadline:
             time.sleep(.01)
         result = self.sessions.get(run['run_id'])
-        self.assertEqual(result['status'], 'failed')
+        self.assertEqual(result['status'], 'completed')
+        self.assertEqual(result['investigation']['report_type'], 'evidence_gap')
+        self.assertEqual(result['investigation']['failed_stage'], 'queued')
+        self.assertEqual(result['investigation']['claims'], [])
         self.assertNotIn('SECRET_KEY', json.dumps(result))
 
     def test_dotenv_literal_and_config_override_after_import(self):
@@ -103,7 +106,8 @@ class ServiceTests(unittest.TestCase):
         folder.mkdir()
         updates = []
         report = {'search_results': [], 'retrieval_status': 'no_results'}
-        with patch.object(sd, 'discover', return_value=report) as discover, patch('signalforge.research_session.machine_records', return_value=[]):
+        with patch.object(sd, 'discover', return_value=report) as discover, patch('signalforge.research_session.machine_records', return_value=[]), \
+             patch('signalforge.company_onboarding.onboard', side_effect=ValueError('No original fixture')):
             execute(folder, {'company': 'Any Company', 'prompt': 'Any question'}, Config(), lambda *a, **kw: updates.append((a, kw)))
         args = discover.call_args
         self.assertEqual(args.args, ('Any Company', 'Any question'))
@@ -111,7 +115,11 @@ class ServiceTests(unittest.TestCase):
         self.assertEqual(args.kwargs['provider'].name, 'bing_rss')
         self.assertEqual(args.kwargs['budget'].request_timeout, 40)
         self.assertEqual(args.kwargs['budget'].max_seconds, 90)
-        self.assertEqual(updates[-1][0][2], 'blocked')
+        self.assertEqual(updates[-1][0][2], 'completed')
+        result = json.loads((folder/'investigation.json').read_text())
+        self.assertEqual(result['report_type'], 'evidence_gap')
+        self.assertEqual(result['claims'], [])
+        self.assertTrue((folder/'investigation_report.md').is_file())
 
     def test_cached_intake_requires_matching_company_and_pinned_original(self):
         from dataclasses import replace

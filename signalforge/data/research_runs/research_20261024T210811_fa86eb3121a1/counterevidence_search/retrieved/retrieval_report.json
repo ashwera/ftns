@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T22:15:35.390805+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T22:15:35.378006+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+      "redirect_chain": [],
+      "source_sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+      "content_type": "text/html; charset=utf-8",
+      "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/1201ccc2609a_755083c0.html",
+      "document_title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

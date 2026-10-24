@@ -1,0 +1,13 @@
+{
+  "claim_ids": [],
+  "evidence_ids": [],
+  "limits": {
+    "max_claims": 40,
+    "per_chunk": 4,
+    "statuses": [
+      "extracted",
+      "ambiguous"
+    ]
+  },
+  "note": "Claims remain unverified; the bundle is a bounded, traceable selection, not an approval."
+}

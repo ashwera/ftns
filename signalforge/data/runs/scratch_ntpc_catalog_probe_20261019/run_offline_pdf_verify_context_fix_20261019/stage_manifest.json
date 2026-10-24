@@ -1,0 +1,59 @@
+{
+  "run_id": "run_offline_pdf_verify_context_fix_20261019",
+  "company": {
+    "name": "NTPC Limited",
+    "aliases": [
+      "NTPC"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "stages": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "7 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "7 claims / 3 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "blocked",
+      "detail": "SIGNALFORGE_API_KEY not configured; live F1 not attempted"
+    },
+    {
+      "stage": "R1",
+      "execution": "not_executed",
+      "detail": "F1 not run"
+    },
+    {
+      "stage": "source_catalog",
+      "execution": "real",
+      "detail": "6 catalog sources: {\"available\": 1, \"not_retrieved\": 5}; network not used"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "7 inputs verified; 6 at primary_source level, 1 at extracted_text_review only; effective outcomes {\"partially_supported\": 7}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "6 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "traceability_problems": [],
+  "claims_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/fixture/claims.jsonl",
+  "evidence_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/fixture/evidence.jsonl",
+  "inputs_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/fixture/reviewed_inputs.json",
+  "network_used": false,
+  "catalog_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/offline_verification/catalog.json",
+  "model_used": false
+}

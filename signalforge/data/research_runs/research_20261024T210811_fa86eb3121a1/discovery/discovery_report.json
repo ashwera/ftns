@@ -1,0 +1,1372 @@
+{
+  "company": "Hindalco Industries Limited",
+  "topic": "Investigate Hindalco's renewable transition and project commissioning disclosures for a potential financially material gap; compare issuer statements with independent regulator or operator evidence and search for counterarguments.",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"Hindalco Industries\" annual report filetype:pdf",
+    "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+    "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf"
+  ],
+  "search_results": [],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T21:08:11.300506+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:08:13.200858+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:08:13.202164+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.203260+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/10-best-iot-examples-in-2020",
+        "title": "10 Best IoT Examples in 2020 - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.203551+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/certification-accreditation/nuclear-component-certification",
+        "title": "Nuclear Component Certification - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.203997+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/9-cool-iot-devices-for-our-daily-lives",
+        "title": "9 Internet of Things Devices for the Home and Workplace - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.204488+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/industry-40-impacts-engineering-design",
+        "title": "How Industry 4.0 Impacts Engineering Design - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.205037+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/publications-submissions/proceedings",
+        "title": "Proceedings - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.205482+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/get-involved/fellowships-and-internships",
+        "title": "Fellowships and Internships - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.205875+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/publications-submissions/proceedings/formatting-the-paper/dealing-with-graphics",
+        "title": "Dealing with Graphics - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.206355+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/seven-ways-iot-super-charges-lean-manufacturing",
+        "title": "Internet of Things Assists Lean Manufacturing - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.206876+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/managing-friction",
+        "title": "Managing Friction - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:13.207370+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/publications-submissions/journals/administration/rss-feeds-asme-journals",
+        "title": "RSS Feeds \u2013 ASME Journals",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T21:08:13.207705+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://www.asme.org/topics-resources/content/10-best-iot-examples-in-2020",
+          "title": "10 Best IoT Examples in 2020 - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/certification-accreditation/nuclear-component-certification",
+          "title": "Nuclear Component Certification - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/topics-resources/content/9-cool-iot-devices-for-our-daily-lives",
+          "title": "9 Internet of Things Devices for the Home and Workplace - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/topics-resources/content/industry-40-impacts-engineering-design",
+          "title": "How Industry 4.0 Impacts Engineering Design - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/publications-submissions/proceedings",
+          "title": "Proceedings - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/get-involved/fellowships-and-internships",
+          "title": "Fellowships and Internships - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/publications-submissions/proceedings/formatting-the-paper/dealing-with-graphics",
+          "title": "Dealing with Graphics - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/topics-resources/content/seven-ways-iot-super-charges-lean-manufacturing",
+          "title": "Internet of Things Assists Lean Manufacturing - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/topics-resources/content/managing-friction",
+          "title": "Managing Friction - ASME",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.asme.org/publications-submissions/journals/administration/rss-feeds-asme-journals",
+          "title": "RSS Feeds \u2013 ASME Journals",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Hindalco Industries\" annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T21:08:13.208356+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:08:14.639036+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:08:14.639658+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.640216+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.youtube.com/",
+        "title": "YouTube",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.640678+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.youtube.com/feed",
+        "title": "YouTube",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.641127+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.google.com/videohp",
+        "title": "Google Videos",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.641496+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://dailywatch.video/in",
+        "title": "Trending Videos in India - DailyWatch",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.641889+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://vimeo.com/watch",
+        "title": "Watch Free Videos, Films, and Shorts - No Ads - Vimeo",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.642266+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://in.bing.com/videos/search",
+        "title": "Search Videos - Bing",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.643007+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.pexels.com/videos/",
+        "title": "Free 4K Stock Videos & Full HD Video Clips to Download",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.643648+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.bing.com/videos",
+        "title": "Search Videos - Bing",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.644083+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.primevideo.com/storefront/home/home",
+        "title": "Prime Video: Watch movies, TV shows, sports, and live TV",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:14.644740+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.bing.com/videos/landing",
+        "title": "Search Videos - Bing",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T21:08:14.645290+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "results": [
+        {
+          "url": "https://www.youtube.com/",
+          "title": "YouTube",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.youtube.com/feed",
+          "title": "YouTube",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.google.com/videohp",
+          "title": "Google Videos",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://dailywatch.video/in",
+          "title": "Trending Videos in India - DailyWatch",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://vimeo.com/watch",
+          "title": "Watch Free Videos, Films, and Shorts - No Ads - Vimeo",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://in.bing.com/videos/search",
+          "title": "Search Videos - Bing",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.pexels.com/videos/",
+          "title": "Free 4K Stock Videos & Full HD Video Clips to Download",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.bing.com/videos",
+          "title": "Search Videos - Bing",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.primevideo.com/storefront/home/home",
+          "title": "Prime Video: Watch movies, TV shows, sports, and live TV",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.bing.com/videos/landing",
+          "title": "Search Videos - Bing",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T21:08:14.645829+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:08:15.367302+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T21:08:15.368500+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.369758+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/1151",
+        "title": "S\u00edndrome de Dubin-Johnson - Sintomas, diagn\u00f3stico e tratamento | BMJ ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.370707+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-us/347",
+        "title": "Rotor syndrome - Symptoms, diagnosis and treatment | BMJ Best Practice US",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.371424+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/347",
+        "title": "S\u00edndrome de Rotor - Sintomas, diagn\u00f3stico e tratamento | BMJ Best Practice",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.372117+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/es-es/1151",
+        "title": "S\u00edndrome de Dubin-Johnson - S\u00edntomas, diagn\u00f3stico y tratamiento | BMJ ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.372678+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/162/epidemiology",
+        "title": "Cetoacidose diab\u00e9tica - Epidemiologia | BMJ Best Practice",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.373123+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-us/1151",
+        "title": "Dubin-Johnson syndrome - Symptoms, diagnosis and treatment | BMJ Best ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.373540+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/346",
+        "title": "S\u00edndrome de Gilbert - Sintomas, diagn\u00f3stico e tratamento | BMJ Best ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.373986+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-us/535",
+        "title": "Primary hypothyroidism - Symptoms, diagnosis and treatment | BMJ Best ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.374452+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-gb/704",
+        "title": "Glucose-6-phosphate dehydrogenase deficiency",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T21:08:15.374818+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-gb/586",
+        "title": "Rotator cuff injury - BMJ Best Practice",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T21:08:15.375217+00:00",
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "results": [
+        {
+          "url": "https://bestpractice.bmj.com/topics/pt-br/1151",
+          "title": "S\u00edndrome de Dubin-Johnson - Sintomas, diagn\u00f3stico e tratamento | BMJ ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/en-us/347",
+          "title": "Rotor syndrome - Symptoms, diagnosis and treatment | BMJ Best Practice US",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/pt-br/347",
+          "title": "S\u00edndrome de Rotor - Sintomas, diagn\u00f3stico e tratamento | BMJ Best Practice",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/es-es/1151",
+          "title": "S\u00edndrome de Dubin-Johnson - S\u00edntomas, diagn\u00f3stico y tratamiento | BMJ ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/pt-br/162/epidemiology",
+          "title": "Cetoacidose diab\u00e9tica - Epidemiologia | BMJ Best Practice",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/en-us/1151",
+          "title": "Dubin-Johnson syndrome - Symptoms, diagnosis and treatment | BMJ Best ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/pt-br/346",
+          "title": "S\u00edndrome de Gilbert - Sintomas, diagn\u00f3stico e tratamento | BMJ Best ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/en-us/535",
+          "title": "Primary hypothyroidism - Symptoms, diagnosis and treatment | BMJ Best ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/en-gb/704",
+          "title": "Glucose-6-phosphate dehydrogenase deficiency",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://bestpractice.bmj.com/topics/en-gb/586",
+          "title": "Rotator cuff injury - BMJ Best Practice",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T21:08:15.375640+00:00",
+      "reason": "query_budget"
+    }
+  ],
+  "errors": [
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    }
+  ],
+  "returned_result_count": 30,
+  "relevant_returned_count": 0,
+  "relevant_result_count": 0,
+  "rejected_result_count": 30,
+  "rejected_results": [
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/10-best-iot-examples-in-2020",
+        "title": "10 Best IoT Examples in 2020 - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/certification-accreditation/nuclear-component-certification",
+        "title": "Nuclear Component Certification - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/9-cool-iot-devices-for-our-daily-lives",
+        "title": "9 Internet of Things Devices for the Home and Workplace - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/industry-40-impacts-engineering-design",
+        "title": "How Industry 4.0 Impacts Engineering Design - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/publications-submissions/proceedings",
+        "title": "Proceedings - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/get-involved/fellowships-and-internships",
+        "title": "Fellowships and Internships - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/publications-submissions/proceedings/formatting-the-paper/dealing-with-graphics",
+        "title": "Dealing with Graphics - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/seven-ways-iot-super-charges-lean-manufacturing",
+        "title": "Internet of Things Assists Lean Manufacturing - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/topics-resources/content/managing-friction",
+        "title": "Managing Friction - ASME",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.asme.org/publications-submissions/journals/administration/rss-feeds-asme-journals",
+        "title": "RSS Feeds \u2013 ASME Journals",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.youtube.com/",
+        "title": "YouTube",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.youtube.com/feed",
+        "title": "YouTube",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.google.com/videohp",
+        "title": "Google Videos",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://dailywatch.video/in",
+        "title": "Trending Videos in India - DailyWatch",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://vimeo.com/watch",
+        "title": "Watch Free Videos, Films, and Shorts - No Ads - Vimeo",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://in.bing.com/videos/search",
+        "title": "Search Videos - Bing",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.pexels.com/videos/",
+        "title": "Free 4K Stock Videos & Full HD Video Clips to Download",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.bing.com/videos",
+        "title": "Search Videos - Bing",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.primevideo.com/storefront/home/home",
+        "title": "Prime Video: Watch movies, TV shows, sports, and live TV",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. filetype:pdf",
+      "result": {
+        "url": "https://www.bing.com/videos/landing",
+        "title": "Search Videos - Bing",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/1151",
+        "title": "S\u00edndrome de Dubin-Johnson - Sintomas, diagn\u00f3stico e tratamento | BMJ ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-us/347",
+        "title": "Rotor syndrome - Symptoms, diagnosis and treatment | BMJ Best Practice US",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/347",
+        "title": "S\u00edndrome de Rotor - Sintomas, diagn\u00f3stico e tratamento | BMJ Best Practice",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/es-es/1151",
+        "title": "S\u00edndrome de Dubin-Johnson - S\u00edntomas, diagn\u00f3stico y tratamiento | BMJ ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/162/epidemiology",
+        "title": "Cetoacidose diab\u00e9tica - Epidemiologia | BMJ Best Practice",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-us/1151",
+        "title": "Dubin-Johnson syndrome - Symptoms, diagnosis and treatment | BMJ Best ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/pt-br/346",
+        "title": "S\u00edndrome de Gilbert - Sintomas, diagn\u00f3stico e tratamento | BMJ Best ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-us/535",
+        "title": "Primary hypothyroidism - Symptoms, diagnosis and treatment | BMJ Best ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-gb/704",
+        "title": "Glucose-6-phosphate dehydrogenase deficiency",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Hindalco Industries\" Investigate Hindalco s renewable transition project commissioning disclosures potential financially material gap issuer statements independent regulator or operator search counterarguments. regulator government filetype:pdf",
+      "result": {
+        "url": "https://bestpractice.bmj.com/topics/en-gb/586",
+        "title": "Rotator cuff injury - BMJ Best Practice",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Hindalco+Industries%22+Investigate+Hindalco+s+renewable+transition+project+commissioning+disclosures+potential+financially+material+gap+issuer+statements+independent+regulator+or+operator+search+counterarguments.+regulator+government+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    }
+  ],
+  "discovery_status": "no_relevant_candidates",
+  "retrieval_status": "not_attempted",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40,
+    "max_response_bytes": 2097152,
+    "max_site_pages": 3
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "evidence_gaps": [],
+  "research_document_count": 0,
+  "site_seeds": [],
+  "site_discovered_count": 0,
+  "site_rejected_results": [],
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "query_budget"
+}

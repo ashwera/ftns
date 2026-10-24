@@ -1,0 +1,153 @@
+{
+  "stage": "r1",
+  "provider": "ollama",
+  "model": "signalforge-qwen",
+  "requested_at": "2026-10-24T21:11:16.253754+00:00",
+  "prompt": "# R1 — Research Investigator (plan specification)\n\nR1 consumes F1's recommended candidate and prepares a structured, executable research plan. Reference supplied evidence by stable `evidence_id` and preserve its source locator/page when citing it. This prompt alone does not retrieve sources or perform live web research. Never invent URLs, excerpts, publication dates, external findings, or research already performed.\n\nTurn the hypothesis into explicit, testable research questions. List exact metrics and periods, what the supplied dataset supports, and what remains missing. Identify public source types and specific documents to seek: company filings, stock-exchange disclosures, annual reports, investor presentations, regulatory documents, and credible news reports, as relevant.\n\nFor each claim, define independent cross-validation sources and the calculation, inputs, units, period alignment, and assumptions required. Include an alternative explanation and a falsification test. Specify what would invalidate or weaken the hypothesis. Include contradictory evidence explicitly when supplied; do not suppress it.\n\nTrack evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.\n\nReturn a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.\n\n\nRequired R1 output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge R1 research plan\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"candidate_id\", \"hypothesis\", \"research_questions\", \"evidence_ledger\", \"checklist\", \"alternative_explanation\", \"falsification_test\", \"retrieval_performed\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"candidate_id\": {\"type\": \"string\", \"minLength\": 1}, \"hypothesis\": {\"type\": \"string\", \"minLength\": 1}, \"retrieval_performed\": {\"type\": \"boolean\", \"const\": false}, \"research_questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"question\", \"metrics\", \"periods\", \"supported_by_dataset\", \"missing\"], \"properties\": {\"question\": {\"type\": \"string\", \"minLength\": 1}, \"metrics\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"supported_by_dataset\": {\"type\": \"boolean\"}, \"missing\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"evidence_ledger\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"evidence_id\", \"source_type\", \"source_url\", \"publication_date\", \"excerpt_or_data_point\", \"claim_supported\", \"kind\", \"status\"], \"properties\": {\"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"]}, \"publication_date\": {\"type\": [\"string\", \"null\"]}, \"excerpt_or_data_point\": {\"type\": [\"string\", \"null\"]}, \"claim_supported\": {\"type\": \"string\"}, \"kind\": {\"type\": \"string\", \"enum\": [\"reported_fact\", \"calculation\", \"inference\", \"unverified_hypothesis\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"planned_lookup\", \"supplied\", \"contradictory\"]}}}}, \"checklist\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"step\", \"expected_evidence\", \"cross_validation_sources\", \"completion_criteria\"], \"properties\": {\"step\": {\"type\": \"string\", \"minLength\": 1}, \"expected_evidence\": {\"type\": \"string\"}, \"cross_validation_sources\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"calculation\": {\"type\": [\"string\", \"null\"]}, \"completion_criteria\": {\"type\": \"string\"}}}}, \"alternative_explanation\": {\"type\": \"string\", \"minLength\": 1}, \"falsification_test\": {\"type\": \"string\", \"minLength\": 1}}}",
+  "payload": {
+    "company_name": "Hindalco Industries Limited",
+    "candidate": {
+      "candidate_id": "fallback_capacity_conversion",
+      "rank": 1,
+      "category": "capacity_conversion",
+      "hypothesis": "Do dated project disclosures distinguish announced capacity from capacity that reached commissioning or commercial operation?",
+      "financial_importance": "Investigate whether verified disclosures support or contradict a potentially material issue; no financial discovery is asserted.",
+      "metrics_and_periods": [
+        "announced, under-implementation and commissioned capacity on a consistent unit and period basis",
+        "target, trial operation and commercial operation dates"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Aligning our Business  \nOfferings to global Megatrends\nIndia is a fast‑growing economy with \nrising consumption. In aluminium, \ncurrent per capita consumption \nstands at 3.1 kg against the global \naverage of 12.2 kg. Similarly, the \nper capita consumption of copper \nis 0.7 kg in India, while the global \naverage is 3.9 kg. In China, per capita \nconsumption is 34.9 kg for aluminium \nand 11.8 kg for copper. This provides \nsignificant headroom for growth and \nan increased demand for our products \nand solutions across all segments. \nWith rapid urbanisation, India's \ncities and towns are projected to \nbecome home to over 600 million \npeople by 2036, compared to 416 \nmillion in 20181. This is expected \nto drive demand for infrastructure \ndevelopment and consumer \nspending. Being a leading provider of \ndownstream products in aluminium, \ncopper, and specialty alumina, we \nare well‑positioned to capitalise on \nthis opportunity. This, along with \nthe evolving economic landscape, \nis driving the need for lightweighting \nsolutions, premiumisation and \nlocalisation. To meet this need, we are \nembracing technological innovations \nto develop newer products and \nsolutions which will aid India’s journey \nof becoming a developed economy. \nTo accelerate action against climate \nchange, India aims to increase its \nnon‑fossil fuel capacity to 500 GW \nby 2030, with a focus on energy from \nsolar Photovoltaic (PV) systems. This \ntransition towards renewable energy \nwill have a multi‑fold impact on our \nbusiness. Since the manufacturing \nof solar module requires 21 kg \nper MW of aluminium 2 and 5.5 kg \nper MW of copper 3, we expect a \nsignificant increase in aluminium and \ncopper consumption. In addition, \nthe paradigm shift of automotive \nindustry towards electrification \nand decarbonisation is driving a \nrise in Electric Vehicles (EV). While \nthe standard Internal Combustion \nEngine (ICE) requires 23 kg/vehicle \nof copper, EVs have nearly 3‑4 \ntimes higher usage of copper 4. \nSource: \n1Cities as Engines of Growth  \n2Aluminium in Solar\n3Copper: Essential in PV Solar Power Growth\n4Copper: The Material of Choice for Vehicle Manufacturers\nAt Hindalco, we aspire to seize \nsuch opportunities to support in the \ntransition towards building a greener \nand resilient economy.   \nAs a responsible business, \nwe have integrated ESG in \nour business strategy which \nserves as the foundation for \nHindalco’s sustainability \njourney. We continuously \nreimagine ways to make our \noperations greener, stronger \nand smarter. Our recycling \ncapabilities at Novelis, enable \nus to maximise the recycling \npotential of our materials, \nreduce waste and conserve \nnatural resources.  \nCommissioned in 2022, Silvassa is the country's first  \nfully automated extrusions plant\nTechnology \nDisruptions\nShift in consumer  \npreferences  \n(such as EV application  \nand renewables)\nNew  \nProducts and \nApplications\nInnovative solutions driven by \nlightweighting, localisation, \nand premiumisation. \n3\n45\nRapid \nUrbanisation\nRise in demand  \nfor downstream  \nproducts\nEmerging  \nTrends\nIncrease in per \ncapita aluminium and \ncopper consumption\nFocus  \non ESG\nIntegrate sustainability \ninto the business  \nstrategy\n21\nHindalco  \nuniverse\nMarket, People, \nand Digital\nOur operating environment is \ndefined by geopolitical uncertainties \nand evolving stakeholder \nexpectations. In this scenario, \nwe leverage our strengths in \nmanufacturing to deliver innovative \nand sustainable products \nand solutions.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:20",
+          "evidence_id": "ev_b4b16e736883ef0de560ba0d",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Portfolio  \nEnrichment\nPrudent Capital  \nStructure\nValue‑enhancing  \nGrowth\nStrong ESG  \nCommitment\nStrategic Objectives\nOur 4 strategic priorities are intricately linked to our material topics, opportunities \nlandscape, risk management, and form a crucial element of our integrated \ndecision‑making process. In line with the identified megatrends, our strategic \npriorities are the pillars for supporting efficient resource allocation to ensure \nlong‑term value‑creation.\n    OUR STRATEGIC PRIORITIES + Financial prudence in capital allocation\n + Growth capex supported by robust \ncashflows and strong balance sheet\n + Consolidated net debt to EBITDA at 1.21x \nas of 31 March 2024\n + Funding investment projects at $6.9 billion \nwhile meeting the target net debt to EBITDA \nof 2.5x at the consolidated level\n + Focus on shareholder value \ncreation by organically expanding \nDownstream businesses \n + Cost optimisation through \nresource securitisation\n + Best‑ever performance in Copper business\n + Won the bid for Meenakshi West coal mines \nin FY 2023‑24\n + MoU with Odisha Mining Corporation \nLtd. to supply bauxite for greenfield \nalumina refinery\n + Highest ever metal‑grade alumina sales\n + Copper and E‑waste recycling project with a \ncapacity of 50 KTPA to be commissioned at \nPakhajan, Bharuch District, Gujarat by 2026\n + Greenfield alumina refinery with a capacity \nof 850 KTPA to be commissioned at \nKansariguda, Rayagada, Odisha by 2027\n + Focus on ESG implementation across the \nvalue chain\n + ESG commitments to strengthen \nour position as the industry leader \nin sustainability\n + Continue to be among the top 1% in the \naluminium industry in the S&P Global \nCorporate Sustainability Assessment \n(CSA) 2023\n + Enhance energy transition initiative \n + Zero waste to landfill certifications for \n3 plants at Hindalco; 2 at Novelis\n + Taloja and Silvassa achieved Zero Liquid \nDischarge (ZLD) in FY 2023‑24\n + CII Biodiversity index and Carbon \nsequestration studies completed at \n11 plants at the end of FY 2023‑24. \nTotal 248,494 tCO2e sequestered to date\n + R&D project focused on arsenic \nprecipitation and stabilisation in glass form \n + Transition towards green energy:\n − 29 MW solar and wind energy to be \noperational by Q2 FY 2025\n − 100 MW of renewable power for our \nOdisha smelter in the coming year \n(won Energy Transition Changemaker \nAward at COP28)\n − Target to reach 300 MW by FY 2026\n + Advancing from manufacturing company to \na manufacturing solutions provider \n + Enriching product mix by increasing the \nshare of high‑end value‑added products\n + Commissioned state‑of‑the‑art extrusion \nfacility at Silvassa in FY 2023‑24\n + Highest‑ever sales of specialty alumina\n + Ongoing execution of various downstream \nprojects such as Aditya FRP, aluminium \nbattery foil, battery enclosures and copper \nInner Grooved Tubes\n + Novelis expansion: $4.9 billion of \ninvestments underway to expand rolling, \nrecycling and casting capacity. The largest \nproject is a $4.1 billion integrated greenfield \nrolling and recycling center in Bay Minette to \ncommission by the second half of CY 2026.\n + Downstream capacity to increase \nfrom 430 KT to more than 600 KT with \ncommissioning of 170KT FRP by the end \nof FY 2026\n + Specialty alumina capacity to increase from \n460 KT to 550 KT by FY 2026\nSP‑1 SP‑2 SP‑3 SP‑4\nImpactOur Approach Way Forward\nCorporate \nOverview\nStrategic  \nOverview\nCreating and \nSustaining Value\nAwards an",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:21",
+          "evidence_id": "ev_f6bf8fc87e968143f61c184e",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "OUTPUTSOUTSIDE IN\nRisk Management Process\nAt Hindalco, we acknowledge that we \noperate in an ever‑changing evolution \nof business landscape. This makes \nit necessary to investigate risks, \nopportunities, and their potential \nimpacts proactively. In this regard, \nwe have established a structured \n6‑step Enterprise Risk Management \n(ERM) Process — Identify, Assess, \nPrioritise, Respond, Monitor, and \nReport — which draws on insights \nfrom globally recognised guidelines, \nincluding COSO and ISO 31000. \nOur ERM follows a scalable and \nflexible approach, allowing it to be \ntailored to different levels within the \norganisation, such as departments, \nplants, mines, and corporate. \nWithin our ERM framework, we \nimplement a 2‑pronged approach, \na bottom‑up complimented by \ntop‑down. The top‑down approach \ninvolves active engagement with the \nsenior leadership team, facilitating \ndiscussions on strategic, long‑term, \nand emerging risks facing the \norganisation, and risk culture building. \nSimultaneously, bottom‑up risks are \naggregated at various levels based \non an approved risk matrix. Key risks \nidentified through this comprehensive \nprocess are then presented to the \nleadership, including Board and \nexecutive committee, on a periodic \nbasis for continuous oversight, \nstrategic guidance, and risk‑intelligent \ndecision making. Further, our risk \nappetite process is dynamic and \ndetermined by both financial and \nnon‑financial factors.\nOn a quarterly basis, a designated \nstakeholder delivers a detailed \noverview of key risks to the Board, \nshowcasing the interconnections \nbetween different locations across \nHindalco. This approach allows \nfor a holistic understanding of the \norganisational risk landscape and \nfacilitates informed decision‑making \nat the Board level. Risk identification \n    RISK AND OPPORTUNITIES\nis a continuous exercise, enabling \nbusiness to capture potential threats \nand opportunities proactively \nacross locations. Identification of \nrisks reflect critical factors that have \nthe potential to impede business \nobjectives. A 3C+2S framework – \nencompassing Cash, Cost, \nCustomer, Safety & Sustainability, \nand Systems & Processes is utilised \nfor comprehensive risk assessment. \nWe further employ tools such as Root \nCause Analysis and Consequence \nAnalysis to assess the likelihood and \nimpact of each risk. \nFollowing the identification and \nassessment of risks, a prioritisation \nprocess is undertaken using a \nrisk scoring matrix which is then \nplotted as a risk heat map. This \nheat map supports determination \nand classification of risks across \ncategories i.e., Strategic, Operational, \nESG, and Projects. This classification \nfurther guides implementation of \nappropriate mitigation plans across \nthe risk categories. We conduct \nperiodic stress testing on these \nmitigation plans to check their \neffectiveness. In order to proactively \nmonitor and report potential risks, \neach site and function maintains \na risk register. Risk exposure is \nreviewed every quarter at the Board \nlevel committee. Continuous risk \nmonitoring and robust reporting \nmechanism enable triggering of \ntimely actions across various levels \nof management. Our systematic \napproach propels value creation and \npositive impacts which augments \nour performance and facilitates the \nachievement of business objectives. \nAdditionally, our risk management \nprocess is audited externally, to \nensure a resilient ERM approach \nwhich showcases adaptabil",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:23",
+          "evidence_id": "ev_157588baa44fe21c7d244306",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Expanding our  \nSpecialty Alumina \nCapabilities \nAt the Specialty Alumina business, \nour expansions go beyond mere \noperational growth; it also involves the \nintegration of modern technologies \nto enhance processes and product \nquality. Muri operations have been \nexpanded to support our vision of \nincreasing specialty alumina to 50% \nof the total alumina production. The \nplant now produces multiple specialty \ngrades serving water treatment, \nrefractory, and ceramics markets \nwithin India and East Asia. \nWe are in process of commissioning \na precipitate (PPT) hydrate plant \nwith a capacity of 20 KT and aim \nto start production in FY 2024‑25. \nThe precipitates and hydrates due \nto be produced by this plant are fine \nparticles of about 1 to 2 microns \nin size, and have applications in \nvarious sectors. \nThese particles are essential for \nmeeting the new safety standards for \nhalogen‑free wires in flame retardants. \nThey are also used in producing paints. \nOur portfolio enrichment includes \ndevelopment of: \n + White fused alumina and tabular \nalumina for applications in \nrefractories and abrasives\n + High precision sub‑micron alumina \nwith excellent insulation properties\n + High purity 3N/4N alumina and high \ncrystalline alumina for advanced \napplications in industrial ceramics\n + Activated alumina used \nas an adsorbent/catalyst \nin petrochemical and \nrefinery industries \n + For White Fused Alumina, a \ngreenfield project has been \napproved and is planned to be \ncommissioned by FY 2026‑27\nTo focus on customer centricity \nand enhance our relationships with \nstakeholders, we are expanding our \npresence worldwide. We aim to widen \nExpanding our  \nDownstream  \nCapabilities \nIn India, demand for battery grade \naluminium foil is expected to grow \nto 40 KT by 2030 driven by growth \nin advanced cell manufacturing. To \nmeet the demand, we have started \nmanufacturing fine quality battery foils \nat our Mouda plant in Maharashtra. \nThe plant is in the process of qualifying \nwith Li‑ion cell manufacturers in \nIndia, Europe, and the USA. We are \nalso investing ~₹800 crore to build \na battery foil plant at Aditya that will \ninitially produce 25 KT of battery foil, \nwhich is a key component of Li‑ion and \nSodium‑ion cells. \nWe are also setting up an automated \nrobotics facility in Chakan, Pune, \nMaharashtra to produce battery \nenclosures for the EV segment \nand will also manufacture other \nautomotive components such as \ncrash management system. The plant \nbrings the latest in machining, robotics \nand welding technology to support \nthe Indian EV segment. This plant, \nwith an annual capacity of 164,000 \nunits will pioneer the production of \nall‑aluminium battery enclosures in \nIndia. The plant is set to be operational \nby Q2 of FY 2024‑25. Additionally, \njoineries such as Flow Drill screw \nhave been added, which is currently \nundergoing installation. We continue \nto also service the EV market from \nour other plants such as battery \nenclosures for swappable batteries \nfrom our Kuppam plant. Furthermore, \nour coated aluminium AC fin project in \nTaloja, Maharashtra, is on track. \nThe state‑of‑the‑art extrusion \nfacility at Silvassa was successfully \ncommissioned with a capacity \nof 34 KT, adding to our overall \ndownstream capacity. This will serve \nthe fast‑growing B&C and auto \nmarkets in western and southern India. \nFurther, we have also commissioned \na state‑of‑the‑art Vertical Powder \nCoating facility, a first of its kind \ni",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:39",
+          "evidence_id": "ev_836e5c74111ba3cda78bda80",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "safety‑fire\tsafety,\twork\tat\theight,\t\nESG\tand\tsustainability,\tcustomer\t\nrelationship\tmanagement,\tcorporate\t\nsocial\tresponsibility\tetc.\tthrough\t\ne‑learnings\tand\tphysical\tsessions.\t\nA\ttotal\tof\t163\tand\t38\ttraining\tand\t\nawareness topics were covered for \nemployees\tand\tworkers\trespectively.\nIn\taddition,\twe\tconducted\ta\ttotal\t\nof\t5\tfamiliarisation\tprogrammes\t\nand other awareness sessions \nfor\tthe\tBoard\tof\tDirectors\tand\tkey\t\nmanagerial\tpersonnel,\tcovering\t\ntopics such as overview of company \nlandscape,\tinvestment\topportunities\t\nin\tsustainability,\trevised\tboard\t\nevaluation\tframework,\tstatutory\t\nand\tnon‑statutory\tpolicies.\t90%\t\nof\tthe\tBoDs\tand\tKMPs\twere\t\ncovered under the programmes and \nawareness\tsessions.\t\nAt\tNovelis,\ta\ttotal\tof\t185,255\ttraining\t\nhours\twere\tprovided.\tThe\temployees\t\nand\tworkers\twere\tprovided\t623.7\t\nhours\tof\ttraining\tin\trisk\tmanagement,\t\n33,148.85\thours\tof\tsafety\ttraining,\t\n6,227.49\thours\tof\thuman\trights\t\nto build the technical capability of \nour multi‑dimensional workforce \nin mainstream manufacturing \noperations and maintenance roles \nacross\tall\tplants\tand\tmines.\tThrough\t\nthis,\twe\toffer\tand\tdeliver\tseveral\t\nonline\tand\toffline\tknowledge\tand\tskill\t\ndevelopment\tprogrammes,\tsupport\t\nin‑house technical summits and \nconferences,\tand\tdrive\ta\tmultitude\tof\t\nstakeholder\ttechnical\tforums.\t\nTechnical\tcapability\tprogrammes\tare\t\ndesigned\tand\tdelivered\tat\t3\tbroad\t\nlevels\tviz.\tcustomised\tprogrammes\t\nfor\tthe\tplants\tbasis\ttheir\tspecific\t\nneeds,\taggregate\tprogrammes\tat\t\nbusiness\tlevel\tand\tfinally\tcentral\t\nthematic signature programmes such \nas\tSix\tSigma,\tProject\tManagement,\t\nReliability,\tetc.\nTo\tensure\trelevance\tand\timpact,\t\nHTU\thas\testablished\tthe\tHTU\t\nschools\tof\tSmelter,\tRefinery,\tPower,\t\nMining,\tCopper,\tSpecialty\tAlumina\t\nand\tMaintenance\ttailored\tto\tthe\t\nspecific\tand\tdynamic\tneeds\tof\tour\t\nentire\tmanufacturing\tvalue\tchain.\t\nEach\tHTU\tSchool\tis\toverseen\t\nby an operating committee \ncomprising representatives from \nthe\tunits,\tresponsible\tfor\tidentifying\t\nappropriate technical capability \ntraining programmes while ensuring \nalignment with industry best practices \nand\texpertise.\nIn\tFY\t2023‑24,\tHTU\tdesigned\tand\t\ndelivered\tmore\tthan\t240\tonsite\t\nand online technical programmes \nreaching\tout\tto\tmore\tthan\t2,500\t\ntechnical professionals across all \nour\tunits.\tThese\tprogrammes\twere\t\ndelivered by several internal subject \nmatter experts and external domain \nexperts\tincluding\tselect\tOEMs.\tThe\t\nfocus was to enhance existing \nknowledge,\tcreate\tawareness\tabout\t\ntechnology\tinnovations\tin\tHindalco’s\t\nmanufacturing processes and also \nbuild\tspecific\tskills\twhich\tcan\tbe\t\napplied\tat\tthe\tworkplace\timmediately.\t\nE‑Karyashala\nWe\thave\tlaunched\tE‑Karyashala,\t\nan e‑Learning mobile and web \napplication\tfor\tshopfloor\toperators\t\nand\tLMS\temployees.\tUnder\t\nE‑Karyashala,\twe\toffer\t60+\ttechnical\t\nmodules\tcovering\tupstream,\t\ndownstream,\tcopper,\tspecialty\t\nalumina,\tmining\toperations,\tand\t\ngeneral engineering and maintenance \ntopics\tin\tEnglish\tand\tvernacular\t\nlanguages.\tAs\tof\tFY\t2023‑24,\ta\ttotal\t\nof\t9,000+\tusers\thave\tregistered\tand\t\nhave\tcompleted\t2,950\tprogrammes.\t\nE‑Karyashala\tis\toperational\tacross\t15\t\nmanufacturing units at Hindalco and \nis gradually being introduced to other \nbusinesses\tof\tthe\tAditya\tBirla\tGroup.\n + My\tPeople\tHour\t(MPH)\t– \nA one‑hour\tmonthly\tone‑on‑one\t\nmeeting where leaders transfer \nimplicit knowledge to their team \nmembers and focus on uncovering \nthe unconscious decision‑making \nprocesses within the team \nhierarchy.\tThis\tis",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:55",
+          "evidence_id": "ev_f4a003fa4a60009b1018f261",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Project level issuer filings with dated status and capacity",
+        "Independent regulator or system operator records confirming commissioning milestones"
+      ],
+      "alternative_explanation": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+      "falsification_condition": "The defined comparison is reconciled on a consistent period, entity, unit and reporting basis, with independent records supporting the disclosed position.",
+      "data_risks_and_limitations": [
+        "This is research planning, not a verified financial finding.",
+        "Issuer-only evidence is not independent corroboration.",
+        "The NTPC quote CSV has no verified company join and is dataset context only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "Contest angle concerns potentially financially material disclosures; this is a prioritization rule, not a finding."
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "11 distinct eligible company evidence records matched the category terms; capped at 5."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "The stated period and metric comparisons are directly retrievable; matching issuer evidence exists."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Fixed neutral baseline applied equally to all contest-defined angles."
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "Two points for at least two distinct matching records, one for one record, zero for none; independent sources are still required."
+        }
+      },
+      "weighted_score": 76.5,
+      "weighted_score_rationale": "Deterministic score from the declared counts and fixed baseline rules; see manifest fallback method.",
+      "next_research_action": "Retrieve the listed dated issuer and independent records, then verify company identity, exact passages, metric basis and counterevidence."
+    },
+    "dataset_summary": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "date_coverage": {
+        "start": "2023-05-01",
+        "end": "2024-03-31"
+      },
+      "missing_information": [
+        "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+        "No source/document provenance fields identified."
+      ],
+      "data_limitations": [
+        "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+        "No source/document provenance fields identified."
+      ]
+    },
+    "supplied_evidence_ids": [
+      "ev_b4b16e736883ef0de560ba0d",
+      "ev_f6bf8fc87e968143f61c184e",
+      "ev_157588baa44fe21c7d244306",
+      "ev_836e5c74111ba3cda78bda80",
+      "ev_f4a003fa4a60009b1018f261",
+      "ev_dd54912f60e5319f278cdd44",
+      "ev_89a3c0da5b4119a3ad90bf1a",
+      "ev_24f65cfcb51b0b8059510d0b",
+      "ev_b78f1f2be0597c4b9edeef26",
+      "ev_9d0caaf9f68e19f138bdbc43",
+      "ev_925778119ac92976d727ed24",
+      "ev_c794e8a585f1f427fb5f7e5f",
+      "ev_2bb1df47d1c25f2e7b353677",
+      "ev_77ac31547230f9162f4c34d9",
+      "ev_d88979f05ff6a63183348a8f",
+      "ev_3193e95f1b356d7907290939"
+    ]
+  }
+}

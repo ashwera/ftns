@@ -1,0 +1,20 @@
+{
+  "stage": "investigation_initial",
+  "provider": "ollama",
+  "model": "signalforge-qwen",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "rejected",
+      "validation_error": "Citation to src_c240197af9376407_ev_f6bf8fc87e968143f61c184e must be ONE exact contiguous span copied from that passage (no ellipses, no stitching sentences, no paraphrase). Offending quote began: 'Downstream capacity to increase from 430 KT to more than 600 KT with commissioning of 170 '"
+    },
+    {
+      "attempt": 2,
+      "status": "rejected",
+      "validation_error": "Citation to src_c240197af9376407_ev_f6bf8fc87e968143f61c184e must be ONE exact contiguous span copied from that passage (no ellipses, no stitching sentences, no paraphrase). Offending quote began: 'Downstream capacity to increase from 430 KT to more than 600 KT with commissioning of 170 '"
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "rejected"
+}

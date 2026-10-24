@@ -19,7 +19,7 @@ def local_config():
     """Read literal allowlisted dotenv assignments; never evaluate or log secrets."""
     allowed = {"SIGNALFORGE_API_KEY", "SIGNALFORGE_MODEL", "SIGNALFORGE_PROVIDER",
                "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY"}
-    for path in (ROOT.parent / ".env", ROOT / ".env"):
+    for path in (ROOT.parent / ".env", ROOT / ".env", Path(__file__).with_name(".env")):
         if not path.is_file():
             continue
         for line in path.read_text(encoding="utf-8").splitlines():
@@ -120,9 +120,16 @@ class ResearchSessions:
             self._save(folder, manifest)
         try:
             self.executor(folder, manifest, self.config, update)
-        except Exception:
-            # Exceptions from providers can contain credentials or request bodies.
+        except Exception as error:
+            # Exceptions from providers can contain credentials or request bodies:
+            # record only the type and code locations, never message text.
+            import traceback
+            manifest["error"] = {"type": type(error).__name__, "frames": [
+                f"{Path(f.filename).name}:{f.lineno} in {f.name}" for f in traceback.extract_tb(error.__traceback__)[-4:]]}
             update(manifest["stage"], "Execution failed; inspect local prerequisites and retry. No finding generated.", "failed")
+            finish_evidence_gap(folder, manifest, update,
+                f"{manifest['stage']} could not complete ({type(error).__name__}); saved model and retrieval audits retain the failure. No financial finding was accepted.",
+                failed_stage=manifest["stage"])
         finally:
             with self.lock:
                 self.active = None
@@ -141,24 +148,69 @@ def execute(folder, manifest, config, update):
            artifacts=["discovery/discovery_report.json"],
            source_count=len(report["search_results"]), retrieval_status=report["retrieval_status"])
     update("machine_evidence", "Checking retrieved PDFs against canonical issuer declarations and exact passages.")
-    records = machine_records(folder, manifest["company"], config, manifest["prompt"])
+    from .evidence_ingestion import load_registry, verify_company
+    if verify_company(manifest["company"], load_registry(config.registry_path))[2] != "verified":
+        update("machine_evidence", "Company not in the registry: onboarding from its own annual report (public PDF, ISIN self-declaration, hash-pinned).")
+        try:
+            from .company_onboarding import onboard
+            registry, pdf, digest, onboarding = onboard(manifest["company"], folder, config,
+                log=lambda action, **fields: None)
+            config = replace(config, registry_path=registry)
+            manifest["onboarding"] = {"identity": onboarding["identity"], "sha256": digest,
+                "wikidata_isin_cross_check": onboarding["wikidata_isin_cross_check"]}
+            update("machine_evidence", f"Identity read from the original PDF: {onboarding['identity']['canonical_name']} "
+                   f"(ISIN {onboarding['identity']['isin']}, page {onboarding['identity']['page']}); Wikidata cross-check {onboarding['wikidata_isin_cross_check']}.",
+                   artifacts=manifest.get("artifacts", []) + ["onboarding_report.json", "run_registry.json"])
+            records = onboarded_records(pdf, digest, manifest["company"], config, manifest["prompt"])
+        except Exception as error:
+            update("machine_evidence", f"Issuer onboarding could not establish eligible original evidence ({type(error).__name__}).", "blocked",
+                   artifacts=manifest.get("artifacts", []) + (["onboarding_report.json"] if (folder / "onboarding_report.json").exists() else []))
+            finish_evidence_gap(folder, manifest, update, "Issuer identity could not be resolved from a retrieved or supplied original PDF. Research stopped before F1; no company-specific financial conclusion is justified.")
+            return
+    else:
+        records = machine_records(folder, manifest["company"], config, manifest["prompt"])
     if not records:
         update("machine_evidence", "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled.")
         records = cached_machine_records(folder, manifest["company"], config, manifest["prompt"])
     if not records:
         update("machine_evidence", "No retrieved or pinned cached original passed source/issuer checks. See machine_evidence_report.json for the exact failures.", "blocked", artifacts=manifest.get("artifacts", []) + ["machine_evidence_report.json"])
+        finish_evidence_gap(folder, manifest, update, "No original passed company identity and evidence eligibility checks. Discovery candidates remain unverified leads; F1, R1 and model investigation did not run.")
         return
     evidence = folder / "eligible_evidence"
     evidence.mkdir()
     (evidence / "evidence.jsonl").write_text("".join(json.dumps(r) + "\n" for r in records))
     config = replace(config, evidence_dir=evidence, output_dir=folder)
-    if not config.api_key:
+    from .llm_client import model_configured, local_model_status
+    if not model_configured(config):
         update("f1", "F1 model credential unavailable; eligible evidence retained.", "blocked")
+        return
+    ready, why = local_model_status(config)
+    if not ready:
+        update("f1", why, "blocked", artifacts=manifest.get("artifacts", []))
         return
     from .f1_research_angle_selector import run as f1
     from .r1_research_investigator import run as r1
     update("f1", "Running F1 on policy-eligible evidence.")
     result = f1(manifest["company"], config.csv_path, folder / "f1.json", config, research_question=manifest["prompt"])
+    fallback_path = folder / "f1_fallback.json"
+    if fallback_path.is_file():
+        fallback_record = json.loads(fallback_path.read_text(encoding="utf-8"))
+        manifest["f1_ranking_provenance"] = fallback_record
+        if fallback_record.get("used"):
+            update("f1", "F1 model ranking was unreliable; deterministic evidence-grounded planning fallback used. This is a research plan, not a verified financial finding.",
+                   artifacts=manifest.get("artifacts", []) + ["f1.json", "f1_fallback.json", "f1_model_output.json", "eligible_evidence/evidence.jsonl"])
+        elif fallback_record.get("blocked"):
+            manifest["artifacts"] = manifest.get("artifacts", []) + ["f1_fallback.json"]
+            update("f1", "F1 model ranking was unusable and fallback stopped because eligible company-specific evidence did not match any contest angle.", artifacts=manifest["artifacts"])
+        else:
+            manifest["artifacts"] = manifest.get("artifacts", []) + ["f1_fallback.json"]
+            update("f1", "F1 used its model-generated ranking; no financial finding is implied.", artifacts=manifest["artifacts"])
+    for retry in ((2,) if config.provider.strip().lower() == "ollama" else (2, 3)):  # local inference is slow
+        # The model's own reliability flag varies between identical runs; re-ask, never override it.
+        if result.get("ranking_reliable"):
+            break
+        update("f1", f"F1 judged its ranking unreliable; re-running (attempt {retry}).")
+        result = f1(manifest["company"], config.csv_path, folder / "f1.json", config, research_question=manifest["prompt"])
     if not result.get("ranking_reliable"):
         update("f1", "F1 returned no reliable recommendation. R1 not run.", "blocked", artifacts=manifest["artifacts"] + ["f1.json", "eligible_evidence/evidence.jsonl"])
         return
@@ -168,7 +220,20 @@ def execute(folder, manifest, config, update):
     investigation = run_investigation(folder, manifest["company"], manifest["prompt"], plan, config, update)
     update("complete", f"Investigation finished: {investigation['status']} / {investigation['evidence_strength']}. Inspect the claim checks and limitations.", "completed",
            investigation=investigation,
-           artifacts=manifest["artifacts"] + ["eligible_evidence/evidence.jsonl", "f1.json", "r1.json", "investigation.json", "investigation_review.json"])
+           artifacts=manifest["artifacts"] + ["eligible_evidence/evidence.jsonl", "f1.json", "r1.json", "investigation.json", "investigation_review.json", "investigation_report.md"])
+
+
+def finish_evidence_gap(folder, manifest, update, reason, failed_stage=None):
+    from .investigation import evidence_gap_report
+    result = evidence_gap_report(folder, manifest["company"], manifest["prompt"], reason, failed_stage=failed_stage)
+    update("complete", "Evidence-gap report saved. No verified financial finding; inspect execution stages and limitations.", "completed",
+        investigation=result, artifacts=list(dict.fromkeys(manifest.get("artifacts", []) + ["investigation.json", "investigation_report.md"])))
+
+
+def onboarded_records(pdf, digest, company, config, research_question=None):
+    from .machine_evidence import create_machine_evidence
+    return create_machine_evidence(pdf, company, config, expected_sha256=digest, max_records=16,
+                                   research_question=research_question)
 
 
 def machine_records(folder, company, config, research_question=None):

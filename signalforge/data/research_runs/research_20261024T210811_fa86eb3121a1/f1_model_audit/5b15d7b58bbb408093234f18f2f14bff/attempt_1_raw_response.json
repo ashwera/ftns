@@ -1,0 +1,38 @@
+{
+  "company_name": "Hindalco Industries Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": {
+      "start": "2023-05-01",
+      "end": "2024-03-31"
+    },
+    "missing_information": [
+      "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+      "No source/document provenance fields identified."
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+      "No source/document provenance fields identified."
+    ]
+  },
+  "ranking_reliable": false,
+  "ranking_limitation": "No company-specific rows could be selected using a verified identifier. The dataset profile does not provide company-specific evidence, and no row-level identifiers support company-level evidence. The research readiness matrix across all categories (renewable transition, capacity conversion, hidden relationships) indicates 'not_ready' due to the absence of company-identifiable rows and missing provenance fields. Without verified, direct, company-level data, any claims about renewable transition or project commissioning cannot be tested or validated, and no candidate can be objectively ranked. External evidence from financial disclosures is not sufficient to establish a testable, evidence-based research angle in this dataset.",
+  "ranked_candidates": [],
+  "recommended_candidate_id": null
+}

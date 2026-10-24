@@ -1,0 +1,160 @@
+{
+  "status": "rejected",
+  "headline": "Hindalco's project status disclosures lack explicit dates for commissioning or commercial operations, and no independent regulatory or operator evidence confirms operational status of downstream capacity expansions.",
+  "summary": "The investigation found that Hindalco's disclosures do not specify commissioning or commercial operation dates for key downstream projects, including battery foil, copper recycling, and aluminium extrusion facilities. While some project milestones are reported (e.g., Silvassa extrusion plant commissioned in 2022, Chakan plant operational by Q2 FY 2024–25), no independent regulatory or operator records validate the operational status of these projects. The absence of verified operational timelines for greenfield projects and the lack of alignment between announced capacity and operational status result in a failure to confirm financial materiality of disclosures.",
+  "why_it_matters": [
+    "Lack of clear operational timelines creates ambiguity around project realization and revenue generation timelines.",
+    "No independent validation undermines credibility of reported milestones and may indicate underperformance or undisclosed exposure.",
+    "Investors rely on timely and accurate disclosures; gaps in verification risk misinformed investment decisions.",
+    "Regulatory bodies require confirmation of operational status for infrastructure projects; absence of such records raises compliance and transparency concerns.",
+    "Failure to distinguish between announced capacity and operational capacity may mislead stakeholders on actual project progress."
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "The Silvassa extrusion plant was commissioned in 2022 and is operational.",
+      "assessment": "supported",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "ev_b4b16e736883ef0de560ba0d",
+          "quote": "Commissioned in 2022, Silvassa is the country's first fully automated extrusions plant."
+        },
+        {
+          "evidence_id": "ev_836e5c74111ba3cda78bda80",
+          "quote": "The state-of-the-art extrusion facility at Silvassa was successfully commissioned with a capacity of 34 KT, adding to our overall downstream capacity."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "text": "A 20 KT precipitate hydrate plant is planned to start production in FY 2024–25.",
+      "assessment": "supported",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "ev_157588baa44fe21c7d244306",
+          "quote": "We are in process of commissioning a precipitate (PPT) hydrate plant with a capacity of 20 KT and aim to start production in FY 2024–25."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "text": "The Chakan battery enclosures plant is set to be operational by Q2 of FY 2024–25.",
+      "assessment": "supported",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "ev_f4a003fa4a60009b1018f261",
+          "quote": "The Chakan battery enclosures plant is set to be operational by Q2 of FY 2024–25."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "text": "A $4.1 billion integrated greenfield rolling and recycling center is scheduled to be commissioned by the second half of CY 2026.",
+      "assessment": "supported",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "ev_f6bf8fc87e968143f61c184e",
+          "quote": "The largest project is a $4.1 billion integrated greenfield rolling and recycling center in Bay Minette to commission by the second half of CY 2026."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "text": "No official commissioning or operational date is provided for copper recycling or other greenfield projects.",
+      "assessment": "contradicted",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "ev_89a3c0da5b4119a3ad90bf1a",
+          "quote": "No direct mention of commercial operation date for copper recycling project."
+        },
+        {
+          "evidence_id": "ev_24f65cfcb51b0b8059510d0b",
+          "quote": "No project-specific commissioning or commercial operation date provided."
+        },
+        {
+          "evidence_id": "ev_d88979f05ff6a63183348a8f",
+          "quote": "No milestone dates for greenfield capacity expansion."
+        },
+        {
+          "evidence_id": "ev_3193e95f1b356d7907290939",
+          "quote": "No official status classification for capacity beyond 'in progress' or 'planned'."
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "text": "No independent regulatory or operator records confirm operational status of any downstream capacity expansion project.",
+      "assessment": "contradicted",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "ev_dd54912f60e5319f278cdd44",
+          "quote": "Commissioning dates for greenfield projects not explicitly stated."
+        },
+        {
+          "evidence_id": "ev_9d0caaf9f68e19f138bdbc43",
+          "quote": "No official milestones or dates reported for specific projects."
+        },
+        {
+          "evidence_id": "ev_925778119ac92976d727ed24",
+          "quote": "No commissioning or operational status defined for any project beyond general statements."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2022",
+      "event": "Silvassa extrusion plant was commissioned and is operational.",
+      "evidence_ids": [
+        "ev_b4b16e736883ef0de560ba0d",
+        "ev_836e5c74111ba3cda78bda80"
+      ]
+    },
+    {
+      "date": "Q2 FY 2024–25",
+      "event": "Chakan battery enclosures plant is set to be operational.",
+      "evidence_ids": [
+        "ev_f4a003fa4a60009b1018f261"
+      ]
+    },
+    {
+      "date": "FY 2024–25",
+      "event": "Precipitate (PPT) hydrate plant aims to start production.",
+      "evidence_ids": [
+        "ev_157588baa44fe21c7d244306"
+      ]
+    },
+    {
+      "date": "Second half of CY 2026",
+      "event": "Bay Minette greenfield rolling and recycling center is scheduled to be commissioned.",
+      "evidence_ids": [
+        "ev_f6bf8fc87e968143f61c184e"
+      ]
+    }
+  ],
+  "calculations": [],
+  "counterargument": {
+    "text": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+    "evidence_ids": [
+      "r1_plan.alternative_explanation"
+    ]
+  },
+  "falsification": "The defined comparison is reconciled on a consistent period, entity, unit and reporting basis, with independent records supporting the disclosed position. The absence of such records for key projects fails this test.",
+  "limitations": [
+    "No independent regulatory or operator evidence was retrieved to validate project operational status.",
+    "No project-level details on commercial operation dates were found in public disclosures or independent sources.",
+    "The 'in progress' or 'planned' descriptions lack precise milestones or definitions of commissioning or commercial operation.",
+    "The provided passages do not contain data on actual capacity utilization or production output post-commissioning.",
+    "The investigation was restricted to excerpts from the specified documents, with no access to third-party reports or regulatory filings."
+  ],
+  "follow_up_queries": [
+    "Search for official commissioning or operational certificates from the Ministry of Mines or Ministry of Power for Hindalco's Silvassa and Bay Minette facilities.",
+    "Retrieve independent reports from industry analysts (e.g., S&P Global, IHS Markit) on copper recycling or aluminium extrusion capacity utilization in India"
+  ]
+}

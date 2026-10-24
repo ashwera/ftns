@@ -1,0 +1,16 @@
+{
+  "stage": "f1",
+  "provider": "ollama",
+  "model": "signalforge-qwen",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "validated",
+      "corrections": []
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "validated",
+  "accepted_attempt": 1
+}

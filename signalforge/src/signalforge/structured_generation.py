@@ -50,7 +50,7 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
             # Invalid JSON/empty model content can be repaired once; never retry
             # authentication, missing configuration, or network failures here.
             if not str(error).startswith(("Model returned invalid JSON", "Model returned an empty response")):
-                entry.update(status="provider_error", error_type=type(error).__name__)
+                entry.update(status="provider_error", error_type=type(error).__name__, error_detail=str(error).replace(secret, "[redacted]")[:300] if secret else str(error)[:300])
                 write("summary.json", summary)
                 raise
             raw = None
@@ -60,6 +60,8 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
             write(f"attempt_{attempt}_raw_response.json", raw)
             try:
                 output = copy.deepcopy(raw)
+                if isinstance(output, dict):
+                    output.pop("$schema", None)  # models often echo the schema URI; carries no content
                 corrections = normalize(output) if normalize else []
                 validate(output)
                 if invariants is not None and preserve:

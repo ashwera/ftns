@@ -40,6 +40,45 @@ class Opener:
 
 
 class DiscoveryTests(unittest.TestCase):
+    def test_empty_strict_filter_revisits_distinct_penalized_leads_only(self):
+        provider = sd.FixtureSearch({'*': {'results': [
+            {'url':'https://news.example/meridian/company-profile?utm_source=x', 'title':'Meridian company profile'},
+            {'url':'https://news.example/meridian/company-profile', 'title':'Meridian company profile'},
+            {'url':'https://jobs.example/meridian-careers', 'title':'Meridian careers'},
+            {'url':'https://other.example/annual.pdf', 'title':'Other issuer annual report', 'confirmed_wrong_company':True,
+             'snippet':'Meridian Energy annual report'},
+        ]}})
+        provider.execution_mode = 'real'
+        with tempfile.TemporaryDirectory() as tmp:
+            page = Path(tmp)/'snapshot.html'
+            page.write_text('<html><p>Meridian Energy reports renewable generation and commissioned capacity.</p></html>')
+            retrieval = {'retrieved_count':1, 'sources':[{'retrieval_status':'retrieved','source_sha256':'abc', 'saved_path':str(page)}]}
+            with patch.object(sd.public_sources, 'retrieve_urls', return_value=retrieval) as fetch:
+                report = sd.discover('Meridian Energy', 'capacity', provider=provider,
+                    budget=sd.Budget(max_queries=1), retrieve=True, output_dir=Path(tmp)/'run')
+        self.assertEqual(report['search_results'], [])
+        self.assertEqual(report['fallback_candidate_count'], 1)
+        self.assertEqual(fetch.call_count, 1)
+        lead = report['fallback_candidates'][0]
+        self.assertEqual(lead['relevance_penalty'], 35)
+        self.assertFalse(lead['evidence_eligible'])
+        self.assertEqual(lead['content_inspection'][0]['status'], 'content_relevant_unverified_lead')
+        self.assertEqual(report['company_identity_status'], 'unresolved')
+
+    def test_strict_match_disables_borderline_lane_and_content_mismatch_fails_closed(self):
+        provider = sd.FixtureSearch({'*': {'results': [
+            {'url':'https://meridian.example/annual-report.pdf', 'title':'Meridian annual report'},
+            {'url':'https://news.example/meridian/profile', 'title':'Meridian company profile'}]}})
+        report = sd.discover('Meridian Energy', 'capacity', provider=provider, budget=sd.Budget(max_queries=1))
+        self.assertFalse(report['fallback_used'])
+        self.assertEqual(report['fallback_candidates'], [])
+        with tempfile.TemporaryDirectory() as tmp:
+            page = Path(tmp)/'snapshot.html'; page.write_text('<html>Unrelated Company annual report capacity</html>')
+            lead = {'retrieval_report':{'sources':[{'retrieval_status':'retrieved', 'saved_path':str(page)}]}}
+            self.assertEqual(sd.inspect_lead_content(lead,'Meridian Energy','capacity')[0]['status'], 'rejected_content_mismatch')
+            page.unlink()
+            self.assertEqual(sd.inspect_lead_content(lead,'Meridian Energy','capacity')[0]['status'], 'extraction_failed')
+
     def test_duckduckgo_lite_links_only_and_challenge_handling(self):
         class HTMLResponse(Response):
             status = 200
@@ -302,6 +341,100 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(ranked[0]["source_class"], "primary_issuer")
         self.assertTrue(all(r["independent_group_id"] is None for r in ranked))
 
+    def test_angle_queries_cover_each_contest_angle_and_stay_short(self):
+        long_topic = "Investigate Powergrid's narrative " * 20
+        queries = sd.build_queries("Power Grid Corporation of India Limited", long_topic)
+        self.assertTrue(all(q.startswith('"POWERGRID"') for q in queries))  # compact token: engines match it
+        self.assertTrue(sd.build_queries("Hindalco Industries Limited", "capacity")[0].startswith('"Hindalco Industries"'))
+        joined = " | ".join(queries[:4])
+        self.assertIn("commissioned capacity", joined)
+        self.assertIn("renewable generation share", joined)
+        self.assertIn("subsidiaries", joined)
+        for angle, expected in (("announced versus commissioned capacity MW", "commissioned"),
+                                ("renewable generation revenue mix", "generation"),
+                                ("subsidiaries counterparties financing", "subsidiar")):
+            q = sd.build_queries("Example Power", angle)
+            self.assertTrue(any(expected in x for x in q[:3]), angle)
+        self.assertTrue(all(len(q) < 400 for q in queries[:4]))
+
+    def test_relevant_vs_irrelevant_hits_need_company_and_topic(self):
+        company, topic = "Power Grid Corporation of India Limited", "renewable capacity commissioning"
+        good = {"url": "https://www.powergrid.in/annual-report.pdf", "title": "POWERGRID Annual Report 2024-25"}
+        bad = [{"url": "https://help.example.com/powergrid-software-support", "title": "Powergrid software help"},
+               {"url": "https://jobs.example.com/powergrid-careers", "title": "Powergrid jobs"},
+               {"url": "https://example.com/powergrid/login", "title": "Powergrid login"},
+               {"url": "https://www.bing.com/search?q=powergrid", "title": "Powergrid - Bing"},
+               {"url": "https://blog.example.com/lifestyle", "title": "Powergrid mentioned in a cooking blog"},
+               {"url": "https://app.powerbi.com/", "title": "Power BI"}]
+        self.assertTrue(sd.result_relevance(good, company, topic)[0])
+        for hit in bad:
+            self.assertFalse(sd.result_relevance(hit, company, topic)[0], hit["url"])
+        self.assertEqual(sd.result_relevance(bad[4], company, topic)[1],
+                         "company_mentioned_but_no_investigative_topic_signal")
+
+    def test_irrelevant_hits_filtered_before_retrieval_and_audited(self):
+        provider = sd.FixtureSearch({"*": {"results": [
+            {"url": "https://www.powergrid.in/annual-report.pdf", "title": "POWERGRID Annual Report"},
+            {"url": "https://jobs.example.com/powergrid-careers", "title": "Powergrid jobs"},
+            {"url": "https://blog.example.com/x", "title": "Powergrid cooking"}]}})
+        provider.execution_mode = "real"
+        with tempfile.TemporaryDirectory() as tmp, patch.object(sd.public_sources, "retrieve_urls",
+                return_value={"retrieved_count": 1, "sources": []}) as fetch:
+            report = sd.discover("Power Grid Corporation of India Limited", "renewable capacity",
+                provider=provider, budget=sd.Budget(max_queries=1), retrieve=True, output_dir=Path(tmp) / "r")
+        self.assertEqual((report["returned_result_count"], report["relevant_result_count"],
+                          report["rejected_result_count"]), (3, 1, 2))
+        self.assertEqual(fetch.call_args.args[0], ["https://www.powergrid.in/annual-report.pdf"])
+        for rejected in report["rejected_results"]:
+            self.assertIn("url", rejected["result"])
+            self.assertTrue(rejected["rejection_reason"])
+
+    def test_issuer_copy_is_not_independent_and_press_is_only_a_candidate(self):
+        hits = [{"url": "https://companiesmarketcap.com/power-grid/annual-reports/", "title": "Power Grid Annual Reports"},
+                {"url": "https://www.bseindia.com/xml-data/powergrid-annual-report.pdf", "title": "Power Grid Annual Report"},
+                {"url": "https://www.powergrid.in/results.pdf", "title": "Power Grid results"},
+                {"url": "https://cea.nic.in/commissioning.pdf", "title": "Power Grid commissioning"},
+                {"url": "https://www.reuters.com/powergrid-renewable", "title": "Power Grid renewable capacity delay"}]
+        ranked = {r["url"]: r for r in sd.rank_urls(hits, issuer_domains=["powergrid.in"])}
+        by_host = {sd.urllib.parse.urlsplit(u).hostname: r for u, r in ranked.items()}
+        self.assertFalse(by_host["companiesmarketcap.com"]["independent_candidate"])
+        self.assertEqual(by_host["companiesmarketcap.com"]["independence_hint"], "issuer_copy_or_derived_third_party_host")
+        self.assertFalse(by_host["www.bseindia.com"]["independent_candidate"])
+        self.assertFalse(by_host["www.powergrid.in"]["independent_candidate"])
+        self.assertEqual(by_host["cea.nic.in"]["source_class"], "government_regulator")
+        self.assertFalse(by_host["cea.nic.in"]["independent_candidate"])
+        self.assertTrue(by_host["www.reuters.com"]["independent_candidate"])
+        self.assertTrue(all(r["independent_group_id"] is None and r["retrieval_status"] == "not_requested"
+                            for r in ranked.values()))
+
+    def test_duplicate_urls_with_tracking_params_www_and_fragment_collapse(self):
+        ranked = sd.rank_urls([
+            {"url": "https://www.example.com/a.pdf?utm_source=x#p1"},
+            {"url": "https://example.com/a.pdf"}, {"url": "https://example.com/a.pdf?id=2"}])
+        self.assertEqual(len(ranked), 2)
+
+    def test_empty_results_and_engine_errors_are_logged_and_next_query_runs(self):
+        class Flaky:
+            name, execution_mode = "flaky", "fixture/replay"
+            def __init__(self): self.calls = 0
+            def search(self, query, *, timeout):
+                self.calls += 1
+                if self.calls == 1: raise sd.SearchError("HTTP 429")
+                if self.calls == 2: return {"results": [], "executed_queries": [query]}
+                return {"results": [{"url": "https://www.powergrid.in/annual-report.pdf", "title": "Annual Report"}],
+                        "executed_queries": [query]}
+        report = sd.discover("Power Grid Corporation of India Limited", "capacity", provider=Flaky(),
+                             budget=sd.Budget(max_queries=3))
+        self.assertEqual(len(report["search_queries"]), 3)
+        self.assertEqual(len(report["errors"]), 1)
+        self.assertEqual(report["relevant_result_count"], 1)
+        self.assertIn("search_no_results", [a["action"] for a in report["action_log"]])
+        self.assertEqual(report["finding_status"], "no_finding")
+        empty = sd.discover("Example Power", "capacity", provider=sd.FixtureSearch({"*": {"results": []}}),
+                            budget=sd.Budget(max_queries=2))
+        self.assertEqual(empty["discovery_status"], "no_relevant_candidates")
+        self.assertEqual(empty["search_results"], [])
+
     def test_fixture_log_result_and_query_budgets(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "fresh"
@@ -363,6 +496,21 @@ class DiscoveryTests(unittest.TestCase):
                 self.assertEqual(sd.main(args), 0)
                 self.assertEqual(sd.main(args), 2)
             self.assertIn("fixture/replay", stdout.getvalue())
+
+
+class BingMarketTest(unittest.TestCase):
+    def test_bing_rss_request_pins_market_and_query(self):
+        rss = b"<rss><channel><item><title>POWERGRID Annual Report</title><link>https://www.powergrid.in/a.pdf</link></item></channel></rss>"
+        class R(Response):
+            def __init__(self): self.data = rss
+        class O:
+            def open(self, request, timeout):
+                self.url = request.full_url
+                return R()
+        opener = O()
+        out = sd.BingRSSSearch(opener=opener, fallback=False).search("POWERGRID annual report", timeout=2)
+        self.assertIn("mkt=en-US", opener.url)
+        self.assertEqual(out["results"][0]["url"], "https://www.powergrid.in/a.pdf")
 
 
 if __name__ == "__main__":

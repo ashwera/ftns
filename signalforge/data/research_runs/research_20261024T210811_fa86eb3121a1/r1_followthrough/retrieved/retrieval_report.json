@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T21:44:55.644099+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T21:44:55.635923+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "redirect_chain": [],
+      "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+      "content_type": "text/html; charset=utf-8",
+      "saved_path": "signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/r1_followthrough/retrieved/sources/44665fd75ebf_e87f0164.html",
+      "document_title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "companies": [
+    {
+      "canonical_name": "Hindalco Industries Limited",
+      "verified_identifier": "INE038A01020",
+      "identifiers": [
+        "INE038A01020"
+      ],
+      "aliases": [
+        "Hindalco Industries",
+        "Hindalco Industries Limited"
+      ],
+      "verification_source": "pdf-sha256:c240197af93764075ec641d91dec5c8daa3ffc46975774ce9133b6c935f23ca0#page=185",
+      "verification_source_type": "issuer_annual_report_self_declaration",
+      "verification_status": "verified",
+      "verification_excerpt": "before 31st August, 2025\n3) Listing details:\na) Equity shares\nStock Exchange ISIN Stock code Reuters Bloomberg\nBSE Limited [\u201cBSE\u201d]\nPhiroze Jeejeebhoy Towers\nDalal Street, Mumbai \u2013 400 001\nINE038A01020\n500440 HALC.BO HNDL IN\nNational Stock Exchange of India Limited \n[\u201cNSE\u201d]\n\u201cExchange Plaza\u201d, Plot No. C-1,\nBlock G, Bandra-Kurla Complex,\nBandra (East), Mumbai - 400 051\nHINDALCO HALC.NS NHNDL IN\nb) Global Depository Receipts [\u201cGDRs\u201d]\nStock Exchange ISIN Overseas \nDepository\nDomestic Custodian Reuter",
+      "note": "Machine-read from the original PDF; Wikidata ISIN cross-check unavailable. Not an exchange registry entry and not human reviewed."
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "company_name": "Hindalco Industries Limited",
+  "candidate_id": "fallback_capacity_conversion",
+  "hypothesis": "Do dated project disclosures distinguish announced capacity from capacity that reached commissioning or commercial operation?",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the announced, under-implementation, and commissioned capacity for aluminium, copper, and specialty alumina by project, facility, and timeline?",
+      "metrics": [
+        "announced capacity",
+        "under-implementation capacity",
+        "commissioned capacity"
+      ],
+      "periods": [
+        "FY 2023–24",
+        "FY 2024–25",
+        "FY 2025–26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Project-level capacity announcements by facility type and date",
+        "Independent verification of capacity status (commissioned vs. under-implementation)",
+        "Detailed timeline for each project with capacity milestones"
+      ]
+    },
+    {
+      "question": "What are the target, trial operation, and commercial operation dates for downstream projects such as battery foil, greenfield refineries, and extrusion facilities?",
+      "metrics": [
+        "target operation date",
+        "trial operation date",
+        "commercial operation date"
+      ],
+      "periods": [
+        "FY 2023–24",
+        "FY 2024–25",
+        "FY 2025–26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Officially filed operation milestones by project",
+        "Publicly available commissioning announcements or regulatory filings",
+        "Date-specific progression from planning to commissioning"
+      ]
+    },
+    {
+      "question": "How do capacity disclosures align across project announcements, investor presentations, and annual reports over time?",
+      "metrics": [
+        "project status",
+        "capacity progression",
+        "milestone progression"
+      ],
+      "periods": [
+        "Announcement (2023)",
+        "Update (2024)",
+        "Final Commissioning (2025–2026)"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Consistent metric definitions across disclosures",
+        "Standardized reporting units (e.g., KT, KTPA)",
+        "Cross-disciplinary validation of reported capacity"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_b4b16e736883ef0de560ba0d",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": null,
+      "kind": "reported_fact",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_f6bf8fc87e968143f61c184e",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": null,
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_157588baa44fe21c7d244306",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": null,
+      "kind": "inference",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_836e5c74111ba3cda78bda80",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": null,
+      "kind": "reported_fact",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": "ev_f4a003fa4a60009b1018f261",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": null,
+      "kind": "reported_fact",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Locate and extract all public project disclosures (annual reports, investor presentations, filings) by Hindalco Industries Limited with clearly dated milestones.",
+      "expected_evidence": "Company filings with project-level capacity announcements and milestones (e.g., announcement, trial, commissioning dates).",
+      "cross_validation_sources": [
+        "Hindalco annual report 2023–24",
+        "Hindalco investor presentation Q4 FY 2023",
+        "Hindalco’s disclosures on SEC or stock exchange filings"
+      ],
+      "calculation": null,
+      "completion_criteria": "Evidence found and verified in a public, official document with dated project status and capacity disclosures."
+    },
+    {
+      "step": "Identify and retrieve official records from independent regulatory or system operators confirming commissioning of projects (e.g., power, smelter, manufacturing facilities).",
+      "expected_evidence": "Official operational milestones or commissioning notices from NTPC, power grid operators, or ministry of new and renewable energy.",
+      "cross_validation_sources": [
+        "NTPC commissioning bulletins",
+        "Ministry of New and Renewable Energy (MNRE) reports",
+        "Department of Industrial Policy and Promotion (DIPP) project status records"
+      ],
+      "calculation": null,
+      "completion_criteria": "At least one independent, publicly accessible record confirms a project's commissioning or operational status beyond internal disclosures."
+    },
+    {
+      "step": "Standardize and reconcile metrics across all project disclosures (capacity, units, timeline) to ensure consistent definitions (e.g., KT, KTPA, MW).",
+      "expected_evidence": "A consolidated table of project status with capacity, milestones, and standardized units.",
+      "cross_validation_sources": [
+        "Annual report 2023–24",
+        "Company website project timeline",
+        "Investor presentation deck"
+      ],
+      "calculation": "Standardize units to kilotonnes (KT) or kilotonnes per annum (KTPA); map metrics to consistent time periods (FY 2023–24 to FY 2026).",
+      "completion_criteria": "All project metrics are standardized and mapped to a consistent period and unit basis, with verified definitions."
+    },
+    {
+      "step": "Cross-check the reported project status (announced, under-implementation, commissioned) with independent records and prior disclosures.",
+      "expected_evidence": "Corroboration that announced capacity has progressed to commissioning or remained under-implementation.",
+      "cross_validation_sources": [
+        "Publicly available commissioning press releases",
+        "Third-party analyst reports on project progress",
+        "Prior-year disclosures in investor updates"
+      ],
+      "calculation": null,
+      "completion_criteria": "A clear distinction is established between announced and commissioned capacity with at least one independent verification."
+    }
+  ],
+  "alternative_explanation": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+  "falsification_test": "The defined comparison is reconciled on a consistent period, entity, unit and reporting basis, with independent records supporting the disclosed position."
+}

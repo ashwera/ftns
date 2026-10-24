@@ -1,0 +1,65 @@
+{
+  "company_name": "Meridian Power Limited",
+  "candidate_id": "sim_capacity_conversion",
+  "hypothesis": "[capacity_conversion] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence. SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "Do the disclosed figures reconcile on a common basis and period?",
+      "metrics": [
+        "as disclosed in the supplied evidence"
+      ],
+      "periods": [
+        "latest disclosed"
+      ],
+      "supported_by_dataset": true,
+      "missing": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_111111111111111111111111",
+      "source_type": "ingested_annual_report_text",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limit",
+      "claim_supported": "[capacity_conversion] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "kind": "unverified_hypothesis",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "annual_report_or_exchange_filing",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "[capacity_conversion] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Locate each input in the primary filing",
+      "expected_evidence": "page/table with value, unit, period, basis",
+      "cross_validation_sources": [
+        "exchange filing",
+        "regulator data"
+      ],
+      "calculation": null,
+      "completion_criteria": "every input has a verification result"
+    },
+    {
+      "step": "Compute the comparison with deterministic code",
+      "expected_evidence": "calculation trace",
+      "cross_validation_sources": [],
+      "calculation": "see signals module",
+      "completion_criteria": "compatibility checks pass"
+    }
+  ],
+  "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+  "falsification_test": "Figures fail to reconcile on a common basis and period."
+}

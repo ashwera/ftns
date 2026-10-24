@@ -1,0 +1,20 @@
+{
+  "stage": "investigation_initial",
+  "provider": "ollama",
+  "model": "signalforge-qwen",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "rejected",
+      "validation_error": "Citation ID 'ev_b4b16e736883ef0de560ba0d' was not supplied; cite exactly one of these passage ids: ['src_44665fd75ebfa8f0_p0_0', 'src_44665fd75ebfa8f0_p0_1800', 'src_44665fd75ebfa8f0_p0_3600', 'src_44665fd75ebfa8f0_p0_5400', 'src_44665fd75ebfa8f0_p0_7200', 'src_8636e77e1bc788b7_p0_0', 'src_8636e77e1bc788b7_p0_1800', 'src_8636e77e1bc788b7_p0_19800', 'src_8636e77e1bc788b7_p0_21600', 'src_8636e77e1bc788b7_p0_3600', 'src_8636e77e1bc788b7_p0_5400', 'src_8636e77e1bc788b7_p0_7200', 'src_8636e77e1bc788b7_p0_9000', 'src_c240197af9376407_p137_5400', 'src_c240197af9376407_p152_0', 'src_c240197af9376407_p184_0', 'src_c240197af9376407_p193_1800', 'src_c240197af9376407_p194_0', 'src_c240197af9376407_p23_0', 'src_c240197af9376407_p62_3600', 'src_c240197af9376407_p98_3600']"
+    },
+    {
+      "attempt": 2,
+      "status": "rejected",
+      "validation_error": "Citation ID 'ev_f6bf8fc87e968143f61c184e' was not supplied; cite exactly one of these passage ids: ['src_44665fd75ebfa8f0_p0_0', 'src_44665fd75ebfa8f0_p0_1800', 'src_44665fd75ebfa8f0_p0_3600', 'src_44665fd75ebfa8f0_p0_5400', 'src_44665fd75ebfa8f0_p0_7200', 'src_8636e77e1bc788b7_p0_0', 'src_8636e77e1bc788b7_p0_1800', 'src_8636e77e1bc788b7_p0_19800', 'src_8636e77e1bc788b7_p0_21600', 'src_8636e77e1bc788b7_p0_3600', 'src_8636e77e1bc788b7_p0_5400', 'src_8636e77e1bc788b7_p0_7200', 'src_8636e77e1bc788b7_p0_9000', 'src_c240197af9376407_p137_5400', 'src_c240197af9376407_p152_0', 'src_c240197af9376407_p184_0', 'src_c240197af9376407_p193_1800', 'src_c240197af9376407_p194_0', 'src_c240197af9376407_p23_0', 'src_c240197af9376407_p62_3600', 'src_c240197af9376407_p98_3600']"
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "rejected"
+}

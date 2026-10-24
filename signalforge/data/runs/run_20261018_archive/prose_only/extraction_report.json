@@ -1,0 +1,37 @@
+{
+  "run_status": "completed",
+  "generated_at": "2026-10-17T21:26:30.472300+00:00",
+  "parser_version": "layer1-deterministic-0.2.0",
+  "schema_version": "1.0",
+  "extractor": "deterministic regex; no model, no network",
+  "input": {
+    "evidence_path": "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/evidence.jsonl",
+    "evidence_sha256": "d7a4808c829e7d19620324df0c9ed4b23f588d4e9948da17119e7ef339447c84",
+    "source_records_path": "/Users/ashwera/Documents/ftns/signalforge/data/processed_step6/source_records.jsonl"
+  },
+  "output_dir": "signalforge/data/runs/run_20261018_archive/prose_only",
+  "input_record_count": 8241,
+  "processed_chunk_count": 8241,
+  "failed_chunk_count": 0,
+  "chunks_with_claims": 579,
+  "chunks_with_zero_claims": 7662,
+  "zero_claims_empty_or_unparsed": 1494,
+  "zero_claims_no_extractable_claim": 6168,
+  "total_claims": 4423,
+  "claims_by_status": {
+    "extracted": 6,
+    "ambiguous": 100,
+    "needs_review": 4317
+  },
+  "claims_needing_attention": 4417,
+  "schema_validation_failures": 0,
+  "chunks_with_rejected_claims": 0,
+  "duplicate_claims_skipped": 0,
+  "review_queue_entries": 4417,
+  "error_summary": [],
+  "error_summary_truncated": false,
+  "notes": [
+    "Claims are extracted candidates and carry claim_verification_status 'unverified'; extraction is not verification.",
+    "Entity is copied from the evidence record and not independently certified."
+  ]
+}

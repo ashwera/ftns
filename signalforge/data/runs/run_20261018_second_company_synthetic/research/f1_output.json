@@ -1,0 +1,184 @@
+{
+  "company_name": "Meridian Power Limited",
+  "dataset_summary": {
+    "row_count": 0,
+    "columns": [],
+    "date_coverage": null,
+    "missing_information": [
+      "live model ranking"
+    ],
+    "data_limitations": [
+      "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "sim_capacity_conversion",
+      "rank": 1,
+      "category": "capacity_conversion",
+      "hypothesis": "[capacity_conversion] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "financial_importance": "Placeholder from the simulated stand-in; not a model judgement.",
+      "metrics_and_periods": [
+        "as disclosed in the supplied evidence"
+      ],
+      "evidence_found": [
+        {
+          "statement": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limit",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:3:block:1",
+          "evidence_id": "ev_111111111111111111111111",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ],
+      "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+      "falsification_condition": "Figures fail to reconcile on a common basis and period.",
+      "data_risks_and_limitations": [
+        "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "evidence_availability": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "simulated"
+        }
+      },
+      "weighted_score": 50.0,
+      "weighted_score_rationale": "simulated; f1.weighted_score over fixed placeholder scores",
+      "next_research_action": "Retrieve the primary filings and verify the inputs."
+    },
+    {
+      "candidate_id": "sim_hidden_relationships",
+      "rank": 2,
+      "category": "hidden_relationships",
+      "hypothesis": "[hidden_relationships] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "financial_importance": "Placeholder from the simulated stand-in; not a model judgement.",
+      "metrics_and_periods": [
+        "as disclosed in the supplied evidence"
+      ],
+      "evidence_found": [
+        {
+          "statement": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limit",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:3:block:1",
+          "evidence_id": "ev_111111111111111111111111",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ],
+      "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+      "falsification_condition": "Figures fail to reconcile on a common basis and period.",
+      "data_risks_and_limitations": [
+        "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "evidence_availability": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "simulated"
+        }
+      },
+      "weighted_score": 50.0,
+      "weighted_score_rationale": "simulated; f1.weighted_score over fixed placeholder scores",
+      "next_research_action": "Retrieve the primary filings and verify the inputs."
+    },
+    {
+      "candidate_id": "sim_renewable_transition",
+      "rank": 3,
+      "category": "renewable_transition",
+      "hypothesis": "[renewable_transition] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "financial_importance": "Placeholder from the simulated stand-in; not a model judgement.",
+      "metrics_and_periods": [
+        "as disclosed in the supplied evidence"
+      ],
+      "evidence_found": [
+        {
+          "statement": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025. • As on 31 March 2025, Meridian Power Limit",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:3:block:1",
+          "evidence_id": "ev_111111111111111111111111",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ],
+      "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+      "falsification_condition": "Figures fail to reconcile on a common basis and period.",
+      "data_risks_and_limitations": [
+        "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "evidence_availability": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "simulated"
+        }
+      },
+      "weighted_score": 50.0,
+      "weighted_score_rationale": "simulated; f1.weighted_score over fixed placeholder scores",
+      "next_research_action": "Retrieve the primary filings and verify the inputs."
+    }
+  ],
+  "recommended_candidate_id": "sim_capacity_conversion"
+}

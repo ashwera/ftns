@@ -209,7 +209,8 @@ def run_pipeline(company, claims_path, evidence_path, inputs_path, run_dir, *, r
     bundle["evidence_records"] = [by_id[eid] for eid in source_ids]
     RB.write_bundle(bundle, run / "bundle")
     _stage(stages, "evidence_bundle", "real", f"{len(bundle['claims'])} claims / {len(bundle['evidence_records'])} chunks selected for F1/R1 (bounded)")
-    cfg = Config(); live_ready = bool(cfg.api_key) and not simulate_llm
+    cfg = Config(); from .llm_client import model_configured
+    live_ready = model_configured(cfg) and not simulate_llm
     if live_ready or simulate_llm:
         fr = RB.run_f1_r1(target.name, run / "bundle", run / "research", config=dataclasses.replace(cfg, registry_path=Path(registry_path)), simulate=simulate_llm)
     else:

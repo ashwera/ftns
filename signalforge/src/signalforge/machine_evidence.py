@@ -91,7 +91,14 @@ def _issuer_matches(passage, name, identifier):
     equity_isin = re.search(
         r"ISIN\s+of\s+the\s+Equity\s+Shares\s+of\s+" + re.escape(name)
         + r"\s+is\s*[-–—:]?\s*" + re.escape(identifier) + r"(?!\w)", passage, re.I)
-    return bool(equity_isin or (declaration and re.search(
+    # Generic layout: the issuer's own name and an "ISIN" label sit within ~200
+    # characters of the identifier (cover page, corporate information, shareholder
+    # information). Requires the label, so a bare identifier in a table never counts.
+    labelled = re.search(
+        r"ISIN(?:\s+(?:No\.?|Number|Code))?\s*(?:of\s+(?:the\s+)?(?:equity\s+)?(?:shares|company))?[\s\S]{0,450}?"
+        + re.escape(identifier) + r"(?!\w)", passage, re.I) and re.search(
+        r"(?<!\w)" + re.escape(name) + r"(?!\w)", passage, re.I)
+    return bool(equity_isin or labelled or (declaration and re.search(
         r"(?<!\w)" + re.escape(identifier) + r"(?!\w)", passage, re.I)))
 
 

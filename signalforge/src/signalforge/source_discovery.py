@@ -119,16 +119,60 @@ def build_queries(company, topic, domains=(), date_window=None, evidence_gaps=()
     # Short brand phrases avoid engines collapsing long legal names to 'Power'.
     brand = re.sub(r"\b(limited|ltd|company|of|india|inc|plc|private|pvt)\b", " ", company, flags=re.I)
     brand = " ".join(brand.split()) or company.strip()
+    brand = _compact_generic_brand(brand)
     base = json.dumps(brand)
     terms = _search_terms(topic)
     gaps = [_search_terms(g) for g in evidence_gaps if isinstance(g, str) and g.strip()]
     queries = [f"{base} {gap} filetype:pdf" for gap in gaps[:2]]
     queries += [f"{base} annual report site:{d} filetype:pdf" for d in domains]
-    queries += [f"{base} annual report filetype:pdf", f"{base} {terms} filetype:pdf",
+    queries += [f"{base} annual report filetype:pdf"]
+    # Short angle queries first: long narrative prompts make engines drift off-company.
+    queries += [f"{base} {q}" for q in angle_queries(topic, evidence_gaps)]
+    queries += [f"{base} {terms} filetype:pdf",
                 f"{base} {terms} regulator government filetype:pdf",
                 f"{base} {terms} delay cancellation contradiction"]
     queries += [f"{base} {gap} filetype:pdf" for gap in gaps[2:]]
     return list(dict.fromkeys(q + suffix for q in queries))
+
+
+ANGLE_QUERIES = {
+    "capacity": ("commissioned capacity MW commercial operation declared COD",
+                 "renewable capacity announced target versus commissioned MW CEA MNRE",
+                 "project delay commissioning shortfall renewable capacity"),
+    "mix": ("renewable generation share revenue mix segment results",
+            "renewable energy generation percent of total generation FY"),
+    "relationships": ("subsidiaries joint ventures related party transactions",
+                      "financing borrowings counterparties material subsidiary"),
+}
+_ANGLE_WORDS = {
+    "capacity": r"capacity|commission|announce|\bMW\b|\bGW\b|\bCOD\b|target|pipeline|renewable|solar|wind",
+    "mix": r"generation|revenue|mix|share|narrative|segment|green|transition",
+    "relationships": r"subsidiar|counterpart|financ|related|joint venture|borrow|lender|offtak",
+}
+
+
+def topic_angles(topic, evidence_gaps=()):
+    text = " ".join([topic, *[g for g in evidence_gaps if isinstance(g, str)]])
+    found = [a for a, rx in _ANGLE_WORDS.items() if re.search(rx, text, re.I)]
+    return found + [a for a in ANGLE_QUERIES if a not in found]  # all three, requested first
+
+
+def angle_queries(topic, evidence_gaps=()):
+    """Interleave the angles so a small query budget still covers each one."""
+    lists = [ANGLE_QUERIES[a] for a in topic_angles(topic, evidence_gaps)]
+    return [q[i] for i in range(3) for q in lists if i < len(q)]
+
+
+def _compact_generic_brand(brand):
+    """Engines collapse 'Power Grid Corporation' to generic 'Power'; the compact issuer
+    token (POWERGRID) is what they match. Only for names made purely of generic words."""
+    words = re.findall(r"[A-Za-z0-9]+", brand)
+    generic = {"power", "grid", "energy", "electric", "electricity", "national", "green", "solar",
+               "hydro", "thermal", "renewable", "corporation", "corp"}
+    core = [w for w in words if w.casefold() not in {"corporation", "corp"}]
+    if len(core) >= 2 and all(w.casefold() in generic for w in core):
+        return "".join(core).upper()
+    return brand
 
 
 def _search_terms(text):
@@ -367,7 +411,7 @@ class BingRSSSearch:
 
     def _search_rss(self, query, *, timeout=20):
         search_url = urllib.parse.urlunsplit(("https", "www.bing.com", "/search",
-            urllib.parse.urlencode({"format": "rss", "q": query}), ""))
+            urllib.parse.urlencode({"format": "rss", "mkt": "en-US", "q": query}), ""))  # no market => junk results
         request = urllib.request.Request(search_url, headers={
             "User-Agent": public_sources.USER_AGENT, "Accept": "application/rss+xml,application/xml"})
         try:
@@ -483,16 +527,22 @@ def rank_urls(results, *, issuer_domains=(), authority_domains=None, topic=""):
         if not _public_url(url):
             continue
         p = urllib.parse.urlsplit(url)
-        normalized = urllib.parse.urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path or "/", p.query, ""))
-        if normalized in seen:
+        query = urllib.parse.urlencode([(k, v) for k, v in urllib.parse.parse_qsl(p.query)
+                                        if not k.lower().startswith(("utm_", "fbclid", "gclid"))])
+        normalized = urllib.parse.urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path or "/", query, ""))
+        dedupe_key = normalized.replace("//www.", "//", 1)  # keep the fetched URL as returned
+        if dedupe_key in seen:
             continue
-        seen.add(normalized)
+        seen.add(dedupe_key)
         host = p.hostname.lower()
         kind = "unknown"
         if _matches(host, issuer_domains):
             kind = "primary_issuer"
         else:
             kind = next((v for d, v in authorities.items() if _matches(host, [d])), "unknown")
+        hint, candidate = classify_independence(result, issuer_domains)
+        if kind == "unknown" and hint == "government_regulator_or_industry_data":
+            kind = "government_regulator"
         title = str(result.get("title", ""))
         score = {"primary_issuer": 50, "government_regulator": 45,
                  "exchange_hosted_issuer_copy": 40, "industry": 25}.get(kind, 10)
@@ -504,7 +554,10 @@ def rank_urls(results, *, issuer_domains=(), authority_domains=None, topic=""):
         score += 6 * sum(w.casefold() in match_text for w in set(_search_terms(topic).split()))
         years = [int(y) for y in re.findall(r"\b(20\d{2})\b", match_text)]
         score += max((max(0, min(10, y - 2015)) for y in years), default=0)
-        ranked.append({**result, "url": normalized, "source_class": kind, "rank_score": score,
+        score += 12 if hint == "candidate_independent_press_or_industry" else 0
+        score -= 10 if hint == "issuer_copy_or_derived_third_party_host" else 0
+        ranked.append({**result, "url": normalized, "source_class": kind,
+                       "independence_hint": hint, "independent_candidate": candidate, "rank_score": score,
                        "classification_status": "unverified_host_hint", "publisher": None,
                        "publication_date": None, "issuer_submitted": None, "derived_from": [],
                        "independent_group_id": None, "retrieval_status": "not_requested"})
@@ -551,6 +604,127 @@ def company_relevance(result, company, issuer_domains=()):
     if len(acronym_words) >= 3 and len(acronym) >= 3 and acronym in tokens:
         return True, "company_derived_acronym_match_unverified"
     return False, "no_distinctive_company_token_brand_or_issuer_domain_match"
+
+
+_NOISE = (r"\b(help|support|knowledge[- ]?base|community|forum|download[- ]?center|login|log[- ]?in|sign[- ]?(in|up)|"
+          r"jobs?|careers?|vacanc\w*|hiring|recruit\w*|resume|salary|interview|template|tutorial|"
+          r"software|app store|play\.google|stock[- ]?(tips|price today)|share[- ]?price[- ]?today)\b")
+_TOPIC_SIGNAL = (r"capacity|\bmw\b|\bgw\b|commission|renewable|solar|wind|hydro|generation|subsidiar|"
+                 r"report|filing|annual[ _/-]*report|financial|results|tariff|order|petition|regulator|transmission|"
+                 r"related[ _-]party|borrowing|joint[ _-]venture|investor|presentation|\.pdf")
+
+
+def result_relevance(result, company, topic="", issuer_domains=()):
+    """Company AND investigative-topic screen; lexical hint, never verification."""
+    accepted, reason = company_relevance(result, company, issuer_domains)
+    if not accepted:
+        return False, reason
+    p = urllib.parse.urlsplit(result["url"])
+    text = urllib.parse.unquote(p.hostname + p.path) + " " + str(result.get("title", ""))
+    if re.search(_NOISE, text, re.I):
+        return False, "noise_software_help_job_login_or_template_page"
+    if _search_snippet_copy(result):
+        return False, "copied_search_snippet_not_a_document"
+    if p.path in {"", "/"} and not str(result.get("title", "")).strip():
+        return True, reason  # nothing to assess; ranking penalizes bare home pages
+    terms = {w.casefold() for w in _search_terms(topic).split() if len(w) > 3}
+    if re.search(_TOPIC_SIGNAL, text, re.I) or any(t in text.casefold() for t in terms):
+        return True, reason
+    return False, "company_mentioned_but_no_investigative_topic_signal"
+
+
+def _search_snippet_copy(result):
+    host = (urllib.parse.urlsplit(result.get("url", "")).hostname or "").lower()
+    return _matches(host, ["bing.com", "google.com", "duckduckgo.com", "yahoo.com"])
+
+
+def borderline_leads(rejections, company, topic, issuer_domains=(), limit=3):
+    """Revisit safe near misses only; ranking is never evidence acceptance."""
+    leads = []
+    core = re.sub(r"\b(limited|ltd|inc|plc|private|pvt)\b", " ", company, flags=re.I)
+    core = " ".join(core.casefold().split())
+    for rejection in rejections:
+        hit = rejection.get("result")
+        if not isinstance(hit, dict) or not _public_url(hit.get("url")):
+            continue
+        reason = rejection.get("rejection_reason")
+        if reason not in {"company_mentioned_but_no_investigative_topic_signal", "no_distinctive_company_token_brand_or_issuer_domain_match"}:
+            continue
+        text = urllib.parse.unquote(hit["url"]) + " " + str(hit.get("title", ""))
+        if re.search(_NOISE, text, re.I) or _search_snippet_copy(hit) or hit.get("confirmed_wrong_company"):
+            continue
+        host = urllib.parse.urlsplit(hit["url"]).hostname
+        company_match = company_relevance(hit, company, issuer_domains)[0]
+        snippet = " ".join(str(hit.get("snippet", "")).casefold().split())
+        snippet_match = len(core) >= 5 and bool(re.search(r"(?<!\w)" + re.escape(core) + r"(?!\w)", snippet))
+        promising = research_document_hint(hit) or _matches(host, GOVERNMENT + EXCHANGES + PRESS_INDUSTRY)
+        profile = bool(re.search(r"about|profile|business|compan", text, re.I))
+        if not ((company_match and (promising or profile)) or (snippet_match and promising)):
+            continue
+        leads.append({**hit, "relevance_penalty": 35,
+            "relevance_reason": reason + "; retrieved content must establish company and topic relevance",
+            "discovery_tier": "borderline_research_lead", "evidence_eligible": False})
+    ranked = rank_urls(leads, issuer_domains=issuer_domains, topic=topic)
+    for lead in ranked:
+        lead["rank_score"] -= lead["relevance_penalty"]
+    return sorted(ranked, key=lambda r: (-r["rank_score"], r["url"]))[:limit]
+
+
+def inspect_lead_content(hit, company, topic):
+    """Read actual retrieved text; keep all results unverified research leads."""
+    from .source_catalog import read_pages
+    from .evidence_ingestion import _html_records
+    outcomes = []
+    for source in hit.get("retrieval_report", {}).get("sources", []):
+        if source.get("retrieval_status") != "retrieved":
+            continue
+        path = Path(source["saved_path"])
+        try:
+            if path.suffix.lower() in {".html", ".htm"}:
+                rows, _ = _html_records(path, path.name)
+                text = " ".join(row.excerpt_or_fact for row in rows)
+            else:
+                pages, _ = read_pages(path)
+                text = " ".join(page["text"] for page in pages)
+            matched = company_relevance({"url": "https://document-check.example/", "title": text}, company)[0]
+            topical = bool(re.search(_TOPIC_SIGNAL, text, re.I))
+            outcomes.append({"sha256": source.get("source_sha256"), "company_text_match": matched,
+                "topic_text_match": topical, "status": "content_relevant_unverified_lead" if matched and topical else "rejected_content_mismatch",
+                "evidence_eligible": False})
+        except Exception:
+            outcomes.append({"status": "extraction_failed", "evidence_eligible": False})
+    hit["content_inspection"] = outcomes
+    hit["evidence_eligible"] = False
+    return outcomes
+
+
+GOVERNMENT = ("cea.nic.in", "cercind.gov.in", "mnre.gov.in", "powermin.gov.in", "grid-india.in",
+              "posoco.in", "sebi.gov.in", "nic.in", "gov.in", "iea.org", "irena.org")
+EXCHANGES = ("bseindia.com", "nseindia.com")
+PRESS_INDUSTRY = ("reuters.com", "economictimes.indiatimes.com", "livemint.com", "business-standard.com",
+                  "thehindubusinessline.com", "mercomindia.com", "ieefa.org", "ember-energy.org",
+                  "downtoearth.org.in", "carboncopy.info", "pv-magazine-india.com")
+ISSUER_COPY_HOSTS = ("companiesmarketcap.com", "screener.in", "moneycontrol.com", "marketscreener.com",
+                     "scribd.com", "annualreports.com", "tickertape.in", "trendlyne.com")
+
+
+def classify_independence(result, issuer_domains=()):
+    """Host-based hint. Only press/industry hosts are *candidate* independents; a third
+    party hosting the issuer's own filing is issuer-derived, not independent."""
+    host = (urllib.parse.urlsplit(result.get("url", "")).hostname or "").lower()
+    text = (str(result.get("title", "")) + " " + result.get("url", "")).lower()
+    filing_like = bool(re.search(r"annual[ _/-]*report|financial[ _/-]*result|investor|presentation|filing", text))
+    if _matches(host, [_domain(d) for d in issuer_domains]) or (not issuer_domains and re.search(r"ntpc\.co\.in|powergrid\.in", host)):
+        return "issuer_filing", False
+    if _matches(host, EXCHANGES):
+        return "issuer_filing_via_exchange", False
+    if _matches(host, ISSUER_COPY_HOSTS) or (filing_like and not _matches(host, GOVERNMENT + PRESS_INDUSTRY)):
+        return "issuer_copy_or_derived_third_party_host", False
+    if _matches(host, GOVERNMENT):
+        return "government_regulator_or_industry_data", False
+    if _matches(host, PRESS_INDUSTRY):
+        return "candidate_independent_press_or_industry", True
+    return "unclassified", False
 
 
 class _PublicOpener:
@@ -609,6 +783,7 @@ def discover(company, topic, *, provider, budget=None, domains=(), issuer_domain
               "evidence_gaps": gaps, "research_document_count": 0,
               "site_seeds": site_seeds, "site_discovered_count": 0,
               "site_rejected_results": [],
+              "fallback_used": False, "fallback_candidate_count": 0, "fallback_candidates": [],
               "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
               "limitations": ["Search results and host classifications are unverified.",
                               "Provider internal searches are not a hard billing budget.",
@@ -649,7 +824,7 @@ def discover(company, topic, *, provider, budget=None, domains=(), issuer_domain
             report["returned_result_count"] += len(found)
             relevant = []
             for hit in found:
-                accepted, reason = (company_relevance(hit, company, issuer_domains)
+                accepted, reason = (result_relevance(hit, company, topic, issuer_domains)
                                     if isinstance(hit, dict) else (False, "malformed_result"))
                 if accepted:
                     relevant.append({**hit, "query": query, "relevance_reason": reason})
@@ -683,7 +858,7 @@ def discover(company, topic, *, provider, budget=None, domains=(), issuer_domain
     if site_seeds and output and provider.execution_mode == "real" and budget.max_site_pages:
         links = _site_links(site_seeds, output, budget, deadline, log)
         for hit in links:
-            accepted, reason = company_relevance(hit, company, issuer_domains)
+            accepted, reason = result_relevance(hit, company, topic, issuer_domains)
             if accepted:
                 hits.append({**hit, "relevance_reason": reason})
                 report["site_discovered_count"] += 1
@@ -697,9 +872,21 @@ def discover(company, topic, *, provider, budget=None, domains=(), issuer_domain
         report["research_document_count"] = sum(research_document_hint(h) for h in report["search_results"])
         report["discovery_status"] = ("unverified_relevant_candidates" if report["search_results"] else "no_relevant_candidates")
         log("site_discovery_completed", accepted_link_count=report["site_discovered_count"])
+    # Strict results always win. Only an empty strict result set enables this
+    # separate lead lane; it cannot set issuer identity or evidence eligibility.
+    retrieval_candidates = report["search_results"]
+    if not retrieval_candidates:
+        leads = borderline_leads(report["rejected_results"] + report["site_rejected_results"],
+                                 company, topic, issuer_domains, min(3, budget.max_results))
+        report.update(fallback_used=bool(leads), fallback_candidate_count=len(leads), fallback_candidates=leads)
+        retrieval_candidates = leads
+        if leads:
+            report["discovery_status"] = "borderline_research_leads_only"
+            log("borderline_fallback", reason="Zero strict-filter matches; 35-point relevance penalty; content and identity checks still required", candidates=leads)
     if retrieve:
         report["retrieval_status"] = "no_results"
-        for hit in report["search_results"][:budget.max_fetches]:
+        seen_content = set()
+        for hit in retrieval_candidates[:budget.max_fetches]:
             if time.monotonic() >= deadline:
                 report["stop_reason"] = "time_budget"
                 break
@@ -710,12 +897,18 @@ def discover(company, topic, *, provider, budget=None, domains=(), issuer_domain
                     opener=_PublicOpener(deadline), source_relationship="unknown")
                 hit["retrieval_status"] = "retrieved" if retrieval["retrieved_count"] else "failed"
                 hit["retrieval_report"] = retrieval
+                digests = {s.get("source_sha256") for s in retrieval.get("sources", []) if s.get("retrieval_status") == "retrieved"} - {None}
+                if digests and digests <= seen_content:
+                    hit.update(retrieval_status="duplicate_content", evidence_eligible=False)
+                seen_content.update(digests)
+                if hit.get("discovery_tier") == "borderline_research_lead":
+                    inspect_lead_content(hit, company, topic)
                 log("retrieval_completed", url=hit["url"], report=retrieval)
             except Exception:
                 hit["retrieval_status"] = "failed"
                 report["errors"].append({"url": hit["url"], "error": "Retrieval failed"})
                 log("retrieval_failed", url=hit["url"])
-        statuses = [h["retrieval_status"] for h in report["search_results"]]
+        statuses = [h["retrieval_status"] for h in retrieval_candidates]
         report["retrieval_status"] = ("retrieved" if "retrieved" in statuses else
                                       "failed" if "failed" in statuses else "not_attempted")
     log("discovery_stopped", reason=report["stop_reason"])

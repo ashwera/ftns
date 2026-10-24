@@ -1,0 +1,238 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 0,
+    "columns": [],
+    "date_coverage": null,
+    "missing_information": [
+      "live model ranking"
+    ],
+    "data_limitations": [
+      "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "sim_capacity_conversion",
+      "rank": 1,
+      "category": "capacity_conversion",
+      "hypothesis": "[capacity_conversion] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "financial_importance": "Placeholder from the simulated stand-in; not a model judgement.",
+      "metrics_and_periods": [
+        "as disclosed in the supplied evidence"
+      ],
+      "evidence_found": [
+        {
+          "statement": "\"S No.\",Name of Statue,\"Nature of Dues\",\"Forum where dispute ispending\",\"Period to which the amount relates (Financial Year)\",\"Gross Disputed Amount (` Crore)\",",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:257:block:2",
+          "evidence_id": "ev_13a7cf49b48e341bc8ee643c",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Int",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:91:block:1",
+          "evidence_id": "ev_2484a0e981c95b1829d91ac3",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "\"DIRECTORS’ REPORT Dear Members, Financial Year ended 31 March 2025, the Auditors’ report, and comments of the Comptroller and Auditor General On behalf of the ",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:90:block:1",
+          "evidence_id": "ev_252ddc5ca75aa6a8bc871cb1",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ],
+      "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+      "falsification_condition": "Figures fail to reconcile on a common basis and period.",
+      "data_risks_and_limitations": [
+        "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "simulated"
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "simulated"
+        }
+      },
+      "weighted_score": 65.0,
+      "weighted_score_rationale": "simulated; f1.weighted_score over fixed placeholder scores",
+      "next_research_action": "Retrieve the primary filings and verify the inputs."
+    },
+    {
+      "candidate_id": "sim_hidden_relationships",
+      "rank": 2,
+      "category": "hidden_relationships",
+      "hypothesis": "[hidden_relationships] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "financial_importance": "Placeholder from the simulated stand-in; not a model judgement.",
+      "metrics_and_periods": [
+        "as disclosed in the supplied evidence"
+      ],
+      "evidence_found": [
+        {
+          "statement": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Int",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:91:block:1",
+          "evidence_id": "ev_2484a0e981c95b1829d91ac3",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "\"DIRECTORS’ REPORT Dear Members, Financial Year ended 31 March 2025, the Auditors’ report, and comments of the Comptroller and Auditor General On behalf of the ",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:90:block:1",
+          "evidence_id": "ev_252ddc5ca75aa6a8bc871cb1",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "\"in India, Bangladesh and Nepal. In the current year (FY25), During FY25, NVVN has traded 2572 MUs of energy for NVVN has also been designated as the nodal agen",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:113:block:1",
+          "evidence_id": "ev_4853865267b3a07e3a09d4b6",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ],
+      "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+      "falsification_condition": "Figures fail to reconcile on a common basis and period.",
+      "data_risks_and_limitations": [
+        "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "simulated"
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "simulated"
+        }
+      },
+      "weighted_score": 65.0,
+      "weighted_score_rationale": "simulated; f1.weighted_score over fixed placeholder scores",
+      "next_research_action": "Retrieve the primary filings and verify the inputs."
+    },
+    {
+      "candidate_id": "sim_renewable_transition",
+      "rank": 3,
+      "category": "renewable_transition",
+      "hypothesis": "[renewable_transition] Reported narrative and disclosed figures can be compared for consistency using the supplied evidence.",
+      "financial_importance": "Placeholder from the simulated stand-in; not a model judgement.",
+      "metrics_and_periods": [
+        "as disclosed in the supplied evidence"
+      ],
+      "evidence_found": [
+        {
+          "statement": "\"Your Company being one of the top 500 listed companies 8. Commercial Performance in the Country in terms of market capitalization, has voluntarily provided Int",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:91:block:1",
+          "evidence_id": "ev_2484a0e981c95b1829d91ac3",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "\"DIRECTORS’ REPORT Dear Members, Financial Year ended 31 March 2025, the Auditors’ report, and comments of the Comptroller and Auditor General On behalf of the ",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:90:block:1",
+          "evidence_id": "ev_252ddc5ca75aa6a8bc871cb1",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "\"in India, Bangladesh and Nepal. In the current year (FY25), During FY25, NVVN has traded 2572 MUs of energy for NVVN has also been designated as the nodal agen",
+          "source_type": "ingested_annual_report_text",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "page:113:block:1",
+          "evidence_id": "ev_4853865267b3a07e3a09d4b6",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "primary-source check of every figure",
+        "independent corroboration"
+      ],
+      "alternative_explanation": "Definitions or reporting bases may differ between disclosures.",
+      "falsification_condition": "Figures fail to reconcile on a common basis and period.",
+      "data_risks_and_limitations": [
+        "SIMULATED: deterministic stand-in, no model call; ordering reflects evidence counts only."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "simulated"
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "simulated"
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "simulated"
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "simulated"
+        }
+      },
+      "weighted_score": 65.0,
+      "weighted_score_rationale": "simulated; f1.weighted_score over fixed placeholder scores",
+      "next_research_action": "Retrieve the primary filings and verify the inputs."
+    }
+  ],
+  "recommended_candidate_id": "sim_capacity_conversion"
+}

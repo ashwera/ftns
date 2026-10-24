@@ -1,0 +1,1502 @@
+{
+  "company": "Hindalco Industries Limited",
+  "topic": "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure.",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+    "\"Hindalco Industries\" annual report filetype:pdf"
+  ],
+  "search_results": [],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T22:15:32.806053+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T22:15:33.500462+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T22:15:33.500862+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.502568+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/",
+        "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.503296+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+        "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.503902+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+        "title": "Hindalco Industries - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.504351+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+        "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.504736+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+        "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.505132+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+        "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "copied_search_snippet_not_a_document"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.505532+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://onehindalco.adityabirla.com/",
+        "title": "Aditya Birla Group - Hindalco Business Application Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.505801+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+        "title": "Hindalco CRM | Login",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.506318+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+        "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.506670+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+        "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T22:15:33.506908+00:00",
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "results": [
+        {
+          "url": "https://www.hindalco.com/",
+          "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+          "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+          "title": "Hindalco Industries - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+          "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+          "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+          "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://onehindalco.adityabirla.com/",
+          "title": "Aditya Birla Group - Hindalco Business Application Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+          "title": "Hindalco CRM | Login",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+          "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+          "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T22:15:33.507200+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T22:15:33.908808+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T22:15:33.909863+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.910756+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/",
+        "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.911349+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+        "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.911846+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+        "title": "Hindalco Industries - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.912334+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+        "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.912649+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+        "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.912873+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+        "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "copied_search_snippet_not_a_document"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.913137+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://onehindalco.adityabirla.com/",
+        "title": "Aditya Birla Group - Hindalco Business Application Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.913446+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+        "title": "Hindalco CRM | Login",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.913888+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+        "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T22:15:33.914328+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+        "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T22:15:33.914753+00:00",
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://www.hindalco.com/",
+          "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+          "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+          "title": "Hindalco Industries - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+          "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+          "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+          "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://onehindalco.adityabirla.com/",
+          "title": "Aditya Birla Group - Hindalco Business Application Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+          "title": "Hindalco CRM | Login",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+          "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+          "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Hindalco Industries\" annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "borderline_fallback",
+      "at": "2026-10-24T22:15:33.917670+00:00",
+      "reason": "Zero strict-filter matches; 35-point relevance penalty; content and identity checks still required",
+      "candidates": [
+        {
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+          "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved",
+          "relevance_penalty": 35,
+          "relevance_reason": "company_mentioned_but_no_investigative_topic_signal; retrieved content must establish company and topic relevance",
+          "discovery_tier": "borderline_research_lead",
+          "evidence_eligible": false,
+          "source_class": "unknown",
+          "independence_hint": "unclassified",
+          "independent_candidate": false,
+          "rank_score": -25,
+          "classification_status": "unverified_host_hint",
+          "publisher": null,
+          "publication_date": null,
+          "issuer_submitted": null,
+          "derived_from": [],
+          "independent_group_id": null,
+          "retrieval_status": "retrieved",
+          "retrieval_report": {
+            "generated_at": "2026-10-24T22:15:34.570111+00:00",
+            "requested_count": 1,
+            "retrieved_count": 1,
+            "failed_count": 0,
+            "sources": [
+              {
+                "requested_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                "retrieval_status": "retrieved",
+                "retrieved_at": "2026-10-24T22:15:34.559690+00:00",
+                "warnings": [
+                  "Publication date not established from recognized page metadata; retrieval time is not substituted."
+                ],
+                "robots_checks": [
+                  {
+                    "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                    "status": "robots.txt retrieved"
+                  }
+                ],
+                "http_status": 200,
+                "canonical_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                "redirect_chain": [],
+                "source_sha256": "3e9f1a9e119eb65075851b1c1ba0dc3ff3db0ee19fa65082b373907fcb6d7881",
+                "content_type": "text/html; charset=utf-8",
+                "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/3e9f1a9e119e_7a211c58.html",
+                "document_title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+                "publication_date": null,
+                "source_relationship": "unknown",
+                "company_association_status": "not_requested"
+              }
+            ],
+            "normalized_evidence_record_count": 1,
+            "duplicate_documents": [],
+            "conflicts": [],
+            "manual_review_count": 1
+          },
+          "content_inspection": [
+            {
+              "sha256": "3e9f1a9e119eb65075851b1c1ba0dc3ff3db0ee19fa65082b373907fcb6d7881",
+              "company_text_match": true,
+              "topic_text_match": true,
+              "status": "content_relevant_unverified_lead",
+              "evidence_eligible": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+          "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved",
+          "relevance_penalty": 35,
+          "relevance_reason": "company_mentioned_but_no_investigative_topic_signal; retrieved content must establish company and topic relevance",
+          "discovery_tier": "borderline_research_lead",
+          "evidence_eligible": false,
+          "source_class": "unknown",
+          "independence_hint": "unclassified",
+          "independent_candidate": false,
+          "rank_score": -25,
+          "classification_status": "unverified_host_hint",
+          "publisher": null,
+          "publication_date": null,
+          "issuer_submitted": null,
+          "derived_from": [],
+          "independent_group_id": null,
+          "retrieval_status": "retrieved",
+          "retrieval_report": {
+            "generated_at": "2026-10-24T22:15:34.818290+00:00",
+            "requested_count": 1,
+            "retrieved_count": 1,
+            "failed_count": 0,
+            "sources": [
+              {
+                "requested_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                "retrieval_status": "retrieved",
+                "retrieved_at": "2026-10-24T22:15:34.810605+00:00",
+                "warnings": [
+                  "Publication date not established from recognized page metadata; retrieval time is not substituted."
+                ],
+                "robots_checks": [
+                  {
+                    "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                    "status": "robots.txt retrieved"
+                  }
+                ],
+                "http_status": 200,
+                "canonical_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                "redirect_chain": [],
+                "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+                "content_type": "text/html; charset=utf-8",
+                "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/44665fd75ebf_e87f0164.html",
+                "document_title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+                "publication_date": null,
+                "source_relationship": "unknown",
+                "company_association_status": "not_requested"
+              }
+            ],
+            "normalized_evidence_record_count": 1,
+            "duplicate_documents": [],
+            "conflicts": [],
+            "manual_review_count": 1
+          },
+          "content_inspection": [
+            {
+              "sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+              "company_text_match": true,
+              "topic_text_match": true,
+              "status": "content_relevant_unverified_lead",
+              "evidence_eligible": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+          "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved",
+          "relevance_penalty": 35,
+          "relevance_reason": "company_mentioned_but_no_investigative_topic_signal; retrieved content must establish company and topic relevance",
+          "discovery_tier": "borderline_research_lead",
+          "evidence_eligible": false,
+          "source_class": "unknown",
+          "independence_hint": "unclassified",
+          "independent_candidate": false,
+          "rank_score": -25,
+          "classification_status": "unverified_host_hint",
+          "publisher": null,
+          "publication_date": null,
+          "issuer_submitted": null,
+          "derived_from": [],
+          "independent_group_id": null,
+          "retrieval_status": "retrieved",
+          "retrieval_report": {
+            "generated_at": "2026-10-24T22:15:35.390805+00:00",
+            "requested_count": 1,
+            "retrieved_count": 1,
+            "failed_count": 0,
+            "sources": [
+              {
+                "requested_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+                "retrieval_status": "retrieved",
+                "retrieved_at": "2026-10-24T22:15:35.378006+00:00",
+                "warnings": [
+                  "Publication date not established from recognized page metadata; retrieval time is not substituted."
+                ],
+                "robots_checks": [
+                  {
+                    "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+                    "status": "robots.txt retrieved"
+                  }
+                ],
+                "http_status": 200,
+                "canonical_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+                "redirect_chain": [],
+                "source_sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+                "content_type": "text/html; charset=utf-8",
+                "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/1201ccc2609a_755083c0.html",
+                "document_title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+                "publication_date": null,
+                "source_relationship": "unknown",
+                "company_association_status": "not_requested"
+              }
+            ],
+            "normalized_evidence_record_count": 1,
+            "duplicate_documents": [],
+            "conflicts": [],
+            "manual_review_count": 1
+          },
+          "content_inspection": [
+            {
+              "sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+              "company_text_match": false,
+              "topic_text_match": true,
+              "status": "rejected_content_mismatch",
+              "evidence_eligible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T22:15:33.918152+00:00",
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T22:15:34.578500+00:00",
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+      "report": {
+        "generated_at": "2026-10-24T22:15:34.570111+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T22:15:34.559690+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "redirect_chain": [],
+            "source_sha256": "3e9f1a9e119eb65075851b1c1ba0dc3ff3db0ee19fa65082b373907fcb6d7881",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/3e9f1a9e119e_7a211c58.html",
+            "document_title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T22:15:34.579191+00:00",
+      "url": "https://www.adityabirla.com/businesses/innovation/aluminium/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T22:15:34.823609+00:00",
+      "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "report": {
+        "generated_at": "2026-10-24T22:15:34.818290+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T22:15:34.810605+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "redirect_chain": [],
+            "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/44665fd75ebf_e87f0164.html",
+            "document_title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T22:15:34.824161+00:00",
+      "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T22:15:35.399809+00:00",
+      "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+      "report": {
+        "generated_at": "2026-10-24T22:15:35.390805+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T22:15:35.378006+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+            "redirect_chain": [],
+            "source_sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/1201ccc2609a_755083c0.html",
+            "document_title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T22:15:35.400255+00:00",
+      "reason": "query_budget"
+    }
+  ],
+  "errors": [
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    }
+  ],
+  "returned_result_count": 20,
+  "relevant_returned_count": 0,
+  "relevant_result_count": 0,
+  "rejected_result_count": 20,
+  "rejected_results": [
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/",
+        "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+        "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+        "title": "Hindalco Industries - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+        "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+        "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+        "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "copied_search_snippet_not_a_document"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://onehindalco.adityabirla.com/",
+        "title": "Aditya Birla Group - Hindalco Business Application Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+        "title": "Hindalco CRM | Login",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+        "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" Reported movements or status differences may reflect timing scope consolidation basis or definitions rather than underperformance or undisclosed exposure. filetype:pdf",
+      "result": {
+        "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+        "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/",
+        "title": "Hindalco Industries Limited \u2013 Leading Aluminium and Copper ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+        "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.m.wikipedia.org/wiki/Hindalco_Industries",
+        "title": "Hindalco Industries - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/hindalcoindustries/HI",
+        "title": "Hindalco Share Price, Hindalco Stock Price, Hindalco Industries Ltd ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+        "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://finance.yahoo.com/quote/HINDALCO.NS/",
+        "title": "Hindalco Industries Limited (HINDALCO.NS) Stock Price, News, Quote ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "copied_search_snippet_not_a_document"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://onehindalco.adityabirla.com/",
+        "title": "Aditya Birla Group - Hindalco Business Application Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://hilweb.adityabirla.com/hilcrm/jsp/login.jsp",
+        "title": "Hindalco CRM | Login",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+        "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    },
+    {
+      "query": "\"Hindalco Industries\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.marketwatch.com/investing/stock/hindalco?countrycode=in",
+        "title": "HINDALCO Stock Price | Hindalco Industries Ltd. Stock Quote (India: NSE ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "company_mentioned_but_no_investigative_topic_signal"
+    }
+  ],
+  "discovery_status": "borderline_research_leads_only",
+  "retrieval_status": "retrieved",
+  "budget": {
+    "max_queries": 2,
+    "max_results": 8,
+    "max_fetches": 3,
+    "max_seconds": 65,
+    "request_timeout": 20,
+    "max_response_bytes": 2097152,
+    "max_site_pages": 3
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "evidence_gaps": [
+    "Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure."
+  ],
+  "research_document_count": 0,
+  "site_seeds": [],
+  "site_discovered_count": 0,
+  "site_rejected_results": [],
+  "fallback_used": true,
+  "fallback_candidate_count": 3,
+  "fallback_candidates": [
+    {
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+      "title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "relevance_penalty": 35,
+      "relevance_reason": "company_mentioned_but_no_investigative_topic_signal; retrieved content must establish company and topic relevance",
+      "discovery_tier": "borderline_research_lead",
+      "evidence_eligible": false,
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": -25,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T22:15:34.570111+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T22:15:34.559690+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited/",
+            "redirect_chain": [],
+            "source_sha256": "3e9f1a9e119eb65075851b1c1ba0dc3ff3db0ee19fa65082b373907fcb6d7881",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/3e9f1a9e119e_7a211c58.html",
+            "document_title": "Hindalco Industries Ltd: Leading Aluminium & Copper Producer",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      },
+      "content_inspection": [
+        {
+          "sha256": "3e9f1a9e119eb65075851b1c1ba0dc3ff3db0ee19fa65082b373907fcb6d7881",
+          "company_text_match": true,
+          "topic_text_match": true,
+          "status": "content_relevant_unverified_lead",
+          "evidence_eligible": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "relevance_penalty": 35,
+      "relevance_reason": "company_mentioned_but_no_investigative_topic_signal; retrieved content must establish company and topic relevance",
+      "discovery_tier": "borderline_research_lead",
+      "evidence_eligible": false,
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": -25,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T22:15:34.818290+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T22:15:34.810605+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+            "redirect_chain": [],
+            "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/44665fd75ebf_e87f0164.html",
+            "document_title": "Aluminium Research | Hindalco Industries Limited | Aditya Birla Group",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      },
+      "content_inspection": [
+        {
+          "sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+          "company_text_match": true,
+          "topic_text_match": true,
+          "status": "content_relevant_unverified_lead",
+          "evidence_eligible": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+      "title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&mkt=en-US&q=%22Hindalco+Industries%22+Reported+movements+or+status+differences+may+reflect+timing+scope+consolidation+basis+or+definitions+rather+than+underperformance+or+undisclosed+exposure.+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "relevance_penalty": 35,
+      "relevance_reason": "company_mentioned_but_no_investigative_topic_signal; retrieved content must establish company and topic relevance",
+      "discovery_tier": "borderline_research_lead",
+      "evidence_eligible": false,
+      "source_class": "unknown",
+      "independence_hint": "unclassified",
+      "independent_candidate": false,
+      "rank_score": -25,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T22:15:35.390805+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T22:15:35.378006+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+            "redirect_chain": [],
+            "source_sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/ashwera/Documents/ftns/signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1/counterevidence_search/retrieved/sources/1201ccc2609a_755083c0.html",
+            "document_title": "Primary metal price | Primary Aluminium | Hindalco Industries Limited",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      },
+      "content_inspection": [
+        {
+          "sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+          "company_text_match": false,
+          "topic_text_match": true,
+          "status": "rejected_content_mismatch",
+          "evidence_eligible": false
+        }
+      ]
+    }
+  ],
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "query_budget"
+}

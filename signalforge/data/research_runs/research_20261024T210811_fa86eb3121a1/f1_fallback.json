@@ -1,0 +1,29 @@
+{
+  "used": true,
+  "reason": "model returned ranking_reliable=false",
+  "method": "For each contest angle, count distinct eligible company evidence IDs whose excerpt, metric name or title contains its fixed keyword list (0-5). Fixed scores: financial significance 4, testability 4 with a match or 2 without, non-obviousness 3; cross-validation potential 0/1/2 for zero/one/two-or-more distinct matching IDs. Apply existing F1 weights and sort by weighted score, then category. At least one angle must cite an eligible record.",
+  "evidence_ids_by_category": {
+    "capacity_conversion": [
+      "ev_b4b16e736883ef0de560ba0d",
+      "ev_f6bf8fc87e968143f61c184e",
+      "ev_157588baa44fe21c7d244306",
+      "ev_836e5c74111ba3cda78bda80",
+      "ev_f4a003fa4a60009b1018f261"
+    ],
+    "hidden_relationships": [
+      "ev_f6bf8fc87e968143f61c184e",
+      "ev_157588baa44fe21c7d244306",
+      "ev_836e5c74111ba3cda78bda80",
+      "ev_f4a003fa4a60009b1018f261",
+      "ev_9d0caaf9f68e19f138bdbc43"
+    ],
+    "renewable_transition": [
+      "ev_b4b16e736883ef0de560ba0d",
+      "ev_f6bf8fc87e968143f61c184e",
+      "ev_89a3c0da5b4119a3ad90bf1a",
+      "ev_9d0caaf9f68e19f138bdbc43"
+    ]
+  },
+  "ranking_type": "deterministic_research_planning_fallback",
+  "financial_finding": false
+}

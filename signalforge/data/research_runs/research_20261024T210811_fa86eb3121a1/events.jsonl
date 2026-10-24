@@ -1,0 +1,26 @@
+{"at": "2026-10-24T21:08:11.285780+00:00", "stage": "discovery", "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."}
+{"at": "2026-10-24T21:08:11.299929+00:00", "stage": "discovery", "message": "Searching with bing_rss; source candidates are unverified."}
+{"at": "2026-10-24T21:08:15.376056+00:00", "stage": "retrieval", "message": "Bounded discovery and retrieval finished."}
+{"at": "2026-10-24T21:08:15.376740+00:00", "stage": "machine_evidence", "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."}
+{"at": "2026-10-24T21:08:15.377457+00:00", "stage": "machine_evidence", "message": "Company not in the registry: onboarding from its own annual report (public PDF, ISIN self-declaration, hash-pinned)."}
+{"at": "2026-10-24T21:08:28.489695+00:00", "stage": "machine_evidence", "message": "Identity read from the original PDF: Hindalco Industries Limited (ISIN INE038A01020, page 185); Wikidata cross-check unavailable."}
+{"at": "2026-10-24T21:08:41.035058+00:00", "stage": "f1", "message": "Running F1 on policy-eligible evidence."}
+{"at": "2026-10-24T21:11:11.594088+00:00", "stage": "f1", "message": "F1 model ranking was unreliable; deterministic evidence-grounded planning fallback used. This is a research plan, not a verified financial finding."}
+{"at": "2026-10-24T21:11:11.609041+00:00", "stage": "r1", "message": "Preparing R1 research plan; a plan is not a verified finding."}
+{"at": "2026-10-24T21:17:26.243189+00:00", "stage": "r1", "message": "Resuming persisted Hindalco run after orchestration restart; F1 fallback output retained."}
+{"at": "2026-10-24T21:21:02.556251+00:00", "stage": "r1", "message": "Execution failed; inspect local prerequisites and retry. No finding generated."}
+{"at": "2026-10-24T21:44:54.571263+00:00", "stage": "investigation", "message": "Searching r1_followthrough: What is the status (announced, under-implementation, commissioned, commercially operational) of downstream capacity expansions by Hindalco as of specific dates,"}
+{"at": "2026-10-24T21:45:14.163274+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-24T21:55:35.833442+00:00", "stage": "investigation", "message": "Investigation stopped at ValueError; inspect saved audit artifacts. No successful report claimed."}
+{"at": "2026-10-24T22:00:24.874049+00:00", "stage": "investigation", "message": "Resuming saved investigation after repairing F1 exact-passage provenance handoff; no onboarding, F1 or R1 repeated."}
+{"at": "2026-10-24T22:00:48.509267+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-24T22:00:51.755824+00:00", "stage": "investigation", "message": "Investigation stopped at LLMError; audit retained. No report completion claimed."}
+{"at": "2026-10-24T22:02:07.705245+00:00", "stage": "investigation", "message": "Resuming saved investigation after repairing F1 exact-passage provenance handoff; no onboarding, F1 or R1 repeated."}
+{"at": "2026-10-24T22:02:27.788007+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-24T22:12:11.407623+00:00", "stage": "investigation", "message": "Investigation stopped at ValueError; audit retained. No report completion claimed."}
+{"at": "2026-10-24T22:15:03.616162+00:00", "stage": "investigation", "message": "Resuming saved investigation after repairing F1 exact-passage provenance handoff; no onboarding, F1 or R1 repeated."}
+{"at": "2026-10-24T22:15:31.192176+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-24T22:15:32.794593+00:00", "stage": "investigation", "message": "Searching counterevidence_search: Reported movements or status differences may reflect timing, scope, consolidation basis or definitions rather than underperformance or undisclosed exposure."}
+{"at": "2026-10-24T22:15:39.483657+00:00", "stage": "complete", "message": "Investigation finished: inconclusive / Weak. Inspect claim checks and limitations."}
+{"at": "2026-10-24T22:18:27.880245+00:00", "stage": "investigation", "message": "Resuming saved investigation after repairing F1 exact-passage provenance handoff; no onboarding, F1 or R1 repeated."}
+{"at": "2026-10-24T22:18:48.146201+00:00", "stage": "investigation", "message": "Comparing 4 original documents and testing the R1 hypothesis."}

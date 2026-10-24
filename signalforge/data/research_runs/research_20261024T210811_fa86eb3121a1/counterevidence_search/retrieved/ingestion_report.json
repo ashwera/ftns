@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T22:15:35.387413+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/1201ccc2609a_755083c0.html",
+      "source_sha256": "1201ccc2609a2b633b8afab512d8b44b6c5105c19cfd97579d23162dcd91f321",
+      "file_format": "html",
+      "source_url": "https://www.hindalco.com/businesses/aluminium/primary-aluminium/primary-metal-price",
+      "retrieved_at": "2026-10-24T22:15:35.378006+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_59258be65a0f81bc1becca43"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_59258be65a0f81bc1becca43",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_59258be65a0f81bc1becca43",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

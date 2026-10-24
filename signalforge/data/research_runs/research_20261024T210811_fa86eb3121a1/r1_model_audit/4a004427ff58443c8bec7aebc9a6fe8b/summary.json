@@ -1,0 +1,20 @@
+{
+  "stage": "r1",
+  "provider": "ollama",
+  "model": "signalforge-qwen",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "rejected",
+      "validation_error": "R1 output failed validation: $: unexpected property 'data_risks_and_limitations'; $/evidence_ledger/0: planned lookup must not contain a URL or excerpt; $/evidence_ledger/1: planned lookup must not contain a URL or excerpt; $/evidence_ledger/2: planned lookup must not contain a URL or excerpt; $/evidence_ledger/3: planned lookup must not contain a URL or excerpt; $/evidence_ledger/4: planned lookup must not contain a URL or excerpt"
+    },
+    {
+      "attempt": 2,
+      "status": "rejected",
+      "validation_error": "R1 output failed validation: $: unexpected property 'data_risks_and_limitations'; $/evidence_ledger/0: planned lookup must not contain a URL or excerpt; $/evidence_ledger/1: planned lookup must not contain a URL or excerpt; $/evidence_ledger/2: planned lookup must not contain a URL or excerpt; $/evidence_ledger/3: planned lookup must not contain a URL or excerpt; $/evidence_ledger/4: planned lookup must not contain a URL or excerpt"
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "rejected"
+}

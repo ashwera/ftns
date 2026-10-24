@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T22:15:34.815489+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/44665fd75ebf_e87f0164.html",
+      "source_sha256": "44665fd75ebfa8f07d8d4401baed8f883fcb1b25951000df7f148b572bbf6be3",
+      "file_format": "html",
+      "source_url": "https://www.adityabirla.com/businesses/innovation/aluminium/",
+      "retrieved_at": "2026-10-24T22:15:34.810605+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_9e0ad11972ce637b3c03e4be"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_9e0ad11972ce637b3c03e4be",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_9e0ad11972ce637b3c03e4be",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

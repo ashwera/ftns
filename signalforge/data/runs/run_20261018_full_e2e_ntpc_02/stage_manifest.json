@@ -1,0 +1,59 @@
+{
+  "run_id": "run_20261018_full_e2e_ntpc_02",
+  "company": {
+    "name": "NTPC Limited",
+    "aliases": [
+      "NTPC"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "stages": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "40942 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "43 claims / 21 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "blocked",
+      "detail": "SIGNALFORGE_API_KEY not configured; live F1 not attempted"
+    },
+    {
+      "stage": "R1",
+      "execution": "not_executed",
+      "detail": "F1 not run"
+    },
+    {
+      "stage": "source_catalog",
+      "execution": "real",
+      "detail": "6 catalog sources: {\"not_retrieved\": 5, \"unreadable\": 1}; network not used"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "7 inputs verified; 0 at primary_source level, 7 at extracted_text_review only; effective outcomes {\"confirmed\": 1, \"partially_supported\": 6}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "6 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "traceability_problems": [],
+  "claims_path": "signalforge/data/runs/run_20261018_full_e2e_ntpc_02_upstream/table_claims/claims.jsonl",
+  "evidence_path": "signalforge/data/runs/run_20261018_full_e2e_ntpc_02_upstream/step6/evidence.jsonl",
+  "inputs_path": "signalforge/data/pipeline_inputs/ntpc_renewable_pipeline_reviewed_inputs.json",
+  "network_used": false,
+  "catalog_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/offline_verification/catalog.json",
+  "model_used": false
+}

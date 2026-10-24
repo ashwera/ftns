@@ -1,0 +1,24 @@
+{
+  "company": "Hindalco Industries Limited",
+  "attempts": [
+    {
+      "origin": "drop_folder",
+      "source": "/Users/ashwera/Documents/ftns/signalforge/data/demo_drop/hindalco_ar_2024_25.pdf",
+      "status": "identity_found",
+      "sha256": "c240197af93764075ec641d91dec5c8daa3ffc46975774ce9133b6c935f23ca0",
+      "page": 185,
+      "isin": "INE038A01020"
+    }
+  ],
+  "policy": "issuer_self_declaration_in_original_pdf_v1",
+  "selected_path": "/Users/ashwera/Documents/ftns/signalforge/data/demo_drop/hindalco_ar_2024_25.pdf",
+  "selected_url": null,
+  "selected_origin": "drop_folder",
+  "selected_sha256": "c240197af93764075ec641d91dec5c8daa3ffc46975774ce9133b6c935f23ca0",
+  "wikidata_isin_cross_check": "unavailable",
+  "identity": {
+    "canonical_name": "Hindalco Industries Limited",
+    "isin": "INE038A01020",
+    "page": 185
+  }
+}

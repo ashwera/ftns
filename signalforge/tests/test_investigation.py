@@ -1,9 +1,46 @@
 import copy
+import hashlib
+from pathlib import Path
+import tempfile
 import unittest
-from signalforge.investigation import check_citation, calculate, adjudicate, evidence_map
+from signalforge.investigation import check_citation, calculate, adjudicate, evidence_map, attach_machine_evidence_passages, bound_source_passages
 
 
 class InvestigationTests(unittest.TestCase):
+    def test_context_bound_keeps_whole_upstream_passages_and_document_diversity(self):
+        sources = [dict(id='a',passages=[dict(id='a1',text='a'*30),dict(id='a2',text='b'*30,origin_evidence_id='ev_a')]),
+                   dict(id='b',passages=[dict(id='b1',text='c'*30)])]
+        result = bound_source_passages(sources, max_chars=90)
+        self.assertEqual(sum(len(p['text']) for s in result for p in s['passages']), 90)
+        self.assertEqual({p['id'] for s in result for p in s['passages']},{'a1','a2','b1'})
+        small = bound_source_passages(sources, max_chars=35)
+        self.assertEqual([p['id'] for s in small for p in s['passages']], ['a2'])
+    def test_upstream_passage_requires_same_original_hash_path_and_exact_quote(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'original.pdf'
+            path.write_bytes(b'original bytes')
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            text = 'The planned project is expected to commission in 2027.'
+            eid = 'ev_' + 'a' * 24
+            source = {'id': 'src_x', 'lineage': 'issuer:X', 'sha256': digest,
+                      'snapshot_path': str(path), 'passages': []}
+            record = {'evidence_id': eid, 'source_path': str(path), 'excerpt_or_fact': text,
+                'page_number': 5, 'machine_verification': {'source_sha256': digest,
+                'passage_sha256': hashlib.sha256(text.encode()).hexdigest(),
+                'checks': dict.fromkeys(['original_sha256','verbatim_page_passage','canonical_issuer','substantive_text'], True)}}
+            for field, bad in [('source_sha256', 'b'*64), ('passage_sha256', 'c'*64)]:
+                changed = copy.deepcopy(record); changed['machine_verification'][field] = bad
+                self.assertEqual(attach_machine_evidence_passages([source], [changed]), 0)
+            changed = copy.deepcopy(record); changed['source_path'] = str(path.with_name('other.pdf'))
+            self.assertEqual(attach_machine_evidence_passages([source], [changed]), 0)
+            self.assertEqual(attach_machine_evidence_passages([source], [record]), 1)
+            self.assertEqual(attach_machine_evidence_passages([source], [record]), 0)
+            citation = {'evidence_id': eid, 'quote': text}
+            check_citation(citation, evidence_map([source]))
+            self.assertEqual(citation['evidence_id'], 'src_x_' + eid)
+            with self.assertRaises(ValueError):
+                check_citation({'evidence_id': eid, 'quote': text.replace('2027', '2024')}, evidence_map([source]))
+
     def setUp(self):
         self.sources = [
             {'id':'a','lineage':'issuer:X','passages':[{'id':'a1','page':1,'text':'Unit 3 capacity is 660 MW; commercial operation 15.06.2025.'}]},
@@ -14,6 +51,8 @@ class InvestigationTests(unittest.TestCase):
         check_citation({'evidence_id':'a1','quote':'Unit 3 capacity is 660 MW'}, self.evidence)
         for citation in [{'evidence_id':'a1','quote':'Unit 3 capacity is 990 MW'}, {'evidence_id':'invented','quote':'Unit 3 capacity is 660 MW'}]:
             with self.assertRaises(ValueError): check_citation(citation, self.evidence)
+        with self.assertRaises(ValueError):
+            check_citation({'evidence_id':'a1','quote':'Unit 3 capacity is not 660 MW'}, self.evidence)
 
     def test_decimal_calculation_requires_real_operands(self):
         spec={'label':'Same capacity ratio','operation':'ratio_percent','unit':'%','basis':'same unit',
@@ -46,7 +85,10 @@ class InvestigationTests(unittest.TestCase):
         review['claims'][0]['independent_corroboration']=False
         self.assertEqual(adjudicate(draft,review,self.sources)['evidence_strength'],'Weak')
         review['conclusion_supported']=False
-        self.assertEqual(adjudicate(draft,review,self.sources)['status'],'inconclusive')
+        result = adjudicate(draft,review,self.sources)
+        self.assertEqual(result['status'],'inconclusive')
+        self.assertNotEqual(result['headline'], draft['headline'])
+        self.assertEqual(result['proposed_headline'], draft['headline'])
 
 
 if __name__ == '__main__': unittest.main()
