@@ -169,6 +169,21 @@ PYTHONPATH=signalforge/src python -m signalforge.f1_research_angle_selector --co
 
 The default provider is Gemini through Google's official OpenAI-compatible chat completions endpoint, using the OpenAI SDK already declared as an optional dependency. Defaults are `SIGNALFORGE_PROVIDER=gemini`, `SIGNALFORGE_MODEL=gemini-3.8-flash`, and the official Gemini compatibility URL. `SIGNALFORGE_API_KEY` is the Gemini API key. You may override provider/model/base URL explicitly; `.env` is not loaded implicitly. No model call occurs without the key, and F1 still requires human-reviewed, approved evidence before making a request. With the current quote CSV alone, F1 cannot run without eligible company-specific evidence.
 
+## PDF-native table extraction (Layer 1.6)
+
+`signalforge/src/signalforge/pdf_table_extraction.py` reads the original PDF's text positions (PyMuPDF) instead of the text chunks, so two-column pages no longer interleave a table's values with prose. It finds a table by its header block (a label cell plus a unit cell such as `Capacity (MW)`), rebuilds rows (wrapped labels joined by leading and block), tracks section headings (`I Owned by your Company`), and ties each total out against its components. Ownership scope (`parent_owned`, `jv_subsidiary`, `group`, `unresolved`) comes only from the table's own section heading or from a grand total that equals the sum of the section totals; nearby prose is never used to assign an owner. Claims are written to a new file, are always `unverified`, are `extracted` only when unit, scope, period and arithmetic are all resolved, and carry the PDF SHA-256, printed page label, table title, section heading, row/column index and bounding box. Existing baselines are not touched.
+
+```bash
+PYTHONPATH=signalforge/src python3 -m signalforge.pdf_table_extraction \
+  --pdf "signalforge/data/Annual Report 2024-25_1.pdf" --pages 90,91,112 \
+  --company "NTPC Limited" --registry signalforge/data/company_registry.json \
+  --evidence signalforge/data/processed_step6/evidence.jsonl \
+  --expected-sha256 28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd \
+  --output-dir signalforge/data/runs/<new_run_id>
+```
+
+Each claim is linked to the Step 6 evidence chunk of the same document and page that prints its value (so downstream citations resolve and the chunk's human-approval state applies); a claim whose value is in no chunk or in several is left unlinked and is not consumed. To use the claims, add `--extra-claims <claims.jsonl>` to the pipeline command and a reviewed-inputs file that names them (`ntpc_renewable_pipeline_reviewed_inputs_pdf_native.json`; the original inputs file is unchanged). Table-cell claims are checked by `claim_verification.verify_table_cell` in reading order (row label then value, header unit, nearest section heading, 'as on' date, status wording); the entity stays unresolved because a table row states none, so such inputs are at most `partially_supported`. PyMuPDF is optional and needed only to read a PDF; the original report is not committed and its hash is checked.
+
 ## Tests
 
 ```bash

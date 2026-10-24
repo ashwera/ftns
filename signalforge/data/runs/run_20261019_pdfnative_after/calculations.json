@@ -1,0 +1,608 @@
+[
+  {
+    "schema_version": "1.0",
+    "calculation_id": "calc_91f2abfb0dcef2eb",
+    "signal_family": "renewable_transition",
+    "name": "re_share_of_group_pipeline",
+    "status": "computed",
+    "formula": "re_under_implementation_group / total_under_implementation_group x 100",
+    "inputs": [
+      {
+        "name": "re_under_implementation_group",
+        "value": 14.5,
+        "unit": "GW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "group",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "cl1_0f2c466c2859d4c9cc88f4b8"
+        ],
+        "verification_ids": [
+          "ver_re_pipeline_group_cc88f4b8_text",
+          "ver_re_pipeline_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": 0.05
+      },
+      {
+        "name": "total_under_implementation_group",
+        "value": 33671.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "group",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_ac835b0493bc7cc37cd8f550"
+        ],
+        "verification_ids": [
+          "ver_pipeline_total_group_7cd8f550_text",
+          "ver_pipeline_total_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      }
+    ],
+    "result": {
+      "value": 43.063764,
+      "unit": "percent",
+      "lower_bound": 42.915268,
+      "upper_bound": 43.21226
+    },
+    "compatibility_checks": [
+      {
+        "check": "input_verified:re_under_implementation_group",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:total_under_implementation_group",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "units_compatible",
+        "ok": true,
+        "detail": "MW vs MW"
+      },
+      {
+        "check": "same_as_of_date",
+        "ok": true,
+        "detail": "2025-03-31 vs 2025-03-31"
+      },
+      {
+        "check": "basis_compatible",
+        "ok": true,
+        "detail": "group / group (allowed: [\"('group', 'group')\"])"
+      },
+      {
+        "check": "statement_status_compatible",
+        "ok": true,
+        "detail": "under_implementation / under_implementation"
+      },
+      {
+        "check": "denominator_nonzero",
+        "ok": true,
+        "detail": "denominator = 33671.0"
+      }
+    ],
+    "assumptions": [
+      "Inputs are used as verified at their stated verification level."
+    ],
+    "missing_inputs": [],
+    "counterargument": "Pipeline entries may be at different stages and can slip or be cancelled.",
+    "falsification_test": "The filing's component table does not sum to the total, or the renewable total is defined differently from the pipeline total.",
+    "trace": "re_under_implementation_group = 14500 MW (14.5 GW); total_under_implementation_group = 33671 MW; 100 x 14500 / 33671 = 43.0638%; rounding bounds [42.9153%, 43.2123%]",
+    "synthetic": false
+  },
+  {
+    "schema_version": "1.0",
+    "calculation_id": "calc_ad5f039d711c3112",
+    "signal_family": "subsidiary_jv_exposure",
+    "name": "jv_subsidiary_share_of_re_pipeline",
+    "status": "computed",
+    "formula": "re_under_implementation_jv_subsidiary / re_under_implementation_group x 100",
+    "inputs": [
+      {
+        "name": "re_under_implementation_jv_subsidiary",
+        "value": 13791.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "jv_subsidiary_part",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_8b1fc767a630c90d4f71893a"
+        ],
+        "verification_ids": [
+          "ver_re_pipeline_jv_sub_4f71893a_text",
+          "ver_re_pipeline_jv_sub_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      },
+      {
+        "name": "re_under_implementation_group",
+        "value": 14.5,
+        "unit": "GW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "group",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "cl1_0f2c466c2859d4c9cc88f4b8"
+        ],
+        "verification_ids": [
+          "ver_re_pipeline_group_cc88f4b8_text",
+          "ver_re_pipeline_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": 0.05
+      }
+    ],
+    "result": {
+      "value": 95.110345,
+      "unit": "percent",
+      "lower_bound": 94.783505,
+      "upper_bound": 95.439446
+    },
+    "compatibility_checks": [
+      {
+        "check": "input_verified:re_under_implementation_jv_subsidiary",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:re_under_implementation_group",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "units_compatible",
+        "ok": true,
+        "detail": "MW vs MW"
+      },
+      {
+        "check": "same_as_of_date",
+        "ok": true,
+        "detail": "2025-03-31 vs 2025-03-31"
+      },
+      {
+        "check": "basis_compatible",
+        "ok": true,
+        "detail": "jv_subsidiary_part / group (allowed: [\"('jv_subsidiary_part', 'group')\"])"
+      },
+      {
+        "check": "statement_status_compatible",
+        "ok": true,
+        "detail": "under_implementation / under_implementation"
+      },
+      {
+        "check": "denominator_nonzero",
+        "ok": true,
+        "detail": "denominator = 14500.0"
+      }
+    ],
+    "assumptions": [
+      "Inputs are used as verified at their stated verification level."
+    ],
+    "missing_inputs": [],
+    "counterargument": "Reporting boundaries differ by company; a parent/subsidiary split may reflect legal structure rather than economics, since subsidiaries are consolidated.",
+    "falsification_test": "The JV/subsidiary renewable amount is shown to be a subset of a different denominator or a different date.",
+    "trace": "re_under_implementation_jv_subsidiary = 13791 MW (13791 MW); re_under_implementation_group = 14500 MW; 100 x 13791 / 14500 = 95.1103%; rounding bounds [94.7835%, 95.4394%]",
+    "synthetic": false
+  },
+  {
+    "schema_version": "1.0",
+    "calculation_id": "calc_715c3de3b8b300bd",
+    "signal_family": "renewable_transition",
+    "name": "re_share_of_parent_own_pipeline",
+    "status": "computed",
+    "formula": "parent_re_under_implementation_direct / parent_under_implementation_direct x 100",
+    "inputs": [
+      {
+        "name": "parent_re_under_implementation_direct",
+        "value": 725.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "parent_own",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_17db1ba3f1f9054e09576cc3"
+        ],
+        "verification_ids": [
+          "ver_re_pipeline_parent_09576cc3_text",
+          "ver_re_pipeline_parent_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      },
+      {
+        "name": "parent_under_implementation_direct",
+        "value": 15376.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "parent_own",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_9621dcd15e3fdc9a20eda573"
+        ],
+        "verification_ids": [
+          "ver_pipeline_parent_20eda573_text",
+          "ver_pipeline_parent_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      }
+    ],
+    "result": {
+      "value": 4.71514,
+      "unit": "percent",
+      "lower_bound": 4.71514,
+      "upper_bound": 4.71514
+    },
+    "compatibility_checks": [
+      {
+        "check": "input_verified:parent_re_under_implementation_direct",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:parent_under_implementation_direct",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "units_compatible",
+        "ok": true,
+        "detail": "MW vs MW"
+      },
+      {
+        "check": "same_as_of_date",
+        "ok": true,
+        "detail": "2025-03-31 vs 2025-03-31"
+      },
+      {
+        "check": "basis_compatible",
+        "ok": true,
+        "detail": "parent_own / parent_own (allowed: [\"('parent_own', 'parent_own')\"])"
+      },
+      {
+        "check": "statement_status_compatible",
+        "ok": true,
+        "detail": "under_implementation / under_implementation"
+      },
+      {
+        "check": "denominator_nonzero",
+        "ok": true,
+        "detail": "denominator = 15376.0"
+      }
+    ],
+    "assumptions": [
+      "Inputs are used as verified at their stated verification level."
+    ],
+    "missing_inputs": [],
+    "counterargument": "Reporting boundaries differ by company; a parent/subsidiary split may reflect legal structure rather than economics, since subsidiaries are consolidated.",
+    "falsification_test": "The parent's own table reports a materially different renewable share than the subtraction implies.",
+    "trace": "parent_re_under_implementation_direct = 725 MW (725 MW); parent_under_implementation_direct = 15376 MW; 100 x 725 / 15376 = 4.7151%; rounding bounds [4.7151%, 4.7151%]",
+    "synthetic": false
+  },
+  {
+    "schema_version": "1.0",
+    "calculation_id": "calc_5ce6c661581af178",
+    "signal_family": "renewable_transition",
+    "name": "re_share_of_jv_subsidiary_pipeline",
+    "status": "computed",
+    "formula": "re_under_implementation_jv_subsidiary / jv_subsidiary_under_implementation x 100",
+    "inputs": [
+      {
+        "name": "re_under_implementation_jv_subsidiary",
+        "value": 13791.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "jv_subsidiary_part",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_8b1fc767a630c90d4f71893a"
+        ],
+        "verification_ids": [
+          "ver_re_pipeline_jv_sub_4f71893a_text",
+          "ver_re_pipeline_jv_sub_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      },
+      {
+        "name": "jv_subsidiary_under_implementation",
+        "value": 18295.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "jv_subsidiary_part",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_b7aa459b3f974ff5834a1893"
+        ],
+        "verification_ids": [
+          "ver_pipeline_jv_sub_834a1893_text",
+          "ver_pipeline_jv_sub_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      }
+    ],
+    "result": {
+      "value": 75.381252,
+      "unit": "percent",
+      "lower_bound": 75.381252,
+      "upper_bound": 75.381252
+    },
+    "compatibility_checks": [
+      {
+        "check": "input_verified:re_under_implementation_jv_subsidiary",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:jv_subsidiary_under_implementation",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "units_compatible",
+        "ok": true,
+        "detail": "MW vs MW"
+      },
+      {
+        "check": "same_as_of_date",
+        "ok": true,
+        "detail": "2025-03-31 vs 2025-03-31"
+      },
+      {
+        "check": "basis_compatible",
+        "ok": true,
+        "detail": "jv_subsidiary_part / jv_subsidiary_part (allowed: [\"('jv_subsidiary_part', 'jv_subsidiary_part')\"])"
+      },
+      {
+        "check": "statement_status_compatible",
+        "ok": true,
+        "detail": "under_implementation / under_implementation"
+      },
+      {
+        "check": "denominator_nonzero",
+        "ok": true,
+        "detail": "denominator = 18295.0"
+      }
+    ],
+    "assumptions": [
+      "Inputs are used as verified at their stated verification level."
+    ],
+    "missing_inputs": [],
+    "counterargument": "Reporting boundaries differ by company; a parent/subsidiary split may reflect legal structure rather than economics, since subsidiaries are consolidated.",
+    "falsification_test": "The JV/subsidiary table totals are not the same population as the renewable subset.",
+    "trace": "re_under_implementation_jv_subsidiary = 13791 MW (13791 MW); jv_subsidiary_under_implementation = 18295 MW; 100 x 13791 / 18295 = 75.3813%; rounding bounds [75.3813%, 75.3813%]",
+    "synthetic": false
+  },
+  {
+    "schema_version": "1.0",
+    "calculation_id": "calc_c34db8ef4d0c7389",
+    "signal_family": "capacity_pipeline_conversion",
+    "name": "pipeline_relative_to_installed_base",
+    "status": "computed",
+    "formula": "total_under_implementation_group / group_installed_capacity x 100",
+    "inputs": [
+      {
+        "name": "total_under_implementation_group",
+        "value": 33671.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "group",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "pdfn_ac835b0493bc7cc37cd8f550"
+        ],
+        "verification_ids": [
+          "ver_pipeline_total_group_7cd8f550_text",
+          "ver_pipeline_total_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      },
+      {
+        "name": "group_installed_capacity",
+        "value": 79930.0,
+        "unit": "MW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "consolidated",
+        "statement_status": "commissioned",
+        "claim_ids": [
+          "cl1_5b1e9c502b174acc1543b65f"
+        ],
+        "verification_ids": [
+          "ver_installed_total_group_1543b65f_text",
+          "ver_installed_total_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      }
+    ],
+    "result": {
+      "value": 42.12561,
+      "unit": "percent",
+      "lower_bound": 42.12561,
+      "upper_bound": 42.12561
+    },
+    "compatibility_checks": [
+      {
+        "check": "input_verified:total_under_implementation_group",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:group_installed_capacity",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "units_compatible",
+        "ok": true,
+        "detail": "MW vs MW"
+      },
+      {
+        "check": "same_as_of_date",
+        "ok": true,
+        "detail": "2025-03-31 vs 2025-03-31"
+      },
+      {
+        "check": "basis_compatible",
+        "ok": true,
+        "detail": "group / consolidated (allowed: [\"('consolidated', 'consolidated')\", \"('consolidated', 'group')\", \"('group', 'consolidated')\", \"('group', 'group')\"])"
+      },
+      {
+        "check": "statement_status_compatible",
+        "ok": true,
+        "detail": "under_implementation / commissioned"
+      },
+      {
+        "check": "denominator_nonzero",
+        "ok": true,
+        "detail": "denominator = 79930.0"
+      }
+    ],
+    "assumptions": [
+      "Inputs are used as verified at their stated verification level."
+    ],
+    "missing_inputs": [],
+    "counterargument": "Pipeline includes coal and hydro as well as renewables; the ratio is not a forecast of additions.",
+    "falsification_test": "Installed and pipeline totals are not on the same group boundary.",
+    "trace": "total_under_implementation_group = 33671 MW (33671 MW); group_installed_capacity = 79930 MW; 100 x 33671 / 79930 = 42.1256%; rounding bounds [42.1256%, 42.1256%]",
+    "synthetic": false
+  },
+  {
+    "schema_version": "1.0",
+    "calculation_id": "calc_50b461ff0526b38d",
+    "signal_family": "renewable_transition",
+    "name": "re_installed_plus_pipeline_vs_target",
+    "status": "computed",
+    "formula": "(sum(achieved + under implementation)) / target x 100",
+    "inputs": [
+      {
+        "name": "re_installed_capacity_group",
+        "value": 6.8,
+        "unit": "GW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "group",
+        "statement_status": "commissioned",
+        "claim_ids": [
+          "cl1_264d9fe1ce46595b0b93c941"
+        ],
+        "verification_ids": [
+          "ver_re_installed_group_0b93c941_text",
+          "ver_re_installed_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": 0.05
+      },
+      {
+        "name": "re_under_implementation_group",
+        "value": 14.5,
+        "unit": "GW",
+        "as_of_date": "2025-03-31",
+        "period_text": "As on 31 March 2025",
+        "basis": "group",
+        "statement_status": "under_implementation",
+        "claim_ids": [
+          "cl1_0f2c466c2859d4c9cc88f4b8"
+        ],
+        "verification_ids": [
+          "ver_re_pipeline_group_cc88f4b8_text",
+          "ver_re_pipeline_group_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": 0.05
+      },
+      {
+        "name": "re_capacity_target_2032",
+        "value": 60.0,
+        "unit": "GW",
+        "as_of_date": null,
+        "period_text": "2032",
+        "basis": "group",
+        "statement_status": "target",
+        "claim_ids": [
+          "cl1_4bad374a50229c566a48d913"
+        ],
+        "verification_ids": [
+          "ver_re_target_6a48d913_text",
+          "ver_re_target_ntpc_ar_fy2024_25"
+        ],
+        "verification_outcome": "partially_supported",
+        "rounding_uncertainty": null
+      }
+    ],
+    "result": {
+      "value": 35.5,
+      "unit": "percent",
+      "lower_bound": 35.333333,
+      "upper_bound": 35.666667
+    },
+    "compatibility_checks": [
+      {
+        "check": "input_verified:re_installed_capacity_group",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:re_under_implementation_group",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "input_verified:re_capacity_target_2032",
+        "ok": true,
+        "detail": "verification outcome = partially_supported"
+      },
+      {
+        "check": "units_compatible",
+        "ok": true,
+        "detail": "all in MW"
+      },
+      {
+        "check": "target_is_labelled_forward_looking",
+        "ok": true,
+        "detail": "target status = target"
+      },
+      {
+        "check": "achieved_inputs_not_targets",
+        "ok": true,
+        "detail": "['commissioned', 'under_implementation']"
+      },
+      {
+        "check": "basis_compatible",
+        "ok": true,
+        "detail": "{'group'}"
+      },
+      {
+        "check": "denominator_nonzero",
+        "ok": true,
+        "detail": "target = 60000"
+      }
+    ],
+    "assumptions": [
+      "Under-implementation capacity is not commissioned and may slip or be cancelled.",
+      "The target is a forward-looking statement, not an outcome."
+    ],
+    "missing_inputs": [],
+    "counterargument": "The target may be defined on a different boundary or year basis; pipeline is not commissioned.",
+    "falsification_test": "Disclosed target is on a different boundary (e.g. parent-only) than the group capacities used here.",
+    "trace": "6800 + 14500 = 21300 MW; / target 60000 = 35.5000% (bounds [35.3333%, 35.6667%])",
+    "synthetic": false
+  }
+]

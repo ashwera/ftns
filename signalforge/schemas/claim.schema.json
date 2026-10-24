@@ -32,12 +32,13 @@
     "schema_version": {
       "enum": [
         "1.0",
-        "1.1"
+        "1.1",
+        "1.2"
       ]
     },
     "claim_id": {
       "type": "string",
-      "pattern": "^cl1_[a-f0-9]{24}$"
+      "pattern": "^(cl1|pdfn)_[a-f0-9]{24}$"
     },
     "entity": {
       "type": [
@@ -135,8 +136,12 @@
       "minimum": 1
     },
     "source_chunk_id": {
-      "type": "string",
-      "pattern": "^ev_[a-f0-9]{24}$"
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^ev_[a-f0-9]{24}$",
+      "description": "Null only for pdf_native_table claims whose page has no unique linked evidence record; such claims cannot be consumed downstream."
     },
     "source_excerpt": {
       "type": "string",
@@ -165,7 +170,8 @@
     "extraction_method": {
       "enum": [
         "prose_regex",
-        "table_row"
+        "table_row",
+        "pdf_native_table"
       ]
     },
     "chunk_class": {
@@ -203,7 +209,105 @@
     },
     "reversal_applied": {
       "type": "boolean"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "printed_page_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "table_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "section_heading": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ownership_scope": {
+      "enum": [
+        "parent_owned",
+        "jv_subsidiary",
+        "group",
+        "unresolved"
+      ]
+    },
+    "scope_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "project_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "row_kind": {
+      "enum": [
+        "item",
+        "total"
+      ]
+    },
+    "bbox": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "tie_out": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "row_label_first_line": {
+      "type": "string"
+    },
+    "table_section_headings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "period_source": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "extraction_method": {
+            "const": "pdf_native_table"
+          }
+        },
+        "required": [
+          "extraction_method"
+        ]
+      },
+      "else": {
+        "properties": {
+          "source_chunk_id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
 }

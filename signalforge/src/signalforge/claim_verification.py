@@ -186,6 +186,103 @@ def _finish(a, src, checks, discrepancies, outcome, why, level, vid, name, claim
            "reviewer": reviewer or {"kind": "automated_passage_check", "id": "claim_verification.verify_assertion", "note": None}, "limitations": list(SOURCE_LIMITS[level])}
     validate_against(res, "verification_result"); return res
 
+# ---------- table-cell claims (extraction_method == pdf_native_table)
+_MARK = re.compile(r"^(?:[a-z]|\d{1,2})[\)\.]\s+", re.I)
+_NUM = r"\(?-?\d[\d,]*(?:\.\d+)?\)?"
+_ASON = re.compile(r"(?i)\bas\s+(?:on|at)\s+(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(\d{4})")
+
+def _flex(text):
+    return r"\s*".join(re.escape(w) for w in text.split())
+
+def _as_on_dates(text):
+    import datetime as dt
+    months = {m: i for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"], 1)}
+    out = []
+    for m in _ASON.finditer(text):
+        if m.group(2).lower() in months:
+            try: out.append((m.start(), dt.date(int(m.group(3)), months[m.group(2).lower()], int(m.group(1))).isoformat()))
+            except ValueError: pass
+    return out
+
+def table_cell_candidates(text, claim):
+    """Occurrences of the claim's row label immediately followed by a number. Returns [(position, number)]."""
+    out = []
+    for raw in dict.fromkeys([claim.get("raw_metric_text") or "", claim.get("row_label_first_line") or ""]):  # a wrapped label may read in order only up to its first line
+        label = _MARK.sub("", " ".join(raw.split()), count=1)
+        if not label: continue
+        rx = re.compile(r"(?i)" + _flex(label) + r"\s{0,3}(" + _NUM + ")")
+        out += [(m.start(), L1._number(m.group(1).strip("()"))) for m in rx.finditer(text) if (m.start(), L1._number(m.group(1).strip("()"))) not in out]
+    return out
+
+def verify_table_cell(a, claim, passage, *, source=None, level="extracted_text_review", verification_id, input_name, claim_id=None, reviewer=None):
+    """Check a PDF-native table-cell claim against a source passage in reading order: the row label must be followed by the value, the
+    column header (carrying the unit) and the table title must precede it, the nearest preceding section heading must be the claimed one,
+    and an 'as on' date and implementation wording must precede the table. Nothing here uses the claim's own coordinates, so it is a check
+    of the source text, not a replay of the extraction. The entity stays unresolved: a table row carries no explicit entity statement."""
+    text = collapse(passage)
+    src = {"source_chunk_id": None, "source_path": None, "page": None, "url": None, "publisher": None, "publication_date": None, "retrieved_at": None, "document_family": None}; src.update(source or {})
+    src.update({"passage": text[:4000], "passage_sha256": sha256_text(text)})
+    checks = {k: _blank() for k in ("entity", "value", "unit_scale", "metric_definition", "period", "basis", "statement_status")}
+    discrepancies, headings = [], [h for h in (claim.get("table_section_headings") or []) if h]
+    want_head = claim.get("section_heading")
+    def heading_before(pos):
+        best = None
+        for h in headings:
+            for m in re.finditer(_flex(h), text):
+                if m.start() < pos and (best is None or m.start() > best[0]): best = (m.start(), h)
+        return best[1] if best else None
+    cands = table_cell_candidates(text, claim)
+    exact = [(p, v) for p, v in cands if abs((v or 0) - a["value"]) < 1e-9]
+    placed = [c for c in exact if want_head is None or heading_before(c[0]) == want_head]
+    if placed: pos = placed[0][0]
+    elif exact:
+        pos = exact[0][0]; under = heading_before(pos)
+        checks["value"] = _blank("match", f"{a['value']} follows the row label")
+        if under is None: checks["basis"] = _blank("unresolved", f"no known section heading precedes the value in this passage (claimed heading {want_head!r}); a passage that starts below the heading cannot settle the scope")
+        else: checks["basis"] = _blank("mismatch", f"the value sits under heading {under!r}, not {want_head!r}"); discrepancies.append(f"scope: value under {under!r}, not {want_head!r}")
+    else:
+        same_section = [(p, v) for p, v in cands if want_head is None or heading_before(p) == want_head]
+        if same_section:
+            checks["value"] = _blank("mismatch", f"row label is followed by {sorted({v for _, v in same_section})} under the claimed heading, not {a['value']}"); discrepancies.append(f"value {a['value']} vs {sorted({v for _, v in same_section})}")
+            return _finish(a, src, checks, discrepancies, "contradicted", f"The row label is followed by a different number under the same heading: {discrepancies[-1]}.", level, verification_id, input_name, claim_id, reviewer, [])
+        checks["value"] = _blank("unresolved", "row label followed by the asserted value not found in the passage")
+        return _finish(a, src, checks, discrepancies, "unable_to_verify", f"The row '{claim.get('raw_metric_text')}' followed by {a['value']} does not appear in the cited passage.", level, verification_id, input_name, claim_id, reviewer, [])
+    if checks["value"]["result"] != "match": checks["value"] = _blank("match", f"{a['value']} follows the row label '{claim.get('raw_metric_text')}'")
+    checks["metric_definition"] = _blank("match", "the asserted row label is immediately followed by the value")
+    head_cell = (claim.get("source_header_text") or "").split(" | ")
+    title, col = (head_cell[0], head_cell[-1]) if len(head_cell) > 1 else (None, head_cell[0] if head_cell and head_cell[0] else None)
+    hdr = re.compile(_flex(f"{title} {col}") if title else _flex(col)) if col else None
+    hdr_hits = [m for m in hdr.finditer(text) if m.start() < pos] if hdr else []
+    if a["unit"] is None: checks["unit_scale"] = _blank("not_applicable", "no unit asserted")
+    elif hdr_hits and re.search(r"\(\s*" + re.escape(a["unit"]) + r"\s*\)", hdr_hits[-1].group(0)): checks["unit_scale"] = _blank("match", f"column header {hdr_hits[-1].group(0)!r} precedes the value and declares {a['unit']}")
+    elif hdr_hits: checks["unit_scale"] = _blank("mismatch", f"column header {hdr_hits[-1].group(0)!r} does not declare {a['unit']}"); discrepancies.append("unit: header differs")
+    else: checks["unit_scale"] = _blank("unresolved", "column header not found before the value")
+    table_start = hdr_hits[-1].start() if hdr_hits else max(0, pos - 1500)
+    window = text[max(0, table_start - 1800):table_start]
+    dates = _as_on_dates(text[max(0, table_start - 1800):pos + 200])
+    if a["as_of_date"] is None: checks["period"] = _blank("not_applicable", "no period asserted")
+    elif dates and dates[-1][1] == a["as_of_date"]: checks["period"] = _blank("match", f"'as on' date {a['as_of_date']} precedes the table")
+    elif dates: checks["period"] = _blank("mismatch", f"nearest 'as on' date is {dates[-1][1]}"); discrepancies.append("period differs")
+    else: checks["period"] = _blank("unresolved", "no 'as on' date before the table")
+    st = a["statement_status"]
+    if st is None: checks["statement_status"] = _blank("not_applicable", "no status asserted")
+    elif st == "under_implementation": checks["statement_status"] = _blank("match", "'under implementation' wording precedes the table") if re.search(r"(?i)under (?:implementation|construction)|on-?going", window + " " + text[table_start:pos]) else _blank("unresolved", "no implementation wording before the table")
+    else: checks["statement_status"] = _blank("unresolved", f"status {st!r} not testable from table position")
+    scope_expected = {"standalone": "parent_owned", "jv_subsidiary_part": "jv_subsidiary", "group": "group", "consolidated": "group"}.get(a["basis"])
+    if checks["basis"]["result"] == "unresolved" and checks["basis"]["detail"].startswith("no known section heading"): pass
+    elif checks["basis"]["result"] != "mismatch":
+        if scope_expected and claim.get("ownership_scope") not in (None, scope_expected): checks["basis"] = _blank("mismatch", f"asserted basis {a['basis']!r} implies {scope_expected}, table scope is {claim.get('ownership_scope')}"); discrepancies.append("basis differs from table scope")
+        elif want_head is not None and heading_before(pos) == want_head: checks["basis"] = _blank("match", f"nearest preceding section heading is {want_head!r}")
+        elif want_head is None and claim.get("ownership_scope") == "group": checks["basis"] = _blank("match", "total row names both sections")
+        else: checks["basis"] = _blank("unresolved", "section heading not located before the value")
+    checks["entity"] = _blank("unresolved", "a table row carries no explicit entity statement; the reporting entity is only implied by the document")
+    bad = [k for k, v in checks.items() if v["result"] == "mismatch"]; unres = [k for k, v in checks.items() if v["result"] == "unresolved"]
+    if bad: outcome, why = "contradicted", f"The passage contradicts the assertion on {bad}: " + "; ".join(discrepancies)
+    elif unres: outcome, why = "partially_supported", f"Row, value and unit found, but {unres} could not be established from the passage."
+    else: outcome, why = "confirmed", "Row label, value, unit, period, scope heading and status are each supported by the cited passage."
+    return _finish(a, src, checks, discrepancies, outcome, why, level, verification_id, input_name, claim_id, reviewer, [])
+
+
 def assertion_from_claim(claim, *, basis=None, statement_status=None, label_terms=None, entity_names=()):
     return {"value": claim["value"], "unit": claim["unit"], "period_type": claim["period_type"], "as_of_date": claim["as_of_date"], "period_text": claim["raw_period_text"], "basis": basis,
             "statement_status": statement_status, "label_terms": list(label_terms if label_terms is not None else ([claim["raw_metric_text"]] if claim.get("raw_metric_text") else [])), "entity": claim["entity"], "entity_names": list(entity_names)}
