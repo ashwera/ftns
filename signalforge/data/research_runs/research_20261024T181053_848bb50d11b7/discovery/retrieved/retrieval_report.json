@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:11:35.478445+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T18:11:35.455237+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+      "redirect_chain": [],
+      "source_sha256": "a1f8fd922e423dc50606d75cf43260b60c05b1a89359ba2b4c06799cbc0ba8af",
+      "content_type": "text/html; charset=UTF-8",
+      "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T181053_848bb50d11b7/discovery/retrieved/sources/a1f8fd922e42_03b743d4.html",
+      "document_title": "Power (TV series) - Wikipedia",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

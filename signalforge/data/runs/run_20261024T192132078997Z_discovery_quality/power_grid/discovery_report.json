@@ -1,0 +1,978 @@
+{
+  "company": "Power Grid Corporation of India Limited",
+  "topic": "transmission commissioned projects capex",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"Power Grid\" annual report filetype:pdf",
+    "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf"
+  ],
+  "search_results": [],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T19:21:32.096654+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:21:32.576436+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:21:32.577049+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.577433+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://app.powerbi.com/home",
+        "title": "Sign in | Microsoft Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.577785+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://powerpoint.cloud.microsoft/en-gb/",
+        "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.578258+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+        "title": "Power (physics) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.578702+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://power.delhi.gov.in/",
+        "title": "Home | Power Department",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.579258+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+        "title": "Power (TV series) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.579677+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.tatapower-ddl.com/",
+        "title": "Welcome to Tata Power-DDL",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.580123+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.imdb.com/title/tt3281796/",
+        "title": "Power (TV Series 2014\u20132020) - IMDb",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.580513+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://msit.powerbi.com/",
+        "title": "Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.580887+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+        "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:32.581409+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+        "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T19:21:32.581745+00:00",
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://app.powerbi.com/home",
+          "title": "Sign in | Microsoft Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://powerpoint.cloud.microsoft/en-gb/",
+          "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+          "title": "Power (physics) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://power.delhi.gov.in/",
+          "title": "Home | Power Department",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+          "title": "Power (TV series) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.tatapower-ddl.com/",
+          "title": "Welcome to Tata Power-DDL",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.imdb.com/title/tt3281796/",
+          "title": "Power (TV Series 2014\u20132020) - IMDb",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://msit.powerbi.com/",
+          "title": "Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+          "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+          "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Power Grid\" annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T19:21:32.582019+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:21:33.074882+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:21:33.075578+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.076331+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://app.powerbi.com/home",
+        "title": "Sign in | Microsoft Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.077069+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://powerpoint.cloud.microsoft/en-gb/",
+        "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.077865+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+        "title": "Power (physics) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.078470+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://power.delhi.gov.in/",
+        "title": "Home | Power Department",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.079074+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+        "title": "Power (TV series) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.079691+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.tatapower-ddl.com/",
+        "title": "Welcome to Tata Power-DDL",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.080643+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.imdb.com/title/tt3281796/",
+        "title": "Power (TV Series 2014\u20132020) - IMDb",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.081165+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://msit.powerbi.com/",
+        "title": "Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.081556+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+        "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.082084+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+        "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T19:21:33.082481+00:00",
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://app.powerbi.com/home",
+          "title": "Sign in | Microsoft Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://powerpoint.cloud.microsoft/en-gb/",
+          "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+          "title": "Power (physics) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://power.delhi.gov.in/",
+          "title": "Home | Power Department",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+          "title": "Power (TV series) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.tatapower-ddl.com/",
+          "title": "Welcome to Tata Power-DDL",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.imdb.com/title/tt3281796/",
+          "title": "Power (TV Series 2014\u20132020) - IMDb",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://msit.powerbi.com/",
+          "title": "Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+          "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+          "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "site_page_requested",
+      "at": "2026-10-24T19:21:33.082845+00:00",
+      "url": "https://powergrid.in/"
+    },
+    {
+      "action": "site_page_retrieval",
+      "at": "2026-10-24T19:21:45.939934+00:00",
+      "url": "https://powergrid.in/",
+      "report": {
+        "generated_at": "2026-10-24T19:21:45.937587+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://powergrid.in/",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:21:33.093146+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://powergrid.in/",
+                "status": "robots.txt retrieved"
+              },
+              {
+                "url": "http://powergrid.in/hi",
+                "status": "robots.txt unavailable (URLError); fail closed"
+              }
+            ],
+            "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "site_discovery_completed",
+      "at": "2026-10-24T19:21:45.941344+00:00",
+      "accepted_link_count": 0
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T19:21:45.941902+00:00",
+      "reason": "query_budget"
+    }
+  ],
+  "errors": [
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    }
+  ],
+  "returned_result_count": 20,
+  "relevant_returned_count": 0,
+  "relevant_result_count": 0,
+  "rejected_result_count": 20,
+  "rejected_results": [
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://app.powerbi.com/home",
+        "title": "Sign in | Microsoft Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://powerpoint.cloud.microsoft/en-gb/",
+        "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+        "title": "Power (physics) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://power.delhi.gov.in/",
+        "title": "Home | Power Department",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+        "title": "Power (TV series) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.tatapower-ddl.com/",
+        "title": "Welcome to Tata Power-DDL",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.imdb.com/title/tt3281796/",
+        "title": "Power (TV Series 2014\u20132020) - IMDb",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://msit.powerbi.com/",
+        "title": "Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+        "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+        "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://app.powerbi.com/home",
+        "title": "Sign in | Microsoft Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://powerpoint.cloud.microsoft/en-gb/",
+        "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+        "title": "Power (physics) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://power.delhi.gov.in/",
+        "title": "Home | Power Department",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+        "title": "Power (TV series) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.tatapower-ddl.com/",
+        "title": "Welcome to Tata Power-DDL",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.imdb.com/title/tt3281796/",
+        "title": "Power (TV Series 2014\u20132020) - IMDb",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://msit.powerbi.com/",
+        "title": "Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+        "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+        "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    }
+  ],
+  "discovery_status": "no_relevant_candidates",
+  "retrieval_status": "not_attempted",
+  "budget": {
+    "max_queries": 2,
+    "max_results": 15,
+    "max_fetches": 2,
+    "max_seconds": 80,
+    "request_timeout": 12,
+    "max_response_bytes": 2097152,
+    "max_site_pages": 3
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "evidence_gaps": [
+    "commissioned projects versus capital expenditure annual report"
+  ],
+  "research_document_count": 0,
+  "site_seeds": [
+    "https://powergrid.in/"
+  ],
+  "site_discovered_count": 0,
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "query_budget"
+}

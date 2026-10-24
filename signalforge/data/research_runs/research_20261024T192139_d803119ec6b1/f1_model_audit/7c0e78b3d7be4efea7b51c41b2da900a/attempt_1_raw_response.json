@@ -1,0 +1,86 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "Operational project-level data",
+      "Unit-specific commissioning dates",
+      "Project completion timelines"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier column exists; filename attribution is not treated as row-level company evidence.",
+      "Dataset comprises market trading data, not operational or corporate project disclosures."
+    ]
+  },
+  "ranking_reliable": false,
+  "ranking_limitation": "The dataset contains only historical market trading prices and volumes; it contains no operational data regarding NTPC power units, project milestones, or capacity expansion, making it impossible to address the research question using current dataset sources.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_ntpc_unit3_001",
+      "rank": 1,
+      "category": "capacity_conversion",
+      "hypothesis": "NTPC's announced timeline for North Karanpura Unit 3 commissioning diverges from actual achievement, impacting expected revenue generation.",
+      "financial_importance": "Highly significant; project commissioning delays typically result in capitalized interest, potential cost overruns, and deferred revenue realization.",
+      "metrics_and_periods": [
+        "Expected vs Actual Commercial Operation Date (COD)",
+        "Trial operation completion date",
+        "Projected vs actual commissioning date (FY2024-25)"
+      ],
+      "evidence_found": [],
+      "additional_evidence_needed": [
+        "Project status reports for North Karanpura Unit 3",
+        "Exchange filings (NSE/BSE) regarding unit synchronization or COD",
+        "CERC tariff petitions for the specific unit"
+      ],
+      "alternative_explanation": "The unit may have faced regulatory delays or supply chain constraints independent of corporate operational mismanagement.",
+      "falsification_condition": "Documented evidence confirming the unit achieved full commercial operation on or before the company-disclosed target date.",
+      "data_risks_and_limitations": [
+        "The current dataset provides zero information on project-level operational data.",
+        "Must rely exclusively on external primary sources as no internal csv data is relevant."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Directly impacts capital expenditure and revenue growth trajectories."
+        },
+        "evidence_availability": {
+          "score": 0,
+          "rationale": "No evidence present in provided datasets."
+        },
+        "testability": {
+          "score": 1,
+          "rationale": "Requires external document collection which is outside of current CSV data scope."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Divergence between announced and actual COD is a recurring industry issue."
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "Can be verified against press releases and regulatory orders."
+        }
+      },
+      "weighted_score": 23.25,
+      "weighted_score_rationale": "High financial weight fails to offset zero evidence availability in the provided files.",
+      "next_research_action": "Search for official NTPC press releases or CERC orders specifically naming the North Karanpura Unit 3 commissioning date."
+    }
+  ],
+  "recommended_candidate_id": "cand_ntpc_unit3_001"
+}

@@ -1,0 +1,31 @@
+{
+  "stage": "f1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "validated",
+      "corrections": [
+        {
+          "candidate_id": "hr_01",
+          "field": "weighted_score",
+          "model_value": 83.5,
+          "computed_value": 84.5,
+          "weights": {
+            "financial_significance": 0.3,
+            "evidence_availability": 0.25,
+            "testability": 0.2,
+            "non_obviousness": 0.075,
+            "cross_validation_potential": 0.175
+          },
+          "formula": "sum((score / 5) * weight * 100)"
+        }
+      ]
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "validated",
+  "accepted_attempt": 1
+}

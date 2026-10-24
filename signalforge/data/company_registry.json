@@ -13,6 +13,21 @@
       "verification_publication_date": null,
       "verification_excerpt": "Scrip Code 532555; NSE Symbol NTPC; ISIN INE733E01010; Name of the entity NTPC LIMITED.",
       "note": "Verified from an NSE-hosted integrated governance filing. This verification does not identify the issuer of the repository CSV rows, which contain no row-level company identifier."
+    },
+    {
+      "canonical_name": "Power Grid Corporation of India Limited",
+      "verified_identifier": "INE752E01010",
+      "identifiers": ["POWERGRID", "532898", "INE752E01010"],
+      "aliases": ["Power Grid", "Powergrid", "PGCIL", "Power Grid Corporation of India"],
+      "verification_source": "https://www.powergrid.in/sites/default/files/Investor_Relation/Reports_Filings/Corporate_Governance/2024-25/Integrated_Filing_Governance_2024-25_Q3.html",
+      "verification_source_type": "issuer_hosted_governance_filing",
+      "verification_status": "verified",
+      "verification_retrieval_date": "2026-10-24",
+      "verification_publication_date": null,
+      "verification_excerpt": "Scrip code 532898; NSE Symbol POWERGRID; ISIN INE752E01010; Name of the entity Power Grid Corporation of India Limited",
+      "verification_source_sha256": "5f4b3c34500749f72f69d4f1d97d5459b941b6bc6bfeb704a082eb105e6f2c2a",
+      "verification_snapshot": "signalforge/data/powergrid_research_20261025/identity_official/sources/5f4b3c345007_9bc4c2df.html",
+      "note": "Canonical identity values checked in the original issuer-hosted quarterly governance filing for quarter ended 31 December 2024, corroborated by the NSE-hosted FY2024-25 IndAS filing. Aliases are research lookup aliases only; this registry mapping never associates identifier-free data rows or verifies document claims. No human evidence approval is created. Snapshot hash must match the retrieval manifest. Publication date is not inferred from retrieval date."
     }
   ]
 }

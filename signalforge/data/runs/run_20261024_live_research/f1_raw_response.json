@@ -1,0 +1,101 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 0,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "Company-specific identifier in rows",
+      "Verified company ticker/registry mapping",
+      "Explicit transaction/asset-level data linking"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier column exists in the dataset; row-level data cannot be validated as NTPC-specific.",
+      "The provided rows contain only market trade data and no company-level operational/financial identifier."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": null,
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_renewable_transition_01",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC's aggressive renewable capacity targets (60 GW by 2032) versus the current 6.8 GW commissioned portfolio present a significant financial transition risk/opportunity if the pace of execution fails to meet capital allocation requirements.",
+      "financial_importance": "The transition represents a material shift in capital expenditure and revenue strategy; failures to scale renewables could impact debt covenants or long-term growth.",
+      "metrics_and_periods": [
+        "Revenue from non-fossil sources (FY 2024-25)",
+        "Renewable capacity commissioned vs pipeline (FY 2024-25)",
+        "Capital expenditure on RE projects"
+      ],
+      "evidence_found": [
+        {
+          "statement": "As of March 31, 2025, the NTPC Group has commissioned 6.8 GW of renewable energy capacity.",
+          "source_type": "Integrated Annual Report",
+          "source_url": null,
+          "date": "2025-03-31",
+          "row_identifier": null,
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "NTPC has set a bold target to achieve 60 GW of renewable energy capacity by 2032.",
+          "source_type": "Integrated Annual Report",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical commissioning timelines to establish execution run-rate.",
+        "Detailed cost of capital for specific RE vs coal projects."
+      ],
+      "alternative_explanation": "Execution delays may be deliberate capital allocation to maintain higher yield coal assets until grid stability and storage costs reach parity.",
+      "falsification_condition": "If commissioned RE capacity grows at a linear rate exceeding 5 GW/year, the transition risk is largely mitigated.",
+      "data_risks_and_limitations": "Reliance on internal report projections; requires cross-verification with independent capacity tracking databases.",
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Directly impacts the core business strategy and future revenue mix."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Strong reporting in Annual Report 2024-25 regarding targets and current installed base."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Commissioned capacity and project pipeline can be tracked quarter-over-quarter."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "While public, the contrast between the 6.8 GW base and 60 GW target is a key transition delta."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be verified via ministry data (MNRE) and project commissioning reports."
+        }
+      },
+      "weighted_score": 425.0,
+      "weighted_score_rationale": "High score due to massive financial materiality and availability of primary source disclosures.",
+      "next_research_action": "Collect quarterly commissioning reports to compare against the 2032 target trajectory."
+    }
+  ],
+  "recommended_candidate_id": "cand_renewable_transition_01"
+}

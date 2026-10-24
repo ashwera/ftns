@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-24T19:21:34.596759+00:00",
+  "requested_count": 1,
+  "retrieved_count": 0,
+  "failed_count": 1,
+  "sources": [
+    {
+      "requested_url": "https://merc.gov.in/wp-content/uploads/2024/10/Order-Case-No.-134-of-2024-1.pdf",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:21:34.509789+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://merc.gov.in/wp-content/uploads/2024/10/Order-Case-No.-134-of-2024-1.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+    }
+  ],
+  "normalized_evidence_record_count": 0,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 0
+}

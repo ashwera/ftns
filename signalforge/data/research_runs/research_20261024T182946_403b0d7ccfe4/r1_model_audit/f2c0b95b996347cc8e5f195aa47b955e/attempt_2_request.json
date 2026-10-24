@@ -1,0 +1,106 @@
+{
+  "stage": "r1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "requested_at": "2026-10-24T18:30:59.902932+00:00",
+  "prompt": "# R1 — Research Investigator (plan specification)\n\nR1 consumes F1's recommended candidate and prepares a structured, executable research plan. Reference supplied evidence by stable `evidence_id` and preserve its source locator/page when citing it. This prompt alone does not retrieve sources or perform live web research. Never invent URLs, excerpts, publication dates, external findings, or research already performed.\n\nTurn the hypothesis into explicit, testable research questions. List exact metrics and periods, what the supplied dataset supports, and what remains missing. Identify public source types and specific documents to seek: company filings, stock-exchange disclosures, annual reports, investor presentations, regulatory documents, and credible news reports, as relevant.\n\nFor each claim, define independent cross-validation sources and the calculation, inputs, units, period alignment, and assumptions required. Include an alternative explanation and a falsification test. Specify what would invalidate or weaken the hypothesis. Include contradictory evidence explicitly when supplied; do not suppress it.\n\nTrack evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.\n\nReturn a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.\n\n\nRequired R1 output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge R1 research plan\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"candidate_id\", \"hypothesis\", \"research_questions\", \"evidence_ledger\", \"checklist\", \"alternative_explanation\", \"falsification_test\", \"retrieval_performed\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"candidate_id\": {\"type\": \"string\", \"minLength\": 1}, \"hypothesis\": {\"type\": \"string\", \"minLength\": 1}, \"retrieval_performed\": {\"type\": \"boolean\", \"const\": false}, \"research_questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"question\", \"metrics\", \"periods\", \"supported_by_dataset\", \"missing\"], \"properties\": {\"question\": {\"type\": \"string\", \"minLength\": 1}, \"metrics\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"supported_by_dataset\": {\"type\": \"boolean\"}, \"missing\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"evidence_ledger\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"evidence_id\", \"source_type\", \"source_url\", \"publication_date\", \"excerpt_or_data_point\", \"claim_supported\", \"kind\", \"status\"], \"properties\": {\"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"]}, \"publication_date\": {\"type\": [\"string\", \"null\"]}, \"excerpt_or_data_point\": {\"type\": [\"string\", \"null\"]}, \"claim_supported\": {\"type\": \"string\"}, \"kind\": {\"type\": \"string\", \"enum\": [\"reported_fact\", \"calculation\", \"inference\", \"unverified_hypothesis\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"planned_lookup\", \"supplied\", \"contradictory\"]}}}}, \"checklist\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"step\", \"expected_evidence\", \"cross_validation_sources\", \"completion_criteria\"], \"properties\": {\"step\": {\"type\": \"string\", \"minLength\": 1}, \"expected_evidence\": {\"type\": \"string\"}, \"cross_validation_sources\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"calculation\": {\"type\": [\"string\", \"null\"]}, \"completion_criteria\": {\"type\": \"string\"}}}}, \"alternative_explanation\": {\"type\": \"string\", \"minLength\": 1}, \"falsification_test\": {\"type\": \"string\", \"minLength\": 1}}}\n\nYour previous response failed validation. Return a complete JSON object against the supplied schema. Correct only these errors; do not invent evidence, change the research conclusion merely to pass validation, or claim retrieval occurred. Validation errors: R1 output failed validation: $: unexpected property '$schema'\nPrevious JSON to repair in place (preserve candidates, hypotheses, recommendation and criterion scores; fix only schema errors):\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"company_name\": \"NTPC Limited\", \"candidate_id\": \"cand_hidden_relationships_001\", \"hypothesis\": \"NTPC Limited's financial interdependencies with subsidiaries and JVs involve significant transaction volumes that may indicate cross-subsidization or operational reliance beyond standard consolidated accounting.\", \"retrieval_performed\": false, \"research_questions\": [{\"question\": \"Do intra-group transaction volumes demonstrate a trend of cross-subsidization where the parent provides funding or operational support to underperforming subsidiaries beyond market terms?\", \"metrics\": [\"Aggregate inter-company receivables\", \"Debt-to-equity ratios of specific subsidiaries\", \"Interest rates on inter-company loans vs market lending rates\"], \"periods\": [\"FY 2023-24\", \"FY 2024-25\"], \"supported_by_dataset\": false, \"missing\": [\"Terms and conditions of inter-company loans\", \"Economic rationale for non-market rate transactions\", \"Standalone financial performance of smaller JVs\"]}, {\"question\": \"Is there a concentration of financial risk in specific JVs like Jhabua Power that impacts NTPC's consolidated liquidity?\", \"metrics\": [\"Outstanding recoverable loan balances per entity\", \"Liquidity ratios of NTPC parent\", \"Ratio of inter-company exposure to total assets\"], \"periods\": [\"FY 2023-24\", \"FY 2024-25\"], \"supported_by_dataset\": false, \"missing\": [\"Cash flow impact analysis of inter-company settlements\", \"Project-specific capacity vs performance data\"]}], \"evidence_ledger\": [{\"evidence_id\": \"ev_77c5f772c341d65bc010f576\", \"source_type\": \"pdf\", \"source_url\": null, \"publication_date\": null, \"excerpt_or_data_point\": \"Detailed table of significant transactions with JVs/Subsidiaries listing values for FY 2024-25 and FY 2023-24.\", \"claim_supported\": \"Existence of large-scale financial interdependencies between NTPC and its subsidiaries/JVs.\", \"kind\": \"reported_fact\", \"status\": \"supplied\"}], \"checklist\": [{\"step\": \"Extract and tabulate transaction data from the 'Related Party Transactions' section of the Annual Report.\", \"expected_evidence\": \"Structured dataset of transaction types (sales, purchases, loans) per subsidiary for FY 24 and FY 25.\", \"cross_validation_sources\": [\"NTPC Standalone Financial Statements\", \"Subsidiary Standalone Annual Reports\"], \"completion_criteria\": \"A complete mapping of inflows and outflows between parent and key entities.\"}, {\"step\": \"Compare internal loan interest rates against benchmark market rates for similar tenor.\", \"expected_evidence\": \"Interest rate disclosure in notes to financial statements.\", \"cross_validation_sources\": [\"Corporate Bond Yield data\", \"NTPC Audit Committee Minutes\"], \"calculation\": \"Spread = (Internal Interest Rate - Market Benchmark Rate)\", \"completion_criteria\": \"Determination of whether loans are provided at arm's length or subsidized rates.\"}], \"alternative_explanation\": \"Transactions represent standard business operations and efficient resource management within a vertically integrated power conglomerate.\", \"falsification_test\": \"Independent audit confirmation showing that all intra-group transactions are conducted strictly at prevailing market rates with no material impact on the parent's independent credit risk profile.\"}",
+  "payload": {
+    "company_name": "NTPC Limited",
+    "candidate": {
+      "candidate_id": "cand_hidden_relationships_001",
+      "rank": 1,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC Limited's financial interdependencies with subsidiaries and JVs involve significant transaction volumes that may indicate cross-subsidization or operational reliance beyond standard consolidated accounting.",
+      "financial_importance": "High; the company maintains large-scale transactions with a complex web of subsidiaries and joint ventures (e.g., thousands of Crores in sales/purchases with entities like NVVN and Jhabua Power).",
+      "metrics_and_periods": [
+        "Aggregate transaction values by counterparty for FY 2024-25 vs FY 2023-24",
+        "Outstanding recoverable loan balances vs. trade balances per party"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Detailed table of significant transactions with JVs/Subsidiaries listing values for FY 2024-25 and FY 2023-24.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Cash flow statement impact of these transactions",
+        "Terms and conditions of inter-company loans",
+        "Arm's length verification for high-value contracts"
+      ],
+      "alternative_explanation": "Transactions represent standard business operations and efficient resource management within a vertically integrated power conglomerate.",
+      "falsification_condition": "Independent audit confirmation showing that all intra-group transactions are conducted strictly at prevailing market rates with no material impact on the parent's independent credit risk profile.",
+      "data_risks_and_limitations": [
+        "Data is extracted from management reports; does not imply independent validation of the economic rationale of these transactions."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "High value of inter-company transactions directly impacts liquidity and subsidiary capital health."
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "Extensive tables provided in the Annual Report covering 2024-25 and 2023-24."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Relies on comparative annual reporting; highly testable via cross-referencing consolidated financial statements."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "While disclosure is mandatory, the scale and complexity of the JV web require detailed mapping."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be cross-validated against individual subsidiary standalone filings if available."
+        }
+      },
+      "weighted_score": 89.5,
+      "weighted_score_rationale": "The evidence is well-documented within the ingested annual report, providing a clear map of relationships and transaction values, making it highly testable.",
+      "next_research_action": "Perform a network analysis of transaction flows between the Parent, subsidiaries, and specific JVs to identify concentration risks."
+    },
+    "dataset_summary": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "date_coverage": null,
+      "missing_information": [
+        "No company-specific revenue/generation mix",
+        "No project-specific capacity data",
+        "No direct financial performance data linked to specific entities in a machine-readable format"
+      ],
+      "data_limitations": [
+        "No recognized company or ticker identifier field in row data; CSV rows are not company-specific.",
+        "The dataset consists of market price data, offering no insight into operations, strategy, or internal corporate structure."
+      ]
+    },
+    "supplied_evidence_ids": [
+      "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "ev_b489528262378cdf8e9d9601",
+      "ev_77c5f772c341d65bc010f576",
+      "ev_08dc5955d5c3ef29b41a5593",
+      "ev_27588cf43298e9264d4d1efa",
+      "ev_5be4db19957ea5f7fd2b0c02",
+      "ev_d3d9906726630bba52e0d915",
+      "ev_13598c8ff149784e31964e13"
+    ]
+  }
+}

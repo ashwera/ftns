@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:21:48.891525+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.wrpc.gov.in/allfile/23092025160049797856%20WRPC%20Supplementary%20Annexures.pdf",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:21:47.934742+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.wrpc.gov.in/allfile/23092025160049797856%20WRPC%20Supplementary%20Annexures.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.wrpc.gov.in/allfile/23092025160049797856%20WRPC%20Supplementary%20Annexures.pdf",
+      "redirect_chain": [],
+      "source_sha256": "321a1962b467901a69b9dac4a76446e16fdaa78e9a460c50f9382434e7af3a65",
+      "content_type": "application/pdf",
+      "saved_path": "signalforge/data/powergrid_research_20261025/cea_mmr/sources/321a1962b467_335a84c3.pdf",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "independent_source",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 50,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 50
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "company_name": "NTPC Limited",
+  "candidate_id": "renewable_transition_001",
+  "hypothesis": "NTPC's aggressive renewable capacity expansion (target 60GW by 2032) represents a pivot that is heavily reliant on subsidiary-led vehicles and strategic joint ventures rather than direct parent-led organic growth.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the breakdown of renewable capacity ownership across NTPC subsidiaries (NGEL, NREL, THDC, NEEPCO) versus the parent company?",
+      "metrics": [
+        "MW commissioned per entity",
+        "MW under execution per entity"
+      ],
+      "periods": [
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Granular asset ownership registry",
+        "JV versus wholly-owned subsidiary contribution breakdown"
+      ]
+    },
+    {
+      "question": "How do capital expenditure (CAPEX) flows from the parent company relate to the funding of subsidiary-led renewable projects?",
+      "metrics": [
+        "Inter-corporate loans",
+        "Equity infusion into NGEL",
+        "Debt-to-equity ratios of subsidiaries"
+      ],
+      "periods": [
+        "FY2024",
+        "FY2025"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Capital structure of specific subsidiaries",
+        "Flow-of-funds analysis"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+      "source_type": "Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "NTPC Group has commissioned 6.8 GW of renewable energy capacity as of March 31, 2025.",
+      "claim_supported": "NTPC renewable capacity status",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_d284dd5e0503ac55d73f2441",
+      "source_type": "Press Release/Exchange Filing",
+      "source_url": null,
+      "publication_date": "2024-11",
+      "excerpt_or_data_point": "NGEL raised 10,000 crore through an IPO.",
+      "claim_supported": "Reliance on subsidiary vehicles for capital mobilization",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "Regulatory Disclosure",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Proportion of total RE growth attributed to JVs vs. direct growth",
+      "kind": "inference",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Segregate capacity data by legal entity",
+      "expected_evidence": "List of RE plants and their parent subsidiary",
+      "cross_validation_sources": [
+        "NTPC Integrated Annual Report",
+        "NGEL Red Herring Prospectus",
+        "BSE/NSE Corporate Announcements"
+      ],
+      "calculation": "Sum of subsidiary capacity / Total commissioned capacity",
+      "completion_criteria": "Mapping of all 6.8GW commissioned capacity to legal entities"
+    },
+    {
+      "step": "Analyze NGEL IPO utilization",
+      "expected_evidence": "Use of proceeds statement from NGEL filings",
+      "cross_validation_sources": [
+        "NGEL IPO prospectus",
+        "Quarterly financial disclosures"
+      ],
+      "calculation": null,
+      "completion_criteria": "Confirmation of capital deployment for new versus existing RE assets"
+    }
+  ],
+  "alternative_explanation": "NTPC's structure is a standard corporate reorganization meant to segregate renewable risk and debt from the regulated thermal business, rather than an indication of reliance on external vehicles for growth.",
+  "falsification_test": "If the parent company directly funds and commissions >50% of new capacity growth in the 2026-2027 period, the 'subsidiary-led pivot' hypothesis would be weakened."
+}

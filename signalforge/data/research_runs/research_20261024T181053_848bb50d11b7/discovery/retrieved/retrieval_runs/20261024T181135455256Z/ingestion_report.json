@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:11:35.475963+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/a1f8fd922e42_03b743d4.html",
+      "source_sha256": "a1f8fd922e423dc50606d75cf43260b60c05b1a89359ba2b4c06799cbc0ba8af",
+      "file_format": "html",
+      "source_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+      "retrieved_at": "2026-10-24T18:11:35.455237+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_9d37acb5cbf7b4c949706644"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_9d37acb5cbf7b4c949706644",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_9d37acb5cbf7b4c949706644",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

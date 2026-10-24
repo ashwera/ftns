@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-10-24T19:23:09.769019+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/4e655fff0789_7573d6c1.pdf",
+      "source_sha256": "4e655fff07890c335890b0e634e9f8f7c3393da5b72f6acee5e828dcfffe70d4",
+      "file_format": "pdf",
+      "source_url": "https://heavyindustries.gov.in/sites/default/files/2025-05/monthly_do_for_the_month_of_april_2025.pdf",
+      "retrieved_at": "2026-10-24T19:23:09.213333+00:00",
+      "source_details": {
+        "page_count": 5
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 5,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_568fe4830c8d392e86ef47d0",
+    "ev_fb2b665a92984d188260fe7d",
+    "ev_2af6c3074bf5e2656c17adce",
+    "ev_5d5f3c466de02d3136c5a667",
+    "ev_fe6865796b80a54e6f7a6fe7"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_568fe4830c8d392e86ef47d0",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_568fe4830c8d392e86ef47d0",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_fb2b665a92984d188260fe7d",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_fb2b665a92984d188260fe7d",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_2af6c3074bf5e2656c17adce",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_2af6c3074bf5e2656c17adce",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_5d5f3c466de02d3136c5a667",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_5d5f3c466de02d3136c5a667",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_fe6865796b80a54e6f7a6fe7",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_fe6865796b80a54e6f7a6fe7",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

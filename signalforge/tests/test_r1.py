@@ -34,6 +34,22 @@ class R1Tests(unittest.TestCase):
             f = Path(d) / "f1.json"; f.write_text(json.dumps({"ranking_reliable": False}))
             with self.assertRaises(ValueError): r1.run(f, Path(d) / "o.json")
 
+    def test_production_schema_repair_preserves_false_retrieval_contract_and_raw(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            f = root / "f1.json"
+            f.write_text(json.dumps({"ranking_reliable": True, "company_name": "X",
+                "recommended_candidate_id": "c1", "ranked_candidates": [{"candidate_id": "c1"}]}))
+            cfg = dataclasses.replace(Config(), evidence_dir=root)
+            with mock.patch.object(r1, "generate_json", side_effect=[plan(retrieval_performed=True), plan()]) as model:
+                result = r1.run(f, root / "r1.json", cfg)
+            self.assertFalse(result["retrieval_performed"])
+            self.assertEqual(2, model.call_count)
+            self.assertIn("Required R1 output JSON Schema", model.call_args.args[0])
+            audit = next((root / "r1_model_audit").iterdir())
+            self.assertTrue(json.loads((audit / "attempt_1_raw_response.json").read_text())["retrieval_performed"])
+            self.assertFalse(json.loads((root / "r1.json").read_text())["retrieval_performed"])
+
 def eid(n): return "ev_" + str(n) * 24
 
 def approved(n, **over):

@@ -1,0 +1,1320 @@
+{
+  "company": "NTPC Limited",
+  "topic": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+    "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+    "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis"
+  ],
+  "search_results": [
+    {
+      "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "title": "NTPC Limited - Wikipedia",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:29:48.751065+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:29:48.715083+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "redirect_chain": [],
+            "source_sha256": "40f467330c8f516a0644f911e5c65319ae31cd0ee2fc135a19de58419c6b16a6",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T182946_403b0d7ccfe4/discovery/retrieved/sources/40f467330c8f_337a4428.html",
+            "document_title": "NTPC Limited - Wikipedia",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://ntpc.co.in/",
+      "title": "Home | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:29:50.009465+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:29:50.002081+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://ntpc.co.in/",
+            "redirect_chain": [],
+            "source_sha256": "4e5d640f93f38f56812c1e66969289acc65225b303a6353414bcf7fe8a432d7f",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T182946_403b0d7ccfe4/discovery/retrieved/sources/4e5d640f93f3_958a89fd.html",
+            "document_title": "Home | NTPC Limited",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+      "title": "NTPC Share Price, NTPC Stock Price, NTPC Ltd. Stock ... - Moneycontrol",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:29:50.203301+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T18:29:50.016422+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "error": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    }
+  ],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T18:29:46.414368+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.856834+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.857646+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.863436+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.864258+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://careers.ntpc.co.in/",
+        "title": "NTPC",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.864531+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+        "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.864760+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:46.864999+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T18:29:46.865440+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "results": [
+        {
+          "url": "https://ntpc.co.in/",
+          "title": "Home | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/recruitment/",
+          "title": "NTPC Limited - Recruitment Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc.html",
+          "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+          "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/",
+          "title": "NTPC",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+          "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+          "title": "NTPC Limited - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpctender.ntpc.co.in/",
+          "title": "NTPC: Home",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+          "title": "NTPC Share Price, NTPC Stock Price, NTPC Ltd. Stock ... - Moneycontrol",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ess.ntpc.co.in/",
+          "title": "Sign in to your account",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 3,
+      "rejected_count": 7,
+      "executed_queries": [
+        "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T18:29:46.865654+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.182570+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.183801+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.184840+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.185516+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://careers.ntpc.co.in/",
+        "title": "NTPC",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.186393+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+        "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.187066+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.187718+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T18:29:47.188588+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "results": [
+        {
+          "url": "https://ntpc.co.in/",
+          "title": "Home | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/recruitment/",
+          "title": "NTPC Limited - Recruitment Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc.html",
+          "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+          "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/",
+          "title": "NTPC",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+          "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+          "title": "NTPC Limited - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpctender.ntpc.co.in/",
+          "title": "NTPC: Home",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+          "title": "NTPC Share Price, NTPC Stock Price, NTPC Ltd. Stock ... - Moneycontrol",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ess.ntpc.co.in/",
+          "title": "Sign in to your account",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 3,
+      "rejected_count": 7,
+      "executed_queries": [
+        "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T18:29:47.189386+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.539972+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.541417+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.541898+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.542641+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://careers.ntpc.co.in/",
+        "title": "NTPC",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.543052+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+        "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.543478+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T18:29:47.543904+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T18:29:47.544479+00:00",
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "results": [
+        {
+          "url": "https://ntpc.co.in/",
+          "title": "Home | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/recruitment/",
+          "title": "NTPC Limited - Recruitment Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc.html",
+          "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+          "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/",
+          "title": "NTPC",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+          "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+          "title": "NTPC Limited - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpctender.ntpc.co.in/",
+          "title": "NTPC: Home",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+          "title": "NTPC Share Price, NTPC Stock Price, NTPC Ltd. Stock ... - Moneycontrol",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ess.ntpc.co.in/",
+          "title": "Sign in to your account",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 3,
+      "rejected_count": 7,
+      "executed_queries": [
+        "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:29:47.544906+00:00",
+      "url": "https://en.wikipedia.org/wiki/NTPC_Limited"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:29:48.751182+00:00",
+      "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "report": {
+        "generated_at": "2026-10-24T18:29:48.751065+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:29:48.715083+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "redirect_chain": [],
+            "source_sha256": "40f467330c8f516a0644f911e5c65319ae31cd0ee2fc135a19de58419c6b16a6",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T182946_403b0d7ccfe4/discovery/retrieved/sources/40f467330c8f_337a4428.html",
+            "document_title": "NTPC Limited - Wikipedia",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:29:48.751525+00:00",
+      "url": "https://ntpc.co.in/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:29:50.009579+00:00",
+      "url": "https://ntpc.co.in/",
+      "report": {
+        "generated_at": "2026-10-24T18:29:50.009465+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:29:50.002081+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://ntpc.co.in/",
+            "redirect_chain": [],
+            "source_sha256": "4e5d640f93f38f56812c1e66969289acc65225b303a6353414bcf7fe8a432d7f",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T182946_403b0d7ccfe4/discovery/retrieved/sources/4e5d640f93f3_958a89fd.html",
+            "document_title": "Home | NTPC Limited",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:29:50.010068+00:00",
+      "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:29:50.204105+00:00",
+      "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+      "report": {
+        "generated_at": "2026-10-24T18:29:50.203301+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T18:29:50.016422+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "error": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T18:29:50.205405+00:00",
+      "reason": "query_budget"
+    }
+  ],
+  "errors": [],
+  "returned_result_count": 30,
+  "relevant_returned_count": 9,
+  "relevant_result_count": 3,
+  "rejected_result_count": 21,
+  "rejected_results": [
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://careers.ntpc.co.in/",
+        "title": "NTPC",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+        "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. annual report investor disclosure",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+annual+report+investor+disclosure",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://careers.ntpc.co.in/",
+        "title": "NTPC",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+        "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. regulator government project data",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+regulator+government+project+data",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://careers.ntpc.co.in/",
+        "title": "NTPC",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+        "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC Limited\" Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources. independent industry analysis",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+Investigate+renewable+capacity%2C+project+execution+and+financial+significance+using+primary+disclosures+and+independent+sources.+independent+industry+analysis",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    }
+  ],
+  "discovery_status": "unverified_relevant_candidates",
+  "retrieval_status": "retrieved",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40,
+    "max_response_bytes": 2097152
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "query_budget"
+}

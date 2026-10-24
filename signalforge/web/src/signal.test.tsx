@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './ui'
-import { parseFinding, parseSourceCatalog, parseVerifications } from './finding'
+import { parseFinding, parseSourceCatalog, parseVerifications, parseResearchDossier } from './finding'
 
 const read = (name: string) => readFileSync(resolve(process.cwd(), 'public/data/finding', name), 'utf8')
 const real = JSON.parse(read('finding_bundle.json'))
@@ -20,10 +20,37 @@ function serve(overrides: Record<string, unknown> = {}, missing: string[] = []) 
 afterEach(() => { cleanup(); vi.unstubAllGlobals() })
 
 describe('finding contract parser', () => {
+  const statement = { statement: 'Synthetic test statement only', citations: [] }
+  const dossier = { schema_version: '1.0', run_id: real.run_id, finding_id: real.finding_id, case_headline: 'Synthetic test case', case_status: 'failed_novelty', chosen_prompt: 'Synthetic test prompt', implications: [statement, statement, statement], candidate_decisions: [], action_log: [], chronology: [], opposing_evidence: [], counterargument: null, falsification: [] }
+  it('validates the optional dossier and rejects stale identity, wrong counts and malformed citations', () => {
+    expect(parseResearchDossier(dossier, real)).toBe(dossier)
+    for (const patch of [{ run_id: 'other' }, { finding_id: 'other' }, { implications: [statement] }, { implications: Array(6).fill(statement) }, { implications: Array(3).fill({ ...statement, citations: [{}] }) }, { case_status: 'verified' }, { action_log: [{ action: 'Test', outcome: 'Test', execution: 'invented', citations: [] }] }]) expect(parseResearchDossier({ ...dossier, ...patch }, real)).toBeNull()
+  })
+  it('renders the separate dossier case, source gaps and report downloads', async () => {
+    serve({ 'research_dossier.json': dossier }); render(<App />)
+    expect(await screen.findByRole('heading', { name: dossier.case_headline })).toBeTruthy()
+    expect(screen.getByText('Synthetic test prompt')).toBeTruthy()
+    expect(screen.getAllByText('Source citation unavailable.')).toHaveLength(3)
+    expect(screen.getByRole('button', { name: 'Download report JSON' })).toBeTruthy()
+    expect(screen.getByRole('button', { name: 'Download report Markdown' })).toBeTruthy()
+    const create = vi.fn(() => 'blob:report'), revoke = vi.fn()
+    vi.stubGlobal('URL', Object.assign(URL, { createObjectURL: create, revokeObjectURL: revoke }))
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+    await userEvent.click(screen.getByRole('button', { name: 'Download report JSON' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Download report Markdown' }))
+    expect(create).toHaveBeenCalledTimes(2)
+    expect(click).toHaveBeenCalledTimes(2)
+    click.mockRestore()
+  })
+  it('keeps the finding visible when the dossier is absent', async () => {
+    serve({}, ['research_dossier.json']); render(<App />)
+    expect(await screen.findByRole('heading', { name: headline })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: 'Research dossier unavailable' })).toBeTruthy()
+  })
   it('accepts the real pipeline finding unchanged and the companion verification file', () => {
     expect(parseFinding(real)).toBe(real)
     expect(parseVerifications(JSON.parse(read('verification_results.json'))).length).toBeGreaterThan(0)
-    expect(parseSourceCatalog(JSON.parse(read('source_catalog_status.json')))).toHaveLength(6)
+    expect(parseSourceCatalog(JSON.parse(read('source_catalog_status.json')))).toHaveLength(1)
   })
   it('rejects contract violations instead of repairing them', () => {
     expect(parseFinding({ ...real, schema_version: '2.0' })).toBeNull()
@@ -65,7 +92,7 @@ describe('Signal view', () => {
     expect(document.body.textContent).toContain('original pipeline-run calculations')
     expect(document.body.textContent).toContain('does not represent the parent company’s economic ownership share')
   })
-  it('keeps all seven support outcomes partial and exposes catalog not-retrieved states and the report hash', async () => {
+  it('keeps all seven support outcomes partial and exposes the recovered source and report hash', async () => {
     serve(); const user = userEvent.setup(); render(<App />); await screen.findByRole('heading', { name: headline })
     expect(real.audit_trail).toHaveLength(7)
     const rows = [...document.querySelectorAll('.sg-table:not(.sg-ratios) tbody > tr:not(.sg-detail)')]
@@ -75,9 +102,9 @@ describe('Signal view', () => {
       expect(rows[index].textContent?.toLowerCase()).toContain('partially supported')
     }
     expect(document.body.textContent).not.toContain('All inputs are from the project’s own text extraction; none was checked against the original PDF.')
-    expect(document.body.textContent).toContain('Run-level verification checked 6 of 7 inputs at primary-source level; 1 remained at project-text level.')
-    await user.click(screen.getByText('Source catalog availability (6)'))
-    expect(document.body.textContent).toContain('not retrieved')
+    expect(document.body.textContent).toContain('6 of 7 inputs have effective primary-source verification')
+    await user.click(screen.getByText('Source catalog availability (1)'))
+    expect(document.body.textContent).toContain('available')
     expect(document.body.textContent).toContain('28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd')
     expect(document.body.textContent).toContain('network not used')
   })
@@ -87,7 +114,7 @@ describe('Signal view', () => {
     expect(document.body.textContent).toContain('13,791 MW')
     await user.click(screen.getByRole('button', { name: 're_under_implementation_jv_subsidiary' }))
     expect(document.body.textContent).toContain('14,516')
-    expect(document.body.textContent).toContain('PDF page 91')
+    expect(document.body.textContent).toContain('Source page 91')
   })
   it('uses direct values for the headline and all four denominator-specific ratios', async () => {
     serve(); render(<App />); await screen.findByRole('heading', { name: headline })

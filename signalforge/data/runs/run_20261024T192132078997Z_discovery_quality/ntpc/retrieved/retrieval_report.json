@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-24T19:22:36.172992+00:00",
+  "requested_count": 1,
+  "retrieved_count": 0,
+  "failed_count": 1,
+  "sources": [
+    {
+      "requested_url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:22:14.288422+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+        }
+      ],
+      "error": "RetrievalError: Response exceeded 15728640 byte limit"
+    }
+  ],
+  "normalized_evidence_record_count": 0,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 0
+}

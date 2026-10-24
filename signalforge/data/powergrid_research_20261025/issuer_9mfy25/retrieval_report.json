@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:19:34.069328+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/sites/default/files/financials_presentations/Q3FY259MFY25Investorpresentation.pdf",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:19:33.801297+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/sites/default/files/financials_presentations/Q3FY259MFY25Investorpresentation.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.powergrid.in/sites/default/files/financials_presentations/Q3FY259MFY25Investorpresentation.pdf",
+      "redirect_chain": [],
+      "source_sha256": "5ed9df216c6b3c8f55dcaa20f2365ba701b58b0e0881704bbd8ebf921fb8490d",
+      "content_type": "application/pdf",
+      "saved_path": "signalforge/data/powergrid_research_20261025/issuer_9mfy25/sources/5ed9df216c6b_1ba82c67.pdf",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "original_disclosure",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 31,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 31
+}

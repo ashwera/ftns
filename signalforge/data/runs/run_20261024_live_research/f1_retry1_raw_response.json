@@ -1,0 +1,171 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "No recognized company or ticker identifier field in CSV data",
+      "No financial statement data in CSV",
+      "No operational capacity data in CSV"
+    ],
+    "data_limitations": [
+      "CSV rows provided (n=126) do not contain company identifiers and appear to be market price data; cannot be linked to NTPC Limited operations.",
+      "Evidence for research is sourced exclusively from the Integrated Annual Report 2024-25, not the provided CSV."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": "Ranking is based on disclosed strategic targets and operational results from the 2024-25 Integrated Annual Report, as the CSV data is irrelevant to corporate performance analysis.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_renewable_transition_001",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC's renewable revenue mix is lagging behind its stated 60 GW 2032 target, relying heavily on coal for current turnover.",
+      "financial_importance": "High: Transition speed impacts long-term cost of capital and regulatory ESG compliance.",
+      "metrics_and_periods": [
+        "Revenue from non-fossil sources (FY2024-25)",
+        "Commissioned renewable capacity (March 31, 2025)",
+        "Under-execution capacity (March 31, 2025)"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Non-fossil revenue reached 17,359.67 crore (9.33% of total revenue).",
+          "source_type": "Integrated Annual Report",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": null,
+          "evidence_id": "ev_cc45cae4383a4d6afdc8f340",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "6.8 GW renewable capacity commissioned; 14.5 GW under execution; 11 GW in pipeline.",
+          "source_type": "Integrated Annual Report",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": null,
+          "evidence_id": "ev_d284dd5e0503ac55d73f2441",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical revenue by source for 2022-2024 for trend analysis.",
+        "Detailed commissioning schedule for the 14.5 GW under execution."
+      ],
+      "alternative_explanation": "Revenue share is low due to longer gestation periods of renewable projects versus immediate revenue recognition of fossil fuel generation.",
+      "falsification_condition": "If non-fossil revenue growth significantly outpaces total revenue growth in the next two fiscal years.",
+      "data_risks_and_limitations": [
+        "Reliance on management-reported revenue splits.",
+        "Revenue recognition methods for green energy JVs may impact reported figures."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Directly impacts valuation and long-term sustainability as a power utility."
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "Report provides clear FY25 figures for revenue and capacity."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "High testability against future annual report disclosures."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Requires reconciling current small revenue contribution with ambitious long-term capacity targets."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be cross-validated against capacity installation reports from the Ministry of New and Renewable Energy."
+        }
+      },
+      "weighted_score": 88.0,
+      "weighted_score_rationale": "The candidate is well-supported by primary evidence, highly significant, and testable using publicly available annual reports.",
+      "next_research_action": "Model the 2032 target timeline based on the current 6.8 GW baseline and the 14.5 GW execution pipeline."
+    },
+    {
+      "candidate_id": "cand_hidden_relationships_001",
+      "rank": 2,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC is using off-balance sheet financing or complex JV structures to manage land acquisition and project debt.",
+      "financial_importance": "Moderate: Could lead to understated leverage or off-balance sheet liabilities.",
+      "metrics_and_periods": [
+        "JV investment amounts",
+        "Guarantee value provided to JVs",
+        "Equity contribution to JVs"
+      ],
+      "evidence_found": [
+        {
+          "statement": "NTPC has multiple JVs (NRGEL, APNHAL, etc.) for land acquisition and project development.",
+          "source_type": "Integrated Annual Report",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": null,
+          "evidence_id": "ev_d284dd5e0503ac55d73f2441",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Significant inter-company balances and guarantees listed for JVs.",
+          "source_type": "Integrated Annual Report",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": null,
+          "evidence_id": "ev_08dc5955d5c3ef29b41a5593",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Audited financial statements of specific material JVs (e.g., NGEL, APNHAL).",
+        "Debt-to-equity covenants at the JV level."
+      ],
+      "alternative_explanation": "The complex structure is a standard operational necessity for state-specific land acquisition and grid integration.",
+      "falsification_condition": "If consolidated financial statements explicitly detail all debt and liabilities of the mentioned JVs without ambiguity.",
+      "data_risks_and_limitations": [
+        "Complexity of accounting for JVs under Ind AS.",
+        "Limited access to private JV-level debt covenants."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 3,
+          "rationale": "Could impact consolidated leverage ratios."
+        },
+        "evidence_availability": {
+          "score": 3,
+          "rationale": "Lists of JVs are provided, but detailed financial interdependencies are opaque."
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "Requires in-depth analysis of specific JV filings which may not be publicly accessible."
+        },
+        "non_obviousness": {
+          "score": 4,
+          "rationale": "Not immediately apparent why so many specific JVs are needed for 'land acquisition' alone."
+        },
+        "cross_validation_potential": {
+          "score": 3,
+          "rationale": "Limited cross-reference options for private JV data."
+        }
+      },
+      "weighted_score": 64.75,
+      "weighted_score_rationale": "Strong conceptual importance but limited by the opacity of private/JV-level financial data.",
+      "next_research_action": "Obtain financial filings for the 25:75 or 50:50 JVs listed to assess leverage ratios."
+    }
+  ],
+  "recommended_candidate_id": "cand_renewable_transition_001"
+}

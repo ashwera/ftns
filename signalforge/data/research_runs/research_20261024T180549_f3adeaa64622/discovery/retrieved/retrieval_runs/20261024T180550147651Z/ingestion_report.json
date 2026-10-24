@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-10-24T18:05:50.170010+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/c88bfedc62e3_786c5a29.html",
+      "source_sha256": "c88bfedc62e3a3d029a8531c73d512bedae7d068fec0f2b032275dab17bf8671",
+      "file_format": "html",
+      "source_url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+      "retrieved_at": "2026-10-24T18:05:50.147615+00:00",
+      "source_details": {
+        "html_metadata": {
+          "article:published_time": "2026-10-23T17:50:00+05:30"
+        }
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_7cef03882e18992782bf34e0"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_7cef03882e18992782bf34e0",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

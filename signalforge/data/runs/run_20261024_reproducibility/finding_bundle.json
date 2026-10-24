@@ -1,0 +1,771 @@
+{
+  "schema_version": "1.0",
+  "finding_id": "find_run_20261024_reproducibility_H_syn",
+  "run_id": "run_20261024_reproducibility",
+  "company": {
+    "name": "Meridian Power Limited",
+    "aliases": [
+      "Meridian"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "finding_status": "provisional_hypothesis",
+  "evidence_strength": "Weak",
+  "headline": "Meridian Power Limited: 20.0% of its own under-implementation pipeline is renewable versus 60.0% of the joint-venture and subsidiary pipeline; 90.0% of the group's renewable pipeline sits in joint ventures and subsidiaries.",
+  "why_it_matters": "Renewable growth is concentrated in joint ventures and subsidiaries, so parent-only metrics and the parent's own capital plan can mis-describe the group's renewable transition, and exposure to those entities' financing and minority interests matters for valuation.",
+  "periods": [
+    "2025-03-31"
+  ],
+  "rank_score": 49.0,
+  "rank_components": {
+    "strength": 16.0,
+    "materiality": 20.0,
+    "corroboration": 0.0,
+    "recency": 10.0,
+    "consistency": 10.0,
+    "contradiction_penalty": -0.0
+  },
+  "inputs": [
+    {
+      "name": "installed_total_group",
+      "value": 12000.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "claim_ids": [
+        "cl1_e050795c5f2ac513ad65cf6a"
+      ],
+      "verification_ids": [
+        "ver_installed_total_group_ad65cf6a_text"
+      ],
+      "verification_outcome": "confirmed",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• Meridian Power Limited reported group installed capacity of 12,000 MW on a consolidated basis as on 31 March 2025.",
+        "url": null
+      }
+    },
+    {
+      "name": "re_installed_group",
+      "value": 900.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "commissioned",
+      "claim_ids": [
+        "cl1_c1b7a152c4abdb33cbe83f46"
+      ],
+      "verification_ids": [
+        "ver_re_installed_group_cbe83f46_text"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• As on 31 March 2025, Meridian has a commissioned renewable capacity of 900 MW.",
+        "url": null
+      }
+    },
+    {
+      "name": "re_pipeline_group",
+      "value": 2000.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_c8d92da20bd3fb596a98b23a"
+      ],
+      "verification_ids": [
+        "ver_re_pipeline_group_6a98b23a_text"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies.",
+        "url": null
+      }
+    },
+    {
+      "name": "pipeline_total_group",
+      "value": 4000.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "group",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_76746b021cc3deae002438ff"
+      ],
+      "verification_ids": [
+        "ver_pipeline_total_group_002438ff_text"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies.",
+        "url": null
+      }
+    },
+    {
+      "name": "pipeline_jv_sub",
+      "value": 3000.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_1efdb0ea77101177fc36990f"
+      ],
+      "verification_ids": [
+        "ver_pipeline_jv_sub_fc36990f_text"
+      ],
+      "verification_outcome": "confirmed",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• As on 31 March 2025, Meridian Power Limited has projects with a total capacity of 4,000 MW under implementation, including 3,000 MW being developed by joint venture and subsidiary companies.",
+        "url": null
+      }
+    },
+    {
+      "name": "re_pipeline_jv_sub",
+      "value": 1800.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "jv_subsidiary_part",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_c64ff088d18dce67d09fb12a"
+      ],
+      "verification_ids": [
+        "ver_re_pipeline_jv_sub_d09fb12a_text"
+      ],
+      "verification_outcome": "confirmed",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• As on 31 March 2025, Meridian's renewable capacity of 2,000 MW is under implementation, including 1,800 MW of renewable projects being developed by joint venture and subsidiary companies.",
+        "url": null
+      }
+    },
+    {
+      "name": "re_target",
+      "value": 5000.0,
+      "unit": "MW",
+      "as_of_date": null,
+      "basis": "group",
+      "statement_status": "target",
+      "claim_ids": [
+        "cl1_a6ebbb26586a20b02929c146"
+      ],
+      "verification_ids": [
+        "ver_re_target_2929c146_text"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": "ev_111111111111111111111111",
+        "source_path": "SYNTHETIC/meridian.txt",
+        "page": 3,
+        "locator": "page:3:block:1",
+        "excerpt": "• Meridian has set a target to achieve 5,000 MW of renewable capacity by 2032.",
+        "url": null
+      }
+    },
+    {
+      "name": "parent_under_implementation",
+      "value": 1000.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "parent_own",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_1efdb0ea77101177fc36990f",
+        "cl1_76746b021cc3deae002438ff"
+      ],
+      "verification_ids": [
+        "ver_pipeline_jv_sub_fc36990f_text",
+        "ver_pipeline_total_group_002438ff_text"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "derived by subtraction of two cited inputs",
+        "excerpt": "parent_under_implementation = whole - part (see calculation trace)",
+        "url": null
+      }
+    },
+    {
+      "name": "parent_re_under_implementation",
+      "value": 200.0,
+      "unit": "MW",
+      "as_of_date": "2025-03-31",
+      "basis": "parent_own",
+      "statement_status": "under_implementation",
+      "claim_ids": [
+        "cl1_c64ff088d18dce67d09fb12a",
+        "cl1_c8d92da20bd3fb596a98b23a"
+      ],
+      "verification_ids": [
+        "ver_re_pipeline_group_6a98b23a_text",
+        "ver_re_pipeline_jv_sub_d09fb12a_text"
+      ],
+      "verification_outcome": "partially_supported",
+      "verification_level": "extracted_text_review",
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "derived by subtraction of two cited inputs",
+        "excerpt": "parent_re_under_implementation = whole - part (see calculation trace)",
+        "url": null
+      }
+    }
+  ],
+  "calculations": [
+    {
+      "calculation_id": "calc_afabd722c5828bbb",
+      "name": "re_share_of_group_pipeline",
+      "formula": "re_pipeline_group / pipeline_total_group x 100",
+      "result": {
+        "value": 50.0,
+        "unit": "percent",
+        "lower_bound": 50.0,
+        "upper_bound": 50.0
+      },
+      "input_names": [
+        "re_pipeline_group",
+        "pipeline_total_group"
+      ],
+      "trace": "re_pipeline_group = 2000 MW (2000 MW); pipeline_total_group = 4000 MW; 100 x 2000 / 4000 = 50.0000%; rounding bounds [50.0000%, 50.0000%]"
+    },
+    {
+      "calculation_id": "calc_691d644d616b1554",
+      "name": "jv_subsidiary_share_of_re_pipeline",
+      "formula": "re_pipeline_jv_sub / re_pipeline_group x 100",
+      "result": {
+        "value": 90.0,
+        "unit": "percent",
+        "lower_bound": 90.0,
+        "upper_bound": 90.0
+      },
+      "input_names": [
+        "re_pipeline_jv_sub",
+        "re_pipeline_group"
+      ],
+      "trace": "re_pipeline_jv_sub = 1800 MW (1800 MW); re_pipeline_group = 2000 MW; 100 x 1800 / 2000 = 90.0000%; rounding bounds [90.0000%, 90.0000%]"
+    },
+    {
+      "calculation_id": "calc_b27f3b992971a005",
+      "name": "re_share_of_parent_own_pipeline",
+      "formula": "parent_re_under_implementation / parent_under_implementation x 100",
+      "result": {
+        "value": 20.0,
+        "unit": "percent",
+        "lower_bound": 20.0,
+        "upper_bound": 20.0
+      },
+      "input_names": [
+        "parent_re_under_implementation",
+        "parent_under_implementation"
+      ],
+      "trace": "parent_re_under_implementation = 200 MW (200 MW); parent_under_implementation = 1000 MW; 100 x 200 / 1000 = 20.0000%; rounding bounds [20.0000%, 20.0000%]"
+    },
+    {
+      "calculation_id": "calc_8f8d6fd4ee82c228",
+      "name": "re_share_of_jv_subsidiary_pipeline",
+      "formula": "re_pipeline_jv_sub / pipeline_jv_sub x 100",
+      "result": {
+        "value": 60.0,
+        "unit": "percent",
+        "lower_bound": 60.0,
+        "upper_bound": 60.0
+      },
+      "input_names": [
+        "re_pipeline_jv_sub",
+        "pipeline_jv_sub"
+      ],
+      "trace": "re_pipeline_jv_sub = 1800 MW (1800 MW); pipeline_jv_sub = 3000 MW; 100 x 1800 / 3000 = 60.0000%; rounding bounds [60.0000%, 60.0000%]"
+    },
+    {
+      "calculation_id": "calc_3117df21328447aa",
+      "name": "pipeline_relative_to_installed_base",
+      "formula": "pipeline_total_group / installed_total_group x 100",
+      "result": {
+        "value": 33.333333,
+        "unit": "percent",
+        "lower_bound": 33.333333,
+        "upper_bound": 33.333333
+      },
+      "input_names": [
+        "pipeline_total_group",
+        "installed_total_group"
+      ],
+      "trace": "pipeline_total_group = 4000 MW (4000 MW); installed_total_group = 12000 MW; 100 x 4000 / 12000 = 33.3333%; rounding bounds [33.3333%, 33.3333%]"
+    },
+    {
+      "calculation_id": "calc_be1314e64d0849ac",
+      "name": "re_installed_plus_pipeline_vs_target",
+      "formula": "(sum(achieved + under implementation)) / target x 100",
+      "result": {
+        "value": 58.0,
+        "unit": "percent",
+        "lower_bound": 58.0,
+        "upper_bound": 58.0
+      },
+      "input_names": [
+        "re_installed_group",
+        "re_pipeline_group",
+        "re_target"
+      ],
+      "trace": "900 + 2000 = 2900 MW; / target 5000 = 58.0000% (bounds [58.0000%, 58.0000%])"
+    }
+  ],
+  "supporting_evidence": [
+    {
+      "statement": "re_share_of_group_pipeline: re_pipeline_group = 2000 MW (2000 MW); pipeline_total_group = 4000 MW; 100 x 2000 / 4000 = 50.0000%; rounding bounds [50.0000%, 50.0000%]",
+      "claim_ids": [
+        "cl1_76746b021cc3deae002438ff",
+        "cl1_c8d92da20bd3fb596a98b23a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_afabd722c5828bbb",
+        "excerpt": "re_pipeline_group / pipeline_total_group x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "jv_subsidiary_share_of_re_pipeline: re_pipeline_jv_sub = 1800 MW (1800 MW); re_pipeline_group = 2000 MW; 100 x 1800 / 2000 = 90.0000%; rounding bounds [90.0000%, 90.0000%]",
+      "claim_ids": [
+        "cl1_c64ff088d18dce67d09fb12a",
+        "cl1_c8d92da20bd3fb596a98b23a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_691d644d616b1554",
+        "excerpt": "re_pipeline_jv_sub / re_pipeline_group x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "re_share_of_parent_own_pipeline: parent_re_under_implementation = 200 MW (200 MW); parent_under_implementation = 1000 MW; 100 x 200 / 1000 = 20.0000%; rounding bounds [20.0000%, 20.0000%]",
+      "claim_ids": [
+        "cl1_1efdb0ea77101177fc36990f",
+        "cl1_76746b021cc3deae002438ff",
+        "cl1_c64ff088d18dce67d09fb12a",
+        "cl1_c8d92da20bd3fb596a98b23a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_b27f3b992971a005",
+        "excerpt": "parent_re_under_implementation / parent_under_implementation x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "re_share_of_jv_subsidiary_pipeline: re_pipeline_jv_sub = 1800 MW (1800 MW); pipeline_jv_sub = 3000 MW; 100 x 1800 / 3000 = 60.0000%; rounding bounds [60.0000%, 60.0000%]",
+      "claim_ids": [
+        "cl1_1efdb0ea77101177fc36990f",
+        "cl1_c64ff088d18dce67d09fb12a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_8f8d6fd4ee82c228",
+        "excerpt": "re_pipeline_jv_sub / pipeline_jv_sub x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "pipeline_relative_to_installed_base: pipeline_total_group = 4000 MW (4000 MW); installed_total_group = 12000 MW; 100 x 4000 / 12000 = 33.3333%; rounding bounds [33.3333%, 33.3333%]",
+      "claim_ids": [
+        "cl1_76746b021cc3deae002438ff",
+        "cl1_e050795c5f2ac513ad65cf6a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_3117df21328447aa",
+        "excerpt": "pipeline_total_group / installed_total_group x 100",
+        "url": null
+      },
+      "independent": false
+    },
+    {
+      "statement": "re_installed_plus_pipeline_vs_target: 900 + 2000 = 2900 MW; / target 5000 = 58.0000% (bounds [58.0000%, 58.0000%])",
+      "claim_ids": [
+        "cl1_a6ebbb26586a20b02929c146",
+        "cl1_c1b7a152c4abdb33cbe83f46",
+        "cl1_c8d92da20bd3fb596a98b23a"
+      ],
+      "citation": {
+        "source_chunk_id": null,
+        "source_path": null,
+        "page": null,
+        "locator": "calc_be1314e64d0849ac",
+        "excerpt": "(sum(achieved + under implementation)) / target x 100",
+        "url": null
+      },
+      "independent": false
+    }
+  ],
+  "contradictory_evidence": [],
+  "alternative_explanations": [
+    "Group (consolidated) reporting already includes these entities, so the split may be organisational rather than economic.",
+    "Under-implementation capacity may slip or be re-scoped; the pipeline is not commissioned capacity.",
+    "The parent may hold economic interests in the subsidiaries that offset the apparent concentration."
+  ],
+  "falsification_conditions": [
+    "The component table in the primary filing does not match the extracted text, so the parent and JV/subsidiary shares differ from those computed here.",
+    "A different boundary or date is used for the renewable total than for the pipeline total.",
+    "Prior-year disclosures show the same split, implying a structural reporting convention rather than a change."
+  ],
+  "missing_evidence": [
+    "Primary-source check of the page 91 table and sentences in the original filing or exchange submission.",
+    "Independent corroboration (regulator or third-party data) of subsidiary renewable pipeline.",
+    "Prior-year pipeline composition to test conversion and trend.",
+    "Ownership percentage and consolidation treatment of each subsidiary/JV."
+  ],
+  "limitations": [
+    "0 of 7 inputs have effective primary-source verification; consult each input's outcome and open checks before relying on it.",
+    "Rounded source figures retain their rounding bounds through the calculations.",
+    "Claims remain unverified; verification results are separate records.",
+    "Provisional: not every key input is confirmed against a primary source; do not treat as a supported finding."
+  ],
+  "stage_provenance": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "7 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "7 claims / 1 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "blocked",
+      "detail": "SIGNALFORGE_API_KEY not configured; no schema-valid human-approved company evidence; live F1 not attempted"
+    },
+    {
+      "stage": "R1",
+      "execution": "not_executed",
+      "detail": "F1 not run"
+    },
+    {
+      "stage": "source_catalog",
+      "execution": "not_executed",
+      "detail": "no --catalog supplied; verification limited to the project's text extraction"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "7 inputs verified; 0 at primary_source level, 7 at extracted_text_review only; effective outcomes {\"confirmed\": 3, \"partially_supported\": 4}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "6 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "all_claims_unverified": true,
+  "synthetic": true,
+  "provisional_rubric": {
+    "status": "PROVISIONAL - transparent initial weights, no calibration data",
+    "weights": {
+      "strength": 40,
+      "materiality": 25,
+      "corroboration": 15,
+      "recency": 10,
+      "consistency": 10
+    },
+    "materiality_threshold_pp": 10.0,
+    "strength_rules": {
+      "None": "no computed calculation, or any key input contradicted/unresolved/unverified",
+      "Weak": "all key inputs at least partially_supported, but verification is extracted_text_review only (no primary-source check) or some input is partial",
+      "Moderate": "all key inputs confirmed at primary_source level, no contradiction",
+      "Strong": "Moderate plus >=2 independent sources, passing cross-checks and no missing inputs"
+    }
+  },
+  "audit_trail": [
+    {
+      "role": "installed_total_group",
+      "input_name": "installed_total_group",
+      "key": true,
+      "claim_id": "cl1_e050795c5f2ac513ad65cf6a",
+      "claim_extraction_status": "ambiguous",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "confirmed",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_installed_total_group_ad65cf6a_text",
+          "level": "extracted_text_review",
+          "outcome": "confirmed",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {},
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "role": "re_installed_group",
+      "input_name": "re_installed_group",
+      "key": true,
+      "claim_id": "cl1_c1b7a152c4abdb33cbe83f46",
+      "claim_extraction_status": "ambiguous",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_re_installed_group_cbe83f46_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "role": "re_pipeline_group",
+      "input_name": "re_pipeline_group",
+      "key": true,
+      "claim_id": "cl1_c8d92da20bd3fb596a98b23a",
+      "claim_extraction_status": "needs_review",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_re_pipeline_group_6a98b23a_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "role": "pipeline_total_group",
+      "input_name": "pipeline_total_group",
+      "key": true,
+      "claim_id": "cl1_76746b021cc3deae002438ff",
+      "claim_extraction_status": "needs_review",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_pipeline_total_group_002438ff_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "role": "pipeline_jv_sub",
+      "input_name": "pipeline_jv_sub",
+      "key": true,
+      "claim_id": "cl1_1efdb0ea77101177fc36990f",
+      "claim_extraction_status": "needs_review",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "confirmed",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_pipeline_jv_sub_fc36990f_text",
+          "level": "extracted_text_review",
+          "outcome": "confirmed",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {},
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "role": "re_pipeline_jv_sub",
+      "input_name": "re_pipeline_jv_sub",
+      "key": true,
+      "claim_id": "cl1_c64ff088d18dce67d09fb12a",
+      "claim_extraction_status": "needs_review",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "confirmed",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_re_pipeline_jv_sub_d09fb12a_text",
+          "level": "extracted_text_review",
+          "outcome": "confirmed",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {},
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "role": "re_target",
+      "input_name": "re_target",
+      "key": true,
+      "claim_id": "cl1_a6ebbb26586a20b02929c146",
+      "claim_extraction_status": "ambiguous",
+      "claim_verification_status": "unverified",
+      "effective_outcome": "partially_supported",
+      "effective_level": "extracted_text_review",
+      "conflict": false,
+      "reason": "no primary source located the value; only the project's text extraction was reviewed",
+      "independent_confirming_groups": 0,
+      "unavailable_sources": [],
+      "results": [
+        {
+          "verification_id": "ver_re_target_2929c146_text",
+          "level": "extracted_text_review",
+          "outcome": "partially_supported",
+          "source": "synthetic",
+          "page": 3,
+          "url": null,
+          "passage_sha256": "9dca68b387d835394f5ffbe3667c926f8b568e58699b74b2fc6f0c168257fbeb",
+          "failed_or_open_checks": {
+            "basis": "unresolved"
+          },
+          "discrepancies": [],
+          "reviewer": "SYNTHETIC"
+        }
+      ]
+    }
+  ],
+  "decision_log": [
+    "input installed_total_group [key]: confirmed at extracted_text_review; 0 independent confirming group(s)",
+    "input re_installed_group [key]: partially_supported at extracted_text_review; 0 independent confirming group(s)",
+    "input re_pipeline_group [key]: partially_supported at extracted_text_review; 0 independent confirming group(s)",
+    "input pipeline_total_group [key]: partially_supported at extracted_text_review; 0 independent confirming group(s)",
+    "input pipeline_jv_sub [key]: confirmed at extracted_text_review; 0 independent confirming group(s)",
+    "input re_pipeline_jv_sub [key]: confirmed at extracted_text_review; 0 independent confirming group(s)",
+    "input re_target [key]: partially_supported at extracted_text_review; 0 independent confirming group(s)",
+    "strength=Weak; materiality=40.0 pp (threshold 10.0); independent groups=0; status=provisional_hypothesis"
+  ],
+  "downgrade_reasons": [
+    "key input 'installed_total_group' is confirmed only against the project's text extraction, not a primary source",
+    "key input 're_installed_group' is partially_supported",
+    "key input 're_pipeline_group' is partially_supported",
+    "key input 'pipeline_total_group' is partially_supported",
+    "key input 'pipeline_jv_sub' is confirmed only against the project's text extraction, not a primary source",
+    "key input 're_pipeline_jv_sub' is confirmed only against the project's text extraction, not a primary source",
+    "key input 're_target' is partially_supported",
+    "only 0 independent source group(s) back the key inputs; Strong needs at least 2"
+  ],
+  "rejected_hypothesis": null,
+  "verification_summary": {
+    "key_inputs": 7,
+    "confirmed_primary": 0,
+    "confirmed_text_only": 3,
+    "partial": 4,
+    "unresolved_or_unverifiable": 0,
+    "contradicted": 0,
+    "conflicts": 0,
+    "min_independent_groups": 0
+  }
+}

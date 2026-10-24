@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:29:50.006158+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/4e5d640f93f3_958a89fd.html",
+      "source_sha256": "4e5d640f93f38f56812c1e66969289acc65225b303a6353414bcf7fe8a432d7f",
+      "file_format": "html",
+      "source_url": "https://ntpc.co.in/",
+      "retrieved_at": "2026-10-24T18:29:50.002081+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_1b2dc90c8f045aa6b479cc3b"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_1b2dc90c8f045aa6b479cc3b",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_1b2dc90c8f045aa6b479cc3b",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

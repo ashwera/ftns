@@ -1,0 +1,591 @@
+{
+  "stage": "f1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "requested_at": "2026-10-24T19:11:38.144502+00:00",
+  "prompt": "# F1 — Research Angle Selector\n\nYou are SignalForge F1 for the Energy, Power & Renewables research track. Identify and rank research angles worth investigating; do not reach an investment conclusion. Inputs are the selected company, CSV-derived evidence, available source URLs/dates, and data limitations.\n\nThe input may include a research-readiness matrix, dataset quality warnings, verified ingested evidence, and explicit F1 scoring weights. Treat only verified-identity evidence matching the selected company as company-specific evidence. Existing market data may be attached only when row-level identifiers support the join; a verified company registry does not retroactively identify identifier-free rows. Dataset-level statistics are not company evidence. Use readiness ratings to calibrate confidence: do not rank an angle as well-supported or imply it is testable from current sources when required fields are missing. You may recommend an externally sourced investigation, clearly labeling evidence that must still be collected. Cite ingested evidence with its evidence_id; never invent an ID.\n\nEvaluate: (A) renewable transition, comparing actual revenue/generation mix with public claims, targets and strategy when evidence supports it; (B) capacity conversion, comparing announced/targeted/awarded/under-implementation capacity with commissioned capacity only when those distinctions are supported; (C) hidden relationships among suppliers, customers, subsidiaries, JVs, related parties and financing counterparties only when supporting evidence exists.\n\nScore each candidate 0–5 for financial significance (30%), evidence availability (25%), testability (20%), non-obviousness (7.5%), and cross-validation potential (17.5%). Calculate `weighted_score = sum((criterion_score / 5) * criterion_weight * 100)`, using weights 0.30, 0.25, 0.20, 0.075, and 0.175 respectively. Weights sum to 1; maximum is 100. Give rationale for every score. Do not inflate scores to force a ranking.\n\nFor every candidate provide: category, hypothesis, financial importance, relevant metrics and periods, evidence actually found in the CSV with provenance, additional evidence to obtain, alternative explanation, falsification condition, data risks/limitations, individual scores and rationale, weighted total, and next research action. Return the best-supported candidate as recommendation. If evidence does not support a reliable ranking, set `ranking_reliable` false and explain. A missing metric is not evidence that the underlying activity is absent. Never fabricate evidence, metrics, citations, URLs, dates, or findings. Clearly distinguish dataset observations from interpretation.\n\nReturn only one JSON object valid against the supplied F1 output JSON Schema. Include a dataset summary and all required fields. Do not include markdown fences.\n\n\nRequired F1 output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge F1 Research Angle Selector output\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"dataset_summary\", \"ranking_reliable\", \"ranking_limitation\", \"ranked_candidates\", \"recommended_candidate_id\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"dataset_summary\": {\"type\": \"object\", \"required\": [\"row_count\", \"columns\", \"date_coverage\", \"missing_information\", \"data_limitations\"], \"properties\": {\"row_count\": {\"type\": \"integer\", \"minimum\": 0}, \"columns\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"date_coverage\": {\"type\": [\"object\", \"null\"], \"properties\": {\"start\": {\"type\": \"string\"}, \"end\": {\"type\": \"string\"}}, \"required\": [\"start\", \"end\"], \"additionalProperties\": false}, \"missing_information\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"data_limitations\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"additionalProperties\": false}, \"ranking_reliable\": {\"type\": \"boolean\"}, \"ranking_limitation\": {\"type\": [\"string\", \"null\"]}, \"ranked_candidates\": {\"type\": \"array\", \"items\": {\"$ref\": \"#/$defs/candidate\"}}, \"recommended_candidate_id\": {\"type\": [\"string\", \"null\"]}}, \"$defs\": {\"evidence\": {\"type\": \"object\", \"required\": [\"statement\", \"source_type\", \"source_url\", \"date\", \"row_identifier\", \"status\"], \"properties\": {\"statement\": {\"type\": \"string\"}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"], \"format\": \"uri\"}, \"date\": {\"type\": [\"string\", \"null\"]}, \"row_identifier\": {\"type\": [\"string\", \"null\"]}, \"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"status\": {\"enum\": [\"observed_in_csv\", \"observed_in_ingested_source\", \"planned_lookup\"]}}, \"additionalProperties\": false}, \"scores\": {\"type\": \"object\", \"required\": [\"financial_significance\", \"evidence_availability\", \"testability\", \"non_obviousness\", \"cross_validation_potential\"], \"properties\": {\"financial_significance\": {\"$ref\": \"#/$defs/score\"}, \"evidence_availability\": {\"$ref\": \"#/$defs/score\"}, \"testability\": {\"$ref\": \"#/$defs/score\"}, \"non_obviousness\": {\"$ref\": \"#/$defs/score\"}, \"cross_validation_potential\": {\"$ref\": \"#/$defs/score\"}}, \"additionalProperties\": false}, \"score\": {\"type\": \"object\", \"required\": [\"score\", \"rationale\"], \"properties\": {\"score\": {\"type\": \"integer\", \"minimum\": 0, \"maximum\": 5}, \"rationale\": {\"type\": \"string\"}}, \"additionalProperties\": false}, \"candidate\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"candidate_id\", \"rank\", \"category\", \"hypothesis\", \"financial_importance\", \"metrics_and_periods\", \"evidence_found\", \"additional_evidence_needed\", \"alternative_explanation\", \"falsification_condition\", \"data_risks_and_limitations\", \"scores\", \"weighted_score\", \"weighted_score_rationale\", \"next_research_action\"], \"properties\": {\"candidate_id\": {\"type\": \"string\"}, \"rank\": {\"type\": \"integer\", \"minimum\": 1}, \"category\": {\"enum\": [\"renewable_transition\", \"capacity_conversion\", \"hidden_relationships\"]}, \"hypothesis\": {\"type\": \"string\"}, \"financial_importance\": {\"type\": \"string\"}, \"metrics_and_periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"evidence_found\": {\"type\": \"array\", \"items\": {\"$ref\": \"#/$defs/evidence\"}}, \"additional_evidence_needed\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"alternative_explanation\": {\"type\": \"string\"}, \"falsification_condition\": {\"type\": \"string\"}, \"data_risks_and_limitations\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"scores\": {\"$ref\": \"#/$defs/scores\"}, \"weighted_score\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 100}, \"weighted_score_rationale\": {\"type\": \"string\"}, \"next_research_action\": {\"type\": \"string\"}}}}}\n\nYour previous response failed validation. Return a complete JSON object against the supplied schema. Correct only these errors; do not invent evidence, change the research conclusion merely to pass validation, or claim retrieval occurred. Validation errors: F1 output failed schema validation: $/ranked_candidates/0/data_risks_and_limitations: expected array\nPrevious JSON to repair in place (preserve candidates, hypotheses, recommendation and criterion scores; fix only schema errors):\n{\"company_name\": \"NTPC Limited\", \"dataset_summary\": {\"row_count\": 126, \"columns\": [\"DATE\", \"SERIES\", \"OPEN\", \"HIGH\", \"LOW\", \"PREV. CLOSE\", \"LTP\", \"CLOSE\", \"VWAP\", \"52 WEEK HIGH\", \"52 WEEK LOW\", \"VOLUME\", \"VALUE\", \"NO. OF  TRADES\"], \"date_coverage\": null, \"missing_information\": [\"Company-specific operational metrics\", \"Renewable energy generation mix\", \"Project-level capacity conversion data\", \"Detailed financial statements aside from aggregate Integrated Report excerpts\"], \"data_limitations\": [\"No recognized company or ticker identifier column exists in the provided CSV.\", \"The CSV appears to contain generic market price data without metadata linking it to NTPC Limited.\", \"Company-level insights derived exclusively from verified Integrated Annual Report 2024-25 PDF excerpts.\"]}, \"ranking_reliable\": true, \"ranking_limitation\": null, \"ranked_candidates\": [{\"candidate_id\": \"hidden_relationships_subsidiaries_jv\", \"rank\": 1, \"category\": \"hidden_relationships\", \"hypothesis\": \"NTPC manages significant intercompany financial and operational exposures with its subsidiaries and joint ventures (JVs) that warrant monitoring due to the scale of intercompany transactions and loan recoveries.\", \"financial_importance\": \"Significant; intercompany transactions (e.g., sale of goods, loans, and services) represent hundreds of crores in recurring business, impacting liquidity and consolidated earnings.\", \"metrics_and_periods\": [\"Intercompany transaction volumes (FY 2024-25 vs FY 2023-24)\", \"Loan recovery status from JVs/subsidiaries\", \"Dividend income from JVs\"], \"evidence_found\": [{\"statement\": \"Details of intercompany transactions including sale/purchase of goods, services, and loans with various subsidiaries and joint ventures (e.g., NVVN, Utility Powertech, TNECL, Meja Urja).\", \"source_type\": \"PDF\", \"source_url\": null, \"date\": \"2025-03-31\", \"row_identifier\": null, \"evidence_id\": \"ev_77c5f772c341d65bc010f576\", \"status\": \"observed_in_ingested_source\"}, {\"statement\": \"Listing of subsidiary/JV exposure and outstanding balances including loans recoverable and trade receivables.\", \"source_type\": \"PDF\", \"source_url\": null, \"date\": \"2025-03-31\", \"row_identifier\": null, \"evidence_id\": \"ev_08dc5955d5c3ef29b41a5593\", \"status\": \"observed_in_ingested_source\"}], \"additional_evidence_needed\": [\"Consolidated vs. standalone intercompany elimination impact\", \"Credit risk mitigation details for specific high-exposure JVs\"], \"alternative_explanation\": \"Transactions are routine arm's length business operations within a conglomerate structure.\", \"falsification_condition\": \"Evidence showing that intercompany exposures have a negligible impact on balance sheet liquidity or that all transactions are strictly external/non-related-party.\", \"data_risks_and_limitations\": \"Data is based on static PDF table extractions and requires continuous monitoring to track evolving intercompany exposures.\", \"scores\": {\"financial_significance\": {\"score\": 4, \"rationale\": \"High value intercompany transaction volumes impact consolidated financial health.\"}, \"evidence_availability\": {\"score\": 5, \"rationale\": \"Directly available in the Integrated Annual Report 2024-25 provided evidence.\"}, \"testability\": {\"score\": 4, \"rationale\": \"Easily testable against future annual reporting cycles.\"}, \"non_obviousness\": {\"score\": 3, \"rationale\": \"Relationships are disclosed but the concentration of risk within specific JVs is a specific analysis area.\"}, \"cross_validation_potential\": {\"score\": 4, \"rationale\": \"Can be verified against subsidiary-level annual reports or consolidated financial statements.\"}}, \"weighted_score\": 79.5, \"weighted_score_rationale\": \"High weight on financial significance and evidence availability makes this the most robust and actionable research angle.\", \"next_research_action\": \"Map the intercompany loan and trade receivable trends for the top five JVs to determine if they are scaling in line with group strategy or indicating potential liquidity strain in subsidiaries.\"}], \"recommended_candidate_id\": \"hidden_relationships_subsidiaries_jv\"}",
+  "payload": {
+    "company": "NTPC Limited",
+    "company_records": {
+      "company": "NTPC Limited",
+      "rows": [],
+      "limitation": "No recognized company or ticker identifier column exists; filename attribution is not treated as row-level company evidence.",
+      "matched_rows": 0
+    },
+    "dataset_level_profile_not_company_evidence": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "quality_warnings": [
+        "No recognized company or ticker identifier field; company coverage cannot be verified from rows."
+      ],
+      "limitations": [
+        "No recognized company or ticker identifier column exists; filename attribution is not treated as row-level company evidence.",
+        "No source/document provenance fields identified."
+      ]
+    },
+    "research_readiness_matrix": [
+      {
+        "category": "renewable_transition",
+        "evidence_available": {
+          "columns": [],
+          "observed_company_records": [],
+          "records_scope": "company_filtered"
+        },
+        "evidence_missing": [
+          "revenue or generation by source",
+          "renewable targets and baseline",
+          "actual progress by consistent period"
+        ],
+        "data_quality": {
+          "rating": "not_ready",
+          "rationale": "No company-specific rows could be selected using a verified identifier.",
+          "dataset_quality_warnings": [
+            "No recognized company or ticker identifier field; company coverage cannot be verified from rows."
+          ]
+        },
+        "relevant_metrics_calculable": [],
+        "external_verification_requirements": [
+          "Company filings and annual reports",
+          "Exchange disclosures",
+          "Regulatory or project commissioning documents",
+          "Independent credible reporting"
+        ],
+        "readiness_rating": "not_ready",
+        "readiness_rationale": "No company-specific rows could be selected using a verified identifier.",
+        "recommended_next_action": "Add a verified company-level dataset with the listed fields and source provenance, then cross-check against primary disclosures.",
+        "claims_not_supported_by_this_dataset": [
+          "Do not claim renewable transition progress or outcomes without direct, dated supporting fields and provenance."
+        ]
+      },
+      {
+        "category": "capacity_conversion",
+        "evidence_available": {
+          "columns": [],
+          "observed_company_records": [],
+          "records_scope": "company_filtered"
+        },
+        "evidence_missing": [
+          "project or asset identifier",
+          "announced/awarded/under-implementation status",
+          "commissioning status/date",
+          "capacity and unit"
+        ],
+        "data_quality": {
+          "rating": "not_ready",
+          "rationale": "No company-specific rows could be selected using a verified identifier.",
+          "dataset_quality_warnings": [
+            "No recognized company or ticker identifier field; company coverage cannot be verified from rows."
+          ]
+        },
+        "relevant_metrics_calculable": [],
+        "external_verification_requirements": [
+          "Company filings and annual reports",
+          "Exchange disclosures",
+          "Regulatory or project commissioning documents",
+          "Independent credible reporting"
+        ],
+        "readiness_rating": "not_ready",
+        "readiness_rationale": "No company-specific rows could be selected using a verified identifier.",
+        "recommended_next_action": "Add a verified company-level dataset with the listed fields and source provenance, then cross-check against primary disclosures.",
+        "claims_not_supported_by_this_dataset": [
+          "Do not claim capacity conversion progress or outcomes without direct, dated supporting fields and provenance."
+        ]
+      },
+      {
+        "category": "hidden_relationships",
+        "evidence_available": {
+          "columns": [],
+          "observed_company_records": [],
+          "records_scope": "company_filtered"
+        },
+        "evidence_missing": [
+          "named counterparties/entities",
+          "relationship type",
+          "period",
+          "transaction or exposure value"
+        ],
+        "data_quality": {
+          "rating": "not_ready",
+          "rationale": "No company-specific rows could be selected using a verified identifier.",
+          "dataset_quality_warnings": [
+            "No recognized company or ticker identifier field; company coverage cannot be verified from rows."
+          ]
+        },
+        "relevant_metrics_calculable": [],
+        "external_verification_requirements": [
+          "Company filings and annual reports",
+          "Exchange disclosures",
+          "Regulatory or project commissioning documents",
+          "Independent credible reporting"
+        ],
+        "readiness_rating": "not_ready",
+        "readiness_rationale": "No company-specific rows could be selected using a verified identifier.",
+        "recommended_next_action": "Add a verified company-level dataset with the listed fields and source provenance, then cross-check against primary disclosures.",
+        "claims_not_supported_by_this_dataset": [
+          "Do not claim hidden relationships progress or outcomes without direct, dated supporting fields and provenance."
+        ]
+      }
+    ],
+    "verified_ingested_evidence": [
+      {
+        "evidence_id": "ev_b1e5e9dbc93dfdf0fdfad35e",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:148",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "NTPC LIMITED | 293292 |  INTEGRATED ANNUAL REPORT - 2024-25\n21. Participation/Inclusion/Representation of women\n22. Turnover Rate for permanent employees and workers\nHolding, Subsidiary and Associate Companies (including joint ventures) \n23. (a) Names of holding / subsidiary / associate companies / joint ventures –\nS. \nNo.\nName of the holding/subsidiary/associate \ncompanies/joint ventures (A)\nIndicate whether \nholding/ Subsidiary/ \nAssociate/ Joint \nVenture\n% of shares held \nby listed entity\nDoes the entity indicated \nat column A, participate in \nthe Business Responsibility \ninitiatives of the listed entity? \n(Yes/No)\n1 NTPC Electric Supply Company Ltd. Subsidiary 100% YES\n2 NTPC Vidyut Vyapar Nigam Ltd. (NVVN) Subsidiary 100% YES\n3 Bhartiya Rail Bijlee Company Ltd. \n(BRBCL)\nSubsidiary 74% YES\n4 Patratu Vidyut Utpadan Nigam Ltd. Subsidiary 74% YES\n5 NTPC Mining Ltd. Subsidiary 100% YES\n6 THDC India Ltd. Subsidiary 74.49% YES\n7 North-Eastern Electric Power \nCorporation Ltd. (NEEPCO)\nSubsidiary 100% YES\n8 NTPC EDMC Waste Solutions Pvt. Ltd. Subsidiary 74% YES\nParticulars\nTotal (A)\nNo. and percentage of Females\nNo. (B) % (B / A)\nBoard of Directors 8* 0 0\nKey Management Personnel 21* 1 4.76%\nS. \nNo. Particulars Total (A)\nMale Female\nNo. (B) % (B / A) No. (C) % (C / A)\nDIFFERENTLY ABLED WORKERS\n4 Permanent (F) 274 236 86.13% 38 13.87%\n5 Other than permanent (G) 610 592 97.05% 18 2.95%\n6 Total differently bled workers (F + G) 884 828 93.67% 56 6.33%\n*-as on 31.03.2025\n(Disclose trends for the past 3 years)\nParticulars FY 2024-25  \n(Turnover rate  \nin current FY)\nFY 2023-24 \n(Turnover rate  \nin previous FY)\nFY 2022-23 \n(Turnover rate in the year \nprior to the previous FY)\nMale Female Total Male Female Total Male Female Total\nPermanent Employees 6.03% 6.14% 6.03% 7.00% 6.06% 6.55% 6.55% 7.67% 6.44%\nPermanent Workers 10.09% 14.20% 10.41% 10.53% 11.54% 10.64% 8.56% 9.09% 6.41%\nS. \nNo.\nName of the holding/subsidiary/associate \ncompanies/joint ventures (A)\nIndicate whether \nholding/ Subsidiary/ \nAssociate/ Joint \nVenture\n% of shares held \nby listed entity\nDoes the entity indicated \nat column A, participate in \nthe Business Responsibility \ninitiatives of the listed entity? \n(Yes/No)\n9 NTPC Parmanu Urja Nigam Ltd. Subsidiary 100% YES\n10 NTPC Green Energy Ltd. Subsidiary 89.01% YES\n11 Ratnagiri Gas & Power Private Ltd. Subsidiary 86.49% YES\n12 Utility Powertech Ltd. Joint Venture 50 YES\n13 NTPC-GE Power Services Pvt. Ltd. Joint Venture 50 YES\n14 NTPC-SAIL Power Co. Ltd. Joint Venture 50 YES\n15 NTPC Tamil Nadu Energy Co. Ltd. Joint Venture 50 YES\n16 Aravali Power Company Pvt. Ltd. Joint Venture 50 YES\n17 Meja Urja Nigam Pvt. Ltd. Joint Venture 50 YES\n18 NTPC-BHEL Power Project Pvt. Ltd. Joint Venture 50 YES\n19 National High Power Test Laboratory \nPvt. Ltd.\nJoint Venture 12.5 YES\n20 Transformers and Electricals Kerala Ltd. Joint Venture 44.6 YES\n21 Energy Efficiency Services Ltd. Joint Venture 39.25 YES\n22 CIL NTPC Urja Pvt. Ltd. Joint Venture 50 YES\n23 Anushakti Vidyut Nigam Ltd. Joint Venture 49 YES\n24 Hindustan Urvarak and Rasayan Ltd. Joint Venture 29.67 YES\n25 Jhabua Power Limited Joint Venture 50 YES\n26 Trincomalee Power Company Ltd. Joint Venture 50 Not Applicable\n27 Bangladesh India Friendship Power \nCompany Ltd. (BIFPCL)\nJoint Venture 50 Not Applicable\nFor a list of NTPC’s Joint Ventures and Subsidiaries, please refer to: https://ntpc.co.in/business-development/joint-\nventures-and-subsidiaries-various-sectors\nCSR Details\n24.  (i)  Whether C",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 148,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:29.398958+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "f660124dbd216785648edacf5a926963aa932ebd69d33295d89b81fe01454375",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "8bf3f3e2c2437a140153bb446fd4ee3b0ab77f4dc1095acb1622801ca75f1cb2"
+        }
+      },
+      {
+        "evidence_id": "ev_b489528262378cdf8e9d9601",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:186",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "368 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 369\n22.1.  Financial assets\nInitial recognition and measurement\nAll financial assets are recognized at fair value on initial recognition, except for trade receivables which are initially \nmeasured at transaction price. Transaction costs that are directly attributable to the acquisition of financial assets, \nwhich are not valued at fair value through profit or loss, are added to the fair value on initial recognition.\nSubsequent measurement\nDebt instruments at amortized cost \nA ‘debt instrument’ is measured at the amortized cost if both the following conditions are met: \n(a)  The asset is held within a business model whose objective is to hold assets for collecting contractual cash \nflows, and\n(b)  Contractual terms of the asset give rise on specified dates to cash flows that are solely payments of principal \nand interest (SPPI) on the principal amount outstanding.\nAfter initial measurement, such financial assets are subsequently measured at amortized cost using the effective \ninterest rate (EIR) method. Amortized cost is calculated by taking into account any discount or premium on \nacquisition and fees or costs that are an integral part of the EIR. The EIR amortization is included in finance income \nin the statement of profit and loss. The losses arising from impairment are recognized in the statement of profit and \nloss. This category generally applies to trade and other receivables.\nDebt instrument at FVTOCI (Fair value through OCI)\nA ‘debt instrument’ is classified as at the FVTOCI if both of the following criteria are met:\n(a)  The objective of the business model is achieved both by collecting contractual cash flows and selling the \nfinancial assets, and\n(b)  The asset’s contractual cash flows represent SPPI\nDebt instruments included within the FVTOCI category are measured initially as well as at each reporting date at \nfair value. Fair value movements are recognized in the OCI. However, the Company recognizes interest income, \nimpairment losses & reversals and foreign exchange gain or loss in the statement of profit and loss. On de-\nrecognition of the asset, cumulative gain or loss previously recognized in OCI is reclassified from the equity to the \nstatement of profit and loss. Interest earned whilst holding FVTOCI debt instrument is reported as interest income \nusing the EIR method.\nDebt instrument at FVTPL (Fair value through profit or loss)\nFVTPL is a residual category for debt instruments. Any debt instrument, which does not meet the criteria for \ncategorization as at amortized cost or as FVTOCI, is classified as at FVTPL. \nIn addition, the Company may elect to classify a debt instrument, which otherwise meets amortized cost or FVTOCI \ncriteria, as at FVTPL. However, such election is allowed only if doing so reduces or eliminates a measurement \nor recognition inconsistency (referred to as ‘accounting mismatch’). Debt instruments included within the FVTPL \ncategory are measured at fair value with all changes recognized in the statement of profit and loss. Interest income \non such investments is presented under ‘Other income’. \nBusiness model assessment\nThe Company holds financial assets which arise from its ordinary course of business and investment property. \nThe objective of the business model for these financial assets is to collect the amounts due from the Company’s \nreceivables and to earn contractual interest income on the amounts collected.\nInve",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 186,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:29.590783+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "618d598122271c3f02d08c2b07a6a2fb1b73eab401f9b5afe5fc2def5f86041c",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "e41b42b67dd780639e28e3fa0e8fdd6ecd4eb59fe3d86f70f027c0f4392ad949"
+        }
+      },
+      {
+        "evidence_id": "ev_77c5f772c341d65bc010f576",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:225",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "446 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 447\nd) Individually significant transactions        \n       \n` Crore\nParticulars Nature of relationship For the year \nended   \n31 March 2025\nFor the year \nended    \n31 March 2024\nContracts for works/services for services received by \nthe Company\nNTPC Vidyut Vyapar Nigam Ltd. Subsidiary Company  29.15  22.05 \nUtility Powertech Ltd. Joint Venture Company  38.03  482.45 \nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  2.70  85.34 \nNTPC BHEL Power Projects Private Ltd.                                                         Joint Venture Company  (0.56)  21.31 \nNTPC-GE Power Services Private Ltd. Joint Venture Company  1.82  2.35 \nContracts for works/services for services provided by \nthe Company\nPatratu Vidyut Utpadan Nigam Ltd. Subsidiary Company  5.01  27.52 \nNTPC Vidyut Vyapar Nigam Ltd. Subsidiary Company  5.07  3.07 \nTHDC India Ltd. Subsidiary Company  6.99  9.34 \nBhartiya Rail Bijlee Company Ltd.                                                                           Subsidiary Company  8.66  2.57 \nNTPC Green Energy Limited Subsidiary Company  8.99  10.94 \nNTPC SAIL Power Company Ltd Joint Venture Company  5.39  3.54 \nUtility Powertech Ltd. Joint Venture Company  1.26  2.99 \nMeja Urja Nigam Private Limited Joint Venture Company  17.74  3.78 \nAravali Power Company Private Ltd. Joint Venture Company  6.78  3.82 \nNTPC Tamil Nadu Energy Company Ltd. Joint Venture Company  6.04  3.69 \nEnergy Efficiency Services Ltd. Joint Venture Company  5.91  5.39 \nSale of goods\nNTPC Vidyut Vyapar Nigam Ltd. Subsidiary Company  2,389.43  2,591.52 \nPurchase of goods\nTHDC India Ltd. Subsidiary Company  826.29  379.01 \nEnergy Efficiency Services Ltd. Joint Venture Company  0.18  0.47 \nTransformers and Electricals Kerala Ltd. Joint Venture Company  -    0.11 \nSale of assets\nNTPC Green Energy Limited Subsidiary Company  1.36  -    \nBhartiya Rail Bijlee Company Ltd.                                                                           Subsidiary Company  -    0.08 \nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  -    11.86 \nNTPC-SAIL Power Company Ltd. Joint Venture Company  -    1.50 \nPurchase of assets\nPatratu Vidyut Utpadan Nigam Ltd. Subsidiary Company  12.03  -    \nNTPC BHEL Power Projects Private Ltd.                                                         Joint Venture Company  3.95  19.88 \nTransformers and Electricals Kerala Ltd. Joint Venture Company  7.32  0.28 \nNTPC-GE Power Services Private Ltd. Joint Venture Company  -    2.02 \nDividend received\nNTPC-SAIL Power Company Ltd. Joint Venture Company  157.50  75.00 \n` Crore\nParticulars Nature of relationship For the year \nended   \n31 March 2025\nFor the year \nended    \n31 March 2024\nAravali Power Company Private Ltd. Joint Venture Company  375.00  375.00 \nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  325.54  275.21 \nMeja Urja Nigam Private Ltd. Joint Venture Company  476.67  -    \nJhabua Power Limited. Joint Venture Company  75.00  -    \nNTPC-GE Power Services Private Ltd. Joint Venture Company  1.05  0.30 \nCIL NTPC Urja Private Ltd. Joint Venture Company  -    0.01 \nNTPC Vidyut Vyapar Nigam Ltd. Subsidiary Company  30.00  25.50 \nNorth Eastern Electric Power Corporation Ltd. Subsidiary Company  250.00  250.00 \nNTPC Electric Supply Company Ltd. Subsidiary Company  10.00  -    \nBhartiya Rail Bijlee Company Ltd.                                                                           Subsidiary Company  222",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 225,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:29.818669+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "2eac058052fcfbaf39314df9185064392ad6c75466cbcc42edf3ae61dc882c69",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "a2429ff4cac55c4aa0c63ea640a98a32df20691070e188d6c33429d420ce30aa"
+        }
+      },
+      {
+        "evidence_id": "ev_08dc5955d5c3ef29b41a5593",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:226",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "448 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 449\n` Crore\nParticulars Nature of relationship For the year \nended   \n31 March 2025\nFor the year \nended    \n31 March 2024\nNTPC Green Energy Limited Subsidiary Company  10.94  6.40 \nNTPC Renewable Energy Ltd. Subsidiary Company of \nNTPC Green Energy Ltd.\n 6.28  5.81 \nNTPC Vidyut Vyapar Nigam Ltd. Subsidiary Company  4.27  3.36 \nMeja Urja Nigam Private Ltd. Joint Venture Company  16.55  15.74 \nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  15.30  14.57 \nNTPC-SAIL Power Company Ltd. Joint Venture Company  7.37  6.88 \nAravali Power Company Private Ltd. Joint Venture Company  11.08  10.88 \nBangladesh-India Friendship Power Company Private Ltd. Joint Venture Company  5.01  5.44 \nTransactions with post employment benefit plans - \nContribution\nNTPC Limited Employees Provident Fund Post employment \nbenefit plans\n 342.33  335.47 \nNTPC Limited Defined Contribution Pension Trust Post employment \nbenefit plans\n 81.82  90.68 \nNTPC Post Retirement Employees Medical Benefit Fund Post employment \nbenefit plans\n 277.00  267.57 \nNTPC Employees Gratuity Fund Post employment \nbenefit plans\n 125.17  93.30 \nTransactions with others\nNTPC Foundation Others  28.42  23.73 \nNTPC Education and Research Society Others  0.25  2.33 \nNTPC School of Business (under NTPC Education and \nResearch Society)\nOthers  2.88  4.83 \nGuarantees received\nNTPC-GE Power Services Private Ltd. Joint Venture Company  72.36  -    \nTransformers and Electricals Kerala Ltd. Joint Venture Company  -    2.36 \nOther Services\nNTPC Green Energy Limited Subsidiary Company  53.73  40.00 \nLoans repaid\nRatnagiri Gas & Power Private Ltd. Subsidiary Company  1,003.10  1,417.42 \nNTPC Mining Ltd. Subsidiary Company  -    0.50 \n \n* Includes equity contribution       \ne) Individually significant balances        \n       \n` Crore\nParticulars Nature of relationship As at  \n31 March 2025\nAs at  \n31 March 2024\nAmount recoverable towards loans from\nRatnagiri Gas & Power Private Ltd. Subsidiary Company  259.32  412.42 \nNational High Power Test Laboratory Private Ltd. Joint Venture Company  -    -    \n` Crore\nParticulars Nature of relationship As at  \n31 March 2025\nAs at  \n31 March 2024\nMr. K Shanmugha Sundaram Key Management \nPersonnel\n -    0.06 \nMr. Ravindra Kumar Key Management \nPersonnel\n 0.01  0.02 \nMr. C Kumar Key Management \nPersonnel\n 0.11  -    \nMr. Animesh Jain Key Management \nPersonnel\n 0.12  -    \nMr. Aditya Dar Key Management \nPersonnel\n 0.07  -    \nMr. Goutam Deb Key Management \nPersonnel\n 0.07  -    \nAmount recoverable other than loans from\nNTPC Green Energy Limited (including NREL & GVREL) Subsidiary Company  14.97  88.71 \nNTPC Vidyut Vyapar Nigam Ltd. Subsidiary Company  364.69  525.34 \nNorth Eastern Electric Power Corporation Ltd. Subsidiary Company  0.80  0.42 \nTHDC India Ltd. Subsidiary Company  25.71  238.31 \nBhartiya Rail Bijlee Company Ltd.                                                                           Subsidiary Company  96.02  120.06 \nPatratu Vidyut Utpadan Nigam Ltd. Subsidiary Company  16.75  27.07 \nNTPC BHEL Power Projects Private Ltd.                                                         Joint Venture Company  116.33  109.52 \nNTPC SAIL Power Company Ltd Joint Venture Company  108.62  70.22 \nAravali Power Company Private Ltd. Joint Venture Company  150.68  107.07 \nMeja Urja Nigam Private Ltd. Joint Venture Company  31.41  37.94 \nNTPC-GE Power Services Private Ltd. Joint Venture Company  51.56  (1.20)\nBan",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 226,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:30.022227+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "e02f3dec30bcf9c9f4f68f16307023b965b96a7bb98efff577e4663e27aad1ce",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "92f389b106e344364526f37ad352da1e5b7f002fd9e8f1a2af9050771be454f9"
+        }
+      },
+      {
+        "evidence_id": "ev_27588cf43298e9264d4d1efa",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:234",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "464 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 465\nRisk Exposure arising from Measurement Management\nCredit Risk Trade receivables, Contract assets, \nderivative financial instruments, \nfinancial assets measured at amortised \ncost and cash and cash equivalents.\nAgeing analysis \nCredit ratings\nCredit limits, letters of credit and \ndiversification of bank deposits.\nLiquidity risk Borrowings and other liabilities Rolling cash \nflows forecast\nAvailability of committed credit lines \nand borrowing facilities\nMarket risk \n– foreign \ncurrency risk\n- Future commercial transactions \n- Recognised financial assets and \nliabilities not denominated in Indian \nrupee (\n`)\nCash flow \nforecasting \nForward foreign exchange contracts \nForeign currency options \nCurrency and interest rate swaps and \nprincipal only swaps\nMarket risk – \ninterest rate \nrisk\nNon-current borrowings at variable rates Sensitivity \nanalysis\nDifferent kinds of loan arrangements \nwith varied terms (e.g. fixed rate loans, \nfloating rate loans, rupee term loans, \nforeign currency loans, etc.)\nRisk management framework\nThe Company’s activities make it susceptible to various risks. The Company has taken adequate measures to address such \nconcerns by developing adequate systems and practices. \nIn order to institutionalize the risk management in the Company, an elaborate Enterprise Risk Management (ERM) \nframework has been developed. The Board of Directors has overall responsibility for the establishment and oversight of \nthe Company’s risk management framework. As a part of the implementation of ERM framework, a ‘Risk Management \nCommittee (RMC)’ with functional directors as its members has been entrusted with the responsibility to identify and \nreview the risks, formulate action plans and strategies to mitigate risks on short-term as well as long-term basis.\nThe RMC meets every quarter to deliberate on strategies. Risks are regularly monitored through reporting of key \nperformance indicators. Outcomes of RMC are submitted for information of the Board of Directors.\nCredit risk       \nCredit risk is the risk of financial loss to the Company if a customer or counterparty to a financial instrument fails to meet \nits contractual obligations resulting in a financial loss to the Company. Credit risk arises principally from trade receivables, \nunbilled revenue, loans, cash and cash equivalents and deposits with banks and financial institutions. \nTrade receivables & unbilled revenue       \nThe Company primarily sells electricity to bulk customers comprising mainly state utilities owned by State Governments. \nThe Company has a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-Partite \nAgreement (TPA). The TPAs were signed among the Govt. of India, RBI and the individual State Governments subsequent \nto the issuance of the One Time Settlement Scheme of SEBs dues during 2001-02 by the GOI, which were valid till October \n2016. Govt of India subsequently approved the extension of these TPAs for another period of 10 years. Most of the States \nhave signed these extended TPAs and signing is in progress for the balance states.  \nCERC Tariff Regulations allow payment against monthly bill towards energy charges within a period of forty five days from \nthe date of bill and levy of surcharge @ 18% p.a. on delayed payment beyond forty five days. GOI has notified Electricity \n(Late Payment Surcharge) Rules, 2021 on 22 February 2021. These rules envisa",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 234,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:30.241946+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "2899c3168d09cef8d4e531ee70a113b2ec62cad3195c38b3d20e6f5c1213dd34",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "a4f18a73c073e40a6948f4c3cb394fbe2a8db119df0acf9ca00588f54ee6cea6"
+        }
+      },
+      {
+        "evidence_id": "ev_5be4db19957ea5f7fd2b0c02",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:239",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "474 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 475\n The carrying values for finance lease receivables approximates the fair value as these are periodically evaluated \nbased on credit worthiness of customer and allowance for estimated losses is recorded based on this evaluation. \nAlso, carrying amount of claims recoverable approximates its fair value as these are recoverable immediately. \n The fair values for loans, borrowings, non-current trade payables and payable for capital expenditure were \ncalculated based on cash flows discounted using a current discount rate. They are classified at respective levels  \nbased on availability of quoted prices and inclusion of observable/non observable inputs.\n67. Capital Management\n The Company’s objectives when managing capital are to:   \n - safeguard its ability to continue as a going concern, so that it can continue to provide returns for  \n    shareholders and benefits for other stakeholders and \n -   maintain an appropriate capital structure of debt and equity.   \n The Board of Directors has the primary responsibility to maintain a strong capital base and reduce the cost of capital \nthrough prudent management in deployment of funds and sourcing by leveraging opportunities in domestic and \ninternational financial markets so as to maintain investors, creditors & markets’ confidence and to sustain future \ndevelopment of the business. The Board of Directors monitors the return on capital, which the Company defines as \nreturns from operating activities divided by total shareholders’ equity deployed in operating activities. The Board \nof Directors also monitors the level of dividends to equity shareholders in line with the dividend distribution policy \nof the Company.  \n Under the terms of major borrowing facilities, the Company is required to comply with the following financial \ncovenants:   \n(i)  Total liability to net worth ranges between 2:1 to 3:1.\n(ii)  Ratio of EBITDA to interest expense shall not at any time be less than 1.75 : 1.\n(iii)  Debt service coverage ratio not less than 1.10:1 (in case of foreign currency borrowings).\n There have been no breaches in the financial covenants of any interest bearing borrowings.   \n The Company monitors capital, using a medium term view of three to five years, on the basis of a number of \nfinancial ratios generally used by industry and by the rating agencies. The Company is not subject to externally \nimposed capital requirements.    \n The Company monitors capital using gearing ratio which is net debt divided by total equity. Net debt comprises \nof non-current borrowings (including current maturities and interest accrued there on) and current borrowings \nless cash and cash equivalents. Equity includes equity share capital and reserves that are managed as capital. The \ngearing ratio at the end of the reporting period was as follows:     \n   \n` Crore\nParticulars As at  \n31 March 2025\nAs at  \n31 March 2024\nBorrowings (including interest accrued)  1,87,342.84  1,87,668.34 \nLess: Cash and cash equivalents  2.15  197.16 \nNet Debt  1,87,340.69  1,87,471.18 \nTotal Equity  1,61,640.55  1,49,885.02 \nNet Debt to Equity Ratio  1.16  1.25 \n68. Disclosure as per Ind AS 114, ‘Regulatory Deferral Accounts’    \n(i)  Nature of rate regulated activities \n The Company is mainly engaged in generation and sale of electricity. The price to be charged by the Company for \nelectricity sold to its beneficiaries is determined by the CERC which provides extensive",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 239,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:30.441508+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "98225bd22d8b764f1513e9dad19624215182606fb5d34d637afc85046d06260e",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "b9a19c583e592cf99eb82745d0c5bd3be44146094ad67d09be613efaec8830e7"
+        }
+      },
+      {
+        "evidence_id": "ev_d3d9906726630bba52e0d915",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:317",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "630 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 631\nc) Outstanding balances with related parties are as follows:  \n` Crore\nParticulars  As at  \n31 March 2025\nAs at  \n31 March 2024\nAmount recoverable towards loans from\n-     Key management personnel  0.45  0.08 \n-     Others -  -    \nAmount recoverable other than loans from\n-     Joint venture companies  435.64  342.65 \n-     Post employment benefit plans  35.29  44.17 \n-     Others  -    7.99 \nOthers\n-     Joint venture companies - Non convertible debentures  475.00  525.00 \nAmount payable to\n-     Joint venture companies  127.62  222.14 \n-     Post employment benefit plans  87.66  102.36 \n-     Others  16.32  0.43 \nGuarantee received Outstanding\n-     Joint venture companies  356.55  354.83 \nd) Individually significant transactions     \n` Crore\nParticulars  Nature of relationship Amount\nFor the year \nended    \n31 March 2025\nFor the year \nended    \n31 March 2024\nContracts for works/services for services received by \nthe Group\nUtility Powertech Ltd. Joint Venture Company  85.39  543.62 \nNTPC BHEL  Power Projects Pri vate Ltd .                                                       Joint Venture Company  (0.56)  21.31 \nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  2.70  85.39 \nNTPC-GE Power Services Private Ltd. Joint Venture Company  62.08  2.35 \nContracts for works/services for services provided by \nthe Group\nNTPC SAIL Power Company Ltd Joint Venture Company  5.40  3.54 \nUtility Powertech Ltd. Joint Venture Company  1.26  2.99 \nMeja Urja Nigam Private Limited Joint Venture Company  17.91  3.78 \nAravali Power Company Private Ltd. Joint Venture Company  7.15  3.82 \nNTPC Tamilnadu Energy Company Ltd. Joint Venture Company  6.12  3.69 \n` Crore\nParticulars  Nature of relationship Amount\nFor the year \nended    \n31 March 2025\nFor the year \nended    \n31 March 2024\nEnergy Efficiency Services Ltd. Joint Venture Company  5.91  5.39 \nSale of goods\nIndian Oil NTPC Green Energy Ltd. Joint Venture Company  21.20  -    \nPurchase of goods\nEnergy Efficiency Services Ltd. Joint Venture Company  0.18  0.47 \nJhabua Power Limited. Joint Venture Company  380.22  448.77 \nTransformers and Electricals Kerala Ltd. Joint Venture Company  -    0.11 \nSale of assets\nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  -    11.86 \nNTPC-SAIL Power Company Ltd. Joint Venture Company  -    1.50 \nPurchase of assets\nNTPC BHEL  Power Projects Pri vate Ltd .                                                       Joint Venture Company  3.95  19.88 \nTransformers and Electricals Kerala Ltd. Joint Venture Company  7.32  0.28 \nNTPC-GE Power Services Private Ltd. Joint Venture Company  132.41  154.70 \nDividend received\nNTPC-SAIL Power Company Ltd. Joint Venture Company  157.50  75.00 \nAravali Power Company Private Ltd. Joint Venture Company  375.00  375.00 \nNTPC-Tamil Nadu Energy Company Ltd. Joint Venture Company  325.54  275.21 \nNTPC-GE Power Services Private Ltd. Joint Venture Company  1.05  0.30 \nCIL NTPC Urja Private Ltd. Joint Venture Company  -    0.01 \nMeja Urja Nigam Private Ltd. Joint Venture Company  476.67  -    \nJhabua Power Limited. Joint Venture Company  75.00  -    \nEquity contributions made\nMeja Urja Nigam Private Ltd. Joint Venture Company  -    34.44 \nBangladesh-India Friendship Power Company Pvt.Ltd. Joint Venture Company  -    161.99 \nMahagenco NTPC Green Energy Ltd. Joint Venture Company  0.05  -    \nEnergy Efficiency Services Ltd. Joint Venture Company  -    383.00 \nNational High P",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 317,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:30.653339+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "9e65bc8c54f06207a4a24323556b07cff45502029e7d1bf9502bb97d4f38eca2",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "7f9781324a119300026d3302a522a161d8e1ea4fbf61d79dff421fd13c81cdfa"
+        }
+      },
+      {
+        "evidence_id": "ev_13598c8ff149784e31964e13",
+        "company_name": "NTPC Limited",
+        "verified_identifier": "INE733E01010",
+        "company_identity_status": "verified",
+        "source_organization": "NTPC Limited",
+        "document_title": "28f32ae3803b_4c280573.pdf",
+        "document_type": "pdf",
+        "source_url": null,
+        "source_path": "/Users/arshiadang/Desktop/fns/signalforge/data/recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+        "source_locator": "page:325",
+        "source_identifier_status": "repository_path_only",
+        "publication_date": null,
+        "event_date": null,
+        "retrieval_date": "2026-10-24",
+        "excerpt_or_fact": "646 |  INTEGRATED ANNUAL REPORT - 2024-25\n NTPC LIMITED | 647\n The Group is exposed to the following risks from its use of financial instruments: \n- Credit risk \n- Liquidity risk \n- Market risk  \n This note presents information about the Group’s exposure to each of the above risks, the Group’s objectives, \npolicies and processes for measuring and managing risk.      \nRisk Exposure arising from Measurement Management\nCredit Risk Trade receivables, contract assets \nrevenue, derivative financial \ninstruments, financial assets \nmeasured at amortised cost and \ncash and cash equivalents.\nAgeing analysis \nCredit ratings\nCredit limits, letters of credit and \ndiversification of bank deposits.\nLiquidity risk Borrowings and other liabilities Rolling cash \nflows forecast\nAvailability of committed credit lines and \nborrowing facilities\nMarket risk \n– foreign \ncurrency risk\n- Future commercial transactions \n- Recognised financial assets and \nliabilities not denominated in \nIndian rupee (\n`)\nCash flow \nforecasting\nForward foreign exchange contracts \nForeign currency options \nCurrency and interest rate swaps and \nprincipal only swaps\nMarket risk – \ninterest rate \nrisk\nNon-current borrowings at \nvariable rates\nSensitivity \nanalysis\nDifferent kinds of loan arrangements with \nvaried terms (e.g. fixed rate loans, floating \nrate loans, rupee term loans, foreign \ncurrency loans, etc.)\n   \n Risk management framework   \n The Group’s activities make it susceptible to various risks. The Group has taken adequate measures to address such \nconcerns by developing adequate systems and practices.    \n In order to institutionalize the risk management in the Group, an elaborate Enterprise Risk Management \n(ERM) framework has been developed. The Board of Directors has overall responsibility for the establishment \nand oversight of the parent company’s risk management framework. As a part of the implementation of ERM \nframework, a ‘Risk Management Committee (RMC)’ with functional directors as its members has been entrusted \nwith the responsibility to identify and review the risks, formulate action plans and strategies to mitigate risks on \nshort-term as well as long-term basis. \n The RMC meets every quarter to deliberate on strategies. Risks are regularly monitored through reporting of key \nperformance indicators. Outcomes of RMC are submitted for information of the Board of Directors.\n68. Financial Risk Management      \n Credit risk            \n Credit risk is the risk of financial loss to the Group if a customer or counterparty to a financial instrument fails \nto meet its contractual obligations resulting in a financial loss to the Group. Credit risk arises principally from \ntrade receivables, unbilled revenue, loans, cash and cash equivalents and deposits with banks and financial \ninstitutions. \n Trade receivables & unbilled revenue               \n The Group primarily sells electricity to bulk customers comprising mainly state utilities owned by State Governments. \nThe Company has a robust payment security mechanism in the form of Letters of Credit (LC) backed by the Tri-\nPartite Agreement (TPA). The TPAs were signed among the Govt. of India, RBI and the individual State Governments \nsubsequent to the issuance of the One Time Settlement Scheme of SEBs dues during 2001-02 by the GOI, which were \nvalid till October 2016. Govt of India subsequently approved the extension of these TPAs for another period of 10 \nyears. Most of the States have signed these ext",
+        "metric_name": null,
+        "metric_value": null,
+        "unit": null,
+        "currency": null,
+        "reporting_period": null,
+        "evidence_category": "unclassified",
+        "related_claim": null,
+        "claim_key": null,
+        "source_relationship": "original_disclosure",
+        "claim_verification_status": "unverified",
+        "information_type": "reported_fact",
+        "parsing_status": "parsed",
+        "extraction_warnings": [
+          "Machine passage match only; claims and table interpretation remain unverified. No independent corroboration established."
+        ],
+        "page_number": 325,
+        "table_identifier": null,
+        "review_status": "automatically_cross_checked",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_note": null,
+        "machine_verification": {
+          "policy_version": "pdf_exact_passage_v1",
+          "verifier": "signalforge.machine_evidence",
+          "verified_at": "2026-10-24T19:11:30.871260+00:00",
+          "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+          "passage_sha256": "7b168e3c8655f16af11d0a3fafe946b291c0864f434cad5c70284a673d5f7c6a",
+          "issuer_page": 132,
+          "issuer_passage": "0\n2020-21 Interim + Final 9696.67$ 6.15 5963.45 04.02.2021 26.02.2021 28.09.2021 08.10.2021\n2021-22 Interim + Final 9696.67 7.00 6787.67 29.01.2022 21.02.2022 30.08.2022 12.09.2022\n2022-23 Interim + Final 9696.67 7.25 7030.08 28.01.2023 24.02.2023 30.08.2023 12.09.2023\n 2023-24 Interim 9696.67 2.25 2,181.75 28.10.2023 23.11.2023 - -\nInterim 9696.67 2.25 2,181.75 29.01.2024 22.02.2024 - -\nFinal 9696.67 3.25 3,151.42 - - 29.08.2024 11.09.2024\n2024-25 Interim 9696.67 2.50 2,424.17 24.10.2024 18.11.2024 - -\nInterim 9696.67 2.50 2,424.17 25.01.2025 18.02.2025 - -\n# Paid up share capital was increased from ₹8245.46 Crore to ₹9894.56 Crore due to Bonus Issue\n$ Paid up share capital was reduced after Buyback of shares.\n8.4 Listing of Equity Shares & Debt Securities\na) NTPC equity shares are listed on the following Stock Exchanges:\nNational Stock Exchange of India Limited (NSE) BSE Limited (BSE)\nScrip Code NTPC EQ 532555\nAddress: Exchange Plaza, Plot No. C/1, G Block, Bandra \n(E), Mumbai – 400051\nPhiroze Jeejeebhoy Towers, Dalal Street, \nMumbai - 400001\nEmail neaps@nse.co.in corp.relations@bseindia.com\nWebsite www.nseindia.com www.bseindia.com\nISIN of the Equity Shares of NTPC limited is – INE733E01010\nb) NTPC domestic bonds are listed on the following Stock Exchanges:\nParticulars National Stock Exchange of India (NSE) BSE Limited (BSE) NSE & BSE\nBond series 32, 34 to 36, 38 to 46, 53, 74, 76, 78, 80 \n& 82\n73, 75, 77, 79 & 81 50, 51, 54 to 57, 60 to 64, 66, 67, \n69, 71 & 72\nc) Details of Listing ",
+          "checks": {
+            "original_sha256": true,
+            "verbatim_page_passage": true,
+            "canonical_issuer": true,
+            "substantive_text": true
+          },
+          "record_sha256": "896ae869640582ec6b317847eef2e6e0b1344b027b8b4f43f062b4bd7ae6a276"
+        }
+      }
+    ],
+    "ingested_evidence_quality_warnings": [],
+    "f1_scoring_weights_percent": {
+      "financial_significance": 30,
+      "evidence_availability": 25,
+      "testability": 20,
+      "non_obviousness": 7.5,
+      "cross_validation_potential": 17.5
+    },
+    "evidence_boundary": "Only company_records and verified_ingested_evidence contain selected-company evidence. Dataset profile values are dataset-level context, never company-specific evidence. automatically_cross_checked records passed deterministic original-PDF identity/hash/page/passage checks, not human approval or claim verification. Neither approval state establishes independent corroboration or justifies Strong/Moderate evidence strength.",
+    "data_limitations": [
+      "No recognized company or ticker identifier field; company coverage cannot be verified from rows."
+    ]
+  }
+}

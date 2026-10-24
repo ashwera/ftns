@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:12:35.686576+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.eprocurentpc.nic.in/nicgep/app",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:12:35.679682+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.eprocurentpc.nic.in/nicgep/app",
+          "status": "robots.txt returned HTTP 404; treated as unavailable under REP"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.eprocurentpc.nic.in/nicgep/app",
+      "redirect_chain": [],
+      "source_sha256": "ada8500b46696e28d7f86efe834887f288786befb71aaed417a6d787a65dba76",
+      "content_type": "text/html;charset=UTF-8",
+      "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T191230_017819901424/discovery/retrieved/sources/ada8500b4669_45af1d2d.html",
+      "document_title": "NTPC Limited eProcurement Portal eProcurement System",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:12:34.036876+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T18:12:34.001640+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "redirect_chain": [],
+      "source_sha256": "40f467330c8f516a0644f911e5c65319ae31cd0ee2fc135a19de58419c6b16a6",
+      "content_type": "text/html; charset=UTF-8",
+      "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T181230_84a3bde559cc/discovery/retrieved/sources/40f467330c8f_337a4428.html",
+      "document_title": "NTPC Limited - Wikipedia",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

@@ -12,6 +12,8 @@ from .data_loader import DataLoadError, evidence_summary, filter_company, load_c
 from .llm_client import LLMError, generate_json
 from .dataset_audit import build_readiness, profile_dataset
 from .evidence_ingestion import load_registry, verify_company
+from .machine_evidence import machine_evidence_eligible
+from .structured_generation import generate_validated
 
 WEIGHTS = {"financial_significance": .30, "evidence_availability": .25, "testability": .20, "non_obviousness": .075, "cross_validation_potential": .175}
 MAX_F1_PAYLOAD_BYTES = 250_000
@@ -21,7 +23,44 @@ MAX_F1_EVIDENCE_RECORD_BYTES = 1_000_000
 def weighted_score(scores):
     return sum((scores[key] / 5) * weight * 100 for key, weight in WEIGHTS.items())
 
+def normalize_f1_scores(output):
+    """Recompute arithmetic only; preserve hypotheses, ranks and recommendation."""
+    corrections = []
+    if not isinstance(output, dict) or not isinstance(output.get("ranked_candidates"), list):
+        return corrections
+    for candidate in output["ranked_candidates"]:
+        if not isinstance(candidate, dict): continue
+        scores = candidate.get("scores")
+        if not isinstance(scores, dict) or set(scores) != set(WEIGHTS): continue
+        if not all(isinstance(v, dict) and type(v.get("score")) is int and 0 <= v["score"] <= 5
+                   for v in scores.values()): continue
+        previous = candidate.get("weighted_score")
+        if type(previous) not in (int, float): continue
+        computed = round(weighted_score({k: v["score"] for k, v in scores.items()}), 10)
+        if previous != computed:
+            candidate["weighted_score"] = computed
+            corrections.append({"candidate_id": candidate.get("candidate_id"),
+                                "field": "weighted_score", "model_value": previous,
+                                "computed_value": computed, "weights": WEIGHTS,
+                                "formula": "sum((score / 5) * weight * 100)"})
+    return corrections
+
+def f1_conclusions(output):
+    """Existing decisions and scoring inputs a schema repair may not rewrite."""
+    if not isinstance(output, dict): return {}
+    result = {key: output[key] for key in ("ranking_reliable", "recommended_candidate_id") if key in output}
+    candidates = output.get("ranked_candidates")
+    if isinstance(candidates, list) and all(isinstance(c, dict) for c in candidates):
+        result["candidates"] = [{key: c[key] for key in
+            ("candidate_id", "rank", "category", "hypothesis", "scores") if key in c} for c in candidates]
+    return result
+
 def eligible_ingested_evidence(records, canonical_name, verified_identifier):
+    """Shared F1/R1 gate: human approval OR independently rechecked PDF passages.
+
+    Machine eligibility certifies exact extraction/provenance only, not claims,
+    human review, source independence, or an evidence-strength grade.
+    """
     def approved_review(record):
         reviewer, timestamp, note = (record.get(k) for k in ("reviewed_by", "reviewed_at", "review_note"))
         if not all(isinstance(v, str) and v.strip() for v in (reviewer, timestamp, note)):
@@ -39,7 +78,8 @@ def eligible_ingested_evidence(records, canonical_name, verified_identifier):
 
     return [r for r in records if r.get("company_identity_status") == "verified" and identity_matches(r) and
         r.get("parsing_status") == "parsed" and isinstance(r.get("excerpt_or_fact"), str) and bool(r["excerpt_or_fact"].strip()) and
-        r.get("review_status") == "approved" and approved_review(r)]
+        ((r.get("review_status") == "approved" and approved_review(r)) or
+         machine_evidence_eligible(r, canonical_name, verified_identifier))]
 
 def validate_output(result, schema_path):
     schema = json.loads(Path(schema_path).read_text(encoding="utf-8"))
@@ -50,6 +90,9 @@ def validate_output(result, schema_path):
 def _validate(value, schema, path="$", root=None):
     root = root or schema
     errors=[]
+    if "if" in schema:
+        branch = "else" if _validate(value, schema["if"], path, root) else "then"
+        if branch in schema: errors.extend(_validate(value, schema[branch], path, root))
     if "$ref" in schema:
         target = root
         for part in schema["$ref"].removeprefix("#/").split("/"): target=target[part]
@@ -70,6 +113,8 @@ def _validate(value, schema, path="$", root=None):
             if "items" in schema: errors.extend(_validate(v,schema["items"],f"{path}/{i}",root))
     if isinstance(value,str):
         if len(value)<schema.get("minLength",0): errors.append(f"{path}: string is too short")
+        if len(value)>schema.get("maxLength",float("inf")): errors.append(f"{path}: string is too long")
+        if "pattern" in schema and not re.search(schema["pattern"], value): errors.append(f"{path}: string does not match pattern")
         if schema.get("format")=="uri" and value and not value.startswith(("https://","http://")): errors.append(f"{path}: expected URI")
     if isinstance(value,(int,float)) and not isinstance(value,bool):
         if value<schema.get("minimum",float("-inf")) or value>schema.get("maximum",float("inf")): errors.append(f"{path}: number outside allowed range")
@@ -81,7 +126,7 @@ def inspect_csv(path):
     _, meta = load_csv(path)
     print(json.dumps(meta, indent=2, ensure_ascii=False))
 
-def run(company, csv_path, output_path, config=None):
+def run(company, csv_path, output_path, config=None, *, research_question=None):
     config = config or Config()
     rows, meta = load_csv(csv_path)
     canonical, verified_identifier, identity_status = verify_company(company, load_registry(config.registry_path))
@@ -128,7 +173,7 @@ def run(company, csv_path, output_path, config=None):
             evidence_warnings=[w for w in report.get("data_quality_warnings",[]) if w.get("evidence_id") in relevant_ids]
     if not selected and not ingested_evidence:
         limitation=meta["company_filter_limitation"] if not meta["company_filtering_available"] else f"No rows for {company!r} were found."
-        raise DataLoadError(limitation + " No human-reviewed, approved, company-specific ingested evidence was available either; F1 cannot run without company-specific evidence.")
+        raise DataLoadError(limitation + " No human-reviewed, approved, company-specific ingested evidence was available either, nor eligible automatically_cross_checked evidence; F1 cannot run without company-specific evidence.")
     company_rows=evidence_summary(rows,meta,company) if meta["company_filtering_available"] else {"company":company,"rows":[],"limitation":meta["company_filter_limitation"],"matched_rows":0}
     payload = {"company": company, "company_records": company_rows,
         "dataset_level_profile_not_company_evidence": {"row_count": audit["row_count"], "columns": audit["column_names"], "quality_warnings": audit["quality_warnings"], "limitations": audit["limitations"]},
@@ -136,14 +181,33 @@ def run(company, csv_path, output_path, config=None):
         "verified_ingested_evidence": ingested_evidence,
         "ingested_evidence_quality_warnings": evidence_warnings,
         "f1_scoring_weights_percent": {"financial_significance":30,"evidence_availability":25,"testability":20,"non_obviousness":7.5,"cross_validation_potential":17.5},
-        "evidence_boundary": "Only company_records and verified_ingested_evidence contain selected-company evidence. Dataset profile values are dataset-level context, never company-specific evidence.",
+        "evidence_boundary": "Only company_records and verified_ingested_evidence contain selected-company evidence. Dataset profile values are dataset-level context, never company-specific evidence. automatically_cross_checked records passed deterministic original-PDF identity/hash/page/passage checks, not human approval or claim verification. Neither approval state establishes independent corroboration or justifies Strong/Moderate evidence strength.",
         "data_limitations": [f"Column {c!r} has {n} missing values." for c,n in meta["missing_values"].items() if n] + audit["quality_warnings"]}
+    if research_question:
+        payload["assigned_research_question"] = research_question
     payload_bytes = len(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
     if payload_bytes > MAX_F1_PAYLOAD_BYTES:
         raise DataLoadError(f"F1 request payload is {payload_bytes} bytes; maximum is {MAX_F1_PAYLOAD_BYTES}. Reduce the reviewed evidence bundle before retrying.")
     prompt = (config.prompt_dir / "f1_research_angle_selector.md").read_text(encoding="utf-8")
-    output = generate_json(prompt, payload, config)
-    validate_output(output, config.schema_path)
+    if research_question:
+        prompt += "\nPrioritize testable angles that answer assigned_research_question. Do not replace it with an unrelated research family merely because that evidence is easier to find."
+        prompt += "\nRead verified_ingested_evidence as the principal research input. The anonymous quote CSV is only excluded context; its lack of operational columns does not erase eligible PDF disclosures. Cite supplied PDF evidence IDs when present."
+    supplied_ids = {record["evidence_id"] for record in ingested_evidence}
+    def validate_f1(result):
+        validate_output(result, config.schema_path)
+        candidates = result["ranked_candidates"]
+        candidate_ids = [c["candidate_id"] for c in candidates]
+        if len(candidate_ids) != len(set(candidate_ids)):
+            raise ValueError("F1 candidate IDs must be unique")
+        if result["recommended_candidate_id"] is not None and result["recommended_candidate_id"] not in candidate_ids:
+            raise ValueError("F1 recommended candidate was not supplied in ranked_candidates")
+        for candidate in candidates:
+            for item in candidate["evidence_found"]:
+                if item.get("evidence_id") is not None and item["evidence_id"] not in supplied_ids:
+                    raise ValueError("F1 evidence_id was not supplied")
+    output = generate_validated(prompt, payload, config, schema_path=config.schema_path,
+        output_path=output_path, generate=generate_json, validate=validate_f1,
+        normalize=normalize_f1_scores, preserve=f1_conclusions, stage="f1")
     out = Path(output_path); out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     recommendation = output.get("recommended_candidate_id")

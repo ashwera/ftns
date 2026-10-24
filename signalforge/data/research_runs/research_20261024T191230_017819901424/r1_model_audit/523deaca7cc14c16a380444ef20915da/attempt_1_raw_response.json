@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "company_name": "NTPC Limited",
+  "candidate_id": "hr_01",
+  "hypothesis": "NTPC Limited utilizes its network of subsidiaries and joint ventures to manage working capital and capital expenditure via significant intercompany transactions.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "To what extent do intercompany loan balances and service contracts correlate with liquidity fluctuations in the parent company?",
+      "metrics": [
+        "Loan-to-equity ratio in subsidiaries",
+        "Days sales outstanding for intercompany receivables",
+        "Net cash flow impact from intercompany lending"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Detailed cash flow movement between specific entities",
+        "Terms of intercompany credit facilities"
+      ]
+    },
+    {
+      "question": "Are the terms of intercompany transactions consistent with arms-length principles defined by regulatory bodies?",
+      "metrics": [
+        "Interest rates on intercompany loans vs market benchmarks",
+        "Markup on services provided to JVs"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Comparable market benchmarks for internal service fees",
+        "Interest rate schedules for intercompany loans"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Detailed listing of subsidiaries and joint ventures, percentage holding, and BRSR initiatives.",
+      "claim_supported": "Existence of a complex network of subsidiaries and JVs.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_77c5f772c341d65bc010f576",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Individually significant transactions for services, goods, assets, and dividends.",
+      "claim_supported": "High volume of intercompany financial activity.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_d3d9906726630bba52e0d915",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Outstanding balances (recoverables/payables) as at 31 March 2025.",
+      "claim_supported": "Presence of material outstanding intercompany balances.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "lookup_01",
+      "source_type": "annual_report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Comparison of intercompany balances vs total consolidated debt.",
+      "kind": "calculation",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Identify all significant related party transactions from the 'Related Party Disclosures' section of the Annual Report.",
+      "expected_evidence": "Table of aggregate transaction values by entity and type.",
+      "cross_validation_sources": [
+        "BSE/NSE Regulatory Filings"
+      ],
+      "calculation": "Sum of intercompany receivables divided by total current assets.",
+      "completion_criteria": "Completion of a database mapping entity names to transaction volumes."
+    },
+    {
+      "step": "Verify interest income/expense on intercompany loans against prevailing corporate bond yield curves.",
+      "expected_evidence": "Interest rate disclosures in the notes to financial statements.",
+      "cross_validation_sources": [
+        "Annual Report Notes",
+        "Market Yield Data"
+      ],
+      "calculation": "Interest expense/loan balance vs. MIBOR or secondary market bond yield.",
+      "completion_criteria": "Determination if internal rates deviate from market benchmarks."
+    }
+  ],
+  "alternative_explanation": "These transactions reflect efficient internal resource allocation between the parent and operating entities within a regulated utility framework, minimizing external financing costs and optimizing tax efficiency.",
+  "falsification_test": "Evidence demonstrating that all intercompany transactions are conducted at market-equivalent rates and that the intercompany loan balances represent less than 5% of the consolidated cash position, with no material impact on working capital requirements of the parent."
+}

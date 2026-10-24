@@ -1,0 +1,50 @@
+{
+  "stage": "f1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "rejected",
+      "validation_error": "F1 output failed schema validation: $/ranked_candidates/0/data_risks_and_limitations: expected array; $/ranked_candidates/1/data_risks_and_limitations: expected array"
+    },
+    {
+      "attempt": 2,
+      "status": "validated",
+      "corrections": [
+        {
+          "candidate_id": "cand_renewable_transition_01",
+          "field": "weighted_score",
+          "model_value": 90.5,
+          "computed_value": 84.5,
+          "weights": {
+            "financial_significance": 0.3,
+            "evidence_availability": 0.25,
+            "testability": 0.2,
+            "non_obviousness": 0.075,
+            "cross_validation_potential": 0.175
+          },
+          "formula": "sum((score / 5) * weight * 100)"
+        },
+        {
+          "candidate_id": "cand_hidden_relationships_01",
+          "field": "weighted_score",
+          "model_value": 75.25,
+          "computed_value": 72.5,
+          "weights": {
+            "financial_significance": 0.3,
+            "evidence_availability": 0.25,
+            "testability": 0.2,
+            "non_obviousness": 0.075,
+            "cross_validation_potential": 0.175
+          },
+          "formula": "sum((score / 5) * weight * 100)"
+        }
+      ]
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "validated",
+  "accepted_attempt": 2
+}

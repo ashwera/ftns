@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url'
 
 const PINNED_RUN = 'run_20261019_ntpc_slice_audit'
 const FILES = ['finding_bundle.json', 'calculations.json', 'verification_results.json', 'audit_trail.json', 'stage_manifest.json']
-const OPTIONAL_FILES = ['source_catalog_status.json']
+const OPTIONAL_FILES = ['source_catalog_status.json', 'research_dossier.json', 'exact_ratio_audit.json']
 const here = dirname(fileURLToPath(import.meta.url))
 const runName = process.argv[2] ?? PINNED_RUN
 if (!/^[A-Za-z0-9_.-]+(\/[A-Za-z0-9_.-]+)*$/.test(runName) || runName.split('/').some(part => part === '.' || part === '..')) { console.error('Invalid run name'); process.exit(2) }

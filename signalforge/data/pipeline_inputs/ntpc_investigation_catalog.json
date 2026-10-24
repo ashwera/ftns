@@ -1,0 +1,36 @@
+{
+  "catalog_version": "1.0",
+  "company": "NTPC Limited",
+  "note": "Operator-discovered original documents retained from the earlier research session. Cached inputs are explicitly labelled; these are not autonomous search results or human evidence approvals.",
+  "sources": [
+    {
+      "source_id": "north_karanpura_unit3_cod",
+      "title": "North Karanpura Unit 3 declaration of commercial operation",
+      "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf",
+      "local_path": "../cod_sources_20261024/sources/a41cafc2b949_a11f02c8.pdf",
+      "sha256": "a41cafc2b949560f83552216a36c6ab353eb4f1190c3529d5bf528e63f586815",
+      "publisher": "NTPC Limited", "source_class": "official_filing", "source_type": "exchange_filing",
+      "publication_date": "2025-06-13", "issuer_submitted": true, "derived_from": []
+    },
+    {
+      "source_id": "north_karanpura_unit3_trial",
+      "title": "North Karanpura Unit 3 trial completion and installed capacity",
+      "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf",
+      "local_path": "../cod_sources_20261024/sources/eb9a13e8e3d5_1aec704f.pdf",
+      "sha256": "eb9a13e8e3d5c690100aa16cf1277f4350281f7ace34d415361fbda34f5f63a8",
+      "publisher": "NTPC Limited", "source_class": "official_filing", "source_type": "exchange_filing",
+      "publication_date": "2025-06-12", "issuer_submitted": true, "derived_from": []
+    },
+    {
+      "source_id": "oerc_gridco_fy2024_25",
+      "title": "OERC GRIDCO tariff order FY2024-25",
+      "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf",
+      "local_path": "../regulator_20261024/sources/2812d3288d24_4e35f8ba.pdf",
+      "sha256": "2812d3288d244940fbae5d0408cdfc91a55f034f2df9b83149699090f2bb72c4",
+      "publisher": "Odisha Electricity Regulatory Commission", "source_class": "regulator", "source_type": "tariff_order",
+      "publication_date": "2024-02-13", "issuer_submitted": false, "derived_from": [],
+      "independent_group_id": "gridco_procurement_oerc",
+      "independence_basis": "GRIDCO's own procurement forecast and regulator treatment are separate from NTPC. Paragraph 380 quotes CEA/NTPC for scheduling: those quoted dates alone are not independent measurement. Credit independence only to GRIDCO's decision to exclude Unit 3 from its supply forecast."
+    }
+  ]
+}

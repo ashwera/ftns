@@ -1,0 +1,850 @@
+{
+  "company": "NTPC Limited",
+  "topic": "renewable commissioned capacity",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"NTPC\" annual report filetype:pdf",
+    "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf"
+  ],
+  "search_results": [
+    {
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+      "title": "NTPC Annual Report Cover Final -",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 100,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T19:22:14.271367+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:21:34.329446+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "error": "RetrievalError: Response exceeded 15728640 byte limit"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "title": "NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T19:22:36.172992+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:22:14.288422+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "error": "RetrievalError: Response exceeded 15728640 byte limit"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "url": "https://ntpc.co.in/index.php/investors/annual-reports/2023-24",
+      "title": "Annual Reports - 2023-24 | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 70,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpc.co.in/investors/annual-reports",
+      "title": "Annual Report | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 70,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpc.co.in/investors/annual-reports/2024-25",
+      "title": "Annual Report 2024-25 | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 70,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpc.co.in/investors/annual-reports/2025-26",
+      "title": "Annual Report 2025-26 | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 70,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpc.co.in/investors/financial-performance/financial-statements-subsidiaries",
+      "title": "Annual Reports of Subsidiaries - NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 70,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpc.co.in/node/1934",
+      "title": "Integrated Annual Report 2023-24 | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 70,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://companiesmarketcap.com/ntpc-limited/annual-reports/",
+      "title": "NTPC Limited - Annual Reports - CompaniesMarketCap.com",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "rank_score": 30,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpc.co.in/",
+      "title": "Home | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 30,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.moneycontrol.com/company-facts/ntpc/annual-report/NTP/",
+      "title": "NTPC - Moneycontrol",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "rank_score": 25,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.eprocurentpc.nic.in/nicgep/app",
+      "title": "NTPC Limited eProcurement Portal",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "relevance_reason": "distinctive_company_token_match_unverified",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    }
+  ],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T19:21:32.096708+00:00",
+      "query": "\"NTPC\" annual report filetype:pdf"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T19:21:32.473086+00:00",
+      "query": "\"NTPC\" annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://ntpc.co.in/investors/annual-reports",
+          "title": "Annual Report | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/investors/annual-reports/2025-26",
+          "title": "Annual Report 2025-26 | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://companiesmarketcap.com/ntpc-limited/annual-reports/",
+          "title": "NTPC Limited - Annual Reports - CompaniesMarketCap.com",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/company-facts/ntpc/annual-report/NTP/",
+          "title": "NTPC - Moneycontrol",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/investors/annual-reports/2024-25",
+          "title": "Annual Report 2024-25 | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+          "title": "NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/index.php/investors/annual-reports/2023-24",
+          "title": "Annual Reports - 2023-24 | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+          "title": "NTPC Annual Report Cover Final -",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/investors/financial-performance/financial-statements-subsidiaries",
+          "title": "Annual Reports of Subsidiaries - NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpc.co.in/node/1934",
+          "title": "Integrated Annual Report 2023-24 | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 10,
+      "rejected_count": 0,
+      "executed_queries": [
+        "\"NTPC\" annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T19:21:32.473736+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:21:33.075151+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 7,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:21:33.075932+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.076637+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.077361+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.078144+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.078764+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:21:33.079388+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T19:21:33.080381+00:00",
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://ntpc.co.in/",
+          "title": "Home | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/recruitment/",
+          "title": "NTPC Limited - Recruitment Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+          "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.eprocurentpc.nic.in/nicgep/app",
+          "title": "NTPC Limited eProcurement Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc.html",
+          "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ess.ntpc.co.in/",
+          "title": "Sign in to your account",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpctender.ntpc.co.in/",
+          "title": "NTPC: Home",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 7,
+      "relevant_count": 2,
+      "rejected_count": 5,
+      "executed_queries": [
+        "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "site_page_requested",
+      "at": "2026-10-24T19:21:33.080949+00:00",
+      "url": "https://ntpc.co.in/"
+    },
+    {
+      "action": "site_page_retrieval",
+      "at": "2026-10-24T19:21:34.314693+00:00",
+      "url": "https://ntpc.co.in/",
+      "report": {
+        "generated_at": "2026-10-24T19:21:34.314126+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:21:33.092009+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              },
+              {
+                "url": "https://validate.perfdrive.com/?ssa=c7bcbcf2-2c41-4248-95da-6e5797b04301&ssb=99744244752&ssc=https%3A%2F%2Fntpc.co.in%2F&ssi=31a99568-cs5n-4e1d-bfb0-3ebea870ffff&ssk=botmanager_support@radware.com&ssm=07615599329436530109442807713189&ssn=65ca696e805669ec12f16aa6f2e138da7168a906a959-f3de-4c38-99c01b&sso=802db0dc-703ddd777ee42855307fb58f971fe00a405a63ae758eb47e&ssp=95373771951792881405179285690199632&ssq=23076126969331446083169693575654967390275&ssr=NDkuMzYuMTAuOTg=&sst=SignalForgeEvidenceBot/0.1 (+local research ingestion; respectful public-source retrieval)&ssu=&ssv=&ssw=&ssx=eyJyZCI6Im50cGMuY28uaW4iLCJfX3V6bWYiOiI3ZjkwMDBhOTA2YTk1OS1mM2RlLTRjMzgtOTBkYy03MDNkZGQ3NzdlZTQxLTE3OTI4Njk2OTM1NTMwLTAwNThmMDJhZWY5ZjFhYjcxNGUxMCIsInV6bXgiOiI3ZmMwMDBlNmIwYTBlMC02NjEzLTRmODYtODY5My1jNTEwMzYyMzczNTYxLTE3OTI4Njk2OTM1NTMwLTAwYTVmMWZlYTdlZmYzYzliMTMxMCJ9",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "error": "RetrievalError: Non-public URL rejected"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "site_discovery_completed",
+      "at": "2026-10-24T19:21:34.315972+00:00",
+      "accepted_link_count": 0
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T19:21:34.316497+00:00",
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T19:22:14.276300+00:00",
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+      "report": {
+        "generated_at": "2026-10-24T19:22:14.271367+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:21:34.329446+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202023-24.pdf",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "error": "RetrievalError: Response exceeded 15728640 byte limit"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T19:22:14.278216+00:00",
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T19:22:36.173617+00:00",
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "report": {
+        "generated_at": "2026-10-24T19:22:36.172992+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:22:14.288422+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+                "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+              }
+            ],
+            "error": "RetrievalError: Response exceeded 15728640 byte limit"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T19:22:36.174036+00:00",
+      "reason": "query_budget"
+    }
+  ],
+  "errors": [
+    {
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    }
+  ],
+  "returned_result_count": 17,
+  "relevant_returned_count": 12,
+  "relevant_result_count": 12,
+  "rejected_result_count": 5,
+  "rejected_results": [
+    {
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://careers.ntpc.co.in/recruitment/",
+        "title": "NTPC Limited - Recruitment Portal",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+        "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "ambiguous_company_acronym_railway_context"
+    },
+    {
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://www.careerpower.in/rrb-ntpc.html",
+        "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://ess.ntpc.co.in/",
+        "title": "Sign in to your account",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"NTPC\" commissioned projects versus capital expenditure annual report filetype:pdf",
+      "result": {
+        "url": "https://ntpctender.ntpc.co.in/",
+        "title": "NTPC: Home",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC%22+commissioned+projects+versus+capital+expenditure+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    }
+  ],
+  "discovery_status": "unverified_relevant_candidates",
+  "retrieval_status": "failed",
+  "budget": {
+    "max_queries": 2,
+    "max_results": 15,
+    "max_fetches": 2,
+    "max_seconds": 80,
+    "request_timeout": 12,
+    "max_response_bytes": 2097152,
+    "max_site_pages": 3
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "evidence_gaps": [
+    "commissioned projects versus capital expenditure annual report"
+  ],
+  "research_document_count": 10,
+  "site_seeds": [
+    "https://ntpc.co.in/"
+  ],
+  "site_discovered_count": 0,
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "query_budget"
+}

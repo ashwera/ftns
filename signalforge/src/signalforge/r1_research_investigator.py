@@ -9,6 +9,7 @@ from .config import Config
 from .evidence_ingestion import load_registry, verify_company
 from .f1_research_angle_selector import MAX_F1_EVIDENCE_RECORDS, _validate, eligible_ingested_evidence
 from .llm_client import LLMError, generate_json
+from .structured_generation import generate_validated
 
 def validate_plan(plan, schema_path, supplied_ids=()):
     schema = json.loads(Path(schema_path).read_text(encoding="utf-8"))
@@ -16,7 +17,7 @@ def validate_plan(plan, schema_path, supplied_ids=()):
     known = set(supplied_ids)
     for i, item in enumerate(plan.get("evidence_ledger", []) if isinstance(plan, dict) else []):
         eid = item.get("evidence_id") if isinstance(item, dict) else None
-        if eid is not None and eid not in known: errors.append(f"$/evidence_ledger/{i}: evidence_id {eid!r} was not supplied")
+        if eid is not None and eid not in known: errors.append(f"$/evidence_ledger/{i}: evidence_id was not supplied")
         if isinstance(item, dict) and item.get("status") == "planned_lookup" and (item.get("source_url") or item.get("excerpt_or_data_point")):
             errors.append(f"$/evidence_ledger/{i}: planned lookup must not contain a URL or excerpt")
     if errors: raise ValueError("R1 output failed validation: " + "; ".join(errors))
@@ -31,7 +32,7 @@ def select_candidate(f1):
 
 def load_evidence_ids(path, company, config=None):
     """Evidence IDs R1 may be given or cite. Same gate as F1: schema-valid, verified identity (canonical name and identifier),
-    parsed non-empty text, and human-approved with complete review metadata. Anything else, including malformed lines, is excluded.
+    parsed non-empty text, and human-approved or deterministically machine-cross-checked. Anything else, including malformed lines, is excluded.
     Fails closed: an unresolved company yields no IDs."""
     config = config or Config()
     p = Path(path)
@@ -59,9 +60,15 @@ def run(f1_path, output_path, config=None):
     ids = load_evidence_ids(config.evidence_dir / "evidence.jsonl", f1["company_name"], config)
     prompt = (config.prompt_dir / "r1_research_investigator.md").read_text(encoding="utf-8")
     payload = {"company_name": f1["company_name"], "candidate": cand, "dataset_summary": f1.get("dataset_summary"), "supplied_evidence_ids": ids}
-    plan = generate_json(prompt, payload, config)
-    plan["retrieval_performed"] = False
-    validate_plan(plan, config.schema_path.with_name("r1_output.schema.json"), ids)
+    def validate_r1(plan):
+        validate_plan(plan, config.schema_path.with_name("r1_output.schema.json"), ids)
+        if plan["candidate_id"] != cand["candidate_id"] or plan["company_name"] != f1["company_name"]:
+            raise ValueError("R1 company and candidate must match supplied F1 recommendation")
+    plan = generate_validated(prompt, payload, config,
+        schema_path=config.schema_path.with_name("r1_output.schema.json"), output_path=output_path,
+        generate=generate_json, validate=validate_r1,
+        preserve=lambda p: {key: p[key] for key in ("company_name", "candidate_id", "hypothesis") if key in p}
+            if isinstance(p, dict) else {}, stage="r1")
     out = Path(output_path); out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"R1 plan saved to {out} ({len(plan['checklist'])} steps; no retrieval performed)")

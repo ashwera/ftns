@@ -1,0 +1,40 @@
+{
+  "run_id": "research_20261024T180549_f3adeaa64622",
+  "company": "NTPC Limited",
+  "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+  "created_at": "2026-10-24T18:05:49.460478+00:00",
+  "updated_at": "2026-10-24T18:05:51.682858+00:00",
+  "status": "blocked",
+  "stage": "machine_evidence",
+  "events": [
+    {
+      "at": "2026-10-24T18:05:49.460937+00:00",
+      "stage": "discovery",
+      "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."
+    },
+    {
+      "at": "2026-10-24T18:05:51.682005+00:00",
+      "stage": "retrieval",
+      "message": "Bounded discovery and retrieval finished."
+    },
+    {
+      "at": "2026-10-24T18:05:51.682306+00:00",
+      "stage": "machine_evidence",
+      "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."
+    },
+    {
+      "at": "2026-10-24T18:05:51.682861+00:00",
+      "stage": "machine_evidence",
+      "message": "No retrieved PDF passed the machine evidence policy. F1/R1 blocked; no finding generated."
+    }
+  ],
+  "artifacts": [
+    "discovery/discovery_report.json"
+  ],
+  "finding": null,
+  "limitations": [
+    "Source retrieval and machine passage matching do not verify financial claims."
+  ],
+  "source_count": 10,
+  "retrieval_status": "retrieved"
+}

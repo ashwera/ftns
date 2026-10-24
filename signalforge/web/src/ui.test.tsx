@@ -98,11 +98,19 @@ describe('SignalForge dashboard interactions', () => {
     expect(await screen.findByText('No claims match these filters.')).toBeTruthy()
   })
 
-  it('keeps Run Research honest and points to the review step without claiming a run started', async () => {
+  it('starts the backend run and keeps a blocked live result separate from the saved example', async () => {
     const user = await renderApp()
-    await user.click(await screen.findByRole('button', { name: /Run research/ }))
-    expect(await screen.findByText(/No research run was started/)).toBeTruthy()
-    await user.click(screen.getByRole('button', { name: 'Review claims' }))
-    expect(await screen.findByText(/candidate claims · all unverified/)).toBeTruthy()
+    const original = globalThis.fetch
+    const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+      if (String(input) === '/api/agent/runs' && init?.method === 'POST') {
+        return new Response(JSON.stringify({run_id:'research_test', company:'NTPC Limited', status:'blocked', stage:'machine_evidence', updated_at:'2026-10-24T18:00:00Z', events:[], artifacts:[]}), {status:202})
+      }
+      return original(input, init)
+    })
+    vi.stubGlobal('fetch', fetchMock)
+    await user.click(await screen.findByRole('button', { name: /^Start research$/ }))
+    expect(await screen.findByRole('heading', {name:/Live run.*Blocked/})).toBeTruthy()
+    expect(screen.getByText(/has not produced a verified finding/)).toBeTruthy()
+    expect(fetchMock.mock.calls.some(([url, init]) => String(url) === '/api/agent/runs' && init?.method === 'POST')).toBe(true)
   })
 })

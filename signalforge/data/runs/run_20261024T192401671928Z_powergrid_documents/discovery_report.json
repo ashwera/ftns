@@ -1,0 +1,2016 @@
+{
+  "company": "Power Grid Corporation of India Limited",
+  "topic": "transmission commissioning capex 2024-25",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"Power Grid Corporation\" annual report filetype:pdf"
+  ],
+  "search_results": [
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 105,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T19:25:21.728157+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:24:03.613968+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "error": "RetrievalError: Response exceeded 15728640 byte limit"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_2.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/hi/annual-reports",
+      "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 105,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/PowergridAnnualReport-2023-24.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 103,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/PowergridAnnualReport-2023-24_0.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/hi/annual-reports",
+      "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 103,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid-Annual-Report-2022-23-Hindi.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/hi/annual-reports",
+      "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 102,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid_Annual_Report_2024-25-1.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 101,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/HindiPowergridAnnuaLReport202425.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/hi/annual-reports",
+      "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSEBSE_AGMNOTICE_dt01092021_0.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSEBSE_Notice_AR_dt06082022_1.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSE_AR_dt29072019.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSE_AR_dt29082020.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/PowerGrid_AR_2022_23.pdf",
+      "title": "",
+      "search_provider": "public_site_links",
+      "url_provenance": "retrieved_html.anchor.href",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+      "company_identity_status": "unresolved",
+      "relevance_reason": "issuer_domain_match_unverified",
+      "source_class": "primary_issuer",
+      "rank_score": 95,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    }
+  ],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T19:24:01.691067+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf"
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:24:02.331505+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "provider": "bing_rss",
+      "status": "completed",
+      "returned_count": 10,
+      "research_document_hints": 0
+    },
+    {
+      "action": "search_provider_attempt",
+      "at": "2026-10-24T19:24:02.332474+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.333001+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://app.powerbi.com/home",
+        "title": "Sign in | Microsoft Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.333471+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://powerpoint.cloud.microsoft/en-gb/",
+        "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.334260+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+        "title": "Power (physics) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.335019+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://power.delhi.gov.in/",
+        "title": "Home | Power Department",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.335655+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+        "title": "Power (TV series) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.336213+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.tatapower-ddl.com/",
+        "title": "Welcome to Tata Power-DDL",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.336731+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.imdb.com/title/tt3281796/",
+        "title": "Power (TV Series 2014\u20132020) - IMDb",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.337208+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://msit.powerbi.com/",
+        "title": "Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.337981+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+        "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_result_rejected",
+      "at": "2026-10-24T19:24:02.338699+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+        "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T19:24:02.339130+00:00",
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "results": [
+        {
+          "url": "https://app.powerbi.com/home",
+          "title": "Sign in | Microsoft Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://powerpoint.cloud.microsoft/en-gb/",
+          "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+          "title": "Power (physics) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://power.delhi.gov.in/",
+          "title": "Home | Power Department",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+          "title": "Power (TV series) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.tatapower-ddl.com/",
+          "title": "Welcome to Tata Power-DDL",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.imdb.com/title/tt3281796/",
+          "title": "Power (TV Series 2014\u20132020) - IMDb",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://msit.powerbi.com/",
+          "title": "Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+          "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+          "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "returned_count": 10,
+      "relevant_count": 0,
+      "rejected_count": 10,
+      "executed_queries": [
+        "\"Power Grid Corporation\" annual report filetype:pdf"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "site_page_requested",
+      "at": "2026-10-24T19:24:02.339640+00:00",
+      "url": "https://www.powergrid.in/en/annual-reports"
+    },
+    {
+      "action": "site_page_retrieval",
+      "at": "2026-10-24T19:24:02.998434+00:00",
+      "url": "https://www.powergrid.in/en/annual-reports",
+      "report": {
+        "generated_at": "2026-10-24T19:24:02.998041+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.powergrid.in/en/annual-reports",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T19:24:02.984943+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.powergrid.in/en/annual-reports",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.powergrid.in/en/annual-reports",
+            "redirect_chain": [],
+            "source_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+            "document_title": "Annual Reports | POWERGRID",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "site_links_discovered",
+      "at": "2026-10-24T19:24:03.008273+00:00",
+      "parent_url": "https://www.powergrid.in/en/annual-reports",
+      "results": [
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#content",
+          "title": "Skip to Main Content",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports",
+          "title": "\u0939\u093f\u0902\u0926\u0940",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "About Us",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Investors",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Financials",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/financials-presentations",
+          "title": "Presentations",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Quarterly / Annual Compliances",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports",
+          "title": "Annual Reports",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Reports & Filings",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/investors-relations",
+          "title": "Schedule of Investors Meet and Presentation",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Investor Services",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/investor-services-cell",
+          "title": "Investor Services Cell",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/investors-complaints",
+          "title": "Investors Complaints",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Shareholders Meeting",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Bonds",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/bonds-file/Bonds_Unclaimed_amount_format.pdf",
+          "title": "Unclaimed Amounts of NCS Investors",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/bonds-file/Bonds_Policy_for_Claims_by_Bond_Investors.pdf",
+          "title": "Policy of Claims by NCS Investors",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Subsidiaries",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-report",
+          "title": "Annual Report",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Trading Window Closure",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Credit Rating",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "TDS certificate of Dividend Payment",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolinks",
+          "title": "Media",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolinks",
+          "title": "Careers",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolinks",
+          "title": "Job Opportunities",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "General Information",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "People & Culture",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Engagement of Apprentices",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Vendors",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolinks",
+          "title": "We Are Listening",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports",
+          "title": "\u0939\u093f\u0902\u0926\u0940",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#content",
+          "title": "Skip to Main Content",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#",
+          "title": "X",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://apps.powergrid.in/pgdocs/2021/11/ecandour.pdf",
+          "title": "Candour",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-report-all",
+          "title": "Annual Reports",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Investors",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#nolink",
+          "title": "Quarterly / Annual Compliances",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/archive/annual-reports",
+          "title": "Annual Report Archive From 2014-15",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid_Annual_Report_2024-25-1.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/PowergridAnnualReport-2023-24.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/PowerGrid_AR_2022_23.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSEBSE_Notice_AR_dt06082022_1.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSEBSE_AGMNOTICE_dt01092021_0.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSE_AR_dt29082020.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSE_AR_dt29072019.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports?page=0",
+          "title": "Current page 1",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports?page=1",
+          "title": "Page 2",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports?page=1",
+          "title": "Next page \u203a\u203a",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports?page=1",
+          "title": "Last page Last \u00bb",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/inline-files/FAQs.pdf",
+          "title": "FAQs",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports#top",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/en/annual-reports",
+          "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+          "company_identity_status": "unresolved"
+        }
+      ]
+    },
+    {
+      "action": "site_page_requested",
+      "at": "2026-10-24T19:24:03.009055+00:00",
+      "url": "https://www.powergrid.in/hi/annual-reports"
+    },
+    {
+      "action": "site_page_retrieval",
+      "at": "2026-10-24T19:24:03.586286+00:00",
+      "url": "https://www.powergrid.in/hi/annual-reports",
+      "report": {
+        "generated_at": "2026-10-24T19:24:03.586083+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://www.powergrid.in/hi/annual-reports",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T19:24:03.571751+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://www.powergrid.in/hi/annual-reports",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://www.powergrid.in/hi/annual-reports",
+            "redirect_chain": [],
+            "source_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+            "document_title": "\u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0930\u093f\u092a\u094b\u0930\u094d\u091f | \u092a\u093e\u0935\u0930 \u0917\u094d\u0930\u093f\u0921",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "site_links_discovered",
+      "at": "2026-10-24T19:24:03.598342+00:00",
+      "parent_url": "https://www.powergrid.in/hi/annual-reports",
+      "results": [
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#content",
+          "title": "\u092e\u0941\u0916\u094d\u092f \u0938\u093e\u092e\u0917\u094d\u0930\u0940 \u092a\u0930 \u091c\u093e\u090f\u0902",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports",
+          "title": "English",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0939\u092e\u093e\u0930\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0928\u093f\u0935\u0947\u0936\u0915 \u0938\u092e\u094d\u092c\u0928\u094d\u0927",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0935\u093f\u0924\u094d\u0924\u0940\u092f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/financials-presentations",
+          "title": "\u092a\u094d\u0930\u0938\u094d\u0924\u0941\u0924\u093f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0924\u094d\u0930\u0948\u092e\u093e\u0938\u093f\u0915 / \u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0905\u0928\u0941\u092a\u093e\u0932\u0928",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports",
+          "title": "\u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0930\u093f\u092a\u094b\u0930\u094d\u091f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0930\u093f\u092a\u094b\u0930\u094d\u091f \u0914\u0930 \u092b\u093e\u0907\u0932\u093f\u0902\u0917",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/investors-relations",
+          "title": "\u0928\u093f\u0935\u0947\u0936\u0915\u094b\u0902 \u0915\u0940 \u092e\u0940\u091f\u093f\u0902\u0917 \u0914\u0930 \u092a\u094d\u0930\u0938\u094d\u0924\u0941\u0924\u093f \u0915\u0940 \u0905\u0928\u0941\u0938\u0942\u091a\u0940",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0907\u0928\u094d\u0935\u0947\u0938\u094d\u091f\u0930 \u0938\u0930\u094d\u0935\u093f\u0938\u0947\u091c",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/investor-services-cell",
+          "title": "\u0928\u093f\u0935\u0947\u0936\u0915 \u0938\u0947\u0935\u093e \u0915\u0915\u094d\u0937",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/investors-complaints",
+          "title": "\u0928\u093f\u0935\u0947\u0936\u0915 \u0936\u093f\u0915\u093e\u092f\u0924\u0947\u0902",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0936\u0947\u092f\u0930\u0927\u093e\u0930\u0915\u094b\u0902 \u0915\u0940 \u092c\u0948\u0920\u0915",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u092c\u093e\u0902\u0921",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/bonds-file/Bonds_Unclaimed_amount_format.pdf",
+          "title": "\u090f\u0928\u0938\u0940\u090f\u0938 \u0928\u093f\u0935\u0947\u0936\u0915\u094b\u0902 \u0915\u0940 \u0932\u093e\u0935\u093e\u0930\u093f\u0938 \u0930\u093e\u0936\u093f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/bonds-file/Bonds_Policy_for_Claims_by_Bond_Investors.pdf",
+          "title": "\u090f\u0928\u0938\u0940\u090f\u0938 \u0928\u093f\u0935\u0947\u0936\u0915\u094b\u0902 \u0926\u094d\u0935\u093e\u0930\u093e \u0926\u093e\u0935\u094b\u0902 \u0915\u0940 \u0928\u0940\u0924\u093f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0938\u0939\u093e\u092f\u0915 \u0915\u092e\u094d\u092a\u0928\u093f\u092f\u093e\u0901",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-report",
+          "title": "\u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0930\u093f\u092a\u094b\u0930\u094d\u091f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u091f\u094d\u0930\u0947\u0921\u093f\u0902\u0917 \u0935\u093f\u0902\u0921\u094b \u0915\u094d\u0932\u094b\u091c\u0930",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0915\u094d\u0930\u0947\u0921\u093f\u091f \u0930\u0947\u091f\u093f\u0902\u0917",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0932\u093e\u092d\u093e\u0902\u0936 \u092d\u0941\u0917\u0924\u093e\u0928 \u0915\u093e \u091f\u0940\u0921\u0940\u090f\u0938 \u092a\u094d\u0930\u092e\u093e\u0923 \u092a\u0924\u094d\u0930",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolinks",
+          "title": "\u092e\u0940\u0921\u093f\u092f\u093e",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolinks",
+          "title": "\u0915\u0930\u093f\u092f\u0930",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolinks",
+          "title": "\u0930\u094b\u091c\u0917\u093e\u0930 \u0915\u0947 \u0905\u0935\u0938\u0930",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0938\u0942\u091a\u0928\u093e",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0932\u094b\u0917 \u0914\u0930 \u0938\u0902\u0938\u094d\u0915\u0943\u0924\u093f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0941\u0913\u0902 \u0915\u0940 \u0928\u093f\u092f\u0941\u0915\u094d\u0924\u093f",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0935\u093f\u0915\u094d\u0930\u0947\u0924\u093e",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolinks",
+          "title": "\u0939\u092e \u0938\u0941\u0928 \u0930\u0939\u0947 \u0939\u0948\u0902",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/en/annual-reports",
+          "title": "English",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#content",
+          "title": "\u092e\u0941\u0916\u094d\u092f \u0938\u093e\u092e\u0917\u094d\u0930\u0940 \u092a\u0930 \u091c\u093e\u090f\u0902",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#",
+          "title": "X",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://apps.powergrid.in/pgdocs/2021/11/ecandour.pdf",
+          "title": "\u0915\u0948\u0902\u0921\u0930",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-report-all",
+          "title": "\u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0930\u093f\u092a\u094b\u0930\u094d\u091f\u094d\u0938",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0928\u093f\u0935\u0947\u0936\u0915 \u0938\u092e\u094d\u092c\u0928\u094d\u0927",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#nolink",
+          "title": "\u0924\u094d\u0930\u0948\u092e\u093e\u0938\u093f\u0915 / \u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0905\u0928\u0941\u092a\u093e\u0932\u0928",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/archive/annual-reports",
+          "title": "\u0935\u093e\u0930\u094d\u0937\u093f\u0915 \u0930\u093f\u092a\u094b\u0930\u094d\u091f \u0906\u0930\u094d\u0915\u093e\u0907\u0935",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_2.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/HindiPowergridAnnuaLReport202425.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/PowergridAnnualReport-2023-24_0.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid-Annual-Report-2022-23-Hindi.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid_AR_2021_22_Hi.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid_Annual_Report_Hindi%20%281%29.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid_Annual_Report_Hindi.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/NSE_AR_dt29072019.pdf",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports?page=0",
+          "title": "Current page 1",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports?page=1",
+          "title": "Photo Gallery 2",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports?page=1",
+          "title": "Next page \u203a\u203a",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports?page=1",
+          "title": "Last page \u0905\u0902\u0924\u093f\u092e \u00bb",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/sites/default/files/inline-files/FAQs.pdf",
+          "title": "\u0938\u093e\u092e\u093e\u0928\u094d\u092f \u092a\u094d\u0930\u0936\u094d\u0928",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports#top",
+          "title": "",
+          "search_provider": "public_site_links",
+          "url_provenance": "retrieved_html.anchor.href",
+          "parent_url": "https://www.powergrid.in/hi/annual-reports",
+          "parent_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+          "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+          "company_identity_status": "unresolved"
+        }
+      ]
+    },
+    {
+      "action": "site_link_rejected",
+      "at": "2026-10-24T19:24:03.599790+00:00",
+      "query": null,
+      "result": {
+        "url": "https://www.powergrid.in/en/annual-reports#nolinks",
+        "title": "Careers",
+        "search_provider": "public_site_links",
+        "url_provenance": "retrieved_html.anchor.href",
+        "parent_url": "https://www.powergrid.in/en/annual-reports",
+        "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+        "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "action": "site_discovery_completed",
+      "at": "2026-10-24T19:24:03.604608+00:00",
+      "accepted_link_count": 107
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T19:24:03.605430+00:00",
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T19:25:22.177874+00:00",
+      "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+      "report": {
+        "generated_at": "2026-10-24T19:25:21.728157+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T19:24:03.613968+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "error": "RetrievalError: Response exceeded 15728640 byte limit"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T19:25:22.187024+00:00",
+      "reason": "time_budget"
+    }
+  ],
+  "errors": [
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "provider": "duckduckgo_lite",
+      "error": "DuckDuckGo challenge or unavailable response; not bypassed"
+    }
+  ],
+  "returned_result_count": 10,
+  "relevant_returned_count": 0,
+  "relevant_result_count": 12,
+  "rejected_result_count": 10,
+  "rejected_results": [
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://app.powerbi.com/home",
+        "title": "Sign in | Microsoft Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://powerpoint.cloud.microsoft/en-gb/",
+        "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+        "title": "Power (physics) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://power.delhi.gov.in/",
+        "title": "Home | Power Department",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+        "title": "Power (TV series) - Wikipedia",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.tatapower-ddl.com/",
+        "title": "Welcome to Tata Power-DDL",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.imdb.com/title/tt3281796/",
+        "title": "Power (TV Series 2014\u20132020) - IMDb",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://msit.powerbi.com/",
+        "title": "Power BI",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+        "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    },
+    {
+      "query": "\"Power Grid Corporation\" annual report filetype:pdf",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+        "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+        "search_provider": "bing_rss",
+        "search_publisher": "Bing",
+        "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation%22+annual+report+filetype%3Apdf",
+        "url_provenance": "rss.channel.item.link",
+        "document_publisher_status": "unknown",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "no_distinctive_company_token_brand_or_issuer_domain_match"
+    }
+  ],
+  "discovery_status": "unverified_relevant_candidates",
+  "retrieval_status": "failed",
+  "budget": {
+    "max_queries": 1,
+    "max_results": 12,
+    "max_fetches": 2,
+    "max_seconds": 65,
+    "request_timeout": 15,
+    "max_response_bytes": 2097152,
+    "max_site_pages": 2
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "evidence_gaps": [],
+  "research_document_count": 12,
+  "site_seeds": [
+    "https://www.powergrid.in/en/annual-reports",
+    "https://www.powergrid.in/"
+  ],
+  "site_discovered_count": 107,
+  "site_rejected_results": [
+    {
+      "query": null,
+      "result": {
+        "url": "https://www.powergrid.in/en/annual-reports#nolinks",
+        "title": "Careers",
+        "search_provider": "public_site_links",
+        "url_provenance": "retrieved_html.anchor.href",
+        "parent_url": "https://www.powergrid.in/en/annual-reports",
+        "parent_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+        "parent_snapshot_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/8cd52efe79b5_e8e94ecc.html",
+        "company_identity_status": "unresolved"
+      },
+      "rejection_reason": "non_research_employment_login_or_tender_portal"
+    }
+  ],
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "time_budget"
+}

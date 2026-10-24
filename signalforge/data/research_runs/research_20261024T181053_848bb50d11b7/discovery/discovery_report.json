@@ -1,0 +1,577 @@
+{
+  "company": "Power Grid Corporation of India Limited",
+  "topic": "Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence.",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure"
+  ],
+  "search_results": [
+    {
+      "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+      "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:11:33.744100+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T18:10:53.478038+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "error": "TimeoutError: The read operation timed out"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "url": "https://app.powerbi.com/home",
+      "title": "Sign in | Microsoft Power BI",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:11:34.230039+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://app.powerbi.com/home",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:11:34.227013+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://app.powerbi.com/home",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://app.powerbi.com/home",
+            "redirect_chain": [],
+            "source_sha256": "070814fdaa97b2774e3614a9752b1e73187e512646397eaea329a875154d8c63",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T181053_848bb50d11b7/discovery/retrieved/sources/070814fdaa97_092ac293.html",
+            "document_title": "Power BI",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+      "title": "Power (TV series) - Wikipedia",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:11:35.478445+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:11:35.455237+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+            "redirect_chain": [],
+            "source_sha256": "a1f8fd922e423dc50606d75cf43260b60c05b1a89359ba2b4c06799cbc0ba8af",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T181053_848bb50d11b7/discovery/retrieved/sources/a1f8fd922e42_03b743d4.html",
+            "document_title": "Power (TV series) - Wikipedia",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+      "title": "Power (physics) - Wikipedia",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://msit.powerbi.com/",
+      "title": "Power BI",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://power.delhi.gov.in/",
+      "title": "Home | Power Department",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://powerpoint.cloud.microsoft/en-gb/",
+      "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.imdb.com/title/tt3281796/",
+      "title": "Power (TV Series 2014\u20132020) - IMDb",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+      "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.tatapower-ddl.com/",
+      "title": "Welcome to Tata Power-DDL",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    }
+  ],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T18:10:53.187954+00:00",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T18:10:53.468746+00:00",
+      "query": "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure",
+      "results": [
+        {
+          "url": "https://app.powerbi.com/home",
+          "title": "Sign in | Microsoft Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://powerpoint.cloud.microsoft/en-gb/",
+          "title": "Edit presentations for free | Microsoft PowerPoint for the Web",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(physics)",
+          "title": "Power (physics) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://power.delhi.gov.in/",
+          "title": "Home | Power Department",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+          "title": "Power (TV series) - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.tatapower-ddl.com/",
+          "title": "Welcome to Tata Power-DDL",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.imdb.com/title/tt3281796/",
+          "title": "Power (TV Series 2014\u20132020) - IMDb",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://msit.powerbi.com/",
+          "title": "Power BI",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+          "title": "PowerPoint | Presentations and Slides Online | Microsoft 365",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/",
+          "title": "Power Automate: Business Process Workflow Automation | Microsoft Power ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22Power+Grid+Corporation+of+India+Limited%22+Investigate+announced+transmission+investment+versus+commissioned+transmission+assets+using+issuer+and+independent+regulator+evidence.+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "executed_queries": [
+        "\"Power Grid Corporation of India Limited\" Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence. annual report investor disclosure"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:10:53.469194+00:00",
+      "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:11:33.747670+00:00",
+      "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+      "report": {
+        "generated_at": "2026-10-24T18:11:33.744100+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T18:10:53.478038+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://www.microsoft.com/en-in/microsoft-365/powerpoint",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "error": "TimeoutError: The read operation timed out"
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:11:33.748974+00:00",
+      "url": "https://app.powerbi.com/home"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:11:34.230166+00:00",
+      "url": "https://app.powerbi.com/home",
+      "report": {
+        "generated_at": "2026-10-24T18:11:34.230039+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://app.powerbi.com/home",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:11:34.227013+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://app.powerbi.com/home",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://app.powerbi.com/home",
+            "redirect_chain": [],
+            "source_sha256": "070814fdaa97b2774e3614a9752b1e73187e512646397eaea329a875154d8c63",
+            "content_type": "text/html; charset=utf-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T181053_848bb50d11b7/discovery/retrieved/sources/070814fdaa97_092ac293.html",
+            "document_title": "Power BI",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:11:34.230372+00:00",
+      "url": "https://en.wikipedia.org/wiki/Power_(TV_series)"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:11:35.478559+00:00",
+      "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+      "report": {
+        "generated_at": "2026-10-24T18:11:35.478445+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:11:35.455237+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://en.wikipedia.org/wiki/Power_(TV_series)",
+            "redirect_chain": [],
+            "source_sha256": "a1f8fd922e423dc50606d75cf43260b60c05b1a89359ba2b4c06799cbc0ba8af",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T181053_848bb50d11b7/discovery/retrieved/sources/a1f8fd922e42_03b743d4.html",
+            "document_title": "Power (TV series) - Wikipedia",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T18:11:35.478765+00:00",
+      "reason": "result_budget"
+    }
+  ],
+  "errors": [],
+  "retrieval_status": "retrieved",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40,
+    "max_response_bytes": 2097152
+  },
+  "company_identity_status": "unresolved",
+  "finding_status": "no_finding",
+  "finding_reason": "Discovery candidates only; identity and claims have not been verified.",
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "result_budget"
+}

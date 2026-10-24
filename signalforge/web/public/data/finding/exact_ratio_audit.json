@@ -1,0 +1,23 @@
+{
+  "parent_renewable_share": {
+    "numerator": "725",
+    "denominator": "15376",
+    "percent_exact": "4.715140478668054110301768991",
+    "percent_display": "4.72",
+    "formula": "numerator / denominator * 100"
+  },
+  "jv_renewable_share": {
+    "numerator": "13791",
+    "denominator": "18295",
+    "percent_exact": "75.38125170811697185023230391",
+    "percent_display": "75.38",
+    "formula": "numerator / denominator * 100"
+  },
+  "jv_share_of_group_renewable": {
+    "numerator": "13791",
+    "denominator": "14516",
+    "percent_exact": "95.00551116009920088178561587",
+    "percent_display": "95.01",
+    "formula": "numerator / denominator * 100"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "stage": "r1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "requested_at": "2026-10-24T19:13:21.222023+00:00",
+  "prompt": "# R1 — Research Investigator (plan specification)\n\nR1 consumes F1's recommended candidate and prepares a structured, executable research plan. Reference supplied evidence by stable `evidence_id` and preserve its source locator/page when citing it. This prompt alone does not retrieve sources or perform live web research. Never invent URLs, excerpts, publication dates, external findings, or research already performed.\n\nTurn the hypothesis into explicit, testable research questions. List exact metrics and periods, what the supplied dataset supports, and what remains missing. Identify public source types and specific documents to seek: company filings, stock-exchange disclosures, annual reports, investor presentations, regulatory documents, and credible news reports, as relevant.\n\nFor each claim, define independent cross-validation sources and the calculation, inputs, units, period alignment, and assumptions required. Include an alternative explanation and a falsification test. Specify what would invalidate or weaken the hypothesis. Include contradictory evidence explicitly when supplied; do not suppress it.\n\nTrack evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.\n\nReturn a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.\n\n\nRequired R1 output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge R1 research plan\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"candidate_id\", \"hypothesis\", \"research_questions\", \"evidence_ledger\", \"checklist\", \"alternative_explanation\", \"falsification_test\", \"retrieval_performed\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"candidate_id\": {\"type\": \"string\", \"minLength\": 1}, \"hypothesis\": {\"type\": \"string\", \"minLength\": 1}, \"retrieval_performed\": {\"type\": \"boolean\", \"const\": false}, \"research_questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"question\", \"metrics\", \"periods\", \"supported_by_dataset\", \"missing\"], \"properties\": {\"question\": {\"type\": \"string\", \"minLength\": 1}, \"metrics\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"supported_by_dataset\": {\"type\": \"boolean\"}, \"missing\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"evidence_ledger\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"evidence_id\", \"source_type\", \"source_url\", \"publication_date\", \"excerpt_or_data_point\", \"claim_supported\", \"kind\", \"status\"], \"properties\": {\"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"]}, \"publication_date\": {\"type\": [\"string\", \"null\"]}, \"excerpt_or_data_point\": {\"type\": [\"string\", \"null\"]}, \"claim_supported\": {\"type\": \"string\"}, \"kind\": {\"type\": \"string\", \"enum\": [\"reported_fact\", \"calculation\", \"inference\", \"unverified_hypothesis\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"planned_lookup\", \"supplied\", \"contradictory\"]}}}}, \"checklist\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"step\", \"expected_evidence\", \"cross_validation_sources\", \"completion_criteria\"], \"properties\": {\"step\": {\"type\": \"string\", \"minLength\": 1}, \"expected_evidence\": {\"type\": \"string\"}, \"cross_validation_sources\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"calculation\": {\"type\": [\"string\", \"null\"]}, \"completion_criteria\": {\"type\": \"string\"}}}}, \"alternative_explanation\": {\"type\": \"string\", \"minLength\": 1}, \"falsification_test\": {\"type\": \"string\", \"minLength\": 1}}}\n\nYour previous response failed validation. Return a complete JSON object against the supplied schema. Correct only these errors; do not invent evidence, change the research conclusion merely to pass validation, or claim retrieval occurred. Validation errors: R1 output failed validation: $: unexpected property '$schema'; $/evidence_ledger/3: evidence_id was not supplied",
+  "payload": {
+    "company_name": "NTPC Limited",
+    "candidate": {
+      "candidate_id": "hr_01",
+      "rank": 1,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC Limited utilizes its network of subsidiaries and joint ventures to manage working capital and capital expenditure via significant intercompany transactions.",
+      "financial_importance": "The scale of intercompany transactions (e.g., thousands of crores in 'Sale of goods' to subsidiaries, and loans/advances) indicates a complex internal capital management structure that influences liquidity and financial risk profiles.",
+      "metrics_and_periods": [
+        "Intercompany transaction volumes (FY 2024-25 vs FY 2023-24)",
+        "Outstanding loan balances with JVs/Subsidiaries",
+        "Equity contribution trends in JVs"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Detailed listing of subsidiaries and joint ventures, indicating percentage holding and participation in Business Responsibility initiatives.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_b1e5e9dbc93dfdf0fdfad35e",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Individually significant transactions between NTPC and its subsidiaries/JVs for services, goods, assets, and dividends.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Outstanding balances (recoverables/payables) with related parties as at 31 March 2025.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_d3d9906726630bba52e0d915",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Consolidated vs. standalone financial statements to assess the impact of intercompany eliminations.",
+        "Specific service level agreements for the largest intercompany contracts."
+      ],
+      "alternative_explanation": "These transactions reflect efficient internal resource allocation between the parent and operating entities within a regulated utility framework.",
+      "falsification_condition": "Evidence showing that these intercompany transactions are conducted purely at arms-length with negligible impact on consolidated financial health.",
+      "data_risks_and_limitations": [
+        "The data is limited to one annual report document.",
+        "Interpretation of 'individually significant transactions' is subjective based on the reporter's materiality threshold."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Transaction volumes involve thousands of crores of rupees."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "High quality, detailed disclosures found in the 2024-25 Integrated Annual Report."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Quantitative data is provided for two fiscal years, allowing trend analysis."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "While related party disclosures are standard, the complexity of the JV/subsidiary network is significant."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Data can be cross-validated against public exchange filings and subsidiary financial reports."
+        }
+      },
+      "weighted_score": 84.5,
+      "weighted_score_rationale": "The candidate scores highly due to the availability of granular financial data within the provided corporate reports, which directly impacts the entity's financial stability and capital structure understanding.",
+      "next_research_action": "Map the intercompany loan and service transaction flows between major subsidiaries and the parent to identify concentrations of financial dependency."
+    },
+    "dataset_summary": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "date_coverage": null,
+      "missing_information": [
+        "revenue or generation by source",
+        "renewable targets and baseline",
+        "actual progress by consistent period",
+        "project or asset identifier",
+        "announced/awarded/under-implementation status",
+        "commissioning status/date",
+        "capacity and unit",
+        "named counterparties/entities",
+        "relationship type",
+        "period",
+        "transaction or exposure value"
+      ],
+      "data_limitations": [
+        "No recognized company or ticker identifier column exists; filename attribution is not treated as row-level company evidence.",
+        "No source/document provenance fields identified."
+      ]
+    },
+    "supplied_evidence_ids": [
+      "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "ev_b489528262378cdf8e9d9601",
+      "ev_77c5f772c341d65bc010f576",
+      "ev_08dc5955d5c3ef29b41a5593",
+      "ev_27588cf43298e9264d4d1efa",
+      "ev_5be4db19957ea5f7fd2b0c02",
+      "ev_d3d9906726630bba52e0d915",
+      "ev_13598c8ff149784e31964e13"
+    ]
+  }
+}

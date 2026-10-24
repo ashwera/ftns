@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { AuditEntry, Citation, Finding, FindingBundle, FindingInput, Stage } from './finding'
+import type { AuditEntry, Citation, Finding, FindingBundle, FindingInput, Stage, ResearchDossier } from './finding'
 import { safeSourceUrl } from './types'
 
 const label = (s?: string | null) => (s ?? 'unknown').replaceAll('_', ' ')
@@ -13,9 +13,36 @@ function Cite({ c, onEvidence, canOpen }: { c: Citation; onEvidence?: (id: strin
   const sourceUrl = safeSourceUrl(c.url)
   return <blockquote className="sg-cite">
     <p>“{c.excerpt}”</p>
-    <footer>{c.source_path ?? 'derived value'}{c.page ? ` · PDF page ${c.page}` : ''}{c.locator ? ` · ${c.locator}` : ''}{sourceUrl ? <> · <a href={sourceUrl} target="_blank" rel="noreferrer noopener">official source link</a></> : ' · no URL on record'}
+    <footer>{c.source_path ?? 'derived value'}{c.page ? ` · Source page ${c.page}` : ''}{c.locator ? ` · ${c.locator}` : ''}{sourceUrl ? <> · <a href={sourceUrl} target="_blank" rel="noreferrer noopener">official source link</a></> : ' · no URL on record'}
       {c.source_chunk_id && canOpen && onEvidence && <> · <button className="sg-link" onClick={() => onEvidence(c.source_chunk_id!)}>Open evidence record</button></>}</footer>
   </blockquote>
+}
+
+function Dossier({ dossier: d, onEvidence, evidenceIds }: { dossier: ResearchDossier | null | undefined; onEvidence: (id: string) => void; evidenceIds: Set<string> }) {
+  const cites = (cs: Citation[]) => cs.length ? cs.map((c, i) => <Cite key={i} c={c} onEvidence={onEvidence} canOpen={!!c.source_chunk_id && evidenceIds.has(c.source_chunk_id)} />) : <p className="sg-sub">Source citation unavailable.</p>
+  if (!d) return <section className="sg-panel" aria-label="Research dossier"><h3>Research dossier unavailable</h3><p>The optional research dossier is missing, invalid, or does not match this finding and run. Chosen prompt, implications, candidate decisions, action log and chronology are unavailable.</p></section>
+  return <section className="sg-dossier" aria-label="Research dossier">
+    {d.case_headline && <header className="sg-panel"><p className="sg-eyebrow">Selected case dossier · {label(d.case_status ?? 'investigation')}</p><h3>{d.case_headline}</h3><p>This investigation is separate from the saved finding above. Its inclusion does not upgrade the finding’s evidence strength.</p></header>}
+    <div className="sg-panel"><h3>Chosen prompt</h3><p>{d.chosen_prompt}</p><h4>Implications</h4><ol>{d.implications.map((x, i) => <li key={i}>{x.statement}{cites(x.citations)}</li>)}</ol></div>
+    <details className="sg-panel"><summary>Candidate decisions and rejected hypotheses</summary>{d.candidate_decisions.length ? d.candidate_decisions.map((x, i) => <div key={i}><h4>{x.hypothesis} · {x.decision}</h4><p>{x.reason}</p>{cites(x.citations)}</div>) : <p>Candidate decisions unavailable.</p>}</details>
+    <details className="sg-panel"><summary>Agent action log</summary>{d.action_log.length ? <ol>{d.action_log.map((x, i) => <li key={i}><b>{x.action} · {EXEC[x.execution]}</b><p>{x.outcome}</p>{cites(x.citations)}</li>)}</ol> : <p>Action log unavailable.</p>}</details>
+    <div className="sg-panel"><h3>Chronology</h3>{d.chronology.length ? <ol className="sg-chronology">{[...d.chronology].sort((a, b) => a.date.localeCompare(b.date)).map((x, i) => <li key={i}><time dateTime={x.date}>{x.date}</time><p>{x.event}</p>{cites(x.citations)}</li>)}</ol> : <p>Chronology unavailable.</p>}</div>
+    <div className="sg-panel"><h3>Opposing evidence and counterargument</h3>{d.opposing_evidence.length ? d.opposing_evidence.map((x, i) => <div key={i}><p>{x.statement}</p>{cites(x.citations)}</div>) : <p>Opposing evidence unavailable; absence is not confirmation.</p>}{d.counterargument ? <><h4>Strongest counterargument</h4><p>{d.counterargument.statement}</p>{cites(d.counterargument.citations)}</> : <p>Counterargument unavailable.</p>}<h4>Falsification</h4>{d.falsification.length ? d.falsification.map((x, i) => <div key={i}><p>{x.statement}</p>{cites(x.citations)}</div>) : <p>Falsification evidence unavailable.</p>}</div>
+  </section>
+}
+
+function downloadReport(bundle: FindingBundle, format: 'json' | 'md') {
+  const f = bundle.finding, d = bundle.researchDossier
+  const payload = { finding: f, research_dossier: d ?? null, source_manifest: bundle.sourceManifest, notes: bundle.notes }
+  const citation = (c: Citation) => `> ${c.excerpt}\n\nSource: ${c.source_path ?? 'unavailable'}; page ${c.page ?? 'unavailable'}; ${safeSourceUrl(c.url) ?? 'URL unavailable'}`
+  const statements = (xs: { statement: string; citations: Citation[] }[]) => xs.map(x => `${x.statement}\n\n${x.citations.map(citation).join('\n\n')}`).join('\n\n')
+  const markdown = [`# ${f.headline}`, `Run: ${f.run_id} · Finding: ${f.finding_id}`, `${STATUS[f.finding_status]} · ${f.evidence_strength}`, f.why_it_matters,
+    ...f.calculations.map(c => `## ${label(c.name)}\n${c.formula}\n\n${c.result ? `${c.result.value.toFixed(2)} ${c.result.unit}` : 'Not computed'}\n\n${c.trace}`),
+    ...f.inputs.map(x => `## ${label(x.name)}\n${x.value.toFixed(2)} ${x.unit ?? ''}\n\n${citation(x.citation)}`),
+    '## Limitations', ...f.limitations, '## Falsification', ...f.falsification_conditions,
+    d ? `## Chosen prompt\n${d.chosen_prompt}\n\n## Implications\n${statements(d.implications)}\n\n## Candidate decisions\n${d.candidate_decisions.map(x => `${x.hypothesis} · ${x.decision}: ${x.reason}\n${x.citations.map(citation).join('\n')}`).join('\n\n')}\n\n## Action log\n${d.action_log.map(x => `${x.action} · ${x.execution}: ${x.outcome}\n${x.citations.map(citation).join('\n')}`).join('\n\n')}\n\n## Chronology\n${d.chronology.map(x => `${x.date}: ${x.event}\n${x.citations.map(citation).join('\n')}`).join('\n\n')}\n\n## Opposing evidence\n${statements(d.opposing_evidence)}\n\n## Counterargument\n${d.counterargument ? statements([d.counterargument]) : 'Unavailable'}\n\n## Falsification evidence\n${statements(d.falsification)}` : 'Research dossier unavailable.', ...bundle.notes].join('\n\n')
+  const url = URL.createObjectURL(new Blob([format === 'json' ? JSON.stringify(payload, null, 2) : markdown], { type: format === 'json' ? 'application/json' : 'text/markdown' }))
+  const a = document.createElement('a'); a.href = url; a.download = `research-report.${format}`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 
 function InputRow({ entry, input, onEvidence, canOpen }: { entry: AuditEntry; input?: FindingInput; onEvidence: (id: string) => void; canOpen: boolean }) {
@@ -87,6 +114,9 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
   const tone = f.finding_status === 'supported_finding' ? 'good' : f.finding_status === 'provisional_hypothesis' ? 'caution' : 'stop'
   return <article className="sg">
     {f.synthetic && <div className="sg-banner bad" role="note"><b>SYNTHETIC EXAMPLE.</b> This run uses invented data and says nothing about any real company.</div>}
+    <nav aria-label="Discovery walkthrough" className="sg-panel">
+      <a href="#sg-question">Research question</a> · <a href="#sg-calc">Calculations</a> · <a href="#sg-ver">Evidence trail</a> · <a href="#sg-risk">Counterargument</a> · <a href="#sg-stage">Execution record</a>
+    </nav>
     <header className={`sg-hero ${tone}`}>
       <div className="sg-eyebrow"><span className={`sg-status ${tone}`}>{STATUS[f.finding_status]}</span><span className="sg-strength">Evidence strength: <b>{f.evidence_strength}</b></span><span>{f.company.name}{f.periods.length ? ` · as of ${f.periods.join(', ')}` : ''}</span></div>
       <h2 className="sg-headline">{showRenewableRatios ? `Renewable pipeline: ${headlineShares!.parent.toFixed(1)}% parent-owned · ${headlineShares!.jv.toFixed(1)}% JV/subsidiary` : f.headline}</h2>
@@ -98,6 +128,28 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
       <p className="sg-why">{f.why_it_matters}</p>
       {f.finding_status !== 'supported_finding' && <p className="sg-caveat"><b>{f.finding_status === 'provisional_hypothesis' ? 'Not a verified conclusion.' : 'Nothing is claimed here.'}</b> {f.finding_status === 'provisional_hypothesis' ? 'This is a hypothesis the evidence points toward but does not yet establish.' : 'The evidence available does not support a finding.'}</p>}
     </header>
+
+    <div className="sg-downloads"><button onClick={() => downloadReport(bundle, 'json')}>Download report JSON</button><button onClick={() => downloadReport(bundle, 'md')}>Download report Markdown</button></div>
+    {headlineShares && <details className="sg-panel"><summary>Headline numbers · formulas and source drilldown (2 decimals)</summary>
+      <p>Parent: {parentRe!.toFixed(2)} ÷ {headlineShares.total.toFixed(2)} × 100 = {headlineShares.parent.toFixed(2)}%. JV/subsidiary: {jvRe!.toFixed(2)} ÷ {headlineShares.total.toFixed(2)} × 100 = {headlineShares.jv.toFixed(2)}%. Group renewable denominator = parent renewable + JV/subsidiary renewable.</p>
+      <div className="sg-share-bar" role="img" aria-label={`Parent ${headlineShares.parent.toFixed(2)} percent; JV/subsidiary ${headlineShares.jv.toFixed(2)} percent`}><span style={{ width: `${headlineShares.parent}%` }} /><span style={{ width: `${headlineShares.jv}%` }} /></div>
+      <p>Direct parent value cross-check: {directParent?.description}. These source checks do not resolve every attribution or period check.</p>
+      {f.inputs.filter(x => ['re_under_implementation_group', 're_under_implementation_jv_subsidiary', 'parent_under_implementation', 'jv_subsidiary_under_implementation', 'total_under_implementation_group'].includes(x.name)).map(x => <div key={x.name}><b>{label(x.name)} · {x.value.toFixed(2)} {x.unit}</b><Cite c={x.citation} onEvidence={onEvidence} canOpen={!!x.citation.source_chunk_id && evidenceIds.has(x.citation.source_chunk_id)} /></div>)}
+    </details>}
+    <Dossier dossier={bundle.researchDossier} onEvidence={onEvidence} evidenceIds={evidenceIds} />
+
+    <section aria-labelledby="sg-question" className="sg-panel">
+      <h3 id="sg-question">Research question and reasoning</h3>
+      <p>{renewableLocation ? 'Where does NTPC’s disclosed renewable project pipeline sit: in parent-owned projects or in joint ventures and subsidiaries?' : f.headline}</p>
+      <p className="sg-sub">{bundle.researchDossier ? `Recorded chosen prompt: ${bundle.researchDossier.chosen_prompt}` : 'This question describes the saved investigation. The original assigned contest prompt has not been recorded in this bundle.'}</p>
+      <ol>
+        <li>Identify the reporting date, company boundary and project status for each input.</li>
+        <li>Compare source passages with the extracted claims and preserve unresolved checks.</li>
+        <li>Calculate shares using the stated numerator and denominator; distinguish rounded figures from direct table values.</li>
+        <li>Assess competing explanations and reduce confidence when evidence remains incomplete.</li>
+      </ol>
+      <p>Current assessment: {STATUS[f.finding_status]} · {f.evidence_strength} evidence. The calculations describe disclosed project capacity; economic ownership and future commissioning require further evidence.</p>
+    </section>
 
     <div className="sg-banner" role="note">
       <b>How this was verified.</b> {audit.length === 0 ? 'No verification audit is attached to this finding.' : <>{primary} of {audit.length} inputs were checked against a primary source{textOnly > 0 ? ` and ${textOnly} against the project’s own extracted text only` : ''}. {confirmed === audit.length ? 'All are confirmed.' : <b>Only {confirmed} of {audit.length} are fully confirmed; the rest are partially supported (open checks such as entity or period remain), so the inputs are not all confirmed.</b>}{independent === 0 ? ' No input is independently corroborated.' : ''}</>}
@@ -111,10 +163,10 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
       <p className="sg-sub">{showRenewableRatios ? 'These are the original pipeline-run calculations and are preserved as reported. The parent renewable calculation uses the derived 709 MW residual and the group renewable calculation uses the rounded 14.5 GW; the headline above uses direct table values instead.' : 'Deterministic arithmetic on the inputs below. Ranges reflect rounding in the source figures.'}</p>
       <div className="sg-calcs">{f.calculations.map(c => <div className="sg-calc" key={c.calculation_id}>
         <div className="sg-calc-name">{label(c.name)}</div>
-        {c.result ? <div className="sg-calc-value">{num(c.result.value, 1)}<small>{c.result.unit === 'percent' ? '%' : ` ${c.result.unit}`}</small></div> : <div className="sg-calc-value muted">not computed</div>}
+        {c.result ? <div className="sg-calc-value">{c.result.value.toFixed(2)}<small>{c.result.unit === 'percent' ? '%' : ` ${c.result.unit}`}</small></div> : <div className="sg-calc-value muted">not computed</div>}
         {c.result && c.result.lower_bound !== null && c.result.upper_bound !== null && <div className="sg-range">range {num(c.result.lower_bound, 1)}–{num(c.result.upper_bound, 1)}</div>}
         <div className="sg-formula">{c.formula}</div>
-        <details><summary>Trace</summary><p>{c.trace}</p><p className="sg-inputs">Inputs: {c.input_names.map(label).join(' · ')}</p></details>
+        <details><summary>Trace</summary><p>{c.trace}</p><p className="sg-inputs">Inputs: {c.input_names.map(label).join(' · ')}</p>{c.input_names.map(name => byName.get(name)).filter((x): x is FindingInput => !!x).map(x => <Cite key={x.name} c={x.citation} onEvidence={onEvidence} canOpen={!!x.citation.source_chunk_id && evidenceIds.has(x.citation.source_chunk_id)} />)}</details>
       </div>)}</div>
     </section>
 
@@ -145,7 +197,7 @@ export default function Signal({ bundle, error, evidenceIds, onEvidence }: { bun
       <div><h4>Limitations</h4><ul>{f.limitations.filter(x => !(primary > 0 && /all inputs are from the project.s own text extraction; none was checked against the original pdf/i.test(x))).map(x => <li key={x}>{x}</li>)}
         {primary > 0 && f.limitations.some(x => /all inputs are from the project.s own text extraction; none was checked against the original pdf/i.test(x)) && <li>Run-level verification checked {primary} of {audit.length} inputs at primary-source level; {textOnly} remained at project-text level. All reviewed inputs remain partially supported.</li>}
       </ul></div>
-      {f.contradictory_evidence.length > 0 && <div className="sg-wide"><h4>Contradictory evidence</h4><ul>{f.contradictory_evidence.map(x => <li key={x.statement}>{x.statement}</li>)}</ul></div>}
+      {f.contradictory_evidence.length > 0 && <div className="sg-wide"><h4>Contradictory evidence</h4><ul>{f.contradictory_evidence.map(x => <li key={x.statement}>{x.statement}<Cite c={x.citation} onEvidence={onEvidence} canOpen={!!x.citation.source_chunk_id && evidenceIds.has(x.citation.source_chunk_id)} /></li>)}</ul></div>}
     </section>
 
     <section aria-labelledby="sg-stage"><h3 id="sg-stage">Pipeline provenance</h3>

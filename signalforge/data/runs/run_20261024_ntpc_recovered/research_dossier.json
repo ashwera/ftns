@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "run_id": "run_20261024_ntpc_recovered",
+  "finding_id": "find_run_20261024_ntpc_recovered_H1_renewable_pipeline_location",
+  "chosen_prompt": "Whether announced capacity additions materially diverge from actually commissioned capacity (Energy, Power & Renewables).",
+  "case_headline": "North Karanpura Unit 3: installed-capacity recognition and commercial operation are separate milestones; a delay headline needs a matched schedule.",
+  "case_status": "no_defensible_signal",
+  "implications": [
+    {
+      "statement": "Treat the 660 MW project as one unit across milestones; do not count trial completion and COD as two additions.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+          "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+        },
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        }
+      ]
+    },
+    {
+      "statement": "Financial timing must use the commercial-operation event and applicable tariff rules; this investigation does not estimate revenue lost.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        }
+      ]
+    },
+    {
+      "statement": "The independent FY2024-25 procurement forecast already excluded Unit 3. A claim of an undisclosed FY25 supply shortfall is not supported by this evidence.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+          "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+          "page": 132,
+          "locator": "page:132",
+          "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+          "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+        }
+      ]
+    },
+    {
+      "statement": "A schedule-based slippage calculation requires the last valid committed COD date and revisions. Public milestone dates alone cannot establish management underdelivery.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+          "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+        },
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        }
+      ]
+    }
+  ],
+  "candidate_decisions": [
+    {
+      "hypothesis": "Parent versus JV renewable pipeline reveals a hidden economic exposure",
+      "decision": "rejected",
+      "reason": "The ownership structure is openly disclosed, pipeline capacity is not equity ownership, and independent key-input confirmation is missing. Retain only as a Weak audit example.",
+      "citations": []
+    },
+    {
+      "hypothesis": "Commissioning milestones conceal a commercial-operation gap",
+      "decision": "selected",
+      "reason": "Investigated actual trial/COD filings and independent procurement treatment. The narrower milestone distinction is supported; the stronger underdelivery thesis fails without matched schedules.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+          "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+        },
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        },
+        {
+          "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+          "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+          "page": 132,
+          "locator": "page:132",
+          "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+          "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+        }
+      ]
+    },
+    {
+      "hypothesis": "Revenue mix changed ahead of narrative",
+      "decision": "deferred",
+      "reason": "No verified same-basis segment revenue series was collected in this run.",
+      "citations": []
+    },
+    {
+      "hypothesis": "A material financing relationship is hidden",
+      "decision": "deferred",
+      "reason": "No verified transaction-level materiality comparison was established.",
+      "citations": []
+    }
+  ],
+  "action_log": [
+    {
+      "action": "Rebuilt claims from the preserved page-block evidence",
+      "outcome": "40,942 candidates; zero schema/chunk failures; extraction is not verification.",
+      "execution": "real",
+      "citations": []
+    },
+    {
+      "action": "Retrieved original NTPC annual report and checked its pinned hash",
+      "outcome": "Exact match; reran seven input checks with zero traceability problems.",
+      "execution": "real",
+      "citations": []
+    },
+    {
+      "action": "Searched capacity and COD evidence across issuer, government and counterparties",
+      "outcome": "Retrieved three issuer filings and OERC's original tariff order. CEA redirected to login; ERPC crawler policy prevented retrieval. Neither is counted as verified.",
+      "execution": "real",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        },
+        {
+          "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+          "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+        },
+        {
+          "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+          "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+          "page": 132,
+          "locator": "page:132",
+          "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+          "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+        }
+      ]
+    },
+    {
+      "action": "Attack the apparent delay interpretation",
+      "outcome": "Trial completion differs from COD; independent procurement planning already excluded Unit 3. Reject the stronger surprise/underdelivery claim.",
+      "execution": "real",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+          "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+        },
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        },
+        {
+          "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+          "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+          "page": 132,
+          "locator": "page:132",
+          "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+          "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+        }
+      ]
+    },
+    {
+      "action": "Execute live model angle selection and research planning on machine-checked original PDF passages",
+      "outcome": "gemini / gemini-3.1-flash-lite: 2 candidate angles; F1 and R1 validated. Artifacts: signalforge/data/runs/run_20261024_live_research/production_final. This separate model run proposes research; it does not verify the capacity case or execute R1 retrieval.",
+      "execution": "real",
+      "citations": []
+    }
+  ],
+  "chronology": [
+    {
+      "date": "2024-02-13",
+      "event": "OERC tariff order for FY2024-25 records exclusion of Unit 3 from GRIDCO estimated supply; order date checked on PDF page 1.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+          "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+          "page": 132,
+          "locator": "page:132",
+          "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+          "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "event": "Cutoff for the older NTPC renewable-pipeline audit example; it measures project portfolio, not COD slippage.",
+      "citations": []
+    },
+    {
+      "date": "2025-06-12",
+      "event": "NTPC filing announces completion of trial operation and installed-capacity inclusion for Unit 3.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+          "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-15",
+      "event": "Effective commercial-operation date for North Karanpura Unit 3, stated in the 13 June filing.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        }
+      ]
+    }
+  ],
+  "opposing_evidence": [
+    {
+      "statement": "Independent OERC/GRIDCO supply planning had already excluded Unit 3; absence of FY25 procurement from this unit was not hidden in that forecast.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+          "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+          "page": 132,
+          "locator": "page:132",
+          "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+          "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+        }
+      ]
+    }
+  ],
+  "counterargument": {
+    "statement": "Milestone terminology and disclosed forecast exclusions can explain an apparent gap. These facts defeat a simple claim of unexpected commercial underdelivery; schedule revisions and tariff treatment remain untested.",
+    "citations": [
+      {
+        "source_chunk_id": "ev_0099ce0b6dcd4907bebc46a8",
+        "source_path": "sources/eb9a13e8e3d5_1aec704f.pdf",
+        "page": 1,
+        "locator": "page:1",
+        "excerpt": "has successfully completed trial operation and consequently included in the installed capacity of NTPC Limited.",
+        "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/12.06.2025_%20Completion%20Of%20Trial%20Operation%20By%20660%20MW%20Capacity%20Unit%20Of%20North%20Karanpura%20Super%20Thermal%20Power%20Project.pdf"
+      },
+      {
+        "source_chunk_id": "ev_0977072db9405b6e1360250c",
+        "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+        "page": 1,
+        "locator": "page:1",
+        "excerpt": "Hrs. of 15.06.2025.",
+        "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+      },
+      {
+        "source_chunk_id": "ev_5d2e440d86520e7dccf3bdb5",
+        "source_path": "sources/2812d3288d24_4e35f8ba.pdf",
+        "page": 132,
+        "locator": "page:132",
+        "excerpt": "GRIDCO has not considered share of power from Unit #3 in the estimated availability of power.",
+        "url": "https://orierc.org/CuteSoft_Client/writereaddata/upload/GRIDCO_TARIFF_ORDER_FY_2024-25.pdf"
+      }
+    ]
+  },
+  "falsification": [
+    {
+      "statement": "A schedule-gap finding requires an original, dated, unrevised commitment for the same 660 MW Unit 3 and matching COD definition. If the valid revised commitment is on or after 15 June 2025, a delay relative to that commitment disappears.",
+      "citations": [
+        {
+          "source_chunk_id": "ev_0977072db9405b6e1360250c",
+          "source_path": "sources/a41cafc2b949_a11f02c8.pdf",
+          "page": 1,
+          "locator": "page:1",
+          "excerpt": "Hrs. of 15.06.2025.",
+          "url": "https://ntpc.co.in/sites/default/files/announcement/2026/2026-01/13.06.2025_Declaration%20of%20COD%20of%20Unit-3%20%28660%20MW%29%20of%20North%20Karanpura%20Super%20Thermal%20Power%20Project%20%283X660mw%29.pdf"
+        }
+      ]
+    }
+  ]
+}

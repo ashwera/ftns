@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:19:02.193148+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/5f4b3c345007_9bc4c2df.html",
+      "source_sha256": "5f4b3c34500749f72f69d4f1d97d5459b941b6bc6bfeb704a082eb105e6f2c2a",
+      "file_format": "html",
+      "source_url": "https://www.powergrid.in/sites/default/files/Investor_Relation/Reports_Filings/Corporate_Governance/2024-25/Integrated_Filing_Governance_2024-25_Q3.html",
+      "retrieved_at": "2026-10-24T19:19:02.175158+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_b73ec731d975bdf1998915b5"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_b73ec731d975bdf1998915b5",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_b73ec731d975bdf1998915b5",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

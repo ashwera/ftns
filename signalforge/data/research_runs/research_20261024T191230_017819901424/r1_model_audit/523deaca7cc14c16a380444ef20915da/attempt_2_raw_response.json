@@ -1,0 +1,104 @@
+{
+  "company_name": "NTPC Limited",
+  "candidate_id": "hr_01",
+  "hypothesis": "NTPC Limited utilizes its network of subsidiaries and joint ventures to manage working capital and capital expenditure via significant intercompany transactions.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the net impact of intercompany transaction volumes on the standalone liquidity position of NTPC?",
+      "metrics": [
+        "Total intercompany revenue vs. consolidated revenue",
+        "Net working capital change attributable to subsidiary balances"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": true,
+      "missing": [
+        "Consolidated financial statement line items for direct elimination amounts",
+        "Contractual terms of intercompany loan interest rates"
+      ]
+    },
+    {
+      "question": "To what extent are capital expenditures funded through intercompany loans rather than external financing?",
+      "metrics": [
+        "Outstanding loan balances with JVs",
+        "Equity contribution vs. debt lending ratio"
+      ],
+      "periods": [
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": true,
+      "missing": [
+        "Detailed breakdown of loan utilization purposes (OpEx vs CapEx)"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "source_type": "Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Detailed listing of subsidiaries and joint ventures, indicating percentage holding.",
+      "claim_supported": "Existence of a complex network of subsidiaries and JVs.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_77c5f772c341d65bc010f576",
+      "source_type": "Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Individually significant transactions between NTPC and its subsidiaries/JVs for services, goods, assets.",
+      "claim_supported": "High volume of intercompany financial interaction.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_d3d9906726630bba52e0d915",
+      "source_type": "Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Outstanding balances (recoverables/payables) with related parties as at 31 March 2025.",
+      "claim_supported": "Direct management of liquidity through related party balances.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_lookup_001",
+      "source_type": "Regulatory Filing",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Arm's length compliance proof.",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Extract related party transaction totals from the standalone vs consolidated financial notes.",
+      "expected_evidence": "Quantitative tables showing elimination of intercompany balances.",
+      "cross_validation_sources": [
+        "Standalone Financial Statements",
+        "Consolidated Financial Statements"
+      ],
+      "calculation": "Total intercompany transactions / Total consolidated revenue",
+      "completion_criteria": "Calculation of the concentration ratio of internal vs external revenue."
+    },
+    {
+      "step": "Analyze movement in loan balances.",
+      "expected_evidence": "Statement of cash flows related to intercompany lending.",
+      "cross_validation_sources": [
+        "Cash Flow Statement",
+        "Notes on Borrowings"
+      ],
+      "calculation": "Net movement in loan receivable / Total debt",
+      "completion_criteria": "Identifying if loan balances trend with capital expenditure cycles."
+    }
+  ],
+  "alternative_explanation": "These transactions reflect efficient internal resource allocation and shared service center models common in large-scale, vertically integrated regulated utility companies.",
+  "falsification_test": "If independent audit reports confirm that all intercompany transactions are strictly priced at market rates and represent less than 5% of total asset volume, the hypothesis of significant working capital manipulation would be invalidated."
+}

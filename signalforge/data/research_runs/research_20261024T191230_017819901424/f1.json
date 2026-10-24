@@ -1,0 +1,121 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "revenue or generation by source",
+      "renewable targets and baseline",
+      "actual progress by consistent period",
+      "project or asset identifier",
+      "announced/awarded/under-implementation status",
+      "commissioning status/date",
+      "capacity and unit",
+      "named counterparties/entities",
+      "relationship type",
+      "period",
+      "transaction or exposure value"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier column exists; filename attribution is not treated as row-level company evidence.",
+      "No source/document provenance fields identified."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": "While the CSV data is insufficient for company-specific testing, the ingested Integrated Annual Report provides significant data on corporate structure and intercompany transactions, making 'hidden_relationships' the only viable candidate for research.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "hr_01",
+      "rank": 1,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC Limited utilizes its network of subsidiaries and joint ventures to manage working capital and capital expenditure via significant intercompany transactions.",
+      "financial_importance": "The scale of intercompany transactions (e.g., thousands of crores in 'Sale of goods' to subsidiaries, and loans/advances) indicates a complex internal capital management structure that influences liquidity and financial risk profiles.",
+      "metrics_and_periods": [
+        "Intercompany transaction volumes (FY 2024-25 vs FY 2023-24)",
+        "Outstanding loan balances with JVs/Subsidiaries",
+        "Equity contribution trends in JVs"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Detailed listing of subsidiaries and joint ventures, indicating percentage holding and participation in Business Responsibility initiatives.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_b1e5e9dbc93dfdf0fdfad35e",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Individually significant transactions between NTPC and its subsidiaries/JVs for services, goods, assets, and dividends.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Outstanding balances (recoverables/payables) with related parties as at 31 March 2025.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_d3d9906726630bba52e0d915",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Consolidated vs. standalone financial statements to assess the impact of intercompany eliminations.",
+        "Specific service level agreements for the largest intercompany contracts."
+      ],
+      "alternative_explanation": "These transactions reflect efficient internal resource allocation between the parent and operating entities within a regulated utility framework.",
+      "falsification_condition": "Evidence showing that these intercompany transactions are conducted purely at arms-length with negligible impact on consolidated financial health.",
+      "data_risks_and_limitations": [
+        "The data is limited to one annual report document.",
+        "Interpretation of 'individually significant transactions' is subjective based on the reporter's materiality threshold."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Transaction volumes involve thousands of crores of rupees."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "High quality, detailed disclosures found in the 2024-25 Integrated Annual Report."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Quantitative data is provided for two fiscal years, allowing trend analysis."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "While related party disclosures are standard, the complexity of the JV/subsidiary network is significant."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Data can be cross-validated against public exchange filings and subsidiary financial reports."
+        }
+      },
+      "weighted_score": 84.5,
+      "weighted_score_rationale": "The candidate scores highly due to the availability of granular financial data within the provided corporate reports, which directly impacts the entity's financial stability and capital structure understanding.",
+      "next_research_action": "Map the intercompany loan and service transaction flows between major subsidiaries and the parent to identify concentrations of financial dependency."
+    }
+  ],
+  "recommended_candidate_id": "hr_01"
+}

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:24:02.996650+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/8cd52efe79b5_e8e94ecc.html",
+      "source_sha256": "8cd52efe79b514d795e31850eaa16d7cc7594f454629fcbeefa2bb14d2305035",
+      "file_format": "html",
+      "source_url": "https://www.powergrid.in/en/annual-reports",
+      "retrieved_at": "2026-10-24T19:24:02.984943+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_d6df9a761cf65bbe97b42567"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_d6df9a761cf65bbe97b42567",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_d6df9a761cf65bbe97b42567",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

@@ -5,4 +5,13 @@ __pycache__/
 outputs/*.json
 outputs/*.jsonl
 data/processed/
+web/node_modules/
+web/dist/
+data/claims_demo_20261024/
+data/recovered_20261024/
+data/recovered_20261024_large/
+data/corroboration_20261024/
+data/capacity_research_20261024/
+data/cod_sources_20261024/
+data/regulator_20261024/
 !outputs/.gitkeep

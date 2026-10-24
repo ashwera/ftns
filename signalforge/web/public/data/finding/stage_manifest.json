@@ -1,5 +1,5 @@
 {
-  "run_id": "run_offline_pdf_verify_context_fix_20261019",
+  "run_id": "run_20261024_ntpc_recovered",
   "company": {
     "name": "NTPC Limited",
     "aliases": [
@@ -11,12 +11,12 @@
     {
       "stage": "claims_load",
       "execution": "real",
-      "detail": "7 claims loaded; all unverified"
+      "detail": "40942 claims loaded; all unverified"
     },
     {
       "stage": "evidence_bundle",
       "execution": "real",
-      "detail": "7 claims / 3 chunks selected for F1/R1 (bounded)"
+      "detail": "43 claims / 21 chunks selected for F1/R1 (bounded)"
     },
     {
       "stage": "F1",
@@ -31,7 +31,7 @@
     {
       "stage": "source_catalog",
       "execution": "real",
-      "detail": "6 catalog sources: {\"available\": 1, \"not_retrieved\": 5}; network not used"
+      "detail": "1 catalog sources: {\"available\": 1}; network not used"
     },
     {
       "stage": "source_verification",
@@ -50,10 +50,10 @@
     }
   ],
   "traceability_problems": [],
-  "claims_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/fixture/claims.jsonl",
-  "evidence_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/fixture/evidence.jsonl",
-  "inputs_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/fixture/reviewed_inputs.json",
+  "claims_path": "signalforge/data/claims_demo_20261024/claims.jsonl",
+  "evidence_path": "signalforge/data/processed_step6/evidence.jsonl",
+  "inputs_path": "signalforge/data/pipeline_inputs/ntpc_renewable_pipeline_reviewed_inputs.json",
   "network_used": false,
-  "catalog_path": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/offline_verification/catalog.json",
+  "catalog_path": "signalforge/data/pipeline_inputs/demo_20261024_catalog.json",
   "model_used": false
 }

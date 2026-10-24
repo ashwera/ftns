@@ -1,0 +1,168 @@
+{
+  "company_name": "NTPC",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "Company-specific identifier in rows",
+      "Time-series data for operational or financial metrics"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier column exists in CSV.",
+      "CSV rows lack provenance and identifiable relevance to NTPC."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": "The CSV dataset provided contains no company-specific data; all findings are sourced from the provided Integrated Annual Report (PDF) evidence.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_renewable_transition_01",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC is effectively leveraging subsidiary structures (NGEL, NREL) to pivot toward non-fossil sources while maintaining coal as a stability mechanism.",
+      "financial_importance": "Revenue transition impacts valuation and ESG-linked funding access. NTPC reported non-fossil energy revenue of ₹17,359.67 crore (9.33% of total) in FY 2024-25.",
+      "metrics_and_periods": [
+        "Revenue mix (FY 2024-25)",
+        "Commissioned RE capacity (6.8 GW as of March 31, 2025)",
+        "Under-execution RE capacity (14.5 GW)"
+      ],
+      "evidence_found": [
+        {
+          "statement": "In FY 2024-25, our revenue from non-fossil energy sources reached 17,359.67 crore (9.33% of total revenue)",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": "page:26",
+          "evidence_id": "ev_cc45cae4383a4d6afdc8f340",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "As of March 31, 2025, the NTPC Group has commissioned 6.8 GW of renewable energy capacity",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": "page:31",
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical revenue and capacity mix data for 2020-2023 to establish trend slope",
+        "Independent verification of commission dates for the 6.8 GW portfolio"
+      ],
+      "alternative_explanation": "Expansion is driven by state-mandated targets and capital subsidies rather than a fundamental business model pivot.",
+      "falsification_condition": "Evidence of significant stagnant or declining renewable energy generation volume in subsequent reporting periods.",
+      "data_risks_and_limitations": [
+        "Reliance on internal management assertions for asset commissioning status; potential for overstating effective contribution to energy mix."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "High impact due to energy transition mandate and significant non-fossil revenue stream."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Strong availability from the FY 2024-25 Integrated Annual Report."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Directly measurable through annual financial disclosures."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Requires consolidation of subsidiary-level activities and specific financial note parsing."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be verified against CERC tariff regulations and public commissioning registries."
+        }
+      },
+      "weighted_score": 84.5,
+      "weighted_score_rationale": "Scores reflect the high relevance of this transition to NTPC's valuation and the clear availability of current-period data in the provided annual report.",
+      "next_research_action": "Map subsidiary generation capacities (NGEL, NREL) versus group-wide coal dependency over 3 years."
+    },
+    {
+      "candidate_id": "cand_hidden_relationships_01",
+      "rank": 2,
+      "category": "hidden_relationships",
+      "hypothesis": "Complex internal JVs and subsidiaries (like NGEL and various state partnerships) facilitate high capital outflow and cross-subsidy arrangements.",
+      "financial_importance": "Significant inter-entity transactions (e.g., Jhabua Power, Utility Powertech) impact standalone profitability and cash flow allocation.",
+      "metrics_and_periods": [
+        "Inter-company transaction values (FY 2024-25)",
+        "Dividend income from JVs",
+        "Outstanding recoverable balances"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Jhabua Power Limited. Joint Venture Company Purchase of goods 380.22",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": "page:317",
+          "evidence_id": "ev_d3d9906726630bba52e0d915",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Dividend received from Aravali Power Company Private Ltd. 375.00 crore",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": "page:225",
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Corporate governance documents for JV control mechanisms",
+        "Pricing policies for intra-group asset sales"
+      ],
+      "alternative_explanation": "JV structures are primarily for risk distribution and local land acquisition compliance rather than opaque financial management.",
+      "falsification_condition": "Transparency reports showing standard arm's-length pricing for all intra-group transactions.",
+      "data_risks_and_limitations": [
+        "High complexity makes isolation of profit-shifting effects difficult without detailed transfer pricing audits."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "Significant volume of inter-company transactions impacts cash position."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Detailed disclosure provided in the annual report's related party notes."
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "Complex mapping of relationships requires significant data aggregation."
+        },
+        "non_obviousness": {
+          "score": 4,
+          "rationale": "The depth of JV network and dividend flow is often overlooked in summary analysis."
+        },
+        "cross_validation_potential": {
+          "score": 3,
+          "rationale": "Requires accessing multiple subsidiary annual reports for corroboration."
+        }
+      },
+      "weighted_score": 72.5,
+      "weighted_score_rationale": "Reflects the high volume of transactions but higher difficulty in proving systemic 'hidden' risks versus operational necessity.",
+      "next_research_action": "Conduct a trend analysis on dividend outflows from key JVs back to the parent."
+    }
+  ],
+  "recommended_candidate_id": "cand_renewable_transition_01"
+}

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:23:42.861555+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/sites/default/files/financials_presentations/Presentation_IAM_Mumbai.pdf",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:23:42.529385+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/sites/default/files/financials_presentations/Presentation_IAM_Mumbai.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.powergrid.in/sites/default/files/financials_presentations/Presentation_IAM_Mumbai.pdf",
+      "redirect_chain": [],
+      "source_sha256": "a4e2d8f43c56a0a0b5ac1563f5c8bc4b2e9e8b124d56de67d61b216b1b6cdad7",
+      "content_type": "application/pdf",
+      "saved_path": "signalforge/data/powergrid_research_20261025/issuer_fy26/sources/a4e2d8f43c56_78a52dff.pdf",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "original_disclosure",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 31,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 31
+}

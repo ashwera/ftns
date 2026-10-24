@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:05:51.681436+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://careers.ntpc.co.in/recruitment/",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T18:05:51.600474+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://careers.ntpc.co.in/recruitment/",
+          "status": "robots.txt returned HTTP 404; treated as unavailable under REP"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://careers.ntpc.co.in/recruitment/",
+      "redirect_chain": [],
+      "source_sha256": "b1313b21a4f2e23b6d02e7313f5cedfb895f0942db8916174eabd1abefcd9460",
+      "content_type": "text/html; charset=UTF-8",
+      "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T180549_f3adeaa64622/discovery/retrieved/sources/b1313b21a4f2_8c27593f.html",
+      "document_title": "NTPC Limited - Recruitment Portal",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

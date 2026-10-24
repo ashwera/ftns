@@ -1,0 +1,147 @@
+{
+  "company_name": "NTPC",
+  "dataset_summary": {
+    "row_count": 0,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "Company-specific identifier in rows",
+      "Consistent historical series for revenue/generation by source",
+      "Detailed project-level commissioning dates and status"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier field exists in CSV; rows cannot be attributed to NTPC.",
+      "The dataset consists of generic market pricing data, not company-specific operational or financial performance records.",
+      "No source/document provenance provided for the CSV."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": null,
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_001_renewable_transition",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC's shift toward renewables is structurally underpinned by its specialized subsidiary structure (NGEL, NREL) and strategic land banking for UMREPPs, aimed at a 60 GW renewable target by 2032.",
+      "financial_importance": "The transition directly impacts capital expenditure requirements, credit profile (AAA rating), and long-term revenue mix diversification from a coal-dominant base.",
+      "metrics_and_periods": [
+        "Revenue by source (FY24-25)",
+        "Commissioned renewable capacity (as of March 31, 2025)",
+        "Renewable capacity under execution/pipeline (as of March 31, 2025)"
+      ],
+      "evidence_found": [
+        {
+          "statement": "As of March 31, 2025, the NTPC Group has commissioned 6.8 GW of renewable energy capacity; 14.5 GW is under execution.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": null,
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical yearly capacity addition rates for renewables compared to conventional thermal decommissioning schedules.",
+        "Detailed breakdown of capital expenditure allocation between coal-based stability projects and new renewable greenfield investments."
+      ],
+      "alternative_explanation": "Renewable expansion may be supplementary to rather than a replacement of coal generation, given the explicitly stated 'stabilizing role' of coal in the company's long-term mix.",
+      "falsification_condition": "Evidence of stalling commissioning of announced 14.5 GW capacity or failure to meet the 60 GW target roadmap via reduced RMC oversight.",
+      "data_risks_and_limitations": "Reliant on management-provided 'Integrated Annual Report' which requires corroboration against independent grid data.",
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Renewable energy is a core strategic pillar for future revenue and ESG compliance."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Integrated Annual Report provides detailed capacity figures."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Capacity targets can be audited against future reporting."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Focuses on the subsidiary structure (NGEL) role in capital raising."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Disclosures can be cross-referenced with CERC data and subsidiary filings."
+        }
+      },
+      "weighted_score": 425.0,
+      "weighted_score_rationale": "High financial significance and robust internal reporting data make this the most actionable area.",
+      "next_research_action": "Quantify the pace of capacity additions by quarter for the next fiscal year using exchange disclosures."
+    },
+    {
+      "candidate_id": "cand_002_hidden_relationships",
+      "rank": 2,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC's extensive use of joint ventures and subsidiaries (e.g., NGEL, THDC, NEEPCO) functions as an off-balance-sheet vehicle for managing development risk and credit exposure.",
+      "financial_importance": "Inter-party lending and debt guarantees impact consolidated debt-to-equity ratios and total enterprise credit risk.",
+      "metrics_and_periods": [
+        "Inter-company loan balances",
+        "Guarantee value outstanding (as of March 31, 2025)"
+      ],
+      "evidence_found": [
+        {
+          "statement": "NTPC has substantial inter-company balances with JVs like Utility Powertech Ltd and Meja Urja Nigam Private Ltd.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-24",
+          "row_identifier": null,
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Cross-analysis of debt covenants at the subsidiary/JV level vs. parent guarantees.",
+        "Details on whether 'other financial assets' in consolidated statements hide distressed project debt."
+      ],
+      "alternative_explanation": "JV structure is a standard operational practice for state-utility risk-sharing (land acquisition/permitting) rather than financial engineering.",
+      "falsification_condition": "Transparency in financial reporting on all contingent liabilities and inter-company flows.",
+      "data_risks_and_limitations": "Complexity of multi-layer subsidiary accounting makes full exposure identification difficult without full audit notes access.",
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "Significant inter-company transactions impact liquidity management."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Related party transaction notes are detailed."
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "Requires analysis of consolidated financial statements."
+        },
+        "non_obviousness": {
+          "score": 4,
+          "rationale": "Understanding the interplay between JVs and parent credit lines."
+        },
+        "cross_validation_potential": {
+          "score": 3,
+          "rationale": "Requires access to separate entity filings for JVs."
+        }
+      },
+      "weighted_score": 367.5,
+      "weighted_score_rationale": "Important, but highly complex and reliant on detailed audit note synthesis.",
+      "next_research_action": "Extract and map the network of debt guarantees across the top 10 JVs."
+    }
+  ],
+  "recommended_candidate_id": "cand_001_renewable_transition"
+}

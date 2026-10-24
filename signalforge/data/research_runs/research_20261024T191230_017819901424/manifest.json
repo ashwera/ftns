@@ -1,0 +1,102 @@
+{
+  "run_id": "research_20261024T191230_017819901424",
+  "company": "NTPC Limited",
+  "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+  "created_at": "2026-10-24T19:12:30.595391+00:00",
+  "updated_at": "2026-10-24T19:13:59.262693+00:00",
+  "status": "failed",
+  "stage": "r1",
+  "events": [
+    {
+      "at": "2026-10-24T19:12:30.597085+00:00",
+      "stage": "discovery",
+      "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."
+    },
+    {
+      "at": "2026-10-24T19:12:30.619237+00:00",
+      "stage": "discovery",
+      "message": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "at": "2026-10-24T19:12:35.687852+00:00",
+      "stage": "retrieval",
+      "message": "Bounded discovery and retrieval finished."
+    },
+    {
+      "at": "2026-10-24T19:12:35.688292+00:00",
+      "stage": "machine_evidence",
+      "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."
+    },
+    {
+      "at": "2026-10-24T19:12:35.689027+00:00",
+      "stage": "machine_evidence",
+      "message": "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled."
+    },
+    {
+      "at": "2026-10-24T19:13:06.569981+00:00",
+      "stage": "f1",
+      "message": "Running F1 on policy-eligible evidence."
+    },
+    {
+      "at": "2026-10-24T19:13:14.988509+00:00",
+      "stage": "r1",
+      "message": "Preparing R1 research plan; a plan is not a verified finding."
+    },
+    {
+      "at": "2026-10-24T19:13:59.262721+00:00",
+      "stage": "r1",
+      "message": "Execution failed; inspect local prerequisites and retry. No finding generated."
+    }
+  ],
+  "artifacts": [
+    "discovery/discovery_report.json"
+  ],
+  "finding": null,
+  "model": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite"
+  },
+  "source_manifest_path": "discovery/discovery_report.json",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40
+  },
+  "stages": [
+    {
+      "name": "discovery",
+      "execution": "real",
+      "detail": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "name": "retrieval",
+      "execution": "real",
+      "detail": "Bounded discovery and retrieval finished."
+    },
+    {
+      "name": "machine_evidence",
+      "execution": "real",
+      "detail": "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled."
+    },
+    {
+      "name": "f1",
+      "execution": "real",
+      "detail": "Running F1 on policy-eligible evidence."
+    },
+    {
+      "name": "r1",
+      "execution": "failed",
+      "detail": "Execution failed; inspect local prerequisites and retry. No finding generated."
+    }
+  ],
+  "limitations": [
+    "Source retrieval and machine passage matching do not verify financial claims.",
+    "Discovery time budget is cooperative; downstream model requests use their existing client timeouts."
+  ],
+  "search_provider": "bing_rss",
+  "source_count": 2,
+  "retrieval_status": "retrieved",
+  "finished_at": "2026-10-24T19:13:59.262719+00:00"
+}

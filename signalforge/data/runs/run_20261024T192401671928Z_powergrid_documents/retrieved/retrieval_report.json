@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-24T19:25:21.728157+00:00",
+  "requested_count": 1,
+  "retrieved_count": 0,
+  "failed_count": 1,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:24:03.613968+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/sites/default/files/annual_reports/Powergrid%20Annual%20Report%202025-26%20Final_1.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "error": "RetrievalError: Response exceeded 15728640 byte limit"
+    }
+  ],
+  "normalized_evidence_record_count": 0,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 0
+}

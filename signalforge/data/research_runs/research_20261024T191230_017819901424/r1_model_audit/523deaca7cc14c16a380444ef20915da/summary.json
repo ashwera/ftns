@@ -1,0 +1,20 @@
+{
+  "stage": "r1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "max_generation_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "rejected",
+      "validation_error": "R1 output failed validation: $: unexpected property '$schema'; $/evidence_ledger/3: evidence_id was not supplied"
+    },
+    {
+      "attempt": 2,
+      "status": "rejected",
+      "validation_error": "R1 output failed validation: $/evidence_ledger/3: evidence_id was not supplied"
+    }
+  ],
+  "credential_redaction": "Configured API key redacted if present in artifacts",
+  "status": "rejected"
+}

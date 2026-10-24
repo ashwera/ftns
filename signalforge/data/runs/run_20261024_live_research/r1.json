@@ -1,0 +1,89 @@
+{
+  "company_name": "NTPC Limited",
+  "candidate_id": "CAND_001_RENEWABLE_TRANSITION",
+  "hypothesis": "NTPC's shift toward non-fossil fuel generation is primarily driven by subsidiary growth and capital allocation, but coal-based assets remain the dominant contributor to operating turnover, necessitating detailed monitoring of capital expenditure efficiency vs. generation mix targets.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the historical year-over-year growth rate of non-fossil revenue relative to coal revenue?",
+      "metrics": [
+        "Annual non-fossil revenue (INR)",
+        "Annual coal-based revenue (INR)",
+        "Percentage contribution to total turnover"
+      ],
+      "periods": [
+        "FY2021-22",
+        "FY2022-23",
+        "FY2023-24",
+        "FY2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Historical revenue breakdown by source",
+        "Consistent segmental reporting across the specified period"
+      ]
+    },
+    {
+      "question": "How efficient is the capital allocation for renewables compared to the target 2032 installed capacity mandate?",
+      "metrics": [
+        "Renewable Capex (INR)",
+        "Commissioned Renewable Capacity (GW)",
+        "Pipeline/Under-implementation Capacity (GW)"
+      ],
+      "periods": [
+        "FY2024-25"
+      ],
+      "supported_by_dataset": true,
+      "missing": [
+        "Detailed Capex split by subsidiary vs. standalone",
+        "Project-specific commissioning timelines"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_cc45cae4383a4d6afdc8f340",
+      "source_type": "Integrated Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Revenue from non-fossil energy sources reached 17,359.67 crore (9.33% of total revenue).",
+      "claim_supported": "Current dependency on non-fossil fuel sources remains limited (9.33%).",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+      "source_type": "Integrated Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "As of March 31, 2025, the NTPC Group has commissioned 6.8 GW of renewable energy capacity.",
+      "claim_supported": "Base metric for renewable scale against the 2032 growth mandate.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Retrieve historical Integrated Annual Reports for the past 5 years.",
+      "expected_evidence": "Segmental revenue and capacity tables.",
+      "cross_validation_sources": [
+        "NTPC Investor Relations website",
+        "Stock Exchange (BSE/NSE) disclosures"
+      ],
+      "calculation": "Revenue from non-fossil source / Total revenue",
+      "completion_criteria": "Completion of a 5-year trend table for revenue and generation mix."
+    },
+    {
+      "step": "Analyze Capex vs. Capacity addition correlation.",
+      "expected_evidence": "Capex allocation by business segment in annual financial statements.",
+      "cross_validation_sources": [
+        "CERC regulatory filings",
+        "NTPC Analyst Presentation decks"
+      ],
+      "calculation": "Total Capex on renewables / Net increase in MW capacity",
+      "completion_criteria": "Identification of cost-per-MW commissioned in the current fiscal year."
+    }
+  ],
+  "alternative_explanation": "Renewable energy growth may be hampered by infrastructure and regulatory delays, forcing NTPC to extend the operational life of its coal assets to ensure national energy security.",
+  "falsification_test": "The hypothesis is falsified if the non-fossil revenue contribution percentage decreases over two consecutive fiscal years, or if the pace of renewable commissioning halts despite rising renewable-specific capital expenditure."
+}

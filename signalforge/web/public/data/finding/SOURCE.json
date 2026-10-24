@@ -1,12 +1,12 @@
 {
-  "source_run": "run_offline_pdf_verify_context_fix_20261019",
-  "source_dir": "signalforge/data/runs/scratch_ntpc_catalog_probe_20261019/run_offline_pdf_verify_context_fix_20261019",
-  "finding_id": "find_run_offline_pdf_verify_context_fix_20261019_H1_renewable_pipeline_location",
+  "source_run": "run_20261024_ntpc_recovered",
+  "source_dir": "signalforge/data/runs/run_20261024_ntpc_recovered",
+  "finding_id": "find_run_20261024_ntpc_recovered_H1_renewable_pipeline_location",
   "files": [
     {
       "name": "finding_bundle.json",
-      "bytes": 46665,
-      "sha256": "6b6eb1b594c717d2f39af027c6db16520be82e2c7141b9cbb2418223a8f8d688"
+      "bytes": 40947,
+      "sha256": "673ac607020051b0d18e6eca42b39f18d69610f1c5461fe2d402714ea2137817"
     },
     {
       "name": "calculations.json",
@@ -20,18 +20,28 @@
     },
     {
       "name": "audit_trail.json",
-      "bytes": 19177,
-      "sha256": "4b1831cdc5009491a6b31a80a6847e300603b7363cdd960504ff45fd91974c55"
+      "bytes": 14354,
+      "sha256": "7190ec3788d2bc8bee756b97d86cee09c8c0573c29ca584bb59ddf5f83d0483a"
     },
     {
       "name": "stage_manifest.json",
-      "bytes": 1898,
-      "sha256": "763b0440e4220b48f80e43e4f39bde81065ce0da43708c2f122622c94d4700a9"
+      "bytes": 1764,
+      "sha256": "70eae4903667ab90ad20fdd9663ca69c876300aabfcc504ee46a82baeb4f5424"
     },
     {
       "name": "source_catalog_status.json",
-      "bytes": 3472,
-      "sha256": "c55916222b47f98c777f2b2ead08f6d0fef48712a5067ca4ab472683c8b6acc2"
+      "bytes": 550,
+      "sha256": "25cf514c10bfad8195b7cd8143022c03363feaf720003ed556e109264aae17d2"
+    },
+    {
+      "name": "research_dossier.json",
+      "bytes": 16889,
+      "sha256": "a4b3aaf2dc6e85db53b9f252cb198bb3233dc38b93e7330a648e19c5966f29fd"
+    },
+    {
+      "name": "exact_ratio_audit.json",
+      "bytes": 667,
+      "sha256": "03d963f9b16db8cf76b52a832793e356dbae39fdaeef52d3e148c6e0dd8ba09b"
     }
   ],
   "note": "Verbatim copies of the listed run files; do not edit. Regenerate with npm run sync-data."

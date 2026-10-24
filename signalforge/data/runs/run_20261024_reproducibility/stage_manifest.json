@@ -1,0 +1,59 @@
+{
+  "run_id": "run_20261024_reproducibility",
+  "company": {
+    "name": "Meridian Power Limited",
+    "aliases": [
+      "Meridian"
+    ],
+    "identity_status": "registry_verified"
+  },
+  "stages": [
+    {
+      "stage": "claims_load",
+      "execution": "real",
+      "detail": "7 claims loaded; all unverified"
+    },
+    {
+      "stage": "evidence_bundle",
+      "execution": "real",
+      "detail": "7 claims / 1 chunks selected for F1/R1 (bounded)"
+    },
+    {
+      "stage": "F1",
+      "execution": "blocked",
+      "detail": "SIGNALFORGE_API_KEY not configured; no schema-valid human-approved company evidence; live F1 not attempted"
+    },
+    {
+      "stage": "R1",
+      "execution": "not_executed",
+      "detail": "F1 not run"
+    },
+    {
+      "stage": "source_catalog",
+      "execution": "not_executed",
+      "detail": "no --catalog supplied; verification limited to the project's text extraction"
+    },
+    {
+      "stage": "source_verification",
+      "execution": "real",
+      "detail": "7 inputs verified; 0 at primary_source level, 7 at extracted_text_review only; effective outcomes {\"confirmed\": 3, \"partially_supported\": 4}"
+    },
+    {
+      "stage": "financial_signals",
+      "execution": "real",
+      "detail": "6 of 6 calculations computed (deterministic code)"
+    },
+    {
+      "stage": "adjudication",
+      "execution": "real",
+      "detail": "status=provisional_hypothesis strength=Weak (provisional rubric)"
+    }
+  ],
+  "traceability_problems": [],
+  "claims_path": "signalforge/data/pipeline_inputs/second_company_synthetic/claims.jsonl",
+  "evidence_path": "signalforge/data/pipeline_inputs/second_company_synthetic/evidence.jsonl",
+  "inputs_path": "signalforge/data/pipeline_inputs/second_company_synthetic/inputs.json",
+  "network_used": false,
+  "catalog_path": null,
+  "model_used": false
+}

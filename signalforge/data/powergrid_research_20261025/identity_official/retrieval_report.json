@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:19:02.195235+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/sites/default/files/Investor_Relation/Reports_Filings/Corporate_Governance/2024-25/Integrated_Filing_Governance_2024-25_Q3.html",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:19:02.175158+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/sites/default/files/Investor_Relation/Reports_Filings/Corporate_Governance/2024-25/Integrated_Filing_Governance_2024-25_Q3.html",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.powergrid.in/sites/default/files/Investor_Relation/Reports_Filings/Corporate_Governance/2024-25/Integrated_Filing_Governance_2024-25_Q3.html",
+      "redirect_chain": [],
+      "source_sha256": "5f4b3c34500749f72f69d4f1d97d5459b941b6bc6bfeb704a082eb105e6f2c2a",
+      "content_type": "text/html; charset=UTF-8",
+      "saved_path": "signalforge/data/powergrid_research_20261025/identity_official/sources/5f4b3c345007_9bc4c2df.html",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "original_disclosure",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

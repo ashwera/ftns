@@ -1,0 +1,21 @@
+{
+  "catalog_version": "1.0",
+  "company": "NTPC Limited",
+  "official_domains": ["ntpc.co.in"],
+  "sources": [{
+    "source_id": "ntpc_ar_fy2024_25",
+    "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+    "local_path": "../recovered_20261024_large/sources/28f32ae3803b_4c280573.pdf",
+    "sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+    "title": "Integrated Annual Report 2024-25",
+    "publisher": "NTPC Limited",
+    "source_class": "official_filing",
+    "source_type": "annual_report",
+    "publication_date": "2025-08-07",
+    "reporting_period": "FY2024-25",
+    "issuer_submitted": true,
+    "derived_from": [],
+    "verified_by": "Codex: official-domain retrieval and match to previously recorded PDF SHA-256; not human evidence approval",
+    "verified_on": "2026-10-24"
+  }]
+}

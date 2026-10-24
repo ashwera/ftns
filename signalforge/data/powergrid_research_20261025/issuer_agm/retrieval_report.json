@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:18:00.418145+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/sites/default/files/agm_egm_files/TranscriptofAGM_Final.pdf",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:17:59.792149+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/sites/default/files/agm_egm_files/TranscriptofAGM_Final.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.powergrid.in/sites/default/files/agm_egm_files/TranscriptofAGM_Final.pdf",
+      "redirect_chain": [],
+      "source_sha256": "f641ced15020cae8020c966054bf62f00f01d56cd1bca9d92eadce7bd1d19058",
+      "content_type": "application/pdf",
+      "saved_path": "signalforge/data/powergrid_research_20261025/issuer_agm/sources/f641ced15020_9ca7bc8b.pdf",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "original_disclosure",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 28,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 28
+}

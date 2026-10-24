@@ -1,0 +1,106 @@
+{
+  "run_id": "research_20261024T192139_d803119ec6b1",
+  "company": "NTPC Limited",
+  "prompt": "For NTPC North Karanpura Unit 3, compare announced capacity additions with actually commissioned capacity at the FY2024-25 cutoff. Find primary passages for expected completion, trial completion and commercial operation dates, and distinguish each milestone before assessing any divergence.",
+  "created_at": "2026-10-24T19:21:39.043173+00:00",
+  "updated_at": "2026-10-24T19:23:07.596496+00:00",
+  "status": "blocked",
+  "stage": "f1",
+  "events": [
+    {
+      "at": "2026-10-24T19:21:39.069105+00:00",
+      "stage": "discovery",
+      "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."
+    },
+    {
+      "at": "2026-10-24T19:21:39.081069+00:00",
+      "stage": "discovery",
+      "message": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "at": "2026-10-24T19:22:24.748074+00:00",
+      "stage": "retrieval",
+      "message": "Bounded discovery and retrieval finished."
+    },
+    {
+      "at": "2026-10-24T19:22:24.749334+00:00",
+      "stage": "machine_evidence",
+      "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."
+    },
+    {
+      "at": "2026-10-24T19:22:24.753222+00:00",
+      "stage": "machine_evidence",
+      "message": "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled."
+    },
+    {
+      "at": "2026-10-24T19:22:48.406545+00:00",
+      "stage": "f1",
+      "message": "Running F1 on policy-eligible evidence."
+    },
+    {
+      "at": "2026-10-24T19:23:07.596509+00:00",
+      "stage": "f1",
+      "message": "F1 returned no reliable recommendation. R1 not run."
+    }
+  ],
+  "artifacts": [
+    "discovery/discovery_report.json",
+    "f1.json",
+    "eligible_evidence/evidence.jsonl"
+  ],
+  "finding": null,
+  "model": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite"
+  },
+  "source_manifest_path": "discovery/discovery_report.json",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40
+  },
+  "stages": [
+    {
+      "name": "discovery",
+      "execution": "real",
+      "detail": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "name": "retrieval",
+      "execution": "real",
+      "detail": "Bounded discovery and retrieval finished."
+    },
+    {
+      "name": "machine_evidence",
+      "execution": "real",
+      "detail": "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled."
+    },
+    {
+      "name": "f1",
+      "execution": "blocked",
+      "detail": "F1 returned no reliable recommendation. R1 not run."
+    },
+    {
+      "name": "r1",
+      "execution": "not_executed"
+    },
+    {
+      "name": "investigation",
+      "execution": "not_executed"
+    },
+    {
+      "name": "adjudication",
+      "execution": "not_executed"
+    }
+  ],
+  "limitations": [
+    "Source retrieval and machine passage matching do not verify financial claims.",
+    "Discovery time budget is cooperative; downstream model requests use their existing client timeouts."
+  ],
+  "search_provider": "bing_rss",
+  "source_count": 10,
+  "retrieval_status": "failed",
+  "finished_at": "2026-10-24T19:23:07.596507+00:00"
+}

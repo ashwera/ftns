@@ -44,4 +44,4 @@ function localResearchData(): Plugin {
   }
 }
 
-export default defineConfig({ plugins: [react(), localResearchData()], server: { host: '127.0.0.1' } })
+export default defineConfig({ plugins: [react(), localResearchData()], server: { host: '127.0.0.1', port: 5173, strictPort: true, proxy: { '/api/agent': { target: 'http://127.0.0.1:8765', changeOrigin: true } } } })

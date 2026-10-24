@@ -28,7 +28,17 @@ export type CrossCheck = { description: string; expected_value: number; found_va
 export type VerificationResult = { verification_id: string; input_name: string; outcome: string; verification_level: string; cross_checks: CrossCheck[]; rationale: string }
 export type SourceManifest = { source_run: string; source_dir: string; finding_id: string; files: { name: string; bytes: number; sha256: string }[] }
 export type SourceCatalogEntry = { source_id: string; title: string; publisher: string; url: string; status: string; sha256: string | null; verification_level: string }
-export type FindingBundle = { finding: Finding; verifications: VerificationResult[]; sourceManifest: SourceManifest | null; catalogSources: SourceCatalogEntry[]; notes: string[] }
+export type DossierStatement = { statement: string; citations: Citation[] }
+export type ResearchDossier = {
+  case_headline?: string; case_status?: 'investigation' | 'failed_novelty' | 'provisional_hypothesis' | 'no_defensible_signal'
+  schema_version: '1.0'; run_id: string; finding_id: string; chosen_prompt: string
+  implications: DossierStatement[]
+  candidate_decisions: { hypothesis: string; decision: 'selected' | 'rejected' | 'deferred'; reason: string; citations: Citation[] }[]
+  action_log: { action: string; outcome: string; execution: Execution; citations: Citation[] }[]
+  chronology: { date: string; event: string; citations: Citation[] }[]
+  opposing_evidence: DossierStatement[]; counterargument: DossierStatement | null; falsification: DossierStatement[]
+}
+export type FindingBundle = { finding: Finding; verifications: VerificationResult[]; sourceManifest: SourceManifest | null; catalogSources: SourceCatalogEntry[]; notes: string[]; researchDossier?: ResearchDossier | null }
 
 const obj = (v: unknown): v is Record<string, any> => !!v && typeof v === 'object' && !Array.isArray(v)
 const strs = (v: unknown): v is string[] => Array.isArray(v) && v.every(x => typeof x === 'string')
@@ -39,6 +49,22 @@ const isCalc = (v: unknown): v is FindingCalculation => obj(v) && typeof v.name 
 const isEvidence = (v: unknown): v is EvidenceItem => obj(v) && typeof v.statement === 'string' && strs(v.claim_ids) && isCitation(v.citation) && typeof v.independent === 'boolean'
 const isStage = (v: unknown): v is Stage => obj(v) && typeof v.stage === 'string' && ['real', 'simulated', 'blocked', 'not_executed'].includes(v.execution) && typeof v.detail === 'string'
 const isAudit = (v: unknown): v is AuditEntry => obj(v) && typeof v.input_name === 'string' && typeof v.key === 'boolean' && typeof v.effective_outcome === 'string' && typeof v.effective_level === 'string' && typeof v.conflict === 'boolean' && Number.isInteger(v.independent_confirming_groups) && Array.isArray(v.results) && typeof v.claim_id === 'string'
+
+export function parseResearchDossier(v: unknown, finding: Finding): ResearchDossier | null {
+  const citations = (x: Record<string, any>) => Array.isArray(x.citations) && x.citations.every(isCitation)
+  const statement = (x: unknown) => obj(x) && typeof x.statement === 'string' && citations(x)
+  const list = (x: unknown, check: (item: any) => boolean) => Array.isArray(x) && x.every(item => obj(item) && check(item))
+  if (!obj(v) || v.schema_version !== '1.0' || v.run_id !== finding.run_id || v.finding_id !== finding.finding_id) return null
+  return (v.case_headline === undefined || typeof v.case_headline === 'string')
+    && (v.case_status === undefined || ['investigation', 'failed_novelty', 'provisional_hypothesis', 'no_defensible_signal'].includes(v.case_status))
+    && typeof v.chosen_prompt === 'string' && !!v.chosen_prompt.trim()
+    && Array.isArray(v.implications) && v.implications.length >= 3 && v.implications.length <= 5 && v.implications.every(statement)
+    && list(v.candidate_decisions, x => typeof x.hypothesis === 'string' && ['selected', 'rejected', 'deferred'].includes(x.decision) && typeof x.reason === 'string' && citations(x))
+    && list(v.action_log, x => typeof x.action === 'string' && typeof x.outcome === 'string' && ['real', 'simulated', 'blocked', 'not_executed'].includes(x.execution) && citations(x))
+    && list(v.chronology, x => typeof x.date === 'string' && /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(x.date) && Number.isFinite(Date.parse(x.date)) && typeof x.event === 'string' && citations(x))
+    && list(v.opposing_evidence, statement) && (v.counterargument === null || statement(v.counterargument)) && list(v.falsification, statement)
+    ? v as ResearchDossier : null
+}
 
 export function parseFinding(v: unknown): Finding | null {
   if (!obj(v) || v.schema_version !== '1.0') return null
@@ -77,6 +103,8 @@ export async function loadFindingBundle(): Promise<FindingBundle | { error: stri
     const hasCatalogFile = sourceManifest?.files.some(f => f.name === 'source_catalog_status.json') ?? false
     const rawCatalog = hasCatalogFile ? await getJson('source_catalog_status.json').catch(() => null) : null
     if (hasCatalogFile && rawCatalog === null) notes.push('source_catalog_status.json unavailable')
-    return { finding, verifications: parseVerifications(rawVer), sourceManifest, catalogSources: parseSourceCatalog(rawCatalog), notes }
+    const researchDossier = parseResearchDossier(await getJson('research_dossier.json').catch(() => null), finding)
+    if (!researchDossier) notes.push('Research dossier unavailable: missing, invalid, or belongs to another run.')
+    return { finding, verifications: parseVerifications(rawVer), sourceManifest, catalogSources: parseSourceCatalog(rawCatalog), notes, researchDossier }
   } catch { return { error: 'No finding bundle found. Run `npm run sync-data` in signalforge/web to copy a pipeline run into public/data/finding/.' } }
 }

@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-10-24T19:22:57.426091+00:00",
+  "requested_count": 2,
+  "retrieved_count": 0,
+  "failed_count": 2,
+  "sources": [
+    {
+      "requested_url": "https://wrpc.gov.in/allfile/230520251426084745LGBR_2025_26.pdf",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:22:56.563708+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://wrpc.gov.in/allfile/230520251426084745LGBR_2025_26.pdf",
+          "status": "robots.txt returned HTTP 301; fail closed"
+        }
+      ],
+      "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+    },
+    {
+      "requested_url": "https://powermin.gov.in/sites/default/files/uploads/MOP_Annual_Report_Eng_2025_26.pdf",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:22:57.095731+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://powermin.gov.in/sites/default/files/uploads/MOP_Annual_Report_Eng_2025_26.pdf",
+          "status": "robots.txt returned HTTP 302; fail closed"
+        }
+      ],
+      "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+    }
+  ],
+  "normalized_evidence_record_count": 0,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 0
+}

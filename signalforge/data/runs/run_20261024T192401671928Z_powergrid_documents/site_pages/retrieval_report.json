@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:24:03.586083+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/hi/annual-reports",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:24:03.571751+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/hi/annual-reports",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.powergrid.in/hi/annual-reports",
+      "redirect_chain": [],
+      "source_sha256": "47b81bf8e1202126cc8bca05ead46ea0a81383064a6b1db078d7ed5d1d6e8432",
+      "content_type": "text/html; charset=UTF-8",
+      "saved_path": "signalforge/data/runs/run_20261024T192401671928Z_powergrid_documents/site_pages/sources/47b81bf8e120_cf28f3d5.html",
+      "document_title": "वार्षिक रिपोर्ट | पावर ग्रिड",
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 1,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 1
+}

@@ -1,0 +1,128 @@
+{
+  "stage": "r1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "requested_at": "2026-10-24T18:11:32.995413+00:00",
+  "prompt": "# R1 — Research Investigator (plan specification)\n\nR1 consumes F1's recommended candidate and prepares a structured, executable research plan. Reference supplied evidence by stable `evidence_id` and preserve its source locator/page when citing it. This prompt alone does not retrieve sources or perform live web research. Never invent URLs, excerpts, publication dates, external findings, or research already performed.\n\nTurn the hypothesis into explicit, testable research questions. List exact metrics and periods, what the supplied dataset supports, and what remains missing. Identify public source types and specific documents to seek: company filings, stock-exchange disclosures, annual reports, investor presentations, regulatory documents, and credible news reports, as relevant.\n\nFor each claim, define independent cross-validation sources and the calculation, inputs, units, period alignment, and assumptions required. Include an alternative explanation and a falsification test. Specify what would invalidate or weaken the hypothesis. Include contradictory evidence explicitly when supplied; do not suppress it.\n\nTrack evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.\n\nReturn a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.\n\n\nRequired R1 output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge R1 research plan\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"candidate_id\", \"hypothesis\", \"research_questions\", \"evidence_ledger\", \"checklist\", \"alternative_explanation\", \"falsification_test\", \"retrieval_performed\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"candidate_id\": {\"type\": \"string\", \"minLength\": 1}, \"hypothesis\": {\"type\": \"string\", \"minLength\": 1}, \"retrieval_performed\": {\"type\": \"boolean\", \"const\": false}, \"research_questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"question\", \"metrics\", \"periods\", \"supported_by_dataset\", \"missing\"], \"properties\": {\"question\": {\"type\": \"string\", \"minLength\": 1}, \"metrics\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"supported_by_dataset\": {\"type\": \"boolean\"}, \"missing\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"evidence_ledger\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"evidence_id\", \"source_type\", \"source_url\", \"publication_date\", \"excerpt_or_data_point\", \"claim_supported\", \"kind\", \"status\"], \"properties\": {\"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"]}, \"publication_date\": {\"type\": [\"string\", \"null\"]}, \"excerpt_or_data_point\": {\"type\": [\"string\", \"null\"]}, \"claim_supported\": {\"type\": \"string\"}, \"kind\": {\"type\": \"string\", \"enum\": [\"reported_fact\", \"calculation\", \"inference\", \"unverified_hypothesis\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"planned_lookup\", \"supplied\", \"contradictory\"]}}}}, \"checklist\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"step\", \"expected_evidence\", \"cross_validation_sources\", \"completion_criteria\"], \"properties\": {\"step\": {\"type\": \"string\", \"minLength\": 1}, \"expected_evidence\": {\"type\": \"string\"}, \"cross_validation_sources\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"calculation\": {\"type\": [\"string\", \"null\"]}, \"completion_criteria\": {\"type\": \"string\"}}}}, \"alternative_explanation\": {\"type\": \"string\", \"minLength\": 1}, \"falsification_test\": {\"type\": \"string\", \"minLength\": 1}}}",
+  "payload": {
+    "company_name": "NTPC Limited",
+    "candidate": {
+      "candidate_id": "renewable_transition_001",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC's aggressive renewable capacity expansion (target 60GW by 2032) represents a pivot that is heavily reliant on subsidiary-led vehicles and strategic joint ventures rather than direct parent-led organic growth.",
+      "financial_importance": "The scale of transition (target 60GW) and the use of IPOs (e.g., NGEL IPO raising 10,000 Cr) significantly impact the company's long-term capital structure and valuation.",
+      "metrics_and_periods": [
+        "Commissioned RE capacity as of 31 March 2025 (6.8 GW)",
+        "Capacity under execution (14.5 GW)",
+        "Pipeline capacity (11 GW)",
+        "NGEL IPO proceeds deployment"
+      ],
+      "evidence_found": [
+        {
+          "statement": "NTPC has set a target to achieve 60 GW of renewable energy capacity by 2032. As of March 31, 2025, NTPC Group has commissioned 6.8 GW of renewable energy capacity.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "NGEL raised 10,000 crore through an IPO in November 2024 to bolster financial capacity for green projects.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_d284dd5e0503ac55d73f2441",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical breakdown of RE vs Thermal generation revenue for the last 5 years to measure the speed of transition.",
+        "Cost of capital metrics specifically for the renewable energy subsidiaries compared to parent.",
+        "Detailed commissioning schedule for the 14.5 GW under execution."
+      ],
+      "alternative_explanation": "The transition may be slower than communicated due to regulatory, land acquisition, or grid connectivity bottlenecks, forcing reliance on JVs to spread risk rather than purely strategic growth.",
+      "falsification_condition": "Failure to achieve the commissioned capacity targets (6.8 GW) or a reversal in the 60GW 2032 goal in future disclosures.",
+      "data_risks_and_limitations": [
+        "Reliance on management narrative and forward-looking statements.",
+        "Commissioned capacity numbers include JVs; individual contribution levels are complex to audit."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "High impact on long-term valuation and capital allocation."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Strong data present in the 2024-25 Annual Report."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Targets are specific and quantifiable."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Understanding the reliance on JV structures for capacity growth adds depth to the surface-level reporting."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be verified against exchange filings and public announcements."
+        }
+      },
+      "weighted_score": 84.5,
+      "weighted_score_rationale": "High score due to massive financial materiality, strong evidence availability, and clear, testable, and quantifiable progress metrics regarding the transition strategy.",
+      "next_research_action": "Map the specific RE projects across subsidiaries (NGEL, NREL, THDC, NEEPCO) and assess capital flow effectiveness from the parent."
+    },
+    "dataset_summary": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "date_coverage": null,
+      "missing_information": [
+        "Company-specific identifier in rows",
+        "Financial data for trend analysis",
+        "Operational generation volumes",
+        "Asset-level capacity data"
+      ],
+      "data_limitations": [
+        "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+        "The CSV dataset contains only market-level trading data with no identifiers linking to NTPC Ltd.",
+        "Evidence is entirely derived from manually ingested Integrated Annual Report 2024-25 PDFs."
+      ]
+    },
+    "supplied_evidence_ids": [
+      "ev_cc45cae4383a4d6afdc8f340",
+      "ev_fed1ce3d68b30da9c8ece744",
+      "ev_eb61ba2e3f173f23fad9bfd8",
+      "ev_d284dd5e0503ac55d73f2441",
+      "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "ev_c5bb4d5e45e3af40a4db4717",
+      "ev_b489528262378cdf8e9d9601",
+      "ev_77c5f772c341d65bc010f576",
+      "ev_08dc5955d5c3ef29b41a5593",
+      "ev_27588cf43298e9264d4d1efa",
+      "ev_0517e238fde73f76da5c576a",
+      "ev_5be4db19957ea5f7fd2b0c02",
+      "ev_44bdd98d360aa06e7a543c2c",
+      "ev_d3d9906726630bba52e0d915",
+      "ev_13598c8ff149784e31964e13",
+      "ev_270842a41f4b2dbca2744278"
+    ]
+  }
+}

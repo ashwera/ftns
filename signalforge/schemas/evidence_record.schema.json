@@ -8,6 +8,41 @@
     "source_organization":{"type":["string","null"]},"document_title":{"type":"string"},"document_type":{"type":"string"},"source_url":{"type":["string","null"],"format":"uri"},"source_path":{"type":["string","null"]},"source_locator":{"type":"string"},"source_identifier_status":{"enum":["provided_url","repository_path_only","missing"]},
     "publication_date":{"type":["string","null"]},"event_date":{"type":["string","null"]},"retrieval_date":{"type":"string"},"excerpt_or_fact":{"type":"string"},"metric_name":{"type":["string","null"]},"metric_value":{"type":["number","string","null"]},"unit":{"type":["string","null"]},"currency":{"type":["string","null"]},"reporting_period":{"type":["string","null"]},"evidence_category":{"type":"string"},"related_claim":{"type":["string","null"]},"claim_key":{"type":["string","null"]},"source_relationship":{"enum":["original_disclosure","republication","independent_source","unknown"]},"claim_verification_status":{"enum":["directly_reported","independently_corroborated","calculated","inferred","unverified"]},"information_type":{"enum":["reported_fact","derived_calculation","inference","unverified_hypothesis"]},
     "parsing_status":{"enum":["parsed","failed","ocr_required","empty"]},"extraction_warnings":{"type":"array","items":{"type":"string"}},"page_number":{"type":["integer","null"],"minimum":1},"table_identifier":{"type":["string","null"]},
-    "review_status":{"type":["string","null"],"enum":["pending_review","approved","rejected",null]},"reviewed_by":{"type":["string","null"]},"reviewed_at":{"type":["string","null"]},"review_note":{"type":["string","null"]}
+    "review_status":{"type":["string","null"],"enum":["pending_review","approved","rejected","automatically_cross_checked",null]},"reviewed_by":{"type":["string","null"]},"reviewed_at":{"type":["string","null"]},"review_note":{"type":["string","null"]},
+    "machine_verification":{
+      "type":"object",
+      "required":["policy_version","verifier","verified_at","source_sha256","passage_sha256","record_sha256","issuer_page","issuer_passage","checks"],
+      "properties":{
+        "policy_version":{"const":"pdf_exact_passage_v1"},
+        "verifier":{"const":"signalforge.machine_evidence"},
+        "verified_at":{"type":"string","minLength":1},
+        "source_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "passage_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "record_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "issuer_page":{"type":"integer","minimum":1},
+        "issuer_passage":{"type":"string","minLength":1,"maxLength":4000},
+        "checks":{
+          "type":"object",
+          "required":["original_sha256","verbatim_page_passage","canonical_issuer","substantive_text"],
+          "properties":{
+            "original_sha256":{"const":true},"verbatim_page_passage":{"const":true},
+            "canonical_issuer":{"const":true},"substantive_text":{"const":true}
+          },"additionalProperties":false
+        }
+      },"additionalProperties":false
+    }
+  },
+  "if":{"properties":{"review_status":{"const":"automatically_cross_checked"}},"required":["review_status"]},
+  "then":{
+    "required":["machine_verification","reviewed_by","reviewed_at","review_note"],
+    "properties":{
+      "reviewed_by":{"type":"null"},"reviewed_at":{"type":"null"},"review_note":{"type":"null"},
+      "document_type":{"const":"pdf"},"source_relationship":{"const":"original_disclosure"},
+      "source_path":{"type":"string","minLength":1},"page_number":{"type":"integer","minimum":1},
+      "parsing_status":{"const":"parsed"},"company_identity_status":{"const":"verified"},
+      "company_name":{"type":"string","minLength":1},"verified_identifier":{"type":"string","minLength":1},
+      "claim_verification_status":{"const":"unverified"},"information_type":{"const":"reported_fact"},
+      "excerpt_or_fact":{"type":"string","minLength":40,"maxLength":4000}
+    }
   },"additionalProperties":false
 }

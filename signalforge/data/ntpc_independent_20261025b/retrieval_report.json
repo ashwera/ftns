@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-24T19:23:09.770291+00:00",
+  "requested_count": 3,
+  "retrieved_count": 1,
+  "failed_count": 2,
+  "sources": [
+    {
+      "requested_url": "https://heavyindustries.gov.in/sites/default/files/2025-05/monthly_do_for_the_month_of_april_2025.pdf",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:23:09.213333+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://heavyindustries.gov.in/sites/default/files/2025-05/monthly_do_for_the_month_of_april_2025.pdf",
+          "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://heavyindustries.gov.in/sites/default/files/2025-05/monthly_do_for_the_month_of_april_2025.pdf",
+      "redirect_chain": [],
+      "source_sha256": "4e655fff07890c335890b0e634e9f8f7c3393da5b72f6acee5e828dcfffe70d4",
+      "content_type": "application/pdf",
+      "saved_path": "signalforge/data/ntpc_independent_20261025b/sources/4e655fff0789_7573d6c1.pdf",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "unknown",
+      "company_association_status": "not_requested"
+    },
+    {
+      "requested_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2246899&lang=2&reg=48",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:23:09.213360+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2246899&lang=2&reg=48",
+          "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+        }
+      ],
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "requested_url": "https://cea.nic.in/wp-content/uploads/installed/2025/10/IC_OCT_2025_allocation_wise.pdf",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:23:09.423083+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://cea.nic.in/wp-content/uploads/installed/2025/10/IC_OCT_2025_allocation_wise.pdf",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "error": "HTTPError: HTTP Error 404: "
+    }
+  ],
+  "normalized_evidence_record_count": 5,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 5
+}

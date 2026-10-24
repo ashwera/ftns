@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:27:22.026153+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/17d0714a3e5b_8c27593f.html",
+      "source_sha256": "17d0714a3e5bb828b2825cd4575c9540cab3b8e18e682944e0c683be2cdf7b1a",
+      "file_format": "html",
+      "source_url": "https://careers.ntpc.co.in/recruitment/",
+      "retrieved_at": "2026-10-24T18:27:21.966022+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_281be685d1ceee56852e93f2"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_281be685d1ceee56852e93f2",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_281be685d1ceee56852e93f2",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

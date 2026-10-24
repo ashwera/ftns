@@ -1,0 +1,582 @@
+{
+  "company": "NTPC Limited",
+  "topic": "NTPC annual report renewable capacity project execution primary PDF disclosures",
+  "provider": "bing_rss",
+  "execution_mode": "real",
+  "search_queries": [
+    "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure"
+  ],
+  "search_results": [
+    {
+      "url": "https://careers.ntpc.co.in/",
+      "title": "NTPC",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "failed",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:05:18.572780+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://careers.ntpc.co.in/",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T18:05:18.196578+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://careers.ntpc.co.in/",
+                "status": "robots.txt returned HTTP 404; treated as unavailable under REP"
+              },
+              {
+                "url": "http://careers.ntpc.co.in/recruitment/",
+                "status": "robots.txt unavailable (URLError); fail closed"
+              }
+            ],
+            "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "url": "https://careers.ntpc.co.in/recruitment/",
+      "title": "NTPC Limited - Recruitment Portal",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:05:19.388272+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://careers.ntpc.co.in/recruitment/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:05:19.306788+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://careers.ntpc.co.in/recruitment/",
+                "status": "robots.txt returned HTTP 404; treated as unavailable under REP"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://careers.ntpc.co.in/recruitment/",
+            "redirect_chain": [],
+            "source_sha256": "253ad694bdd21c617a2a643fa0450ff999db8bdd6f0d014c9aa09f4fca5d2d53",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T180517_dc5f89f0606c/discovery/retrieved/sources/253ad694bdd2_8c27593f.html",
+            "document_title": "NTPC Limited - Recruitment Portal",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "title": "NTPC Limited - Wikipedia",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "retrieved",
+      "retrieval_report": {
+        "generated_at": "2026-10-24T18:05:21.810202+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:05:21.770973+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "redirect_chain": [],
+            "source_sha256": "40f467330c8f516a0644f911e5c65319ae31cd0ee2fc135a19de58419c6b16a6",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T180517_dc5f89f0606c/discovery/retrieved/sources/40f467330c8f_337a4428.html",
+            "document_title": "NTPC Limited - Wikipedia",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "url": "https://ntpc.co.in/",
+      "title": "Home | NTPC Limited",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ntpctender.ntpc.co.in/",
+      "title": "NTPC: Home",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+      "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+      "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.careerpower.in/rrb-ntpc.html",
+      "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+      "title": "NTPC Share Price, NTPC Stock Price, NTPC Ltd. Stock ... - Moneycontrol",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 11,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    },
+    {
+      "url": "https://ess.ntpc.co.in/",
+      "title": "Sign in to your account",
+      "search_provider": "bing_rss",
+      "search_publisher": "Bing",
+      "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+      "url_provenance": "rss.channel.item.link",
+      "document_publisher_status": "unknown",
+      "company_identity_status": "unresolved",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "source_class": "unknown",
+      "rank_score": 10,
+      "classification_status": "unverified_host_hint",
+      "publisher": null,
+      "publication_date": null,
+      "issuer_submitted": null,
+      "derived_from": [],
+      "independent_group_id": null,
+      "retrieval_status": "not_requested"
+    }
+  ],
+  "action_log": [
+    {
+      "action": "search_requested",
+      "at": "2026-10-24T18:05:17.851806+00:00",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure"
+    },
+    {
+      "action": "search_completed",
+      "at": "2026-10-24T18:05:18.183945+00:00",
+      "query": "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure",
+      "results": [
+        {
+          "url": "https://ntpc.co.in/",
+          "title": "Home | NTPC Limited",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/recruitment/",
+          "title": "NTPC Limited - Recruitment Portal",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc.html",
+          "title": "RRB NTPC 2026 Notification Out for 5236 Graduate & UG Vacancies, Check ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.adda247.com/exams/railway/rrb-ntpc-vacancy-2026/",
+          "title": "RRB NTPC Notification 2026 Out For 5,236 UG and Graduate Posts ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://careers.ntpc.co.in/",
+          "title": "NTPC",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.careerpower.in/rrb-ntpc-apply-online.html",
+          "title": "RRB NTPC Apply Online 2026 for 5236 Posts, Application Link Active at ...",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+          "title": "NTPC Limited - Wikipedia",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ntpctender.ntpc.co.in/",
+          "title": "NTPC: Home",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+          "title": "NTPC Share Price, NTPC Stock Price, NTPC Ltd. Stock ... - Moneycontrol",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        },
+        {
+          "url": "https://ess.ntpc.co.in/",
+          "title": "Sign in to your account",
+          "search_provider": "bing_rss",
+          "search_publisher": "Bing",
+          "search_result_url": "https://www.bing.com/search?format=rss&q=%22NTPC+Limited%22+NTPC+annual+report+renewable+capacity+project+execution+primary+PDF+disclosures+annual+report+investor+disclosure",
+          "url_provenance": "rss.channel.item.link",
+          "document_publisher_status": "unknown",
+          "company_identity_status": "unresolved"
+        }
+      ],
+      "executed_queries": [
+        "\"NTPC Limited\" NTPC annual report renewable capacity project execution primary PDF disclosures annual report investor disclosure"
+      ],
+      "search_entry_points": []
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:05:18.184340+00:00",
+      "url": "https://careers.ntpc.co.in/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:05:18.573086+00:00",
+      "url": "https://careers.ntpc.co.in/",
+      "report": {
+        "generated_at": "2026-10-24T18:05:18.572780+00:00",
+        "requested_count": 1,
+        "retrieved_count": 0,
+        "failed_count": 1,
+        "sources": [
+          {
+            "requested_url": "https://careers.ntpc.co.in/",
+            "retrieval_status": "failed",
+            "retrieved_at": "2026-10-24T18:05:18.196578+00:00",
+            "warnings": [],
+            "robots_checks": [
+              {
+                "url": "https://careers.ntpc.co.in/",
+                "status": "robots.txt returned HTTP 404; treated as unavailable under REP"
+              },
+              {
+                "url": "http://careers.ntpc.co.in/recruitment/",
+                "status": "robots.txt unavailable (URLError); fail closed"
+              }
+            ],
+            "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+          }
+        ],
+        "normalized_evidence_record_count": 0,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 0
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:05:18.573315+00:00",
+      "url": "https://careers.ntpc.co.in/recruitment/"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:05:19.388443+00:00",
+      "url": "https://careers.ntpc.co.in/recruitment/",
+      "report": {
+        "generated_at": "2026-10-24T18:05:19.388272+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://careers.ntpc.co.in/recruitment/",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:05:19.306788+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://careers.ntpc.co.in/recruitment/",
+                "status": "robots.txt returned HTTP 404; treated as unavailable under REP"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://careers.ntpc.co.in/recruitment/",
+            "redirect_chain": [],
+            "source_sha256": "253ad694bdd21c617a2a643fa0450ff999db8bdd6f0d014c9aa09f4fca5d2d53",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T180517_dc5f89f0606c/discovery/retrieved/sources/253ad694bdd2_8c27593f.html",
+            "document_title": "NTPC Limited - Recruitment Portal",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "retrieval_requested",
+      "at": "2026-10-24T18:05:19.388672+00:00",
+      "url": "https://en.wikipedia.org/wiki/NTPC_Limited"
+    },
+    {
+      "action": "retrieval_completed",
+      "at": "2026-10-24T18:05:21.810329+00:00",
+      "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "report": {
+        "generated_at": "2026-10-24T18:05:21.810202+00:00",
+        "requested_count": 1,
+        "retrieved_count": 1,
+        "failed_count": 0,
+        "sources": [
+          {
+            "requested_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "retrieval_status": "retrieved",
+            "retrieved_at": "2026-10-24T18:05:21.770973+00:00",
+            "warnings": [
+              "Publication date not established from recognized page metadata; retrieval time is not substituted."
+            ],
+            "robots_checks": [
+              {
+                "url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+                "status": "robots.txt retrieved"
+              }
+            ],
+            "http_status": 200,
+            "canonical_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+            "redirect_chain": [],
+            "source_sha256": "40f467330c8f516a0644f911e5c65319ae31cd0ee2fc135a19de58419c6b16a6",
+            "content_type": "text/html; charset=UTF-8",
+            "saved_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T180517_dc5f89f0606c/discovery/retrieved/sources/40f467330c8f_337a4428.html",
+            "document_title": "NTPC Limited - Wikipedia",
+            "publication_date": null,
+            "source_relationship": "unknown",
+            "company_association_status": "not_requested"
+          }
+        ],
+        "normalized_evidence_record_count": 1,
+        "duplicate_documents": [],
+        "conflicts": [],
+        "manual_review_count": 1
+      }
+    },
+    {
+      "action": "discovery_stopped",
+      "at": "2026-10-24T18:05:21.810641+00:00",
+      "reason": "result_budget"
+    }
+  ],
+  "errors": [],
+  "retrieval_status": "retrieved",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40,
+    "max_response_bytes": 2097152
+  },
+  "limitations": [
+    "Search results and host classifications are unverified.",
+    "Provider internal searches are not a hard billing budget.",
+    "Independent publication and document lineage require review."
+  ],
+  "stop_reason": "result_budget"
+}

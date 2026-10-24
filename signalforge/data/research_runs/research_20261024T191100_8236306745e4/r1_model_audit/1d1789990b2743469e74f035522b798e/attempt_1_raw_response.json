@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "company_name": "NTPC Limited",
+  "candidate_id": "hidden_relationships_subsidiaries_jv",
+  "hypothesis": "NTPC manages significant intercompany financial and operational exposures with its subsidiaries and joint ventures (JVs) that warrant monitoring due to the scale of intercompany transactions and loan recoveries.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "To what extent are intercompany trade receivables and loans for top-five JVs increasing relative to the parent company's consolidated revenue?",
+      "metrics": [
+        "Ratio of Intercompany Receivables to Consolidated Revenue",
+        "Year-over-Year (YoY) growth in loan balances for key JVs"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": true,
+      "missing": [
+        "Historical (pre-2023) intercompany exposure data for trend benchmarking"
+      ]
+    },
+    {
+      "question": "Do recurring intercompany transactions indicate potential liquidity constraints within specific subsidiary operations?",
+      "metrics": [
+        "Aging of trade receivables (current vs. overdue)",
+        "Interest income vs. principal recovery rates on intercompany loans"
+      ],
+      "periods": [
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Detailed aging schedules",
+        "Specific loan repayment terms and maturity profiles for JVs"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_77c5f772c341d65bc010f576",
+      "source_type": "PDF",
+      "source_url": null,
+      "publication_date": "2025-03-31",
+      "excerpt_or_data_point": "Details of intercompany transactions including sale/purchase of goods, services, and loans with various subsidiaries and joint ventures.",
+      "claim_supported": "Existence of high-volume recurring intercompany financial and operational activities.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_08dc5955d5c3ef29b41a5593",
+      "source_type": "PDF",
+      "source_url": null,
+      "publication_date": "2025-03-31",
+      "excerpt_or_data_point": "Listing of subsidiary/JV exposure and outstanding balances including loans recoverable and trade receivables.",
+      "claim_supported": "Scale of intercompany debt and credit risk exposures.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Identify top 5 JVs by transaction volume and loan exposure.",
+      "expected_evidence": "Table of counterparties categorized by outstanding exposure amount.",
+      "cross_validation_sources": [
+        "NTPC Integrated Annual Report 2024-25 (Related Party Transactions note)",
+        "Subsidiary-level Standalone Financial Statements"
+      ],
+      "completion_criteria": "Extraction of top 5 entities completed for comparative analysis."
+    },
+    {
+      "step": "Calculate YoY changes in intercompany balances.",
+      "expected_evidence": "Growth percentage of receivables and loans for identified JVs.",
+      "cross_validation_sources": [
+        "NTPC Integrated Annual Report 2023-24",
+        "NTPC Integrated Annual Report 2024-25"
+      ],
+      "calculation": "(Balance FY25 - Balance FY24) / Balance FY24",
+      "completion_criteria": "Identification of JVs exhibiting anomalous growth in exposure."
+    }
+  ],
+  "alternative_explanation": "Transactions are routine arm's length business operations within a conglomerate structure, reflecting standard intra-group financing and service level agreements (SLAs) rather than structural liquidity stress.",
+  "falsification_test": "If intercompany exposure, as a percentage of total assets, remains stable or decreases while cash flow from operations remains positive for the subsidiaries, the hypothesis of potential systemic liquidity strain is weakened or invalidated."
+}

@@ -1,0 +1,85 @@
+{
+  "run_id": "research_20261024T181053_848bb50d11b7",
+  "company": "Power Grid Corporation of India Limited",
+  "prompt": "Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence.",
+  "created_at": "2026-10-24T18:10:53.174880+00:00",
+  "updated_at": "2026-10-24T18:11:35.479812+00:00",
+  "status": "blocked",
+  "stage": "machine_evidence",
+  "events": [
+    {
+      "at": "2026-10-24T18:10:53.176512+00:00",
+      "stage": "discovery",
+      "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."
+    },
+    {
+      "at": "2026-10-24T18:10:53.187473+00:00",
+      "stage": "discovery",
+      "message": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "at": "2026-10-24T18:11:35.479018+00:00",
+      "stage": "retrieval",
+      "message": "Bounded discovery and retrieval finished."
+    },
+    {
+      "at": "2026-10-24T18:11:35.479405+00:00",
+      "stage": "machine_evidence",
+      "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."
+    },
+    {
+      "at": "2026-10-24T18:11:35.479816+00:00",
+      "stage": "machine_evidence",
+      "message": "No retrieved PDF passed the machine evidence policy. F1/R1 blocked; no finding generated."
+    }
+  ],
+  "artifacts": [
+    "discovery/discovery_report.json"
+  ],
+  "finding": null,
+  "model": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite"
+  },
+  "source_manifest_path": "discovery/discovery_report.json",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40
+  },
+  "stages": [
+    {
+      "name": "discovery",
+      "execution": "real",
+      "detail": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "name": "retrieval",
+      "execution": "real",
+      "detail": "Bounded discovery and retrieval finished."
+    },
+    {
+      "name": "machine_evidence",
+      "execution": "blocked",
+      "detail": "No retrieved PDF passed the machine evidence policy. F1/R1 blocked; no finding generated."
+    },
+    {
+      "name": "f1",
+      "execution": "not_executed"
+    },
+    {
+      "name": "r1",
+      "execution": "not_executed"
+    }
+  ],
+  "limitations": [
+    "Source retrieval and machine passage matching do not verify financial claims.",
+    "Discovery time budget is cooperative; downstream model requests use their existing client timeouts."
+  ],
+  "search_provider": "bing_rss",
+  "source_count": 10,
+  "retrieval_status": "retrieved",
+  "finished_at": "2026-10-24T18:11:35.479815+00:00"
+}

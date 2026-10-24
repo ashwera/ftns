@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:05:21.802513+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/40f467330c8f_337a4428.html",
+      "source_sha256": "40f467330c8f516a0644f911e5c65319ae31cd0ee2fc135a19de58419c6b16a6",
+      "file_format": "html",
+      "source_url": "https://en.wikipedia.org/wiki/NTPC_Limited",
+      "retrieved_at": "2026-10-24T18:05:21.770973+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_a3cc3ef6a0a523ce6b8cdca9"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_a3cc3ef6a0a523ce6b8cdca9",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_a3cc3ef6a0a523ce6b8cdca9",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

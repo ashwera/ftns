@@ -11,33 +11,7 @@
     "conflict": false,
     "reason": "primary source supports the value but not every check",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_installed_total_group_1543b65f_text",
@@ -80,33 +54,7 @@
     "conflict": false,
     "reason": "primary source supports the value but not every check",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_re_installed_group_0b93c941_text",
@@ -150,33 +98,7 @@
     "conflict": false,
     "reason": "primary source supports the value but not every check",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_re_pipeline_group_cc88f4b8_text",
@@ -222,33 +144,7 @@
     "conflict": false,
     "reason": "primary source supports the value but not every check",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_pipeline_total_group_711c57e9_text",
@@ -294,33 +190,7 @@
     "conflict": false,
     "reason": "primary source supports the value but not every check",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_pipeline_jv_sub_8d47a510_text",
@@ -365,33 +235,7 @@
     "conflict": false,
     "reason": "no primary source located the value; only the project's text extraction was reviewed",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_re_pipeline_jv_sub_755a6e95_text",
@@ -443,33 +287,7 @@
     "conflict": false,
     "reason": "primary source supports the value but not every check",
     "independent_confirming_groups": 0,
-    "unavailable_sources": [
-      {
-        "source_id": "ntpc_fy25_results_concall_transcript",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_fy2024_25_annual_report_exchange_filing",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "ntpc_21st_annual_analysts_presentation",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_under_construction_re_projects_mar2025",
-        "status": "not_retrieved",
-        "error": null
-      },
-      {
-        "source_id": "cea_installed_capacity_reports",
-        "status": "not_retrieved",
-        "error": null
-      }
-    ],
+    "unavailable_sources": [],
     "results": [
       {
         "verification_id": "ver_re_target_6a48d913_text",

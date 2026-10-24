@@ -1,0 +1,103 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "Company-specific operational metrics",
+      "Renewable energy generation mix",
+      "Project-level capacity conversion data",
+      "Detailed financial statements aside from aggregate Integrated Report excerpts"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier column exists in the provided CSV.",
+      "The CSV appears to contain generic market price data without metadata linking it to NTPC Limited.",
+      "Company-level insights derived exclusively from verified Integrated Annual Report 2024-25 PDF excerpts."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": null,
+  "ranked_candidates": [
+    {
+      "candidate_id": "hidden_relationships_subsidiaries_jv",
+      "rank": 1,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC manages significant intercompany financial and operational exposures with its subsidiaries and joint ventures (JVs) that warrant monitoring due to the scale of intercompany transactions and loan recoveries.",
+      "financial_importance": "Significant; intercompany transactions (e.g., sale of goods, loans, and services) represent hundreds of crores in recurring business, impacting liquidity and consolidated earnings.",
+      "metrics_and_periods": [
+        "Intercompany transaction volumes (FY 2024-25 vs FY 2023-24)",
+        "Loan recovery status from JVs/subsidiaries",
+        "Dividend income from JVs"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Details of intercompany transactions including sale/purchase of goods, services, and loans with various subsidiaries and joint ventures (e.g., NVVN, Utility Powertech, TNECL, Meja Urja).",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": "2025-03-31",
+          "row_identifier": null,
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Listing of subsidiary/JV exposure and outstanding balances including loans recoverable and trade receivables.",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": "2025-03-31",
+          "row_identifier": null,
+          "evidence_id": "ev_08dc5955d5c3ef29b41a5593",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Consolidated vs. standalone intercompany elimination impact",
+        "Credit risk mitigation details for specific high-exposure JVs"
+      ],
+      "alternative_explanation": "Transactions are routine arm's length business operations within a conglomerate structure.",
+      "falsification_condition": "Evidence showing that intercompany exposures have a negligible impact on balance sheet liquidity or that all transactions are strictly external/non-related-party.",
+      "data_risks_and_limitations": "Data is based on static PDF table extractions and requires continuous monitoring to track evolving intercompany exposures.",
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "High value intercompany transaction volumes impact consolidated financial health."
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "Directly available in the Integrated Annual Report 2024-25 provided evidence."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Easily testable against future annual reporting cycles."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Relationships are disclosed but the concentration of risk within specific JVs is a specific analysis area."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be verified against subsidiary-level annual reports or consolidated financial statements."
+        }
+      },
+      "weighted_score": 79.5,
+      "weighted_score_rationale": "High weight on financial significance and evidence availability makes this the most robust and actionable research angle.",
+      "next_research_action": "Map the intercompany loan and trade receivable trends for the top five JVs to determine if they are scaling in line with group strategy or indicating potential liquidity strain in subsidiaries."
+    }
+  ],
+  "recommended_candidate_id": "hidden_relationships_subsidiaries_jv"
+}

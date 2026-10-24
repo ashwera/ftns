@@ -1,0 +1,93 @@
+{
+  "company_name": "NTPC",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "Company-specific identifier in rows",
+      "Operational performance metrics in rows"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier field in rows.",
+      "Dataset rows represent market trading data, not company operational records."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": null,
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_renewable_transition_001",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC is undergoing a significant transition from fossil-fuel reliance to renewable energy, as evidenced by its commitment to 60 GW capacity by 2032 and the development of specific renewable subsidiaries (NGEL, NREL).",
+      "financial_importance": "The scale of transition (130 GW total target by 2032) and recent fundraising (NGEL IPO, green bonds) indicate high financial impact on long-term valuation and asset mix.",
+      "metrics_and_periods": [
+        "Revenue mix by energy source (FY 2024-25)",
+        "Commissioned renewable capacity (as of 31 March 2025)",
+        "Pipeline capacity in tender/execution"
+      ],
+      "evidence_found": [
+        {
+          "statement": "NTPC has set a target to achieve 60 GW of renewable energy capacity by 2032; as of March 31, 2025, NTPC Group has commissioned 6.8 GW.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical generation data by source to validate the pace of transition",
+        "Year-over-year capital expenditure breakdown for renewable versus thermal projects"
+      ],
+      "alternative_explanation": "Renewable energy expansion may be slower than targets suggest due to project delays or priority shifts towards coal stabilization, as acknowledged in internal reports.",
+      "falsification_condition": "If actual commissioned renewable capacity growth stalls or if fossil-fuel revenue percentage increases significantly beyond stated trends.",
+      "data_risks_and_limitations": [
+        "Heavy reliance on company-provided figures from a single annual report without third-party operational validation."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Directly impacts the core business model and future profitability."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "High quality internal disclosures are present in the provided annual report excerpts."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Specific targets and commissioned capacities are explicitly stated and trackable."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Requires synthesis of various subsidiary-level data and stated corporate strategy."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be cross-checked with exchange disclosures and ministry bidding roadmaps."
+        }
+      },
+      "weighted_score": 425.0,
+      "weighted_score_rationale": "sum((5/5)*0.30*100 + (4/5)*0.25*100 + (4/5)*0.20*100 + (3/5)*0.075*100 + (4/5)*0.175*100) = 30 + 20 + 16 + 4.5 + 14 = 84.5/100",
+      "next_research_action": "Audit NGEL's project delivery timelines against the 2032 target trajectory."
+    }
+  ],
+  "recommended_candidate_id": "cand_renewable_transition_001"
+}

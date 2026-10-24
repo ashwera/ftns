@@ -1,0 +1,117 @@
+{
+  "stage": "r1",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "requested_at": "2026-10-24T19:11:47.269910+00:00",
+  "prompt": "# R1 — Research Investigator (plan specification)\n\nR1 consumes F1's recommended candidate and prepares a structured, executable research plan. Reference supplied evidence by stable `evidence_id` and preserve its source locator/page when citing it. This prompt alone does not retrieve sources or perform live web research. Never invent URLs, excerpts, publication dates, external findings, or research already performed.\n\nTurn the hypothesis into explicit, testable research questions. List exact metrics and periods, what the supplied dataset supports, and what remains missing. Identify public source types and specific documents to seek: company filings, stock-exchange disclosures, annual reports, investor presentations, regulatory documents, and credible news reports, as relevant.\n\nFor each claim, define independent cross-validation sources and the calculation, inputs, units, period alignment, and assumptions required. Include an alternative explanation and a falsification test. Specify what would invalidate or weaken the hypothesis. Include contradictory evidence explicitly when supplied; do not suppress it.\n\nTrack evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.\n\nReturn a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.\n\n\nRequired R1 output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge R1 research plan\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"candidate_id\", \"hypothesis\", \"research_questions\", \"evidence_ledger\", \"checklist\", \"alternative_explanation\", \"falsification_test\", \"retrieval_performed\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"candidate_id\": {\"type\": \"string\", \"minLength\": 1}, \"hypothesis\": {\"type\": \"string\", \"minLength\": 1}, \"retrieval_performed\": {\"type\": \"boolean\", \"const\": false}, \"research_questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"question\", \"metrics\", \"periods\", \"supported_by_dataset\", \"missing\"], \"properties\": {\"question\": {\"type\": \"string\", \"minLength\": 1}, \"metrics\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"supported_by_dataset\": {\"type\": \"boolean\"}, \"missing\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"evidence_ledger\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"evidence_id\", \"source_type\", \"source_url\", \"publication_date\", \"excerpt_or_data_point\", \"claim_supported\", \"kind\", \"status\"], \"properties\": {\"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"]}, \"publication_date\": {\"type\": [\"string\", \"null\"]}, \"excerpt_or_data_point\": {\"type\": [\"string\", \"null\"]}, \"claim_supported\": {\"type\": \"string\"}, \"kind\": {\"type\": \"string\", \"enum\": [\"reported_fact\", \"calculation\", \"inference\", \"unverified_hypothesis\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"planned_lookup\", \"supplied\", \"contradictory\"]}}}}, \"checklist\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"step\", \"expected_evidence\", \"cross_validation_sources\", \"completion_criteria\"], \"properties\": {\"step\": {\"type\": \"string\", \"minLength\": 1}, \"expected_evidence\": {\"type\": \"string\"}, \"cross_validation_sources\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"calculation\": {\"type\": [\"string\", \"null\"]}, \"completion_criteria\": {\"type\": \"string\"}}}}, \"alternative_explanation\": {\"type\": \"string\", \"minLength\": 1}, \"falsification_test\": {\"type\": \"string\", \"minLength\": 1}}}\n\nYour previous response failed validation. Return a complete JSON object against the supplied schema. Correct only these errors; do not invent evidence, change the research conclusion merely to pass validation, or claim retrieval occurred. Validation errors: R1 output failed validation: $: unexpected property '$schema'\nPrevious JSON to repair in place (preserve candidates, hypotheses, recommendation and criterion scores; fix only schema errors):\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"company_name\": \"NTPC Limited\", \"candidate_id\": \"hidden_relationships_subsidiaries_jv\", \"hypothesis\": \"NTPC manages significant intercompany financial and operational exposures with its subsidiaries and joint ventures (JVs) that warrant monitoring due to the scale of intercompany transactions and loan recoveries.\", \"retrieval_performed\": false, \"research_questions\": [{\"question\": \"To what extent are intercompany trade receivables and loans for top-five JVs increasing relative to the parent company's consolidated revenue?\", \"metrics\": [\"Ratio of Intercompany Receivables to Consolidated Revenue\", \"Year-over-Year (YoY) growth in loan balances for key JVs\"], \"periods\": [\"FY 2023-24\", \"FY 2024-25\"], \"supported_by_dataset\": true, \"missing\": [\"Historical (pre-2023) intercompany exposure data for trend benchmarking\"]}, {\"question\": \"Do recurring intercompany transactions indicate potential liquidity constraints within specific subsidiary operations?\", \"metrics\": [\"Aging of trade receivables (current vs. overdue)\", \"Interest income vs. principal recovery rates on intercompany loans\"], \"periods\": [\"FY 2024-25\"], \"supported_by_dataset\": false, \"missing\": [\"Detailed aging schedules\", \"Specific loan repayment terms and maturity profiles for JVs\"]}], \"evidence_ledger\": [{\"evidence_id\": \"ev_77c5f772c341d65bc010f576\", \"source_type\": \"PDF\", \"source_url\": null, \"publication_date\": \"2025-03-31\", \"excerpt_or_data_point\": \"Details of intercompany transactions including sale/purchase of goods, services, and loans with various subsidiaries and joint ventures.\", \"claim_supported\": \"Existence of high-volume recurring intercompany financial and operational activities.\", \"kind\": \"reported_fact\", \"status\": \"supplied\"}, {\"evidence_id\": \"ev_08dc5955d5c3ef29b41a5593\", \"source_type\": \"PDF\", \"source_url\": null, \"publication_date\": \"2025-03-31\", \"excerpt_or_data_point\": \"Listing of subsidiary/JV exposure and outstanding balances including loans recoverable and trade receivables.\", \"claim_supported\": \"Scale of intercompany debt and credit risk exposures.\", \"kind\": \"reported_fact\", \"status\": \"supplied\"}], \"checklist\": [{\"step\": \"Identify top 5 JVs by transaction volume and loan exposure.\", \"expected_evidence\": \"Table of counterparties categorized by outstanding exposure amount.\", \"cross_validation_sources\": [\"NTPC Integrated Annual Report 2024-25 (Related Party Transactions note)\", \"Subsidiary-level Standalone Financial Statements\"], \"completion_criteria\": \"Extraction of top 5 entities completed for comparative analysis.\"}, {\"step\": \"Calculate YoY changes in intercompany balances.\", \"expected_evidence\": \"Growth percentage of receivables and loans for identified JVs.\", \"cross_validation_sources\": [\"NTPC Integrated Annual Report 2023-24\", \"NTPC Integrated Annual Report 2024-25\"], \"calculation\": \"(Balance FY25 - Balance FY24) / Balance FY24\", \"completion_criteria\": \"Identification of JVs exhibiting anomalous growth in exposure.\"}], \"alternative_explanation\": \"Transactions are routine arm's length business operations within a conglomerate structure, reflecting standard intra-group financing and service level agreements (SLAs) rather than structural liquidity stress.\", \"falsification_test\": \"If intercompany exposure, as a percentage of total assets, remains stable or decreases while cash flow from operations remains positive for the subsidiaries, the hypothesis of potential systemic liquidity strain is weakened or invalidated.\"}",
+  "payload": {
+    "company_name": "NTPC Limited",
+    "candidate": {
+      "candidate_id": "hidden_relationships_subsidiaries_jv",
+      "rank": 1,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC manages significant intercompany financial and operational exposures with its subsidiaries and joint ventures (JVs) that warrant monitoring due to the scale of intercompany transactions and loan recoveries.",
+      "financial_importance": "Significant; intercompany transactions (e.g., sale of goods, loans, and services) represent hundreds of crores in recurring business, impacting liquidity and consolidated earnings.",
+      "metrics_and_periods": [
+        "Intercompany transaction volumes (FY 2024-25 vs FY 2023-24)",
+        "Loan recovery status from JVs/subsidiaries",
+        "Dividend income from JVs"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Details of intercompany transactions including sale/purchase of goods, services, and loans with various subsidiaries and joint ventures (e.g., NVVN, Utility Powertech, TNECL, Meja Urja).",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": "2025-03-31",
+          "row_identifier": null,
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Listing of subsidiary/JV exposure and outstanding balances including loans recoverable and trade receivables.",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": "2025-03-31",
+          "row_identifier": null,
+          "evidence_id": "ev_08dc5955d5c3ef29b41a5593",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Consolidated vs. standalone intercompany elimination impact",
+        "Credit risk mitigation details for specific high-exposure JVs"
+      ],
+      "alternative_explanation": "Transactions are routine arm's length business operations within a conglomerate structure.",
+      "falsification_condition": "Evidence showing that intercompany exposures have a negligible impact on balance sheet liquidity or that all transactions are strictly external/non-related-party.",
+      "data_risks_and_limitations": [
+        "Data is based on static PDF table extractions and requires continuous monitoring to track evolving intercompany exposures."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "High value intercompany transaction volumes impact consolidated financial health."
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "Directly available in the Integrated Annual Report 2024-25 provided evidence."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Easily testable against future annual reporting cycles."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Relationships are disclosed but the concentration of risk within specific JVs is a specific analysis area."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be verified against subsidiary-level annual reports or consolidated financial statements."
+        }
+      },
+      "weighted_score": 83.5,
+      "weighted_score_rationale": "High weight on financial significance and evidence availability makes this the most robust and actionable research angle.",
+      "next_research_action": "Map the intercompany loan and trade receivable trends for the top five JVs to determine if they are scaling in line with group strategy or indicating potential liquidity strain in subsidiaries."
+    },
+    "dataset_summary": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "date_coverage": null,
+      "missing_information": [
+        "Company-specific operational metrics",
+        "Renewable energy generation mix",
+        "Project-level capacity conversion data",
+        "Detailed financial statements aside from aggregate Integrated Report excerpts"
+      ],
+      "data_limitations": [
+        "No recognized company or ticker identifier column exists in the provided CSV.",
+        "The CSV appears to contain generic market price data without metadata linking it to NTPC Limited.",
+        "Company-level insights derived exclusively from verified Integrated Annual Report 2024-25 PDF excerpts."
+      ]
+    },
+    "supplied_evidence_ids": [
+      "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "ev_b489528262378cdf8e9d9601",
+      "ev_77c5f772c341d65bc010f576",
+      "ev_08dc5955d5c3ef29b41a5593",
+      "ev_27588cf43298e9264d4d1efa",
+      "ev_5be4db19957ea5f7fd2b0c02",
+      "ev_d3d9906726630bba52e0d915",
+      "ev_13598c8ff149784e31964e13"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{"at": "2026-10-24T19:21:39.069105+00:00", "stage": "discovery", "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."}
+{"at": "2026-10-24T19:21:39.081069+00:00", "stage": "discovery", "message": "Searching with bing_rss; source candidates are unverified."}
+{"at": "2026-10-24T19:22:24.748074+00:00", "stage": "retrieval", "message": "Bounded discovery and retrieval finished."}
+{"at": "2026-10-24T19:22:24.749334+00:00", "stage": "machine_evidence", "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."}
+{"at": "2026-10-24T19:22:24.753222+00:00", "stage": "machine_evidence", "message": "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled."}
+{"at": "2026-10-24T19:22:48.406545+00:00", "stage": "f1", "message": "Running F1 on policy-eligible evidence."}
+{"at": "2026-10-24T19:23:07.596509+00:00", "stage": "f1", "message": "F1 returned no reliable recommendation. R1 not run."}

@@ -1,0 +1,16 @@
+{
+  "intake_mode": "cached_original_rechecked",
+  "company": "NTPC Limited",
+  "attempts": [
+    {
+      "source_id": "ntpc_ar_fy2024_25",
+      "catalog": "/Users/arshiadang/Desktop/fns/signalforge/data/pipeline_inputs/demo_20261024_catalog.json",
+      "url": "https://ntpc.co.in/sites/default/files/annual-report/complete-reports/Annual%20Report%202024-25_1.pdf",
+      "source_sha256": "28f32ae3803bc5aec87b49176df1e056d0cc9cf2c2a8d78f9144bc72c1b7cbbd",
+      "intake_mode": "cached_original_rechecked",
+      "status": "eligible",
+      "record_count": 8
+    }
+  ],
+  "eligible_record_count": 8
+}

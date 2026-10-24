@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:20:06.257353+00:00",
+  "requested_count": 1,
+  "retrieved_count": 1,
+  "failed_count": 0,
+  "sources": [
+    {
+      "requested_url": "https://www.powergrid.in/sites/default/files/financials_presentations/BSENSEReg30IAMPresentation.PDF",
+      "retrieval_status": "retrieved",
+      "retrieved_at": "2026-10-24T19:20:05.926994+00:00",
+      "warnings": [
+        "Publication date not established from recognized page metadata; retrieval time is not substituted."
+      ],
+      "robots_checks": [
+        {
+          "url": "https://www.powergrid.in/sites/default/files/financials_presentations/BSENSEReg30IAMPresentation.PDF",
+          "status": "robots.txt retrieved"
+        }
+      ],
+      "http_status": 200,
+      "canonical_url": "https://www.powergrid.in/sites/default/files/financials_presentations/BSENSEReg30IAMPresentation.PDF",
+      "redirect_chain": [],
+      "source_sha256": "aea32a92357cfa551e6bb5301be77893c303198bff7594b127ba9af060f08111",
+      "content_type": "application/pdf",
+      "saved_path": "signalforge/data/powergrid_research_20261025/issuer_fy25/sources/aea32a92357c_62bf22f2.pdf",
+      "document_title": null,
+      "publication_date": null,
+      "source_relationship": "original_disclosure",
+      "company_association_status": "not_requested"
+    }
+  ],
+  "normalized_evidence_record_count": 47,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 47
+}

@@ -49,6 +49,8 @@ class CatalogAuditTests(unittest.TestCase):  # all SYNTHETIC
         with tempfile.TemporaryDirectory() as d:
             t = setup(d, {"ar": snapshot(OK)}, [entry("ar", "Meridian")]); f, problems = run(t)
             self.assertEqual([], problems); self.assertEqual(("supported_finding", "Moderate"), (f["finding_status"], f["evidence_strength"]))
+            self.assertFalse(any("none was checked against the original PDF" in x for x in f["limitations"]))
+            self.assertTrue(any("effective primary-source verification" in x for x in f["limitations"]))
             keys = [a for a in f["audit_trail"] if a["key"]]; self.assertTrue(all(a["effective_outcome"] == "confirmed" and a["effective_level"] == "primary_source" and a["independent_confirming_groups"] == 1 for a in keys))
             self.assertTrue(any("independent source group" in r for r in f["downgrade_reasons"])); self.assertTrue(all(i["claim_verification_status"] == "unverified" for i in map(lambda c: c, [json.loads(l) for l in (t / "claims.jsonl").read_text().splitlines()])))
     def test_independent_regulator_source_makes_it_strong_but_issuer_copies_do_not(self):

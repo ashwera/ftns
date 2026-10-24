@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-24T19:18:23.633248+00:00",
+  "requested_count": 1,
+  "retrieved_count": 0,
+  "failed_count": 1,
+  "sources": [
+    {
+      "requested_url": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_INDAS_92091_20052025145547_iXBRL_WEB.html",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T19:17:58.362825+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_INDAS_92091_20052025145547_iXBRL_WEB.html",
+          "status": "robots.txt unavailable (TimeoutError); fail closed"
+        }
+      ],
+      "error": "RetrievalError: robots.txt disallows retrieval or could not be verified."
+    }
+  ],
+  "normalized_evidence_record_count": 0,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 0
+}

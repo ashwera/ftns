@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "company_name": "NTPC Limited",
+  "candidate_id": "cand_hidden_relationships_001",
+  "hypothesis": "NTPC Limited's financial interdependencies with subsidiaries and JVs involve significant transaction volumes that may indicate cross-subsidization or operational reliance beyond standard consolidated accounting.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "Do intra-group transaction volumes demonstrate a trend of cross-subsidization where the parent provides funding or operational support to underperforming subsidiaries beyond market terms?",
+      "metrics": [
+        "Aggregate inter-company receivables",
+        "Debt-to-equity ratios of specific subsidiaries",
+        "Interest rates on inter-company loans vs market lending rates"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Terms and conditions of inter-company loans",
+        "Economic rationale for non-market rate transactions",
+        "Standalone financial performance of smaller JVs"
+      ]
+    },
+    {
+      "question": "Is there a concentration of financial risk in specific JVs like Jhabua Power that impacts NTPC's consolidated liquidity?",
+      "metrics": [
+        "Outstanding recoverable loan balances per entity",
+        "Liquidity ratios of NTPC parent",
+        "Ratio of inter-company exposure to total assets"
+      ],
+      "periods": [
+        "FY 2023-24",
+        "FY 2024-25"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Cash flow impact analysis of inter-company settlements",
+        "Project-specific capacity vs performance data"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_77c5f772c341d65bc010f576",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Detailed table of significant transactions with JVs/Subsidiaries listing values for FY 2024-25 and FY 2023-24.",
+      "claim_supported": "Existence of large-scale financial interdependencies between NTPC and its subsidiaries/JVs.",
+      "kind": "reported_fact",
+      "status": "supplied"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Extract and tabulate transaction data from the 'Related Party Transactions' section of the Annual Report.",
+      "expected_evidence": "Structured dataset of transaction types (sales, purchases, loans) per subsidiary for FY 24 and FY 25.",
+      "cross_validation_sources": [
+        "NTPC Standalone Financial Statements",
+        "Subsidiary Standalone Annual Reports"
+      ],
+      "completion_criteria": "A complete mapping of inflows and outflows between parent and key entities."
+    },
+    {
+      "step": "Compare internal loan interest rates against benchmark market rates for similar tenor.",
+      "expected_evidence": "Interest rate disclosure in notes to financial statements.",
+      "cross_validation_sources": [
+        "Corporate Bond Yield data",
+        "NTPC Audit Committee Minutes"
+      ],
+      "calculation": "Spread = (Internal Interest Rate - Market Benchmark Rate)",
+      "completion_criteria": "Determination of whether loans are provided at arm's length or subsidized rates."
+    }
+  ],
+  "alternative_explanation": "Transactions represent standard business operations and efficient resource management within a vertically integrated power conglomerate.",
+  "falsification_test": "Independent audit confirmation showing that all intra-group transactions are conducted strictly at prevailing market rates with no material impact on the parent's independent credit risk profile."
+}

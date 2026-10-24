@@ -1,0 +1,48 @@
+{
+  "run_id": "production_final",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "started_at": "2026-10-24T18:12:33.583961+00:00",
+  "stages": {
+    "machine_evidence": {
+      "status": "prepared",
+      "count": 16
+    },
+    "f1": {
+      "status": "validated",
+      "execution": "real",
+      "ranking_reliable": true,
+      "recommended_candidate_id": "cand_renewable_transition_01"
+    },
+    "r1": {
+      "status": "validated",
+      "execution": "real",
+      "retrieval_performed": false
+    }
+  },
+  "runner": "signalforge.live_research",
+  "max_generation_attempts_per_stage": 2,
+  "limitations": [
+    "Machine passage matching is not human review or claim verification.",
+    "R1 is a plan, not executed research; source independence is assessed separately."
+  ],
+  "evidence_ids": [
+    "ev_cc45cae4383a4d6afdc8f340",
+    "ev_fed1ce3d68b30da9c8ece744",
+    "ev_eb61ba2e3f173f23fad9bfd8",
+    "ev_d284dd5e0503ac55d73f2441",
+    "ev_b1e5e9dbc93dfdf0fdfad35e",
+    "ev_c5bb4d5e45e3af40a4db4717",
+    "ev_b489528262378cdf8e9d9601",
+    "ev_77c5f772c341d65bc010f576",
+    "ev_08dc5955d5c3ef29b41a5593",
+    "ev_27588cf43298e9264d4d1efa",
+    "ev_0517e238fde73f76da5c576a",
+    "ev_5be4db19957ea5f7fd2b0c02",
+    "ev_44bdd98d360aa06e7a543c2c",
+    "ev_d3d9906726630bba52e0d915",
+    "ev_13598c8ff149784e31964e13",
+    "ev_270842a41f4b2dbca2744278"
+  ],
+  "finished_at": "2026-10-24T18:13:00.979220+00:00"
+}

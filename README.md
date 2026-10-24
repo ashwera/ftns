@@ -7,9 +7,10 @@ SignalForge is an initial research workflow foundation for the Energy, Power & R
 - F1 loader, metadata inspection, optional model client, prompt, JSON Schema validation and CLI are implemented.
 - The available CSV has no company/ticker column and is not joined to NTPC based on its filename. NTPC Limited's canonical identity, NSE symbol, ISIN, and BSE scrip code are verified from an NSE-hosted filing; that does not identify the CSV rows.
 - Bounded public URL retrieval and local document parsing are implemented. Retrieval is caller-directed, respects robots policy and rate limits, and does not discover sources or perform broad web research.
-- Company-specific F1 can use registry-verified ingested disclosures or rows with a verified identifier. The current quote CSV alone is insufficient, and no F1 result has been generated. Do not point F1 at `processed_step6` until a review gate excludes unreviewed page fragments; those records are not approved evidence.
+- Company-specific F1 can use registry-verified eligible disclosures or rows with a verified identifier. The current quote CSV alone is insufficient. Original `processed_step6` fragments remain pending and ineligible; separate machine-checked evidence was used for the saved live model run described below.
 - R1 is a research-plan runner only. It does not perform external research.
-- No genuine F1 model result is included. Output JSON files and credentials are ignored by Git.
+- Genuine F1 and R1 model outputs are saved under `signalforge/data/runs/run_20261024_live_research/`, with raw responses, rejected attempts, deterministic scoring corrections and explicit execution provenance. This is an analyst-directed PDF investigation, not proof of end-to-end autonomous discovery. Credentials remain ignored by Git.
+- A frontend-ready, real-data NTPC pipeline run is included as a clearly labeled `provisional_hypothesis` / `Weak` discovery. It is suitable for demonstrating the evidence trail and reasoning flow, but it must not be presented as a verified conclusion.
 
 ## Structure
 
@@ -186,9 +187,50 @@ PYTHONPATH=signalforge/src python -m signalforge.r1_research_investigator --f1 s
 
 Live claim research still requires choosing and retrieving relevant primary disclosures, reviewing extracted evidence and table structure, then independently corroborating claims. The current quote dataset cannot support operating or company-specific claims by itself.
 
+## Reproducible pipeline demo
+
+### Live local research application (24 October update)
+
+Start the backend in one terminal from the repository root:
+
+```bash
+PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.research_service
+```
+
+Start the frontend in another with `cd signalforge/web && npm run dev`. **Start research** submits the company and question to the localhost service, executes bounded public search/retrieval, saves status and action logs in `signalforge/data/research_runs/`, and polls real progress. The saved NTPC case below it is explicitly a separate prior run. Public search needs no key; model stages require a configured key and eligible evidence. The service reads literal allowlisted assignments from the ignored `signalforge/.env`; it never evaluates shell expressions. Both servers are local demonstration services.
+
+`source_discovery.py` supplies Gemini grounded search with a public Bing RSS fallback, relevance filtering, budgets and failure records. Returned URLs are candidates, not verified sources. The real Power Grid exercise returned no eligible verified evidence and therefore no finding. Sector/NIFTY constituency verification and broad unseen-company coverage are not complete.
+
+The separate `automatically_cross_checked` evidence policy verifies original PDF hash, canonical issuer declaration, exact page passage and substantive text. It does not create human approvals, verify numerical interpretations or establish independent corroboration. Existing human-approved evidence is still supported. Pending records remain ineligible. To reproduce live F1/R1 on a recovered original PDF:
+
+```bash
+PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.live_research \
+  --original-pdf /absolute/path/to/original.pdf --company NTPC \
+  --expected-sha256 <recorded-source-hash> \
+  --run-dir signalforge/data/runs/<fresh-run-name>
+```
+
+The interface includes the chosen prompt, implications, considered/rejected hypotheses, action log, chronology, cited opposing evidence, falsification, two-decimal formula drilldowns and JSON/Markdown downloads. `research_dossier.json` must match the displayed run and finding. The NTPC COD investigation rejects a stronger surprise/underdelivery claim: milestone definitions differ and OERC's independent forecast already excluded the unit. It has not produced a novel, independently supported contest-winning discovery.
+
+The repository includes a completed NTPC vertical slice under `signalforge/data/runs/` and a synchronized copy for the dashboard under `signalforge/web/public/data/finding/`. It demonstrates one end-to-end discovery with source-linked inputs, deterministic calculations, verification outcomes, downgrade reasons, and pipeline provenance. It is a provisional hypothesis, not a verified finding: the underlying claims remain unverified, F1 is blocked without credentials and approved evidence, and R1 is not executed.
+
+To reproduce the pipeline stages from the repository root (use a new, non-existing run directory):
+
+```bash
+PYTHONPATH=signalforge/src python3 -m signalforge.archive_evaluation --run-dir signalforge/data/runs/<new_run_id>
+PYTHONPATH=signalforge/src python3 -m signalforge.pipeline \
+  --company "NTPC Limited" \
+  --claims signalforge/data/runs/<archive_run_id>/table_aware/claims.jsonl \
+  --inputs signalforge/data/pipeline_inputs/ntpc_renewable_pipeline_reviewed_inputs.json \
+  --run-dir signalforge/data/runs/<new_run_id> \
+  [--simulate-llm]
+```
+
+The source-catalog path is optional and operator-controlled. Adding `--catalog <catalog.json>` uses only catalog entries that satisfy the verification policy; adding `--allow-network` is required before any URL retrieval. Do not treat catalog availability as independent corroboration. The frontend demo is read-only and does not run the pipeline or access credentials.
+
 ## SignalForge research dashboard
 
-The frontend is a separate React + TypeScript application in `signalforge/web/`, built with Vite. Its read-only Vite development middleware serves a fixed allowlist of local audit, readiness, ingestion, evidence, F1, and R1 outputs; it does not execute shell commands or expose credentials. Evidence is read from `signalforge/data/processed_step6/evidence.jsonl` when present. The dashboard labels unavailable outputs, shows extraction warnings, and refuses to present a discovery while the current research remains blocked. No demo finding is mixed with real evidence.
+The frontend is a separate React + TypeScript application in `signalforge/web/`, built with Vite. Its read-only Vite development middleware serves a fixed allowlist of local audit, readiness, ingestion, evidence, F1, and R1 outputs; it does not execute shell commands or expose credentials. Evidence is read from `signalforge/data/processed_step6/evidence.jsonl` when present. The dashboard shows the included provisional NTPC discovery separately from the blocked live F1/R1 workspace, labels its evidence strength and verification state, exposes source citations and calculation traces, and keeps unavailable outputs visible. It never upgrades provisional or synthetic data into a verified finding.
 
 Start the dashboard from the repository root:
 

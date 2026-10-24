@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T18:11:34.228506+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/070814fdaa97_092ac293.html",
+      "source_sha256": "070814fdaa97b2774e3614a9752b1e73187e512646397eaea329a875154d8c63",
+      "file_format": "html",
+      "source_url": "https://app.powerbi.com/home",
+      "retrieved_at": "2026-10-24T18:11:34.227013+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_6168107268fbc73c2f85ca37"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_6168107268fbc73c2f85ca37",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_6168107268fbc73c2f85ca37",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

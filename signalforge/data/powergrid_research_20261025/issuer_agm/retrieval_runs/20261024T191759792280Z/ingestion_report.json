@@ -1,0 +1,279 @@
+{
+  "generated_at": "2026-10-24T19:18:00.336370+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/f641ced15020_9ca7bc8b.pdf",
+      "source_sha256": "f641ced15020cae8020c966054bf62f00f01d56cd1bca9d92eadce7bd1d19058",
+      "file_format": "pdf",
+      "source_url": "https://www.powergrid.in/sites/default/files/agm_egm_files/TranscriptofAGM_Final.pdf",
+      "retrieved_at": "2026-10-24T19:17:59.792149+00:00",
+      "source_details": {
+        "page_count": 28
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 28,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_5328a0b5c5c995067be34faa",
+    "ev_6691cb19943b2158b3a7db6a",
+    "ev_973c57892f9b02273646b4a7",
+    "ev_c9879c948e056935f150c1eb",
+    "ev_a78990818366df154de49055",
+    "ev_7598a40a6e42671dd65f1b83",
+    "ev_c6fbf8aa413c66b8d4c5d441",
+    "ev_a56e34893c422dc33f93ac71",
+    "ev_f8946b621fe15df5a7a0fd68",
+    "ev_d84a599df9fa89a302ef184e",
+    "ev_d9e6a5dabbefe12a85141cea",
+    "ev_74f57ca1e32f8e210667e6a3",
+    "ev_1e0985f335d7da60ea59515d",
+    "ev_191b7641050797373aed6e84",
+    "ev_33c6944ff905215c7d497a7c",
+    "ev_a29caa553c9b4f4532896594",
+    "ev_64ce559effa8cf92b99c7bfe",
+    "ev_9c7654f74bdd81d360c66fb5",
+    "ev_a782364c52e178a503941a2c",
+    "ev_f67f91803c0d6087f2ee7795",
+    "ev_82e58497c5e637252491cd42",
+    "ev_4ef838f3ca16ba3551d8761a",
+    "ev_fe28e75d960f99d7dd9382a6",
+    "ev_819d4b4b33f028374bced553",
+    "ev_0d07c99ee2d0ead6d7faaf30",
+    "ev_4d65395bc7fbf7d66b2bfbf7",
+    "ev_748055613268c30bc3addc3d",
+    "ev_2a85c3683e923fc7c530f9cd"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_5328a0b5c5c995067be34faa",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_5328a0b5c5c995067be34faa",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_6691cb19943b2158b3a7db6a",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_6691cb19943b2158b3a7db6a",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_973c57892f9b02273646b4a7",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_973c57892f9b02273646b4a7",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_c9879c948e056935f150c1eb",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_c9879c948e056935f150c1eb",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_a78990818366df154de49055",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_a78990818366df154de49055",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_7598a40a6e42671dd65f1b83",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_7598a40a6e42671dd65f1b83",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_c6fbf8aa413c66b8d4c5d441",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_c6fbf8aa413c66b8d4c5d441",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_a56e34893c422dc33f93ac71",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_a56e34893c422dc33f93ac71",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_f8946b621fe15df5a7a0fd68",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_f8946b621fe15df5a7a0fd68",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_d84a599df9fa89a302ef184e",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_d84a599df9fa89a302ef184e",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_d9e6a5dabbefe12a85141cea",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_d9e6a5dabbefe12a85141cea",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_74f57ca1e32f8e210667e6a3",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_74f57ca1e32f8e210667e6a3",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_1e0985f335d7da60ea59515d",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_1e0985f335d7da60ea59515d",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_191b7641050797373aed6e84",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_191b7641050797373aed6e84",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_33c6944ff905215c7d497a7c",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_33c6944ff905215c7d497a7c",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_a29caa553c9b4f4532896594",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_a29caa553c9b4f4532896594",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_64ce559effa8cf92b99c7bfe",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_64ce559effa8cf92b99c7bfe",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_9c7654f74bdd81d360c66fb5",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_9c7654f74bdd81d360c66fb5",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_a782364c52e178a503941a2c",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_a782364c52e178a503941a2c",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_f67f91803c0d6087f2ee7795",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_f67f91803c0d6087f2ee7795",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_82e58497c5e637252491cd42",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_82e58497c5e637252491cd42",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_4ef838f3ca16ba3551d8761a",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_4ef838f3ca16ba3551d8761a",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_fe28e75d960f99d7dd9382a6",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_fe28e75d960f99d7dd9382a6",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_819d4b4b33f028374bced553",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_819d4b4b33f028374bced553",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_0d07c99ee2d0ead6d7faaf30",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_0d07c99ee2d0ead6d7faaf30",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_4d65395bc7fbf7d66b2bfbf7",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_4d65395bc7fbf7d66b2bfbf7",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_748055613268c30bc3addc3d",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_748055613268c30bc3addc3d",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    },
+    {
+      "evidence_id": "ev_2a85c3683e923fc7c530f9cd",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_2a85c3683e923fc7c530f9cd",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

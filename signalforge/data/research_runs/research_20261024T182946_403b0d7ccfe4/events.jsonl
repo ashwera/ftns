@@ -1,0 +1,8 @@
+{"at": "2026-10-24T18:29:46.402615+00:00", "stage": "discovery", "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."}
+{"at": "2026-10-24T18:29:46.413727+00:00", "stage": "discovery", "message": "Searching with bing_rss; source candidates are unverified."}
+{"at": "2026-10-24T18:29:50.206348+00:00", "stage": "retrieval", "message": "Bounded discovery and retrieval finished."}
+{"at": "2026-10-24T18:29:50.207172+00:00", "stage": "machine_evidence", "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."}
+{"at": "2026-10-24T18:29:50.209759+00:00", "stage": "machine_evidence", "message": "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled."}
+{"at": "2026-10-24T18:30:15.496909+00:00", "stage": "f1", "message": "Running F1 on policy-eligible evidence."}
+{"at": "2026-10-24T18:30:22.922608+00:00", "stage": "r1", "message": "Preparing R1 research plan; a plan is not a verified finding."}
+{"at": "2026-10-24T18:31:02.533239+00:00", "stage": "complete", "message": "Discovery, retrieval, F1 and R1 finished. Claims remain unverified."}

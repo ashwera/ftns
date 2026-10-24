@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T19:12:35.684885+00:00",
+  "source_documents": [
+    {
+      "source_path": "sources/ada8500b4669_45af1d2d.html",
+      "source_sha256": "ada8500b46696e28d7f86efe834887f288786befb71aaed417a6d787a65dba76",
+      "file_format": "html",
+      "source_url": "https://www.eprocurentpc.nic.in/nicgep/app",
+      "retrieved_at": "2026-10-24T19:12:35.679682+00:00",
+      "source_details": {
+        "html_metadata": {}
+      }
+    }
+  ],
+  "document_count": 1,
+  "evidence_record_count": 1,
+  "duplicate_documents": [],
+  "repeated_facts": [],
+  "conflicts": [],
+  "unit_currency_inconsistencies": [],
+  "amended_or_revised_document_records": [],
+  "claim_cross_validation": [],
+  "manual_review_evidence_ids": [
+    "ev_602c9014ffc806539d2ea27d"
+  ],
+  "data_quality_warnings": [
+    {
+      "evidence_id": "ev_602c9014ffc806539d2ea27d",
+      "warning": "Publication date missing or not extractable."
+    },
+    {
+      "evidence_id": "ev_602c9014ffc806539d2ea27d",
+      "warning": "Company identity unresolved; exclude from company-specific joins."
+    }
+  ]
+}

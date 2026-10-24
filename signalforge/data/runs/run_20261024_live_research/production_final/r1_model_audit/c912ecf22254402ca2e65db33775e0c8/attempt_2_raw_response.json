@@ -1,0 +1,93 @@
+{
+  "company_name": "NTPC",
+  "candidate_id": "cand_renewable_transition_01",
+  "hypothesis": "NTPC is effectively leveraging subsidiary structures (NGEL, NREL) to pivot toward non-fossil sources while maintaining coal as a stability mechanism.",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the historical growth rate of renewable energy (RE) capacity commissioned by NGEL and NREL vs. the parent company coal additions?",
+      "metrics": [
+        "MW commissioned per year",
+        "CAGR of RE capacity",
+        "Coal capacity additions vs retirements"
+      ],
+      "periods": [
+        "2020-2025"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Historical capacity data for 2020-2023",
+        "Subsidiary-specific operational reports"
+      ]
+    },
+    {
+      "question": "Does the revenue growth of the non-fossil segment outperform the traditional coal segment on a constant-currency basis?",
+      "metrics": [
+        "Revenue by segment (INR Crore)",
+        "EBITDA margin by segment"
+      ],
+      "periods": [
+        "FY 2022-2025"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Segmental revenue breakdowns for FY 2022-2023"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_cc45cae4383a4d6afdc8f340",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": "2026-10-24",
+      "excerpt_or_data_point": "In FY 2024-25, our revenue from non-fossil energy sources reached 17,359.67 crore (9.33% of total revenue)",
+      "claim_supported": "NTPC reports current non-fossil energy contribution",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": "2026-10-24",
+      "excerpt_or_data_point": "As of March 31, 2025, the NTPC Group has commissioned 6.8 GW of renewable energy capacity",
+      "claim_supported": "NTPC current RE capacity",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "annual_report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Historical capacity trends for NGEL/NREL",
+      "kind": "reported_fact",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Analyze NTPC Group Annual Reports for 2020-2024",
+      "expected_evidence": "Historical year-on-year RE commissioning data and coal-based generation revenue",
+      "cross_validation_sources": [
+        "NTPC Investor Presentations",
+        "Ministry of Power - Central Electricity Authority (CEA) reports"
+      ],
+      "calculation": "CAGR = ((Final_Capacity / Initial_Capacity)^(1/n)) - 1",
+      "completion_criteria": "Successful extraction of a 5-year trend line for both RE and Coal capacities."
+    },
+    {
+      "step": "Verify RE subsidiary commission dates",
+      "expected_evidence": "Project-level commissioning certificates or press releases",
+      "cross_validation_sources": [
+        "CERC (Central Electricity Regulatory Commission) Tariff Orders",
+        "MNRE (Ministry of New and Renewable Energy) public database"
+      ],
+      "completion_criteria": "Correlation of reported 6.8 GW figure with independent project registries."
+    }
+  ],
+  "alternative_explanation": "Expansion is driven by state-mandated targets and capital subsidies rather than a fundamental business model pivot.",
+  "falsification_test": "If generation volume from renewable sources remains flat or declines over three consecutive fiscal years despite the 14.5 GW under-execution backlog, the hypothesis of an effective pivot is invalidated."
+}

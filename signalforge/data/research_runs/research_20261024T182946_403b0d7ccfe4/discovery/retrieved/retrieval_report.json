@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-24T18:29:50.203301+00:00",
+  "requested_count": 1,
+  "retrieved_count": 0,
+  "failed_count": 1,
+  "sources": [
+    {
+      "requested_url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+      "retrieval_status": "failed",
+      "retrieved_at": "2026-10-24T18:29:50.016422+00:00",
+      "warnings": [],
+      "robots_checks": [
+        {
+          "url": "https://www.moneycontrol.com/india/stockpricequote/power-generationdistribution/ntpc/NTP",
+          "status": "robots.txt returned HTTP 403; treated as unavailable under REP"
+        }
+      ],
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ],
+  "normalized_evidence_record_count": 0,
+  "duplicate_documents": [],
+  "conflicts": [],
+  "manual_review_count": 0
+}

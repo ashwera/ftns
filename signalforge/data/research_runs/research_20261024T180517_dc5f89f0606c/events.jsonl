@@ -1,0 +1,4 @@
+{"at": "2026-10-24T18:05:17.840624+00:00", "stage": "discovery", "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."}
+{"at": "2026-10-24T18:05:21.811338+00:00", "stage": "retrieval", "message": "Bounded discovery and retrieval finished."}
+{"at": "2026-10-24T18:05:21.811749+00:00", "stage": "machine_evidence", "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."}
+{"at": "2026-10-24T18:05:21.814675+00:00", "stage": "machine_evidence", "message": "No retrieved PDF passed the machine evidence policy. F1/R1 blocked; no finding generated."}

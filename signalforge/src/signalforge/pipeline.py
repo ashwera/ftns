@@ -158,7 +158,7 @@ def build_finding(run_id, company, identity, calcs, derived, I, verifications, v
         alternative_explanations=["Group (consolidated) reporting already includes these entities, so the split may be organisational rather than economic.", "Under-implementation capacity may slip or be re-scoped; the pipeline is not commissioned capacity.", "The parent may hold economic interests in the subsidiaries that offset the apparent concentration."],
         falsification_conditions=["The component table in the primary filing does not match the extracted text, so the parent and JV/subsidiary shares differ from those computed here.", "A different boundary or date is used for the renewable total than for the pipeline total.", "Prior-year disclosures show the same split, implying a structural reporting convention rather than a change."],
         missing_evidence=["Primary-source check of the page 91 table and sentences in the original filing or exchange submission.", "Independent corroboration (regulator or third-party data) of subsidiary renewable pipeline.", "Prior-year pipeline composition to test conversion and trend.", "Ownership percentage and consolidation treatment of each subsidiary/JV."],
-        limitations=["All inputs are from the project's own text extraction; none was checked against the original PDF.", "The 14.5 GW and 6.8 GW figures are rounded in the source; bounds are carried through the calculations.", "Claims remain unverified; verification results are separate records."],
+        limitations=[f"{sum(a['effective_level'] == 'primary_source' for a in audit)} of {len(audit)} inputs have effective primary-source verification; consult each input's outcome and open checks before relying on it.", "Rounded source figures retain their rounding bounds through the calculations.", "Claims remain unverified; verification results are separate records."],
         stage_provenance=prov, claims_all_unverified=claims_unverified, synthetic=synthetic, reference_year=reference_year, periods=sorted({i["as_of_date"] for i in inputs_out if i["as_of_date"]}),
         key_verifications=list(key_eff.values()), independence_by_input={a['input_name']: a['independent_confirming_groups'] for a in audit if a['key']} or None,
         audit_trail=list(audit), decision_log=list(decision_log), conflicts=sum(bool(e.get('conflict')) for e in key_eff.values()), qualifying_evidence_count=len(contradictory))
@@ -172,15 +172,26 @@ def run_pipeline(company, claims_path, evidence_path, inputs_path, run_dir, *, r
     _stage(stages, "claims_load", "real", f"{len(store.claims)} claims loaded; all unverified")
     wanted = {i["claim_id"] for i in spec["inputs"]}
     bundle = RB.select_bundle(store.claims, by_id, max_claims=40)
-    bundle["claims"] = bundle["claims"] + [dict(store.get(c), _families=["spec"]) for c in wanted if c not in {x["claim_id"] for x in bundle["claims"]}]
-    extra = [by_id[store.get(c)["source_chunk_id"]] for c in wanted]; bundle["evidence_records"] = list({r["evidence_id"]: r for r in bundle["evidence_records"] + extra}.values())
+    if len(wanted) > 40:
+        raise ValueError("Reviewed input specification exceeds the 40-claim bundle limit")
+    required = [dict(store.get(c), _families=["spec"]) for c in sorted(wanted)]
+    bundle["claims"] = (required + [c for c in bundle["claims"] if c["claim_id"] not in wanted])[:40]
+    source_ids = sorted({c["source_chunk_id"] for c in bundle["claims"]})
+    bundle["evidence_records"] = [by_id[eid] for eid in source_ids]
     RB.write_bundle(bundle, run / "bundle")
     _stage(stages, "evidence_bundle", "real", f"{len(bundle['claims'])} claims / {len(bundle['evidence_records'])} chunks selected for F1/R1 (bounded)")
     cfg = Config(); live_ready = bool(cfg.api_key) and not simulate_llm
     if live_ready or simulate_llm:
         fr = RB.run_f1_r1(target.name, run / "bundle", run / "research", config=dataclasses.replace(cfg, registry_path=Path(registry_path)), simulate=simulate_llm)
     else:
-        fr = {"f1": {"execution": "blocked", "error": "SIGNALFORGE_API_KEY not configured; live F1 not attempted"}, "r1": {"execution": "not_executed", "reason": "F1 not run"}}
+        try:
+            eligible_ids = RB.r1.load_evidence_ids(run / "bundle" / "evidence.jsonl", target.name, dataclasses.replace(cfg, registry_path=Path(registry_path)))
+        except (OSError, ValueError):
+            eligible_ids = []
+        blockers = ["SIGNALFORGE_API_KEY not configured"]
+        if not eligible_ids:
+            blockers.append("no schema-valid human-approved company evidence")
+        fr = {"f1": {"execution": "blocked", "error": "; ".join(blockers) + "; live F1 not attempted"}, "r1": {"execution": "not_executed", "reason": "F1 not run"}}
     for k in ("f1", "r1"):
         _stage(stages, k.upper(), fr[k]["execution"], fr[k].get("error") or fr[k].get("reason") or ("deterministic stand-in, no model call" if fr[k]["execution"] == "simulated" else "live"))
     srcs, dlog = [], []

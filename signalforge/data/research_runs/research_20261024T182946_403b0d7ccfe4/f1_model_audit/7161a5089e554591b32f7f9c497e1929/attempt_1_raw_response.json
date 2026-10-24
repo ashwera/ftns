@@ -1,0 +1,94 @@
+{
+  "company_name": "NTPC Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "No company-specific revenue/generation mix",
+      "No project-specific capacity data",
+      "No direct financial performance data linked to specific entities in a machine-readable format"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier field in row data; CSV rows are not company-specific.",
+      "The dataset consists of market price data, offering no insight into operations, strategy, or internal corporate structure."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": "The CSV dataset provided contains only market price data, which is irrelevant to all three research categories. Consequently, all research must rely exclusively on the provided PDF ingested evidence.",
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_hidden_relationships_001",
+      "rank": 1,
+      "category": "hidden_relationships",
+      "hypothesis": "NTPC Limited's financial interdependencies with subsidiaries and JVs involve significant transaction volumes that may indicate cross-subsidization or operational reliance beyond standard consolidated accounting.",
+      "financial_importance": "High; the company maintains large-scale transactions with a complex web of subsidiaries and joint ventures (e.g., thousands of Crores in sales/purchases with entities like NVVN and Jhabua Power).",
+      "metrics_and_periods": [
+        "Aggregate transaction values by counterparty for FY 2024-25 vs FY 2023-24",
+        "Outstanding recoverable loan balances vs. trade balances per party"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Detailed table of significant transactions with JVs/Subsidiaries listing values for FY 2024-25 and FY 2023-24.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_77c5f772c341d65bc010f576",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Cash flow statement impact of these transactions",
+        "Terms and conditions of inter-company loans",
+        "Arm's length verification for high-value contracts"
+      ],
+      "alternative_explanation": "Transactions represent standard business operations and efficient resource management within a vertically integrated power conglomerate.",
+      "falsification_condition": "Independent audit confirmation showing that all intra-group transactions are conducted strictly at prevailing market rates with no material impact on the parent's independent credit risk profile.",
+      "data_risks_and_limitations": [
+        "Data is extracted from management reports; does not imply independent validation of the economic rationale of these transactions."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "High value of inter-company transactions directly impacts liquidity and subsidiary capital health."
+        },
+        "evidence_availability": {
+          "score": 5,
+          "rationale": "Extensive tables provided in the Annual Report covering 2024-25 and 2023-24."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Relies on comparative annual reporting; highly testable via cross-referencing consolidated financial statements."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "While disclosure is mandatory, the scale and complexity of the JV web require detailed mapping."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Can be cross-validated against individual subsidiary standalone filings if available."
+        }
+      },
+      "weighted_score": 87.5,
+      "weighted_score_rationale": "The evidence is well-documented within the ingested annual report, providing a clear map of relationships and transaction values, making it highly testable.",
+      "next_research_action": "Perform a network analysis of transaction flows between the Parent, subsidiaries, and specific JVs to identify concentration risks."
+    }
+  ],
+  "recommended_candidate_id": "cand_hidden_relationships_001"
+}

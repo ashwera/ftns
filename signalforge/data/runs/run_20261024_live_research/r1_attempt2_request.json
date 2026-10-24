@@ -1,0 +1,123 @@
+{
+  "execution": "real",
+  "model": "gemini-3.1-flash-lite",
+  "provider": "gemini",
+  "prompt": "# R1 — Research Investigator (plan specification)\n\nR1 consumes F1's recommended candidate and prepares a structured, executable research plan. Reference supplied evidence by stable `evidence_id` and preserve its source locator/page when citing it. This prompt alone does not retrieve sources or perform live web research. Never invent URLs, excerpts, publication dates, external findings, or research already performed.\n\nTurn the hypothesis into explicit, testable research questions. List exact metrics and periods, what the supplied dataset supports, and what remains missing. Identify public source types and specific documents to seek: company filings, stock-exchange disclosures, annual reports, investor presentations, regulatory documents, and credible news reports, as relevant.\n\nFor each claim, define independent cross-validation sources and the calculation, inputs, units, period alignment, and assumptions required. Include an alternative explanation and a falsification test. Specify what would invalidate or weaken the hypothesis. Include contradictory evidence explicitly when supplied; do not suppress it.\n\nTrack evidence items with `source_url`, `publication_date`, `excerpt_or_data_point`, `claim_supported`, and status. If a field is not yet known, use null and mark the item as a planned lookup; do not populate it with a plausible guess. Distinguish reported facts, calculations, inferences, and unverified hypotheses.\n\nReturn a research checklist that a later implementation can execute, with steps, expected evidence, and completion criteria. The plan must be actionable but must not imply that any source retrieval occurred.\n\n\nRequired output JSON Schema:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"SignalForge R1 research plan\", \"type\": \"object\", \"additionalProperties\": false, \"required\": [\"company_name\", \"candidate_id\", \"hypothesis\", \"research_questions\", \"evidence_ledger\", \"checklist\", \"alternative_explanation\", \"falsification_test\", \"retrieval_performed\"], \"properties\": {\"company_name\": {\"type\": \"string\", \"minLength\": 1}, \"candidate_id\": {\"type\": \"string\", \"minLength\": 1}, \"hypothesis\": {\"type\": \"string\", \"minLength\": 1}, \"retrieval_performed\": {\"type\": \"boolean\", \"const\": false}, \"research_questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"question\", \"metrics\", \"periods\", \"supported_by_dataset\", \"missing\"], \"properties\": {\"question\": {\"type\": \"string\", \"minLength\": 1}, \"metrics\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"periods\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"supported_by_dataset\": {\"type\": \"boolean\"}, \"missing\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"evidence_ledger\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"evidence_id\", \"source_type\", \"source_url\", \"publication_date\", \"excerpt_or_data_point\", \"claim_supported\", \"kind\", \"status\"], \"properties\": {\"evidence_id\": {\"type\": [\"string\", \"null\"]}, \"source_type\": {\"type\": \"string\"}, \"source_url\": {\"type\": [\"string\", \"null\"]}, \"publication_date\": {\"type\": [\"string\", \"null\"]}, \"excerpt_or_data_point\": {\"type\": [\"string\", \"null\"]}, \"claim_supported\": {\"type\": \"string\"}, \"kind\": {\"type\": \"string\", \"enum\": [\"reported_fact\", \"calculation\", \"inference\", \"unverified_hypothesis\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"planned_lookup\", \"supplied\", \"contradictory\"]}}}}, \"checklist\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"step\", \"expected_evidence\", \"cross_validation_sources\", \"completion_criteria\"], \"properties\": {\"step\": {\"type\": \"string\", \"minLength\": 1}, \"expected_evidence\": {\"type\": \"string\"}, \"cross_validation_sources\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"calculation\": {\"type\": [\"string\", \"null\"]}, \"completion_criteria\": {\"type\": \"string\"}}}}, \"alternative_explanation\": {\"type\": \"string\", \"minLength\": 1}, \"falsification_test\": {\"type\": \"string\", \"minLength\": 1}}}\nThis is a research plan only, retrieval_performed must be false. Only the supplied evidence IDs can be cited. All records are automatically_cross_checked, not human approved or independent corroboration. Supplied excerpts refer to a single issuer annual report. Unavailable URLs, publication dates and planned-lookup excerpts must be null. Do not claim research was executed.\n\nRegenerate a complete correct response. Previous validation errors: [\"$: unexpected property '$schema'\"]",
+  "payload": {
+    "company_name": "NTPC Limited",
+    "candidate": {
+      "candidate_id": "CAND_001_RENEWABLE_TRANSITION",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "NTPC's shift toward non-fossil fuel generation is primarily driven by subsidiary growth and capital allocation, but coal-based assets remain the dominant contributor to operating turnover, necessitating detailed monitoring of capital expenditure efficiency vs. generation mix targets.",
+      "financial_importance": "High; NTPC's valuation and transition credibility depend on the scaling of renewable generation against coal-based revenue stability.",
+      "metrics_and_periods": [
+        "Revenue from non-fossil sources vs. total revenue (FY2024-25)",
+        "Installed renewable capacity (GW) vs. 2032 targets (as of March 31, 2025)",
+        "Revenue by energy source (Coal, Gas, Solar, Hydro, Wind)"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Revenue from non-fossil energy sources reached 17,359.67 crore (9.33% of total revenue).",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_cc45cae4383a4d6afdc8f340",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "As of March 31, 2025, the NTPC Group has commissioned 6.8 GW of renewable energy capacity.",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": null,
+          "row_identifier": "INE733E01010",
+          "evidence_id": "ev_fed1ce3d68b30da9c8ece744",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Historical trend analysis of generation mix percentage (previous 3-5 years)",
+        "Detailed breakdown of renewable capex by project stage (commissioned vs. under implementation) across all subsidiaries"
+      ],
+      "alternative_explanation": "Renewable energy growth may be hampered by infrastructure and regulatory delays, forcing NTPC to extend the operational life of its coal assets to ensure national energy security.",
+      "falsification_condition": "If non-fossil revenue percentage fails to increase year-on-year, or if total renewable commissioning capacity stays stagnant despite the 2032 growth mandate.",
+      "data_risks_and_limitations": [
+        "Reported figures represent single point in time (FY2024-25).",
+        "No independent verification of subsidiary-level operational performance."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 5,
+          "rationale": "Directly impacts investor sentiment regarding the ESG transition strategy."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "High-quality annual report data available for current fiscal year."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Metrics are clearly defined in the integrated annual report."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Balances short-term coal-dependence stability with long-term green capital mandates."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "Cross-validation possible with CERC regulatory filings and exchange disclosures."
+        }
+      },
+      "weighted_score": 84.5,
+      "weighted_score_rationale": "(5/5)*30 + (4/5)*25 + (4/5)*20 + (3/5)*7.5 + (4/5)*17.5 = 30 + 20 + 16 + 4.5 + 14 = 84.5 (adjusted to model schema formula logic: 30 + 20 + 16 + 4.5 + 14 = 84.5) [Weighted total recomputed by SignalForge weighted_score; original model response retained separately.]",
+      "next_research_action": "Map year-over-year revenue generation mix from previous Integrated Annual Reports to establish the rate of transition."
+    },
+    "dataset_summary": {
+      "row_count": 126,
+      "columns": [
+        "DATE",
+        "SERIES",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        "PREV. CLOSE",
+        "LTP",
+        "CLOSE",
+        "VWAP",
+        "52 WEEK HIGH",
+        "52 WEEK LOW",
+        "VOLUME",
+        "VALUE",
+        "NO. OF  TRADES"
+      ],
+      "date_coverage": null,
+      "missing_information": [
+        "Company identifier in row data",
+        "Operational performance metrics beyond annual totals"
+      ],
+      "data_limitations": [
+        "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+        "No source/document provenance fields identified."
+      ]
+    },
+    "supplied_evidence_ids": [
+      "ev_cc45cae4383a4d6afdc8f340",
+      "ev_fed1ce3d68b30da9c8ece744",
+      "ev_eb61ba2e3f173f23fad9bfd8",
+      "ev_d284dd5e0503ac55d73f2441",
+      "ev_b1e5e9dbc93dfdf0fdfad35e",
+      "ev_c5bb4d5e45e3af40a4db4717",
+      "ev_b489528262378cdf8e9d9601",
+      "ev_77c5f772c341d65bc010f576",
+      "ev_08dc5955d5c3ef29b41a5593",
+      "ev_27588cf43298e9264d4d1efa",
+      "ev_0517e238fde73f76da5c576a",
+      "ev_5be4db19957ea5f7fd2b0c02",
+      "ev_44bdd98d360aa06e7a543c2c",
+      "ev_d3d9906726630bba52e0d915",
+      "ev_13598c8ff149784e31964e13",
+      "ev_270842a41f4b2dbca2744278"
+    ]
+  },
+  "requested_at": "2026-10-24T18:07:51.501191+00:00"
+}
