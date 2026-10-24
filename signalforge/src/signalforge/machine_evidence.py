@@ -98,7 +98,10 @@ def _issuer_matches(passage, name, identifier):
         r"ISIN(?:\s+(?:No\.?|Number|Code))?\s*(?:of\s+(?:the\s+)?(?:equity\s+)?(?:shares|company))?[\s\S]{0,450}?"
         + re.escape(identifier) + r"(?!\w)", passage, re.I) and re.search(
         r"(?<!\w)" + re.escape(name) + r"(?!\w)", passage, re.I)
-    return bool(equity_isin or labelled or (declaration and re.search(
+    corporate = (re.fullmatch(r"[LU]\d{5}[A-Z]{2}\d{4}[A-Z]{3}\d{6}", identifier)
+        and re.search(r"(?:\bCIN\b|Corporate\s+Identi(?:ty|fication)\s+Number)\s*[:|\-]?\s*" + re.escape(identifier), passage, re.I)
+        and re.search(r"(?<!\w)" + re.escape(name) + r"(?!\w)", passage, re.I))
+    return bool(equity_isin or labelled or corporate or (declaration and re.search(
         r"(?<!\w)" + re.escape(identifier) + r"(?!\w)", passage, re.I)))
 
 

@@ -1,0 +1,31 @@
+{
+  "result": {
+    "ok": true
+  },
+  "actual_provider_calls": [
+    {
+      "provider": "ollama",
+      "model": "not-installed",
+      "fallback_reason": null,
+      "stage": "actual_failover_probe",
+      "http_status": null,
+      "outcome": "failed",
+      "error_type": "LLMError",
+      "latency_seconds": 0.788
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-20b",
+      "fallback_reason": "Model request failed (APIConnectionError): Connection error.",
+      "stage": "actual_failover_probe",
+      "usage": {
+        "prompt_tokens": 110,
+        "completion_tokens": 120,
+        "total_tokens": 230
+      },
+      "outcome": "responded",
+      "latency_seconds": 0.579
+    }
+  ],
+  "test": "Ollama unavailable on this Mac; real Groq fallback response"
+}

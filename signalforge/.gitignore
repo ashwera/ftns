@@ -16,3 +16,8 @@ data/cod_sources_20261024/
 data/regulator_20261024/
 !outputs/.gitkeep
 data/demo_drop/
+# New research executions and model probes stay local; curated validation exports
+# belong under data/demo_validation/. Already tracked historical runs are unchanged.
+data/research_runs/
+data/runs/run_20261025_groq_*/
+data/runs/arshia_coalindia_retrieval_probe/

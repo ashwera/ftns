@@ -52,6 +52,12 @@ def handler(sessions):
         def do_GET(self):
             if not self.allowed():
                 return
+            if self.path == "/api/agent/health":
+                from .llm_client import routes, credentials
+                return self.reply(200, {"status": "running", "active_run": sessions.active,
+                    "providers": [{"provider": c.provider, "model": c.model,
+                        "credential_configured": bool(credentials(c)) if c.provider != "ollama" else None,
+                        "health": "not_probed"} for c in routes(sessions.config)]})
             if self.path == "/api/agent/runs":
                 return self.reply(200, sessions.list_runs())
             prefix = "/api/agent/runs/"

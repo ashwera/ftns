@@ -70,6 +70,21 @@ class ServiceTests(unittest.TestCase):
             self.assertEqual(self.request('POST', '/api/agent/runs', payload)[0], 400)
         self.assertEqual(self.request('POST', '/api/agent/runs', {}, **{'Content-Type': 'text/plain'})[0], 415)
 
+    def test_runtime_health_is_explicitly_not_a_cloud_probe(self):
+        code, value = self.request('GET', '/api/agent/health')
+        self.assertEqual(code, 200)
+        self.assertEqual(value['status'], 'running')
+        self.assertEqual(value['providers'][0]['health'], 'not_probed')
+        self.assertNotIn('api_key', json.dumps(value))
+
+    def test_orphaned_running_manifest_is_displayed_as_interrupted(self):
+        run_id='research_20261025T000000_aaaaaaaaaaaa'
+        folder=Path(self.temp.name)/run_id;folder.mkdir()
+        original={'run_id':run_id,'status':'running','stage':'investigation'}
+        (folder/'manifest.json').write_text(json.dumps(original))
+        self.assertEqual(self.sessions.get(run_id)['status'],'interrupted')
+        self.assertEqual(json.loads((folder/'manifest.json').read_text()), original)
+
     def test_busy_and_redacted_failure(self):
         release = threading.Event()
         def failure(folder, manifest, config, update):

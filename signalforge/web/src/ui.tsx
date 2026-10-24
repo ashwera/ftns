@@ -9,7 +9,7 @@ const initial: ResearchData = { audit: null, readiness: null, evidence: [], inge
 const fmtDate = (value?: string | null) => { if (!value) return null; const date = new Date(value); return Number.isNaN(date.valueOf()) ? null : date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }) }
 const titleCase = (s?: string | null) => (s || 'unknown').replaceAll('_', ' ').replace(/\b\w/g, c => c.toUpperCase())
 
-type LiveRun = { run_id: string; company: string; prompt: string; status: string; stage: string; created_at: string; events: { at: string; stage: string; message: string }[]; artifacts: string[]; discovery_actions?: { action: string; at: string; url?: string; query?: string }[]; investigation?: Investigation | null }
+type LiveRun = { run_id: string; company: string; prompt: string; status: string; stage: string; created_at: string; events: { at: string; stage: string; message: string }[]; artifacts: string[]; discovery_actions?: { action: string; at: string; url?: string; query?: string }[]; investigation?: Investigation | null; runtime_note?: string; model_calls?: {stage: string; provider: string; model: string; outcome: string; latency_seconds: number; validation_outcome?: string; fallback_reason?: string | null}[] }
 type RunSummary = Pick<LiveRun, 'run_id' | 'company' | 'prompt' | 'created_at' | 'status' | 'stage'>
 
 export function StartResearch() {
@@ -94,9 +94,11 @@ export function StartResearch() {
     </form>
     {error && <p role="alert">{error}</p>}
     {run && <>
-      {!run.investigation && <><h3>Live run · {titleCase(run.status)}</h3><p>This live run has not produced a verified finding. The saved example below is a separate prior run.</p></>}
-      {run.investigation ? <InvestigationView key={run.run_id} investigation={run.investigation} runId={run.run_id} /> : <p role="status">{active ? 'Investigation in progress. Results will appear when available.' : 'Final investigation unavailable for this run. F1/R1 planning output alone is not a completed investigation.'}</p>}
-      <details open={!run.investigation}><summary>Run execution record · {titleCase(run.status)}</summary><p>{run.company} · {run.run_id} · {run.created_at}</p><p>Current stage: {titleCase(run.stage)}</p><ol>{(run.events ?? []).map((event, index) => <li key={index}><b>{titleCase(event.stage)}</b> — {event.message}</li>)}</ol>{!!run.discovery_actions?.length && <p>Latest source action: {titleCase(run.discovery_actions.at(-1)?.action)} · {run.discovery_actions.at(-1)?.url || run.discovery_actions.at(-1)?.query}</p>}<p>Saved locally: data/research_runs/{run.run_id}/manifest.json and events.jsonl</p>{!!run.artifacts?.length && <p>Artifacts: {run.artifacts.join(', ')}</p>}</details>
+      {(!run.investigation || active) && <><h3>Live run · {titleCase(run.status)}</h3><p>This live run has not produced a verified finding. The saved example below is a separate prior run.</p></>}
+      {run.investigation && !active ? <InvestigationView key={run.run_id} investigation={run.investigation} runId={run.run_id} /> : <p role="status">{active ? 'Investigation in progress. Results will appear when available.' : 'Final investigation unavailable for this run. F1/R1 planning output alone is not a completed investigation.'}</p>}
+      {run.runtime_note && <p role="status">{run.runtime_note}</p>}
+      {!!run.model_calls?.length && <details><summary>Models used in this run</summary><ul>{run.model_calls.map((call, n) => <li key={n}>{call.stage}: {call.provider} / {call.model} · {call.outcome} · {call.latency_seconds}s · validation {call.validation_outcome ?? 'not recorded'}{call.fallback_reason && ` · Fallback: ${call.fallback_reason}`}</li>)}</ul></details>}
+      <details open={!run.investigation || active}><summary>Run execution record · {titleCase(run.status)}</summary><p>{run.company} · {run.run_id} · {run.created_at}</p><p>Current stage: {titleCase(run.stage)}</p><ol>{(run.events ?? []).map((event, index) => <li key={index}><b>{titleCase(event.stage)}</b> — {event.message}</li>)}</ol>{!!run.discovery_actions?.length && <p>Latest source action: {titleCase(run.discovery_actions.at(-1)?.action)} · {run.discovery_actions.at(-1)?.url || run.discovery_actions.at(-1)?.query}</p>}<p>Saved locally: data/research_runs/{run.run_id}/manifest.json and events.jsonl</p>{!!run.artifacts?.length && <p>Artifacts: {run.artifacts.join(', ')}</p>}</details>
     </>}
   </section>
 }

@@ -1,0 +1,511 @@
+{
+  "run_id": "research_20261024T234754_a378b8365612",
+  "company": "Coal India Limited",
+  "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+  "created_at": "2026-10-24T23:47:54.534674+00:00",
+  "updated_at": "2026-10-24T23:50:47.253706+00:00",
+  "status": "completed",
+  "worker_pid": 94003,
+  "worker_host": "arshias-MacBook-Air.local",
+  "stage": "complete",
+  "events": [
+    {
+      "at": "2026-10-24T23:47:54.656128+00:00",
+      "stage": "discovery",
+      "message": "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds)."
+    },
+    {
+      "at": "2026-10-24T23:47:54.680277+00:00",
+      "stage": "discovery",
+      "message": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "at": "2026-10-24T23:47:56.213384+00:00",
+      "stage": "retrieval",
+      "message": "Bounded discovery and retrieval finished."
+    },
+    {
+      "at": "2026-10-24T23:47:56.213897+00:00",
+      "stage": "machine_evidence",
+      "message": "Checking retrieved PDFs against canonical issuer declarations and exact passages."
+    },
+    {
+      "at": "2026-10-24T23:47:56.214473+00:00",
+      "stage": "machine_evidence",
+      "message": "Company not in the registry: onboarding from its own annual report (public PDF, ISIN self-declaration, hash-pinned)."
+    },
+    {
+      "at": "2026-10-24T23:47:57.711124+00:00",
+      "stage": "machine_evidence",
+      "message": "Onboarding action: wikidata. Navigation hints remain unverified until source checks pass."
+    },
+    {
+      "at": "2026-10-24T23:47:59.117506+00:00",
+      "stage": "machine_evidence",
+      "message": "Onboarding action: model_url_hints. Navigation hints remain unverified until source checks pass."
+    },
+    {
+      "at": "2026-10-24T23:48:15.161145+00:00",
+      "stage": "machine_evidence",
+      "message": "Identity read from the original PDF: Coal India Limited (CIN L23109WB1973GOI028844, page 67); Wikidata cross-check not_comparable_CIN_only."
+    },
+    {
+      "at": "2026-10-24T23:48:28.494743+00:00",
+      "stage": "f1",
+      "message": "Running F1 on policy-eligible evidence."
+    },
+    {
+      "at": "2026-10-24T23:48:37.434422+00:00",
+      "stage": "f1",
+      "message": "F1 used its model-generated ranking; no financial finding is implied."
+    },
+    {
+      "at": "2026-10-24T23:48:37.435550+00:00",
+      "stage": "r1",
+      "message": "Preparing R1 research plan; a plan is not a verified finding."
+    },
+    {
+      "at": "2026-10-24T23:49:00.621268+00:00",
+      "stage": "investigation",
+      "message": "Searching r1_followthrough: What is the actual commissioned (operational) capacity for each announced solar, thermal, and BESS project as of 31\u202fMar\u202f2026 (FY\u202f2025\u201126) and FY\u202f2026\u201127 outlook"
+    },
+    {
+      "at": "2026-10-24T23:49:11.967578+00:00",
+      "stage": "investigation",
+      "message": "Comparing 1 original documents and testing the R1 hypothesis."
+    },
+    {
+      "at": "2026-10-24T23:49:54.035750+00:00",
+      "stage": "investigation",
+      "message": "Searching counterevidence_search: Search Central Electricity Authority (CEA) capacity reports for operational status of Coal India renewable assets as of 31 March 2026."
+    },
+    {
+      "at": "2026-10-24T23:49:58.722996+00:00",
+      "stage": "adjudication",
+      "message": "Checking final claims against exact passages, independent lineages and the strongest alternative."
+    },
+    {
+      "at": "2026-10-24T23:50:47.253735+00:00",
+      "stage": "complete",
+      "message": "Investigation finished: inconclusive / Not rated. Inspect the claim checks and limitations."
+    }
+  ],
+  "artifacts": [
+    "discovery/discovery_report.json",
+    "onboarding_report.json",
+    "run_registry.json",
+    "f1_fallback.json",
+    "eligible_evidence/evidence.jsonl",
+    "f1.json",
+    "r1.json",
+    "investigation.json",
+    "investigation_review.json",
+    "investigation_report.md"
+  ],
+  "finding": null,
+  "model": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b"
+  },
+  "source_manifest_path": "discovery/discovery_report.json",
+  "budget": {
+    "max_queries": 3,
+    "max_results": 10,
+    "max_fetches": 3,
+    "max_seconds": 90,
+    "request_timeout": 40
+  },
+  "stages": [
+    {
+      "name": "discovery",
+      "execution": "real",
+      "detail": "Searching with bing_rss; source candidates are unverified."
+    },
+    {
+      "name": "retrieval",
+      "execution": "real",
+      "detail": "Bounded discovery and retrieval finished."
+    },
+    {
+      "name": "machine_evidence",
+      "execution": "real",
+      "detail": "Identity read from the original PDF: Coal India Limited (CIN L23109WB1973GOI028844, page 67); Wikidata cross-check not_comparable_CIN_only."
+    },
+    {
+      "name": "f1",
+      "execution": "real",
+      "detail": "F1 used its model-generated ranking; no financial finding is implied."
+    },
+    {
+      "name": "r1",
+      "execution": "real",
+      "detail": "Preparing R1 research plan; a plan is not a verified finding."
+    },
+    {
+      "name": "investigation",
+      "execution": "real",
+      "detail": "Searching counterevidence_search: Search Central Electricity Authority (CEA) capacity reports for operational status of Coal India renewable assets as of 31 March 2026."
+    },
+    {
+      "name": "adjudication",
+      "execution": "real",
+      "detail": "Checking final claims against exact passages, independent lineages and the strongest alternative."
+    }
+  ],
+  "limitations": [
+    "Source retrieval and machine passage matching do not verify financial claims.",
+    "Discovery time budget is cooperative; downstream model requests use their existing client timeouts."
+  ],
+  "search_provider": "bing_rss",
+  "source_count": 0,
+  "retrieval_status": "not_attempted",
+  "navigation_model_calls": [
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "onboarding_url_hints",
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 65,
+        "total_tokens": 215
+      },
+      "outcome": "responded",
+      "latency_seconds": 1.405
+    }
+  ],
+  "onboarding": {
+    "identity": {
+      "canonical_name": "Coal India Limited",
+      "isin": null,
+      "identifier": "L23109WB1973GOI028844",
+      "identifier_type": "CIN",
+      "page": 67
+    },
+    "sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+    "wikidata_isin_cross_check": "not_comparable_CIN_only"
+  },
+  "f1_ranking_provenance": {
+    "used": false,
+    "reason": null,
+    "ranking_type": "model_generated",
+    "financial_finding": false
+  },
+  "investigation": {
+    "report_type": "evidence_gap",
+    "status": "inconclusive",
+    "headline": "Evidence gap: Coal India Limited",
+    "summary": "Final model claims did not pass strict validation after counterevidence retrieval; semantic adjudication remains incomplete.",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "run_id": "research_20261024T234754_a378b8365612",
+    "why_it_matters": [
+      "The available material cannot support a defensible financial finding."
+    ],
+    "claims": [],
+    "sources": [
+      {
+        "id": "src_6be29201be42be17",
+        "title": "Coal India Limited annual report (onboarded original)",
+        "url": "https://www.coalindia.in/documents/14122/CIL_AR_2025-26.pdf",
+        "publisher": "Coal India Limited",
+        "lineage": "issuer:Coal India Limited",
+        "independence_basis": null,
+        "source_class": "issuer_annual_report",
+        "publication_date": null,
+        "sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+        "snapshot_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T234754_a378b8365612/onboarding_pdfs/sources/6be29201be42_29c0e63f.pdf",
+        "intake_mode": "onboarded_original_rechecked",
+        "catalog": null,
+        "passages": [
+          {
+            "id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+            "page": 6,
+            "text": "Initiative Description Value Created Capitals Impacted\n100 MW  \nPatan Solar  \nProject\nRail \nInfrastructure \nDevelopment\nPartnership  \nwith Hindustan  \nCopper\nRenewable \nEnergy \nfor Green \nAmmonia\nRare Earth  \nElement (REE)  \nBlock  \nAcquisition\nStrategic  \nInvestment  \nPlatform\nThermal Power \nExpansion\nCommissioned a 100 MW solar \npower project at Patan as part of \nthe renewable energy portfolio.\nCollaborating with strategic rail \ninfrastructure partners to develop \nand strengthen rail connectivity \nfor Coal India and its subsidiaries.\nEntered into a strategic \ncollaboration with Hindustan \nCopper to explore opportunities \nin critical minerals.\nSupporting India\u2019s green energy \ntransition by supplying renewable \npower from planned renewable \nenergy projects to green \nammonia production facilities.\nSecured the Kawalapur  \nRare Earth Element block\nReceived the first dividend \nfrom Hindustan Urvarak & \nRasayan Limited and CIL  \nNavikarniya Urja Limited.\nEstablished a joint venture to \ndevelop a 1,600 MW brownfield \nthermal power plant in Jharkhand.\nDiversified the energy portfolio, \nenhanced renewable capacity \nand reduced emissions intensity.\nImproves coal evacuation, logistics \nefficiency, supply chain reliability \nand operational productivity.\nEnhanced access to emerging \nmineral opportunities and \nstrengthened technical capabilities.\nAdvances decarbonisation, \ncreates new revenue streams and \nstrengthens participation in the \ngreen hydrogen ecosystem.\nOpened new growth avenues \nand strengthened resource  \ndiversification.\nCreated an additional earnings \nstream and demonstrated value \nfrom strategic investments.\nEnhances power generation \ncapacity, supports energy security \nand creates long-term value through \ndiversified business operations.\nListing of BCCL  \nand CMPDIL\nBCCL and CMPDIL were listed \nduring FY 2025-26 as part of the \nmonetisation drive.\nUnlocks value and improves \nvisibility, governance and \nstakeholder transparency.\nNaturalSocial & Relationship HumanManufactured IntellectualFinancial\nStrategic Initiatives Driving \nValue Creation\nThroughout FY 2025-26, we continued to strengthen our core mining business while investing \nin future growth platforms. Our initiatives focused on improving operational efficiency, \nexpanding infrastructure, advancing diversification and creating long-term value for stakeholders.\nTLS - Mechanised Truck Loading System\n08 09\nCorporate Overview Statutory Reports Financial Statements\nCoal India Limited\nIntegrated Annual Report 2025-26",
+            "source_locator": "page:6",
+            "origin_evidence_id": "ev_9e3008f225572b9cae1053eb"
+          },
+          {
+            "id": "src_6be29201be42be17_ev_9745f1ec9f355d0eaf9a1803",
+            "page": 49,
+            "text": "Deposit-based Rail Projects\nStrategic JV / SPV Rail Corridors\nTwo major railway projects funded directly by CIL have significantly strengthened evacuation capacity in key coal-bearing regions.\nTo accelerate infrastructure creation, we continue to partner through special purpose vehicles and joint ventures for dedicated \ncoal evacuation corridors.\nThe 44.37 km double line, along with the recently \ncommissioned tripling works, strengthens evacuation from \nthe North Karanpura coalfield of CCL.\nAngul\u2013Balram rail link commissioned, \nenabling evacuation from \nTalcher coalfields.\nShivpur\u2013Kathautia \nconnectivity under execution.\nThe 52.41 km line, along with recently commissioned doubling \nworks, is being further strengthened through flyover and \nloading infrastructure upgrades.\nTori\u2013Shivpur New BG Line\nMahanadi Coal Railway Limited (MCRL)\nMajor corridor substantially completed \nwith balance work underway.\nChhattisgarh East Railway Limited \n(CERL) Phase I\nJharkhand Coal Railway Limited (JCRL)\nJharsuguda\u2013Barpali\u2013Sardega Rail Line\n~100 MTY\nEvacuation capacity enabled\n15 MTY \nCapacity\n68.5% \nComplete\n96%\nComplete\n25 MTY \nCapacity\n65 MTY\nCapacity\n~90 MTY\nEvacuation capacity upon completion\nConstruction underway following \nfinancial closure.\nCritical evacuation corridor for Korba \ncoalfield progressing steadily.\nCERL Phase II\nChhattisgarh East West Rail \nLimited (CEWRL)\n38% \nComplete \n80%\nComplete \n875 MW\nSolar project at Pugal Solar \nPark, Rajasthan\n80 MW / 320 MWh\nBESS project in Odisha\n188 MW / \n750 MWh\nBESS project in Telangana\n600 MW\nSolar project awarded at Jalaun \nSolar Park\nJ 21,000 Crores\nInvestment at Thermal power plant \nat Chandrapura\n300 MW\nKhavda Solar Project, Gujarat \n(200 MW commissioned as of \nJuly 2026)\n65 MTY\nCapacity\nFuture Ready Asset Portfolio\nRenewable Energy Expansion\nRenewable and storage \nopportunities\nBattery Energy Storage Systems\nThermal Energy Assets\nUtility-scale solar pipeline\nAs India\u2019s energy ecosystem evolves, \nour manufacturing capital is expanding \nbeyond conventional coal mining \ninto renewable energy, storage \ninfrastructure, and strategic energy \nassets. We are building future-ready \ncapabilities that strengthen long-term \nresilience while supporting national \nenergy transition goals.\nWe have aligned our diversification \nstrategy with India\u2019s net-zero ambition \nand targets an overall renewable energy \ncapacity of 9.5 GW by FY 2029-30.\nWe achieved significant progress in \nscaling our renewable energy portfolio \nthrough strategic partnerships, utility-\nscale solar projects, and hybrid \nenergy initiatives.\nA major milestone during FY 2025-26 \nwas the renewable energy partnership \nwith UPRVUNL to jointly develop large-\nscale renewable energy projects in Uttar \nPradesh. The proposed joint venture \nwill develop utility-scale renewable \nassets supported by allocated land and \ndedicated project infrastructure.\nIn Rajasthan, we entered into a strategic \njoint venture with RRVUNL, resulting \nin the formation of CIL Rajasthan \nAkshay Urja Limited, strengthening \nour presence in one of India\u2019s most \npromising solar corridors.\nTo accelerate diversification, we signed \nMoUs with commercial and industrial \nconsumers for supplying 4.5 GW \nof renewable power through wind-\nsolar hybrid projects.\nPlanned development includes:\n 1.5 GW wind power projects\n 3 GW solar power projects\nBattery storage represents a major new \ngrowth area supporting renewable energy \nintegration and grid reliability.\nCIL secured success",
+            "source_locator": "page:49",
+            "origin_evidence_id": "ev_9745f1ec9f355d0eaf9a1803"
+          },
+          {
+            "id": "src_6be29201be42be17_p153_1800",
+            "page": 153,
+            "text": "i Forest Division\", fifteen hundred seedlings are multiplied and planted in re-vegetated mined out sites, nearby forest site and RFRI botanical garden with exhaustive care. Conservation and maintenance of orchid species were done at RFRI botanical garden and Tikak Colliery. Bench Scale Study on reducing ash content (mineral matter) from Washery Grade Coking coal and high ash non-coking coal through oil agglomeration. Coal-Oil Agglomeration unit fabricated, installed and commissioned at NML laboratory, Jamshedpur using three types of oils i.e. sunflower oil, castor oil and pine oil for reducing the ash content of coal. Coking coal with sunflower oil shows encouraging results (Topa Coal: Ash%age reduced to 9% from 21% with 84% yield, Rajrappa Coal: Ash%age reduced to 20% from 34% with 80% yield). Development of Guidelines for Increasing the Height of Overburden Dumps at Opencast Coal Mines in India. Design and developed a Large- Scale Direct Shear Testing Machine at CMPDIL for testing of representative OB dump samples from Opencast Coal mines. Steeper bench angles up to 40\u00b0 and external dump height up to 120m can be considered safe based on the strength properties of OB material, in comparison to present Coal Mine Regulation 2017 which limits the individual bench angle to 37.5\u00b0 and external dump heights up to 90m. Capacity Building for extraction of CMM Resource within CIL Command Areas (CMPDIL & CSIRO, Australia). CMPDIL has developed a State-of-Art Laboratory facility for understanding of CBM/ CMM resources in India to assist in unconventional gas resources extraction. Project outcome will be helpful in development of CBM/CMM in CIL & other leasehold areas. Under a project, the effect of blasting on opencast mine dump was investigated and prediction model of FOS for stability of the OB dump slope was recommended considering various uncertain material parameters under blast loading with different explosive densities and distances of the blasting point. Under a project, a VOD measurement system was developed which can measure velocity of detonation of in-the-hole explosive as well as cartridges, booster and other accessories on the surface. The system uses fiber o"
+          },
+          {
+            "id": "src_6be29201be42be17_p180_3600",
+            "page": 180,
+            "text": "ding systems under its First Mile Connectivity (FMC) projects. A total of 72 FMC projects have been planned to be implemented in four phases, with an aggregate capacity of 843 MTY. As of FY 2025-26, FMC projects with a cumulative capacity of 432 MTY have been operationalised. Upon completion of all FMC projects, CIL's total mechanised/rapid loading capacity is projected to reach 994 MTY by FY 2028-29. The share of SILO loading is expected to grow upto 39% in the FY 2026-27. In order to understand the requirements of the consumers, CIL is conducting quarterly zone-wise consumer meeting with both power and non-power consumers separately. Further, subsidiaries also conduct meeting with the consumers at regular intervals. In addition, to promote ease of doing business, CIL has set up a Consumer Grievance Redressal Mechanism to redress the grievances of consumers related to coal supplies and other related issues. Customer satisfaction through quality assurance and transparency in business operations have been priority areas for CIL. The initiatives taken to build Consumers' confidence and satisfaction include supply of sized coal as per FSA provisions, extension of third-party sampling facility to all sectors of consumers under all schemes through deployment of empanelled Third-Party Agencies (TPA) as per the choice of consumer, Collection of samples through Auto Mechanical Samplers at Silo Loading points, Operationalisation Mechanical Augurs for coal sample collection, providing live camera feed to the customers for observing sample collection and preparation process, timely issuance of credit/ debit notes on quality grounds etc. At present, twelve independent Third Party sampling agencies have been empanelled. Out of these, 10 agencies have been empanelled by Power Finance Corporation Ltd (PFCL) under Ministry of Power and 2 by CIL to cater to both power and non-power sector, giving consumers a wide option to choose from the empanelled agencies. As a result of conscious and continuous measures taken towards quality maintenance, a) The gap between the weighted average of declared and analysed GCV of coal based on results received for FY 2025-26 is only 56.7 Kcal/kg "
+          },
+          {
+            "id": "src_6be29201be42be17_p180_5400",
+            "page": 180,
+            "text": " Corporation Ltd (PFCL) under Ministry of Power and 2 by CIL to cater to both power and non-power sector, giving consumers a wide option to choose from the empanelled agencies. As a result of conscious and continuous measures taken towards quality maintenance, a) The gap between the weighted average of declared and analysed GCV of coal based on results received for FY 2025-26 is only 56.7 Kcal/kg which is well within the GCV band of same Grade and b) The final grade conformity including referee for FY 2025-26 is 86%. Coal India Limited has significantly advanced transparency and efficiency in its operations through the Online Reconciliation Portal, which integrates quantity, quality, and finance data into a unified digital framework. Widely adopted by power sector utilities, captive power plants, CPSEs, and non-regulated sector consumers, the portal has facilitated over 1,600 joint reconciliation statements, thereby reducing disputes and strengthening consumer confidence. By offering a comprehensive suite of services-including customer profiles, contracts, payment tracking, railway receipt details, and invoice records in downloadable formats-the platform has streamlined settlements and provided a one-stop solution for stakeholders. This digital transformation has enhanced ease of doing business and reinforced CIL's commitment to accountability and operational excellence. Operations Outlook: In CIL, as on 1st April, 2026, 124 ongoing mining projects costing 20 Crores and above having capacity of about 1,044.79 Mty with sanctioned capital of H 1,69,452.25 Crores are under different stages of implementation. For achieving production target in FY 2026-27, EC for 08 no. of proposals with incremental capacity of about 21.45 Mty are under different stages of approval. In FY 2026-27, Stage-II FC of 12 nos. of proposals involving 2,800.145 Ha (tentative) forest land are required to achieve coal production target. Also, total land to be possessed by the subsidiaries of CIL has been estimated to be 4,171.79 Ha for achieving target. To leverage state-of-the-art technology and enhance operational efficiency through private sector participation, initiatives have been undertak"
+          },
+          {
+            "id": "src_6be29201be42be17_p196_1800",
+            "page": 196,
+            "text": "he risks, such that the amount of provision reflects the present value of the expenditures expected to be incurred to settle the obligation. The Company records a corresponding asset associated with the liability for final reclamation and mine closure. The obligation and corresponding assets are recognised in the period in which the liability is incurred. The asset representing the total site restoration cost (as estimated by Central Mine Planning and Design Institute Limited) as per the mine closure plan is recognised as a separate item in PPE and amortised over the balance project/mine life. The value of the provision is progressively increased over time as the effect of discounting unwinds; creating an expense recognised as a financial expense. Further, a specific escrow fund account is maintained for this purpose as per the approved mine closure plan. The progressive mine closure expenses incurred on year to year basis forming part of the total mine closure obligation are initially recognised as receivable from the escrow account and thereafter adjusted with the obligation in the year in which the amount is withdrawn after the concurrence of the certifying agency. 2.9 Exploration and Evaluation Assets Exploration and evaluation assets comprise costs that are attributable to the search for coal and related resources, pending the determination of technical feasibility and the assessment of commercial viability of an identified resource which comprises inter alia the following: acquisition of rights to explore researching and analysing historical exploration data; gathering exploration data through topographical, geo-chemical and geo-physical studies; exploratory drilling, trenching, and sampling; determining and examining the volume and grade of the resource; surveying transportation and infrastructure requirements; Conducting market and finance studies. The above includes employee remuneration, cost of materials and fuel used, payments to contractors etc. As the intangible component represents an insignificant/ indistinguishable portion of the overall expected tangible costs to be incurred and recouped from future exploitation, these costs along with other ca"
+          }
+        ]
+      }
+    ],
+    "timeline": [],
+    "calculations": [],
+    "counterargument": {
+      "text": "Missing or unusable evidence is not evidence of misconduct or lack of financial activity.",
+      "evidence_ids": []
+    },
+    "falsification": "Obtain company-identified original disclosures and independent records for the same claim, period, unit and reporting scope.",
+    "evidence_strength": "Not rated",
+    "strength_reasons": [
+      "No substantive financial conclusion was accepted; an evidence-strength grade does not apply."
+    ],
+    "limitations": [
+      "Final model claims did not pass strict validation after counterevidence retrieval; semantic adjudication remains incomplete.",
+      "No independent corroboration or novelty is established.",
+      "The unrelated quote CSV is dataset context only; missing matching rows imply nothing about company activity."
+    ],
+    "decision_log": [
+      {
+        "action": "r1_followthrough",
+        "reason": "What is the actual commissioned (operational) capacity for each announced solar, thermal, and BESS project as of 31\u202fMar\u202f2026 (FY\u202f2025\u201126) and FY\u202f2026\u201127 outlook?",
+        "outcome": "2 searches; not_attempted. Full queries and failures retained in r1_followthrough/discovery_report.json."
+      },
+      {
+        "action": "Carry forward F1 source passages",
+        "reason": "F1-eligible evidence matched the same hash-pinned original PDF",
+        "outcome": "2 exact passages added with original evidence IDs and page locators; claim verification remains separate."
+      },
+      {
+        "action": "Read and hash original documents",
+        "reason": "Compare source passages and document lineage",
+        "outcome": "1 unique snapshots; 6 exact passages. Cached originals explicitly labelled."
+      },
+      {
+        "action": "counterevidence_search",
+        "reason": "Search Central Electricity Authority (CEA) capacity reports for operational status of Coal India renewable assets as of 31 March 2026.",
+        "outcome": "2 searches; not_attempted. Full queries and failures retained in counterevidence_search/discovery_report.json."
+      },
+      {
+        "action": "Carry forward F1 source passages",
+        "reason": "F1-eligible evidence matched the same hash-pinned original PDF",
+        "outcome": "2 exact passages added with original evidence IDs and page locators; claim verification remains separate."
+      },
+      {
+        "action": "Read and hash original documents",
+        "reason": "Compare source passages and document lineage",
+        "outcome": "1 unique snapshots; 6 exact passages. Cached originals explicitly labelled."
+      },
+      {
+        "action": "Reject unvalidated final claims",
+        "reason": "ValueError",
+        "outcome": "No model final conclusion accepted."
+      }
+    ],
+    "completed_at": "2026-10-24T23:50:47.252034+00:00",
+    "novelty_established": false,
+    "source_scope": "Only the saved source snapshots listed in this report; discovery leads remain unverified.",
+    "execution": "deterministic_evidence_gap_adjudication",
+    "model_review_execution": "not_completed",
+    "failed_stage": "investigation_final"
+  },
+  "finished_at": "2026-10-24T23:50:47.253730+00:00",
+  "model_calls": [
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "onboarding_url_hints",
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 65,
+        "total_tokens": 215
+      },
+      "outcome": "responded",
+      "latency_seconds": 1.405
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "f1",
+      "usage": {
+        "prompt_tokens": 5657,
+        "completion_tokens": 1756,
+        "total_tokens": 7413
+      },
+      "outcome": "responded",
+      "latency_seconds": 4.112,
+      "generation_attempt": 1,
+      "validation_outcome": "validated",
+      "audit_path": "f1_model_audit/beb771867175492eaeea83c60bcf6f21/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "investigation_final",
+      "http_status": 429,
+      "outcome": "failed",
+      "error_type": "LLMError",
+      "quota_wait_seconds": 38.98,
+      "latency_seconds": 0.137,
+      "generation_attempt": 1,
+      "validation_outcome": "rejected",
+      "audit_path": "investigation_final_model_audit/a09a4b77202544df8e10632234690199/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 2,
+      "fallback_reason": null,
+      "stage": "investigation_final",
+      "usage": {
+        "prompt_tokens": 4985,
+        "completion_tokens": 1842,
+        "total_tokens": 6827
+      },
+      "outcome": "responded",
+      "latency_seconds": 5.094,
+      "generation_attempt": 1,
+      "validation_outcome": "rejected",
+      "audit_path": "investigation_final_model_audit/a09a4b77202544df8e10632234690199/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "investigation_final",
+      "http_status": 429,
+      "outcome": "failed",
+      "error_type": "LLMError",
+      "latency_seconds": 0.116,
+      "generation_attempt": 2,
+      "validation_outcome": "rejected",
+      "audit_path": "investigation_final_model_audit/a09a4b77202544df8e10632234690199/summary.json"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "request_attempt": 1,
+      "fallback_reason": "Model request failed (RateLimitError): Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01km18zm61exrt2hms9gnf0qxn` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7358, Requested 7909. Please try again in 54.5025s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "stage": "investigation_final",
+      "usage": {
+        "prompt_tokens": 6605,
+        "completion_tokens": 1237,
+        "total_tokens": 7842
+      },
+      "outcome": "responded",
+      "latency_seconds": 4.178,
+      "generation_attempt": 2,
+      "validation_outcome": "rejected",
+      "audit_path": "investigation_final_model_audit/a09a4b77202544df8e10632234690199/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "investigation_initial",
+      "http_status": 429,
+      "outcome": "failed",
+      "error_type": "LLMError",
+      "quota_wait_seconds": 31.3075,
+      "latency_seconds": 0.348,
+      "generation_attempt": 1,
+      "validation_outcome": "rejected",
+      "audit_path": "investigation_initial_model_audit/50535c25c97a49e4adbeb6d4a37bf173/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 2,
+      "fallback_reason": null,
+      "stage": "investigation_initial",
+      "usage": {
+        "prompt_tokens": 4985,
+        "completion_tokens": 1348,
+        "total_tokens": 6333
+      },
+      "outcome": "responded",
+      "latency_seconds": 3.416,
+      "generation_attempt": 1,
+      "validation_outcome": "rejected",
+      "audit_path": "investigation_initial_model_audit/50535c25c97a49e4adbeb6d4a37bf173/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "investigation_initial",
+      "http_status": 413,
+      "outcome": "failed",
+      "error_type": "LLMError",
+      "latency_seconds": 0.079,
+      "generation_attempt": 2,
+      "validation_outcome": "validated",
+      "audit_path": "investigation_initial_model_audit/50535c25c97a49e4adbeb6d4a37bf173/summary.json"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "request_attempt": 1,
+      "fallback_reason": "Model request failed (APIStatusError): Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01km18zm61exrt2hms9gnf0qxn` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8041, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "stage": "investigation_initial",
+      "usage": {
+        "prompt_tokens": 6252,
+        "completion_tokens": 1042,
+        "total_tokens": 7294
+      },
+      "outcome": "responded",
+      "latency_seconds": 6.902,
+      "generation_attempt": 2,
+      "validation_outcome": "validated",
+      "audit_path": "investigation_initial_model_audit/50535c25c97a49e4adbeb6d4a37bf173/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 1,
+      "fallback_reason": null,
+      "stage": "r1",
+      "http_status": 429,
+      "outcome": "failed",
+      "error_type": "LLMError",
+      "quota_wait_seconds": 13.6075,
+      "latency_seconds": 0.085,
+      "generation_attempt": 1,
+      "validation_outcome": "validated",
+      "audit_path": "r1_model_audit/b8a8166a44004e48a7f3fbab9809f129/summary.json"
+    },
+    {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "request_attempt": 2,
+      "fallback_reason": null,
+      "stage": "r1",
+      "usage": {
+        "prompt_tokens": 3423,
+        "completion_tokens": 2179,
+        "total_tokens": 5602
+      },
+      "outcome": "responded",
+      "latency_seconds": 5.145,
+      "generation_attempt": 1,
+      "validation_outcome": "validated",
+      "audit_path": "r1_model_audit/b8a8166a44004e48a7f3fbab9809f129/summary.json"
+    }
+  ]
+}

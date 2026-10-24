@@ -1,4 +1,6 @@
-# SignalForge current state — 24 October 2026
+# SignalForge current state — 25 October 2026
+
+Current takeover verification is in `ARSHIA_DEMO_HANDOVER.md`. On Arshia's 8 GB M2 Mac, the clean checkout was fast-forwarded from `9dd5fc5` to remote `6893f33`. Fixes are on `codex/arshia-demo-readiness`. Gemini and Groq passed live JSON; Groq also passed a genuine F1/R1 evidence replay. Ollama is absent. Backend: 351 tests OK/two skipped; frontend:43 passed/build passed. Recovered uncurated Coal India run `research_20261024T232238_39445100e7e3` completed model challenge and deterministic adjudication: inconclusive/Weak. Unattended browser run `research_20261024T234754_a378b8365612` completed in about173s with an evidence-gap/Not rated report after rejecting an invented zero operand; semantic review for that run did not complete. Both rendered/exported correctly. Hosted inference, identity, failover, recovery and report-integrity fixes are tested; a novel independently corroborated discovery and current constituent verification remain unachieved. The audit below is retained as historical context and its older runtime/test/commit assertions are not the current handover.
 
 Workspace: `/Users/arshiadang/Desktop/fns` (macOS). Branch `main`, inspected HEAD `823d68615a3ce51ee66cd74c803fecda45b00ad7`. `git fetch --all --prune` succeeded. Open PR #4: `sprint2/pdf-native-tables`; inspected as background only. Existing changes were preserved. Nothing staged, committed or pushed by this execution.
 

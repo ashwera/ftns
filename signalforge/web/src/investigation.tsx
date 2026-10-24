@@ -6,12 +6,12 @@ export type Investigation = {
   report_type?: 'evidence_gap'; model_review_execution?: string; failed_stage?: string | null
   company?: string; prompt?: string; run_id?: string; novelty_established?: boolean; source_scope?: string
   status: 'supported' | 'inconclusive' | 'rejected'; headline: string; summary: string; why_it_matters: string[]
-  claims: { id: string; text: string; evidence_ids: string[]; assessment: 'supported' | 'contradicted' | 'unresolved'; independently_corroborated?: boolean; verification_reason?: string; independent_groups?: string[]; citations?: { evidence_id: string; quote: string }[] }[]
+  claims: { id: string; text: string; evidence_ids: string[]; assessment: 'supported' | 'contradicted' | 'unresolved'; assessment_method?: string; independently_corroborated?: boolean; verification_reason?: string; independent_groups?: string[]; citations?: { evidence_id: string; quote: string }[] }[]
   sources: { id: string; title: string; url: string; publisher: string; lineage: string; sha256: string; intake_mode: string; passages: { id: string; page: number | null; text: string }[] }[]
   timeline: { date: string; event: string; evidence_ids: string[] }[]
   calculations: { label: string; formula: string; result: number | string | null; unit: string; evidence_ids: string[] }[]
   counterargument: { text: string; evidence_ids: string[] }; falsification: string
-  evidence_strength: 'Strong' | 'Moderate' | 'Weak'; strength_reasons: string[]; limitations: string[]
+  evidence_strength: 'Strong' | 'Moderate' | 'Weak' | 'Not rated'; strength_reasons: string[]; limitations: string[]
   decision_log: { action: string; reason: string; outcome: string }[]; completed_at: string
 }
 

@@ -125,6 +125,6 @@ class CatalogAuditTests(unittest.TestCase):  # all SYNTHETIC
         for f in SRC_DIR.glob("*.py"):
             if f.name in ("public_sources.py", "evidence_ingestion.py", "f1_research_angle_selector.py"): continue
             urls = re.findall(r"https?://[A-Za-z][^\s\"')|]+", f.read_text())
-            self.assertEqual([], [u for u in urls if not any(x in u for x in ("w3.org", "json-schema", "example", "synthetic", "claude.com", "generativelanguage.googleapis.com", "wikidata.org"))], f.name)
+            self.assertEqual([], [u for u in urls if u != "https://api.groq.com/openai/v1" and not any(x in u for x in ("w3.org", "json-schema", "example", "synthetic", "claude.com", "generativelanguage.googleapis.com", "wikidata.org"))], f.name)
 
 if __name__ == "__main__": unittest.main()

@@ -44,7 +44,7 @@ class OllamaTests(unittest.TestCase):
         with patch.dict(sys.modules, {"openai": types.SimpleNamespace(OpenAI=FakeOpenAI)}):
             llm_client.generate_json("p", {}, gem)
         self.assertEqual("K", FakeOpenAI.created["api_key"])
-        self.assertEqual(2, FakeOpenAI.created["max_retries"])
+        self.assertEqual(0, FakeOpenAI.created["max_retries"])
         self.assertEqual(llm_client.GEMINI_OPENAI_BASE_URL, FakeOpenAI.created["base_url"])
         with self.assertRaises(llm_client.LLMError):
             llm_client.generate_json("p", {}, dataclasses.replace(gem, api_key=""))

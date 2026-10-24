@@ -1,0 +1,189 @@
+{
+  "company_name": "Coal India Limited",
+  "candidate_id": "cand_001",
+  "hypothesis": "Coal India Limited’s announced or planned capacity expansions (solar, thermal, BESS, rail‑linked evacuation) materially exceed the capacity that is actually commissioned and operational in the reporting period.",
+  "research_questions": [
+    {
+      "question": "What is the actual commissioned (operational) capacity for each announced solar, thermal, and BESS project as of 31 Mar 2026 (FY 2025‑26) and FY 2026‑27 outlook?",
+      "metrics": [
+        "Commissioned capacity (MW)",
+        "Announced capacity (MW)"
+      ],
+      "periods": [
+        "FY 2025‑26 (ended 31 Mar 2026)",
+        "FY 2026‑27 outlook"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Project‑level commissioning dates",
+        "Operational status verification"
+      ]
+    },
+    {
+      "question": "What capital expenditure (CAPEX) has been actually incurred versus announced for each project?",
+      "metrics": [
+        "Announced CAPEX (INR bn)",
+        "Actual CAPEX spent (INR bn)"
+      ],
+      "periods": [
+        "FY 2025‑26",
+        "FY 2026‑27 outlook"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Audited financial statement line‑items for project‑specific CAPEX",
+        "Schedule of payments disclosed in management discussion"
+      ]
+    },
+    {
+      "question": "How does the reported revenue attribution (if disclosed) align with the operational status of the announced projects?",
+      "metrics": [
+        "Revenue credited to solar/thermal/BESS projects (INR bn)",
+        "Proportion of total revenue from newly commissioned capacity"
+      ],
+      "periods": [
+        "FY 2025‑26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Segment‑level revenue breakdown by project type"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_9e3008f225572b9cae1053eb",
+      "source_type": "PDF",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Commissioned a 100 MW solar power project at Patan as part of the renewable energy portfolio.",
+      "claim_supported": "announced vs commissioned capacity",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_9e3008f225572b9cae1053eb",
+      "source_type": "PDF",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand.",
+      "claim_supported": "announced vs commissioned capacity",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_9745f1ec9f355d0eaf9a1803",
+      "source_type": "PDF",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "875 MW Solar project at Pugal Solar Park, Rajasthan; 80 MW / 320 MWh BESS project in Odisha; 600 MW BESS project in Telangana; 188 MW / 750 MWh BESS project in Odisha.",
+      "claim_supported": "announced vs commissioned capacity",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": "ev_9745f1ec9f355d0eaf9a1803",
+      "source_type": "PDF",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": "Rail infrastructure projects (e.g., 44.37 km double line, Angul–Balram rail link, Tori–Shivpur new BG line) commissioned to strengthen coal evacuation capacity.",
+      "claim_supported": "announced vs commissioned capacity",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "Annual Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "announced vs commissioned capacity",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "Regulatory Capacity Table",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "announced vs commissioned capacity",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "Audited Financial Statements",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "CAPEX announced vs actual",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "News Media Report",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "thermal JV operational status",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Obtain Coal India Limited Integrated Annual Report (IAR) FY 2025‑26 and FY 2026‑27 outlook.",
+      "expected_evidence": "Project‑level tables showing announced capacity, commissioning dates, and status (operational / under construction).",
+      "cross_validation_sources": [
+        "Ministry of Power – Generation Capacity Statistics",
+        "Central Electricity Authority (CEA) – Operational Capacity Reports"
+      ],
+      "calculation": null,
+      "completion_criteria": "All announced projects listed in the hypothesis have a recorded status and commissioning date in the IAR."
+    },
+    {
+      "step": "Retrieve audited financial statements (Balance Sheet, Cash Flow) for FY 2025‑26.",
+      "expected_evidence": "Breakdown of capital expenditure by project or by segment that matches announced projects.",
+      "cross_validation_sources": [
+        "Management Discussion & Analysis (MD&A) section of IAR",
+        "Quarterly financial releases"
+      ],
+      "calculation": null,
+      "completion_criteria": "Actual CAPEX figures are extracted and can be compared to announced CAPEX for each project."
+    },
+    {
+      "step": "Collect official capacity tables from Ministry of Power / CEA for the reporting date 31 Mar 2026.",
+      "expected_evidence": "Verified operational MW for solar, thermal, and BESS assets belonging to Coal India Limited.",
+      "cross_validation_sources": [
+        "Ministry of Power website (generation‑capacity‑statistics)",
+        "CEA annual capacity report"
+      ],
+      "calculation": "Operational MW (regulatory source) – Announced MW (company source) = Gap per project",
+      "completion_criteria": "For each project, a numeric gap is calculated and documented."
+    },
+    {
+      "step": "Search reputable news outlets (e.g., Economic Times, Business Standard) for updates on the 1,600 MW thermal JV and BESS projects.",
+      "expected_evidence": "Articles confirming commercial operation, delays, or cancellations.",
+      "cross_validation_sources": [
+        "Company press releases",
+        "Regulatory filing notices"
+      ],
+      "calculation": null,
+      "completion_criteria": "At least one independent news source per major project confirming operational status or delay."
+    },
+    {
+      "step": "Perform quantitative comparison of announced vs commissioned capacity and announced vs actual CAPEX.",
+      "expected_evidence": "Summary table showing percentage of announced capacity that is operational and percentage of CAPEX spent versus announced.",
+      "cross_validation_sources": [
+        "All previously gathered evidence"
+      ],
+      "calculation": "[(Commissioned MW / Announced MW) * 100] and [(Actual CAPEX / Announced CAPEX) * 100] per project",
+      "completion_criteria": "If the average commissioned share is below 80 % for any major asset class, hypothesis is supported."
+    }
+  ],
+  "alternative_explanation": "The disclosed projects may be at different implementation stages (e.g., awarded, under construction, or in financial closure) and the company may be reporting them as ‘commissioned’ in a forward‑looking sense, which would explain a gap between announced capacity and current operational output.",
+  "falsification_test": "If independent regulator or audited financial data show that the announced capacities (especially the 1,600 MW thermal plant and the listed BESS projects) have not been commissioned by the end of FY 2025‑26, the hypothesis that announced capacity materially exceeds commissioned capacity is confirmed; conversely, if all announced capacities are verified as operational, the hypothesis is falsified.",
+  "retrieval_performed": false
+}

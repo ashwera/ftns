@@ -281,6 +281,14 @@ def run(company, csv_path, output_path, config=None, *, research_question=None):
         "data_limitations": [f"Column {c!r} has {n} missing values." for c,n in meta["missing_values"].items() if n] + audit["quality_warnings"]}
     if research_question:
         payload["assigned_research_question"] = research_question
+    if config.provider.strip().lower() == "groq" or "groq" in config.fallback_providers.split(","):
+        # The full records have already passed eligibility. Avoid sending repeated
+        # verifier snippets/digests to inference; originals remain in the audit store.
+        fields = ("evidence_id", "company_name", "source_url", "document_title", "publication_date", "page_number")
+        payload["verified_ingested_evidence"] = [
+            {**{k: r.get(k) for k in fields}, "excerpt_or_fact": r["excerpt_or_fact"][:1600]}
+            for r in ingested_evidence[:4]]
+        payload["model_selection_notes"] = f"Bounded planning view: {min(4,len(ingested_evidence))} of {len(ingested_evidence)} eligible passages; at most 1600 characters per passage. Full originals remain available to investigation. Omitted evidence is not negative evidence."
     payload_bytes = len(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
     if payload_bytes > MAX_F1_PAYLOAD_BYTES:
         raise DataLoadError(f"F1 request payload is {payload_bytes} bytes; maximum is {MAX_F1_PAYLOAD_BYTES}. Reduce the reviewed evidence bundle before retrying.")

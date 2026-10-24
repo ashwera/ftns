@@ -1,0 +1,201 @@
+{
+  "headline": "Investigation inconclusive: proposed conclusion did not pass review",
+  "summary": "Selected passages do not establish document-wide non-disclosure or a material commissioning gap.",
+  "why_it_matters": [
+    "Resolve the reviewed evidence gaps before drawing a financial conclusion."
+  ],
+  "timeline": [
+    {
+      "date": "FY 2025-26",
+      "event": "Commissioned 100 MW Patan solar project",
+      "evidence_ids": [
+        "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb"
+      ]
+    }
+  ],
+  "counterargument": {
+    "text": "The company may have awarded renewable projects that are not disclosed in the integrated report, meaning the apparent lack of gap could be due to incomplete reporting rather than execution risk.",
+    "evidence_ids": [
+      "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+      "src_6be29201be42be17_p6_0"
+    ]
+  },
+  "falsification": "A capacity-gap claim would be overturned by original records showing that the same projects achieved the required commissioning milestone by the last valid scheduled deadline, after accounting for revisions. Awards not yet due do not establish a shortfall.",
+  "proposed_headline": "Coal India reports commissioning of a 100 MW Patan solar project but provides no disclosed capacity for awarded renewable projects",
+  "proposed_summary": "The FY 2025‑26 Integrated Annual Report confirms that Coal India Limited commissioned a 100 MW solar power project at Patan. The report does not list any other renewable projects by status (awarded, under construction, or planned), and no subsequent quarterly filings are available in the supplied sources. Consequently, the hypothesis that a material gap exists between announced renewable capacity and commissioned capacity cannot be confirmed nor refuted with the current evidence.",
+  "status": "inconclusive",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Coal India commissioned a 100 MW solar power project at Patan in FY 2025‑26.",
+      "assessment": "supported",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "quote": "Commissioned a 100 MW solar power project at Patan as part of the renewable energy portfolio."
+        }
+      ],
+      "verification_reason": "The 2025-26 Integrated Annual Report explicitly states the commissioning of a 100 MW solar power project at Patan.",
+      "evidence_ids": [
+        "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb"
+      ],
+      "independent_groups": [
+        "issuer:Coal India Limited"
+      ],
+      "independently_corroborated": false
+    },
+    {
+      "id": "c2",
+      "text": "The FY 2025‑26 report does not disclose any other renewable projects by status (awarded, under construction, commissioned).",
+      "assessment": "unresolved",
+      "key": false,
+      "citations": [
+        {
+          "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "quote": "Initiative Description Value Created Capitals Impacted 100 MW Patan Solar Project"
+        }
+      ],
+      "verification_reason": "Selected passages cannot establish absence across an entire document; the broad non-disclosure claim is unresolved.",
+      "evidence_ids": [
+        "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb"
+      ],
+      "independent_groups": [
+        "issuer:Coal India Limited"
+      ],
+      "independently_corroborated": false,
+      "assessment_method": "Scope policy"
+    },
+    {
+      "id": "c3",
+      "text": "No quarterly updates on renewable project status are present in the supplied sources.",
+      "assessment": "supported",
+      "key": false,
+      "citations": [
+        {
+          "evidence_id": "src_6be29201be42be17_p6_0",
+          "quote": "Initiative Description Value Created Capitals Impacted 100 MW Patan Solar Project"
+        }
+      ],
+      "verification_reason": "The scope of the provided sources is limited solely to the annual report; no quarterly filings were included.",
+      "evidence_ids": [
+        "src_6be29201be42be17_p6_0"
+      ],
+      "independent_groups": [
+        "issuer:Coal India Limited"
+      ],
+      "independently_corroborated": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_6be29201be42be17",
+      "title": "Coal India Limited annual report (onboarded original)",
+      "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/CIL_AR_2025-26.pdf",
+      "publisher": "Coal India Limited",
+      "lineage": "issuer:Coal India Limited",
+      "independence_basis": null,
+      "source_class": "issuer_annual_report",
+      "publication_date": null,
+      "sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+      "snapshot_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261024T232238_39445100e7e3/onboarding_pdfs/sources/6be29201be42_29c0e63f.pdf",
+      "intake_mode": "onboarded_original_rechecked",
+      "catalog": null,
+      "passages": [
+        {
+          "id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "page": 6,
+          "text": "Initiative Description Value Created Capitals Impacted\n100 MW  \nPatan Solar  \nProject\nRail \nInfrastructure \nDevelopment\nPartnership  \nwith Hindustan  \nCopper\nRenewable \nEnergy \nfor Green \nAmmonia\nRare Earth  \nElement (REE)  \nBlock  \nAcquisition\nStrategic  \nInvestment  \nPlatform\nThermal Power \nExpansion\nCommissioned a 100 MW solar \npower project at Patan as part of \nthe renewable energy portfolio.\nCollaborating with strategic rail \ninfrastructure partners to develop \nand strengthen rail connectivity \nfor Coal India and its subsidiaries.\nEntered into a strategic \ncollaboration with Hindustan \nCopper to explore opportunities \nin critical minerals.\nSupporting India’s green energy \ntransition by supplying renewable \npower from planned renewable \nenergy projects to green \nammonia production facilities.\nSecured the Kawalapur  \nRare Earth Element block\nReceived the first dividend \nfrom Hindustan Urvarak & \nRasayan Limited and CIL  \nNavikarniya Urja Limited.\nEstablished a joint venture to \ndevelop a 1,600 MW brownfield \nthermal power plant in Jharkhand.\nDiversified the energy portfolio, \nenhanced renewable capacity \nand reduced emissions intensity.\nImproves coal evacuation, logistics \nefficiency, supply chain reliability \nand operational productivity.\nEnhanced access to emerging \nmineral opportunities and \nstrengthened technical capabilities.\nAdvances decarbonisation, \ncreates new revenue streams and \nstrengthens participation in the \ngreen hydrogen ecosystem.\nOpened new growth avenues \nand strengthened resource  \ndiversification.\nCreated an additional earnings \nstream and demonstrated value \nfrom strategic investments.\nEnhances power generation \ncapacity, supports energy security \nand creates long-term value through \ndiversified business operations.\nListing of BCCL  \nand CMPDIL\nBCCL and CMPDIL were listed \nduring FY 2025-26 as part of the \nmonetisation drive.\nUnlocks value and improves \nvisibility, governance and \nstakeholder transparency.\nNaturalSocial & Relationship HumanManufactured IntellectualFinancial\nStrategic Initiatives Driving \nValue Creation\nThroughout FY 2025-26, we continued to strengthen our core mining business while investing \nin future growth platforms. Our initiatives focused on improving operational efficiency, \nexpanding infrastructure, advancing diversification and creating long-term value for stakeholders.\nTLS - Mechanised Truck Loading System\n08 09\nCorporate Overview Statutory Reports Financial Statements\nCoal India Limited\nIntegrated Annual Report 2025-26",
+          "source_locator": "page:6",
+          "origin_evidence_id": "ev_9e3008f225572b9cae1053eb"
+        },
+        {
+          "id": "src_6be29201be42be17_p153_1800",
+          "page": 153,
+          "text": "i Forest Division\", fifteen hundred seedlings are multiplied and planted in re-vegetated mined out sites, nearby forest site and RFRI botanical garden with exhaustive care. Conservation and maintenance of orchid species were done at RFRI botanical garden and Tikak Colliery. Bench Scale Study on reducing ash content (mineral matter) from Washery Grade Coking coal and high ash non-coking coal through oil agglomeration. Coal-Oil Agglomeration unit fabricated, installed and commissioned at NML laboratory, Jamshedpur using three types of oils i.e. sunflower oil, castor oil and pine oil for reducing the ash content of coal. Coking coal with sunflower oil shows encouraging results (Topa Coal: Ash%age reduced to 9% from 21% with 84% yield, Rajrappa Coal: Ash%age reduced to 20% from 34% with 80% yield). Development of Guidelines for Increasing the Height of Overburden Dumps at Opencast Coal Mines in India. Design and developed a Large- Scale Direct Shear Testing Machine at CMPDIL for testing of representative OB dump samples from Opencast Coal mines. Steeper bench angles up to 40° and external dump height up to 120m can be considered safe based on the strength properties of OB material, in comparison to present Coal Mine Regulation 2017 which limits the individual bench angle to 37.5° and external dump heights up to 90m. Capacity Building for extraction of CMM Resource within CIL Command Areas (CMPDIL & CSIRO, Australia). CMPDIL has developed a State-of-Art Laboratory facility for understanding of CBM/ CMM resources in India to assist in unconventional gas resources extraction. Project outcome will be helpful in development of CBM/CMM in CIL & other leasehold areas. Under a project, the effect of blasting on opencast mine dump was investigated and prediction model of FOS for stability of the OB dump slope was recommended considering various uncertain material parameters under blast loading with different explosive densities and distances of the blasting point. Under a project, a VOD measurement system was developed which can measure velocity of detonation of in-the-hole explosive as well as cartridges, booster and other accessories on the surface. The system uses fiber o"
+        },
+        {
+          "id": "src_6be29201be42be17_p6_0",
+          "page": 6,
+          "text": "Initiative Description Value Created Capitals Impacted 100 MW Patan Solar Project Rail Infrastructure Development Partnership with Hindustan Copper Renewable Energy for Green Ammonia Rare Earth Element (REE) Block Acquisition Strategic Investment Platform Thermal Power Expansion Commissioned a 100 MW solar power project at Patan as part of the renewable energy portfolio. Collaborating with strategic rail infrastructure partners to develop and strengthen rail connectivity for Coal India and its subsidiaries. Entered into a strategic collaboration with Hindustan Copper to explore opportunities in critical minerals. Supporting India's green energy transition by supplying renewable power from planned renewable energy projects to green ammonia production facilities. Secured the Kawalapur Rare Earth Element block Received the first dividend from Hindustan Urvarak & Rasayan Limited and CIL Navikarniya Urja Limited. Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand. Diversified the energy portfolio, enhanced renewable capacity and reduced emissions intensity. Improves coal evacuation, logistics efficiency, supply chain reliability and operational productivity. Enhanced access to emerging mineral opportunities and strengthened technical capabilities. Advances decarbonisation, creates new revenue streams and strengthens participation in the green hydrogen ecosystem. Opened new growth avenues and strengthened resource diversification. Created an additional earnings stream and demonstrated value from strategic investments. Enhances power generation capacity, supports energy security and creates long-term value through diversified business operations. Listing of BCCL and CMPDIL BCCL and CMPDIL were listed during FY 2025-26 as part of the monetisation drive. Unlocks value and improves visibility, governance and stakeholder transparency. NaturalSocial & Relationship HumanManufactured IntellectualFinancial Strategic Initiatives Driving Va"
+        },
+        {
+          "id": "src_6be29201be42be17_p152_3600",
+          "page": 152,
+          "text": " Hydrokinetic- Based Pumped Storage (SHK-PSP) Technology etc. CIL is now prioritising R&D Projects mainly through applied research. Project with Technology Readiness Level (TRL)-4 & above are being prioritized to give a momentum shift to R&D landscape of CIL. 2. Benefits derived from R&D activities in coal and lignite sectors Notable advances have been made through R&D efforts in coal exploration techniques Introduction of mining methods like \"blasting gallery and cable bolting\" for recovery of coal in thick seams and shortwall mining at SECL. \"Controlled blasting\" for removal of overburden rocks and coal in opencast mines as close as to 50m from surface structures successfully. Rock Mass Rating (RMR) developed under R&D is now being used for designing support in underground mines. Applying new technique using Airborne Laser Terrain Mapper and ground based Terrestrial Laser Scanner (TLS) for OB measurement. To ensure the safety and to protect loss of equipment in opencast mines, Dumper Collision Avoidance System (DCAS) has been developed indigenously and was successfully undertaken at KDH opencast mine of Central Coalfields Limited (CCL). Self-advancing goaf edge (mobile) chock type supports have been indigenously developed and their field trial conducted successfully at Bastacolla mine of BCCL [in coal roof] and RK-7 mine of SCCL [shale/ sand stone roof]. Introduction of modern technique like Ground Penetrating Radar for detection of old unapproachable water-logged workings. The solar photovoltaic plant has been erected and commissioned on the roof tops of CMPDIL office buildings. The total installed capacity of the plant is 190 kW. This project reduces carbon footprint & maximizes renewable energy system. 300 301 Coal India Limited Integrated Annual Report 2025-26 Corporate Overview Statutory Reports Financial Statements"
+        },
+        {
+          "id": "src_6be29201be42be17_p61_1800",
+          "page": 61,
+          "text": "to continuously track atmospheric conditions across underground and surface operations. These systems enhance miner safety by enabling the early detection of hazardous gas concentrations and facilitating timely preventive action. A network of 164 Continuous Ambient Air Quality Monitoring Systems (CAAQMS) enables real time monitoring of key air quality parameters, including PM2.5, PM10, SOx, NOx and CO. Strategically installed across mine lease areas, coal handling facilities and surrounding communities, these systems provide continuous environmental surveillance. The monitoring data is seamlessly integrated with the Central Pollution Control Board (CPCB) and respective State Pollution Control Boards (SPCBs), ensuring regulatory compliance, transparency and timely environmental oversight. Advanced environmental tele monitoring systems and gas chromatographs are deployed for detailed chemical and gaseous analyses, particularly in underground mines and operational workshops. These technologies facilitate the detection of complex air pollutants, support continuous environmental profiling, and enable timely identification of potential environmental and occupational health risks. Meteorological parameters such as wind speed, wind direction, humidity, rainfall and temperature are monitored alongside air quality indicators to provide a comprehensive understanding of environmental conditions. This integrated approach supports predictive dust dispersion modelling, enables proactive risk assessment and facilitates the effective deployment of dust control and mitigation systems. Noise levels are monitored in decibels using both portable and fixed location monitoring devices during daytime and night time periods. The resulting data supports the implementation of noise control measures, helps maintain compliance with prescribed standards, and informs the development of green belts and buffer zones around sensitive receptors such as schools, hospitals and residential communities. Personal Dust Samplers (PDS) are deployed across critical work areas to monitor employee exposure to airborne particulates. Complementing these efforts, mobile dust monitoring units, stationary analys"
+        }
+      ]
+    }
+  ],
+  "calculations": [],
+  "evidence_strength": "Weak",
+  "strength_reasons": [
+    "The evidence confirms the commissioning of the Patan project, but the lack of supplementary data makes it impossible to verify the existence or status of a broader renewable pipeline.",
+    "No key claim passed independent corroboration checks."
+  ],
+  "limitations": [
+    "Only the FY 2025‑26 integrated annual report is available; quarterly filings and external announcements were not provided.",
+    "Unresolved assertion about the full document: The report does not contain a detailed project‑by‑project table for renewable projects, limiting verification of awarded capacity.",
+    "Absence of evidence is not evidence of absence; the hypothesis cannot be definitively rejected.",
+    "Document-wide absence assertions were withheld: only selected original passages were reviewed (claims: c2).",
+    "Not every key claim has independent confirmation; issuer-only facts remain labelled.",
+    "Novelty relative to market knowledge has not been established.",
+    "Semantic support was challenged by a second model pass, not a human audit. Exact quotes and hashes were checked by code.",
+    "The model's award-only commissioning-gap criterion was withheld because it lacked a matched deadline and cutoff."
+  ],
+  "novelty_established": false,
+  "completed_at": "2026-10-24T23:46:34.926287+00:00",
+  "company": "Coal India Limited",
+  "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+  "run_id": "research_20261024T232238_39445100e7e3",
+  "execution": "real",
+  "retrieval_performed": true,
+  "decision_log": [
+    {
+      "action": "r1_followthrough",
+      "reason": "What is the capacity in MW/MWh of each renewable project by status (awarded, under construction, commissioned) as reported in FY 2025-26 and updated through the most recent quarterly filings?",
+      "outcome": "Resumed using the existing completed live search and saved retrieval audit."
+    },
+    {
+      "action": "Carry forward F1 source passages",
+      "reason": "F1-eligible evidence matched the same hash-pinned original PDF",
+      "outcome": "1 exact passages added with original evidence IDs and page locators; claim verification remains separate."
+    },
+    {
+      "action": "Read and hash original documents",
+      "reason": "Compare source passages and document lineage",
+      "outcome": "1 unique snapshots; 5 exact passages. Cached originals explicitly labelled."
+    },
+    {
+      "action": "counterevidence_search",
+      "reason": "What are the detailed capacities and statuses of renewable projects announced in the FY 2025‑26 Integrated Annual Report, excluding Patan solar?",
+      "outcome": "Resumed using the existing completed live search and saved retrieval audit."
+    },
+    {
+      "action": "Carry forward F1 source passages",
+      "reason": "F1-eligible evidence matched the same hash-pinned original PDF",
+      "outcome": "1 exact passages added with original evidence IDs and page locators; claim verification remains separate."
+    },
+    {
+      "action": "Read and hash original documents",
+      "reason": "Compare source passages and document lineage",
+      "outcome": "1 unique snapshots; 5 exact passages. Cached originals explicitly labelled."
+    },
+    {
+      "action": "Adjudicate after challenge",
+      "reason": "The evidence confirms the commissioning of the Patan project, but the lack of supplementary data makes it impossible to verify the existence or status of a broader renewable pipeline.",
+      "outcome": "inconclusive / Weak"
+    },
+    {
+      "action": "Apply document-scope and schedule policy after model challenge",
+      "reason": "Selected excerpts do not establish absence across an annual report; an award alone does not prove a missed deadline.",
+      "outcome": "Broad claim c2 unresolved; overall conclusion inconclusive; unmatched award-only criterion withheld."
+    }
+  ],
+  "source_scope": "Bounded live search; one hash-rechecked onboarded original PDF; zero prepared catalog sources. Earlier acquisition failures and recovery checkpoints are retained."
+}

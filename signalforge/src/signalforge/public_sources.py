@@ -102,7 +102,7 @@ def _append_jsonl(path, records, id_field):
     path.write_text("".join(json.dumps(r,ensure_ascii=False)+"\n" for r in merged),encoding="utf-8")
     return merged
 
-def retrieve_urls(urls, output_dir, registry_path=None, timeout=20, max_bytes=MAX_BYTES, opener=None, robots_checker=None, sleep_fn=time.sleep, source_relationship="unknown", company=None, source_organization=None):
+def retrieve_urls(urls, output_dir, registry_path=None, timeout=20, max_bytes=MAX_BYTES, opener=None, robots_checker=None, sleep_fn=time.sleep, source_relationship="unknown", company=None, source_organization=None, normalize_evidence=True):
     if not urls: raise ValueError("At least one URL is required")
     if len(urls)>MAX_SOURCES: raise ValueError(f"Maximum {MAX_SOURCES} URLs per run")
     if source_relationship not in {"original_disclosure","republication","independent_source","unknown"}: raise ValueError("Invalid source relationship classification")
@@ -163,7 +163,7 @@ def retrieve_urls(urls, output_dir, registry_path=None, timeout=20, max_bytes=MA
         except (urllib.error.URLError,TimeoutError,RetrievalError,OSError,ValueError) as e:
             item["error"]=f"{type(e).__name__}: {e}"
         manifest.append(item)
-    if local_paths:
+    if local_paths and normalize_evidence:
         run_dir=output/"retrieval_runs"/dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
         records,ingest_report=ingest_paths(local_paths,run_dir,registry_path,root=output,source_metadata=metadata)
         # Merge by stable IDs, retaining prior records and original files.
@@ -173,6 +173,7 @@ def retrieve_urls(urls, output_dir, registry_path=None, timeout=20, max_bytes=MA
         (output/"ingestion_report.json").write_text(json.dumps(ingest_report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     else: records=[]; ingest_report={"duplicate_documents":[],"conflicts":[],"manual_review_evidence_ids":[]}
     report={"generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"requested_count":len(urls),"retrieved_count":sum(x["retrieval_status"]=="retrieved" for x in manifest),"failed_count":sum(x["retrieval_status"]!="retrieved" for x in manifest),"sources":manifest,"normalized_evidence_record_count":len(records),"duplicate_documents":ingest_report.get("duplicate_documents",[]),"conflicts":ingest_report.get("conflicts",[]),"manual_review_count":len(ingest_report.get("manual_review_evidence_ids",[]))}
+    report["normalization_status"] = "performed" if normalize_evidence else "deferred_to_identity_and_machine_evidence_intake"
     (output/"retrieval_report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     return report
 

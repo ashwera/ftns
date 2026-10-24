@@ -1,14 +1,17 @@
 # SignalForge
 
-SignalForge is an initial research workflow foundation for the Energy, Power & Renewables contest track. F1 selects and ranks evidence-led research angles; R1 specifies how to investigate the selected angle. The current repository dataset is an NTPC daily equity quote export, so it supports market-data analysis only.
+SignalForge is a local financial research application for the Energy, Power & Renewables contest track. The research service connects company onboarding, source discovery, eligible original-PDF evidence, F1 angle selection, R1 planning, bounded investigation, counterevidence search and a cited report. The anonymous NTPC quote export is historical dataset context, not evidence for another company's operations.
+
+For the current machine, provider status, measured tests, live-run outcome and demo/recovery commands, start with [ARSHIA_DEMO_HANDOVER.md](ARSHIA_DEMO_HANDOVER.md). Earlier reports below describe their dated runs and do not establish current readiness.
 
 ## Current status
 
 - F1 loader, metadata inspection, optional model client, prompt, JSON Schema validation and CLI are implemented.
 - The available CSV has no company/ticker column and is not joined to NTPC based on its filename. NTPC Limited's canonical identity, NSE symbol, ISIN, and BSE scrip code are verified from an NSE-hosted filing; that does not identify the CSV rows.
-- Bounded public URL retrieval and local document parsing are implemented. Retrieval is caller-directed, respects robots policy and rate limits, and does not discover sources or perform broad web research.
+- Bounded public URL retrieval and local document parsing are implemented. The retrieval adapter is caller-directed and respects robots policy and rate limits; the research service combines it with bounded source discovery and follow-up searches.
 - Company-specific F1 can use registry-verified eligible disclosures or rows with a verified identifier. The current quote CSV alone is insufficient. Original `processed_step6` fragments remain pending and ineligible; separate machine-checked evidence was used for the saved live model run described below.
-- R1 is a research-plan runner only. It does not perform external research.
+- The standalone R1 module produces a plan. The research service follows it through `investigation.py`; actual completion, source gaps and model failures remain visible per run.
+- Gemini, Groq and Ollama share the model interface. Groq uses its own `GROQ_API_KEY`, optional ordered failover, bounded timeouts, model/latency/usage audit and the same schema/evidence gates. A provider responding does not establish a completed discovery. See the handover for observed account limits.
 - Genuine F1 and R1 model outputs are saved under `signalforge/data/runs/run_20261024_live_research/`, with raw responses, rejected attempts, deterministic scoring corrections and explicit execution provenance. This is an analyst-directed PDF investigation, not proof of end-to-end autonomous discovery. Credentials remain ignored by Git.
 - A frontend-ready, real-data NTPC pipeline run is included as a clearly labeled `provisional_hypothesis` / `Weak` discovery. It is suitable for demonstrating the evidence trail and reasoning flow, but it must not be presented as a verified conclusion.
 
@@ -24,13 +27,13 @@ signalforge/
   outputs/              Generated local results (ignored)
 ```
 
-## Data files that are not in the repository
+## Data availability
 
-Large source and generated data are deliberately not committed (GitHub rejects files over 100 MB and the outputs are reproducible). If you clone this repository, **ask the maintainer for the source archive**, or regenerate the outputs from it.
+The current upstream includes `signalforge/data/CSV.zip` and some normalized archive data. Older reports describe a checkout without them. Large downloaded originals and new execution directories remain local and ignored; a saved artifact may still refer to an original PDF from another machine. Check the actual path before claiming a prepared case is reproducible, and retrieve the pinned original or ask the maintainer when it is absent.
 
 | Missing path | What it is | How to get it |
 |---|---|---|
-| `signalforge/data/CSV.zip` | Source archive: 30 PDF-to-text CSVs (9 NTPC annual reports FY2017-18 to FY2025-26 and 21 quarterly/results filings). About 2 MB. | Ask the maintainer. It is the only input the rest depends on. Do not edit it. |
+| `signalforge/data/CSV.zip` | Tracked source archive: 30 PDF-to-text CSVs (9 NTPC annual reports FY2017-18 to FY2025-26 and 21 quarterly/results filings). About 2 MB. | Included in current upstream; ask the maintainer only if absent. Input for historical archive extraction, not a requirement for generic public-document onboarding. Do not edit it. |
 | `signalforge/data/intake/CSV/` | The same files, unzipped (macOS `__MACOSX` and `.DS_Store` removed). | `unzip signalforge/data/CSV.zip -x "__MACOSX/*" "*.DS_Store" -d signalforge/data/intake` |
 | `signalforge/data/processed_step6/` | 8,241 page-block evidence records (`evidence.jsonl`, `source_records.jsonl`, reports). Some of its files may be absent from a clone. | `PYTHONPATH=signalforge/src python3 -m signalforge.document_text_ingestion --input-dir signalforge/data/intake/CSV --output-dir signalforge/data/processed_step6` |
 | `signalforge/data/claims_step1/`, `claims_table_step1/`, `claims_table_xy/` | Historical claim outputs from earlier extractor versions (about 8 MB, 72 MB, 84 MB). | Ask the maintainer, or regenerate with the extraction commands above. Counts will differ if extractor versions differ. |

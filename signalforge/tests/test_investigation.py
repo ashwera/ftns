@@ -7,6 +7,36 @@ from signalforge.investigation import check_citation, calculate, adjudicate, evi
 
 
 class InvestigationTests(unittest.TestCase):
+    def test_excerpt_absence_cannot_become_document_wide_non_disclosure(self):
+        draft,review=self.fixture()
+        draft['claims'][0]['text']='The report does not disclose any other commissioned capacity.'
+        result=adjudicate(draft,review,self.sources)
+        self.assertEqual(result['claims'][0]['assessment'],'unresolved')
+        self.assertEqual(result['status'],'inconclusive')
+        self.assertIn('Selected passages',result['summary'])
+
+    def test_quote_references_resolve_only_to_unchanged_matching_passages(self):
+        from signalforge.investigation import quote_catalog, resolve_quote_references, norm
+        sources=[{'id':'s','passages':[{'id':'p','page':1,'text':'The unit has a capacity of 660 MW. Commercial operation begins in June.'}]}]
+        catalog=quote_catalog(sources)
+        self.assertTrue(all(q['text'] in norm(sources[0]['passages'][0]['text']) for q in catalog))
+        citation={'evidence_id':'p','quote':catalog[0]['quote_id']}
+        value={'claims':[{'citations':[citation]}]}
+        self.assertTrue(resolve_quote_references(value,catalog))
+        self.assertEqual(citation['quote'],catalog[0]['text'])
+        with self.assertRaises(ValueError):
+            resolve_quote_references({'claims':[{'citations':[{'evidence_id':'other','quote':catalog[0]['quote_id']}]}]},catalog)
+
+    def test_bounded_model_view_preserves_required_full_passage(self):
+        from dataclasses import replace
+        from signalforge.config import Config
+        from signalforge.investigation import model_sources
+        source={'id':'s1','title':'Synthetic','lineage':'issuer:fixture','passages':[{'id':'required','page':1,'text':'x'*9500}]}
+        cfg=replace(Config(),provider='groq')
+        self.assertEqual(model_sources([source],cfg),[])
+        view=model_sources([source],cfg,{'required'})
+        self.assertEqual(view[0]['passages'][0]['text'],source['passages'][0]['text'])
+
     def test_context_bound_keeps_whole_upstream_passages_and_document_diversity(self):
         sources = [dict(id='a',passages=[dict(id='a1',text='a'*30),dict(id='a2',text='b'*30,origin_evidence_id='ev_a')]),
                    dict(id='b',passages=[dict(id='b1',text='c'*30)])]

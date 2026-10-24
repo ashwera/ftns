@@ -17,10 +17,11 @@ afterEach(() => { cleanup(); localStorage.clear(); vi.restoreAllMocks(); vi.unst
 
 describe('completed investigation', () => {
   it('labels a terminal evidence gap without claiming that model review ran', () => {
-    render(<InvestigationView investigation={{...investigation, report_type:'evidence_gap', claims:[], sources:[], model_review_execution:'not_executed'}} runId="gap-run" />)
+    render(<InvestigationView investigation={{...investigation, report_type:'evidence_gap', evidence_strength:'Not rated', claims:[], sources:[], model_review_execution:'not_executed'}} runId="gap-run" />)
     expect(screen.getByText('Evidence-gap report · inconclusive')).toBeTruthy()
     expect(screen.getByText(/No financial conclusion accepted. Model review: not_executed/)).toBeTruthy()
     expect(screen.queryByText('Completed investigation · inconclusive')).toBeNull()
+    expect(screen.getByText('Not rated')).toBeTruthy()
   })
   it('shows exact quotes, challenge reasons and backend corroboration without inferring independence', () => {
     const expanded: Investigation = { ...investigation, company: 'Test Company', run_id: 'test-run', prompt: 'Assigned test question', novelty_established: false, source_scope: 'Bounded search', claims: [{ ...investigation.claims[0], verification_reason: 'Issuer statement only', independently_corroborated: false, independent_groups: ['issuer:canonical'], citations: [{ evidence_id: 'passage1', quote: 'Exact synthetic test quote' }] }] }
@@ -100,6 +101,15 @@ describe('saved live runs', () => {
     expect(await screen.findByRole('heading', { name: investigation.headline })).toBeTruthy()
     expect(screen.queryByText(/has not produced a verified finding/)).toBeNull()
     expect(fetcher.mock.calls.every(([url]) => url.startsWith('/api/agent/runs'))).toBeTruthy()
+  })
+  it('does not display a prior report as the result of an active recovery', async () => {
+    const resumed={...manifest,status:'running',stage:'adjudication'}
+    vi.stubGlobal('fetch',vi.fn(async (url:string)=>new Response(JSON.stringify(url==='/api/agent/runs'?{runs:[resumed]}:resumed),{status:200})))
+    render(<StartResearch />)
+    await screen.findByRole('option',{name:/Test Company/})
+    await userEvent.selectOptions(screen.getByLabelText('Saved investigations'),resumed.run_id)
+    expect(await screen.findByText(/Investigation in progress/)).toBeTruthy()
+    expect(screen.queryByRole('heading',{name:investigation.headline})).toBeNull()
   })
   it('marks older planning-only runs as missing a final investigation', async () => {
     const old = { ...manifest, investigation: null }

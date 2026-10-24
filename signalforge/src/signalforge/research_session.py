@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import re
+import socket
 import threading
 import uuid
 
@@ -18,7 +19,9 @@ def now():
 def local_config():
     """Read literal allowlisted dotenv assignments; never evaluate or log secrets."""
     allowed = {"SIGNALFORGE_API_KEY", "SIGNALFORGE_MODEL", "SIGNALFORGE_PROVIDER",
-               "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY"}
+               "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY",
+               "GROQ_API_KEY", "SIGNALFORGE_FALLBACK_PROVIDERS", "SIGNALFORGE_GROQ_MODEL",
+               "SIGNALFORGE_GEMINI_MODEL", "SIGNALFORGE_OLLAMA_MODEL", "SIGNALFORGE_REQUEST_TIMEOUT"}
     for path in (ROOT.parent / ".env", ROOT / ".env", Path(__file__).with_name(".env")):
         if not path.is_file():
             continue
@@ -30,9 +33,16 @@ def local_config():
                     value = value[1:-1]
                 os.environ.setdefault(key, value)
     # Config defaults are evaluated at import time: override explicitly after dotenv.
-    return replace(Config(), **{field: os.environ.get(env, getattr(Config(), field))
+    config = replace(Config(), **{field: os.environ.get(env, getattr(Config(), field))
         for field, env in (("api_key", "SIGNALFORGE_API_KEY"), ("model", "SIGNALFORGE_MODEL"),
-                           ("provider", "SIGNALFORGE_PROVIDER"), ("base_url", "SIGNALFORGE_BASE_URL"))})
+                           ("provider", "SIGNALFORGE_PROVIDER"), ("base_url", "SIGNALFORGE_BASE_URL"),
+                           ("groq_api_key", "GROQ_API_KEY"), ("fallback_providers", "SIGNALFORGE_FALLBACK_PROVIDERS"),
+                           ("groq_model", "SIGNALFORGE_GROQ_MODEL"), ("gemini_model", "SIGNALFORGE_GEMINI_MODEL"),
+                           ("ollama_model", "SIGNALFORGE_OLLAMA_MODEL"))})
+    timeout = float(os.environ.get("SIGNALFORGE_REQUEST_TIMEOUT", config.request_timeout))
+    if not 1 <= timeout <= 120:
+        raise ValueError("SIGNALFORGE_REQUEST_TIMEOUT must be between 1 and 120 seconds")
+    return replace(config, request_timeout=timeout)
 
 
 class ResearchSessions:
@@ -60,6 +70,17 @@ class ResearchSessions:
             result = json.loads((self.root / run_id / "manifest.json").read_text())
         except FileNotFoundError:
             raise KeyError(run_id) from None
+        owner_alive = False
+        if result.get("worker_host") == socket.gethostname() and isinstance(result.get("worker_pid"), int):
+            try:
+                os.kill(result["worker_pid"], 0)
+                owner_alive = True
+            except OSError:
+                pass
+        if result["status"] in {"running", "queued"} and self.active != run_id and not owner_alive:
+            result["recorded_status"] = result["status"]
+            result["status"] = "interrupted"
+            result["runtime_note"] = "Saved run has no worker in this service instance. Inspect its artifacts before resuming; no background progress is occurring here."
         if result["status"] == "running" and result["stage"] == "discovery":
             try:
                 discovery = json.loads((self.root / run_id / "discovery" / "discovery_report.json").read_text())
@@ -85,6 +106,7 @@ class ResearchSessions:
             folder.mkdir(parents=True)
             manifest = {"run_id": run_id, **{k: v.strip() for k, v in payload.items()},
                         "created_at": now(), "updated_at": now(), "status": "queued",
+                        "worker_pid": os.getpid(), "worker_host": socket.gethostname(),
                         "stage": "queued", "events": [], "artifacts": [],
                         "finding": None, "model": {"provider": self.config.provider, "model": self.config.model},
                         "source_manifest_path": "discovery/discovery_report.json",
@@ -103,6 +125,7 @@ class ResearchSessions:
         temporary.replace(folder / "manifest.json")
 
     def _work(self, folder, manifest):
+        manifest.update(worker_pid=os.getpid(), worker_host=socket.gethostname())
         def update(stage, message, status="running", **fields):
             previous = manifest["stage"]
             for item in manifest["stages"]:
@@ -131,6 +154,17 @@ class ResearchSessions:
                 f"{manifest['stage']} could not complete ({type(error).__name__}); saved model and retrieval audits retain the failure. No financial finding was accepted.",
                 failed_stage=manifest["stage"])
         finally:
+            manifest["model_calls"] = list(manifest.get("navigation_model_calls", []))
+            for audit_path in sorted(folder.glob("*_model_audit/*/summary.json")):
+                try:
+                    audit = json.loads(audit_path.read_text())
+                    for attempt in audit.get("attempts", []):
+                        for call in attempt.get("provider_calls", []):
+                            manifest["model_calls"].append({**call, "generation_attempt": attempt["attempt"],
+                                "validation_outcome": attempt.get("status"), "audit_path": str(audit_path.relative_to(folder))})
+                except (OSError, ValueError, KeyError):
+                    continue
+            self._save(folder, manifest)
             with self.lock:
                 self.active = None
 
@@ -141,9 +175,17 @@ def execute(folder, manifest, config, update):
     update("discovery", "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds).")
     provider = source_discovery.BingRSSSearch()
     update("discovery", f"Searching with {provider.name}; source candidates are unverified.", search_provider=provider.name)
-    report = discover(manifest["company"], manifest["prompt"], provider=provider,
-        budget=Budget(max_queries=3, max_results=10, max_fetches=3, max_seconds=90, request_timeout=40),
-        output_dir=folder / "discovery", retrieve=True, registry_path=config.registry_path)
+    checkpoint = folder / "discovery/discovery_report.json"
+    report = json.loads(checkpoint.read_text()) if checkpoint.is_file() else None
+    if report and (report.get("company") != manifest["company"] or report.get("topic") != manifest["prompt"] or
+                   not any(a.get("action") == "discovery_stopped" for a in report.get("action_log", []))):
+        raise ValueError("Existing discovery checkpoint is incomplete or belongs to a different question")
+    if report:
+        update("discovery", "Reusing the completed source-search checkpoint; source snapshots will be rehashed.")
+    else:
+        report = discover(manifest["company"], manifest["prompt"], provider=provider,
+            budget=Budget(max_queries=3, max_results=10, max_fetches=3, max_seconds=90, request_timeout=40),
+            output_dir=folder / "discovery", retrieve=True, registry_path=config.registry_path)
     update("retrieval", "Bounded discovery and retrieval finished.",
            artifacts=["discovery/discovery_report.json"],
            source_count=len(report["search_results"]), retrieval_status=report["retrieval_status"])
@@ -153,13 +195,16 @@ def execute(folder, manifest, config, update):
         update("machine_evidence", "Company not in the registry: onboarding from its own annual report (public PDF, ISIN self-declaration, hash-pinned).")
         try:
             from .company_onboarding import onboard
-            registry, pdf, digest, onboarding = onboard(manifest["company"], folder, config,
-                log=lambda action, **fields: None)
+            def onboarding_log(action, **fields):
+                if fields.get("model_calls"):
+                    manifest.setdefault("navigation_model_calls", []).extend(fields["model_calls"])
+                update("machine_evidence", f"Onboarding action: {action}. Navigation hints remain unverified until source checks pass.")
+            registry, pdf, digest, onboarding = onboard(manifest["company"], folder, config, log=onboarding_log)
             config = replace(config, registry_path=registry)
             manifest["onboarding"] = {"identity": onboarding["identity"], "sha256": digest,
                 "wikidata_isin_cross_check": onboarding["wikidata_isin_cross_check"]}
             update("machine_evidence", f"Identity read from the original PDF: {onboarding['identity']['canonical_name']} "
-                   f"(ISIN {onboarding['identity']['isin']}, page {onboarding['identity']['page']}); Wikidata cross-check {onboarding['wikidata_isin_cross_check']}.",
+                   f"({onboarding['identity'].get('identifier_type') or 'ISIN'} {onboarding['identity'].get('identifier') or onboarding['identity']['isin']}, page {onboarding['identity']['page']}); Wikidata cross-check {onboarding['wikidata_isin_cross_check']}.",
                    artifacts=manifest.get("artifacts", []) + ["onboarding_report.json", "run_registry.json"])
             records = onboarded_records(pdf, digest, manifest["company"], config, manifest["prompt"])
         except Exception as error:
@@ -169,6 +214,13 @@ def execute(folder, manifest, config, update):
             return
     else:
         records = machine_records(folder, manifest["company"], config, manifest["prompt"])
+        saved_evidence = folder / "eligible_evidence/evidence.jsonl"
+        if not records and saved_evidence.is_file():
+            from .f1_research_angle_selector import eligible_ingested_evidence
+            canonical, identifier, _ = verify_company(manifest["company"], load_registry(config.registry_path))
+            saved_records = [json.loads(line) for line in saved_evidence.read_text().splitlines() if line.strip()]
+            records = eligible_ingested_evidence(saved_records, canonical, identifier)
+            update("machine_evidence", "Rechecked saved evidence against its original PDF bytes and issuer identifier.")
     if not records:
         update("machine_evidence", "Search did not retrieve an eligible PDF. Rechecking available pinned official-source snapshots; cached inputs will be labelled.")
         records = cached_machine_records(folder, manifest["company"], config, manifest["prompt"])
@@ -177,7 +229,7 @@ def execute(folder, manifest, config, update):
         finish_evidence_gap(folder, manifest, update, "No original passed company identity and evidence eligibility checks. Discovery candidates remain unverified leads; F1, R1 and model investigation did not run.")
         return
     evidence = folder / "eligible_evidence"
-    evidence.mkdir()
+    evidence.mkdir(exist_ok=True)
     (evidence / "evidence.jsonl").write_text("".join(json.dumps(r) + "\n" for r in records))
     config = replace(config, evidence_dir=evidence, output_dir=folder)
     from .llm_client import model_configured, local_model_status

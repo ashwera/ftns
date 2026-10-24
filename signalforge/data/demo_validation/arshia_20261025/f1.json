@@ -1,0 +1,123 @@
+{
+  "company_name": "Coal India Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "company identifier per row",
+      "source document provenance per row"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier field; company coverage cannot be verified from rows."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": null,
+  "ranked_candidates": [
+    {
+      "candidate_id": "cand_001",
+      "rank": 1,
+      "category": "capacity_conversion",
+      "hypothesis": "Coal India Limited’s announced or planned capacity expansions (solar, thermal, BESS, rail‑linked evacuation) materially exceed the capacity that is actually commissioned and operational in the reporting period.",
+      "financial_importance": "Capacity additions drive future revenue streams, affect capital allocation, and influence debt financing; a mismatch between announced and commissioned capacity could materially impact earnings forecasts and investor risk perception.",
+      "metrics_and_periods": [
+        "Announced vs. commissioned capacity (MW) for solar, thermal, and battery energy storage projects – FY 2025‑26 (31 Mar 2026) and FY 2026‑27 outlook",
+        "Capital spend announced vs. actual cash outlay (INR bn) for each project",
+        "Revenue attribution by project type where disclosed"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Commissioned a 100 MW solar power project at Patan as part of the renewable energy portfolio.",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_9e3008f225572b9cae1053eb",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand.",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_9e3008f225572b9cae1053eb",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "875 MW Solar project at Pugal Solar Park, Rajasthan; 80 MW / 320 MWh BESS project in Odisha; 600 MW BESS project in Telangana; 188 MW / 750 MWh BESS project in Odisha.",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_9745f1ec9f355d0eaf9a1803",
+          "status": "observed_in_ingested_source"
+        },
+        {
+          "statement": "Rail infrastructure projects (e.g., 44.37 km double line, Angul–Balram rail link, Tori–Shivpur new BG line) commissioned to strengthen coal evacuation capacity.",
+          "source_type": "PDF",
+          "source_url": null,
+          "date": null,
+          "row_identifier": null,
+          "evidence_id": "ev_9745f1ec9f355d0eaf9a1803",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Project‑level commissioning dates and capacity status from CIL annual/Integrated Annual Reports (FY 2025‑26, FY 2026‑27).",
+        "Official capacity tables from Ministry of Power or Central Electricity Authority confirming operational status of the 100 MW Patan solar plant and any other renewable assets.",
+        "Capital expenditure schedules and actual spend disclosed in audited financial statements for each announced project.",
+        "Third‑party news or regulator filings that confirm whether the 1,600 MW thermal JV has reached commercial operation."
+      ],
+      "alternative_explanation": "The disclosed projects may be at different implementation stages (e.g., awarded, under construction, or in financial closure) and the company may be reporting them as ‘commissioned’ in a forward‑looking sense, which would explain a gap between announced capacity and current operational output.",
+      "falsification_condition": "If independent regulator or audited financial data show that the announced capacities (especially the 1,600 MW thermal plant and the listed BESS projects) have not been commissioned by the end of FY 2025‑26, the hypothesis that announced capacity materially exceeds commissioned capacity is confirmed.",
+      "data_risks_and_limitations": [
+        "The ingested PDF excerpts do not contain explicit dates or status qualifiers (e.g., ‘under construction’ vs ‘operational’).",
+        "No row‑level identifiers link the excerpts to structured data; reliance on narrative text may miss nuances.",
+        "Potential forward‑looking language in the Integrated Annual Report could conflate planned and commissioned capacity."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "Capacity expansions of several hundred megawatts represent multi‑billion‑rupee capital projects that will affect future revenue and debt covenants."
+        },
+        "evidence_availability": {
+          "score": 3,
+          "rationale": "Company‑specific PDF excerpts identify multiple announced projects and at least one commissioned solar plant, but lack precise status or quantitative commissioning data."
+        },
+        "testability": {
+          "score": 3,
+          "rationale": "The hypothesis can be tested by obtaining official commissioning dates and capacity tables from regulator filings or audited reports."
+        },
+        "non_obviousness": {
+          "score": 2,
+          "rationale": "While capacity expansion is a standard line of inquiry, probing the gap between announced and actual commissioned capacity for a coal‑centric firm adds a non‑trivial angle."
+        },
+        "cross_validation_potential": {
+          "score": 2,
+          "rationale": "External data sources (Ministry of Power, CEA, news releases) exist but were not yet accessed; cross‑validation is feasible but not demonstrated."
+        }
+      },
+      "weighted_score": 61.0,
+      "weighted_score_rationale": "Weighted calculation: (4/5)*30 + (3/5)*25 + (3/5)*20 + (2/5)*7.5 + (2/5)*17.5 = 24 + 15 + 12 + 3 + 7 = 61 points.",
+      "next_research_action": "Retrieve the latest Integrated Annual Report and audited financial statements for FY 2025‑26/27, extract project‑level commissioning dates and capital spend, and cross‑check capacities against Ministry of Power/CEA published generation capacity tables and reputable news sources."
+    }
+  ],
+  "recommended_candidate_id": "cand_001"
+}

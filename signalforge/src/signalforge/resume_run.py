@@ -2,10 +2,12 @@
 import argparse
 from dataclasses import replace
 import json
+import shutil
+import uuid
 
 from .config import ROOT
 from .investigation import run_investigation
-from .research_session import ResearchSessions, local_config, now
+from .research_session import ResearchSessions, local_config, now, execute as execute_from_intake
 from .r1_research_investigator import load_evidence_ids, select_candidate, validate_plan
 
 
@@ -15,8 +17,23 @@ def resume(run_id, config=None):
     if manifest['status'] in {'running', 'queued'}:
         raise ValueError('Run still marked active. Inspect its process before attempting recovery; no duplicate started.')
     folder = sessions.root / run_id
+    backup = folder / "recovery_snapshots" / uuid.uuid4().hex
+    backup.mkdir(parents=True)
+    for name in ("manifest.json", "onboarding_report.json", "f1.json", "r1.json", "investigation.json", "investigation_report.md"):
+        if (folder / name).is_file():
+            shutil.copy2(folder / name, backup / name)
+    manifest.pop('error', None)
+    manifest.pop('investigation', None)
     cfg = replace(sessions.config, output_dir=folder, evidence_dir=folder/'eligible_evidence',
                   registry_path=folder/'run_registry.json' if (folder/'run_registry.json').is_file() else sessions.config.registry_path)
+    if not (folder/'f1.json').is_file() or not (folder/'r1.json').is_file():
+        manifest.setdefault('recovery_history', []).append({'at': now(), 'from_status': manifest['status'],
+            'from_stage': manifest['stage'], 'method': 'Resume intake; reuse completed search and pinned downloaded snapshots'})
+        manifest.pop('finished_at', None)
+        manifest['model'] = {'provider':cfg.provider,'model':cfg.model}
+        sessions.executor = execute_from_intake
+        sessions._work(folder, manifest)
+        return sessions.get(run_id)
     f1 = json.loads((folder/'f1.json').read_text())
     plan = json.loads((folder/'r1.json').read_text())
     if not f1.get('ranking_reliable') or plan['candidate_id'] != select_candidate(f1)['candidate_id'] or plan['company_name'] != f1['company_name']:

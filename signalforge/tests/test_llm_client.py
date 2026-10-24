@@ -38,7 +38,7 @@ class LlmClientTests(unittest.TestCase):
         self.assertEqual("fixture-secret", calls["client"]["api_key"])
         self.assertEqual(GEMINI_OPENAI_BASE_URL, calls["client"]["base_url"])
         self.assertEqual(60, calls["client"]["timeout"])
-        self.assertEqual(2, calls["client"]["max_retries"])
+        self.assertEqual(0, calls["client"]["max_retries"])
         self.assertEqual("gemini-3.8-flash", calls["request"]["model"])
         self.assertEqual({"type": "json_object"}, calls["request"]["response_format"])
         self.assertEqual('{"value": "fixture"}', calls["request"]["messages"][1]["content"])
