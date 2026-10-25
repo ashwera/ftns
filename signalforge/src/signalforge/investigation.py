@@ -534,7 +534,7 @@ def attach_planning_leads(result, plan):
     return result
 
 
-def run_investigation(folder, company, question, plan, config, update):
+def run_investigation(folder, company, question, plan, config, update, *, reuse_searches=False):
     from .source_discovery import discover, Budget, BingRSSSearch
     log = []
     def search(topic, stage):
@@ -542,8 +542,9 @@ def run_investigation(folder, company, question, plan, config, update):
         if checkpoint.is_file():
             report = json.loads(checkpoint.read_text())
             if report.get("company") == company and any(a.get("action") == "discovery_stopped" for a in report.get("action_log", [])):
-                if report.get("topic") == topic:
-                    log.append({"action": stage, "reason": topic, "outcome": "Resumed using the existing completed live search and saved retrieval audit."})
+                if report.get("topic") == topic or reuse_searches:
+                    log.append({"action": stage, "reason": report.get("topic"), "outcome": "Resumed using the existing completed live search and saved retrieval audit." +
+                        (f" New proposed query not executed during provider recovery: {topic}" if report.get("topic") != topic else "")})
                     return
                 # A new research question cannot be represented as an already
                 # completed search. Preserve the old report in its own folder.

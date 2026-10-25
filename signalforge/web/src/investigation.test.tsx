@@ -86,6 +86,15 @@ describe('saved live runs', () => {
     expect((screen.getByLabelText('Research question') as HTMLTextAreaElement).value).toContain('distinguish each milestone')
   })
   const manifest = { run_id: 'research_20261025T000000_123456abcdef', company: 'Test Company', prompt: 'Test question', status: 'completed', stage: 'complete', created_at: '2026-10-25', events: [], artifacts: [], investigation }
+  it('shows the saved run provider without attributing another provider to its result', async () => {
+    const saved={...manifest,model:{provider:'ollama',model:'saved-local-model'}}
+    vi.stubGlobal('fetch',vi.fn(async (url:string)=>new Response(JSON.stringify(url==='/api/agent/runs'?{runs:[saved]}:saved),{status:200})))
+    render(<StartResearch />)
+    await screen.findByRole('option',{name:/Test Company/})
+    await userEvent.selectOptions(screen.getByLabelText('Saved investigations'),saved.run_id)
+    expect(await screen.findByText('Last configured inference for this run: ollama · saved-local-model')).toBeTruthy()
+    expect(screen.queryByText(/grok-4.7/)).toBeNull()
+  })
   it('replaces running progress with the final investigation when polling completes', async () => {
     const running = { ...manifest, status: 'running', investigation: null }
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => new Response(JSON.stringify(url === '/api/agent/runs' ? options?.method === 'POST' ? running : { runs: [] } : manifest), { status: 200 }))

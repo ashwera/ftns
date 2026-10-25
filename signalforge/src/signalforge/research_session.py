@@ -15,11 +15,12 @@ def now():
     return datetime.now(timezone.utc).isoformat()
 
 
-def local_config():
+def local_config(paths=None):
     """Read literal allowlisted dotenv assignments; never evaluate or log secrets."""
     allowed = {"SIGNALFORGE_API_KEY", "SIGNALFORGE_MODEL", "SIGNALFORGE_PROVIDER",
-               "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY"}
-    for path in (ROOT.parent / ".env", ROOT / ".env", Path(__file__).with_name(".env")):
+               "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY", "XAI_API_KEY"}
+    values = dict(os.environ)
+    for path in paths if paths is not None else (ROOT.parent / ".env", ROOT / ".env", Path(__file__).with_name(".env")):
         if not path.is_file():
             continue
         for line in path.read_text(encoding="utf-8").splitlines():
@@ -28,11 +29,16 @@ def local_config():
                 value = value.strip()
                 if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
                     value = value[1:-1]
-                os.environ.setdefault(key, value)
-    # Config defaults are evaluated at import time: override explicitly after dotenv.
-    return replace(Config(), **{field: os.environ.get(env, getattr(Config(), field))
-        for field, env in (("api_key", "SIGNALFORGE_API_KEY"), ("model", "SIGNALFORGE_MODEL"),
-                           ("provider", "SIGNALFORGE_PROVIDER"), ("base_url", "SIGNALFORGE_BASE_URL"))})
+                values.setdefault(key, value)
+    # Preserve the independent search adapter's environment conventions, while
+    # avoiding global inference-provider/key changes when loading a run config.
+    for key in ("SIGNALFORGE_SEARCH_MODEL", "SIGNALFORGE_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"):
+        if key in values:
+            os.environ.setdefault(key, values[key])
+    provider = values.get("SIGNALFORGE_PROVIDER") or ("xai" if values.get("XAI_API_KEY") else "gemini")
+    model = values.get("SIGNALFORGE_MODEL") or {"xai":"grok-4.7", "ollama":"signalforge-qwen"}.get(provider.strip().lower(), "gemini-3.8-flash")
+    return replace(Config(), provider=provider, model=model, api_key=values.get("SIGNALFORGE_API_KEY", ""),
+        xai_api_key=values.get("XAI_API_KEY", ""), base_url=values.get("SIGNALFORGE_BASE_URL", ""))
 
 
 class ResearchSessions:
@@ -126,7 +132,11 @@ class ResearchSessions:
             import traceback
             manifest["error"] = {"type": type(error).__name__, "frames": [
                 f"{Path(f.filename).name}:{f.lineno} in {f.name}" for f in traceback.extract_tb(error.__traceback__)[-4:]]}
-            update(manifest["stage"], "Execution failed; inspect local prerequisites and retry. No finding generated.", "failed")
+            from .llm_client import LLMError, redact
+            provider_error = redact(str(error), self.config) if isinstance(error, LLMError) and self.config.provider.strip().lower() == "xai" else None
+            if provider_error:
+                manifest["error"]["provider_detail"] = provider_error
+            update(manifest["stage"], (provider_error + " No finding generated.") if provider_error else "Execution failed; inspect local prerequisites and retry. No finding generated.", "failed")
             finish_evidence_gap(folder, manifest, update,
                 f"{manifest['stage']} could not complete ({type(error).__name__}); saved model and retrieval audits retain the failure. No financial finding was accepted.",
                 failed_stage=manifest["stage"])
@@ -182,7 +192,7 @@ def execute(folder, manifest, config, update):
     config = replace(config, evidence_dir=evidence, output_dir=folder)
     from .llm_client import model_configured, local_model_status
     if not model_configured(config):
-        update("f1", "F1 model credential unavailable; eligible evidence retained.", "blocked")
+        update("f1", "Missing XAI_API_KEY; configure the dedicated xAI key in an ignored local .env. Eligible evidence retained." if config.provider.strip().lower()=="xai" else "F1 model credential unavailable; eligible evidence retained.", "blocked")
         return
     ready, why = local_model_status(config)
     if not ready:

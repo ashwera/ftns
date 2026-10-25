@@ -40,6 +40,14 @@ class Opener:
 
 
 class DiscoveryTests(unittest.TestCase):
+    def test_xai_model_does_not_replace_independent_gemini_search_configuration(self):
+        with patch.dict(os.environ,{'SIGNALFORGE_PROVIDER':'xai','SIGNALFORGE_MODEL':'grok-4.7','XAI_API_KEY':'xai-fixture'},clear=True):
+            provider=sd.GeminiGoogleSearch()
+            self.assertTrue(provider.model.startswith('gemini-'))
+            with self.assertRaisesRegex(sd.SearchError,'Search credential missing'):
+                provider._search_gemini('fixture',timeout=1)
+        with patch.dict(os.environ,{'SIGNALFORGE_MODEL':'grok-4.7','SIGNALFORGE_SEARCH_MODEL':'gemini-explicit'},clear=True):
+            self.assertEqual(sd.GeminiGoogleSearch().model,'gemini-explicit')
     def test_empty_strict_filter_revisits_distinct_penalized_leads_only(self):
         provider = sd.FixtureSearch({'*': {'results': [
             {'url':'https://news.example/meridian/company-profile?utm_source=x', 'title':'Meridian company profile'},

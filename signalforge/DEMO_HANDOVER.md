@@ -4,54 +4,64 @@ Run commands from the repository root. This is a local research demonstration:
 completion does not mean a red flag has been proven. A neutral or evidence-gap
 report is a valid outcome. The saved NTPC dashboard is a separate historical case.
 
-## Prerequisites on this Mac
+## Prerequisites and current provider status
 
-- Python virtual environment `.venv`, Node/npm, and Ollama running locally.
-- Install Python dependencies with `.venv/bin/python -m pip install -r signalforge/requirements.txt`.
+- Python virtual environment `.venv` and Node/npm. Ollama is optional.
+- `.venv/bin/python -m pip install -r signalforge/requirements.txt` installs the
+  existing OpenAI-compatible SDK (2.x); no additional provider SDK is used.
 - Install frontend dependencies with `npm install --prefix signalforge/web`.
-- `ollama list` must show `qwen3:8b` or the existing `qwen3:4b-instruct`.
-  No cloud inference quota is required. Preserve existing ignored `.env` keys;
-  optional Gemini search/URL hints have independent configuration.
-- The local source CSV is optional company context only and is never an issuer
-  join merely because its filename says NTPC. The current F1 loader expects the
-  repository quote CSV to exist; a missing CSV is a configuration error.
+- xAI inference uses a dedicated `XAI_API_KEY`. Gemini/search credentials remain
+  separate. An xAI key never substitutes for a Gemini or OpenAI key.
+- The repository quote CSV must still exist for F1 inspection. It is context
+  only and never becomes the target company's data without a verified join.
 
-## Start the app
+**Live validation is blocked:** the supplied private credential was rejected by
+xAI's model-list endpoint with HTTP 400 (API-key error). Model access and Grok
+inference have not been verified. No Grok JSON/quotation smoke or Hindalco model
+resume succeeded. Automated provider/schema/quote checks use mocks. The prior
+Hindalco Weak evidence-gap report is preserved; it is not a Grok result.
 
-Terminal 1 (skip if Ollama is already running):
+## Configure the xAI key securely
 
-```bash
-ollama serve
-```
-
-Create the configured model from already installed weights, once:
+In the backend terminal, enter a valid xAI API key through zsh's hidden prompt:
 
 ```bash
-ollama create signalforge-qwen8b -f signalforge/Modelfile.qwen3-8b
+read -s "XAI_API_KEY?xAI API key (hidden): "; export XAI_API_KEY
 ```
 
-The 8B Q4 model was configured with a 32,768-token context on this 16 GB Mac
-and passed a JSON/exact-quotation smoke test. The existing 4B model is retained:
+The key is not placed in shell history or command arguments. This applies to the
+current shell; repeat it in a new terminal, or maintain `XAI_API_KEY` in the ignored
+`signalforge/src/signalforge/.env` using a local editor. Do not paste credentials
+into chat, commit them, or overwrite existing `SIGNALFORGE_API_KEY`/Gemini values.
+An explicit shell export takes precedence over the private file.
+
+## Verify access before investigation
+
+After replacing the rejected key, run this bounded preflight from repository root
+with a fresh output directory:
 
 ```bash
-ollama create signalforge-qwen -f signalforge/Modelfile.qwen3-4b
+SIGNALFORGE_PROVIDER=xai SIGNALFORGE_MODEL=grok-4.7 SIGNALFORGE_BASE_URL=https://api.x.ai/v1 PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.xai_smoke --run-dir signalforge/data/research_runs/research_20261024T210811_fa86eb3121a1 --output-dir signalforge/outputs/xai_preflight_new
 ```
 
-Terminal 2, backend:
+It requests the authenticated model list, verifies the requested ID (or a listed
+compatible fallback), makes one tiny schema request and one representative draft
+request quoting a revalidated original passage. It records response status and
+returned token usage, then applies local schema and exact-passage checks. Failed
+transport/authentication/rate-limit calls are not automatically retried. A schema
+repair during normal agent execution remains bounded to one additional call.
+Only proceed when the summary says `passed`; use its `selected_model` if it differs
+from the requested model. No paid inference was reached in tonight's live check.
+
+## Start the app with Grok
+
+Backend terminal, from repository root, after configuring the key:
 
 ```bash
-SIGNALFORGE_PROVIDER=ollama SIGNALFORGE_MODEL=signalforge-qwen SIGNALFORGE_BASE_URL=http://127.0.0.1:11434/v1 PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.research_service
+SIGNALFORGE_PROVIDER=xai SIGNALFORGE_MODEL=grok-4.7 SIGNALFORGE_BASE_URL=https://api.x.ai/v1 PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.research_service
 ```
 
-The explicit base URL matters: `/v1p` is invalid and caused an observed 404.
-Use `/v1` exactly. The command overrides the endpoint without editing credentials.
-The 4B model is the default because the full 8B investigation request timed out
-at 420 seconds despite passing its 11-second quotation smoke test. The 8B model
-is installed and configured, but its smoke success did not establish end-to-end
-reliability. No timeout was increased. The 4B model also needed strict quotation
-repairs, so a defensible gap report remains an expected outcome.
-
-Terminal 3, frontend:
+Frontend terminal:
 
 ```bash
 cd signalforge/web
@@ -124,18 +134,19 @@ Artifacts live under `signalforge/data/research_runs/<run_id>/`:
 For a stopped run with valid saved F1/R1, resume from that stage:
 
 ```bash
-SIGNALFORGE_PROVIDER=ollama SIGNALFORGE_MODEL=signalforge-qwen SIGNALFORGE_BASE_URL=http://127.0.0.1:11434/v1 PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.resume_run --run-id research_20261024T210811_fa86eb3121a1
+SIGNALFORGE_PROVIDER=xai SIGNALFORGE_MODEL=grok-4.7 SIGNALFORGE_BASE_URL=https://api.x.ai/v1 PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.resume_run --run-id research_20261024T210811_fa86eb3121a1
 ```
+
+Resume only after the xAI preflight passes. The previous report is archived under the run’s `recovery_history/` before recovery. Completed discovery/counterevidence audits are reused; proposed new queries are explicitly recorded as unexecuted. Returned provider usage is saved alongside the model audits.
 
 Do not start another model call or investigation while one is active. The resume
 command refuses an active manifest. Check the process before recovering a stale
 running state; saved artifacts and raw rejected responses must be preserved.
-On a 404, check `/v1`; on connection failure, start Ollama and backend; on missing
-model, use an installed model. Do not increase timeouts or download alternatives
+On xAI 400/401/403 authentication errors, correct `XAI_API_KEY`; other provider keys are not interchangeable. On 404, check the selected model against the authenticated list and use `https://api.x.ai/v1`. On 429, stop and inspect account rate limits; on timeout or provider failure, inspect the saved audit before retrying. No silent fallback to Ollama occurs. Do not increase timeouts or download alternatives
 to hide schema/evidence failures. A scanned PDF without usable text may require
 a different public original; OCR is not automatically supplied by this flow.
 
-## Tonight's validation case
+## Prior local-model validation case
 
 Hindalco run ID: `research_20261024T210811_fa86eb3121a1`.
 It required a cached local PDF from `data/demo_drop/` for issuer onboarding;
@@ -147,7 +158,7 @@ are not established independent corroboration. Inspect the current saved report
 and execution record for the final model-review outcome rather than assuming
 that earlier planning completion was a complete investigation.
 
-Final outcome tonight: a saved **evidence-gap / inconclusive / Weak** report.
+Prior saved outcome: a **evidence-gap / inconclusive / Weak** report.
 4B investigation responses failed exact quotation validation; 8B passed a small
 smoke test but timed out on the full investigation. Counterevidence retrieval
 completed; semantic model review, validated final financial claims and financial
@@ -165,3 +176,22 @@ npm run build
 
 Run artifacts, downloaded originals, dependencies, machine-specific files and
 credentials are local and are excluded from the final source commit.
+
+## Optional Ollama alternative
+
+Only when explicitly selected, start `ollama serve`, then use:
+
+```bash
+SIGNALFORGE_PROVIDER=ollama SIGNALFORGE_MODEL=signalforge-qwen SIGNALFORGE_BASE_URL=http://127.0.0.1:11434/v1 PYTHONPATH=signalforge/src .venv/bin/python -m signalforge.research_service
+```
+
+This uses the prior 4B configuration. Its semantic investigation did not complete
+in the Hindalco case. The installed 8B passed a small smoke but timed out on the
+full request. These limitations do not constitute validation of Grok.
+
+xAI uses the Responses API with schema output (`text.format`), `store=false`,
+a bounded 8,192-token output, the existing 60-second cloud timeout and zero SDK
+retries. Grok 4.7 uses supported medium reasoning; Ollama's parameters are not
+sent. Application schema, quotation, arithmetic, provenance and adjudication
+checks remain mandatory. See [xAI's Responses migration guide](https://docs.x.ai/developers/model-capabilities/text/comparison)
+and [structured output documentation](https://docs.x.ai/developers/model-capabilities/text/structured-outputs).

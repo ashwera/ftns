@@ -289,8 +289,9 @@ class GeminiGoogleSearch:
 
     def __init__(self, model=None, *, opener=None, max_response_bytes=2 * 1024 * 1024,
                  fallback=True):
+        inference_model = os.environ.get("SIGNALFORGE_MODEL", "")
         self.model = (model or os.environ.get("SIGNALFORGE_SEARCH_MODEL")
-                      or os.environ.get("SIGNALFORGE_MODEL") or "gemini-3.8-flash")
+                      or (inference_model if inference_model.startswith("gemini-") else "gemini-3.8-flash"))
         if not re.fullmatch(r"[A-Za-z0-9._-]+", self.model):
             raise ValueError("Invalid search model")
         self._opener = opener or urllib.request.build_opener(public_sources._NoRedirect())

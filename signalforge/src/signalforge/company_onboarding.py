@@ -213,7 +213,7 @@ def wikidata_identity(company, timeout=20):
 def gemini_url_suggestions(company, config, timeout=60):
     """Candidate IR/annual-report URLs from plain generation (no search quota needed)."""
     # Optional Gemini call (URL hints only); unrelated to the inference provider.
-    if not getattr(config, "api_key", "") or config.provider.strip().lower() not in {"gemini", "ollama"}:
+    if not getattr(config, "api_key", "") or config.provider.strip().lower() not in {"gemini", "ollama", "xai"}:
         return []
     model = os.environ.get("SIGNALFORGE_SEARCH_MODEL") or "gemini-3.5-flash"
     body = {"contents": [{"parts": [{"text":

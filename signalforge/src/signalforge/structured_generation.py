@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 import uuid
 
-from .llm_client import LLMError
+from .llm_client import LLMError, redact
 
 
 def generate_validated(prompt, payload, config, *, schema_path, output_path,
@@ -22,13 +22,11 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
     output_path = Path(output_path)
     audit = output_path.parent / (output_path.stem + "_model_audit") / uuid.uuid4().hex
     audit.mkdir(parents=True, exist_ok=False)
-    secret = getattr(config, "api_key", "")
 
     def write(name, value):
         encoded = json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False)
         # Provider output or validation feedback must not echo a configured key.
-        if secret:
-            encoded = encoded.replace(secret, "[redacted]")
+        encoded = redact(encoded, config)
         (audit / name).write_text(encoded + "\n", encoding="utf-8")
 
     summary = {"stage": stage, "provider": config.provider, "model": config.model,
@@ -45,12 +43,15 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
         entry = {"attempt": attempt}
         summary["attempts"].append(entry)
         try:
-            raw = generate(request_prompt, payload, config)
+            if config.provider.strip().lower() == "xai":
+                raw = generate(request_prompt, payload, config, schema=schema, audit_path=audit / f"attempt_{attempt}_provider.json")
+            else:
+                raw = generate(request_prompt, payload, config)
         except LLMError as error:
             # Invalid JSON/empty model content can be repaired once; never retry
             # authentication, missing configuration, or network failures here.
             if not str(error).startswith(("Model returned invalid JSON", "Model returned an empty response")):
-                entry.update(status="provider_error", error_type=type(error).__name__, error_detail=str(error).replace(secret, "[redacted]")[:300] if secret else str(error)[:300])
+                entry.update(status="provider_error", error_type=type(error).__name__, error_detail=redact(str(error), config)[:300])
                 write("summary.json", summary)
                 raise
             raw = None
@@ -81,9 +82,9 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
         write("summary.json", summary)
         if attempt == 2:
             # Raise a new exception to avoid retaining provider/response context.
-            safe_failure = failure.replace(secret, "[redacted]") if secret else failure
+            safe_failure = redact(failure, config)
             raise ValueError(safe_failure) from None
-        safe_feedback = failure.replace(secret, "[redacted]") if secret else failure
+        safe_feedback = redact(failure, config)
         if attempt == 1 and raw is not None and preserve:
             invariants = preserve(raw)
         feedback = ("\n\nYour previous response failed validation. Return a complete JSON object "
@@ -94,7 +95,7 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
         # ordinary schema failures give the actual response to edit in place.
         if raw is not None and "was not supplied" not in failure:
             previous = json.dumps(raw, ensure_ascii=False)
-            if secret: previous = previous.replace(secret, "[redacted]")
+            previous = redact(previous, config)
             if len(previous.encode("utf-8")) <= 64_000:
                 feedback += ("\nPrevious JSON to repair in place (preserve candidates, hypotheses, "
                              "recommendation and criterion scores; fix only schema errors):\n" + previous)

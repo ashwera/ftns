@@ -4,10 +4,20 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from signalforge.resume_run import resume
+from signalforge.resume_run import preserve_report
 from signalforge.research_session import record_investigation_outcome
 
 
 class ResumeRunTests(unittest.TestCase):
+    def test_prior_report_is_preserved_before_provider_recovery(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)
+            for name in ('manifest.json','investigation.json','investigation_report.md'):
+                (folder/name).write_text('original '+name)
+            archive=folder/preserve_report(folder)
+            (folder/'investigation.json').write_text('new attempted report')
+            self.assertEqual((archive/'investigation.json').read_text(),'original investigation.json')
+            self.assertEqual((archive/'manifest.json').read_text(),'original manifest.json')
     def test_gap_report_does_not_mark_model_investigation_successful(self):
         manifest={'stages':[{'name':'investigation','execution':'running'}, {'name':'adjudication','execution':'not_executed'}]}
         record_investigation_outcome(manifest, {'report_type':'evidence_gap','failed_stage':'investigation_initial','summary':'Exact quote validation failed'})
