@@ -1,0 +1,39 @@
+{
+  "audit_date": "2026-10-25",
+  "runtime_commit": "df7155242caecb6385351a38faee86f9296b6549",
+  "integrated_main": "e19b9de9ad081c685ba9a3e7a64a062cf9f710f7",
+  "later_main_excluded": "8630a67b55b9948352ab50a2ed41c9ff5331dfd4",
+  "reason_for_exclusion": "New xAI migration not part of tested demo; upstream report records authentication failure and no live generation",
+  "run_id": "research_20261025T051452_b844776593ba",
+  "cold_browser_start": true,
+  "manual_recovery": false,
+  "prepared_company_catalogs": 0,
+  "duration_seconds": 94.743607,
+  "eligible_evidence_records": 16,
+  "accepted_claims": 3,
+  "accepted_calculations": 1,
+  "independent_corroboration": false,
+  "novelty": false,
+  "outcome": "inconclusive",
+  "rating": "Weak",
+  "original_hashes_checked": true,
+  "all_claim_quotes_checked": true,
+  "calculation_recomputed": true,
+  "json_export_matches": true,
+  "markdown_export_checked": true,
+  "backend": {
+    "run": 359,
+    "passed": 357,
+    "skipped": 2
+  },
+  "frontend_passed": 44,
+  "typescript": "passed",
+  "production_build": "passed",
+  "feature_counts": {
+    "WORKING": 15,
+    "PARTIALLY WORKING": 17,
+    "BROKEN": 1,
+    "NOT TESTED": 1,
+    "NOT IMPLEMENTED": 3
+  }
+}

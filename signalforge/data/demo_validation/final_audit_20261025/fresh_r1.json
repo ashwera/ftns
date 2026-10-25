@@ -1,0 +1,86 @@
+{
+  "company_name": "Coal India Limited",
+  "candidate_id": "c1_renewable_expansion_gap",
+  "hypothesis": "CIL's aggressive renewable energy targets (9.5 GW by FY 2029-30) face potential execution risks when comparing announced project pipeline status against current commissioning rates (e.g., only 200 MW commissioned of the 300 MW Khavda project as of July 2026).",
+  "retrieval_performed": false,
+  "research_questions": [
+    {
+      "question": "What is the granular commissioning status of the identified renewable portfolio projects?",
+      "metrics": [
+        "Commissioned capacity (MW)",
+        "Under-construction capacity (MW)",
+        "Commissioning date variance (Actual vs Scheduled)"
+      ],
+      "periods": [
+        "FY 2025-26",
+        "FY 2026-27 YTD"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Project-specific commissioning logs",
+        "Updated schedule for Pugal, Jalaun, and BESS projects"
+      ]
+    },
+    {
+      "question": "Does the capital expenditure (Capex) allocation align with the stated 9.5 GW target timeline?",
+      "metrics": [
+        "Annual Renewable Capex (INR Crores)",
+        "Cumulative spend relative to project completion status (%)"
+      ],
+      "periods": [
+        "FY 2024-25",
+        "FY 2025-26"
+      ],
+      "supported_by_dataset": false,
+      "missing": [
+        "Breakdown of Capex by specific renewable project",
+        "Actual vs Budgeted spending reconciliation"
+      ]
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "ev_9745f1ec9f355d0eaf9a1803",
+      "source_type": "pdf",
+      "source_url": null,
+      "publication_date": "2026-10-25",
+      "excerpt_or_data_point": "Company targets 9.5 GW renewable energy capacity by FY 2029-30. Includes specific projects: 875 MW Pugal Solar, 80 MW/320 MWh BESS Odisha, 600 MW Jalaun Solar, 300 MW Khavda (200 MW commissioned July 2026).",
+      "claim_supported": "CIL renewable targets and specific project status",
+      "kind": "reported_fact",
+      "status": "supplied"
+    },
+    {
+      "evidence_id": null,
+      "source_type": "Regulatory Filing",
+      "source_url": null,
+      "publication_date": null,
+      "excerpt_or_data_point": null,
+      "claim_supported": "Progress status of 1.5 GW wind and 3 GW solar projects",
+      "kind": "unverified_hypothesis",
+      "status": "planned_lookup"
+    }
+  ],
+  "checklist": [
+    {
+      "step": "Gather regulatory commissioning reports for CIL renewable assets",
+      "expected_evidence": "Verification of 200 MW commissioning at Khavda and status of Pugal/Jalaun projects",
+      "cross_validation_sources": [
+        "Ministry of New and Renewable Energy (MNRE) status updates",
+        "CIL Investor Presentations"
+      ],
+      "completion_criteria": "Mapping of all identified projects to confirmed commissioned status"
+    },
+    {
+      "step": "Analyze annual report Capex sections for renewable expenditure",
+      "expected_evidence": "Annual spend data versus project delivery milestones",
+      "cross_validation_sources": [
+        "CIL Annual Report (Audited Financials)",
+        "Exchange filings (BSE/NSE)"
+      ],
+      "calculation": "Spend per MW commissioned versus industry benchmarks",
+      "completion_criteria": "Identification of any significant lag between capital deployment and asset commissioning"
+    }
+  ],
+  "alternative_explanation": "Project delays may result from sector-wide supply chain constraints, transmission grid connectivity bottlenecks, or land acquisition hurdles rather than specific company-level failure.",
+  "falsification_test": "If commissioned capacity aligns with the projected 9.5 GW roadmap at reported interim milestones (as verified by third-party regulatory or industry trackers), the hypothesis of an execution gap is falsified."
+}

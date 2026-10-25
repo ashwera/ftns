@@ -1,0 +1,356 @@
+[
+  {
+    "run_id": "research_20261024T180517_dc5f89f0606c",
+    "company": "NTPC Limited",
+    "prompt": "NTPC annual report renewable capacity project execution primary PDF disclosures",
+    "created_at": "2026-10-24T18:05:17.814917+00:00",
+    "finished_at": null,
+    "recorded_status": "blocked",
+    "stage": "machine_evidence",
+    "model": null,
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T180549_f3adeaa64622",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-24T18:05:49.460478+00:00",
+    "finished_at": null,
+    "recorded_status": "blocked",
+    "stage": "machine_evidence",
+    "model": null,
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T180705_dfbbc440c8cc",
+    "company": "NTPC Limited",
+    "prompt": "Whether announced capacity additions materially diverge from actually commissioned capacity.",
+    "created_at": "2026-10-24T18:07:05.643113+00:00",
+    "finished_at": "2026-10-24T18:07:09.001638+00:00",
+    "recorded_status": "blocked",
+    "stage": "machine_evidence",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T181053_848bb50d11b7",
+    "company": "Power Grid Corporation of India Limited",
+    "prompt": "Investigate announced transmission investment versus commissioned transmission assets using issuer and independent regulator evidence.",
+    "created_at": "2026-10-24T18:10:53.174880+00:00",
+    "finished_at": "2026-10-24T18:11:35.479815+00:00",
+    "recorded_status": "blocked",
+    "stage": "machine_evidence",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T181230_84a3bde559cc",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-24T18:12:30.122316+00:00",
+    "finished_at": "2026-10-24T18:12:34.039331+00:00",
+    "recorded_status": "blocked",
+    "stage": "machine_evidence",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T182719_98221b1b2fec",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-24T18:27:19.273667+00:00",
+    "finished_at": "2026-10-24T18:27:23.578054+00:00",
+    "recorded_status": "blocked",
+    "stage": "machine_evidence",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T182946_403b0d7ccfe4",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-24T18:29:46.376276+00:00",
+    "finished_at": "2026-10-24T18:31:02.533235+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T191100_8236306745e4",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-24T19:11:00.666266+00:00",
+    "finished_at": "2026-10-24T19:11:50.965282+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T191230_017819901424",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-24T19:12:30.595391+00:00",
+    "finished_at": "2026-10-24T19:13:59.262719+00:00",
+    "recorded_status": "failed",
+    "stage": "r1",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T192139_d803119ec6b1",
+    "company": "NTPC Limited",
+    "prompt": "For NTPC North Karanpura Unit 3, compare announced capacity additions with actually commissioned capacity at the FY2024-25 cutoff. Find primary passages for expected completion, trial completion and commercial operation dates, and distinguish each milestone before assessing any divergence.",
+    "created_at": "2026-10-24T19:21:39.043173+00:00",
+    "finished_at": "2026-10-24T19:23:07.596507+00:00",
+    "recorded_status": "blocked",
+    "stage": "f1",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "none",
+    "rating": null,
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T210811_fa86eb3121a1",
+    "company": "Hindalco Industries Limited",
+    "prompt": "Investigate Hindalco's renewable transition and project commissioning disclosures for a potential financially material gap; compare issuer statements with independent regulator or operator evidence and search for counterarguments.",
+    "created_at": "2026-10-24T21:08:11.249420+00:00",
+    "finished_at": "2026-10-24T22:25:53.556036+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "ollama",
+      "model": "signalforge-qwen8b"
+    },
+    "report_type": "evidence_gap",
+    "rating": "Weak",
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": false
+  },
+  {
+    "run_id": "research_20261024T231716_0847e66a85c0",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "created_at": "2026-10-24T23:17:16.457664+00:00",
+    "finished_at": "2026-10-24T23:18:45.283045+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "evidence_gap",
+    "rating": "Weak",
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T232121_c7b0d4c03049",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "created_at": "2026-10-24T23:21:21.990731+00:00",
+    "finished_at": "2026-10-24T23:21:29.674486+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-20b"
+    },
+    "report_type": "evidence_gap",
+    "rating": "Weak",
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261024T232238_39445100e7e3",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "created_at": "2026-10-24T23:22:38.370421+00:00",
+    "finished_at": "2026-10-24T23:41:08.894291+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b"
+    },
+    "report_type": "investigation",
+    "rating": "Weak",
+    "claim_count": 3,
+    "review_artifact": true,
+    "source_paths_present": true
+  },
+  {
+    "run_id": "research_20261024T234754_a378b8365612",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "created_at": "2026-10-24T23:47:54.534674+00:00",
+    "finished_at": "2026-10-24T23:50:47.253730+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b"
+    },
+    "report_type": "evidence_gap",
+    "rating": "Not rated",
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": true
+  },
+  {
+    "run_id": "research_20261025T000129_2ecbfd3ad81c",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "created_at": "2026-10-25T00:01:29.016953+00:00",
+    "finished_at": "2026-10-25T00:16:53.490789+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "investigation",
+    "rating": "Weak",
+    "claim_count": 3,
+    "review_artifact": true,
+    "source_paths_present": true
+  },
+  {
+    "run_id": "research_20261025T051452_b844776593ba",
+    "company": "Coal India Limited",
+    "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+    "created_at": "2026-10-25T05:14:52.201155+00:00",
+    "finished_at": "2026-10-25T05:16:26.944762+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "investigation",
+    "rating": "Weak",
+    "claim_count": 3,
+    "review_artifact": true,
+    "source_paths_present": true
+  },
+  {
+    "run_id": "research_20261025T052304_b578c6cb991b",
+    "company": "Power Grid Corporation of India Limited",
+    "prompt": "Whether announced capacity additions materially diverge from actually commissioned capacity.",
+    "created_at": "2026-10-25T05:23:04.445054+00:00",
+    "finished_at": "2026-10-25T05:23:09.711698+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "evidence_gap",
+    "rating": "Not rated",
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261025T052640_7b196a1b0265",
+    "company": "Power Grid Corporation of India Limited",
+    "prompt": "what major changes have occured in this company",
+    "created_at": "2026-10-25T05:26:40.367169+00:00",
+    "finished_at": "2026-10-25T05:26:44.016328+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "evidence_gap",
+    "rating": "Not rated",
+    "claim_count": 0,
+    "review_artifact": false,
+    "source_paths_present": null
+  },
+  {
+    "run_id": "research_20261025T052701_82374d097e79",
+    "company": "NTPC Limited",
+    "prompt": "Investigate renewable capacity, project execution and financial significance using primary disclosures and independent sources.",
+    "created_at": "2026-10-25T05:27:01.202809+00:00",
+    "finished_at": "2026-10-25T05:28:45.042901+00:00",
+    "recorded_status": "completed",
+    "stage": "complete",
+    "model": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "report_type": "investigation",
+    "rating": "Weak",
+    "claim_count": 2,
+    "review_artifact": true,
+    "source_paths_present": true
+  }
+]

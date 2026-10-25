@@ -1,0 +1,9 @@
+# Final audit evidence, 25 October 2026
+
+Actual runtime commit: `df7155242caecb6385351a38faee86f9296b6549` on `codex/arshia-demo-readiness`. It integrates main `e19b9de`, the Groq/provider work and the citation repair. Later upstream main `8630a67` introduces xAI migration and is deliberately outside this tested demo version; its upstream report records authentication failure and no live generation.
+
+`fresh_*` files are exact copies from the browser-initiated Coal India run `research_20261025T051452_b844776593ba`. No manual recovery, supplied Coal India PDF or prepared company catalog was used. Issuer navigation retrieved the annual report online after ordinary searches retained zero results. The run finished in94.743607 seconds, with16 eligible records, F1/R1, final review, three issuer observations and a checked capacity ratio. Outcome: inconclusive/Weak; no independent corroboration or novelty.
+
+`verification_summary.json` records the actual quote/hash/arithmetic/export checks, test results and feature-count totals. `run_inventory.json` records20 manifests present at the audit snapshot, including three additional concurrent Power Grid/NTPC runs inspected without initiating extra audit smoke tests. Original source PDFs and complete raw model/retrieval directories remain local and ignored; the portable copies alone do not make the saved chooser/source revalidation reproducible on another machine.
+
+The JSON browser export wraps the report under `investigation`; that object matched `fresh_investigation.json`. Markdown export, source drilldown and actual rendering were checked. Screenshot: `signalforge/outputs/signalforge-final-audit-demo.png`. All financial statements in these reports are source-backed model assessments with disclosed limitations, not independent operating confirmations or investment recommendations.

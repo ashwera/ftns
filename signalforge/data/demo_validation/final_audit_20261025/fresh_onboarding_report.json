@@ -1,0 +1,28 @@
+{
+  "company": "Coal India Limited",
+  "attempts": [
+    {
+      "origin": "model_navigation_hint+annual_report_page",
+      "source": "https://www.coalindia.in/documents/14122/CIL_AR_2025-26.pdf",
+      "status": "identity_found",
+      "sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+      "page": 67,
+      "isin": null,
+      "identifier": "L23109WB1973GOI028844",
+      "identifier_type": "CIN"
+    }
+  ],
+  "policy": "issuer_self_declaration_in_original_pdf_v1",
+  "selected_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261025T051452_b844776593ba/onboarding_pdfs/sources/6be29201be42_29c0e63f.pdf",
+  "selected_url": "https://www.coalindia.in/documents/14122/CIL_AR_2025-26.pdf",
+  "selected_origin": "model_navigation_hint+annual_report_page",
+  "selected_sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+  "wikidata_isin_cross_check": "not_comparable_CIN_only",
+  "identity": {
+    "canonical_name": "Coal India Limited",
+    "isin": null,
+    "identifier": "L23109WB1973GOI028844",
+    "identifier_type": "CIN",
+    "page": 67
+  }
+}

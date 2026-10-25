@@ -1,5 +1,7 @@
 # SignalForge — Arshia's demo handover
 
+> Historical handover from the other machine's16GB/Ollama session. Installed-model,420-second timeout and test-count statements below describe that recorded session, not the current8GB Arshia Mac. Use the root `ARSHIA_DEMO_HANDOVER.md` and `SIGNALFORGE_DEMO_DAY_QUICK_REFERENCE.md` for the final integrated audit, current hosted-provider commands and successful fresh Coal India run. Ollama is unavailable on the current demo machine.
+
 Run commands from the repository root. This is a local research demonstration:
 completion does not mean a red flag has been proven. A neutral or evidence-gap
 report is a valid outcome. The saved NTPC dashboard is a separate historical case.

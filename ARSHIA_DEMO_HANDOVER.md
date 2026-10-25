@@ -1,5 +1,19 @@
 # Arshia demo handover — 25 October 2026
 
+## Final integrated audit and presentation
+
+Current runtime is integration commit `df71552` on `codex/arshia-demo-readiness`, including remote main `e19b9de` and the citation/Groq work. Current recommendation on this8GB Mac is **Gemini `gemini-3.1-flash-lite` for the fuller live context**, with a labelled saved report and manual Groq/recovery contingency. Older provider recommendations and counts below are historical. Today's explicit Gemini startup command is in `SIGNALFORGE_DEMO_DAY_QUICK_REFERENCE.md`; the local `.env` keys were preserved.
+
+Main advanced during the audit to `8630a67` (xAI Responses/configuration/recovery migration). That commit was inspected but deliberately not integrated into the verified demo branch. Its own report says live authentication failed and no generation occurred. The current demo has no xAI integration; see the feature cheat sheet's version boundary before any future merge. The feature branch contains all previously verified work, but is not identical to the newest main.
+
+The fresh frontend-initiated run **`research_20261025T051452_b844776593ba`** completed acquisition, F1, R1, exact claims, counter-search, final semantic review and report generation in **94.743607 seconds** without manual recovery, a Coal India catalog or a supplied PDF. Initial/follow-up/opposition searches found zero usable results; issuer navigation nevertheless retrieved the original report online. Sixteen eligible records, one model-ranked angle and two R1 steps were recorded. Final report: three issuer-backed observations and a checked Khavda200/300 capacity ratio, **inconclusive / Weak**, no independent corroboration or novelty. Generated planning-lead associations and falsification wording still require analyst refinement. The saved citation recovery remains useful as a separate repair example.
+
+Current checks: **359 backend tests run,357 passed,2 skipped**; **44 frontend tests passed**, TypeScript and production build passed. Original-PDF checks account for the skips. Fresh Groq120B/Gemini JSON probes passed in0.660/1.072 seconds; Ollama was unreachable. The full feature/run audit is `SIGNALFORGE_FEATURE_CHEATSHEET.md`; speaking roles, exact timed clicks and defence are in `SIGNALFORGE_5_MIN_DEMO_SCRIPT.md` and `SIGNALFORGE_JUDGE_QA.md`. These four presentation files supersede conflicting older machine-specific instructions.
+
+Keep two tabs: `127.0.0.1:5173` for live work and `localhost:5173` with the best saved run already selected. The active-tab saved chooser is disabled; this separate-origin backup flow was verified during the fresh run. Full raw runs/PDFs remain local; portable audit exports are under `signalforge/data/demo_validation/final_audit_20261025/`.
+
+Additional saved runs appeared during the audit: NTPC `research_20261025T052701_82374d097e79` completed model review in103.840092s with four explicitly cached catalog sources, two issuer-supported claims and a9.81-percentage-point combined-category capex calculation, still inconclusive/Weak and no corroborated claim. Power Grid `research_20261025T052304_b578c6cb991b` and `research_20261025T052640_7b196a1b0265` stopped with zero eligible evidence and Not-rated gap reports. These were inspected as existing concurrent runs, not initiated as additional audit smoke tests. Coal India remains the preferred catalog-free case.
+
 ## Latest targeted citation recovery
 
 Original run **`research_20261025T000129_2ecbfd3ad81c`** now completes investigation and a fresh semantic review. It was resumed in place; no new run ID was created. Its onboarding, F1, R1, eligible evidence, completed discovery/follow-up/opposition searches and PDF were reused, with all eight input hashes unchanged. The original failed reports and raw model attempts are preserved in recovery snapshots/audits.

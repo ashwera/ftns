@@ -1,0 +1,93 @@
+{
+  "company_name": "Coal India Limited",
+  "dataset_summary": {
+    "row_count": 126,
+    "columns": [
+      "DATE",
+      "SERIES",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "PREV. CLOSE",
+      "LTP",
+      "CLOSE",
+      "VWAP",
+      "52 WEEK HIGH",
+      "52 WEEK LOW",
+      "VOLUME",
+      "VALUE",
+      "NO. OF  TRADES"
+    ],
+    "date_coverage": null,
+    "missing_information": [
+      "No company-specific revenue/production data in CSV",
+      "No verified identifier in CSV records"
+    ],
+    "data_limitations": [
+      "No recognized company or ticker identifier field; company coverage cannot be verified from rows.",
+      "No source/document provenance fields identified."
+    ]
+  },
+  "ranking_reliable": true,
+  "ranking_limitation": null,
+  "ranked_candidates": [
+    {
+      "candidate_id": "c1_renewable_expansion_gap",
+      "rank": 1,
+      "category": "renewable_transition",
+      "hypothesis": "CIL's aggressive renewable energy targets (9.5 GW by FY 2029-30) face potential execution risks when comparing announced project pipeline status against current commissioning rates (e.g., only 200 MW commissioned of the 300 MW Khavda project as of July 2026).",
+      "financial_importance": "The transition represents a strategic pivot to diversify revenue streams. Failure to meet capacity targets may impair future growth valuations and sustainability narrative credibility.",
+      "metrics_and_periods": [
+        "Planned Capacity vs. Commissioned Capacity (FY 2025-26)",
+        "Progress status of 1.5 GW wind and 3 GW solar projects",
+        "Capex allocated for renewable energy projects"
+      ],
+      "evidence_found": [
+        {
+          "statement": "Company targets 9.5 GW renewable energy capacity by FY 2029-30. Includes specific projects: 875 MW Pugal Solar, 80 MW/320 MWh BESS Odisha, 600 MW Jalaun Solar, 300 MW Khavda (200 MW commissioned July 2026).",
+          "source_type": "pdf",
+          "source_url": null,
+          "date": "2026-10-25",
+          "row_identifier": null,
+          "evidence_id": "ev_9745f1ec9f355d0eaf9a1803",
+          "status": "observed_in_ingested_source"
+        }
+      ],
+      "additional_evidence_needed": [
+        "Project-level completion timelines from external energy regulatory filings",
+        "Third-party independent verification of renewable infrastructure installation progress"
+      ],
+      "alternative_explanation": "Project delays may result from sector-wide supply chain constraints or land acquisition hurdles rather than specific company-level failure.",
+      "falsification_condition": "If commissioned capacity aligns with the projected 9.5 GW roadmap at reported interim milestones, the hypothesis of execution gap is falsified.",
+      "data_risks_and_limitations": [
+        "Reliance on internal management disclosure for project status; potential for over-optimistic project milestones."
+      ],
+      "scores": {
+        "financial_significance": {
+          "score": 4,
+          "rationale": "Directly impacts the firm's pivot strategy and long-term valuation."
+        },
+        "evidence_availability": {
+          "score": 4,
+          "rationale": "Clear disclosure of targets and project pipelines in the integrated report."
+        },
+        "testability": {
+          "score": 4,
+          "rationale": "Project milestones are time-bound and checkable against commissioning reports."
+        },
+        "non_obviousness": {
+          "score": 3,
+          "rationale": "Requires bridging the gap between stated goals and granular asset-level progress."
+        },
+        "cross_validation_potential": {
+          "score": 4,
+          "rationale": "External regulatory data can confirm commissioning status."
+        }
+      },
+      "weighted_score": 78.5,
+      "weighted_score_rationale": "The candidate has high financial significance and clear, testable, and supported evidence in the ingested report, allowing for a rigorous gap analysis.",
+      "next_research_action": "Map out a timeline of milestones for the mentioned solar and BESS projects and compare against subsequent quarterly updates or industry tracker databases."
+    }
+  ],
+  "recommended_candidate_id": "c1_renewable_expansion_gap"
+}

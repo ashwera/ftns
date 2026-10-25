@@ -1,0 +1,27 @@
+{
+  "claims": [
+    {
+      "id": "claim_0",
+      "verdict": "supported",
+      "reason": "The claim aligns with the text on page 76, which explicitly states that 200 MW of the 300 MW solar capacity at Khavda was commissioned as of 15th July 2026.",
+      "independent_corroboration": false
+    },
+    {
+      "id": "claim_1",
+      "verdict": "supported",
+      "reason": "The corporate goal of 9.5 GW by FY 2029-30 is explicitly stated in the issuer's annual report on page 49.",
+      "independent_corroboration": false
+    },
+    {
+      "id": "claim_2",
+      "verdict": "supported",
+      "reason": "The report confirms the operationalization of the 100 MW Banaskantha plant as of 31st March 2026, corroborated by the receipt of a commissioning certificate on 4th May 2026.",
+      "independent_corroboration": false
+    }
+  ],
+  "conclusion_supported": true,
+  "conclusion_reason": "The draft accurately reflects the commissioned status of specific solar projects and identifies the uncertainty surrounding other projects (Pugal and Jalaun), which are noted in the report only as 'planned' or 'awarded' status without firm commissioning timelines.",
+  "calculation_basis_valid": true,
+  "counterargument_addressed": true,
+  "novelty_established": false
+}
