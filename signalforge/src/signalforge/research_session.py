@@ -264,6 +264,12 @@ def execute_models(folder, manifest, config, update):
         update("f1", "F1 returned no reliable recommendation. R1 not run.", "blocked", artifacts=manifest["artifacts"] + ["f1.json", "eligible_evidence/evidence.jsonl"])
         return
     update("r1", "Preparing R1 research plan; a plan is not a verified finding.")
+    execute_r1_and_investigation(folder,manifest,config,update)
+
+
+def execute_r1_and_investigation(folder, manifest, config, update):
+    from .r1_research_investigator import run as r1
+    update('r1','Preparing R1 from saved validated F1 and exact original evidence; source metadata is not inferred from model narrative.')
     plan = r1(folder / "f1.json", folder / "r1.json", config)
     from .investigation import run_investigation, attach_planning_leads, write_report, write
     investigation = run_investigation(folder, manifest["company"], manifest["prompt"], plan, config, update)

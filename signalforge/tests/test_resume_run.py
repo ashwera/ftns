@@ -10,6 +10,28 @@ from signalforge.research_session import record_investigation_outcome
 
 
 class ResumeRunTests(unittest.TestCase):
+    def test_r1_recovery_reuses_f1_and_passes_saved_evidence_to_executor(self):
+        from signalforge.config import Config
+        from signalforge.research_session import ResearchSessions
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);run_id='research_20261025T000000_123456abcdef';folder=root/run_id;folder.mkdir()
+            (folder/'eligible_evidence').mkdir()
+            original=json.dumps({'ranking_reliable':True,'company_name':'Example Limited','recommended_candidate_id':'c1','ranked_candidates':[{'candidate_id':'c1'}]})
+            (folder/'f1.json').write_text(original)
+            (folder/'manifest.json').write_text(json.dumps({'run_id':run_id,'company':'Example Limited','prompt':'question','status':'completed','stage':'complete','stages':[{'name':'f1','execution':'real'}],'events':[],'investigation':{'report_type':'evidence_gap'}}))
+            cfg=replace(Config(),provider='ollama');sessions=ResearchSessions(root=root,config=cfg)
+            def executor(f,m,c,u):
+                self.assertEqual(c.evidence_dir,folder/'eligible_evidence')
+                self.assertEqual((folder/'f1.json').read_text(),original)
+                u('complete','test R1 recovery','completed',investigation={'report_type':'evidence_gap'})
+            with patch('signalforge.resume_run.ResearchSessions',return_value=sessions), \
+                 patch('signalforge.resume_run.load_evidence_ids',return_value={'real_evidence'}), \
+                 patch('signalforge.research_session.execute_r1_and_investigation',side_effect=executor) as r1, \
+                 patch('signalforge.f1_research_angle_selector.run') as f1:
+                result=resume(run_id,config=cfg,retry_r1=True)
+            self.assertEqual(result['status'],'completed');r1.assert_called_once();f1.assert_not_called()
+            self.assertEqual((folder/'f1.json').read_text(),original)
+
     def test_f1_recovery_uses_saved_evidence_directory_and_preserves_report(self):
         from signalforge.config import Config
         from signalforge.research_session import ResearchSessions

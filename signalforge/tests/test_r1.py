@@ -18,6 +18,30 @@ def plan(**over):
     p.update(over); return p
 
 class R1Tests(unittest.TestCase):
+    def test_generation_schema_is_strict_and_cannot_emit_planned_lookup_as_kind(self):
+        from signalforge.groq_provider import strict_schema
+        original=json.loads(SCHEMA.read_text())
+        schema=r1.ledger_generation_schema(original,'Example','c1',{'ev_real':{'source_url':None,'publication_date':None,'excerpt_or_data_point':'Original solar capacity target is 3 GW by FY2028.'}})
+        self.assertTrue(strict_schema(schema))
+        ledger=schema['properties']['evidence_ledger']['items']['properties']
+        self.assertNotIn('planned_lookup',ledger['kind']['enum'])
+        self.assertIn('planned_lookup',ledger['status']['enum'])
+        self.assertEqual(ledger['source_url']['enum'],[None])
+        self.assertNotIn('calculation',original['properties']['checklist']['items']['required'])
+
+    def test_supplied_metadata_and_quotes_cannot_be_invented_from_f1(self):
+        source={'ev_real':{'source_url':None,'publication_date':None,'excerpt_or_data_point':'Original solar capacity target is 3 GW by FY2028.'}}
+        p=plan();p['evidence_ledger'][0].update(evidence_id='ev_real',status='supplied',kind='reported_fact',excerpt_or_data_point='Original solar capacity target is 3 GW by FY2028.')
+        r1.validate_ledger_sources(p,source)
+        for field,value in (('source_url','https://issuer.example/invented.pdf'),('publication_date','2024-04-15'),('excerpt_or_data_point','Pages 30-40 detail 1.8 GW commissioned.')):
+            bad=json.loads(json.dumps(p));bad['evidence_ledger'][0][field]=value
+            with self.assertRaises(ValueError):r1.validate_ledger_sources(bad,source)
+
+    def test_planned_lookup_cannot_claim_date_or_supplied_identity(self):
+        for field,value in (('publication_date','2025-05-12'),('evidence_id','ev_real')):
+            p=plan();p['evidence_ledger'][0][field]=value
+            with self.assertRaises(ValueError):r1.validate_ledger_sources(p,{})
+
     def test_valid(self): r1.validate_plan(plan(), SCHEMA)
     def test_retrieval_claim_rejected(self):
         with self.assertRaises(ValueError): r1.validate_plan(plan(retrieval_performed=True), SCHEMA)

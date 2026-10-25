@@ -100,9 +100,8 @@ describe('saved live runs', () => {
   it('opens a saved run without old-run or provider labels', async () => {
     const saved={...manifest,model:{provider:'ollama',model:'saved-local-model'}}
     vi.stubGlobal('fetch',vi.fn(async (url:string)=>new Response(JSON.stringify(url==='/api/agent/runs'?{runs:[saved]}:saved),{status:200})))
+    localStorage.setItem('signalforge.lastResearchRun',saved.run_id)
     render(<StartResearch />)
-    await screen.findByRole('option',{name:/Test Company/})
-    await userEvent.selectOptions(screen.getByLabelText('Saved investigations'),saved.run_id)
     expect(await screen.findByRole('heading', { name: /Current run · Test Company/ })).toBeTruthy()
     expect(screen.queryByText(/Last configured inference|saved-local-model/)).toBeNull()
     expect(screen.queryByText(/grok-4.7/)).toBeNull()
@@ -123,9 +122,8 @@ describe('saved live runs', () => {
     const { run_id, company, prompt, created_at, status, stage } = manifest
     const fetcher = vi.fn(async (url: string) => new Response(JSON.stringify(url === '/api/agent/runs' ? { runs: [{ run_id, company, prompt, created_at, status, stage }] } : manifest), { status: 200 }))
     vi.stubGlobal('fetch', fetcher)
+    localStorage.setItem('signalforge.lastResearchRun',manifest.run_id)
     render(<StartResearch />)
-    await screen.findByRole('option', { name: /Test Company/ })
-    await userEvent.selectOptions(screen.getByLabelText('Saved investigations'), manifest.run_id)
     expect(await screen.findByRole('heading', { name: investigation.headline })).toBeTruthy()
     expect(screen.queryByText(/has not produced a verified finding/)).toBeNull()
     expect(fetcher.mock.calls.every(([url]) => url.startsWith('/api/agent/runs'))).toBeTruthy()
@@ -133,9 +131,8 @@ describe('saved live runs', () => {
   it('marks older planning-only runs as missing a final investigation', async () => {
     const old = { ...manifest, investigation: null }
     vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(JSON.stringify(url === '/api/agent/runs' ? { runs: [old] } : old), { status: 200 })))
+    localStorage.setItem('signalforge.lastResearchRun',old.run_id)
     render(<StartResearch />)
-    await screen.findByRole('option', { name: /Test Company/ })
-    await userEvent.selectOptions(screen.getByLabelText('Saved investigations'), old.run_id)
     expect(await screen.findByText(/F1\/R1 planning output alone/)).toBeTruthy()
   })
 })

@@ -37,7 +37,7 @@ def mark_reused_stages(manifest):
             stage.update(zip(('execution','detail'),modes[stage['name']]))
 
 
-def resume(run_id, config=None, *, retry_onboarding=False, retry_f1=False):
+def resume(run_id, config=None, *, retry_onboarding=False, retry_f1=False, retry_r1=False):
     sessions = ResearchSessions(config=config or local_config())
     manifest = sessions.get(run_id)  # validates ID before filesystem access
     if manifest['status'] in {'running', 'queued'}:
@@ -48,6 +48,26 @@ def resume(run_id, config=None, *, retry_onboarding=False, retry_f1=False):
     if not model_configured(cfg):
         variable={'groq':'GROQ_API_KEY','xai':'XAI_API_KEY'}.get(cfg.provider.strip().lower(),'SIGNALFORGE_API_KEY')
         raise LLMError(f'Missing {variable}; configure the selected provider before resume.')
+    if retry_r1:
+        if not (folder/'f1.json').is_file() or (folder/'r1.json').exists():
+            raise ValueError('R1 recovery requires completed F1 and no completed R1 output')
+        f1=json.loads((folder/'f1.json').read_text())
+        if not f1.get('ranking_reliable') or not select_candidate(f1):
+            raise ValueError('Saved F1 has no reliable recommendation')
+        if not load_evidence_ids(cfg.evidence_dir/'evidence.jsonl',f1['company_name'],cfg):
+            raise ValueError('Saved original evidence failed revalidation')
+        archive=preserve_report(folder)
+        manifest.setdefault('recovery_history',[]).append({'at':now(),'provider':cfg.provider,'model':cfg.model,
+            'prior_report_archive':archive,'method':'Resume R1 with saved F1 and revalidated original evidence; no discovery, retrieval, onboarding or F1 repeated'})
+        manifest['investigation']=None
+        manifest.pop('finished_at',None);manifest.pop('error',None)
+        for stage in manifest['stages']:
+            if stage['name'] in {'discovery','retrieval','machine_evidence','f1'}:
+                stage.update(execution='cached_model_ranking' if stage['name']=='f1' else 'cached_original_rechecked',detail='Completed prior stage reused; originals revalidated. No new search or F1 inference.')
+        from .research_session import execute_r1_and_investigation
+        sessions.executor=lambda f,m,c,u:execute_r1_and_investigation(f,m,cfg,u)
+        sessions._work(folder,manifest)
+        return sessions.get(run_id)
     if retry_f1:
         if (folder/'f1.json').exists() or not (folder/'eligible_evidence/evidence.jsonl').exists():
             raise ValueError('F1 recovery requires saved eligible evidence and no completed F1 output')
@@ -125,9 +145,10 @@ def main():
     parser.add_argument('--run-id', required=True)
     parser.add_argument('--retry-onboarding',action='store_true',help='Retry identity acquisition from completed saved discovery, only before F1')
     parser.add_argument('--retry-f1',action='store_true',help='Resume before F1 from existing revalidated evidence; never repeats completed F1')
+    parser.add_argument('--retry-r1',action='store_true',help='Resume R1 from completed F1 and revalidated evidence; never repeats completed R1')
     args=parser.parse_args()
-    if args.retry_f1 and args.retry_onboarding:parser.error('Choose one recovery stage')
-    result=resume(args.run_id,retry_onboarding=args.retry_onboarding,retry_f1=args.retry_f1)
+    if sum((args.retry_f1,args.retry_r1,args.retry_onboarding))>1:parser.error('Choose one recovery stage')
+    result=resume(args.run_id,retry_onboarding=args.retry_onboarding,retry_f1=args.retry_f1,retry_r1=args.retry_r1)
     print(json.dumps({'run_id':args.run_id,'status':result['status'],'report_type':result.get('investigation',{}).get('report_type','investigation')}))
 
 
