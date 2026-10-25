@@ -127,6 +127,8 @@ class CatalogAuditTests(unittest.TestCase):  # all SYNTHETIC
             urls = re.findall(r"https?://[A-Za-z][^\s\"')|]+", f.read_text())
             if f.name == "llm_client.py":
                 urls = [u for u in urls if u != "https://api.x.ai/v1"]  # inference endpoint, never document evidence
+            if f.name == "groq_provider.py":
+                urls = [u for u in urls if u.rstrip(';') != "https://api.groq.com/openai/v1"]  # inference endpoint only
             self.assertEqual([], [u for u in urls if not any(x in u for x in ("w3.org", "json-schema", "example", "synthetic", "claude.com", "generativelanguage.googleapis.com", "wikidata.org"))], f.name)
 
 if __name__ == "__main__": unittest.main()

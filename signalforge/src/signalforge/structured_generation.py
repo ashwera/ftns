@@ -17,8 +17,11 @@ from .llm_client import LLMError, redact
 def generate_validated(prompt, payload, config, *, schema_path, output_path,
                        generate, validate, normalize=None, preserve=None, stage="research"):
     schema = json.loads(Path(schema_path).read_text(encoding="utf-8"))
-    base_prompt = (prompt + f"\n\nRequired {stage.upper()} output JSON Schema:\n"
-                   + json.dumps(schema, ensure_ascii=False))
+    # Groq receives the complete schema in response_format. Keep repair feedback
+    # in the prompt without repeating a large schema against the free token cap.
+    base_prompt = prompt if config.provider.strip().lower() == "groq" else (
+        prompt + f"\n\nRequired {stage.upper()} output JSON Schema:\n"
+        + json.dumps(schema, ensure_ascii=False))
     output_path = Path(output_path)
     audit = output_path.parent / (output_path.stem + "_model_audit") / uuid.uuid4().hex
     audit.mkdir(parents=True, exist_ok=False)
@@ -43,7 +46,7 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
         entry = {"attempt": attempt}
         summary["attempts"].append(entry)
         try:
-            if config.provider.strip().lower() == "xai":
+            if config.provider.strip().lower() in {"xai", "groq"}:
                 raw = generate(request_prompt, payload, config, schema=schema, audit_path=audit / f"attempt_{attempt}_provider.json")
             else:
                 raw = generate(request_prompt, payload, config)

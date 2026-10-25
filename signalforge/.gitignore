@@ -5,6 +5,7 @@ __pycache__/
 outputs/*.json
 outputs/*.jsonl
 outputs/xai_preflight_*/
+outputs/groq*/
 data/processed/
 web/node_modules/
 web/dist/

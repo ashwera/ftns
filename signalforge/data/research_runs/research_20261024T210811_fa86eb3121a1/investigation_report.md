@@ -1,4 +1,4 @@
-# Evidence gap: Hindalco Industries Limited
+# Investigation inconclusive: proposed conclusion did not pass review
 
 Run: research_20261024T210811_fa86eb3121a1
 
@@ -6,27 +6,65 @@ Company: Hindalco Industries Limited
 
 Status: inconclusive / Weak
 
-The model investigation failed strict validation. Original snapshots and counterevidence retrieval were retained, but no financial claim passed the complete verification/review flow.
+The report confirms the announced capacities and target commissioning dates but does not provide any independent confirmation of actual commissioning or commercial operation. Thus, there is no evidence of a material gap between announced plans and realized operations, but the lack of independent data prevents definitive assessment of operational status.
 
 ## Claims and review
 
+- supported: Hindalco announced a copper and E‑waste recycling project with a capacity of 50 KTPA to be commissioned by 2026.
+
+  Review: The cited passage from Hindalco’s annual report explicitly states a copper and E‑waste recycling project with a 50 KTPA capacity to be commissioned at Pakhajan, Gujarat by 2026.
+
+  Independent corroboration: False
+
+> Copper and E‑waste recycling project with a capacity of 50 KTPA to be commissioned at Pakhajan, Bharuch District, Gujarat by 2026
+
+Passage: src_c240197af9376407_ev_f6bf8fc87e968143f61c184e
+
+- supported: Hindalco announced a greenfield alumina refinery with a capacity of 850 KTPA to be commissioned by 2027.
+
+  Review: The same annual‑report passage notes a greenfield alumina refinery with 850 KTPA capacity to be commissioned at Kansariguda, Odisha by 2027.
+
+  Independent corroboration: False
+
+> Greenfield alumina refinery with a capacity of 850 KTPA to be commissioned at Kansariguda, Rayagada, Odisha by 2027
+
+Passage: src_c240197af9376407_ev_f6bf8fc87e968143f61c184e
+
+- unresolved: No independent evidence of actual commissioning or commercial operation for the above projects is provided in the supplied documents.
+
+  Review: The available evidence contains only Hindalco’s forward‑looking statements; no separate regulator or operator documents confirming actual commissioning or commercial operation are provided. Consequently, the claim that no independent evidence exists cannot be conclusively verified and remains unresolved.
+
+  Independent corroboration: False
+
+> Copper and E‑waste recycling project with a capacity of 50 KTPA to be commissioned at Pakhajan, Bharuch District, Gujarat by 2026
+
+Passage: src_c240197af9376407_ev_f6bf8fc87e968143f61c184e
+
+> Greenfield alumina refinery with a capacity of 850 KTPA to be commissioned at Kansariguda, Rayagada, Odisha by 2027
+
+Passage: src_c240197af9376407_ev_f6bf8fc87e968143f61c184e
+
 ## Counterargument
 
-Missing or unusable evidence is not evidence of misconduct or lack of financial activity.
+The announced capacities and commissioning dates may reflect planned future expansions and are subject to regulatory approvals, financial constraints, and construction progress. Without independent confirmation, the absence of actual commissioning data does not necessarily indicate a financial material gap but may simply reflect the forward‑looking nature of the disclosures.
 
 ## Falsification
 
-Obtain company-identified original disclosures and independent records for the same claim, period, unit and reporting scope.
+If independent regulator or operator documents were found indicating that the projects were commissioned before the stated dates, the claim that there is a lack of evidence would be falsified.
 
 ## Limitations
 
-- The model investigation failed strict validation. Original snapshots and counterevidence retrieval were retained, but no financial claim passed the complete verification/review flow.
+- Only issuer annual report passages were available; independent regulator or operator documents were not supplied.
 
-- No independent corroboration or novelty is established.
+- No dates of actual commissioning or commercial operation are present in the provided evidence.
 
-- The unrelated quote CSV is dataset context only; missing matching rows imply nothing about company activity.
+- The analysis cannot assess whether the projects were completed on schedule or whether capacity was achieved.
 
-- The 8B full investigation request timed out at the existing 420-second deadline after its small JSON/quotation smoke test passed. Earlier 4B responses failed exact quotation validation. Semantic review and final financial calculations did not complete.
+- Not every key claim has independent confirmation; issuer-only facts remain labelled.
+
+- Novelty relative to market knowledge has not been established.
+
+- Semantic support was challenged by a second model pass, not a human audit. Exact quotes and hashes were checked by code.
 
 ## Research leads — planning only, not verified financial findings
 

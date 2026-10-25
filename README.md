@@ -1,12 +1,15 @@
 # SignalForge
 
 **25 October demo handover:** [Arshia's startup, unfamiliar-company workflow and recovery guide](signalforge/DEMO_HANDOVER.md).
-Inference now supports dedicated `XAI_API_KEY` credentials and xAI Responses with
-the configured `grok-4.7` model. **Live Grok validation is blocked by the supplied
-credential's HTTP 400 API-key rejection**; no successful Grok investigation is
-claimed. The saved Hindalco report remains the prior local-model evidence-gap
-result. The handover provides secure key setup, bounded preflight and saved-stage
-resume commands. Ollama is an explicitly selectable alternative.
+Inference now defaults to **Groq** when a dedicated `GROQ_API_KEY` is present:
+preferred `openai/gpt-oss-120b` at `https://api.groq.com/openai/v1`. The completed
+Hindalco recovery used explicitly selected `openai/gpt-oss-20b` after the 120B
+free daily allowance ran low. Authenticated model
+access, live JSON-schema generation, separate exact-quotation validation and
+built-in `browser_search` have been verified. Browser results remain leads;
+original retrieval and evidence checks are mandatory. See the handover and
+[Groq validation report](signalforge/GROQ_DEMO_REPORT.md) for actual run outcomes,
+free-tier limits and remaining blockers. Ollama and xAI remain explicit alternatives.
 The live application now connects discovery, issuer onboarding, policy-eligible
 evidence, F1/R1, investigation, counterevidence search, model challenge and a final
 report. Insufficient evidence produces an explicit evidence-gap report. A terminal

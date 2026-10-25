@@ -17,7 +17,7 @@ from urllib.parse import urlsplit
 
 from .config import ROOT
 from .evidence_ingestion import load_registry, verify_company
-from .llm_client import generate_json
+from .llm_client import generate_json, LLMError, redact
 from .source_catalog import load, read_pages
 from .structured_generation import generate_validated
 from .f1_research_angle_selector import validate_output, eligible_ingested_evidence
@@ -554,8 +554,9 @@ def run_investigation(folder, company, question, plan, config, update, *, reuse_
                     index += 1
                 stage = f"{original_stage}_{index:02d}"
         update("investigation", f"Searching {stage}: {topic[:160]}")
-        report = discover(company, topic, provider=BingRSSSearch(),
-            budget=Budget(max_queries=2, max_results=8, max_fetches=3, max_seconds=65, request_timeout=20),
+        from .groq_provider import discovery_provider
+        report = discover(company, topic, provider=discovery_provider(config,folder/(stage+'_provider_audit')),
+            budget=Budget(max_queries=1 if config.provider=='groq' else 2, max_results=8, max_fetches=3, max_seconds=90 if config.provider=='groq' else 65, request_timeout=30 if config.provider=='groq' else 20),
             evidence_gaps=[topic], output_dir=folder / stage, retrieve=True, registry_path=config.registry_path)
         log.append({"action": stage, "reason": topic,
             "outcome": f"{len(report['search_queries'])} searches; {report['retrieval_status']}. Full queries and failures retained in {stage}/discovery_report.json."})
@@ -574,10 +575,11 @@ def run_investigation(folder, company, question, plan, config, update, *, reuse_
         search(topic, "counterevidence_search")
         sources, audit = collect_sources(folder, company, question_terms + " " + topic, config)
         log.extend(audit)
+        failure=redact(str(error),config)[:500] if isinstance(error,LLMError) and config.provider.strip().lower() in {'groq','xai'} else 'Exact-passage or schema validation did not pass.'
         log.append({"action": "Reject unvalidated model claims", "reason": type(error).__name__,
-                    "outcome": "Exact-passage or schema validation did not pass. Model claims withheld; semantic review and financial calculations not completed."})
+                    "outcome": failure+" Model claims withheld; semantic review and financial calculations not completed."})
         return evidence_gap_report(folder, company, question,
-            "The model investigation failed strict validation. Original snapshots and counterevidence retrieval were retained, but no financial claim passed the complete verification/review flow.",
+            failure+" Original snapshots and counterevidence retrieval were retained, but no financial claim passed the complete verification/review flow.",
             sources=sources, decision_log=log, failed_stage="investigation_initial")
     write(folder / "investigation_initial.json", draft)
     topic = next(iter(draft["follow_up_queries"]), plan.get("alternative_explanation", "schedule revision commissioning contradiction"))
@@ -588,8 +590,9 @@ def run_investigation(folder, company, question, plan, config, update, *, reuse_
     try:
         draft = draft_result(folder, company, question, plan, sources, config, "investigation_final")
     except (ValueError, RuntimeError) as error:
-        log.append({"action": "Reject unvalidated final claims", "reason": type(error).__name__, "outcome": "No model final conclusion accepted."})
-        return evidence_gap_report(folder, company, question, "Final model claims did not pass strict validation after counterevidence retrieval; semantic adjudication remains incomplete.",
+        failure=redact(str(error),config)[:500] if isinstance(error,LLMError) and config.provider.strip().lower() in {'groq','xai'} else 'Final model claims did not pass strict validation.'
+        log.append({"action": "Reject unvalidated final claims", "reason": type(error).__name__, "outcome": failure+" No model final conclusion accepted."})
+        return evidence_gap_report(folder, company, question, failure+" After counterevidence retrieval, semantic adjudication remains incomplete.",
                                    sources=sources, decision_log=log, failed_stage="investigation_final")
     write(folder / "investigation_final.json", draft)
     schema_path = folder / "investigation_review.schema.json"

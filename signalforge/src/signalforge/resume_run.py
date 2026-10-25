@@ -16,13 +16,25 @@ def preserve_report(folder):
     """Snapshot the valid prior report before a provider recovery can replace it."""
     archive=folder/'recovery_history'/uuid.uuid4().hex
     archive.mkdir(parents=True)
-    for name in ('manifest.json','investigation.json','investigation_report.md','investigation_initial.json','investigation_final.json','investigation_review.json'):
+    for name in ('manifest.json','onboarding_report.json','investigation.json','investigation_report.md','investigation_initial.json','investigation_final.json','investigation_review.json'):
         path=folder/name
         if path.is_file(): shutil.copy2(path,archive/name)
     return str(archive.relative_to(folder))
 
 
-def resume(run_id, config=None):
+def mark_reused_stages(manifest):
+    modes={'discovery':('cached_completed_live_search','Reused saved discovery; no new search during recovery.'),
+        'retrieval':('cached_original_rechecked','Reused saved source snapshots; originals rehashed.'),
+        'machine_evidence':('cached_original_rechecked','Saved issuer identity and eligible evidence revalidated.'),
+        'f1':('cached_deterministic_planning_fallback' if manifest.get('f1_ranking_provenance',{}).get('used') else 'cached_model_ranking','Saved F1 recommendation reused; no new F1 inference.'),
+        'r1':('cached_validated_plan','Saved R1 plan revalidated against the schema and eligible evidence IDs.'),
+        'counterevidence_search':('cached_completed_live_search','Completed opposition search and retrieval audit reused; no new queries during recovery.')}
+    for stage in manifest.get('stages',[]):
+        if stage['name'] in modes:
+            stage.update(zip(('execution','detail'),modes[stage['name']]))
+
+
+def resume(run_id, config=None, *, retry_onboarding=False):
     sessions = ResearchSessions(config=config or local_config())
     manifest = sessions.get(run_id)  # validates ID before filesystem access
     if manifest['status'] in {'running', 'queued'}:
@@ -31,7 +43,20 @@ def resume(run_id, config=None):
     cfg = replace(sessions.config, output_dir=folder, evidence_dir=folder/'eligible_evidence',
                   registry_path=folder/'run_registry.json' if (folder/'run_registry.json').is_file() else sessions.config.registry_path)
     if not model_configured(cfg):
-        raise LLMError('Missing XAI_API_KEY; configure the dedicated xAI key before resume.' if cfg.provider.strip().lower()=='xai' else 'Selected model provider is not configured.')
+        variable={'groq':'GROQ_API_KEY','xai':'XAI_API_KEY'}.get(cfg.provider.strip().lower(),'SIGNALFORGE_API_KEY')
+        raise LLMError(f'Missing {variable}; configure the selected provider before resume.')
+    if retry_onboarding:
+        if (folder/'f1.json').exists() or (folder/'eligible_evidence').exists():
+            raise ValueError('Onboarding recovery only applies before eligible evidence/F1; completed stages must not be repeated')
+        archive=preserve_report(folder)
+        manifest.setdefault('recovery_history',[]).append({'at':now(),'provider':cfg.provider,'model':cfg.model,
+            'prior_report_archive':archive,'method':'Retry identity acquisition using saved discovery leads; no search repeated'})
+        manifest['investigation']=None
+        manifest.pop('finished_at',None)
+        from .research_session import execute as execute_session
+        sessions.executor=lambda f,m,c,u:execute_session(f,m,c,u,reuse_discovery=True)
+        sessions._work(folder,manifest)
+        return sessions.get(run_id)
     f1 = json.loads((folder/'f1.json').read_text())
     plan = json.loads((folder/'r1.json').read_text())
     if not f1.get('ranking_reliable') or plan['candidate_id'] != select_candidate(f1)['candidate_id'] or plan['company_name'] != f1['company_name']:
@@ -47,6 +72,7 @@ def resume(run_id, config=None):
         manifest['previous_report'] = {k:manifest['investigation'].get(k) for k in ('report_type','status','completed_at')}
     manifest['investigation'] = None
     manifest['model'] = {'provider':cfg.provider,'model':cfg.model}
+    mark_reused_stages(manifest)
     def execute(folder, manifest, config, update):
         update('investigation', 'Resuming saved F1/R1 and completed source searches; exact evidence checks remain required.')
         result = run_investigation(folder, manifest['company'], manifest['prompt'], plan, cfg, update, reuse_searches=True)
@@ -57,7 +83,9 @@ def resume(run_id, config=None):
         usage=[]
         for path in sorted(folder.glob('investigation*_model_audit/*/attempt_*_provider.json')):
             entry=json.loads(path.read_text())
-            usage.append({**entry,'artifact':str(path.relative_to(folder))})
+            usage.append({**{k:entry[k] for k in ('provider','model','api','browser_search','status','http_status',
+                'error','error_code','elapsed_seconds','usage','limits','quota_scope','quota_numbers','request_bytes','sdk_retries') if k in entry},
+                'artifact':str(path.relative_to(folder))})
         manifest['provider_call_usage']=usage
         artifacts = [str(p.relative_to(folder)) for p in folder.glob('investigation*') if p.is_file()]
         update('complete', f"Report finished: {result['status']} / {result['evidence_strength']}; inspect actual execution record.", 'completed',
@@ -70,8 +98,9 @@ def resume(run_id, config=None):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run-id', required=True)
+    parser.add_argument('--retry-onboarding',action='store_true',help='Retry identity acquisition from completed saved discovery, only before F1')
     args=parser.parse_args()
-    result=resume(args.run_id)
+    result=resume(args.run_id,retry_onboarding=args.retry_onboarding)
     print(json.dumps({'run_id':args.run_id,'status':result['status'],'report_type':result.get('investigation',{}).get('report_type','investigation')}))
 
 

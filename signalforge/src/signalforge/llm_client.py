@@ -16,7 +16,7 @@ class LLMError(RuntimeError):
 
 
 def configured_secrets(config):
-    return tuple(s for s in (getattr(config, "api_key", ""), getattr(config, "xai_api_key", "")) if s)
+    return tuple(s for s in (getattr(config, "api_key", ""), getattr(config, "xai_api_key", ""), getattr(config, "groq_api_key", "")) if s)
 
 
 def redact(value, config):
@@ -67,6 +67,8 @@ def model_configured(config):
         return True
     if config.provider.strip().lower() == "xai":
         return bool(getattr(config, "xai_api_key", "").strip())
+    if config.provider.strip().lower() == "groq":
+        return bool(getattr(config, "groq_api_key", "").strip())
     return bool(config.api_key)
 
 
@@ -89,6 +91,9 @@ def local_model_status(config, timeout=5):
 
 def generate_json(prompt, payload, config, *, schema=None, audit_path=None):
     provider = config.provider.strip().lower()
+    if provider == "groq":
+        from .groq_provider import structured_json
+        return structured_json(prompt, payload, config, schema=schema, audit_path=audit_path)
     if provider == "xai":
         client = xai_client(config)
         started = time.monotonic()

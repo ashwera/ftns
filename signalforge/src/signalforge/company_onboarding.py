@@ -302,6 +302,18 @@ def onboard(company, run_dir, config, *, pdf_path=None, pdf_url=None, max_downlo
                     if source.get("retrieval_status") == "retrieved" and path.suffix.lower() == ".pdf":
                         discovered[str(path)] = source
                         sources.append(("live_discovery_snapshot", path))
+            # Identity acquisition may inspect an ambiguous PDF lead after the
+            # normal retrievals fail. It is not accepted evidence or a reversal
+            # of strict relevance: the original must declare the target issuer
+            # and equity ISIN and later pass every machine-evidence check.
+            leads=[]
+            for rejected in discovery.get('rejected_results',[]):
+                hit=rejected.get('result',{})
+                if rejected.get('rejection_reason')=='no_distinctive_company_token_brand_or_issuer_domain_match':
+                    url=hit.get('url','')
+                    if _public_url(url) and '.pdf' in url.lower() and re.search(r'annual|integrated',hit.get('title',''),re.I):
+                        leads.append(("unverified_discovery_pdf_identity_probe",url))
+            sources.extend(dict.fromkeys(leads))
     if pdf_path:
         sources.append(("operator_pdf", Path(pdf_path)))
     for path in drop_folder_pdfs():
@@ -336,6 +348,8 @@ def onboard(company, run_dir, config, *, pdf_path=None, pdf_url=None, max_downlo
             return None
 
     for origin, source in sources:
+        if isinstance(source,str) and downloads>=max_downloads:
+            continue
         result = attempt(origin, source)
         if result:
             break

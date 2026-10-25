@@ -18,7 +18,7 @@ def now():
 def local_config(paths=None):
     """Read literal allowlisted dotenv assignments; never evaluate or log secrets."""
     allowed = {"SIGNALFORGE_API_KEY", "SIGNALFORGE_MODEL", "SIGNALFORGE_PROVIDER",
-               "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY", "XAI_API_KEY"}
+               "SIGNALFORGE_BASE_URL", "SIGNALFORGE_SEARCH_MODEL", "GEMINI_API_KEY", "GOOGLE_API_KEY", "XAI_API_KEY", "GROQ_API_KEY"}
     values = dict(os.environ)
     for path in paths if paths is not None else (ROOT.parent / ".env", ROOT / ".env", Path(__file__).with_name(".env")):
         if not path.is_file():
@@ -35,10 +35,10 @@ def local_config(paths=None):
     for key in ("SIGNALFORGE_SEARCH_MODEL", "SIGNALFORGE_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"):
         if key in values:
             os.environ.setdefault(key, values[key])
-    provider = values.get("SIGNALFORGE_PROVIDER") or ("xai" if values.get("XAI_API_KEY") else "gemini")
-    model = values.get("SIGNALFORGE_MODEL") or {"xai":"grok-4.7", "ollama":"signalforge-qwen"}.get(provider.strip().lower(), "gemini-3.8-flash")
+    provider = values.get("SIGNALFORGE_PROVIDER") or ("groq" if values.get("GROQ_API_KEY") else "xai" if values.get("XAI_API_KEY") else "gemini")
+    model = values.get("SIGNALFORGE_MODEL") or {"groq":"openai/gpt-oss-120b", "xai":"grok-4.7", "ollama":"signalforge-qwen"}.get(provider.strip().lower(), "gemini-3.8-flash")
     return replace(Config(), provider=provider, model=model, api_key=values.get("SIGNALFORGE_API_KEY", ""),
-        xai_api_key=values.get("XAI_API_KEY", ""), base_url=values.get("SIGNALFORGE_BASE_URL", ""))
+        xai_api_key=values.get("XAI_API_KEY", ""), groq_api_key=values.get("GROQ_API_KEY", ""), base_url=values.get("SIGNALFORGE_BASE_URL", ""))
 
 
 class ResearchSessions:
@@ -94,7 +94,7 @@ class ResearchSessions:
                         "stage": "queued", "events": [], "artifacts": [],
                         "finding": None, "model": {"provider": self.config.provider, "model": self.config.model},
                         "source_manifest_path": "discovery/discovery_report.json",
-                        "budget": {"max_queries": 3, "max_results": 10, "max_fetches": 3, "max_seconds": 90, "request_timeout": 40},
+                        "budget": {"max_queries": 1 if self.config.provider.strip().lower()=='groq' else 3, "max_results": 10, "max_fetches": 3, "max_seconds": 90, "request_timeout": 40},
                         "stages": [{"name": name, "execution": "not_executed"} for name in ("discovery", "retrieval", "machine_evidence", "f1", "r1", "investigation", "adjudication")],
                         "limitations": ["Source retrieval and machine passage matching do not verify financial claims.",
                                          "Discovery time budget is cooperative; downstream model requests use their existing client timeouts."]}
@@ -133,7 +133,7 @@ class ResearchSessions:
             manifest["error"] = {"type": type(error).__name__, "frames": [
                 f"{Path(f.filename).name}:{f.lineno} in {f.name}" for f in traceback.extract_tb(error.__traceback__)[-4:]]}
             from .llm_client import LLMError, redact
-            provider_error = redact(str(error), self.config) if isinstance(error, LLMError) and self.config.provider.strip().lower() == "xai" else None
+            provider_error = redact(str(error), self.config) if isinstance(error, LLMError) and self.config.provider.strip().lower() in {"xai","groq"} else None
             if provider_error:
                 manifest["error"]["provider_detail"] = provider_error
             update(manifest["stage"], (provider_error + " No finding generated.") if provider_error else "Execution failed; inspect local prerequisites and retry. No finding generated.", "failed")
@@ -145,16 +145,23 @@ class ResearchSessions:
                 self.active = None
 
 
-def execute(folder, manifest, config, update):
+def execute(folder, manifest, config, update, *, reuse_discovery=False):
     from . import source_discovery
     Budget, discover = source_discovery.Budget, source_discovery.discover
-    update("discovery", "Discovering public sources (3 queries, 10 results, 3 retrievals, 90 seconds).")
-    provider = source_discovery.BingRSSSearch()
-    update("discovery", f"Searching with {provider.name}; source candidates are unverified.", search_provider=provider.name)
-    report = discover(manifest["company"], manifest["prompt"], provider=provider,
-        budget=Budget(max_queries=3, max_results=10, max_fetches=3, max_seconds=90, request_timeout=40),
-        output_dir=folder / "discovery", retrieve=True, registry_path=config.registry_path)
+    if reuse_discovery:
+        report=json.loads((folder/'discovery/discovery_report.json').read_text())
+        if report.get('company')!=manifest['company'] or not any(a.get('action')=='discovery_stopped' for a in report.get('action_log',[])):
+            raise ValueError('Cannot reuse incomplete or mismatched discovery')
+        update('discovery','Reusing completed search and retrieval audit; no discovery repeated.', search_execution='cached_completed_live_search')
+    else:
+        from .groq_provider import discovery_provider
+        provider = discovery_provider(config,folder/'discovery_provider_audit')
+        update("discovery", f"Searching with {provider.name}; source candidates are unverified.", search_provider=provider.name)
+        report = discover(manifest["company"], manifest["prompt"], provider=provider,
+            budget=Budget(max_queries=1 if config.provider.strip().lower()=='groq' else 3, max_results=10, max_fetches=3, max_seconds=90, request_timeout=40),
+            output_dir=folder / "discovery", retrieve=True, registry_path=config.registry_path)
     update("retrieval", "Bounded discovery and retrieval finished.",
+           budget=report.get('budget',manifest.get('budget')),
            artifacts=["discovery/discovery_report.json"],
            source_count=len(report["search_results"]), retrieval_status=report["retrieval_status"])
     update("machine_evidence", "Checking retrieved PDFs against canonical issuer declarations and exact passages.")
@@ -192,7 +199,8 @@ def execute(folder, manifest, config, update):
     config = replace(config, evidence_dir=evidence, output_dir=folder)
     from .llm_client import model_configured, local_model_status
     if not model_configured(config):
-        update("f1", "Missing XAI_API_KEY; configure the dedicated xAI key in an ignored local .env. Eligible evidence retained." if config.provider.strip().lower()=="xai" else "F1 model credential unavailable; eligible evidence retained.", "blocked")
+        variable={'groq':'GROQ_API_KEY','xai':'XAI_API_KEY'}.get(config.provider.strip().lower(),'SIGNALFORGE_API_KEY')
+        update("f1", f"Missing {variable}; configure the selected provider in an ignored local .env. Eligible evidence retained.", "blocked")
         return
     ready, why = local_model_status(config)
     if not ready:
@@ -215,7 +223,7 @@ def execute(folder, manifest, config, update):
         else:
             manifest["artifacts"] = manifest.get("artifacts", []) + ["f1_fallback.json"]
             update("f1", "F1 used its model-generated ranking; no financial finding is implied.", artifacts=manifest["artifacts"])
-    for retry in ((2,) if config.provider.strip().lower() == "ollama" else (2, 3)):  # local inference is slow
+    for retry in (() if config.provider.strip().lower() == "groq" else (2,) if config.provider.strip().lower() == "ollama" else (2, 3)):
         # The model's own reliability flag varies between identical runs; re-ask, never override it.
         if result.get("ranking_reliable"):
             break
@@ -244,6 +252,20 @@ def record_investigation_outcome(manifest, result):
                 stage.update(execution="failed" if result.get("failed_stage") else "blocked", detail=result["summary"])
             if stage["name"] == "adjudication":
                 stage.update(execution="deterministic_evidence_gap", detail="No financial conclusion accepted; semantic model review not completed.")
+    else:
+        # A resumed run may retain failed stage labels from an older provider.
+        # Reconcile only from the actually completed investigation contract.
+        completed={
+            'claim_validation':('real','Final claims passed schema and exact-passage checks; semantic verdicts remain separate.'),
+            'review':('real','Skeptical semantic review completed; inspect per-claim verdicts and rejected conclusions.'),
+            'report_generation':('real','Final adjudicated investigation JSON and Markdown saved.'),
+            'calculations':('real' if result.get('calculations') else 'not_applicable',
+                'Deterministic source-backed calculations completed.' if result.get('calculations') else 'No calculation was proposed; no numeric financial conclusion generated.')}
+        stages=manifest.setdefault('stages',[])
+        for name,(execution,detail) in completed.items():
+            item=next((s for s in stages if s['name']==name),None)
+            if item is None:item={'name':name};stages.append(item)
+            item.update(execution=execution,detail=detail)
 
 
 def finish_evidence_gap(folder, manifest, update, reason, failed_stage=None):

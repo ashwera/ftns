@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import App from './ui'
+import { LegacyApp as App } from './ui'
 
 const evidence = {
   evidence_id: 'ev_0123456789abcdef01234567', company_name: 'NTPC Limited', verified_identifier: 'INE733E01010',
@@ -103,14 +103,17 @@ describe('SignalForge dashboard interactions', () => {
     const original = globalThis.fetch
     const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       if (String(input) === '/api/agent/runs' && init?.method === 'POST') {
-        return new Response(JSON.stringify({run_id:'research_test', company:'NTPC Limited', status:'blocked', stage:'machine_evidence', updated_at:'2026-10-24T18:00:00Z', events:[], artifacts:[]}), {status:202})
+        return new Response(JSON.stringify({run_id:'research_20261024T180000_0123456789ab', company:'NTPC Limited', prompt:'Q', status:'blocked', stage:'machine_evidence', created_at:'2026-10-24T18:00:00Z', updated_at:'2026-10-24T18:00:00Z', events:[], artifacts:[]}), {status:202})
       }
       return original(input, init)
     })
     vi.stubGlobal('fetch', fetchMock)
+    await user.type(screen.getByLabelText('Company', { selector: 'input' }), 'NTPC Limited')
     await user.click(await screen.findByRole('button', { name: /^Start research$/ }))
-    expect(await screen.findByRole('heading', {name:/Live run.*Blocked/})).toBeTruthy()
+    expect(await screen.findByRole('heading', {name:/Current run.*Blocked at Machine Evidence/})).toBeTruthy()
     expect(screen.getByText(/has not produced a verified finding/)).toBeTruthy()
+    expect(screen.getByText(/HISTORICAL SAVED WORKSPACE · NTPC Limited · Separate from live research above/)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: 'Historical saved pipeline stages' })).toBeTruthy()
     expect(fetchMock.mock.calls.some(([url, init]) => String(url) === '/api/agent/runs' && init?.method === 'POST')).toBe(true)
   })
 })

@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import App from './ui'
+import { LegacyApp as App } from './ui'
 import { parseFinding, parseSourceCatalog, parseVerifications, parseResearchDossier } from './finding'
 
 const read = (name: string) => readFileSync(resolve(process.cwd(), 'public/data/finding', name), 'utf8')

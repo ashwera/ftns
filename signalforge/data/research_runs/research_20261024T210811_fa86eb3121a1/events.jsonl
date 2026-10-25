@@ -25,3 +25,13 @@
 {"at": "2026-10-24T22:18:27.880245+00:00", "stage": "investigation", "message": "Resuming saved investigation after repairing F1 exact-passage provenance handoff; no onboarding, F1 or R1 repeated."}
 {"at": "2026-10-24T22:18:48.146201+00:00", "stage": "investigation", "message": "Comparing 4 original documents and testing the R1 hypothesis."}
 {"at": "2026-10-24T22:25:53.555812+00:00", "stage": "complete", "message": "Investigation finished: inconclusive / Weak. Inspect claim checks and limitations."}
+{"at": "2026-10-25T05:44:56.604979+00:00", "stage": "investigation", "message": "Resuming saved F1/R1 and completed source searches; exact evidence checks remain required."}
+{"at": "2026-10-25T05:45:18.374412+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-25T05:45:23.371756+00:00", "stage": "complete", "message": "Report finished: inconclusive / Weak; inspect actual execution record."}
+{"at": "2026-10-25T05:49:44.326389+00:00", "stage": "investigation", "message": "Resuming saved F1/R1 and completed source searches; exact evidence checks remain required."}
+{"at": "2026-10-25T05:50:04.837430+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-25T05:50:09.837148+00:00", "stage": "complete", "message": "Report finished: inconclusive / Weak; inspect actual execution record."}
+{"at": "2026-10-25T05:55:35.715624+00:00", "stage": "investigation", "message": "Resuming saved F1/R1 and completed source searches; exact evidence checks remain required."}
+{"at": "2026-10-25T05:55:55.696953+00:00", "stage": "investigation", "message": "Comparing 3 original documents and testing the R1 hypothesis."}
+{"at": "2026-10-25T05:57:04.461474+00:00", "stage": "adjudication", "message": "Checking final claims against exact passages, independent lineages and the strongest alternative."}
+{"at": "2026-10-25T05:59:03.750157+00:00", "stage": "complete", "message": "Report finished: inconclusive / Weak; inspect actual execution record."}

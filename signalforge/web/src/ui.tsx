@@ -1,107 +1,225 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { categoryLabels, loadResearchData, safeSourceUrl, type Claim, type Evidence, type ResearchData } from './types'
 import { loadFindingBundle, type FindingBundle } from './finding'
 import Signal from './signal'
-import InvestigationView, { type Investigation } from './investigation'
+import InvestigationView from './investigation'
+import { DEMO_COMPANY, DEMO_RUN_ID, SHOW_LEGACY_SAVED_RUN } from './demo-run'
+import { ACTIVE, ApiError, MAX_POLL_FAILURES, POLL_MS, RUN_ID, getRun, isLiveRun, listRuns, normalizeInvestigation, outcome, reportMismatch, stageLabel, stageTone, startRun, type LiveRun, type RunSummary } from './live-run'
 
 type View = 'signal' | 'overview' | 'claims' | 'evidence' | 'angles'
 const initial: ResearchData = { audit: null, readiness: null, evidence: [], ingestion: null, f1: null, r1: null, companies: [], claims: [], claimReport: null, unavailable: [] }
 const fmtDate = (value?: string | null) => { if (!value) return null; const date = new Date(value); return Number.isNaN(date.valueOf()) ? null : date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }) }
 const titleCase = (s?: string | null) => (s || 'unknown').replaceAll('_', ' ').replace(/\b\w/g, c => c.toUpperCase())
 
-type LiveRun = { model?: {provider: string; model: string}; run_id: string; company: string; prompt: string; status: string; stage: string; created_at: string; events: { at: string; stage: string; message: string }[]; artifacts: string[]; discovery_actions?: { action: string; at: string; url?: string; query?: string }[]; investigation?: Investigation | null }
-type RunSummary = Pick<LiveRun, 'run_id' | 'company' | 'prompt' | 'created_at' | 'status' | 'stage'>
+const LAST_RUN_KEY = 'signalforge.lastResearchRun'
+const storage = { get: () => { try { return localStorage.getItem(LAST_RUN_KEY) } catch { return null } }, set: (id: string) => { try { localStorage.setItem(LAST_RUN_KEY, id) } catch { /* private mode */ } } }
+const DEFAULT_PROMPT = 'Whether announced capacity additions materially diverge from actually commissioned capacity.'
+type Origin = 'new' | 'saved' | 'restored'
 
 export function StartResearch() {
-  const [company, setCompany] = useState('NTPC Limited')
-  const [prompt, setPrompt] = useState('Whether announced capacity additions materially diverge from actually commissioned capacity.')
+  const [company, setCompany] = useState('')
+  const [prompt, setPrompt] = useState(DEFAULT_PROMPT)
   const [run, setRun] = useState<LiveRun | null>(null)
+  const [origin, setOrigin] = useState<Origin>('new')
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
+  const [pollError, setPollError] = useState('')
+  const [pollStopped, setPollStopped] = useState(false)
+  const [pollKick, setPollKick] = useState(0)
   const [savedRuns, setSavedRuns] = useState<RunSummary[]>([])
   const [runsError, setRunsError] = useState('')
   const [opening, setOpening] = useState(false)
-  const active = !!run && ['queued', 'running'].includes(run.status)
+  const currentId = useRef<string | null>(null)
+  const request = useRef(0)
+  const active = !!run && ACTIVE.has(run.status)
+  const show = (next: LiveRun | null, from: Origin) => { currentId.current = next?.run_id ?? null; setRun(next); setOrigin(from); setPollError(''); setPollStopped(false) }
+
   useEffect(() => {
     const controller = new AbortController()
-    fetch('/api/agent/runs', { signal: controller.signal }).then(async response => {
-      if (!response.ok) throw new Error()
-      const body = await response.json()
+    listRuns(controller.signal).then(body => {
       if (!Array.isArray(body.runs)) throw new Error()
-      if (!controller.signal.aborted) { setSavedRuns(body.runs); setRunsError('') }
+      setSavedRuns(body.runs); setRunsError('')
     }).catch(() => { if (!controller.signal.aborted) setRunsError('Saved runs unavailable. The local research service may be offline.') })
     return () => controller.abort()
   }, [run?.status, run?.run_id])
-  async function openSaved(id: string) {
-    if (!id) return
-    setOpening(true); setError('')
-    try {
-      const response = await fetch(`/api/agent/runs/${encodeURIComponent(id)}`)
-      if (!response.ok) throw new Error('Saved run could not be opened.')
-      const saved = await response.json() as LiveRun
-      setRun(saved); setCompany(saved.company); setPrompt(saved.prompt)
-      localStorage.setItem('signalforge.lastResearchRun', saved.run_id)
-    } catch { setError('Saved run could not be opened. The current result is retained.') }
-    finally { setOpening(false) }
-  }
+
+  // Reopening the workspace restores the last run you opened, labelled as such — never silently.
   useEffect(() => {
-    const id = localStorage.getItem('signalforge.lastResearchRun')
-    if (!id || !/^research_\d{8}T\d{6}_[a-f0-9]{12}$/.test(id)) return
+    const id = storage.get()
+    if (!id || !RUN_ID.test(id)) return
     const controller = new AbortController()
-    fetch(`/api/agent/runs/${id}`, {signal:controller.signal}).then(async response => {
-      if (!response.ok) return
-      const saved = await response.json() as LiveRun
-      setRun(saved); setCompany(saved.company); setPrompt(saved.prompt)
+    const token = ++request.current
+    getRun(id, controller.signal).then(saved => {
+      if (token !== request.current || !isLiveRun(saved) || saved.run_id !== id) return
+      show(saved, 'restored'); setCompany(saved.company); setPrompt(saved.prompt)
     }).catch(() => {})
     return () => controller.abort()
   }, [])
+
+  async function openSaved(id: string) {
+    if (!id) return
+    const token = ++request.current
+    setOpening(true); setError('')
+    try {
+      const saved = await getRun(id)
+      if (token !== request.current) return
+      if (!isLiveRun(saved) || saved.run_id !== id) throw new Error()
+      show(saved, 'saved'); setCompany(saved.company); setPrompt(saved.prompt); storage.set(saved.run_id)
+    } catch { if (token === request.current) setError('Saved run could not be opened. Nothing else was changed.') }
+    finally { if (token === request.current) setOpening(false) }
+  }
+
   useEffect(() => {
-    if (!active || !run) return
+    if (!active || !run || pollStopped) return
+    const id = run.run_id
     const controller = new AbortController()
     let timer: ReturnType<typeof setTimeout>
+    let failures = 0
     async function poll() {
       try {
-        const response = await fetch(`/api/agent/runs/${run!.run_id}`, { signal: controller.signal })
-        if (!response.ok) throw new Error('Status unavailable')
-        setRun(await response.json() as LiveRun)
-        setError('')
-      } catch { if (!controller.signal.aborted) setError('Live status unavailable. The service may still be running; polling will retry.') }
-      if (!controller.signal.aborted) timer = setTimeout(poll, 1500)
+        const next = await getRun(id, controller.signal)
+        if (controller.signal.aborted || currentId.current !== id) return
+        if (!isLiveRun(next) || next.run_id !== id) throw new ApiError('Status response did not match this run.')
+        failures = 0; setPollError(''); setRun(next)
+        if (!ACTIVE.has(next.status)) return
+      } catch (cause) {
+        if (controller.signal.aborted) return
+        failures += 1
+        const message = cause instanceof Error ? cause.message : 'Status unavailable.'
+        if ((cause instanceof ApiError && cause.status === 404) || failures >= MAX_POLL_FAILURES) {
+          setPollStopped(true)
+          setPollError(cause instanceof ApiError && cause.status === 404 ? `Run ${id} was not found on the research service. Status checks stopped.`
+            : `Status checks stopped after ${failures} failed attempts (${message}) The run may still be executing on the service; its last known state is shown and is not final.`)
+          return
+        }
+        setPollError(`Status check failed (${message}) Retrying ${failures}/${MAX_POLL_FAILURES}…`)
+      }
+      timer = setTimeout(poll, POLL_MS * Math.max(1, failures))
     }
     timer = setTimeout(poll, 500)
     return () => { controller.abort(); clearTimeout(timer) }
-  }, [active, run?.run_id])
+  }, [active, run?.run_id, pollStopped, pollKick])
+
   async function start() {
-    setPending(true); setError('')
+    const c = company.trim(), q = prompt.trim()
+    if (!c || !q) { setError('Enter both a company and a research question.'); return }
+    request.current++
+    show(null, 'new'); setPending(true); setError('')
     try {
-      const response = await fetch('/api/agent/runs', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ company, prompt }) })
-      const body = await response.json()
-      if (!response.ok) throw new Error(body.error || 'Research could not start')
-      setRun(body as LiveRun)
-      if (/^research_\d{8}T\d{6}_[a-f0-9]{12}$/.test(body.run_id)) localStorage.setItem('signalforge.lastResearchRun', body.run_id)
-    } catch (cause) { setError(cause instanceof Error && cause.message !== 'Failed to fetch' ? cause.message : 'Local research service unavailable. Start it with PYTHONPATH=signalforge/src python3 -m signalforge.research_service from the repository root.') }
-    finally { setPending(false) }
+      const body = await startRun(c, q)
+      if (!isLiveRun(body) || !RUN_ID.test(body.run_id)) throw new ApiError('Research service accepted the request but returned no valid run ID.')
+      show(body, 'new'); storage.set(body.run_id)
+    } catch (cause) {
+      const status = cause instanceof ApiError ? cause.status : undefined
+      setError(status === 409 ? 'Another research run is already active on the service. Wait for it to finish, or open it from Saved investigations to follow its progress.'
+        : status === 400 ? 'The service rejected the input: company must be 1–200 characters and the question 1–4000 characters.'
+        : cause instanceof Error ? cause.message : 'Research could not start.')
+    } finally { setPending(false) }
   }
+
+  const editedAway = !!run && !active && (company.trim() !== run.company || prompt.trim() !== run.prompt)
   return <section aria-label="Start research" className="weight-card" style={{ display: 'block', marginBottom: 24 }}>
-    <h2>Start research</h2><p>Discover and retrieve public sources for any company. Runs are saved locally; evidence gates can block F1/R1.</p>
+    <h2>Start research</h2><p>Runs the latest research workflow on the local service for any company: public-source discovery, evidence checks, F1 angle selection, R1 planning and investigation using the backend's configured model. Each stage reports its real outcome; evidence gates can stop F1/R1.</p>
     <p>The default question is selected from the handover; exact judge-assigned wording has not been provided.</p>
     <button type="button" className="quiet-link" disabled={pending || active || opening} onClick={() => { setCompany('NTPC Limited'); setPrompt('For NTPC North Karanpura Unit 3, compare announced capacity additions with actually commissioned capacity at the FY2024-25 cutoff. Find primary passages for expected completion, trial completion and commercial operation dates, and distinguish each milestone before assessing any divergence.') }}>Use focused NTPC example · North Karanpura Unit 3</button>
-    <div className="saved-runs"><label htmlFor="saved-research-run">Saved investigations</label><select id="saved-research-run" value={savedRuns.some(s => s.run_id === run?.run_id) ? run!.run_id : ''} onChange={event => void openSaved(event.target.value)} disabled={active || pending || opening}><option value="">Choose a saved run</option>{savedRuns.map(s => <option key={s.run_id} value={s.run_id}>{s.company} · {s.prompt} · {s.status} · {s.created_at}</option>)}</select>{runsError && <p>{runsError}</p>}{opening && <p role="status">Opening saved investigation…</p>}{!runsError && !savedRuns.length && <p>No saved runs available.</p>}</div>
-    <form onSubmit={event => { event.preventDefault(); void start() }}>
-      <label htmlFor="research-company">Company</label><input id="research-company" value={company} onChange={e => setCompany(e.target.value)} maxLength={200} required disabled={pending || active} style={{ display: 'block', width: '100%', margin: '8px 0 16px' }}/>
+    <div className="saved-runs"><label htmlFor="saved-research-run">Saved investigations</label><select id="saved-research-run" value={savedRuns.some(s => s.run_id === run?.run_id) ? run!.run_id : ''} onChange={event => void openSaved(event.target.value)} disabled={active || pending || opening}><option value="">Choose a saved run</option>{savedRuns.map(s => <option key={s.run_id} value={s.run_id}>{s.company} · {s.prompt.slice(0, 90)} · {s.status} · {s.created_at}</option>)}</select>{runsError && <p>{runsError}</p>}{opening && <p role="status">Opening saved investigation…</p>}{!runsError && !savedRuns.length && <p>No saved runs available.</p>}</div>
+    <form noValidate onSubmit={event => { event.preventDefault(); void start() }}>
+      <label htmlFor="research-company">Company</label><input id="research-company" value={company} onChange={e => setCompany(e.target.value)} maxLength={200} required placeholder="Company to investigate, e.g. the judge-assigned issuer" disabled={pending || active} style={{ display: 'block', width: '100%', margin: '8px 0 16px' }}/>
       <label htmlFor="research-prompt">Research question</label><textarea id="research-prompt" value={prompt} onChange={e => setPrompt(e.target.value)} maxLength={4000} required rows={3} disabled={pending || active} style={{ display: 'block', width: '100%', margin: '8px 0 16px' }}/>
-      <button className="run-button" type="submit" disabled={pending || active || !company.trim() || !prompt.trim()}>{pending ? 'Starting…' : active ? 'Research running…' : 'Start research'}</button>
+      <button className="run-button" type="submit" disabled={pending || active}>{pending ? 'Starting…' : active ? 'Research running…' : 'Start research'}</button>
     </form>
     {error && <p role="alert">{error}</p>}
-    {run && <>
-      {!run.investigation && <><h3>Live run · {titleCase(run.status)}</h3><p>This live run has not produced a verified finding. The saved example below is a separate prior run.</p></>}
-      {run.investigation ? <InvestigationView key={run.run_id} investigation={run.investigation} runId={run.run_id} /> : <p role="status">{active ? 'Investigation in progress. Results will appear when available.' : 'Final investigation unavailable for this run. F1/R1 planning output alone is not a completed investigation.'}</p>}
-      <details open={!run.investigation}><summary>Run execution record · {titleCase(run.status)}</summary><p>{run.company} · {run.run_id} · {run.created_at}</p><p>Current stage: {titleCase(run.stage)}</p>{run.model && <p>Last configured inference for this run: {run.model.provider} · {run.model.model}</p>}<ol>{(run.events ?? []).map((event, index) => <li key={index}><b>{titleCase(event.stage)}</b> — {event.message}</li>)}</ol>{!!run.discovery_actions?.length && <p>Latest source action: {titleCase(run.discovery_actions.at(-1)?.action)} · {run.discovery_actions.at(-1)?.url || run.discovery_actions.at(-1)?.query}</p>}<p>Saved locally: data/research_runs/{run.run_id}/manifest.json and events.jsonl</p>{!!run.artifacts?.length && <p>Artifacts: {run.artifacts.join(', ')}</p>}</details>
-    </>}
+    {pending && <p role="status">Submitting to the research service…</p>}
+    {run && <RunReport run={run} heading={origin === 'new' ? 'Current run' : origin === 'saved' ? 'Saved run' : 'Restored run'}
+      note={origin !== 'new' ? `${origin === 'restored' ? 'Restored from your last session' : 'Opened from saved investigations'}; created ${run.created_at}. This is not a new run. Enter a company and start research to run a new investigation.` : undefined}>
+      {editedAway && <p role="note">The form now differs from this run. The result below still belongs to {run.company}; it has not been re-run for your edits.</p>}
+      {pollError && <p role="alert">{pollError}</p>}
+      {pollStopped && active && <button type="button" className="quiet-link" onClick={() => { setPollStopped(false); setPollError(''); setPollKick(k => k + 1) }}>Resume status checks</button>}
+      {active && !pollStopped && <p role="status">Investigation in progress. Local model inference can take several minutes; status is checked every {POLL_MS / 1000} seconds.</p>}
+    </RunReport>}
   </section>
 }
 
+/** One run's real stages, errors and report — shared by live runs and the pinned demo run. */
+export function RunReport({ run, heading, note, children }: { run: LiveRun; heading: string; note?: string; children?: React.ReactNode }) {
+  const status = outcome(run)
+  const mismatch = reportMismatch(run)
+  const active = ACTIVE.has(run.status)
+  return <div className="live-run" data-run-id={run.run_id}>
+      <h3>{heading} · {run.company} · <span className={`workflow-status ${status.tone}`}>{status.label}</span></h3>
+      {note && <p>{note}</p>}
+      <p>Run <code>{run.run_id}</code> · Question: {run.prompt}</p>
+      {run.model && <p>Last configured inference for this run: {run.model.provider} · {run.model.model}</p>}
+      {children}
+      {!!run.stages?.length && <ol className="workflow-list" aria-label="Run stages">{run.stages.map((s, i) => <li key={s.name}><span className="workflow-index">{String(i + 1).padStart(2, '0')}</span><div className="workflow-copy"><b>{titleCase(s.name)}</b><small>{s.detail || (s.execution === 'not_executed' ? 'Not reached in this run.' : '')}</small></div><span className={`workflow-status ${stageTone(s.execution)}`}>{stageLabel(s.execution)}</span></li>)}</ol>}
+      {run.error && <div role="alert"><b>Run error{run.error.type ? ` (${run.error.type})` : ''}</b>{run.error.provider_detail && <p>{run.error.provider_detail}</p>}{!!run.error.frames?.length && <p>At: {run.error.frames.join(' → ')}</p>}</div>}
+      {mismatch ? <p role="alert">The saved report does not belong to this run ({mismatch}), so it is not shown.</p>
+        : run.investigation ? <>{run.investigation.report_type === 'evidence_gap' && <p>The workflow ended with an evidence-gap report: it did not establish a verified finding for {run.company}. The gaps and limitations below are the actual result.</p>}<InvestigationView key={run.run_id} investigation={normalizeInvestigation(run.investigation)} runId={run.run_id} /></>
+        : !active && <p role="status">{run.status === 'completed' ? 'Final investigation unavailable for this run. F1/R1 planning output alone is not a completed investigation.' : `This run ended ${run.status} and has not produced a verified finding. See the stages above for where it stopped.`}</p>}
+      <details open={!run.investigation && !active}><summary>Run execution record · {titleCase(run.status)}</summary><p>{run.company} · {run.run_id} · created {run.created_at}{run.finished_at ? ` · finished ${run.finished_at}` : ''}</p><p>Current stage: {titleCase(run.stage)}</p><ol>{(run.events ?? []).map((event, index) => <li key={index}><b>{titleCase(event.stage)}</b> — {event.message}</li>)}</ol>{!!run.discovery_actions?.length && <p>Latest source action: {titleCase(run.discovery_actions.at(-1)?.action)} · {run.discovery_actions.at(-1)?.url || run.discovery_actions.at(-1)?.query}</p>}<p>Saved locally: data/research_runs/{run.run_id}/manifest.json and events.jsonl</p>{!!run.artifacts?.length && <p>Artifacts: {run.artifacts.join(', ')}</p>}</details>
+    </div>
+}
+
+/** Pinned report: a real run of the same live workflow, pinned by run ID (see demo-run.ts); polled while still active. */
+export function DemoReport() {
+  const [run, setRun] = useState<LiveRun | null>(null)
+  const [error, setError] = useState('')
+  useEffect(() => {
+    if (!DEMO_RUN_ID) { setError(`No ${DEMO_COMPANY} run is pinned yet. Set DEMO_RUN_ID in web/src/demo-run.ts to a run ID.`); return }
+    const controller = new AbortController()
+    let timer: ReturnType<typeof setTimeout> | undefined
+    const load = () => getRun(DEMO_RUN_ID, controller.signal).then(r => { if (!isLiveRun(r) || r.run_id !== DEMO_RUN_ID) throw new ApiError('Unexpected response for the pinned run.'); setRun(r); if (ACTIVE.has(r.status)) timer = setTimeout(load, POLL_MS) })
+      .catch(cause => { if (!controller.signal.aborted) setError(`${DEMO_COMPANY} report unavailable (${cause instanceof Error ? cause.message : 'error'}). The pinned run is read from the local research service.`) })
+    load()
+    return () => { controller.abort(); clearTimeout(timer) }
+  }, [])
+  return <section aria-label={`${DEMO_COMPANY} report`} className="weight-card" style={{ display: 'block', marginBottom: 24 }}>
+    <h2>Pinned report · {DEMO_COMPANY}</h2>
+    <p>A saved run of the same live research workflow judges can run below, shown exactly as the service records it, including its current status.</p>
+    {error && <p role="alert">{error}</p>}
+    {!run && !error && <p role="status">Loading pinned report…</p>}
+    {run && <RunReport run={run} heading="Pinned run" note={`Run created ${run.created_at}${run.finished_at ? `, finished ${run.finished_at}` : ''}.`} />}
+  </section>
+}
+
+/** Demo screen: pinned Hindalco report + live workflow. The old saved run lives on in LegacyApp. */
 export default function App() {
+  return SHOW_LEGACY_SAVED_RUN ? <LegacyApp /> : <DemoApp />
+}
+
+function DemoApp() {
+  const [view, setView] = useState<'ntpc' | 'live' | 'old'>('ntpc')
+  const tabs: ['ntpc' | 'live' | 'old', string][] = [['ntpc', 'Hindalco report'], ['live', 'Live research'], ['old', 'Old NTPC report']]
+  return <div className="app-shell">
+    <aside className="rail">
+      <a className="brand" href="#top" aria-label="SignalForge home"><span className="brand-mark">S<span>F</span></span><span className="brand-copy"><strong>SignalForge</strong><small>RESEARCH SYSTEM</small></span></a>
+      <div className="rail-label">WORKSPACE</div>
+      <nav aria-label="Main navigation" className="nav-list">{tabs.map(([id, label], i) => <button key={id} className={`nav-item ${view === id ? 'active' : ''}`} onClick={() => setView(id)}><span className="nav-index">0{i + 1}</span>{label}</button>)}</nav>
+      <div className="rail-bottom"><div className="rail-label">SYSTEM</div><div className="rail-note">Research leads and evidence gaps are not verified findings.</div><div className="rail-version">LOCAL WORKSPACE <span>v0.1</span></div></div>
+    </aside>
+    <main id="top" className="main">
+      <header className="topbar"><div className="breadcrumb">Energy, Power & Renewables <span>/</span> {tabs.find(t => t[0] === view)![1]}</div><div className="top-actions"><span className="local-tag"><i/> Local service</span></div></header>
+      <div className="content">
+        <div className="page-head"><div><h1>{view === 'live' ? 'Live research' : view === 'old' ? 'Old NTPC report' : DEMO_COMPANY}</h1></div></div>
+        {view === 'ntpc' ? <DemoReport /> : view === 'live' ? <StartResearch /> : <OldReport />}
+      </div>
+    </main>
+  </div>
+}
+
+/** The earlier saved batch-pipeline report (public/data/finding, run_20261024_ntpc_recovered), shown as history. */
+function OldReport() {
+  const [bundle, setBundle] = useState<FindingBundle | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  useEffect(() => { loadFindingBundle().then(r => 'error' in r ? setError(r.error) : setBundle(r)) }, [])
+  return <>
+    <p className="section-eyebrow">HISTORICAL SAVED RUN · earlier batch pipeline · Not produced by the live workflow</p>
+    <p>Pipeline provenance below reflects that run's configuration at the time (for example its F1 status); it does not describe the current model setup.</p>
+    <Signal bundle={bundle} error={error} evidenceIds={new Set()} onEvidence={() => {}} />
+  </>
+}
+
+export function LegacyApp() {
   const [data, setData] = useState(initial)
   const [loading, setLoading] = useState(true)
   const [view, setView] = useState<View>('signal')
@@ -150,7 +268,7 @@ export default function App() {
       <div className="page-head"><div><h1>{view === 'signal' ? 'Signal' : view === 'overview' ? `${companyName.replace(/ Limited$/, '')} investigation` : view === 'claims' ? 'Claim review' : view === 'evidence' ? 'Evidence library' : 'Research angles'}</h1></div><div className="run-control"><label htmlFor="company-select">Saved workspace company</label><select id="company-select" aria-label="Company" value={companyName} onChange={e => setCompanyName(e.target.value)}>{data.companies.map(company => <option key={company.verified_identifier} value={company.canonical_name}>{company.canonical_name}</option>)}</select></div></div>
           <StartResearch />
           {view === 'signal' && <><p className="section-eyebrow">SAVED PRIOR RUN · NTPC · Separate from live research above</p><Signal bundle={bundle} error={findingError} evidenceIds={evidenceIds} onEvidence={id => { const e = data.evidence.find(x => x.evidence_id === id); if (e) selectEvidence(e) }} /></>}
-          {view === 'overview' && <Overview data={data} companyName={companyName} counts={counts} claims={companyClaims} onEvidence={selectEvidence} onViewClaims={() => setView('claims')} />}
+          {view === 'overview' && <><p className="section-eyebrow">HISTORICAL SAVED WORKSPACE · {companyName} · Separate from live research above</p><Overview data={data} companyName={companyName} counts={counts} claims={companyClaims} onEvidence={selectEvidence} onViewClaims={() => setView('claims')} /></>}
           {view === 'claims' && <ClaimReview claims={filteredClaims} total={companyClaims.length} report={data.claimReport} query={claimQuery} setQuery={setClaimQuery} status={claimStatus} setStatus={setClaimStatus} onEvidence={claim => { const source = data.evidence.find(e => e.evidence_id === claim.source_chunk_id); if (source) selectEvidence(source) }} />}
           {view === 'evidence' && <EvidenceView records={displayEvidence} total={data.evidence.length} docs={docs} selected={selected} onSelect={selectEvidence} onClose={() => { setSelected(null); location.hash = 'evidence' }} query={query} setQuery={setQuery} kind={kind} setKind={setKind} verified={verified} setVerified={setVerified} dateFilter={dateFilter} setDateFilter={setDateFilter} sourceFilter={sourceFilter} setSourceFilter={setSourceFilter} />}
           {view === 'angles' && <Angles data={data} />}
@@ -180,7 +298,7 @@ function Overview({ data, companyName, counts, claims, onEvidence, onViewClaims 
       <section className="claims-section" id="claim-review"><div className="row-section-heading"><div><h3>Claims to review</h3><p>{report ? `${report.claims_by_status.needs_review?.toLocaleString() ?? 0} need review · ${report.claims_by_status.ambiguous?.toLocaleString() ?? 0} ambiguous · ${report.claims_by_status.extracted?.toLocaleString() ?? 0} extracted, still unverified` : 'Claim extraction has not produced a report.'}</p></div><button className="quiet-link" onClick={onViewClaims}>All candidates <span>↗</span></button></div>
         {sample.length ? <ClaimTable claims={sample} onEvidence={claim => { const source = data.evidence.find(e => e.evidence_id === claim.source_chunk_id); if (source) onEvidence(source) }} /> : <div className="claims-empty"><b>{report ? 'No candidate claims match this company.' : 'No extracted claims are available yet.'}</b><p>{report ? 'The extraction report contains no company-matched candidates.' : 'When Layer 1 completes, source-linked candidates will appear here. Raw evidence remains in the evidence library.'}</p><button onClick={onViewClaims}>Open claim review <span>↗</span></button></div>}
       </section>
-      <section className="workflow-section"><div className="row-section-heading"><div><h3>Research stages</h3><p>Based on generated output files</p></div></div><ol className="workflow-list">{stageRows.map(([name, detail, label, tone], i) => <li key={name}><span className="workflow-index">0{i + 1}</span><div className="workflow-copy"><b>{name}</b><small>{detail}</small></div><span className={`workflow-status ${tone}`}>{label}</span></li>)}</ol><div className="report-readiness"><b>Discovery report</b><span>Counterargument, falsification test and evidence strength are unavailable until a reliable F1 hypothesis and verified evidence exist.</span></div></section>
+      <section className="workflow-section"><div className="row-section-heading"><div><h3>Historical saved pipeline stages</h3><p>From older saved output files for this workspace, not the live run above</p></div></div><ol className="workflow-list">{stageRows.map(([name, detail, label, tone], i) => <li key={name}><span className="workflow-index">0{i + 1}</span><div className="workflow-copy"><b>{name}</b><small>{detail}</small></div><span className={`workflow-status ${tone}`}>{label}</span></li>)}</ol><div className="report-readiness"><b>Discovery report</b><span>Counterargument, falsification test and evidence strength are unavailable until a reliable F1 hypothesis and verified evidence exist.</span></div></section>
     </div>
   </>
 }
@@ -197,7 +315,7 @@ function statusLabel(value: string) { return value.replaceAll('_', ' ').replace(
 
 function Angles({ data }: { data: ResearchData }) {
   const cats = data.readiness?.candidate_categories ?? []
-  return <section className="angle-page"><div className="angle-banner"><div><span className="section-eyebrow">F1 STATUS</span><h2>Ranking refused</h2><p>The F1 runner fails closed when it cannot establish company-specific evidence. No model ranking or illustrative score is substituted here.</p></div><span className="blocked-stamp">BLOCKED<br/>NO COMPANY EVIDENCE</span></div><div className="weight-card"><div><span className="section-eyebrow">CONFIGURED F1 WEIGHTS</span><h3>Scoring rubric</h3><p>Configured weights from the live research readiness output.</p></div><div className="weights">{[['Financial significance',30],['Evidence availability',25],['Testability',20],['Non-obviousness',7.5],['Cross-validation',17.5]].map(([name, n]) => <div className="weight-row" key={name as string}><span>{name}</span><div className="weight-track"><i style={{ width: `${Number(n) * 2.4}%` }}/></div><b>{data.readiness?.f1_weights[String(name).toLowerCase().replaceAll(' ','_').replace('cross-validation','cross_validation_potential')] ?? n}%</b></div>)}</div></div><div className="angle-list">{cats.map((c,i) => <div key={c.category} className="angle-card"><div className="angle-num">0{i+1}</div><div className="angle-content"><div className="angle-title"><h3>{categoryLabels[c.category]}</h3><span className="readiness-tag">{titleCase(c.readiness_rating)}</span></div><p>{c.readiness_rationale}</p><div className="angle-columns"><div><small>DATASET CAN CALCULATE</small><p>{c.relevant_metrics_calculable.length ? c.relevant_metrics_calculable.join(', ') : 'No relevant metrics.'}</p></div><div><small>MISSING EVIDENCE</small><ul>{c.evidence_missing.map(x => <li key={x}>{x}</li>)}</ul></div><div><small>NEXT ACTION</small><p>{c.recommended_next_action}</p></div></div></div></div>)}</div><div className="weights-foot">Weights: financial significance 30% · evidence availability 25% · testability 20% · non-obviousness 7.5% · cross-validation 17.5%</div></section>
+  return <section className="angle-page"><div className="angle-banner"><div><span className="section-eyebrow">HISTORICAL SAVED F1 STATUS · not the live run above</span><h2>Ranking refused</h2><p>The F1 runner fails closed when it cannot establish company-specific evidence. No model ranking or illustrative score is substituted here.</p></div><span className="blocked-stamp">BLOCKED<br/>NO COMPANY EVIDENCE</span></div><div className="weight-card"><div><span className="section-eyebrow">CONFIGURED F1 WEIGHTS</span><h3>Scoring rubric</h3><p>Configured weights from the live research readiness output.</p></div><div className="weights">{[['Financial significance',30],['Evidence availability',25],['Testability',20],['Non-obviousness',7.5],['Cross-validation',17.5]].map(([name, n]) => <div className="weight-row" key={name as string}><span>{name}</span><div className="weight-track"><i style={{ width: `${Number(n) * 2.4}%` }}/></div><b>{data.readiness?.f1_weights[String(name).toLowerCase().replaceAll(' ','_').replace('cross-validation','cross_validation_potential')] ?? n}%</b></div>)}</div></div><div className="angle-list">{cats.map((c,i) => <div key={c.category} className="angle-card"><div className="angle-num">0{i+1}</div><div className="angle-content"><div className="angle-title"><h3>{categoryLabels[c.category]}</h3><span className="readiness-tag">{titleCase(c.readiness_rating)}</span></div><p>{c.readiness_rationale}</p><div className="angle-columns"><div><small>DATASET CAN CALCULATE</small><p>{c.relevant_metrics_calculable.length ? c.relevant_metrics_calculable.join(', ') : 'No relevant metrics.'}</p></div><div><small>MISSING EVIDENCE</small><ul>{c.evidence_missing.map(x => <li key={x}>{x}</li>)}</ul></div><div><small>NEXT ACTION</small><p>{c.recommended_next_action}</p></div></div></div></div>)}</div><div className="weights-foot">Weights: financial significance 30% · evidence availability 25% · testability 20% · non-obviousness 7.5% · cross-validation 17.5%</div></section>
 }
 
 function EvidenceView({ records, total, docs, selected, onSelect, onClose, query, setQuery, kind, setKind, verified, setVerified, dateFilter, setDateFilter, sourceFilter, setSourceFilter }: { records: Evidence[]; total: number; docs: string[]; selected: Evidence | null; onSelect: (e:Evidence)=>void; onClose:()=>void; query:string; setQuery:(s:string)=>void; kind:string; setKind:(s:string)=>void; verified:string; setVerified:(s:string)=>void; dateFilter:string; setDateFilter:(s:string)=>void; sourceFilter:string; setSourceFilter:(s:string)=>void }) {

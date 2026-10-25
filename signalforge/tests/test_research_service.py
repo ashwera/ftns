@@ -141,6 +141,25 @@ class ServiceTests(unittest.TestCase):
             self.assertEqual(cached_machine_records(folder, 'Example', cfg), [])
             checker.assert_not_called()
 
+    def test_onboarding_resume_reuses_only_completed_matching_discovery(self):
+        from dataclasses import replace
+        from signalforge import source_discovery as sd
+        root=Path(self.temp.name)/'resume';root.mkdir();(root/'discovery').mkdir()
+        report={'company':'Unseen Energy','search_results':[],'retrieval_status':'failed',
+                'action_log':[{'action':'discovery_stopped'}]}
+        path=root/'discovery/discovery_report.json';path.write_text(json.dumps(report))
+        cfg=replace(Config(),provider='groq',groq_api_key='fixture')
+        updates=[]
+        with patch.object(sd,'discover') as discover,patch('signalforge.company_onboarding.onboard',side_effect=ValueError('No eligible original')):
+            execute(root,{'company':'Unseen Energy','prompt':'Capacity'},cfg,lambda *a,**kw:updates.append((a,kw)),reuse_discovery=True)
+            discover.assert_not_called()
+        self.assertEqual(updates[0][1]['search_execution'],'cached_completed_live_search')
+        self.assertEqual(updates[-1][0][2],'completed')
+        for company,actions in [('Other',[{'action':'discovery_stopped'}]),('Unseen Energy',[])]:
+            path.write_text(json.dumps({**report,'company':company,'action_log':actions}))
+            with self.assertRaisesRegex(ValueError,'incomplete or mismatched'):
+                execute(root,{'company':'Unseen Energy','prompt':'Capacity'},cfg,lambda *a,**kw:None,reuse_discovery=True)
+
 
 if __name__ == '__main__':
     unittest.main()

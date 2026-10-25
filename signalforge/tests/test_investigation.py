@@ -11,6 +11,35 @@ from unittest.mock import patch
 
 
 class InvestigationTests(unittest.TestCase):
+    def test_completed_recovery_replaces_stale_failure_stages_and_labels_cached_work(self):
+        from signalforge.research_session import record_investigation_outcome
+        from signalforge.resume_run import mark_reused_stages
+        manifest={'f1_ranking_provenance':{'used':True},'stages':[{'name':n,'execution':'failed'} for n in ('claim_validation','review','report_generation','discovery','f1','r1','retrieval','counterevidence_search')]}
+        mark_reused_stages(manifest)
+        record_investigation_outcome(manifest,{'status':'inconclusive','execution':'real','calculations':[]})
+        stages={s['name']:s for s in manifest['stages']}
+        self.assertEqual(stages['review']['execution'],'real')
+        self.assertEqual(stages['claim_validation']['execution'],'real')
+        self.assertEqual(stages['f1']['execution'],'cached_deterministic_planning_fallback')
+        self.assertEqual(stages['counterevidence_search']['execution'],'cached_completed_live_search')
+        self.assertEqual(stages['calculations']['execution'],'not_applicable')
+    def test_provider_quota_failure_survives_in_gap_report_without_accepted_claims(self):
+        from signalforge.investigation import run_investigation
+        from signalforge.llm_client import LLMError
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)
+            for stage in ('r1_followthrough','counterevidence_search'):
+                (folder/stage).mkdir()
+                (folder/stage/'discovery_report.json').write_text(json.dumps({'company':'Example','topic':'same',
+                    'action_log':[{'action':'discovery_stopped'}]}))
+            cfg=replace(Config(),provider='groq',groq_api_key='secret')
+            with patch('signalforge.investigation.collect_sources',return_value=([],[])), \
+                 patch('signalforge.investigation.draft_result',side_effect=LLMError('Groq rate_limit error (HTTP 429)')):
+                result=run_investigation(folder,'Example','Question',{},cfg,lambda *a,**kw:None,reuse_searches=True)
+            self.assertIn('HTTP 429',result['summary'])
+            self.assertEqual(result['claims'],[])
+            self.assertEqual(result['evidence_strength'],'Weak')
+            self.assertEqual(result['model_review_execution'],'not_completed')
     def test_same_url_and_repeated_content_cannot_become_distinct_sources(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp); inputs=root/'data/pipeline_inputs'; inputs.mkdir(parents=True)

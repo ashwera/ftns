@@ -100,6 +100,7 @@ describe('saved live runs', () => {
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => new Response(JSON.stringify(url === '/api/agent/runs' ? options?.method === 'POST' ? running : { runs: [] } : manifest), { status: 200 }))
     vi.stubGlobal('fetch', fetcher)
     render(<StartResearch />)
+    await userEvent.type(screen.getByLabelText('Company'), 'Test Company')
     await userEvent.click(screen.getByRole('button', { name: 'Start research' }))
     expect(await screen.findByText(/Investigation in progress/)).toBeTruthy()
     expect(await screen.findByRole('heading', { name: investigation.headline }, { timeout: 2000 })).toBeTruthy()
