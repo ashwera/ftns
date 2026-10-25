@@ -1,5 +1,14 @@
 # SignalForge
 
+**25 October demo handover:** [Arshia's startup, unfamiliar-company workflow and recovery guide](signalforge/DEMO_HANDOVER.md).
+The live application now connects discovery, issuer onboarding, policy-eligible
+evidence, F1/R1, investigation, counterevidence search, model challenge and a final
+report. Insufficient evidence produces an explicit evidence-gap report. A terminal
+report can record incomplete model stages; inspect its execution record. F1's
+deterministic planning fallback is labelled separately from model ranking and
+financial findings. The historical implementation notes below describe earlier
+milestones and are superseded by the handover where they differ.
+
 SignalForge is an initial research workflow foundation for the Energy, Power & Renewables contest track. F1 selects and ranks evidence-led research angles; R1 specifies how to investigate the selected angle. The current repository dataset is an NTPC daily equity quote export, so it supports market-data analysis only.
 
 ## Current status

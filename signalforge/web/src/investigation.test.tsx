@@ -16,6 +16,13 @@ const investigation: Investigation = {
 afterEach(() => { cleanup(); localStorage.clear(); vi.restoreAllMocks(); vi.unstubAllGlobals() })
 
 describe('completed investigation', () => {
+  it('keeps source-grounded planning leads visibly separate from financial claims', () => {
+    const lead={question:'Did the target project commission?',citation:{evidence_id:'passage1',quote:'Synthetic capacity target for planning only.'},confidence:'Weak',why:'Issuer target requires checking.',counterargument:'Definitions may differ.',required_evidence:'A dated operator record.',lineage:'issuer:Test',date:null}
+    render(<InvestigationView investigation={{...investigation,claims:[],research_leads:[lead]}} runId="lead-run" />)
+    expect(screen.getByText('These questions are not verified financial findings.')).toBeTruthy()
+    expect(screen.getByText(lead.citation.quote)).toBeTruthy()
+    expect(investigationMarkdown({...investigation,research_leads:[lead]},'lead-run')).toContain(lead.required_evidence)
+  })
   it('labels a terminal evidence gap without claiming that model review ran', () => {
     render(<InvestigationView investigation={{...investigation, report_type:'evidence_gap', claims:[], sources:[], model_review_execution:'not_executed'}} runId="gap-run" />)
     expect(screen.getByText('Evidence-gap report · inconclusive')).toBeTruthy()

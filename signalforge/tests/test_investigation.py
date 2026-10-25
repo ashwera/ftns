@@ -1,12 +1,43 @@
 import copy
 import hashlib
+import json
+from dataclasses import replace
 from pathlib import Path
 import tempfile
 import unittest
-from signalforge.investigation import check_citation, calculate, adjudicate, evidence_map, attach_machine_evidence_passages, bound_source_passages
+from signalforge.investigation import check_citation, calculate, adjudicate, evidence_map, attach_machine_evidence_passages, bound_source_passages, attach_planning_leads, collect_sources
+from signalforge.config import Config
+from unittest.mock import patch
 
 
 class InvestigationTests(unittest.TestCase):
+    def test_same_url_and_repeated_content_cannot_become_distinct_sources(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); inputs=root/'data/pipeline_inputs'; inputs.mkdir(parents=True)
+            folder=root/'run'; folder.mkdir()
+            registry=root/'registry.json'; registry.write_text(json.dumps({'companies':[{'canonical_name':'Example Energy Limited','verified_identifier':'EXAMPLE','aliases':['Example Energy'],'verification_status':'verified','verification_source':'fixture'}]}))
+            rows=[]
+            for index,text in enumerate(['Capacity is a future target; commissioning needs a dated operational record. '*3,
+                                         'Capacity  is  a future target; commissioning needs a dated operational record. '*3,
+                                         'Capacity differs in this snapshot but its source URL repeats the first document. '*3]):
+                p=inputs/f'{index}.txt'; p.write_text(text)
+                rows.append(dict(source_id=str(index),publisher='Example Energy Limited',source_class='official_filing',source_type='report',local_path=p.name,
+                    sha256=hashlib.sha256(p.read_bytes()).hexdigest(),url='https://issuer.example/original' if index!=1 else 'https://mirror.example/copy'))
+            (inputs/'example_catalog.json').write_text(json.dumps({'company':'Example Energy Limited','sources':rows}))
+            cfg=replace(Config(),registry_path=registry,evidence_dir=root/'no-evidence')
+            with patch('signalforge.investigation.ROOT',root):
+                sources,audit=collect_sources(folder,'Example Energy Limited','capacity commissioning',cfg)
+            self.assertEqual(len(sources),1)
+            self.assertEqual(len([a for a in audit if a['action']=='Deduplicate source']),2)
+    def test_research_lead_quotes_a_real_checked_passage_without_creating_claims(self):
+        result={'claims':[], 'sources':[{'id':'s','lineage':'issuer:X', 'passages':[
+            {'id':'s1','origin_evidence_id':'ev_x','text':'Commissioned capacity is disclosed for one project; future project targets need separate checks.'}]}]}
+        attach_planning_leads(result, {'hypothesis':'Did the same project reach its announced milestone?'})
+        self.assertEqual(result['claims'], [])
+        lead=result['research_leads'][0]
+        check_citation(lead['citation'], evidence_map(result['sources']))
+        self.assertEqual(lead['confidence'],'Weak')
+        self.assertIsNone(lead['date'])
     def test_context_bound_keeps_whole_upstream_passages_and_document_diversity(self):
         sources = [dict(id='a',passages=[dict(id='a1',text='a'*30),dict(id='a2',text='b'*30,origin_evidence_id='ev_a')]),
                    dict(id='b',passages=[dict(id='b1',text='c'*30)])]
