@@ -1,0 +1,27 @@
+{
+  "claims": [
+    {
+      "id": "c1",
+      "verdict": "supported",
+      "reason": "The annual report explicitly lists the 100 MW Patan solar project as 'commissioned'.",
+      "independent_corroboration": false
+    },
+    {
+      "id": "c2",
+      "verdict": "supported",
+      "reason": "The report identifies the 9.5 GW target by FY 2029-30 as part of the company's diversification strategy.",
+      "independent_corroboration": false
+    },
+    {
+      "id": "c3",
+      "verdict": "supported",
+      "reason": "The document confirms a 50:50 joint venture with Damodar Valley Corporation for a 2x800 MW (1,600 MW) brownfield thermal plant at Chandrapura.",
+      "independent_corroboration": false
+    }
+  ],
+  "conclusion_supported": true,
+  "conclusion_reason": "The summary correctly distinguishes between commissioned assets and future-dated targets, noting that the reported figures for renewable capacity represent long-term goals rather than immediate capacity gaps.",
+  "calculation_basis_valid": true,
+  "counterargument_addressed": true,
+  "novelty_established": false
+}

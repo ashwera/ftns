@@ -1,0 +1,14 @@
+{
+  "exact_normalized_match": true,
+  "quote_length": 14,
+  "source_sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+  "physical_page": 80,
+  "original_failure": "Citation to src_6be29201be42be17_ev_9745f1ec9f355d0eaf9a1803 must be ONE exact contiguous span copied from that passage (no ellipses, no stitching sentences, no paraphrase). Offending quote began: '68.5% Complete'",
+  "new_failure": "Citation quote is too short (14 normalized characters; minimum 15). Copy a longer exact contiguous span from the same supplied passage, preserving table context, or use its quote_catalog reference. Do not add wording absent from the source.",
+  "model_quote": {
+    "evidence_id": "ev_bdeae55e836484532b189cd2",
+    "quote": "JCRL (Shivpur-Kathautia, 49 KM): 68.5% progress. Expected commissioning: June 2027"
+  },
+  "latency_seconds": 22.448,
+  "new_quote_validation": "passed"
+}

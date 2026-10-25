@@ -410,6 +410,11 @@ def calculate(spec, evidence):
                 raise ValueError("Calculation input not explicitly present in quoted evidence")
             values.append(d)
     op = spec["operation"]
+    if op == "sum":
+        components = [(item['evidence_id'], norm(item['quote']), Decimal(item['value'])) for item in spec['inputs']]
+        if len(components) != len(set(components)):
+            raise ValueError("Sum repeats the same source-backed operand; this double-counts one observation. "
+                             "Use distinct evidenced components or omit the calculation; do not invent an additional project.")
     if op != "sum" and len(values) != 2:
         raise ValueError("Operation needs exactly two inputs")
     if op == "days":
@@ -470,12 +475,39 @@ Status supported means the narrow conclusion is supported, not an investment rec
     # Rejected attempts remain immutable and the recovery is recorded separately.
     saved = sorted((folder / f"{stage}_model_audit").glob("*/attempt_*_raw_response.json"),
                    key=lambda p: p.stat().st_mtime, reverse=True)
+    repair_context = None
     for path in saved:
+        value = None
         try:
             value = json.loads(path.read_text())
             value.pop("$schema", None)
             validate(value)
-        except (ValueError, TypeError, KeyError):
+        except (ValueError, TypeError, KeyError) as error:
+            if isinstance(error, ValueError) and str(error).startswith("Sum repeats the same source-backed operand"):
+                # An optional duplicate calculation need not erase exact-cited
+                # observations. Keep its rejection, then revalidate everything
+                # remaining before the mandatory fresh semantic review.
+                rejected, retained = [], []
+                for spec in value['calculations']:
+                    try:
+                        calculate(spec, evidence)
+                    except ValueError as invalid:
+                        rejected.append({'calculation': spec, 'reason': redact(str(invalid), config)})
+                    else:
+                        retained.append(spec)
+                value['calculations'] = retained
+                try:
+                    validate(value)
+                except ValueError:
+                    pass
+                else:
+                    write(folder / f"{stage}_recovery.json", {'raw_response': str(path.relative_to(folder)),
+                        'revalidated_at': stamp(), 'discarded_calculations': rejected,
+                        'method': 'Optional invalid calculations withheld; every remaining claim and operand revalidated; semantic review still required'})
+                    return value
+            if repair_context is None and isinstance(value, dict):
+                repair_context = {"previous_draft": value, "validation_error": redact(str(error), config),
+                                  "raw_response": str(path.relative_to(folder))}
             continue
         write(folder / f"{stage}_recovery.json", {"raw_response": str(path.relative_to(folder)),
             "revalidated_at": stamp(), "method": "Unchanged schema, exact-passage and calculation gates reapplied to rehashed source snapshots"})
@@ -486,10 +518,21 @@ Status supported means the narrow conclusion is supported, not an investment rec
     checkpoint = folder / f"{stage}.json"
     if checkpoint.is_file():
         saved = json.loads(checkpoint.read_text())
-        validate(saved)
-        return saved
+        try:
+            validate(saved)
+        except ValueError as error:
+            repair_context = {"previous_draft": saved, "validation_error": redact(str(error), config),
+                              "raw_response": str(checkpoint.relative_to(folder))}
+        else:
+            return saved
+    if repair_context:
+        prompt += ("\nResume the rejected draft in repair_context. Retain unaffected source-backed observations for semantic review. "
+                   "Repair only failing citations using longer original context or another supplied passage; omit an unsupported "
+                   "calculation or downgrade its claim rather than inventing an operand. A reported percentage is an observation, "
+                   "not a reason to invent a 100 denominator. Reassess an overbroad headline separately; earlier claim proposals "
+                   "are not verified conclusions. All existing checks will be applied again.")
     return generate_validated(prompt, {"company": company, "assigned_question": question,
-        "r1_plan": intent, "sources": sources, "quote_catalog": quotes}, config, schema_path=schema_path,
+        "r1_plan": intent, "sources": sources, "quote_catalog": quotes, "repair_context": repair_context}, config, schema_path=schema_path,
         output_path=folder / f"{stage}.json", generate=generate_json, validate=validate,
         normalize=lambda value: resolve_quote_references(value, quotes), stage=stage)
 
@@ -640,6 +683,11 @@ def run_investigation(folder, company, question, plan, config, update):
         return evidence_gap_report(folder, company, question, "Final model claims did not pass strict validation after counterevidence retrieval; semantic adjudication remains incomplete.",
                                    sources=sources, decision_log=log, failed_stage="investigation_final")
     write(folder / "investigation_final.json", draft)
+    recovery = folder / "investigation_final_recovery.json"
+    if recovery.is_file():
+        for rejected in json.loads(recovery.read_text()).get('discarded_calculations', []):
+            log.append({'action': 'Reject unsupported optional calculation', 'reason': rejected['reason'],
+                        'outcome': rejected['calculation']['label'] + ': withheld; unaffected observations proceed to semantic review.'})
     schema_path = folder / "investigation_review.schema.json"
     write(schema_path, REVIEW_SCHEMA)
     def validate(review):

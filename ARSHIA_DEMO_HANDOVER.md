@@ -1,5 +1,19 @@
 # Arshia demo handover — 25 October 2026
 
+## Latest targeted citation recovery
+
+Original run **`research_20261025T000129_2ecbfd3ad81c`** now completes investigation and a fresh semantic review. It was resumed in place; no new run ID was created. Its onboarding, F1, R1, eligible evidence, completed discovery/follow-up/opposition searches and PDF were reused, with all eight input hashes unchanged. The original failed reports and raw model attempts are preserved in recovery snapshots/audits.
+
+The original 14-character quote was reproduced against the previous validator; current feedback correctly identifies a length failure. A live Gemini probe selected a longer exact contiguous quotation on physical PDF page 80 that identifies JCRL, its progress percentage and its expected commissioning. The page was visually inspected; no table text was reconstructed or stitched. The repaired initial investigation validated on its first response, retaining issuer-backed observations and omitting the unsupported 68.5/100 calculation.
+
+Review then exposed another issue: the model summed the same 1,600 MW project twice, and its first skeptical review missed this. A targeted duplicate-operand gate now refuses that sum. Recovery withholds the optional calculation, records the rejection, revalidates all remaining observations and requires fresh semantic review. It does not treat a matching quote as proof of an additional project.
+
+Final result: **inconclusive / Weak** with three source-backed issuer observations: Patan solar commissioning, the future renewable-capacity target, and the Jharkhand thermal-development project. No calculation was accepted; independent corroboration and novelty remain absent. The counterargument distinguishes future targets from presently due commissioning obligations. Same-project independent COD/schedule records and reporting-perimeter matching remain research leads, not acquired evidence.
+
+Gemini `gemini-3.1-flash-lite` handled this recovery with the fuller saved context and without Groq fallback, avoiding the latter's account input quota. The final successful recovery took **30.559 seconds**. Earlier recoveries took 43.511 seconds and 27.580 seconds (the latter hit Gemini HTTP503); total recovery execution was **101.650 seconds**, excluding the separate 22.448-second quote probe and time editing/testing code. This is a recovered saved case, not a fresh unattended discovery benchmark.
+
+Backend: **355 tests OK, two skipped**. Browser rendering, the counterargument, the withheld-calculation decision log and JSON/Markdown downloads passed; the JSON export's `investigation` object exactly equals the saved report. Portable proof exports are in `signalforge/data/demo_validation/coalindia_citation_fix_20261025/`; screenshot: `signalforge/outputs/coalindia-citation-fix-result.png`. Earlier sections below retain their measured historical outcomes.
+
 ## Verified checkout and environment
 
 Repository: `https://github.com/ashwera/ftns.git`. The initial local commit was `9dd5fc5b86074c8938d17cc45837a88b154efdb1` on `main`, with a clean working tree. Fetch found three newer commits; the checkout was fast-forwarded to `6893f33634dde700dc6a2e7051460756ac8d8202`. Ashwera's later onboarding, Ollama, resume, borderline-search fallback and PDF-table changes exist on the remote. The remote did not contain this handover or Groq failover. Its Hindalco manifest was still marked running, with an evidence-gap artifact and paths to `/Users/ashwera/Documents/ftns`; that is not a completed portable investigation.

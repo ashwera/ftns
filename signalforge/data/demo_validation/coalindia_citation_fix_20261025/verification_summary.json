@@ -1,0 +1,29 @@
+{
+  "run_id": "research_20261025T000129_2ecbfd3ad81c",
+  "new_run_created": false,
+  "original_failure_reproduced": true,
+  "live_long_quote_validation": "passed",
+  "investigation_completed": true,
+  "semantic_review_completed": true,
+  "independent_corroboration": false,
+  "status": "inconclusive",
+  "rating": "Weak",
+  "successful_final_resume_seconds": 30.559,
+  "all_recovery_execution_seconds": 101.65,
+  "cached_artifacts_unchanged": true,
+  "accepted_claim_ids": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "rejected_items": [
+    "Unsupported 68.5/100 calculation",
+    "Duplicate 1600+1600 MW calculation"
+  ],
+  "json_export_matches": true,
+  "markdown_export_checked": true,
+  "backend_tests": 355,
+  "backend_skipped": 2,
+  "fresh_review_requested_at": "2026-10-25T00:16:48.065889+00:00",
+  "review_saw_repaired_draft": true
+}

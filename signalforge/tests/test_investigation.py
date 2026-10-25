@@ -93,6 +93,81 @@ class InvestigationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'exact contiguous span'):
             check_citation({'evidence_id': 'p', 'quote': '15 MTY Capacity 69.5% Complete'}, evidence)
 
+    def test_failed_optional_quote_repairs_without_losing_other_observations(self):
+        from dataclasses import replace
+        from unittest.mock import Mock, patch
+        from signalforge.config import Config
+        from signalforge.investigation import draft_result
+        draft, _ = self.fixture()
+        source = copy.deepcopy(self.sources)
+        source[0]['passages'].append({'id': 'short', 'page': 3,
+            'text': 'JCRL rail project: 68.5% Complete; commissioning expected June 2027.'})
+        draft['calculations'] = [{'label': 'Unsupported percentage calculation', 'operation': 'ratio_percent',
+            'inputs': [{'value': v, 'evidence_id': 'short', 'quote': '68.5% Complete'} for v in ('68.5', '100')],
+            'unit': '%', 'basis': 'project progress'}]
+        draft['follow_up_queries'] = []
+        repaired = copy.deepcopy(draft)
+        repaired['calculations'] = []
+        generator = Mock(side_effect=[draft, repaired])
+        with tempfile.TemporaryDirectory() as temp, patch('signalforge.investigation.generate_json', generator):
+            result = draft_result(Path(temp), 'Fixture', 'Question', {}, source,
+                replace(Config(), provider='gemini', fallback_providers=''), 'investigation_initial')
+            self.assertEqual(result['claims'], draft['claims'])
+            self.assertEqual(result['calculations'], [])
+            self.assertEqual(generator.call_count, 2)
+            self.assertIn('too short (14 normalized characters; minimum 15)', generator.call_args.args[0])
+            self.assertIn('Previous JSON to repair in place', generator.call_args.args[0])
+            # A resume feeds the rejected artifact and precise error back to the
+            # model, while the original raw response remains unchanged.
+            generator.reset_mock(side_effect=True)
+            generator.return_value = repaired
+            import json
+            original = Path(temp) / 'investigation_resume_model_audit' / 'failed' / 'attempt_1_raw_response.json'
+            original.parent.mkdir(parents=True)
+            original.write_text(json.dumps(draft))
+            # An existing rejected stage file must enter the same bounded
+            # repair path rather than abort before model repair can run.
+            (Path(temp) / 'investigation_resume.json').write_text(json.dumps(draft))
+            second = draft_result(Path(temp), 'Fixture', 'Question', {}, source,
+                replace(Config(), provider='gemini', fallback_providers=''), 'investigation_resume')
+            self.assertEqual(second['claims'], draft['claims'])
+            self.assertEqual(generator.call_count, 1)
+            self.assertEqual(generator.call_args.args[1]['repair_context']['previous_draft'], draft)
+            self.assertIn('too short', generator.call_args.args[1]['repair_context']['validation_error'])
+            self.assertEqual(json.loads(original.read_text()), draft)
+
+    def test_sum_cannot_count_the_same_quoted_project_twice(self):
+        spec = {'label': 'Duplicated unit', 'operation': 'sum', 'unit': 'MW', 'basis': 'same unit',
+            'inputs': [{'value': '660', 'evidence_id': 'a1', 'quote': 'Unit 3 capacity is 660 MW'} for _ in range(2)]}
+        with self.assertRaisesRegex(ValueError, 'double-counts one observation'):
+            calculate(spec, self.evidence)
+
+    def test_saved_duplicate_calculation_is_withheld_without_erasing_exact_claims(self):
+        from dataclasses import replace
+        from unittest.mock import Mock, patch
+        import json
+        from signalforge.config import Config
+        from signalforge.investigation import draft_result
+        draft, _ = self.fixture()
+        draft['follow_up_queries'] = []
+        draft['calculations'] = [{'label': 'Duplicate unit', 'operation': 'sum', 'unit': 'MW', 'basis': 'same unit',
+            'inputs': [{'value': '660', 'evidence_id': 'a1', 'quote': 'Unit 3 capacity is 660 MW'} for _ in range(2)]}]
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            raw = root / 'investigation_final_model_audit' / 'saved' / 'attempt_1_raw_response.json'
+            raw.parent.mkdir(parents=True)
+            raw.write_text(json.dumps(draft))
+            generator = Mock(side_effect=AssertionError('No new draft needed for duplicate operand rejection'))
+            with patch('signalforge.investigation.generate_json', generator):
+                result = draft_result(root, 'Fixture', 'Question', {}, self.sources,
+                    replace(Config(), provider='gemini', fallback_providers=''), 'investigation_final')
+            self.assertEqual(result['claims'], draft['claims'])
+            self.assertEqual(result['calculations'], [])
+            generator.assert_not_called()
+            self.assertEqual(json.loads(raw.read_text()), draft)
+            audit = json.loads((root / 'investigation_final_recovery.json').read_text())
+            self.assertIn('double-counts', audit['discarded_calculations'][0]['reason'])
+
     def test_decimal_calculation_requires_real_operands(self):
         spec={'label':'Same capacity ratio','operation':'ratio_percent','unit':'%','basis':'same unit',
               'inputs':[{'value':'660','evidence_id':e,'quote':'Unit 3 capacity is 660 MW'} for e in ['a1','b1']]}

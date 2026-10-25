@@ -1,0 +1,28 @@
+{
+  "raw_response": "investigation_final_model_audit/a2433aeaac364bf4886368d78facd062/attempt_1_raw_response.json",
+  "revalidated_at": "2026-10-25T00:16:48.065187+00:00",
+  "discarded_calculations": [
+    {
+      "calculation": {
+        "label": "Thermal expansion target",
+        "operation": "sum",
+        "inputs": [
+          {
+            "value": "1600",
+            "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+            "quote": "Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand."
+          },
+          {
+            "value": "1600",
+            "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+            "quote": "Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand."
+          }
+        ],
+        "unit": "MW",
+        "basis": "FY 2025-26 report"
+      },
+      "reason": "Sum repeats the same source-backed operand; this double-counts one observation. Use distinct evidenced components or omit the calculation; do not invent an additional project."
+    }
+  ],
+  "method": "Optional invalid calculations withheld; every remaining claim and operand revalidated; semantic review still required"
+}

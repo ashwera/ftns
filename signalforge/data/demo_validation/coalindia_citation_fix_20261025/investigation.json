@@ -1,0 +1,239 @@
+{
+  "headline": "Coal India Limited reports a mix of commissioned assets and ongoing infrastructure development without explicit operational gaps.",
+  "summary": "Coal India Limited (CIL) discloses specific commissioned projects, such as a 100 MW solar plant at Patan and various rail evacuation lines. The company maintains an extensive pipeline for renewable energy (9.5 GW by FY 2029-30) and thermal expansion (e.g., 1,600 MW brownfield plant in Jharkhand). Current disclosures categorize these as under execution, development, or awarded, which precludes definitive evidence of an material gap between 'announced' and 'commissioned' capacity, as the former often refers to long-term diversification targets rather than immediate operational output.",
+  "why_it_matters": [
+    "Distinguishes between long-term strategic diversification targets and immediate asset commissioning.",
+    "Provides transparency on coal evacuation infrastructure status versus future completion plans.",
+    "Clarifies the use of joint ventures and SPVs in managing project-specific execution risks."
+  ],
+  "timeline": [
+    {
+      "date": "April 16, 2012",
+      "event": "Sustainable Development Committee established.",
+      "evidence_ids": [
+        "src_6be29201be42be17_p90_3600"
+      ]
+    },
+    {
+      "date": "FY 2025-26",
+      "event": "CIL reports commissioning of various rail works and the Patan solar project.",
+      "evidence_ids": [
+        "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+        "src_6be29201be42be17_ev_9745f1ec9f355d0eaf9a1803"
+      ]
+    },
+    {
+      "date": "March 28, 2026",
+      "event": "CSR Committee reconstituted.",
+      "evidence_ids": [
+        "src_6be29201be42be17_p90_3600"
+      ]
+    },
+    {
+      "date": "July 2026",
+      "event": "200 MW of Khavda Solar Project commissioned.",
+      "evidence_ids": [
+        "src_6be29201be42be17_p49_1800"
+      ]
+    }
+  ],
+  "counterargument": {
+    "text": "The gap between announced 9.5 GW targets and currently commissioned capacity is an intentional feature of multi-year strategic planning, where 'announced' figures represent long-term goals for FY 2029-30 rather than immediate operational failures.",
+    "evidence_ids": [
+      "src_6be29201be42be17_p49_1800"
+    ]
+  },
+  "falsification": "A capacity-gap claim would be overturned by original records showing that the same projects achieved the required commissioning milestone by the last valid scheduled deadline, after accounting for revisions. Awards not yet due do not establish a shortfall.",
+  "status": "inconclusive",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Coal India commissioned a 100 MW solar power project at Patan.",
+      "assessment": "supported",
+      "key": true,
+      "citations": [
+        {
+          "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "quote": "Commissioned a 100 MW solar power project at Patan as part of the renewable energy portfolio."
+        },
+        {
+          "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "quote": "Commissioned a 100 MW solar power project at Patan as part of the renewable energy portfolio."
+        }
+      ],
+      "verification_reason": "The annual report explicitly lists the 100 MW Patan solar project as 'commissioned'.",
+      "evidence_ids": [
+        "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb"
+      ],
+      "independent_groups": [
+        "issuer:Coal India Limited"
+      ],
+      "independently_corroborated": false
+    },
+    {
+      "id": "c2",
+      "text": "CIL targets an overall renewable energy capacity of 9.5 GW by FY 2029-30.",
+      "assessment": "supported",
+      "key": false,
+      "citations": [
+        {
+          "evidence_id": "src_6be29201be42be17_p49_1800",
+          "quote": "We have aligned our diversification strategy with India's net-zero ambition and targets an overall renewable energy capacity of 9.5 GW by FY 2029-30."
+        },
+        {
+          "evidence_id": "src_6be29201be42be17_p49_1800",
+          "quote": "We have aligned our diversification strategy with India's net-zero ambition and targets an overall renewable energy capacity of 9.5 GW by FY 2029-30."
+        }
+      ],
+      "verification_reason": "The report identifies the 9.5 GW target by FY 2029-30 as part of the company's diversification strategy.",
+      "evidence_ids": [
+        "src_6be29201be42be17_p49_1800"
+      ],
+      "independent_groups": [
+        "issuer:Coal India Limited"
+      ],
+      "independently_corroborated": false
+    },
+    {
+      "id": "c3",
+      "text": "CIL is developing a 1,600 MW brownfield thermal power plant in Jharkhand.",
+      "assessment": "supported",
+      "key": false,
+      "citations": [
+        {
+          "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "quote": "Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand."
+        },
+        {
+          "evidence_id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "quote": "Established a joint venture to develop a 1,600 MW brownfield thermal power plant in Jharkhand."
+        }
+      ],
+      "verification_reason": "The document confirms a 50:50 joint venture with Damodar Valley Corporation for a 2x800 MW (1,600 MW) brownfield thermal plant at Chandrapura.",
+      "evidence_ids": [
+        "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb"
+      ],
+      "independent_groups": [
+        "issuer:Coal India Limited"
+      ],
+      "independently_corroborated": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_6be29201be42be17",
+      "title": "Coal India Limited annual report (onboarded original)",
+      "url": "https://www.coalindia.in/documents/14122/CIL_AR_2025-26.pdf",
+      "publisher": "Coal India Limited",
+      "lineage": "issuer:Coal India Limited",
+      "independence_basis": null,
+      "source_class": "issuer_annual_report",
+      "publication_date": null,
+      "sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+      "snapshot_path": "/Users/arshiadang/Desktop/fns/signalforge/data/research_runs/research_20261025T000129_2ecbfd3ad81c/onboarding_pdfs/sources/6be29201be42_29c0e63f.pdf",
+      "intake_mode": "onboarded_original_rechecked",
+      "catalog": null,
+      "passages": [
+        {
+          "id": "src_6be29201be42be17_ev_9e3008f225572b9cae1053eb",
+          "page": 6,
+          "text": "Initiative Description Value Created Capitals Impacted\n100 MW  \nPatan Solar  \nProject\nRail \nInfrastructure \nDevelopment\nPartnership  \nwith Hindustan  \nCopper\nRenewable \nEnergy \nfor Green \nAmmonia\nRare Earth  \nElement (REE)  \nBlock  \nAcquisition\nStrategic  \nInvestment  \nPlatform\nThermal Power \nExpansion\nCommissioned a 100 MW solar \npower project at Patan as part of \nthe renewable energy portfolio.\nCollaborating with strategic rail \ninfrastructure partners to develop \nand strengthen rail connectivity \nfor Coal India and its subsidiaries.\nEntered into a strategic \ncollaboration with Hindustan \nCopper to explore opportunities \nin critical minerals.\nSupporting India’s green energy \ntransition by supplying renewable \npower from planned renewable \nenergy projects to green \nammonia production facilities.\nSecured the Kawalapur  \nRare Earth Element block\nReceived the first dividend \nfrom Hindustan Urvarak & \nRasayan Limited and CIL  \nNavikarniya Urja Limited.\nEstablished a joint venture to \ndevelop a 1,600 MW brownfield \nthermal power plant in Jharkhand.\nDiversified the energy portfolio, \nenhanced renewable capacity \nand reduced emissions intensity.\nImproves coal evacuation, logistics \nefficiency, supply chain reliability \nand operational productivity.\nEnhanced access to emerging \nmineral opportunities and \nstrengthened technical capabilities.\nAdvances decarbonisation, \ncreates new revenue streams and \nstrengthens participation in the \ngreen hydrogen ecosystem.\nOpened new growth avenues \nand strengthened resource  \ndiversification.\nCreated an additional earnings \nstream and demonstrated value \nfrom strategic investments.\nEnhances power generation \ncapacity, supports energy security \nand creates long-term value through \ndiversified business operations.\nListing of BCCL  \nand CMPDIL\nBCCL and CMPDIL were listed \nduring FY 2025-26 as part of the \nmonetisation drive.\nUnlocks value and improves \nvisibility, governance and \nstakeholder transparency.\nNaturalSocial & Relationship HumanManufactured IntellectualFinancial\nStrategic Initiatives Driving \nValue Creation\nThroughout FY 2025-26, we continued to strengthen our core mining business while investing \nin future growth platforms. Our initiatives focused on improving operational efficiency, \nexpanding infrastructure, advancing diversification and creating long-term value for stakeholders.\nTLS - Mechanised Truck Loading System\n08 09\nCorporate Overview Statutory Reports Financial Statements\nCoal India Limited\nIntegrated Annual Report 2025-26",
+          "source_locator": "page:6",
+          "origin_evidence_id": "ev_9e3008f225572b9cae1053eb"
+        },
+        {
+          "id": "src_6be29201be42be17_ev_9745f1ec9f355d0eaf9a1803",
+          "page": 49,
+          "text": "Deposit-based Rail Projects\nStrategic JV / SPV Rail Corridors\nTwo major railway projects funded directly by CIL have significantly strengthened evacuation capacity in key coal-bearing regions.\nTo accelerate infrastructure creation, we continue to partner through special purpose vehicles and joint ventures for dedicated \ncoal evacuation corridors.\nThe 44.37 km double line, along with the recently \ncommissioned tripling works, strengthens evacuation from \nthe North Karanpura coalfield of CCL.\nAngul–Balram rail link commissioned, \nenabling evacuation from \nTalcher coalfields.\nShivpur–Kathautia \nconnectivity under execution.\nThe 52.41 km line, along with recently commissioned doubling \nworks, is being further strengthened through flyover and \nloading infrastructure upgrades.\nTori–Shivpur New BG Line\nMahanadi Coal Railway Limited (MCRL)\nMajor corridor substantially completed \nwith balance work underway.\nChhattisgarh East Railway Limited \n(CERL) Phase I\nJharkhand Coal Railway Limited (JCRL)\nJharsuguda–Barpali–Sardega Rail Line\n~100 MTY\nEvacuation capacity enabled\n15 MTY \nCapacity\n68.5% \nComplete\n96%\nComplete\n25 MTY \nCapacity\n65 MTY\nCapacity\n~90 MTY\nEvacuation capacity upon completion\nConstruction underway following \nfinancial closure.\nCritical evacuation corridor for Korba \ncoalfield progressing steadily.\nCERL Phase II\nChhattisgarh East West Rail \nLimited (CEWRL)\n38% \nComplete \n80%\nComplete \n875 MW\nSolar project at Pugal Solar \nPark, Rajasthan\n80 MW / 320 MWh\nBESS project in Odisha\n188 MW / \n750 MWh\nBESS project in Telangana\n600 MW\nSolar project awarded at Jalaun \nSolar Park\nJ 21,000 Crores\nInvestment at Thermal power plant \nat Chandrapura\n300 MW\nKhavda Solar Project, Gujarat \n(200 MW commissioned as of \nJuly 2026)\n65 MTY\nCapacity\nFuture Ready Asset Portfolio\nRenewable Energy Expansion\nRenewable and storage \nopportunities\nBattery Energy Storage Systems\nThermal Energy Assets\nUtility-scale solar pipeline\nAs India’s energy ecosystem evolves, \nour manufacturing capital is expanding \nbeyond conventional coal mining \ninto renewable energy, storage \ninfrastructure, and strategic energy \nassets. We are building future-ready \ncapabilities that strengthen long-term \nresilience while supporting national \nenergy transition goals.\nWe have aligned our diversification \nstrategy with India’s net-zero ambition \nand targets an overall renewable energy \ncapacity of 9.5 GW by FY 2029-30.\nWe achieved significant progress in \nscaling our renewable energy portfolio \nthrough strategic partnerships, utility-\nscale solar projects, and hybrid \nenergy initiatives.\nA major milestone during FY 2025-26 \nwas the renewable energy partnership \nwith UPRVUNL to jointly develop large-\nscale renewable energy projects in Uttar \nPradesh. The proposed joint venture \nwill develop utility-scale renewable \nassets supported by allocated land and \ndedicated project infrastructure.\nIn Rajasthan, we entered into a strategic \njoint venture with RRVUNL, resulting \nin the formation of CIL Rajasthan \nAkshay Urja Limited, strengthening \nour presence in one of India’s most \npromising solar corridors.\nTo accelerate diversification, we signed \nMoUs with commercial and industrial \nconsumers for supplying 4.5 GW \nof renewable power through wind-\nsolar hybrid projects.\nPlanned development includes:\n 1.5 GW wind power projects\n 3 GW solar power projects\nBattery storage represents a major new \ngrowth area supporting renewable energy \nintegration and grid reliability.\nCIL secured success",
+          "source_locator": "page:49",
+          "origin_evidence_id": "ev_9745f1ec9f355d0eaf9a1803"
+        },
+        {
+          "id": "src_6be29201be42be17_p153_1800",
+          "page": 153,
+          "text": "i Forest Division\", fifteen hundred seedlings are multiplied and planted in re-vegetated mined out sites, nearby forest site and RFRI botanical garden with exhaustive care. Conservation and maintenance of orchid species were done at RFRI botanical garden and Tikak Colliery. Bench Scale Study on reducing ash content (mineral matter) from Washery Grade Coking coal and high ash non-coking coal through oil agglomeration. Coal-Oil Agglomeration unit fabricated, installed and commissioned at NML laboratory, Jamshedpur using three types of oils i.e. sunflower oil, castor oil and pine oil for reducing the ash content of coal. Coking coal with sunflower oil shows encouraging results (Topa Coal: Ash%age reduced to 9% from 21% with 84% yield, Rajrappa Coal: Ash%age reduced to 20% from 34% with 80% yield). Development of Guidelines for Increasing the Height of Overburden Dumps at Opencast Coal Mines in India. Design and developed a Large- Scale Direct Shear Testing Machine at CMPDIL for testing of representative OB dump samples from Opencast Coal mines. Steeper bench angles up to 40° and external dump height up to 120m can be considered safe based on the strength properties of OB material, in comparison to present Coal Mine Regulation 2017 which limits the individual bench angle to 37.5° and external dump heights up to 90m. Capacity Building for extraction of CMM Resource within CIL Command Areas (CMPDIL & CSIRO, Australia). CMPDIL has developed a State-of-Art Laboratory facility for understanding of CBM/ CMM resources in India to assist in unconventional gas resources extraction. Project outcome will be helpful in development of CBM/CMM in CIL & other leasehold areas. Under a project, the effect of blasting on opencast mine dump was investigated and prediction model of FOS for stability of the OB dump slope was recommended considering various uncertain material parameters under blast loading with different explosive densities and distances of the blasting point. Under a project, a VOD measurement system was developed which can measure velocity of detonation of in-the-hole explosive as well as cartridges, booster and other accessories on the surface. The system uses fiber o"
+        },
+        {
+          "id": "src_6be29201be42be17_p49_1800",
+          "page": 49,
+          "text": " at Thermal power plant at Chandrapura 300 MW Khavda Solar Project, Gujarat (200 MW commissioned as of July 2026) 65 MTY Capacity Future Ready Asset Portfolio Renewable Energy Expansion Renewable and storage opportunities Battery Energy Storage Systems Thermal Energy Assets Utility-scale solar pipeline As India's energy ecosystem evolves, our manufacturing capital is expanding beyond conventional coal mining into renewable energy, storage infrastructure, and strategic energy assets. We are building future-ready capabilities that strengthen long-term resilience while supporting national energy transition goals. We have aligned our diversification strategy with India's net-zero ambition and targets an overall renewable energy capacity of 9.5 GW by FY 2029-30. We achieved significant progress in scaling our renewable energy portfolio through strategic partnerships, utility- scale solar projects, and hybrid energy initiatives. A major milestone during FY 2025-26 was the renewable energy partnership with UPRVUNL to jointly develop large- scale renewable energy projects in Uttar Pradesh. The proposed joint venture will develop utility-scale renewable assets supported by allocated land and dedicated project infrastructure. In Rajasthan, we entered into a strategic joint venture with RRVUNL, resulting in the formation of CIL Rajasthan Akshay Urja Limited, strengthening our presence in one of India's most promising solar corridors. To accelerate diversification, we signed MoUs with commercial and industrial consumers for supplying 4.5 GW of renewable power through wind- solar hybrid projects. Planned development includes: 1.5 GW wind power projects 3 GW solar power projects Battery storage represents a major new growth area supporting renewable energy integration and grid reliability. CIL secured successful bids for: While expanding into clean energy, we continue to strengthen strategic thermal capacity to support reliable baseload power generation. A key milestone during FY 2025-26 was the formation of a 50:50 joint venture with Damodar Valley Corporation (DVC) for development of a 2 × 800 MW thermal power plant at Chandrapura. Major solar projects under execution inclu"
+        },
+        {
+          "id": "src_6be29201be42be17_p90_3600",
+          "page": 90,
+          "text": "th operational heads invited as business dictates. Core Oversight Areas: Evaluation of related party transactions, scrutiny of inter-corporate loans, and verification of the adequacy and operational integrity of internal control frameworks. B. Corporate Social Responsibility (CSR) Committee Originally established on April 16, 2012, as the Sustainable Development Committee, the forum was subsequently reconstituted as the CSR Committee in alignment with Section 135 of the Companies Act, 2013 and CSR Rules, 2014. Current Structure: Reconstituted on March 28, 2026, the committee consists of 1 Independent Director as Chairman, 1 Government Nominee Director, and 1 Functional Director (Director - HR). 28. STATUTORY COMPLIANCE, DECLARATIONS & DISCLOSURES A. Statutory Declarations by Independent Directors The Company confirms receipt of mandatory independence declarations from all Independent Directors pursuant to Section 149(7) of the Companies Act, 2013 and SEBI LODR Regulation 25(8). The declarations confirm compliance with criteria defined under Section 149(6) and Regulation 16(1)(b), verifying the absence of any circumstances impairing objective performance. The Board formally took these confirmations on record at its 490th meeting on April 27, 2026, following due evaluation. Independent Directors maintain valid registrations with the Independent Directors' Databank managed by the Indian Institute of Corporate Affairs (IICA) under Rule 6. Furthermore, at its April 27, 2026 meeting, the Board ratified the list of core competencies, professional integrity, and domain expertise verified across these directors. B. Policy for Selection and Appointment of Directors' and their Remuneration Your Company being a Government Company, the provisions of Section 134(3)(e) of the Companies Act, 2013 do not apply in accordance with the Gazette notification dated 5 th June 2015 issued by Ministry of Corporate Affairs, Government of India. C. Performance Evaluation of Directors and the Board As per notification dated 5 th June, 2015 issued by the Ministry of Corporate Affairs, Government of India, Government Companies are exempted from complying with provisions of Section 134(3)(p) o"
+        },
+        {
+          "id": "src_6be29201be42be17_p49_0",
+          "page": 49,
+          "text": "Deposit-based Rail Projects Strategic JV / SPV Rail Corridors Two major railway projects funded directly by CIL have significantly strengthened evacuation capacity in key coal-bearing regions. To accelerate infrastructure creation, we continue to partner through special purpose vehicles and joint ventures for dedicated coal evacuation corridors. The 44.37 km double line, along with the recently commissioned tripling works, strengthens evacuation from the North Karanpura coalfield of CCL. Angul-Balram rail link commissioned, enabling evacuation from Talcher coalfields. Shivpur-Kathautia connectivity under execution. The 52.41 km line, along with recently commissioned doubling works, is being further strengthened through flyover and loading infrastructure upgrades. Tori-Shivpur New BG Line Mahanadi Coal Railway Limited (MCRL) Major corridor substantially completed with balance work underway. Chhattisgarh East Railway Limited (CERL) Phase I Jharkhand Coal Railway Limited (JCRL) Jharsuguda-Barpali-Sardega Rail Line ~100 MTY Evacuation capacity enabled 15 MTY Capacity 68.5% Complete 96% Complete 25 MTY Capacity 65 MTY Capacity ~90 MTY Evacuation capacity upon completion Construction underway following financial closure. Critical evacuation corridor for Korba coalfield progressing steadily. CERL Phase II Chhattisgarh East West Rail Limited (CEWRL) 38% Complete 80% Complete 875 MW Solar project at Pugal Solar Park, Rajasthan 80 MW / 320 MWh BESS project in Odisha 188 MW / 750 MWh BESS project in Telangana 600 MW Solar project awarded at Jalaun Solar Park J 21,000 Crores Investment at Thermal power plant at Chandrapura 300 MW Khavda Solar Project, Gujarat (200 MW commissioned as of July 2026) 65 MTY Capacity Future Ready Asset Portfolio Renewable Energy Expansion Renewable and storage opportunities Battery Energy Storage Systems Thermal Energy Assets Utility-scale solar pipeline As India's energy ecosystem evolves, our manufacturing capital is expanding beyond conventional "
+        }
+      ]
+    }
+  ],
+  "calculations": [],
+  "evidence_strength": "Weak",
+  "strength_reasons": [
+    "The summary correctly distinguishes between commissioned assets and future-dated targets, noting that the reported figures for renewable capacity represent long-term goals rather than immediate capacity gaps.",
+    "No key claim passed independent corroboration checks."
+  ],
+  "limitations": [
+    "Lack of granular, project-level commercial operation dates (COD) for the entire 9.5 GW portfolio.",
+    "Independent verification of specific rail project completion percentages beyond company self-reporting is not included in the provided passages.",
+    "Reporting cutoff of FY 2025-26 limits visibility into long-term project performance realization.",
+    "Not every key claim has independent confirmation; issuer-only facts remain labelled.",
+    "Novelty relative to market knowledge has not been established.",
+    "Semantic support was challenged by a second model pass, not a human audit. Exact quotes and hashes were checked by code.",
+    "The model's award-only commissioning-gap criterion was withheld because it lacked a matched deadline and cutoff."
+  ],
+  "novelty_established": false,
+  "completed_at": "2026-10-25T00:16:53.489528+00:00",
+  "company": "Coal India Limited",
+  "prompt": "Investigate whether announced production or capacity expansion differs materially from commissioned operations, or whether significant customer and financing relationships deserve scrutiny. Choose an angle supported by the company disclosures, compare reporting periods and seek independent evidence and counterarguments.",
+  "run_id": "research_20261025T000129_2ecbfd3ad81c",
+  "decision_log": [
+    {
+      "action": "r1_followthrough",
+      "reason": "What is the total renewable (solar + BESS) capacity that Coal India has commissioned and is operational as of FY 2025‑26?",
+      "outcome": "Resumed using the existing completed live search and saved retrieval audit."
+    },
+    {
+      "action": "Carry forward F1 source passages",
+      "reason": "F1-eligible evidence matched the same hash-pinned original PDF",
+      "outcome": "2 exact passages added with original evidence IDs and page locators; claim verification remains separate."
+    },
+    {
+      "action": "Read and hash original documents",
+      "reason": "Compare source passages and document lineage",
+      "outcome": "1 unique snapshots; 6 exact passages. Cached originals explicitly labelled."
+    },
+    {
+      "action": "counterevidence_search",
+      "reason": "Verify the commissioning status of the Jharkhand 1,600 MW brownfield thermal project using the Central Electricity Authority (CEA) project monitor.",
+      "outcome": "Resumed using the existing completed live search and saved retrieval audit."
+    },
+    {
+      "action": "Carry forward F1 source passages",
+      "reason": "F1-eligible evidence matched the same hash-pinned original PDF",
+      "outcome": "2 exact passages added with original evidence IDs and page locators; claim verification remains separate."
+    },
+    {
+      "action": "Read and hash original documents",
+      "reason": "Compare source passages and document lineage",
+      "outcome": "1 unique snapshots; 6 exact passages. Cached originals explicitly labelled."
+    },
+    {
+      "action": "Reject unsupported optional calculation",
+      "reason": "Sum repeats the same source-backed operand; this double-counts one observation. Use distinct evidenced components or omit the calculation; do not invent an additional project.",
+      "outcome": "Thermal expansion target: withheld; unaffected observations proceed to semantic review."
+    },
+    {
+      "action": "Adjudicate after challenge",
+      "reason": "The summary correctly distinguishes between commissioned assets and future-dated targets, noting that the reported figures for renewable capacity represent long-term goals rather than immediate capacity gaps.",
+      "outcome": "inconclusive / Weak"
+    }
+  ],
+  "execution": "real",
+  "retrieval_performed": true,
+  "source_scope": "Bounded live search; 1 hash-rechecked original snapshot(s), including 0 prepared catalog source(s). Consult each source's intake mode."
+}

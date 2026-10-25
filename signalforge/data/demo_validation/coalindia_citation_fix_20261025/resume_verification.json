@@ -1,0 +1,23 @@
+{
+  "run_id": "research_20261025T000129_2ecbfd3ad81c",
+  "resumed_at": "2026-10-25T00:12:35.514955+00:00",
+  "provider": "gemini",
+  "cached_artifacts_before": {
+    "onboarding_report.json": "77497da5027b320aa2591e34958984ae35f19ea212afdb4dac2c983db173dfb8",
+    "f1.json": "06dc973b1a9cd5179ec5f514cde174d988807ad703490a29136e23fca2777d78",
+    "r1.json": "97f6f7454e054569fbd9bf1a87351f5d581d8887c8cc44d53eb677772f959e92",
+    "eligible_evidence/evidence.jsonl": "2fb62d1a6552a2721781edf2364a5814329bcb8ead860c78c0211b7f6c261a91",
+    "discovery/discovery_report.json": "df7c721d24b9643e31fd69cb15a44e6ee08ae457973c2f8a24b2f0f77d1347d9",
+    "r1_followthrough/discovery_report.json": "46541bf14c64830a718da1aaef9655301c83085d23c2c19c6063c13daaf3e440",
+    "counterevidence_search/discovery_report.json": "b50ac3fcb33b00b10e51cde50c0a0fb99bd9005a245788677f97cd04207c8c39",
+    "onboarding_pdfs/sources/6be29201be42_29c0e63f.pdf": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685"
+  },
+  "duration_seconds": 43.511,
+  "finished_at": "2026-10-25T00:13:19.027512+00:00",
+  "status": "completed",
+  "stage": "complete",
+  "cached_artifacts_unchanged": true,
+  "report_type": "investigation",
+  "report_status": "inconclusive",
+  "evidence_strength": "Weak"
+}
