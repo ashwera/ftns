@@ -109,6 +109,16 @@ class GroqProviderTests(unittest.TestCase):
         self.assertIn(quote,' '.join(text.split()));self.assertIn('commissioned',quote)
         with self.assertRaisesRegex(LLMError,'bounded free-tier'):generate_json('p',{'text':'x'*20000},self.cfg())
 
+    def test_csv_readiness_is_compact_context_without_removing_pdf_evidence(self):
+        original={'research_readiness_matrix':[{'category':'capacity_conversion','readiness_rating':'not_ready',
+            'readiness_rationale':'No matching CSV rows','evidence_missing':['x'*4000]}],
+            'verified_ingested_evidence':[{'evidence_id':'ev_real','excerpt_or_fact':'Actual issuer solar capacity commissioned 100 MW.'}]}
+        slim=G.bounded_payload(original)
+        self.assertEqual(slim['verified_ingested_evidence'][0]['evidence_id'],'ev_real')
+        self.assertEqual(slim['research_readiness_matrix'][0]['readiness_rating'],'not_ready')
+        self.assertNotIn('evidence_missing',slim['research_readiness_matrix'][0])
+        self.assertIn('evidence_missing',original['research_readiness_matrix'][0])
+
     def test_repairs_receive_feedback_and_fabricated_quotes_remain_rejected(self):
         evidence=evidence_map([{'id':'s','passages':[{'id':'p','text':'The project has a target capacity of 170 MW.'}]}])
         requests=[]

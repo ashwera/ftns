@@ -4,8 +4,14 @@
     {
       "canonical_name": "NTPC Limited",
       "verified_identifier": "INE733E01010",
-      "identifiers": ["NTPC", "532555", "INE733E01010"],
-      "aliases": ["NTPC"],
+      "identifiers": [
+        "NTPC",
+        "532555",
+        "INE733E01010"
+      ],
+      "aliases": [
+        "NTPC"
+      ],
       "verification_source": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_GOVERNANCE_152692_24042026170150_iXBRL_WEB.html",
       "verification_source_type": "exchange_filing",
       "verification_status": "verified",
@@ -17,8 +23,17 @@
     {
       "canonical_name": "Power Grid Corporation of India Limited",
       "verified_identifier": "INE752E01010",
-      "identifiers": ["POWERGRID", "532898", "INE752E01010"],
-      "aliases": ["Power Grid", "Powergrid", "PGCIL", "Power Grid Corporation of India"],
+      "identifiers": [
+        "POWERGRID",
+        "532898",
+        "INE752E01010"
+      ],
+      "aliases": [
+        "Power Grid",
+        "Powergrid",
+        "PGCIL",
+        "Power Grid Corporation of India"
+      ],
       "verification_source": "https://www.powergrid.in/sites/default/files/Investor_Relation/Reports_Filings/Corporate_Governance/2024-25/Integrated_Filing_Governance_2024-25_Q3.html",
       "verification_source_type": "issuer_hosted_governance_filing",
       "verification_status": "verified",
@@ -28,6 +43,30 @@
       "verification_source_sha256": "5f4b3c34500749f72f69d4f1d97d5459b941b6bc6bfeb704a082eb105e6f2c2a",
       "verification_snapshot": "signalforge/data/powergrid_research_20261025/identity_official/sources/5f4b3c345007_9bc4c2df.html",
       "note": "Canonical identity values checked in the original issuer-hosted quarterly governance filing for quarter ended 31 December 2024, corroborated by the NSE-hosted FY2024-25 IndAS filing. Aliases are research lookup aliases only; this registry mapping never associates identifier-free data rows or verifies document claims. No human evidence approval is created. Snapshot hash must match the retrieval manifest. Publication date is not inferred from retrieval date."
+    },
+    {
+      "canonical_name": "Coal India Limited",
+      "verified_identifier": "INE522F01014",
+      "identifiers": [
+        "COALINDIA",
+        "533278",
+        "INE522F01014"
+      ],
+      "aliases": [
+        "CIL",
+        "COALINDIA",
+        "Coal India",
+        "COAL INDIA LIMITED"
+      ],
+      "verification_status": "verified",
+      "verification_source": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_77981_07022025152404_iXBRL_WEB.html",
+      "verification_source_type": "exchange_filing",
+      "verification_retrieval_date": "2026-10-25",
+      "verification_excerpt": "Scrip Code 533278; NSE Symbol COALINDIA; ISIN INE522F01014; Name of the entity COAL INDIA LIMITED; Type of company Equity.",
+      "supporting_issuer_pdf": "signalforge/data/coalindia_research_20261025/annual_fy25_exchange_copy/sources/41109105a6b1_080cfaf1.pdf",
+      "supporting_issuer_pdf_sha256": "41109105a6b1e3dabd4eec51371d56a70ac2867ccf0f59cd3efcc5ac997f09de",
+      "supporting_issuer_page": 1,
+      "note": "NSE filing identity read using web retrieval; local NSE robots check timed out and was not bypassed. Separately verified matching labelled equity ISIN in issuer annual-report filing cover letter mirrored on Moneycontrol, not an independently authored financial source. No human review approval."
     }
   ]
 }

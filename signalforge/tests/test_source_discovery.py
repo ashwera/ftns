@@ -40,6 +40,14 @@ class Opener:
 
 
 class DiscoveryTests(unittest.TestCase):
+    def test_generic_sector_name_preserves_jurisdiction_and_compact_domain(self):
+        queries=sd.build_queries('Coal India Limited','renewable solar commissioning')
+        self.assertTrue(queries[0].startswith('"Coal India"'))
+        self.assertTrue(sd.company_relevance({'url':'https://www.coalindia.in/performance/annual-reports/','title':'Annual reports'},'Coal India Limited')[0])
+        self.assertTrue(sd.company_relevance({'url':'https://news.example/','title':'CIL solar commissioning'},'Coal India Limited')[0])
+        self.assertFalse(sd.company_relevance({'url':'https://www.gov.uk/coal-authority','title':'Coal Authority annual report'},'Coal India Limited')[0])
+        self.assertFalse(sd.company_relevance({'url':'https://coal.gov.in/annual-report','title':'Ministry of Coal Annual Report'},'Coal India Limited')[0])
+
     def test_xai_model_does_not_replace_independent_gemini_search_configuration(self):
         with patch.dict(os.environ,{'SIGNALFORGE_PROVIDER':'xai','SIGNALFORGE_MODEL':'grok-4.7','XAI_API_KEY':'xai-fixture'},clear=True):
             provider=sd.GeminiGoogleSearch()

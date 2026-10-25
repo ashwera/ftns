@@ -52,9 +52,10 @@ class ServiceTests(unittest.TestCase):
             time.sleep(.01)
         status, result = self.request('GET', '/api/agent/runs/' + run['run_id'])
         self.assertEqual(status, 200)
-        self.assertEqual(result['status'], 'blocked')
+        self.assertEqual(result['status'], 'completed')
+        self.assertEqual(result['investigation']['report_type'], 'evidence_gap')
         self.assertIsNone(result['finding'])
-        self.assertEqual(len(result['events']), 2)
+        self.assertEqual(len(result['events']), 3)
         restored = ResearchSessions(self.temp.name, Config()).get(run['run_id'])
         self.assertEqual(restored, result)
         self.assertTrue((Path(self.temp.name) / run['run_id'] / 'events.jsonl').is_file())
@@ -69,6 +70,15 @@ class ServiceTests(unittest.TestCase):
         for payload in ({}, {'company': 'X', 'prompt': 'Y', 'command': 'ls'}, {'company': '', 'prompt': 'Y'}, {'company': 'X', 'prompt': 'x' * 4001}):
             self.assertEqual(self.request('POST', '/api/agent/runs', payload)[0], 400)
         self.assertEqual(self.request('POST', '/api/agent/runs', {}, **{'Content-Type': 'text/plain'})[0], 415)
+
+    def test_only_allowlisted_run_report_files_can_be_read(self):
+        run_id='research_20261025T000000_123456abcdef'
+        folder=Path(self.temp.name)/run_id;folder.mkdir()
+        (folder/'manifest.json').write_text(json.dumps({'status':'completed'}))
+        (folder/'f1.json').write_text('{"company":"Example"}')
+        self.assertEqual(self.request('GET',f'/api/agent/runs/{run_id}/artifacts/f1.json'),(200,{'company':'Example'}))
+        self.assertEqual(self.request('GET',f'/api/agent/runs/{run_id}/artifacts/.env')[0],404)
+        self.assertEqual(self.request('GET',f'/api/agent/runs/{run_id}/artifacts/../../.env')[0],404)
 
     def test_busy_and_redacted_failure(self):
         release = threading.Event()

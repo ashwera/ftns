@@ -17,12 +17,15 @@ _next_call = 0.0
 
 
 def client(config, timeout=60):
-    from openai import OpenAI
     if not getattr(config,'groq_api_key','').strip():
         raise LLMError('Missing GROQ_API_KEY; configure the dedicated Groq key in an ignored local .env or shell. No provider fallback used.')
     base=config.base_url or BASE_URL
     if base.rstrip('/') != BASE_URL:
         raise LLMError('Groq free-provider endpoint must be https://api.groq.com/openai/v1; no credential sent to another endpoint.')
+    try:
+        from openai import OpenAI
+    except ImportError:
+        raise LLMError('OpenAI-compatible Python SDK is required for Groq; use the project virtual environment.') from None
     return OpenAI(api_key=config.groq_api_key,base_url=base,timeout=timeout,max_retries=0)
 
 
@@ -133,6 +136,12 @@ def bounded_payload(payload):
     for key in ('verified_ingested_evidence',):
         if key in value:
             value[key]=[{k:(excerpt(r[k]) if k=='excerpt_or_fact' else r[k]) for k in ('evidence_id','company_name','document_title','source_locator','excerpt_or_fact') if k in r} for r in value[key][:4]]
+    if 'research_readiness_matrix' in value:
+        # Anonymous CSV readiness is context, not the issuer PDF eligibility gate.
+        rows=value['research_readiness_matrix']
+        fields=('category','readiness_rating','readiness_rationale')
+        value['research_readiness_matrix']=([{field:row[field] for field in fields if field in row} for row in rows]
+            if isinstance(rows,list) else {k:{field:row[field] for field in fields if field in row} for k,row in rows.items()})
     if 'r1_plan' in value:value['r1_plan']={k:value['r1_plan'][k] for k in ('hypothesis','alternative_explanation') if k in value['r1_plan']}
     if 'candidate' in value:
         candidate=value['candidate']

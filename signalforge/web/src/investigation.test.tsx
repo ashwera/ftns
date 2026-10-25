@@ -16,6 +16,17 @@ const investigation: Investigation = {
 afterEach(() => { cleanup(); localStorage.clear(); vi.restoreAllMocks(); vi.unstubAllGlobals() })
 
 describe('completed investigation', () => {
+  it('shows actual reported figures and source arithmetic with evidence navigation', async () => {
+    const report: Investigation={...investigation,reported_facts:[{id:'f1',label:'Reported installed capacity',value:'15',unit:'MW',period:'FY2025',milestone:'installed',evidence_id:'passage1',quote:'Synthetic passage for UI tests only.'}],
+      source_crosschecks:[{label:'Components',formula:'12 + 3',result:'15',unit:'MW',evidence_ids:['passage1']}]}
+    render(<InvestigationView investigation={report} runId="test-run" />)
+    expect(screen.getByRole('heading',{name:'Reported facts and figures'})).toBeTruthy()
+    expect(screen.getByText('15 MW')).toBeTruthy()
+    expect(screen.getByText('12 + 3 = 15 MW')).toBeTruthy()
+    await userEvent.click(screen.getAllByRole('button',{name:'Source passage: passage1'})[0])
+    expect(within(screen.getByRole('region',{name:'Selected source passages'})).getByRole('link',{name:'Open source document'})).toBeTruthy()
+    expect(investigationMarkdown(report,'test-run')).toContain('Reported installed capacity: 15 MW')
+  })
   it('keeps source-grounded planning leads visibly separate from financial claims', () => {
     const lead={question:'Did the target project commission?',citation:{evidence_id:'passage1',quote:'Synthetic capacity target for planning only.'},confidence:'Weak',why:'Issuer target requires checking.',counterargument:'Definitions may differ.',required_evidence:'A dated operator record.',lineage:'issuer:Test',date:null}
     render(<InvestigationView investigation={{...investigation,claims:[],research_leads:[lead]}} runId="lead-run" />)
@@ -86,13 +97,14 @@ describe('saved live runs', () => {
     expect((screen.getByLabelText('Research question') as HTMLTextAreaElement).value).toContain('distinguish each milestone')
   })
   const manifest = { run_id: 'research_20261025T000000_123456abcdef', company: 'Test Company', prompt: 'Test question', status: 'completed', stage: 'complete', created_at: '2026-10-25', events: [], artifacts: [], investigation }
-  it('shows the saved run provider without attributing another provider to its result', async () => {
+  it('opens a saved run without old-run or provider labels', async () => {
     const saved={...manifest,model:{provider:'ollama',model:'saved-local-model'}}
     vi.stubGlobal('fetch',vi.fn(async (url:string)=>new Response(JSON.stringify(url==='/api/agent/runs'?{runs:[saved]}:saved),{status:200})))
     render(<StartResearch />)
     await screen.findByRole('option',{name:/Test Company/})
     await userEvent.selectOptions(screen.getByLabelText('Saved investigations'),saved.run_id)
-    expect(await screen.findByText('Last configured inference for this run: ollama · saved-local-model')).toBeTruthy()
+    expect(await screen.findByRole('heading', { name: /Current run · Test Company/ })).toBeTruthy()
+    expect(screen.queryByText(/Last configured inference|saved-local-model/)).toBeNull()
     expect(screen.queryByText(/grok-4.7/)).toBeNull()
   })
   it('replaces running progress with the final investigation when polling completes', async () => {

@@ -38,6 +38,8 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
     feedback = ""
     invariants = None
     for attempt in (1, 2):
+        from .model_runtime import effective_config
+        config = effective_config(config)
         request_prompt = base_prompt + feedback
         write(f"attempt_{attempt}_request.json", {
             "stage": stage, "provider": config.provider, "model": config.model,
@@ -46,7 +48,7 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
         entry = {"attempt": attempt}
         summary["attempts"].append(entry)
         try:
-            if config.provider.strip().lower() in {"xai", "groq"}:
+            if config.provider.strip().lower() in {"xai", "groq", "ollama"}:
                 raw = generate(request_prompt, payload, config, schema=schema, audit_path=audit / f"attempt_{attempt}_provider.json")
             else:
                 raw = generate(request_prompt, payload, config)
@@ -61,6 +63,8 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
             failure = "Model returned invalid JSON or empty content. Return a JSON object."
             write(f"attempt_{attempt}_response_error.json", {"error": failure})
         else:
+            actual = effective_config(config)
+            entry.update(provider=actual.provider, model=actual.model)
             write(f"attempt_{attempt}_raw_response.json", raw)
             try:
                 output = copy.deepcopy(raw)
@@ -88,17 +92,18 @@ def generate_validated(prompt, payload, config, *, schema_path, output_path,
             safe_failure = redact(failure, config)
             raise ValueError(safe_failure) from None
         safe_feedback = redact(failure, config)
+        feedback_limit = 1500 if config.provider == 'groq' else 6000
         if attempt == 1 and raw is not None and preserve:
             invariants = preserve(raw)
         feedback = ("\n\nYour previous response failed validation. Return a complete JSON object "
                     "against the supplied schema. Correct only these errors; do not invent "
                     "evidence, change the research conclusion merely to pass validation, or "
-                    "claim retrieval occurred. Validation errors: " + safe_feedback[:6000])
+                    "claim retrieval occurred. Validation errors: " + safe_feedback[:feedback_limit])
         # Do not reintroduce an unsupplied ID into the allowlisted prompt. For
         # ordinary schema failures give the actual response to edit in place.
         if raw is not None and "was not supplied" not in failure:
             previous = json.dumps(raw, ensure_ascii=False)
             previous = redact(previous, config)
-            if len(previous.encode("utf-8")) <= 64_000:
+            if len(previous.encode("utf-8")) <= (2000 if config.provider == 'groq' else 64_000):
                 feedback += ("\nPrevious JSON to repair in place (preserve candidates, hypotheses, "
                              "recommendation and criterion scores; fix only schema errors):\n" + previous)

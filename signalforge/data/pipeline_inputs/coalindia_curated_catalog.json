@@ -1,0 +1,274 @@
+{
+  "catalog_version": "1.0",
+  "company": "Coal India Limited",
+  "research_intake": "operator_cached_originals",
+  "curation_status": "operator_prepared_originals",
+  "sources": [
+    {
+      "source_id": "cil_investor_may25",
+      "title": "Coal India investor presentation 12 May 2025 (issuer filing; Tijori mirror)",
+      "publisher": "Coal India Limited",
+      "source_class": "official_filing",
+      "source_type": "investor_presentation",
+      "publication_date": "2025-05-12",
+      "issuer_submitted": true,
+      "derived_from": [],
+      "url": "https://files.tijorifinance.com/insight/india/6234/Investor%20Presentation/IP-May25.pdf",
+      "canonical_url": "https://files.tijorifinance.com/insight/india/6234/Investor%20Presentation/IP-May25.pdf",
+      "local_path": "../coalindia_research_20261025/investor_may25_mirror/sources/da54d011da4d_497d77bc.pdf",
+      "sha256": "da54d011da4d803e51b5e80a2928b7784029b29f02db47c988dcf42df93b455c",
+      "verified_by": "Codex automated original-document inspection; not human approval",
+      "verified_on": "2026-10-25",
+      "provenance": "Original issuer document; mirror host is not independent corroboration. Exact original bytes rehashed; retrieval report retained.",
+      "evidence_pages": [
+        34
+      ],
+      "research_pages": [
+        34
+      ],
+      "research_terms": [
+        "solar",
+        "renewable",
+        "capacity"
+      ]
+    },
+    {
+      "source_id": "cil_ar_fy26",
+      "title": "Coal India Integrated Annual Report FY2025-26 (official website redirect)",
+      "publisher": "Coal India Limited",
+      "source_class": "official_filing",
+      "source_type": "annual_report",
+      "publication_date": "2026-08-07",
+      "url": "https://www.coalindia.in/documents/14122/CIL_AR_2025-26.pdf",
+      "canonical_url": "https://d3u7ubx0okog7j.cloudfront.net/documents/CIL_AR_2025-26.pdf",
+      "local_path": "../coalindia_research_20261025/annual_fy26_official/sources/6be29201be42_29c0e63f.pdf",
+      "sha256": "6be29201be42be17fc57231e6b01eb6fab805b81d6110cc452787251af192685",
+      "issuer_submitted": true,
+      "derived_from": [],
+      "verified_by": "Codex automated original-document inspection; not human approval",
+      "verified_on": "2026-10-25",
+      "provenance": "Downloaded using normal bounded public_sources client; actual retrieval report retained",
+      "retrieval_report": "../coalindia_research_20261025/annual_fy26_official/retrieval_report.json",
+      "research_pages": [
+        76,
+        77,
+        81
+      ],
+      "research_terms": [
+        "solar",
+        "renewable",
+        "commission"
+      ]
+    },
+    {
+      "source_id": "rajya_sabha_2313",
+      "title": "Rajya Sabha Question 2313: Investments and timelines for Solar power Projects",
+      "publisher": "Ministry of Coal",
+      "source_class": "government_data",
+      "source_type": "parliament_reply",
+      "publication_date": "2024-12-16",
+      "url": "https://sansad.in/getFile/annex/266/AU2313_FjPHs1.pdf?source=pqars",
+      "canonical_url": "https://sansad.in/getFile/annex/266/AU2313_FjPHs1.pdf?source=pqars",
+      "local_path": "../coalindia_research_20261025/parliament_2024/sources/b82e4f0be8bf_6803d638.pdf",
+      "sha256": "b82e4f0be8bff9f398facbbce0f6a96c936ab7b4c1553fec28b69565064b0573",
+      "issuer_submitted": false,
+      "derived_from": [],
+      "verified_by": "Codex automated original-document inspection; not human approval",
+      "verified_on": "2026-10-25",
+      "provenance": "Downloaded using normal bounded public_sources client; actual retrieval report retained",
+      "retrieval_report": "../coalindia_research_20261025/parliament_2024/retrieval_report.json",
+      "lineage_note": "Ministry reply contains company-reported project status; do not assume independent corroboration of commissioning."
+    },
+    {
+      "source_id": "cil_ar_fy25",
+      "title": "Coal India Integrated Annual Report FY2024-25 (issuer CDN)",
+      "publisher": "Coal India Limited",
+      "source_class": "official_filing",
+      "source_type": "annual_report",
+      "publication_date": "2025-08-04",
+      "issuer_submitted": true,
+      "derived_from": [],
+      "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf",
+      "canonical_url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf",
+      "local_path": "../coalindia_research_20261025/annual_fy25/sources/0f896912be8f_517792dd.pdf",
+      "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+      "verified_by": "Codex automated original-document inspection; not human approval",
+      "verified_on": "2026-10-25",
+      "provenance": "Original issuer document; mirror host is not independent corroboration. Exact original bytes rehashed; retrieval report retained.",
+      "research_pages": [
+        70
+      ],
+      "research_terms": [
+        "solar",
+        "renewable",
+        "commission"
+      ]
+    },
+    {
+      "source_id": "rajya_sabha_117",
+      "title": "Rajya Sabha Question 117: Diversification of Coal CPSEs into renewable energy",
+      "publisher": "Ministry of Coal",
+      "source_class": "government_data",
+      "source_type": "parliament_reply",
+      "publication_date": "2025-03-10",
+      "url": "https://sansad.in/getFile/annex/267/AS117_JWOUki.pdf?source=pqars",
+      "canonical_url": "https://sansad.in/getFile/annex/267/AS117_JWOUki.pdf?source=pqars",
+      "local_path": "../coalindia_research_20261025/parliament_2025/sources/68c65f484ad9_29525bd9.pdf",
+      "sha256": "68c65f484ad92ee0652b2f6c17eb268ec98f6d967f7f6adfabc84e6904bbb536",
+      "issuer_submitted": false,
+      "derived_from": [],
+      "verified_by": "Codex automated original-document inspection; not human approval",
+      "verified_on": "2026-10-25",
+      "provenance": "Downloaded using normal bounded public_sources client; actual retrieval report retained",
+      "retrieval_report": "../coalindia_research_20261025/parliament_2025/retrieval_report.json",
+      "lineage_note": "Ministry reply contains company-reported project status; do not assume independent corroboration of commissioning."
+    },
+    {
+      "source_id": "cil_ar_fy25_filing",
+      "title": "FY2024-25 AGM notice and annual-report transmittal letter, 18 pages (issuer filing; Moneycontrol mirror)",
+      "publisher": "Coal India Limited",
+      "source_class": "official_filing",
+      "source_type": "agm_notice_and_transmittal",
+      "publication_date": "2025-08-04",
+      "url": "https://images.moneycontrol.com/backends/livefeed_pdf/Aug2025/04082025_32.pdf",
+      "canonical_url": "https://images.moneycontrol.com/backends/livefeed_pdf/Aug2025/04082025_32.pdf",
+      "local_path": "../coalindia_research_20261025/annual_fy25_exchange_copy/sources/41109105a6b1_080cfaf1.pdf",
+      "sha256": "41109105a6b1e3dabd4eec51371d56a70ac2867ccf0f59cd3efcc5ac997f09de",
+      "issuer_submitted": true,
+      "derived_from": [],
+      "verified_by": "Codex automated original-document inspection; not human approval",
+      "verified_on": "2026-10-25",
+      "provenance": "Issuer-origin filing mirrored by Moneycontrol; not independently authenticated exchange bytes",
+      "retrieval_report": "../coalindia_research_20261025/annual_fy25_exchange_copy/retrieval_report.json"
+    }
+  ],
+  "research_map": {
+    "path": "../coal_india_databasenew.json",
+    "role": "Unverified research leads; not evidence or accepted calculations"
+  },
+  "limitations": [
+    "CAG identified audit PDF currently returns HTTP404; not included as retrieved evidence.",
+    "NSE/BSE direct retrieval failed; errors retained.",
+    "Financial interpretation, date and scope reconciliation remain model-challenged; originals are not independent merely because hosts differ.",
+    "Operator-selected pages focus on the assigned research question; selected text is reparsed and matched to hash-pinned originals, not assumed financially verified."
+  ],
+  "reported_facts": [
+    {
+      "id": "solar_target",
+      "label": "Disclosed solar-capacity target",
+      "value": "3",
+      "unit": "GW",
+      "source_id": "cil_ar_fy25",
+      "page": 70,
+      "quote": "achieve 3 GW of solar capacity by FY 2027\u201328",
+      "period": "FY 2027\u201328",
+      "milestone": "future target"
+    },
+    {
+      "id": "installed_fy25",
+      "label": "Installed solar capacity, CIL and subsidiaries",
+      "value": "209.08",
+      "unit": "MW",
+      "source_id": "cil_ar_fy25",
+      "page": 70,
+      "quote": "Consequently, as of March 31, 2025, CIL\u2019s \ncumulative installed solar capacity stands at 209.08 \nMW, comprising 186 MW of ground-mounted and \n23.08 MW of rooftop solar projects.",
+      "period": "FY 2024\u201325",
+      "milestone": "installed"
+    },
+    {
+      "id": "ground_fy25",
+      "label": "Ground-mounted component",
+      "value": "186",
+      "unit": "MW",
+      "source_id": "cil_ar_fy25",
+      "page": 70,
+      "quote": "Consequently, as of March 31, 2025, CIL\u2019s \ncumulative installed solar capacity stands at 209.08 \nMW, comprising 186 MW of ground-mounted and \n23.08 MW of rooftop solar projects.",
+      "period": "FY 2024\u201325",
+      "milestone": "installed"
+    },
+    {
+      "id": "roof_fy25",
+      "label": "Rooftop component",
+      "value": "23.08",
+      "unit": "MW",
+      "source_id": "cil_ar_fy25",
+      "page": 70,
+      "quote": "Consequently, as of March 31, 2025, CIL\u2019s \ncumulative installed solar capacity stands at 209.08 \nMW, comprising 186 MW of ground-mounted and \n23.08 MW of rooftop solar projects.",
+      "period": "FY 2024\u201325",
+      "milestone": "installed"
+    },
+    {
+      "id": "ground_added",
+      "label": "Ground-mounted additions during FY2024\u201325",
+      "value": "114",
+      "unit": "MW",
+      "source_id": "cil_ar_fy25",
+      "page": 70,
+      "quote": "During FY 2024\u201325, CIL \nsuccessfully commissioned an additional 114 MW of \nground-mounted solar projects",
+      "period": "FY 2024\u201325",
+      "milestone": "commissioned additions"
+    },
+    {
+      "id": "roof_added",
+      "label": "Rooftop additions during FY2024\u201325",
+      "value": "12.11",
+      "unit": "MW",
+      "source_id": "cil_ar_fy25",
+      "page": 70,
+      "quote": "Rooftop \nsolar installations across various subsidiaries \ncontributed an additional 12.11 MW during the \nyear.",
+      "period": "FY 2024\u201325",
+      "milestone": "reported additions"
+    },
+    {
+      "id": "installed_fy26",
+      "label": "Installed renewable capacity reported for FY2025\u201326",
+      "value": "357",
+      "unit": "MW",
+      "source_id": "cil_ar_fy26",
+      "page": 81,
+      "quote": "Business Segment Milestones\nRenewable Energy 9.5 GW target by FY30\nInstalled RE Capacity 357 MW",
+      "period": "2025-26",
+      "milestone": "installed"
+    },
+    {
+      "id": "pipeline_fy26",
+      "label": "Renewable capacity under development",
+      "value": "523",
+      "unit": "MW",
+      "source_id": "cil_ar_fy26",
+      "page": 81,
+      "quote": "RE Capacity Under \nDevelopment\n523 MW",
+      "period": "2025-26",
+      "milestone": "under development"
+    },
+    {
+      "id": "khavda_commissioned",
+      "label": "Khavda portion commissioned, out of 300 MW",
+      "value": "200",
+      "unit": "MW",
+      "source_id": "cil_ar_fy26",
+      "page": 76,
+      "quote": "Coal India Limited has successfully commissioned \n200 MW out of the 300 MW solar power capacity at \nKhavda, Gujarat as of 15th July, 2026.",
+      "period": "15th July, 2026",
+      "milestone": "commissioned portion"
+    }
+  ],
+  "source_crosschecks": [
+    {
+      "label": "Installed solar components tie to the reported total",
+      "operation": "sum",
+      "fact_ids": [
+        "ground_fy25",
+        "roof_fy25"
+      ]
+    },
+    {
+      "label": "Solar additions reported during FY2024\u201325",
+      "operation": "sum",
+      "fact_ids": [
+        "ground_added",
+        "roof_added"
+      ]
+    }
+  ]
+}

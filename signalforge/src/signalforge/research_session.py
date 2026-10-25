@@ -125,7 +125,19 @@ class ResearchSessions:
                 stream.write(json.dumps(event) + "\n")
             self._save(folder, manifest)
         try:
-            self.executor(folder, manifest, self.config, update)
+            from .model_runtime import model_runtime
+            def record_model(event, selected, detail):
+                manifest.setdefault('model_stage_history', []).append({'at':now(), 'stage':manifest['stage'],
+                    'event':event, 'provider':selected.provider, 'model':selected.model, 'detail':detail})
+                manifest['model'] = {'provider':selected.provider, 'model':selected.model}
+                for item in manifest.get('stages', []):
+                    if item['name'] == manifest['stage']:
+                        item['model'] = manifest['model']
+                self._save(folder, manifest)
+            with model_runtime(self.config, record_model):
+                self.executor(folder, manifest, self.config, update)
+            if not manifest.get('investigation'):
+                finish_evidence_gap(folder, manifest, update, 'Execution stopped before a complete investigation; inspect the recorded stage and evidence gaps.', failed_stage=manifest['stage'])
         except Exception as error:
             # Exceptions from providers can contain credentials or request bodies:
             # record only the type and code locations, never message text.
@@ -154,16 +166,31 @@ def execute(folder, manifest, config, update, *, reuse_discovery=False):
             raise ValueError('Cannot reuse incomplete or mismatched discovery')
         update('discovery','Reusing completed search and retrieval audit; no discovery repeated.', search_execution='cached_completed_live_search')
     else:
-        from .groq_provider import discovery_provider
-        provider = discovery_provider(config,folder/'discovery_provider_audit')
-        update("discovery", f"Searching with {provider.name}; source candidates are unverified.", search_provider=provider.name)
-        report = discover(manifest["company"], manifest["prompt"], provider=provider,
-            budget=Budget(max_queries=1 if config.provider.strip().lower()=='groq' else 3, max_results=10, max_fetches=3, max_seconds=90, request_timeout=40),
-            output_dir=folder / "discovery", retrieve=True, registry_path=config.registry_path)
-    update("retrieval", "Bounded discovery and retrieval finished.",
+        from .catalog_intake import prepared_discovery
+        report = prepared_discovery(manifest['company'], manifest['prompt'], config, folder/'discovery')
+        if report is not None:
+            update('discovery', 'Operator-prepared original-source catalog selected; snapshots rehashed. No fresh online discovery claimed.',
+                   source_intake='cached_original_rechecked', search_provider='operator_source_catalog')
+        else:
+            report = live_discovery(folder, manifest, config, update)
+    update("retrieval", "Cached originals rehashed; no download performed." if report.get('execution_mode') == 'cached_original_intake' else "Bounded discovery and retrieval finished.",
            budget=report.get('budget',manifest.get('budget')),
            artifacts=["discovery/discovery_report.json"],
-           source_count=len(report["search_results"]), retrieval_status=report["retrieval_status"])
+           source_count=len(report["search_results"])+len(report.get('catalog_sources', [])), retrieval_status=report["retrieval_status"])
+    execute_evidence_and_models(folder, manifest, config, update)
+
+
+def live_discovery(folder, manifest, config, update):
+    from .source_discovery import discover, Budget
+    from .groq_provider import discovery_provider
+    provider = discovery_provider(config,folder/'discovery_provider_audit')
+    update("discovery", f"Searching with {provider.name}; source candidates are unverified.", search_provider=provider.name)
+    return discover(manifest["company"], manifest["prompt"], provider=provider,
+        budget=Budget(max_queries=1 if config.provider.strip().lower()=='groq' else 3, max_results=10, max_fetches=3, max_seconds=90, request_timeout=40),
+        output_dir=folder / "discovery", retrieve=True, registry_path=config.registry_path)
+
+
+def execute_evidence_and_models(folder, manifest, config, update):
     update("machine_evidence", "Checking retrieved PDFs against canonical issuer declarations and exact passages.")
     from .evidence_ingestion import load_registry, verify_company
     if verify_company(manifest["company"], load_registry(config.registry_path))[2] != "verified":
@@ -197,6 +224,10 @@ def execute(folder, manifest, config, update, *, reuse_discovery=False):
     evidence.mkdir()
     (evidence / "evidence.jsonl").write_text("".join(json.dumps(r) + "\n" for r in records))
     config = replace(config, evidence_dir=evidence, output_dir=folder)
+    execute_models(folder, manifest, config, update)
+
+
+def execute_models(folder, manifest, config, update):
     from .llm_client import model_configured, local_model_status
     if not model_configured(config):
         variable={'groq':'GROQ_API_KEY','xai':'XAI_API_KEY'}.get(config.provider.strip().lower(),'SIGNALFORGE_API_KEY')
@@ -236,6 +267,8 @@ def execute(folder, manifest, config, update, *, reuse_discovery=False):
     plan = r1(folder / "f1.json", folder / "r1.json", config)
     from .investigation import run_investigation, attach_planning_leads, write_report, write
     investigation = run_investigation(folder, manifest["company"], manifest["prompt"], plan, config, update)
+    from .source_facts import attach_source_facts
+    attach_source_facts(investigation, config)
     attach_planning_leads(investigation, plan)
     write(folder / "investigation.json", investigation)
     write_report(folder, investigation)
@@ -259,7 +292,8 @@ def record_investigation_outcome(manifest, result):
             'claim_validation':('real','Final claims passed schema and exact-passage checks; semantic verdicts remain separate.'),
             'review':('real','Skeptical semantic review completed; inspect per-claim verdicts and rejected conclusions.'),
             'report_generation':('real','Final adjudicated investigation JSON and Markdown saved.'),
-            'calculations':('real' if result.get('calculations') else 'not_applicable',
+            'calculations':('real' if result.get('calculations') or result.get('source_crosschecks') else 'not_applicable',
+                'Deterministic checks of reported source components completed; no financial-loss inference.' if result.get('source_crosschecks') else
                 'Deterministic source-backed calculations completed.' if result.get('calculations') else 'No calculation was proposed; no numeric financial conclusion generated.')}
         stages=manifest.setdefault('stages',[])
         for name,(execution,detail) in completed.items():
@@ -269,8 +303,17 @@ def record_investigation_outcome(manifest, result):
 
 
 def finish_evidence_gap(folder, manifest, update, reason, failed_stage=None):
-    from .investigation import evidence_gap_report
-    result = evidence_gap_report(folder, manifest["company"], manifest["prompt"], reason, failed_stage=failed_stage)
+    from .investigation import evidence_gap_report, collect_sources
+    from .source_facts import attach_source_facts
+    cfg=replace(local_config(),evidence_dir=folder/'eligible_evidence',
+        registry_path=folder/'run_registry.json' if (folder/'run_registry.json').is_file() else local_config().registry_path)
+    try:
+        sources,audit=collect_sources(folder,manifest['company'],manifest['prompt'],cfg)
+    except (ValueError,OSError,KeyError):
+        sources,audit=[],[]
+    result = evidence_gap_report(folder, manifest["company"], manifest["prompt"], reason,
+        sources=sources,decision_log=audit,failed_stage=failed_stage)
+    attach_source_facts(result,cfg)
     update("complete", "Evidence-gap report saved. No verified financial finding; inspect execution stages and limitations.", "completed",
         investigation=result, artifacts=list(dict.fromkeys(manifest.get("artifacts", []) + ["investigation.json", "investigation_report.md"])))
 
@@ -335,10 +378,11 @@ def cached_machine_records(folder, company, config, research_question=None):
                     attempt = {"source_id": source["source_id"], "catalog": str(catalog_path), "url": source.get("url"), "source_sha256": source["sha256"], "intake_mode": "cached_original_rechecked"}
                     report["attempts"].append(attempt)
                     try:
-                        records = create_machine_evidence(path, company, config, expected_sha256=source["sha256"], max_records=16, research_question=research_question)
+                        records = create_machine_evidence(path, company, config, expected_sha256=source["sha256"], max_records=16,
+                            pages=source.get('evidence_pages'), research_question=research_question)
                         attempt.update(status="eligible", record_count=len(records))
                     except Exception as error:
-                        attempt.update(status="rejected", error_type=type(error).__name__)
+                        attempt.update(status="rejected", error_type=type(error).__name__, reason=str(error)[:300])
                     if records:
                         break
             except (ValueError, OSError, TypeError, KeyError):

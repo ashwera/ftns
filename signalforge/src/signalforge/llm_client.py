@@ -90,6 +90,11 @@ def local_model_status(config, timeout=5):
 
 
 def generate_json(prompt, payload, config, *, schema=None, audit_path=None):
+    from .model_runtime import invoke
+    return invoke(config, lambda selected: _generate_json(prompt, payload, selected, schema=schema, audit_path=audit_path))
+
+
+def _generate_json(prompt, payload, config, *, schema=None, audit_path=None):
     provider = config.provider.strip().lower()
     if provider == "groq":
         from .groq_provider import structured_json
@@ -134,6 +139,14 @@ def generate_json(prompt, payload, config, *, schema=None, audit_path=None):
         raise LLMError("OpenAI-compatible Python SDK is required for model calls. Install it with: python3 -m pip install 'openai>=1.30,<3'") from e
     try:
         local = provider == "ollama"
+        from .model_runtime import using_fallback
+        if local and using_fallback():
+            from .groq_provider import bounded_payload
+            payload = bounded_payload(payload)
+            schema, options = local_quote_schema(schema, payload)
+            if options:
+                payload={**payload,'quotation_options':options}
+                prompt += '\nFor citations copy one quotation_options quote exactly, with its evidence_id. Never reconstruct table rows. Prefer one or two narrow claims; optional calculations may be empty. An unproved target variance is not a missed future deadline.'
         # Local inference: placeholder credential, no redundant retries, long single timeout.
         kwargs = {"api_key": "ollama" if local else config.api_key,
                   "timeout": LOCAL_TIMEOUT_SECONDS if local else 60, "max_retries": 0 if local else 2}
@@ -141,10 +154,20 @@ def generate_json(prompt, payload, config, *, schema=None, audit_path=None):
         if base_url: kwargs["base_url"] = base_url
         client = OpenAI(**kwargs)
         extra = {"reasoning_effort": "none"} if local else {}  # skip hidden chain-of-thought: speed
-        response = client.chat.completions.create(model=config.model, response_format={"type": "json_object"},
+        response = client.chat.completions.create(model=config.model, response_format=(
+            {"type":"json_schema", "json_schema":{"name":"signalforge", "schema":schema}} if local and schema else {"type": "json_object"}),
             messages=[{"role": "system", "content": prompt}, {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
-            **extra)
+            **({'max_tokens':2048} if local and using_fallback() else {}), **extra)
         content = response.choices[0].message.content
+        if audit_path and local:
+            path = Path(audit_path)
+            if path.exists():
+                previous = json.loads(path.read_text())
+                if previous.get('provider') == 'groq':
+                    path.with_name(path.stem+'_groq_failure.json').write_text(path.read_text())
+            Path(audit_path).write_text(json.dumps({"provider":"ollama", "model":config.model,
+                "api":"chat.completions", "sdk_retries":0, "request":{"prompt":prompt,'payload':payload,'schema':schema},
+                "usage":response.usage.model_dump(mode="json") if response.usage else None})+'\n')
         if not content: raise LLMError("Model returned an empty response")
         text = content.strip()
         if text.startswith("```"):  # some models fence JSON despite response_format
@@ -156,3 +179,31 @@ def generate_json(prompt, payload, config, *, schema=None, audit_path=None):
     except Exception as e:
         detail = redact(str(e), config)
         raise LLMError(f"Model request failed ({type(e).__name__}): {detail}") from None
+
+
+def local_quote_schema(schema, payload):
+    """Restrict local citation grammar to real short spans, never inventing text."""
+    import copy
+    import re
+    options=[]
+    for source in payload.get('sources',[]):
+        for passage in source.get('passages',[]):
+            text=passage['text']
+            sentences=re.split(r'(?<=[.!?])\s+',text)
+            candidates=[s for s in sentences if re.search(r'capacity|installed|commission|\bMW\b|\bGW\b',s,re.I)] or sentences
+            for sentence in candidates[:1]:
+                quote=sentence[:160]
+                if len(sentence)>160 and ' ' in quote:quote=quote.rsplit(' ',1)[0]
+                if len(quote)>=25 and quote in text:
+                    options.append({'evidence_id':passage['id'],'quote':quote})
+    if not options or schema is None:return schema,[]
+    quotes=list(dict.fromkeys(o['quote'] for o in options))
+    result=copy.deepcopy(schema)
+    def visit(value):
+        if isinstance(value,dict):
+            if 'quote' in value.get('properties',{}):value['properties']['quote']={'type':'string','enum':quotes}
+            for item in value.values():visit(item)
+        elif isinstance(value,list):
+            for item in value:visit(item)
+    visit(result)
+    return result, options

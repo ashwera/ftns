@@ -1,0 +1,1319 @@
+{
+  "meta": {
+    "company": "Coal India Limited (NSE: COALINDIA, BSE: 533278)",
+    "built_on": "2026-10-25",
+    "coverage": "Q1 FY22 (Apr-Jun 2021) to Q1 FY27 (Apr-Jun 2026), 21 quarters. Q2 FY27 results are not yet out (due by 14 Nov 2026). Annual data for FY22-FY26 is in 'annual_reports'.",
+    "units": "INR crore unless stated; MT = million tonnes; MW = megawatt (AC unless noted)",
+    "important_caveats": [
+      "Figures were compiled from press and exchange-filing coverage of each quarterly result, not by parsing the original BSE/NSE PDF filings. Verify against filings before relying on them for investment or audit work.",
+      "Coal India restated several prior-period figures (stripping-activity adjustment; and from Q4 FY26 a gross presentation of revenue from operations). Where both the as-originally-reported and the restated figure were found, both are stored.",
+      "Revenue series break: from Q4 FY26 revenue from operations is on a higher (gross) basis. Q4 FY25 comparative moved from 37,824.54 to 43,961.56 and Q1 FY26 from 35,842.19 to 42,919. Do not compare Q4 FY26 / Q1 FY27 revenue with older quarters without adjusting.",
+      "'pat_attributable_cr' is profit attributable to owners of the company; 'pat_consolidated_cr' is total consolidated profit (includes non-controlling interest) where the two were distinguishable. Outlets often mix the two, so small differences between sources are expected.",
+      "null = value not found in the sources reviewed.",
+      "Annual-report data: compiled from results, investor presentations, AGM summaries and press coverage, not from the annual report PDFs themselves. FY26 production and offtake are reversed in one source (see annual_reports.years[FY26]); the version used matches the other sources.",
+      "Dividend totals per year are derived from an aggregator's ex-date list, except FY23 and FY25 which are confirmed by Business Standard and FilingReader respectively."
+    ]
+  },
+  "quarterly_financials": [
+    {
+      "fiscal_year": "FY22",
+      "quarter": "Q1",
+      "period_end": "2021-06-30",
+      "revenue_from_operations_cr": null,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 3174,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "PAT up ~53% YoY; below analyst estimate of 3,805.",
+      "sources": [
+        "https://www.hellenicshippingnews.com/coal-india-q1fy22-results-net-profit-rises-53-yoy-to-rs-3174-cr-misses-estimates/"
+      ]
+    },
+    {
+      "fiscal_year": "FY22",
+      "quarter": "Q2",
+      "period_end": "2021-09-30",
+      "revenue_from_operations_cr": null,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 2932.73,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "Value is the year-ago comparative published with Q2 FY23 results. PBT 3,643.24; total expenses 20,424.52.",
+      "sources": [
+        "https://www.business-standard.com/amp/article/news-cm/coal-india-records-pat-of-rs-6-044-crore-in-q2-fy23-coal-production-up-11-yoy-122110800273_1.html"
+      ]
+    },
+    {
+      "fiscal_year": "FY22",
+      "quarter": "Q3",
+      "period_end": "2021-12-31",
+      "revenue_from_operations_cr": null,
+      "total_income_cr": 29086,
+      "pat_consolidated_cr": 4558.3,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "Total income is the year-ago comparative (Rs 290.86 bn) published with Q3 FY23 results.",
+      "sources": [
+        "https://www.outlookbusiness.com/amp/story/news/coal-india-q3-net-profit-rises-70--news-258400",
+        "https://powerline.net.in/2023/02/02/coal-india-records-a-profit-of-rs-77-19-billion-in-the-quarter-ended-december-2022/"
+      ]
+    },
+    {
+      "fiscal_year": "FY22",
+      "quarter": "Q4",
+      "period_end": "2022-03-31",
+      "revenue_from_operations_cr": 32706.77,
+      "total_income_cr": 34474.52,
+      "pat_consolidated_cr": 6692.94,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": 209,
+      "offtake_mt": 180.25,
+      "dividend_per_share_inr": 3,
+      "notes": "Net sales 30,046.25; PBT 9,335.27. Total income from the Q4 FY23 results comparative. FY22 PAT approx 17,378 (Rs 173.78 bn).",
+      "sources": [
+        "https://www.business-standard.com/amp/article/news-cm/coal-india-q4-pat-jumps-46-yoy-to-rs-6-693-cr-122052600349_1.html",
+        "https://alphastreet.com/india/coal-india-limited-q4-fy23-net-profit-down-by-18"
+      ]
+    },
+    {
+      "fiscal_year": "FY23",
+      "quarter": "Q1",
+      "period_end": "2022-06-30",
+      "revenue_from_operations_cr": null,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 8832.86,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "Results announced 10 Aug 2022. PAT roughly triple the year-ago 3,174.",
+      "sources": [
+        "https://etvbharat.com/english/business/top-news/coal-india-q1-profit-almost-triples-to-rs-8833-cr/na20220810185913223223393"
+      ]
+    },
+    {
+      "fiscal_year": "FY23",
+      "quarter": "Q2",
+      "period_end": "2022-09-30",
+      "revenue_from_operations_cr": 29838,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 6043.99,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": 139.228,
+      "offtake_mt": 154.533,
+      "dividend_per_share_inr": null,
+      "notes": "Net sales 27,538.59 (+29% YoY); PBT 7,687.48. Revenue from operations is the comparative given with Q2 FY24 results.",
+      "sources": [
+        "https://www.business-standard.com/amp/article/news-cm/coal-india-records-pat-of-rs-6-044-crore-in-q2-fy23-coal-production-up-11-yoy-122110800273_1.html",
+        "https://businessworld.in/index.php/article/coal-indias-q2-net-profit-soars-13-to-rs-6814-cr-498456"
+      ]
+    },
+    {
+      "fiscal_year": "FY23",
+      "quarter": "Q3",
+      "period_end": "2022-12-31",
+      "revenue_from_operations_cr": 35169.33,
+      "total_income_cr": 36754,
+      "pat_consolidated_cr": 7755.55,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "Consolidated sales 32,429.46. Revenue from operations is the comparative given with Q3 FY24 results.",
+      "sources": [
+        "https://psuwatch.com/latestnews/q3fy23-results-net-profit-of-cil-rises-by-70",
+        "https://www.outlookbusiness.com/corporate/coal-india-net-profit-rises-17-pc-to-rs-9069-cr-in-q3"
+      ]
+    },
+    {
+      "fiscal_year": "FY23",
+      "quarter": "Q4",
+      "period_end": "2023-03-31",
+      "revenue_from_operations_cr": 38152,
+      "total_income_cr": 40362.36,
+      "pat_consolidated_cr": 5527.62,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": 6875.07,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 4,
+      "notes": "PAT fell ~18% on wage provisions as originally reported; restated Q4 FY23 PAT of 6,875.07 appears as the comparative in Q4 FY24 results. FY23 original PAT ~28,125; restated ~31,723-31,763. Net sales 35,161.",
+      "sources": [
+        "https://alphastreet.com/india/coal-india-limited-q4-fy23-net-profit-down-by-18",
+        "https://www.business-standard.com/companies/news/cil-records-all-time-high-profit-in-fy23-declares-rs-4-per-share-dividend-123050700702_1.html",
+        "https://5paisa.com/news/coal-india-q4-fy2024-results-net-profit-increased-by-26percent"
+      ]
+    },
+    {
+      "fiscal_year": "FY24",
+      "quarter": "Q1",
+      "period_end": "2023-06-30",
+      "revenue_from_operations_cr": 35983,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 7941,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": 10528.03,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "Original PAT 7,941 (-10% YoY); restated 10,528.03 per Q1 FY25 comparative. One source gives the year-ago revenue as 35,893.21.",
+      "sources": [
+        "https://www.businesstoday.in/amp/latest/corporate/story/coal-india-q1-results-net-profit-declines-10-to-rs-7971-cr-393315-2023-08-08",
+        "https://www.business-standard.com/amp/markets/capital-market-news/coal-india-rallies-as-q1-pat-rises-to-rs-10-959-cr-coal-supplies-at-198-5-mt-124080100304_1.html"
+      ]
+    },
+    {
+      "fiscal_year": "FY24",
+      "quarter": "Q2",
+      "period_end": "2023-09-30",
+      "revenue_from_operations_cr": 32776,
+      "total_income_cr": 34760.3,
+      "pat_consolidated_cr": 6814,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": 8048.64,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": 173.73,
+      "dividend_per_share_inr": null,
+      "notes": "Original PAT 6,814 (+13% YoY); restated 8,048.64 per Q2 FY25 comparative. Offtake is the comparative from Q2 FY25 results.",
+      "sources": [
+        "https://businessworld.in/index.php/article/coal-indias-q2-net-profit-soars-13-to-rs-6814-cr-498456",
+        "https://www.angelone.in/news/share-market/coal-india-q2-fy25-earnings-interim-dividend-declared"
+      ]
+    },
+    {
+      "fiscal_year": "FY24",
+      "quarter": "Q3",
+      "period_end": "2023-12-31",
+      "revenue_from_operations_cr": 36153.97,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 9069.19,
+      "pat_attributable_cr": null,
+      "pat_restated_cr": 10253.48,
+      "ebitda_cr": null,
+      "production_mt": 198.994,
+      "offtake_mt": null,
+      "dividend_per_share_inr": null,
+      "notes": "Described as a record Q3 profit at the time; restated figure 10,253.48 is the Q3 FY25 comparative.",
+      "sources": [
+        "https://www.outlookbusiness.com/corporate/coal-india-net-profit-rises-17-pc-to-rs-9069-cr-in-q3",
+        "https://www.business-standard.com/amp/markets/capital-market-news/coal-india-q3-pat-slides-to-rs-8-505-cr-in-fy25-declares-dividend-of-rs-5-60-share-125012700866_1.html"
+      ]
+    },
+    {
+      "fiscal_year": "FY24",
+      "quarter": "Q4",
+      "period_end": "2024-03-31",
+      "revenue_from_operations_cr": 37410.4,
+      "total_income_cr": 39654.5,
+      "pat_consolidated_cr": 8682.2,
+      "pat_attributable_cr": 8640.45,
+      "pat_restated_cr": 8572.14,
+      "ebitda_cr": 11337,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 5,
+      "notes": "EBITDA margin 30.3%. Revenue comparative restated to 38,213.48 in Q4 FY25 results. FY24 PAT 37,369-37,402 depending on source (restated quarters sum to 37,402).",
+      "sources": [
+        "https://www.business-standard.com/amp/companies/results/coal-india-q4-results-consolidated-net-profit-rises-26-to-rs-8-682-crore-124050201082_1.html",
+        "https://5paisa.com/news/coal-india-q4-fy2024-results-net-profit-increased-by-26percent"
+      ]
+    },
+    {
+      "fiscal_year": "FY25",
+      "quarter": "Q1",
+      "period_end": "2024-06-30",
+      "revenue_from_operations_cr": 36464.61,
+      "total_income_cr": 39388,
+      "pat_consolidated_cr": 10959.47,
+      "pat_attributable_cr": 10943.55,
+      "pat_restated_cr": null,
+      "ebitda_cr": 15478,
+      "production_mt": null,
+      "offtake_mt": 198.5,
+      "dividend_per_share_inr": null,
+      "notes": "PBT 14,147.21. Offtake figure from a headline reference to 'coal supplies at 198.5 MT'.",
+      "sources": [
+        "https://www.business-standard.com/amp/markets/capital-market-news/coal-india-rallies-as-q1-pat-rises-to-rs-10-959-cr-coal-supplies-at-198-5-mt-124080100304_1.html"
+      ]
+    },
+    {
+      "fiscal_year": "FY25",
+      "quarter": "Q2",
+      "period_end": "2024-09-30",
+      "revenue_from_operations_cr": 30672.88,
+      "total_income_cr": 32177.92,
+      "pat_consolidated_cr": 6289.1,
+      "pat_attributable_cr": 6274.8,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": 167.71,
+      "dividend_per_share_inr": 15.75,
+      "notes": "Sales 27,271.30 (-9% YoY). Dividend of 15.75 is as stated by one outlet.",
+      "sources": [
+        "https://www.business-standard.com/markets/capital-market-news/coal-india-consolidated-net-profit-declines-21-86-in-the-september-2024-quarter-124102600156_1.html",
+        "https://www.angelone.in/news/share-market/coal-india-q2-fy25-earnings-interim-dividend-declared"
+      ]
+    },
+    {
+      "fiscal_year": "FY25",
+      "quarter": "Q3",
+      "period_end": "2024-12-31",
+      "revenue_from_operations_cr": 35779.78,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 8505.57,
+      "pat_attributable_cr": 8491.22,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": 202.014,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 5.6,
+      "notes": "Net sales 32,358.98.",
+      "sources": [
+        "https://www.business-standard.com/amp/markets/capital-market-news/coal-india-q3-pat-slides-to-rs-8-505-cr-in-fy25-declares-dividend-of-rs-5-60-share-125012700866_1.html"
+      ]
+    },
+    {
+      "fiscal_year": "FY25",
+      "quarter": "Q4",
+      "period_end": "2025-03-31",
+      "revenue_from_operations_cr": 37824.54,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 9604.02,
+      "pat_attributable_cr": 9592.53,
+      "pat_restated_cr": 9751.64,
+      "ebitda_cr": null,
+      "production_mt": 237.69,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 5.15,
+      "notes": "Original revenue 37,824.54; restated (gross basis) 43,961.56 per Q4 FY26 comparative. FY25 PAT original 35,302.10, restated 35,505.78. Production is the comparative in Q4 FY26 coverage.",
+      "sources": [
+        "https://www.business-standard.com/amp/companies/quarterly-results/coal-india-q4-results-net-profit-rises-12-to-9-593-revenue-down-1-125050701407_1.html",
+        "https://scanx.trade/stock-market-news/companies/coal-india-q4-fy26-results-consolidated-net-profit-rises-to-10-839-crore-despite-annual-decline/38906454"
+      ]
+    },
+    {
+      "fiscal_year": "FY26",
+      "quarter": "Q1",
+      "period_end": "2025-06-30",
+      "revenue_from_operations_cr": 35842.19,
+      "total_income_cr": 37458,
+      "pat_consolidated_cr": 8743.38,
+      "pat_attributable_cr": 8734.17,
+      "pat_restated_cr": null,
+      "ebitda_cr": 13165,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 5.5,
+      "notes": "Revenue restated to 42,919 (gross basis) in Q1 FY27 comparative. PBT 11,709. Production -3% and offtake -4% YoY. Results date 31 Jul 2025.",
+      "sources": [
+        "https://www.business-standard.com/markets/capital-market-news/coal-india-consolidated-net-profit-declines-20-22-in-the-june-2025-quarter-125080100151_1.html",
+        "https://scanx.trade/stock-market-news/earnings/coal-india-reports-20-drop-in-q1-profit-declares-5-50-interim-dividend/15525282"
+      ]
+    },
+    {
+      "fiscal_year": "FY26",
+      "quarter": "Q2",
+      "period_end": "2025-09-30",
+      "revenue_from_operations_cr": 30186.7,
+      "total_income_cr": 32327.16,
+      "pat_consolidated_cr": 4354.28,
+      "pat_attributable_cr": 4262.64,
+      "pat_restated_cr": null,
+      "ebitda_cr": 6716,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 10.25,
+      "notes": "Weakest quarter in the window. Minister attributed the fall to heavy September rainfall. EBITDA margin 22.2%. Some aggregators wrongly show 6,289 (that is Q2 FY25). Results date 29 Oct 2025.",
+      "sources": [
+        "https://www.business-standard.com/companies/quarterly-results/coal-india-q2fy26-results-profit-falls-32-at-4-262-cr-dividend-declared-125102900626_1.html",
+        "https://www.business-standard.com/markets/capital-market-news/coal-india-consolidated-net-profit-declines-30-76-in-the-september-2025-quarter-125102900737_1.html",
+        "https://www.motilaloswal.com/news/company-result/29624"
+      ]
+    },
+    {
+      "fiscal_year": "FY26",
+      "quarter": "Q3",
+      "period_end": "2025-12-31",
+      "revenue_from_operations_cr": 34924,
+      "total_income_cr": null,
+      "pat_consolidated_cr": 7166,
+      "pat_attributable_cr": 7157.45,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": null,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 5.5,
+      "notes": "A one-time provision for executive pay-scale upgradation was cited as a drag. 9M FY26 PAT 20,163 vs 25,709. Results date 12-13 Feb 2026.",
+      "sources": [
+        "https://www.kotakneo.com/news/market-news/coal-india-q3-fy26-results/",
+        "https://www.arihantcapital.com/company-information/companynewsdetails/25044010050",
+        "https://www.motilaloswal.com/news/stocks/116614"
+      ]
+    },
+    {
+      "fiscal_year": "FY26",
+      "quarter": "Q4",
+      "period_end": "2026-03-31",
+      "revenue_from_operations_cr": 46490.03,
+      "total_income_cr": 51617.75,
+      "pat_consolidated_cr": 10907.79,
+      "pat_attributable_cr": 10839.18,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": 239,
+      "offtake_mt": 199.14,
+      "dividend_per_share_inr": 5.25,
+      "notes": "REVENUE ON NEW GROSS BASIS (series break). PBT 14,626.75; other income 5,128 (+30%). FY26 PAT attributable 31,094.29 vs 35,505.78 (-12%). FY26 revenue shown as 168,400 on the new basis. Production 239 MT as reported in one source; treat as approximate. Results date 27-28 Apr 2026.",
+      "sources": [
+        "https://scanx.trade/stock-market-news/companies/coal-india-q4-fy26-results-consolidated-net-profit-rises-to-10-839-crore-despite-annual-decline/38906454",
+        "https://www.kotakneo.com/news/market-news/coal-india-q4-results-fy26-pat-rises-rs-5-25-dividend-27-april/",
+        "https://www.arihantcapital.com/company-information/companynewsdetails/25118010049"
+      ]
+    },
+    {
+      "fiscal_year": "FY27",
+      "quarter": "Q1",
+      "period_end": "2026-06-30",
+      "revenue_from_operations_cr": 46254.8,
+      "total_income_cr": 48295,
+      "pat_consolidated_cr": 8852.11,
+      "pat_attributable_cr": 8849.81,
+      "pat_restated_cr": null,
+      "ebitda_cr": null,
+      "production_mt": 169.63,
+      "offtake_mt": null,
+      "dividend_per_share_inr": 5.5,
+      "notes": "Revenue on new gross basis (vs 42,919 restated Q1 FY26, +7.8%). EBITDA margin compressed ~306 bps. Operating profit about 12,069 per one data aggregator. Capex 3,399. First energy-sales revenue (5.68 cr standalone solar segment). One aggregator (Univest) shows PAT 8,609 and prior-year revenue 35,842; excluded as inconsistent with the filing-based figures. Results date 27 Jul 2026.",
+      "sources": [
+        "https://www.freepressjournal.in/business/coal-india-net-profit-rises-07-to-8850-crore-in-q1-fy27-revenue-up-8",
+        "https://www.jmfinancialservices.in/market-news-and-insights/1713589",
+        "https://ticker.finology.in/discover/market-update/coal-india-q1-fy27-results",
+        "https://powerline.net.in/2026/07/29/coal-india-reports-rs-88-49-billion-net-profit-in-the-first-quarter-of-2026-27/"
+      ]
+    }
+  ],
+  "annual_summary": [
+    {
+      "fiscal_year": "FY22",
+      "pat_cr": 17378,
+      "basis": "as reported",
+      "source": "https://powerline.net.in/2023/05/08/coal-india-reports-profit-of-rs-281-25-billion-in-2022-23/"
+    },
+    {
+      "fiscal_year": "FY23",
+      "pat_cr": 28125,
+      "pat_restated_cr": 31723,
+      "basis": "original / restated",
+      "source": "https://www.moneyworks4me.com/mobile/news/index/id/649440/fincode/219300"
+    },
+    {
+      "fiscal_year": "FY24",
+      "pat_cr": 37369.13,
+      "revenue_from_operations_cr": 144762.42,
+      "basis": "as later reported in FY25 results",
+      "source": "https://www.business-standard.com/amp/companies/quarterly-results/coal-india-q4-results-net-profit-rises-12-to-9-593-revenue-down-1-125050701407_1.html"
+    },
+    {
+      "fiscal_year": "FY25",
+      "pat_cr": 35302.1,
+      "pat_restated_cr": 35505.78,
+      "revenue_from_operations_cr": 143368.92,
+      "ebitda_cr": 51640,
+      "basis": "original / restated",
+      "source": "https://www.business-standard.com/amp/companies/quarterly-results/coal-india-q4-results-net-profit-rises-12-to-9-593-revenue-down-1-125050701407_1.html"
+    },
+    {
+      "fiscal_year": "FY26",
+      "pat_attributable_cr": 31094.29,
+      "revenue_from_operations_cr_new_basis": 168400.29,
+      "capex_cr": 19607,
+      "capex_target_cr": 16000,
+      "basis": "FY26 audited consolidated; revenue on new gross basis",
+      "source": "https://scanx.trade/stock-market-news/companies/coal-india-q4-fy26-results-consolidated-net-profit-rises-to-10-839-crore-despite-annual-decline/38906454"
+    }
+  ],
+  "renewable_energy": {
+    "targets_history": [
+      {
+        "announced": "2015",
+        "target": "1,000 MW renewable capacity by March 2019 (to cut annual energy spend by about 55.5 cr)",
+        "status_by_2026": "Most projects rescheduled to 2027-28",
+        "source": "https://indianpsu.com/coal-india-commissions-200mw-khavda-solar-project-renewable-energy/"
+      },
+      {
+        "announced": "2017",
+        "target": "3,000 MW solar by 2024 (government mandate, 'Net Zero Energy Company')",
+        "status_by_2026": "CAG: only 122.49 MW (4.08%) installed at 31 Dec 2024; commissioning pushed to 2027-28",
+        "source": "https://www.theweek.in/wire-updates/business/2025/12/16/dcm48-biz-cag-coalindia-delays.html"
+      },
+      {
+        "announced": "Oct 2018 / Mar 2021",
+        "target": "NLC India 50:50 JV (Coal Lignite Urja Vikash Pvt Ltd): 3,000 MW solar + 2,000 MW thermal; est. 12,000-12,500 cr; 15-month solar deadline",
+        "status_by_2026": "No commissioned JV capacity found in the sources reviewed; CAG describes JVs with NTPC and NLC as intended 2,000 MW",
+        "source": "https://powerline.net.in/2021/03/24/nlc-india-coal-india-limited-to-invest-in-3-gw-of-solar-power-projects/"
+      },
+      {
+        "announced": "Dec 2024 (Parliament reply)",
+        "target": "3,000 MW by FY28 with phasing: 211.59 MW FY25, 697.85 MW FY26, 1,235 MW FY27, 785 MW FY28; 1,209 cr earmarked for 661 MW ground-mounted",
+        "status_by_2026": "Phasing implies ~909 MW added by end-FY26; actual far lower (see milestones)",
+        "source": "https://themachinemaker.com/news/coal-india-allocates-%e2%82%b91209-crore-to-solar-power-projects/"
+      },
+      {
+        "announced": "2026 (company filings and trade press)",
+        "target": "3 GW RE by FY2027-28 and 9.5 GW RE by FY2029-30",
+        "status_by_2026": "Reiterated in July and May 2026 coverage; 557 MW installed solar as of mid-July 2026",
+        "source": "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw"
+      },
+      {
+        "announced": "Jan-May 2026",
+        "target": "About 675 MW commissioned by end of FY26 (from ~247 MW in Dec 2025), including 100 MW Gujarat plant and 300 MW Khavda",
+        "status_by_2026": "Khavda slipped to July-August 2026; only one 100 MW plant plus part of Khavda delivered after the target date",
+        "source": "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/"
+      },
+      {
+        "announced": "May 2026 (UNVERIFIED)",
+        "target": "5 GW solar by 2030 with 524 MW under execution",
+        "status_by_2026": "Appears only on low-quality aggregator/spam domains; conflicts with the 9.5 GW RE figure. Do not rely on it.",
+        "source": "https://www.mycpd2.moh.gov.my/expert-time/Coal-India-Targets-5-GW-Solar-Capacity-by-2030-with-524-MW-Under-Execution-24-12284"
+      }
+    ],
+    "installed_solar_capacity_timeline_mw": [
+      {
+        "as_of": "2020-07",
+        "mw": 4.83,
+        "note": "Pre-expansion base",
+        "source": "https://powerline.net.in/2020/07/06/cil-nlc-india-plan-jv-to-develop-3000-mw-of-solar-power-capacity/"
+      },
+      {
+        "as_of": "2024-12-31",
+        "mw": 122.492,
+        "note": "CAG audit figure (CIL and subsidiaries)",
+        "source": "https://www.theweek.in/wire-updates/business/2025/12/16/dcm48-biz-cag-coalindia-delays.html"
+      },
+      {
+        "as_of": "2025-late",
+        "mw": 208.05,
+        "note": "Mercom Research: operational capacity, with ~510 MW under development; date approximate (reported Dec 2025)",
+        "source": "https://mercomindia.com/cag-pulls-up-coal-india-for-tardy-implementation-of-solar-projects"
+      },
+      {
+        "as_of": "2025-12-31",
+        "mw": 247,
+        "note": "Company said ~247 MW commissioned by Dec 2025 (CIL plus subsidiaries)",
+        "source": "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/"
+      },
+      {
+        "as_of": "2026-07-15",
+        "mw": 557,
+        "note": "Total after Khavda 200 MW certificate (implies ~357 MW before Khavda)",
+        "source": "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw"
+      }
+    ],
+    "commissioning_milestones": [
+      {
+        "project": "Bhadramali (Deesa), Banaskantha, Gujarat",
+        "capacity_mw": 100,
+        "event": "GEDA commissioning certificate",
+        "date": "2026-05-04",
+        "notes": "First-ever energy sales revenue (5.68 cr) in Q1 FY27 tied to this plant. One outlet describes it as 'Patan' and another says commissioned 'from March 2026'; the certificate date is 4 May 2026.",
+        "sources": [
+          "https://solarquarter.com/2026/05/06/coal-india-limited-commissions-100-mw-solar-power-plant-in-gujarats-banaskantha-district/",
+          "https://scanx.trade/stock-market-news/companies/coal-india-q1-results-capital-expenditure-rises-16-64-exceeds-quarterly-goals/46772031"
+        ]
+      },
+      {
+        "project": "Khavda Solar Park (GIPCL), Gujarat - tranche 1",
+        "capacity_mw": 200,
+        "of_total_mw": 300,
+        "event": "GEDA commissioning certificate",
+        "date": "2026-07-15",
+        "notes": "EPC by KPI Green Energy (200 MW AC / 269 MW DC done; remaining 100 MW AC / 136 MW DC pending). 25-year offtake with GUVNL.",
+        "sources": [
+          "https://www.energetica-india.net/news/kpi-green-energy-commissions-200-mw-solar-capacity-for-coal-india",
+          "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw"
+        ]
+      },
+      {
+        "project": "Khavda Solar Park - tranche 1 commercial operation",
+        "capacity_mw": 200,
+        "event": "Commercial operations date",
+        "date": "2026-08-08",
+        "notes": "Exchange filing dated 7 Aug 2026; effective 00:00 hrs 8 Aug 2026.",
+        "sources": [
+          "https://www.psuconnect.in/psu-news/coal-india-switches-on-200-mw-solar-capacity-at-khavda",
+          "https://solarquarter.com/2026/08/11/coal-india-starts-commercial-operations-of-200-mw-solar-project-in-gujarats-khavda/"
+        ]
+      },
+      {
+        "project": "Khavda Solar Park - tranche 2",
+        "capacity_mw": 100,
+        "event": "Pending",
+        "date": null,
+        "notes": "'In due course' / 'coming months'. Tender specified commissioning up to 31 Jan 2026 or transmission COD, whichever earlier (with a 12-month minimum from LoA and auto-extension if transmission is late).",
+        "sources": [
+          "https://www.pv-magazine-india.com/?p=8744",
+          "https://www.psuconnect.in/psu-news/coal-india-switches-on-200-mw-solar-capacity-at-khavda"
+        ]
+      }
+    ],
+    "pipeline_and_awards": [
+      {
+        "project": "Jalaun Solar Park, Uttar Pradesh (2 x 300 MW)",
+        "capacity_mw": 600,
+        "detail": "Award reported at ~2,831 cr with an 18-month completion schedule; one report attributes the award to SJVN and another to Bundelkhand Saur Urja (NHPC-UPNEDA JV). Date of award not stated in the retrieved text.",
+        "sources": [
+          "https://www.outlookbusiness.com/news/coal-india-bags-2831-cr-solar-power-project",
+          "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw"
+        ]
+      },
+      {
+        "project": "UPRVUNL JV (51:49, CIL:UPRVUNL)",
+        "capacity_mw": 500,
+        "detail": "MoU May 2025; JV agreement signed July 2026 covering ground and floating solar, pumped storage and wind.",
+        "sources": [
+          "https://www.energetica-india.net/news/coal-india-signs-jv-agreement-with-uprvunl-for-re-projects-in-uttar-pradesh",
+          "https://renewablewatch.in/2026/08/10/coal-india-commissions-200-mw-solar-power-capacity-in-gujarat/"
+        ]
+      },
+      {
+        "project": "Rajasthan JV (CIL Rajasthan Akshay Urja Ltd, incorporated 9 Jun 2025)",
+        "capacity_mw": 875,
+        "detail": "Staged project under examination as of Jan-May 2026.",
+        "sources": [
+          "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/",
+          "https://powerpeakdigest.com/coal-india-cil-solar-pv-dissolution/"
+        ]
+      },
+      {
+        "project": "Gorakhpur floating solar",
+        "capacity_mw": 20,
+        "detail": "Bids invited.",
+        "sources": [
+          "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/"
+        ]
+      },
+      {
+        "project": "BESS - Telangana (Choutuppal)",
+        "capacity_mw": 187.5,
+        "capacity_mwh": 750,
+        "detail": "Won Mar 2026 at 3.14 lakh INR/MW/month.",
+        "sources": [
+          "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw"
+        ]
+      },
+      {
+        "project": "BESS - GRIDCO Odisha (4 projects, 2 clusters)",
+        "capacity_mw": 80,
+        "capacity_mwh": 320,
+        "detail": "Letter of award June 2026; est. cost ~400 cr.",
+        "sources": [
+          "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw"
+        ]
+      },
+      {
+        "project": "Pumped storage JV with EDF India",
+        "capacity_mw": null,
+        "detail": "JV agreement announced Feb 2025; no capacity or timeline found.",
+        "sources": [
+          "https://solarquarter.com/2025/02/28/coal-india-limited-joins-hands-with-edf-india-to-develop-pumped-storage-projects-for-renewable-energy/"
+        ]
+      }
+    ],
+    "setbacks": [
+      {
+        "item": "CIL Solar PV Ltd (planned 4 GW integrated solar manufacturing SPV) struck off the register",
+        "date": "2026-05-11",
+        "note": "Ends the manufacturing plan; no replacement announced.",
+        "sources": [
+          "https://www.pv-magazine-india.com/2026/05/12/coal-india-scraps-solar-manufacturing-arm/",
+          "https://www.arihantcapital.com/company-information/companynewsdetails/25132010129"
+        ]
+      },
+      {
+        "item": "CAG: existing 85 MW cell and 200 MW module line minimally used because of limited raw material; module line cannot be upgraded",
+        "date": "2025-12",
+        "sources": [
+          "https://mercomindia.com/cag-pulls-up-coal-india-for-tardy-implementation-of-solar-projects"
+        ]
+      },
+      {
+        "item": "CAG: work orders issued for only 692.5 MW ground-mounted and 34.56 MW rooftop as of Dec 2024",
+        "date": "2025-12",
+        "sources": [
+          "https://www.outlookbusiness.com/planet/industry/cag-flags-delays-in-development-of-3000-mw-solar-projects-by-coal-india"
+        ]
+      }
+    ],
+    "capex_and_financials": {
+      "solar_capex_fy26_cr": {
+        "value": 961,
+        "note": "Reported as spent through January FY26 and above the 957 cr full-year target; roughly 2x the 412 cr in the same period of FY25. Full-year FY26 solar capex not found.",
+        "source": "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/"
+      },
+      "solar_capex_q1_fy27_cr": {
+        "value": 278,
+        "jv_investment_cr": 207,
+        "total_company_capex_cr": 3399,
+        "source": "https://nsearchives.nseindia.com/corporate/COALINDIA_28072026132930_Press_Release.pdf"
+      },
+      "capex_plan_fy27_cr": {
+        "value": 16500,
+        "note": "Lower than FY26 actual capex of 19,607 cr.",
+        "source": "https://psuwatch.com/amp/story/newsupdates/coal-indias-q1-capex-rises-1664-to-rs-3399-crore-beats-quarterly-target"
+      },
+      "solar_cost_per_mw_cr": {
+        "now": "4.0-4.5",
+        "earlier": "5.5-6.0",
+        "source": "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/"
+      },
+      "q1_fy27_energy_sales": {
+        "revenue_cr": 5.68,
+        "segment_result_cr": 1.56,
+        "note": "Standalone solar segment; first energy-sales revenue in company history.",
+        "sources": [
+          "https://www.psuconnect.in/financial/coal-india-q1-results-pat-8850-cr-dividend",
+          "https://scanx.trade/stock-market-news/companies/coal-india-q1-results-capital-expenditure-rises-16-64-exceeds-quarterly-goals/46772031"
+        ]
+      }
+    }
+  },
+  "analysis_calculations": {
+    "note": "Derived by the analyst from the figures above. Estimates are labelled as such.",
+    "pace_gap": {
+      "recent_pace_mw_per_month": {
+        "value": 23.5,
+        "formula": "(557 - 122.49) MW over 31 Dec 2024 to 15 Jul 2026 (~18.5 months)"
+      },
+      "required_for_3gw_by_mar_2028_mw_per_month": {
+        "value": 119,
+        "formula": "(3000 - 557) MW over ~20.5 months from 15 Jul 2026"
+      },
+      "required_for_9_5gw_by_mar_2030_mw_per_month": {
+        "value": 201,
+        "formula": "(9500 - 557) MW over ~44.5 months from 15 Jul 2026"
+      },
+      "acceleration_multiple_vs_recent": {
+        "for_3gw_fy28": 5.1,
+        "for_9_5gw_fy30": 8.6
+      }
+    },
+    "fy26_end_vs_guidance": {
+      "guided_mw": 675,
+      "estimated_actual_mw": 350,
+      "pct_of_guidance_estimate": 52,
+      "basis": "ESTIMATE: ~247 MW (Dec 2025) + 100 MW Bhadramali (Mar-May 2026); Khavda 200 MW only certified 15 Jul 2026."
+    },
+    "vs_dec_2024_phasing_plan": {
+      "planned_cumulative_end_fy26_mw": 909,
+      "estimated_actual_end_fy26_mw": 350,
+      "pct_of_plan_estimate": 38,
+      "basis": "Phasing of 211.59 + 697.85 MW; actual is an ESTIMATE (see above)."
+    },
+    "indicative_capex_to_hit_targets_cr": {
+      "to_3gw_fy28": {
+        "low": 9772,
+        "high": 10994,
+        "formula": "2,443 MW x 4.0-4.5 cr/MW (ESTIMATE; ground-mounted solar only)"
+      },
+      "to_9_5gw_fy30": {
+        "low": 35772,
+        "high": 40244,
+        "formula": "8,943 MW x 4.0-4.5 cr/MW (ESTIMATE; excludes storage, transmission and any JV debt)"
+      }
+    },
+    "materiality": {
+      "solar_share_of_q1_fy27_capex_pct": 8.2,
+      "solar_plus_jv_share_of_q1_fy27_capex_pct": 14.3,
+      "solar_revenue_share_of_q1_fy27_consolidated_revenue_pct": 0.012,
+      "bess_telangana_annual_capacity_payment_cr": {
+        "value": 70.7,
+        "formula": "3.14 lakh INR x 187.5 MW x 12 months (ESTIMATE of contracted capacity revenue once commissioned)"
+      }
+    },
+    "watch_items": [
+      "Q2 FY27 results (due by 14 Nov 2026): first full quarter of Khavda 200 MW (COD 8 Aug 2026) plus Bhadramali 100 MW.",
+      "Commissioning of the remaining 100 MW at Khavda and any revised SCOD.",
+      "Execution start and financing for Jalaun 600 MW, Rajasthan 875 MW and UPRVUNL 500 MW.",
+      "Whether the 3 GW FY28 target is formally revised in the FY26/FY27 annual report or by the coal ministry."
+    ]
+  },
+  "articles_and_announcements": [
+    {
+      "date": "2025-12-16",
+      "type": "audit",
+      "title": "CAG flags delays in development of 3,000 MW solar projects by Coal India (PTI)",
+      "url": "https://www.theweek.in/wire-updates/business/2025/12/16/dcm48-biz-cag-coalindia-delays.html",
+      "relevance": "Core evidence on target slippage: 122.492 MW installed vs 3,000 MW.",
+      "reliability": "High (wire service reporting CAG report)"
+    },
+    {
+      "date": "2025-12-18",
+      "type": "audit",
+      "title": "CAG Pulls Up Coal India for Tardy Implementation of Solar Projects (Mercom)",
+      "url": "https://mercomindia.com/cag-pulls-up-coal-india-for-tardy-implementation-of-solar-projects",
+      "relevance": "FY25 additions (114 MW ground + 12.11 MW rooftop), 208 MW operational plus ~510 MW under development, 9.5 GW target, underused manufacturing line.",
+      "reliability": "High (trade press; some figures behind paywall)"
+    },
+    {
+      "date": "2025-12",
+      "type": "audit",
+      "title": "CAG Flags Delays in Development of 3,000 MW Solar Projects (Outlook Business)",
+      "url": "https://www.outlookbusiness.com/planet/industry/cag-flags-delays-in-development-of-3000-mw-solar-projects-by-coal-india",
+      "relevance": "Work orders, 2027-28 commissioning, JV structure.",
+      "reliability": "High"
+    },
+    {
+      "date": "2024-12-19",
+      "type": "government announcement",
+      "title": "Coal India to invest Rs 12.09 bn in expanding solar capacity (Parliament reply)",
+      "url": "https://ssmb.in/2024/12/19/coal-india-to-invest-rs-12-09-billion-in-expanding-solar-capacity/",
+      "relevance": "Official year-by-year phasing toward 3 GW by FY28.",
+      "reliability": "High (ministerial reply, secondary report)"
+    },
+    {
+      "date": "2026-05-12",
+      "type": "corporate filing",
+      "title": "Coal India scraps solar manufacturing arm (pv magazine India)",
+      "url": "https://www.pv-magazine-india.com/2026/05/12/coal-india-scraps-solar-manufacturing-arm/",
+      "relevance": "Dissolution of CIL Solar PV, 4 GW manufacturing plan ended; restates 3 GW FY28 / 9.5 GW FY30 targets.",
+      "reliability": "High"
+    },
+    {
+      "date": "2026-05-22",
+      "type": "company disclosure",
+      "title": "Coal India spends Rs 961 crore on solar, surpasses FY26 capex target (Kotak Neo)",
+      "url": "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/",
+      "relevance": "Capex vs target, 247 MW by Dec 2025, 675 MW guidance for end-FY26, 2 GW pipeline, cost per MW.",
+      "reliability": "Medium-high (cites ET, Business Standard, The Hindu)"
+    },
+    {
+      "date": "2026-05-06",
+      "type": "commissioning",
+      "title": "Coal India commissions 100 MW solar plant in Banaskantha, Gujarat (SolarQuarter)",
+      "url": "https://solarquarter.com/2026/05/06/coal-india-limited-commissions-100-mw-solar-power-plant-in-gujarats-banaskantha-district/",
+      "relevance": "GEDA certificate 4 May 2026.",
+      "reliability": "Medium-high"
+    },
+    {
+      "date": "2026-07-16",
+      "type": "exchange filing",
+      "title": "Coal India commissions 200 MW solar capacity at Khavda (PSU Connect)",
+      "url": "https://www.psuconnect.in/psu-news/coal-india-commissions-200-mw-solar-capacity-at-khavda-gujarat",
+      "relevance": "Regulation 30 disclosure of the 15 Jul 2026 GEDA certificate.",
+      "reliability": "High (reports exchange filing)"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "trade press",
+      "title": "Coal India Commissions 200 MW at Khavda, Total Solar Capacity Reaches 557 MW (Energetica India)",
+      "url": "https://www.energetica-india.net/news/coal-india-commissions-200-mw-at-khavda-solar-project-total-solar-capacity-reaches-557-mw",
+      "relevance": "557 MW total, 9.5 GW FY30 target, BESS and JV wins, 25-year GUVNL offtake.",
+      "reliability": "High (read in full)"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "EPC contractor disclosure",
+      "title": "KPI Green Energy commissions 200 MW solar capacity for Coal India (Energetica India)",
+      "url": "https://www.energetica-india.net/news/kpi-green-energy-commissions-200-mw-solar-capacity-for-coal-india",
+      "relevance": "EPC view: 200 MW AC / 269 MW DC done, 100 MW AC / 136 MW DC remaining.",
+      "reliability": "High"
+    },
+    {
+      "date": "2026-08-08",
+      "type": "exchange filing",
+      "title": "Coal India switches on 200 MW solar capacity at Khavda (PSU Connect)",
+      "url": "https://www.psuconnect.in/psu-news/coal-india-switches-on-200-mw-solar-capacity-at-khavda",
+      "relevance": "Commercial operations from 8 Aug 2026.",
+      "reliability": "High (reports exchange filing)"
+    },
+    {
+      "date": "2026-07-28",
+      "type": "company press release",
+      "title": "Coal India's Capex Rises 16.64% in Q1 FY'27, Surpasses Quarterly Target (NSE filing)",
+      "url": "https://nsearchives.nseindia.com/corporate/COALINDIA_28072026132930_Press_Release.pdf",
+      "relevance": "Solar capex 278 cr and JV investment 207 cr in Q1 FY27; FY27 capex target 16,500 cr.",
+      "reliability": "Very high (primary document)"
+    },
+    {
+      "date": "2026-07-28",
+      "type": "results coverage",
+      "title": "Coal India Q1 FY27: first energy-sales revenue of 5.68 cr (ScanX)",
+      "url": "https://scanx.trade/stock-market-news/companies/coal-india-q1-results-capital-expenditure-rises-16-64-exceeds-quarterly-goals/46772031",
+      "relevance": "Financial footprint of solar in the P&L.",
+      "reliability": "Medium"
+    },
+    {
+      "date": "2026-07",
+      "type": "JV",
+      "title": "Coal India signs JV agreement with UPRVUNL for RE projects in Uttar Pradesh",
+      "url": "https://www.energetica-india.net/news/coal-india-signs-jv-agreement-with-uprvunl-for-re-projects-in-uttar-pradesh",
+      "relevance": "500 MW MoU converted to a 51:49 JV with solar, wind and pumped storage scope.",
+      "reliability": "High"
+    },
+    {
+      "date": "undated (2026)",
+      "type": "contract award",
+      "title": "Coal India bags Rs 2,831 cr solar power project (Outlook Business)",
+      "url": "https://www.outlookbusiness.com/news/coal-india-bags-2831-cr-solar-power-project",
+      "relevance": "600 MW Uttar Pradesh award, 18-month completion; award date and counterparty described differently across outlets.",
+      "reliability": "Medium"
+    },
+    {
+      "date": "2025-02-28",
+      "type": "JV",
+      "title": "Coal India joins hands with EDF India to develop pumped storage projects",
+      "url": "https://solarquarter.com/2025/02/28/coal-india-limited-joins-hands-with-edf-india-to-develop-pumped-storage-projects-for-renewable-energy/",
+      "relevance": "Storage ambition; no capacity or schedule disclosed.",
+      "reliability": "Medium-high"
+    },
+    {
+      "date": "2021-03-24",
+      "type": "JV",
+      "title": "NLC India-Coal India JV to invest in 3 GW of solar projects (Powerline)",
+      "url": "https://powerline.net.in/2021/03/24/nlc-india-coal-india-limited-to-invest-in-3-gw-of-solar-power-projects/",
+      "relevance": "Origin of the 3 GW JV plan (12,500 cr, 70:30 debt-equity).",
+      "reliability": "High"
+    },
+    {
+      "date": "undated (c. 2023-24)",
+      "type": "tender",
+      "title": "Coal India launches 300 MW solar EPC tender at Khavda (pv magazine India)",
+      "url": "https://www.pv-magazine-india.com/?p=8744",
+      "relevance": "Original commissioning window: up to 31 Jan 2026 or transmission COD.",
+      "reliability": "High"
+    },
+    {
+      "date": "2023-09-01",
+      "type": "sector target",
+      "title": "Indian coal and lignite firms set goal of 5,570 MW renewable capacity by 2030 (SolarQuarter)",
+      "url": "https://solarquarter.com/2023/09/01/indian-coal-and-lignite-firms-set-ambitious-goal-of-5570-mw-renewable-capacity-by-2030/",
+      "relevance": "Earlier, lower sector-level goal; shows target inflation to 9.5 GW.",
+      "reliability": "Medium"
+    },
+    {
+      "date": "2026-05-28",
+      "type": "UNVERIFIED aggregator",
+      "title": "Coal India Targets 5 GW Solar Capacity by 2030 with 524 MW Under Execution",
+      "url": "https://www.mycpd2.moh.gov.my/expert-time/Coal-India-Targets-5-GW-Solar-Capacity-by-2030-with-524-MW-Under-Execution-24-12284",
+      "relevance": "Claims 5 GW solar target and 524 MW under execution. Published on unrelated spam-like domains; not corroborated by any primary or reputable source.",
+      "reliability": "Low - excluded from calculations"
+    },
+    {
+      "date": "2026 (undated)",
+      "type": "analyst note",
+      "title": "Coal India capacity expansion offsets muted volume outlook (ICICI Securities via DSIJ)",
+      "url": "https://insights.dsij.in/hi/markets/reports/report-details/coal-india-ltd/44811",
+      "relevance": "Flags that a faster-than-expected rise in renewables' share is a risk to coal volumes.",
+      "reliability": "Medium"
+    },
+    {
+      "date": "2026-04-27",
+      "type": "company presentation",
+      "title": "Coal India Q4/FY26 investor presentation (NSE filing)",
+      "url": "https://nsearchives.nseindia.com/corporate/COALINDIA_27042026203552_Presentation_final.pdf",
+      "relevance": "FY26 vs FY25 EBITDA, PAT, net worth, 100 MW Patan plant grid-connected 31 Mar 2026, Rajasthan JV, one-off pay provision.",
+      "reliability": "Very high (primary), though the production/offtake labels look swapped"
+    },
+    {
+      "date": "2026-08",
+      "type": "annual report notice",
+      "title": "Coal India Integrated Annual Report FY2025-26 and 52nd AGM (InvestyWise)",
+      "url": "https://www.investywise.com/coal-india-limited-integrated-annual-report-for-fy-2025-26-and-record-date-for-final-dividend/",
+      "relevance": "AGM 31 Aug 2026, final dividend 5.25, FY26 highlights including 100 MW Patan solar.",
+      "reliability": "Medium-high"
+    },
+    {
+      "date": "2025-08",
+      "type": "AGM coverage",
+      "title": "Coal India posts strong financials, drives growth and diversification (FilingReader, FY25 AGM)",
+      "url": "https://filingreader.com/news-wire/mumbai/2025-08-28/coal-india-posts-strong-financials-drives-growth-and-diversification",
+      "relevance": "FY25 dividends (26.50 total), production vs target, CSR.",
+      "reliability": "Medium (AI-generated summary of AGM proceedings)"
+    },
+    {
+      "date": "2025",
+      "type": "results analysis",
+      "title": "CIL reports stable FY25 performance amid strategic diversification push (BigMint)",
+      "url": "https://www.bigmint.co/insights/detail/india-cil-reports-stable-fy25-performance-amid-strategic-diversification-push-645088",
+      "relevance": "FY25 production, offtake, net sales, EBITDA, 50 MW Nigahi plant.",
+      "reliability": "Medium-high"
+    },
+    {
+      "date": "2025-08",
+      "type": "analysis",
+      "title": "CIL's solar energy ambitions reveal a story of missed targets and mounting consequences (Down To Earth)",
+      "url": "https://www.downtoearth.org.in/energy/cils-solar-energy-ambitions-reveal-a-story-of-missed-targets-and-mounting-consequences",
+      "relevance": "Target history 2015-2024, 4.84 MW in Nov 2021, revised plans of Feb and Jul 2023, MNRE extensions.",
+      "reliability": "Medium-high (draws on the audit report)"
+    },
+    {
+      "date": "2024-04",
+      "type": "capex",
+      "title": "Coal India's capex at Rs 19,840 crore in FY24 (BloombergQuint)",
+      "url": "https://www.bloombergquint.com/business/coal-indias-capex-at-rs-19840-crore-in-fy24",
+      "relevance": "FY24 vs FY23 capex and target.",
+      "reliability": "High"
+    },
+    {
+      "date": "2022-04",
+      "type": "capex",
+      "title": "Coal India FY22 capex its highest ever (IIFL)",
+      "url": "https://indiainfoline.com/news/markets/coal-india-fy22-capex-its-highest-ever",
+      "relevance": "FY22 capex 14,834 vs target 14,695.",
+      "reliability": "Medium-high"
+    },
+    {
+      "date": "2026",
+      "type": "dividend history",
+      "title": "Coal India dividend history (StockeZee)",
+      "url": "https://www.stockezee.com/stocks/coalindia/dividend",
+      "relevance": "Ex-date table used to derive annual dividend totals.",
+      "reliability": "Medium (aggregator)"
+    }
+  ],
+  "annual_reports": {
+    "scope": "FY22 to FY26 (five annual reports). Each entry is compiled from the annual results, investor presentation, AGM coverage and news coverage of that year's annual report. The actual annual report PDFs were not parsed (the Ministry of Coal PDF was blocked and company PDFs were not retrievable), so line items marked null were not found.",
+    "years": [
+      {
+        "fiscal_year": "FY22",
+        "period": "2021-04-01 to 2022-03-31",
+        "production_mt": 622.6,
+        "production_yoy_pct": 4.4,
+        "offtake_mt": 661.9,
+        "offtake_yoy_pct": 15.3,
+        "power_sector_supply_mt": 540.4,
+        "net_sales_cr": 100000,
+        "net_sales_note": "Approximate ('Rs 1 trillion' per Business Standard FY23 coverage)",
+        "revenue_from_operations_cr": null,
+        "ebitda_cr": null,
+        "pat_consolidated_cr": 17378,
+        "pat_note": "Rs 173.78 bn per Powerline",
+        "net_worth_cr": 43817,
+        "net_worth_basis": "Total equity incl. minority interest (stockanalysis.com, INR 438,168 mn); not the company's own 'net worth' line",
+        "dividends_per_share_inr": {
+          "interim": [
+            9,
+            5
+          ],
+          "final": 3,
+          "total": 17,
+          "basis": "DERIVED from ex-date list (Dec 2021 9; Feb 2022 5; Aug 2022 final 3)"
+        },
+        "capex_cr": 14834,
+        "capex_target_cr": 14695,
+        "capex_note": "Highest ever at the time; second straight year above target",
+        "solar_installed_mw": 4.84,
+        "solar_installed_as_of": "2021-11",
+        "solar_breakdown": "2.83 MW rooftop + 2.01 MW ground-mounted (per audit Action Taken Note)",
+        "renewable_disclosures": [
+          "Apr 2021: CIL Navikarniya Urja Ltd formed to speed up solar projects",
+          "Mar 2021: 50:50 JV with NLC India (Coal Lignite Urja Vikash) for 3,000 MW solar plus thermal",
+          "Target outstanding: 3,000 MW solar by 2024 (set 2017)"
+        ],
+        "sources": [
+          "https://www.outlookindia.com/national/coal-india-s-production-rises-4-4-in-fy-22-news-189590",
+          "https://powerline.net.in/2023/05/08/coal-india-reports-profit-of-rs-281-25-billion-in-2022-23/",
+          "https://indiainfoline.com/news/markets/coal-india-fy22-capex-its-highest-ever",
+          "https://www.stockezee.com/stocks/coalindia/dividend",
+          "https://www.downtoearth.org.in/energy/cils-solar-energy-ambitions-reveal-a-story-of-missed-targets-and-mounting-consequences"
+        ]
+      },
+      {
+        "fiscal_year": "FY23",
+        "period": "2022-04-01 to 2023-03-31",
+        "production_mt": 703,
+        "production_note": "Record; beat 700 MT target. Implied ~703.2 MT from FY24 growth of 70.4 MT",
+        "offtake_mt": null,
+        "net_sales_cr": 127000,
+        "net_sales_yoy_pct": 27,
+        "revenue_from_operations_cr": 138252,
+        "revenue_note": "Comparative shown in FY24 results",
+        "ebitda_cr": null,
+        "pat_consolidated_cr": 28125,
+        "pat_restated_cr": 31723,
+        "pat_note": "Record at the time (+62%). Restated figure after stripping-activity adjustment (31,723 per moneyworks4me; 31,763 per 5paisa)",
+        "net_worth_cr": 61614,
+        "net_worth_basis": "Total equity incl. minority interest (stockanalysis.com)",
+        "dividends_per_share_inr": {
+          "interim": [
+            15,
+            5.25
+          ],
+          "final": 4,
+          "total": 24.25,
+          "basis": "Business Standard: 20.25 earlier tranches + 4 final; matches ex-date list"
+        },
+        "realisation_inr_per_tonne": {
+          "fsa_fy23": 1475,
+          "fsa_fy22": 1406,
+          "eauction_fy23": 4841,
+          "eauction_fy22": 1879
+        },
+        "capex_cr": 18619,
+        "capex_target_cr": null,
+        "capex_note": "FY23 figure as the comparative in FY24 capex coverage",
+        "solar_installed_mw": null,
+        "solar_installed_as_of": null,
+        "renewable_disclosures": [
+          "Dec 2022 / Jan 2023: MNRE granted blanket extensions of solar commissioning deadlines to March 2024",
+          "Feb 2023: management revised plan to 11.313 MW by FY23, 397.42 MW in FY24 and 1,443 MW in FY25 (total 1,851.73 MW), citing post-Covid PV module supply disruption",
+          "Installed capacity at March 2023 not found in sources reviewed"
+        ],
+        "sources": [
+          "https://www.business-standard.com/companies/news/cil-records-all-time-high-profit-in-fy23-declares-rs-4-per-share-dividend-123050700702_1.html",
+          "https://powerline.net.in/2023/05/08/coal-india-reports-profit-of-rs-281-25-billion-in-2022-23/",
+          "https://www.moneyworks4me.com/mobile/news/index/id/649440/fincode/219300",
+          "https://www.bloombergquint.com/business/coal-indias-capex-at-rs-19840-crore-in-fy24",
+          "https://www.downtoearth.org.in/energy/cils-solar-energy-ambitions-reveal-a-story-of-missed-targets-and-mounting-consequences"
+        ]
+      },
+      {
+        "fiscal_year": "FY24",
+        "period": "2023-04-01 to 2024-03-31",
+        "production_mt": 773.65,
+        "production_yoy_pct": 10,
+        "production_note": "Shortfall of ~6.4 MT versus an implied ~780 MT target (derived)",
+        "offtake_mt": 753.65,
+        "net_sales_cr": 130326,
+        "revenue_from_operations_cr": 144762.42,
+        "revenue_note": "As restated in FY25 results; originally reported ~142,324 (ICICIdirect)",
+        "ebitda_cr": 51793,
+        "pat_consolidated_cr": 37369.13,
+        "pat_note": "As reported in FY25 comparatives; 37,402 per 5paisa (sum of restated quarters)",
+        "net_worth_cr": 83582,
+        "net_worth_basis": "Total equity incl. minority interest (stockanalysis.com)",
+        "dividends_per_share_inr": {
+          "interim": [
+            15.25,
+            5.25
+          ],
+          "final": 5,
+          "total": 25.5,
+          "basis": "DERIVED from ex-date list"
+        },
+        "capex_cr": 19840,
+        "capex_target_cr": 16500,
+        "capex_note": "+6.5% on FY23; fourth straight year above target. CONFLICT: Ministry of Coal annual report table shows 23,475.41 cr for 2023-24 (basis unclear; may include other items). Company figure used as primary.",
+        "capex_ministry_of_coal_cr": 23475.41,
+        "solar_installed_mw": null,
+        "solar_installed_as_of": null,
+        "renewable_disclosures": [
+          "Mar 2024: coal sector (CIL, NLC, SCCL) announced goal of over 9 GW renewables by 2030",
+          "MNRE blanket extension to March 2024 expired with Coal India's 3 GW 2024 target far from met",
+          "Installed capacity at March 2024 not found in sources reviewed; CAG later reported 122.49 MW at Dec 2024"
+        ],
+        "sources": [
+          "https://www.theweek.in/wire-updates/business/2024/04/01/ccm1-biz-coal-india-output.html",
+          "https://www.bigmint.co/insights/detail/india-cil-reports-stable-fy25-performance-amid-strategic-diversification-push-645088",
+          "https://www.bloombergquint.com/business/coal-indias-capex-at-rs-19840-crore-in-fy24",
+          "https://www.coal.nic.in/sites/default/files/2025-02/chap5AnnualReport2025en2.pdf",
+          "https://www.newsonair.gov.in/coal-sector-aims-to-ramp-up-renewable-energy-capacity-to-over-9gw-by-2030"
+        ]
+      },
+      {
+        "fiscal_year": "FY25",
+        "period": "2024-04-01 to 2025-03-31",
+        "production_mt": 781.06,
+        "production_target_mt": 838,
+        "production_target_achievement_pct": 93.18,
+        "production_yoy_pct": 1,
+        "offtake_mt": 762.98,
+        "offtake_note": "BigMint shows 763.06",
+        "net_sales_cr": 126957,
+        "revenue_from_operations_cr": 143368.92,
+        "revenue_restated_new_basis_cr": 169177.37,
+        "ebitda_cr": 51640,
+        "ebitda_restated_new_basis_cr": 57139,
+        "pbt_cr": 46966.19,
+        "pat_consolidated_cr": 35302.1,
+        "pat_restated_cr": 35450,
+        "pat_attributable_restated_cr": 35505.78,
+        "pat_note": "35,302 originally; 35,450 consolidated and 35,505.78 attributable per the FY26 presentation/results",
+        "eps_inr": 57.37,
+        "eps_restated_inr": 57.61,
+        "net_worth_cr": 101720,
+        "net_worth_basis": "Company presentation (FY26 deck comparative). FilingReader's 99,105 is the June 2024 figure, not March 2025",
+        "dividends_per_share_inr": {
+          "interim": [
+            15.75,
+            5.6
+          ],
+          "final": 5.15,
+          "total": 26.5,
+          "basis": "FilingReader AGM summary (AI-generated) and ex-date list agree"
+        },
+        "csr_cr": 850.17,
+        "capex_cr": null,
+        "capex_budget_cr": 15500,
+        "capex_note": "Full-year FY25 capex not found. Ministry of Coal shows BE 15,500; April-November 2024 capex was reported up ~7.6% YoY without a figure in the retrieved text",
+        "solar_installed_mw": 122.492,
+        "solar_installed_as_of": "2024-12-31",
+        "solar_additions_in_year_mw": {
+          "ground_mounted": 114,
+          "rooftop": 12.11,
+          "projects": "24 MW CCL, 50 MW MCL (Nigahi, NCL largest at 50 MW per BigMint), 20 MW SECL, 20 MW BCCL"
+        },
+        "solar_note": "Mercom Research later put operational capacity at 208.05 MW with ~510 MW under development (Dec 2025)",
+        "renewable_disclosures": [
+          "Work orders only for 692.5 MW ground-mounted + 34.56 MW rooftop as of Dec 2024; completion pushed to 2027-28",
+          "Coal Gas India Ltd formed with GAIL (coal-to-SNG); CLEANZ MoU with IIT Hyderabad",
+          "MNRE told audit CIL planned a further 158 MW by 2025-26 and would study floating solar on abandoned mines and overburden dumps"
+        ],
+        "sources": [
+          "https://www.business-standard.com/amp/companies/quarterly-results/coal-india-q4-results-net-profit-rises-12-to-9-593-revenue-down-1-125050701407_1.html",
+          "https://www.bigmint.co/insights/detail/india-cil-reports-stable-fy25-performance-amid-strategic-diversification-push-645088",
+          "https://filingreader.com/news-wire/mumbai/2025-08-28/coal-india-posts-strong-financials-drives-growth-and-diversification",
+          "https://www.deccanherald.com/business/companies/coal-india-produces-781-mt-in-fy25-misses-target-3472278",
+          "https://nsearchives.nseindia.com/corporate/COALINDIA_27042026203552_Presentation_final.pdf",
+          "https://mercomindia.com/cag-pulls-up-coal-india-for-tardy-implementation-of-solar-projects"
+        ]
+      },
+      {
+        "fiscal_year": "FY26",
+        "period": "2025-04-01 to 2026-03-31",
+        "production_mt": 768.19,
+        "production_yoy_pct": -2,
+        "offtake_mt": 744.88,
+        "offtake_yoy_pct": -2,
+        "production_offtake_note": "The NSE investor presentation (as read) lists 744.88 as production and 768.19 as offtake, but its FY25 comparatives (762.98 / 781.06) are the reverse of the known FY25 figures (production 781.06, offtake 762.98). Resolved to match the FY25 pattern, Multibagg, FilingReader and the annual report summary ('production above 768 MT'). Verify in the annual report.",
+        "overburden_removal_mcum": 1980.09,
+        "revenue_from_operations_cr_new_basis": 168400.29,
+        "revenue_fy25_comparative_new_basis_cr": 169177.37,
+        "ebitda_cr": 53276,
+        "ebitda_yoy_pct": -7,
+        "ebitda_margin_pct_on_revenue": 32,
+        "pbt_cr": 41923.09,
+        "pat_consolidated_cr": 31071,
+        "pat_attributable_cr": 31094.29,
+        "pat_yoy_pct": -12,
+        "eps_inr": 50.46,
+        "net_worth_cr": 119102,
+        "net_worth_yoy_pct": 17,
+        "book_value_per_share_inr": 193.26,
+        "dividends_per_share_inr": {
+          "interim": [
+            5.5,
+            10.25,
+            5.5
+          ],
+          "final": 5.25,
+          "total": 26.5,
+          "basis": "DERIVED from ex-date list; final 5.25 recommended, ex-date 4 Sep 2026"
+        },
+        "one_off_items": [
+          "One-time provision of 1,458 cr for executive pay-scale upgradation",
+          "Rates and taxes up 3,635 cr, mainly the higher Jharkhand mineral-bearing land cess"
+        ],
+        "capex_cr": 19607,
+        "capex_target_cr": 16000,
+        "solar_capex_cr": 961,
+        "solar_capex_target_cr": 957,
+        "solar_capex_note": "961 cr was the figure through January 2026; full-year solar capex not found",
+        "solar_installed_mw": 247,
+        "solar_installed_as_of": "2025-12-31",
+        "renewable_disclosures": [
+          "Presentation: 100 MW solar plant at Patan/Bhadramali connected to grid as of 31 Mar 2026 (GEDA commissioning certificate followed on 4 May 2026)",
+          "CIL Rajasthan Akshay Urja Ltd incorporated 9 Jun 2025 (CIL 74%, RVUNL 26%); no capacity stated",
+          "Guided ~675 MW commissioned by end-FY26; Khavda 300 MW slipped to Jul-Aug 2026"
+        ],
+        "fy27_production_target_mt": 769.35,
+        "workforce_jan_2026": 214333,
+        "annual_report_events": {
+          "integrated_annual_report_published_for": "52nd AGM",
+          "agm_date": "2026-08-31"
+        },
+        "sources": [
+          "https://nsearchives.nseindia.com/corporate/COALINDIA_27042026203552_Presentation_final.pdf",
+          "https://www.multibagg.ai/market-pulse/articles/coal-india-fy26-results-targets-cmsiuql3902g60zlm4rqtb0h3",
+          "https://www.investywise.com/coal-india-limited-integrated-annual-report-for-fy-2025-26-and-record-date-for-final-dividend/",
+          "https://scanx.trade/stock-market-news/companies/coal-india-q4-fy26-results-consolidated-net-profit-rises-to-10-839-crore-despite-annual-decline/38906454",
+          "https://www.kotakneo.com/news/market-news/coal-india-solar-capex-961-crore-fy26/",
+          "https://www.angelone.in/news/stocks/coal-india-q1-fy27-results-capital-expenditure-grows-16-64-percent-to-rs-3399-crore"
+        ]
+      }
+    ],
+    "reconciliation_to_quarterly_pat": [
+      {
+        "fiscal_year": "FY22",
+        "sum_of_quarterly_pat_as_first_reported_cr": 17357.97,
+        "sum_using_restated_where_available_cr": 17357.97,
+        "comment": "Ties to annual 17,378 within ~20 cr."
+      },
+      {
+        "fiscal_year": "FY23",
+        "sum_of_quarterly_pat_as_first_reported_cr": 28160.02,
+        "sum_using_restated_where_available_cr": 29507.47,
+        "comment": "Ties to original annual 28,125 within ~35 cr."
+      },
+      {
+        "fiscal_year": "FY24",
+        "sum_of_quarterly_pat_as_first_reported_cr": 32506.39,
+        "sum_using_restated_where_available_cr": 37402.29,
+        "comment": "First-reported quarters (32,506) do not tie to the 37,369 annual because of the stripping-activity restatement; restated quarters (about 37,400) do."
+      },
+      {
+        "fiscal_year": "FY25",
+        "sum_of_quarterly_pat_as_first_reported_cr": 35358.16,
+        "sum_using_restated_where_available_cr": 35505.78,
+        "comment": "Ties to the original annual 35,302 within ~60 cr; restated annual is 35,450-35,506."
+      },
+      {
+        "fiscal_year": "FY26",
+        "sum_of_quarterly_pat_as_first_reported_cr": 31171.45,
+        "sum_using_restated_where_available_cr": 31171.45,
+        "comment": "Quarters use consolidated PAT; annual consolidated is 31,071 (attributable 31,094). The ~100 cr gap comes from outlets mixing consolidated and attributable figures for Q2."
+      }
+    ],
+    "dividend_ex_date_table_source": "https://www.stockezee.com/stocks/coalindia/dividend (aggregator citing NSE/BSE filings); annual dividend totals marked DERIVED are sums of these ex-date entries by the fiscal year of the profits they relate to",
+    "solar_capacity_vs_target_by_annual_report_mw": {
+      "FY22": {
+        "installed": 4.84,
+        "as_of": "2021-11",
+        "target": 3000,
+        "target_year": 2024
+      },
+      "FY23": {
+        "installed": null,
+        "plan_for_year": 11.313
+      },
+      "FY24": {
+        "installed": null,
+        "plan_for_year": 397.42
+      },
+      "FY25": {
+        "installed": 122.492,
+        "as_of": "2024-12-31",
+        "plan_for_year": 1443
+      },
+      "FY26": {
+        "installed": 247,
+        "as_of": "2025-12-31",
+        "guided_year_end": 675
+      }
+    }
+  }
+}

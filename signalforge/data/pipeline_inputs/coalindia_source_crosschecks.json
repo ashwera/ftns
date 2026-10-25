@@ -1,0 +1,93 @@
+{
+  "execution": "deterministic_original_source_crosscheck",
+  "status": "arithmetic_ties_to_reported_total",
+  "model_adjudication": "Separate from saved investigation claim verdicts; no financial-loss inference.",
+  "calculations": [
+    {
+      "label": "FY2025 installed capacity components",
+      "operation": "sum",
+      "unit": "MW",
+      "result": "209.08",
+      "formula": "186 + 23.08",
+      "basis": "CIL and subsidiaries, solar capacity, FY2024-25; same report and page.",
+      "inputs": [
+        {
+          "value": "186",
+          "quote": "186 MW of ground-mounted and \n23.08 MW of rooftop solar projects.",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        },
+        {
+          "value": "23.08",
+          "quote": "186 MW of ground-mounted and \n23.08 MW of rooftop solar projects.",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        }
+      ]
+    },
+    {
+      "label": "FY2025 additions",
+      "operation": "sum",
+      "unit": "MW",
+      "result": "126.11",
+      "formula": "114 + 12.11",
+      "basis": "CIL and subsidiaries, solar capacity, FY2024-25; same report and page.",
+      "inputs": [
+        {
+          "value": "114",
+          "quote": "successfully commissioned an additional 114 MW of \nground-mounted solar projects",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        },
+        {
+          "value": "12.11",
+          "quote": "Rooftop \nsolar installations across various subsidiaries \ncontributed an additional 12.11 MW during the \nyear.",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        }
+      ]
+    },
+    {
+      "label": "Opening capacity plus FY2025 additions",
+      "operation": "sum",
+      "unit": "MW",
+      "result": "209.08",
+      "formula": "82.97 + 114 + 12.11",
+      "basis": "CIL and subsidiaries, solar capacity, FY2024-25; same report and page.",
+      "inputs": [
+        {
+          "value": "82.97",
+          "quote": "FY 2023\u201324, CIL had an operational \nsolar capacity of 82.97 MW.",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        },
+        {
+          "value": "114",
+          "quote": "successfully commissioned an additional 114 MW of \nground-mounted solar projects",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        },
+        {
+          "value": "12.11",
+          "quote": "Rooftop \nsolar installations across various subsidiaries \ncontributed an additional 12.11 MW during the \nyear.",
+          "page": 70,
+          "source_id": "cil_ar_fy25",
+          "sha256": "0f896912be8f756b9836599c27ba48a082045290cb8390da6669e69f19f44600",
+          "url": "https://d3u7ubx0okog7j.cloudfront.net/documents/HYPERLINKED_Coal_India__IAR_2024-25_compressed_04.08.2025.pdf"
+        }
+      ]
+    }
+  ]
+}

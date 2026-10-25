@@ -2,6 +2,8 @@
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from urllib.parse import urlsplit
+from pathlib import Path
+import re
 from .research_session import ResearchSessions
 
 HOSTS = {"127.0.0.1:8765", "localhost:8765"}
@@ -57,6 +59,14 @@ def handler(sessions):
             prefix = "/api/agent/runs/"
             if not self.path.startswith(prefix) or urlsplit(self.path).query:
                 return self.reply(404, {"error": "Unknown endpoint"})
+            artifact = re.fullmatch(r'(research_\d{8}T\d{6}_[a-f0-9]{12})/artifacts/(f1\.json|r1\.json|investigation\.json|investigation_review\.json|machine_evidence_report\.json)',self.path[len(prefix):])
+            if artifact:
+                try:
+                    sessions.get(artifact[1])
+                    value=json.loads((sessions.root/artifact[1]/artifact[2]).read_text())
+                except (KeyError,OSError,ValueError):
+                    return self.reply(404,{'error':'Report artifact unavailable'})
+                return self.reply(200,value)
             try:
                 result = sessions.get(self.path[len(prefix):])
             except KeyError:

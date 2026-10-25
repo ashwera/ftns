@@ -6,6 +6,9 @@ outputs/*.json
 outputs/*.jsonl
 outputs/xai_preflight_*/
 outputs/groq*/
+outputs/demo_preflight_*/
+outputs/coalindia_*/
+data/coalindia_research_20261025/
 data/processed/
 web/node_modules/
 web/dist/

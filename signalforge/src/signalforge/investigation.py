@@ -111,6 +111,11 @@ def collect_sources(folder, company, question, config):
                 audit.append({"action":"Deduplicate source", "reason":src.get("url"), "outcome":"Repeated URL snapshot retained in retrieval audit, excluded from source count."})
                 continue
             pages = parsed(str(path), digest)
+            if src.get('research_pages'):
+                requested=src['research_pages']
+                if not isinstance(requested,list) or not requested or any(type(p) is not int or p<1 for p in requested) or not set(requested)<=set(p['page'] for p in pages):
+                    raise ValueError('Invalid operator research-page selection')
+                pages=[p for p in pages if p['page'] in requested]
             text_digest = hashlib.sha256(norm(" ".join(p["text"] for p in pages)).encode()).hexdigest()
             if text_digest in seen_text:
                 audit.append({"action":"Deduplicate source", "reason":src.get("url") or path.name, "outcome":"Repeated normalized document content; not a distinct corroborating source."})
@@ -133,7 +138,8 @@ def collect_sources(folder, company, question, config):
             # Rare question terms (e.g. a project name) outweigh repeated generic
             # words such as capacity in long reports. Avoid selecting unrelated tables.
             frequency = {w: sum(w in c[0] for c in chunks) for w in words}
-            ranked = [(sum(1 / frequency[w] for w in matched), page, offset, chunk)
+            focus=src.get('research_terms',[])[:10]
+            ranked = [(sum(1 / frequency[w] for w in matched) + 10*sum(bool(re.search(re.escape(term),chunk,re.I)) for term in focus), page, offset, chunk)
                       for matched, page, offset, chunk in chunks]
             ranked.sort(key=lambda x: -x[0])
             selected = ranked[:4]
@@ -152,6 +158,8 @@ def collect_sources(folder, company, question, config):
                 "catalog": src.get("catalog"), "passages": [
                     {"id": f"{sid}_p{page or 0}_{offset}", "page": page, "text": text}
                     for _, page, offset, text in selected]})
+            if src.get('research_pages'):
+                sources[-1]['passage_selection']='operator_selected_pages_rehashed_and_reparsed'
             seen.add(digest)
             seen_text.add(text_digest)
             if url_key:
@@ -456,7 +464,7 @@ def adjudicate(draft, review, sources):
     narrative = {k: draft[k] for k in ("headline", "summary", "why_it_matters", "timeline", "counterargument", "falsification")}
     if not accepted:
         narrative.update(headline="Investigation inconclusive: proposed conclusion did not pass review",
-            summary=review["conclusion_reason"],
+            summary="The proposed conclusion did not pass evidence review. Reported source figures and exact passages are retained below. No verified target failure, financial loss or misconduct was established; inspect the claim challenge and limitations.",
             why_it_matters=["Resolve the reviewed evidence gaps before drawing a financial conclusion."],
             proposed_headline=draft["headline"], proposed_summary=draft["summary"])
     return {**narrative,
@@ -553,6 +561,11 @@ def run_investigation(folder, company, question, plan, config, update, *, reuse_
                 while (folder / f"{original_stage}_{index:02d}").exists():
                     index += 1
                 stage = f"{original_stage}_{index:02d}"
+        from .catalog_intake import prepared_discovery
+        prepared = prepared_discovery(company, topic, config, folder/stage)
+        if prepared is not None:
+            log.append({'action':stage, 'reason':topic, 'outcome':'Reviewing the operator-prepared, rehashed source set for this question and counterevidence. No additional online search executed; proposed query remains unexecuted.'})
+            return
         update("investigation", f"Searching {stage}: {topic[:160]}")
         from .groq_provider import discovery_provider
         report = discover(company, topic, provider=discovery_provider(config,folder/(stage+'_provider_audit')),
@@ -615,8 +628,10 @@ novelty_established requires evidence comparing existing public knowledge; do no
     result = adjudicate(draft, review, sources)
     log.append({"action": "Adjudicate after challenge", "reason": review["conclusion_reason"],
                 "outcome": result["status"] + " / " + result["evidence_strength"]})
+    live = any(source.get('intake_mode') == 'live_retrieval' for source in sources)
     result.update(company=company, prompt=question, run_id=folder.name, decision_log=log,
-        execution="real", retrieval_performed=True, source_scope="Bounded live search plus explicitly labelled hash-pinned originals")
+        execution="real", retrieval_performed=live, source_scope=("Bounded live search plus explicitly labelled hash-pinned originals" if live else
+            "Operator-prepared hash-pinned originals, rechecked locally; no new online source discovery or download in this investigation"))
     write(folder / "investigation.json", result)
     write_report(folder, result)
     return result

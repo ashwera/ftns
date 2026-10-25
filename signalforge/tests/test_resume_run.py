@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from dataclasses import replace
 from unittest.mock import patch
 from signalforge.resume_run import resume
 from signalforge.resume_run import preserve_report
@@ -9,6 +10,28 @@ from signalforge.research_session import record_investigation_outcome
 
 
 class ResumeRunTests(unittest.TestCase):
+    def test_f1_recovery_uses_saved_evidence_directory_and_preserves_report(self):
+        from signalforge.config import Config
+        from signalforge.research_session import ResearchSessions
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);run_id='research_20261025T000000_123456abcdef';folder=root/run_id;folder.mkdir()
+            (folder/'eligible_evidence').mkdir();(folder/'eligible_evidence/evidence.jsonl').write_text('{}\n')
+            (folder/'manifest.json').write_text(json.dumps({'run_id':run_id,'company':'Example Limited','prompt':'question','status':'completed','stage':'complete','stages':[],'events':[],'investigation':{'report_type':'evidence_gap'}}))
+            (folder/'investigation.json').write_text('{"report_type":"evidence_gap"}')
+            cfg=replace(Config(),provider='ollama')
+            sessions=ResearchSessions(root=root,config=cfg)
+            def execute(f,m,c,u):
+                self.assertEqual(c.evidence_dir,folder/'eligible_evidence')
+                self.assertEqual(c.output_dir,folder)
+                u('complete','test model executor','completed',investigation={'report_type':'evidence_gap'})
+            with patch('signalforge.resume_run.ResearchSessions',return_value=sessions), \
+                 patch('signalforge.resume_run.load_evidence_ids',return_value={'real_evidence'}), \
+                 patch('signalforge.evidence_ingestion.verify_company',return_value=('Example Limited','TEST','verified')), \
+                 patch('signalforge.research_session.execute_models',side_effect=execute):
+                result=resume(run_id,config=cfg,retry_f1=True)
+            self.assertEqual(result['status'],'completed')
+            self.assertTrue(list((folder/'recovery_history').glob('*/investigation.json')))
+
     def test_prior_report_is_preserved_before_provider_recovery(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder=Path(tmp)

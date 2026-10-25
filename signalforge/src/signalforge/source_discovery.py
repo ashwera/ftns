@@ -117,7 +117,8 @@ def build_queries(company, topic, domains=(), date_window=None, evidence_gaps=()
             raise ValueError("Date window start is after end")
         suffix = f" after:{start - dt.timedelta(days=1)} before:{end + dt.timedelta(days=1)}"
     # Short brand phrases avoid engines collapsing long legal names to 'Power'.
-    brand = re.sub(r"\b(limited|ltd|company|of|india|inc|plc|private|pvt)\b", " ", company, flags=re.I)
+    brand = re.sub(r"\bof\s+india\b", " ", company, flags=re.I)
+    brand = re.sub(r"\b(limited|ltd|company|of|inc|plc|private|pvt)\b", " ", brand, flags=re.I)
     brand = " ".join(brand.split()) or company.strip()
     brand = _compact_generic_brand(brand)
     base = json.dumps(brand)
@@ -585,8 +586,12 @@ def company_relevance(result, company, issuer_domains=()):
     legal = {"limited", "ltd", "corporation", "corp", "inc", "incorporated", "company",
              "co", "plc", "llc", "india", "indian", "of", "the", "and", "private", "pvt"}
     generic = legal | {"power", "grid", "energy", "electric", "electricity", "national",
-                       "holdings", "group", "international", "industries", "services"}
+                       "holdings", "group", "international", "industries", "services", "coal"}
     brand_words = [w for w in words if w not in legal]
+    # Preserve a jurisdiction when it distinguishes a generic-sector issuer.
+    # 'Coal India' cannot be reduced to 'coal', nor rejected on coalindia.in.
+    if "india" in words and "of" not in words:
+        brand_words = [w for w in words if w == "india" or w not in legal]
     distinctive = {w for w in words if w not in generic and len(w) >= 3}
     text = str(result.get("title", "")) + " " + p.hostname + " " + urllib.parse.unquote(p.path)
     tokens = re.findall(r"[a-z0-9]+", text.casefold())
