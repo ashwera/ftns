@@ -84,6 +84,15 @@ class InvestigationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             check_citation({'evidence_id':'a1','quote':'Unit 3 capacity is not 660 MW'}, self.evidence)
 
+    def test_exact_short_quote_gets_actionable_length_error_not_mismatch(self):
+        sources = [{'id': 's', 'passages': [{'id': 'p', 'text': '15 MTY Capacity 68.5% \nComplete'}]}]
+        evidence = evidence_map(sources)
+        with self.assertRaisesRegex(ValueError, r'too short \(14 normalized characters; minimum 15\)'):
+            check_citation({'evidence_id': 'p', 'quote': '68.5% Complete'}, evidence)
+        check_citation({'evidence_id': 'p', 'quote': '15 MTY Capacity 68.5% Complete'}, evidence)
+        with self.assertRaisesRegex(ValueError, 'exact contiguous span'):
+            check_citation({'evidence_id': 'p', 'quote': '15 MTY Capacity 69.5% Complete'}, evidence)
+
     def test_decimal_calculation_requires_real_operands(self):
         spec={'label':'Same capacity ratio','operation':'ratio_percent','unit':'%','basis':'same unit',
               'inputs':[{'value':'660','evidence_id':e,'quote':'Unit 3 capacity is 660 MW'} for e in ['a1','b1']]}
