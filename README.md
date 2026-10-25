@@ -3,6 +3,15 @@
 SignalForge is a local financial research application for the Energy, Power & Renewables contest track. The research service connects company onboarding, source discovery, eligible original-PDF evidence, F1 angle selection, R1 planning, bounded investigation, counterevidence search and a cited report. The anonymous NTPC quote export is historical dataset context, not evidence for another company's operations.
 
 For the current machine, provider status, measured tests, live-run outcome and demo/recovery commands, start with [ARSHIA_DEMO_HANDOVER.md](ARSHIA_DEMO_HANDOVER.md). Earlier reports below describe their dated runs and do not establish current readiness.
+**25 October demo handover:** [Arshia's startup, unfamiliar-company workflow and recovery guide](signalforge/DEMO_HANDOVER.md).
+The live application now connects discovery, issuer onboarding, policy-eligible
+evidence, F1/R1, investigation, counterevidence search, model challenge and a final
+report. Insufficient evidence produces an explicit evidence-gap report. A terminal
+report can record incomplete model stages; inspect its execution record. F1's
+deterministic planning fallback is labelled separately from model ranking and
+financial findings. The historical implementation notes below describe earlier
+milestones and are superseded by the handover where they differ.
+
 
 ## Current status
 

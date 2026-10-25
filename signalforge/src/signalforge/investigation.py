@@ -96,7 +96,7 @@ def collect_sources(folder, company, question, config):
                         "source_class": "unverified", "intake_mode": "live_retrieval"})
     words = {w for w in re.findall(r"[a-z]{4,}", question.lower()) if w not in {
         "whether", "company", "limited", "which", "their", "sources", "research", "evidence", "with", "from"}}
-    sources, seen = [], set()
+    sources, seen, seen_urls, seen_text = [], set(), set(), set()
     for src in candidates:
         digest = src["sha256"]
         if digest in seen:
@@ -106,7 +106,15 @@ def collect_sources(folder, company, question, config):
             # Rehash even when parsed pages are cached; changed files fail closed.
             if path.stat().st_size > 64 * 1024 * 1024 or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
                 raise ValueError("Snapshot hash or size failed")
+            url_key = (src.get("url") or "").split("#", 1)[0].replace("//www.", "//", 1)
+            if url_key and url_key in seen_urls:
+                audit.append({"action":"Deduplicate source", "reason":src.get("url"), "outcome":"Repeated URL snapshot retained in retrieval audit, excluded from source count."})
+                continue
             pages = parsed(str(path), digest)
+            text_digest = hashlib.sha256(norm(" ".join(p["text"] for p in pages)).encode()).hexdigest()
+            if text_digest in seen_text:
+                audit.append({"action":"Deduplicate source", "reason":src.get("url") or path.name, "outcome":"Repeated normalized document content; not a distinct corroborating source."})
+                continue
             if src["intake_mode"] == "live_retrieval":
                 from .source_discovery import company_relevance
                 if not company_relevance({"url": "https://source-content.example/", "title": " ".join(p["text"] for p in pages)}, canonical)[0]:
@@ -145,6 +153,9 @@ def collect_sources(folder, company, question, config):
                     {"id": f"{sid}_p{page or 0}_{offset}", "page": page, "text": text}
                     for _, page, offset, text in selected]})
             seen.add(digest)
+            seen_text.add(text_digest)
+            if url_key:
+                seen_urls.add(url_key)
         except Exception as error:
             audit.append({"action": "Check source snapshot", "reason": src.get("url") or path.name,
                           "outcome": f"Excluded: {type(error).__name__}"})
@@ -628,10 +639,43 @@ def write_report(folder, result):
         lines += [f"> {q['quote']}\n\nPassage: {q['evidence_id']}" for q in claim.get("citations", [])]
     lines += ["## Counterargument", result["counterargument"]["text"], "## Falsification", result["falsification"], "## Limitations"]
     lines += [f"- {x}" for x in result["limitations"]]
+    lines += ["## Research leads — planning only, not verified financial findings"]
+    for lead in result.get("research_leads", []):
+        lines += [lead["question"], f"> {lead['citation']['quote']}", f"Passage: {lead['citation']['evidence_id']}; confidence {lead['confidence']}; lineage {lead['lineage']}",
+                  lead["why"], f"Counterargument: {lead['counterargument']}", f"Required evidence: {lead['required_evidence']}"]
     lines += ["## Source register"]
     for source in result["sources"]:
         lines += [f"- {source['id']}: {source['title']}; lineage {source['lineage']}; intake {source['intake_mode']}; SHA-256 {source['sha256']}; URL {source.get('url') or 'unavailable'}"]
     (folder / "investigation_report.md").write_text("\n\n".join(lines) + "\n")
+
+
+def attach_planning_leads(result, plan):
+    """Show source-grounded research questions separately from accepted claims."""
+    evidence = evidence_map(result.get("sources", []))
+    leads = []
+    for pid, (source, passage) in evidence.items():
+        if not passage.get("origin_evidence_id"):
+            continue
+        text = norm(passage["text"])
+        # Prefer an actual project/relationship disclosure to broad market
+        # capacity or national renewable targets mentioned in an issuer report.
+        match = re.search(r"commission|related party|joint venture", text, re.I)
+        if not match:
+            continue
+        start = text.rfind(" ", 0, max(0, match.start()-80)) + 1
+        end = text.find(" ", min(len(text), start+240))
+        quote = text[start:end if end != -1 else len(text)]
+        citation = {"evidence_id":pid, "quote":quote}
+        check_citation(citation, evidence)
+        leads.append({"question":plan.get("hypothesis", "Reconcile the disclosed project milestones on a consistent reporting basis."),
+            "citation":citation, "date":source.get("publication_date"), "lineage":source["lineage"],
+            "confidence":"Weak", "why":"This exact issuer passage gives a concrete disclosure to check; research planning does not establish a financial discrepancy.",
+            "counterargument":plan.get("alternative_explanation", "Timing, scope or definitions may explain the apparent difference."),
+            "required_evidence":"Dated issuer updates and independently attributed regulator/operator records for the same project, unit and period."})
+        if len(leads) == 3:
+            break
+    result["research_leads"] = leads
+    return result
 
 
 def run_investigation(folder, company, question, plan, config, update):
@@ -642,8 +686,16 @@ def run_investigation(folder, company, question, plan, config, update):
         if checkpoint.is_file():
             report = json.loads(checkpoint.read_text())
             if report.get("company") == company and any(a.get("action") == "discovery_stopped" for a in report.get("action_log", [])):
-                log.append({"action": stage, "reason": topic, "outcome": "Resumed using the existing completed live search and saved retrieval audit."})
-                return
+                if report.get("topic") == topic:
+                    log.append({"action": stage, "reason": topic, "outcome": "Resumed using the existing completed live search and saved retrieval audit."})
+                    return
+                # A new research question cannot be represented as an already
+                # completed search. Preserve the old report in its own folder.
+                index = 2
+                original_stage = stage
+                while (folder / f"{original_stage}_{index:02d}").exists():
+                    index += 1
+                stage = f"{original_stage}_{index:02d}"
         update("investigation", f"Searching {stage}: {topic[:160]}")
         report = discover(company, topic, provider=BingRSSSearch(),
             budget=Budget(max_queries=2, max_results=8, max_fetches=3, max_seconds=65, request_timeout=20),

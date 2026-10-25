@@ -268,11 +268,24 @@ def execute(folder, manifest, config, update):
         return
     update("r1", "Preparing R1 research plan; a plan is not a verified finding.")
     plan = r1(folder / "f1.json", folder / "r1.json", config)
-    from .investigation import run_investigation
+    from .investigation import run_investigation, attach_planning_leads, write_report, write
     investigation = run_investigation(folder, manifest["company"], manifest["prompt"], plan, config, update)
+    attach_planning_leads(investigation, plan)
+    write(folder / "investigation.json", investigation)
+    write_report(folder, investigation)
+    record_investigation_outcome(manifest, investigation)
     update("complete", f"Investigation finished: {investigation['status']} / {investigation['evidence_strength']}. Inspect the claim checks and limitations.", "completed",
            investigation=investigation,
-           artifacts=manifest["artifacts"] + ["eligible_evidence/evidence.jsonl", "f1.json", "r1.json", "investigation.json", "investigation_review.json", "investigation_report.md"])
+           artifacts=list(dict.fromkeys(manifest["artifacts"] + [p for p in ["eligible_evidence/evidence.jsonl", "f1.json", "r1.json", "investigation.json", "investigation_review.json", "investigation_report.md"] if (folder / p).is_file()])))
+
+
+def record_investigation_outcome(manifest, result):
+    if result.get("report_type") == "evidence_gap":
+        for stage in manifest.get("stages", []):
+            if stage["name"] == "investigation":
+                stage.update(execution="failed" if result.get("failed_stage") else "blocked", detail=result["summary"])
+            if stage["name"] == "adjudication":
+                stage.update(execution="deterministic_evidence_gap", detail="No financial conclusion accepted; semantic model review not completed.")
 
 
 def finish_evidence_gap(folder, manifest, update, reason, failed_stage=None):
@@ -298,7 +311,9 @@ def machine_records(folder, company, config, research_question=None):
     records = []
     report = json.loads((folder / "discovery" / "discovery_report.json").read_text())
     pinned = {}
-    for hit in report.get("search_results", []):
+    for hit in report.get("search_results", []) + report.get("fallback_candidates", []):
+        if hit.get("discovery_tier") and not any(x.get("status") == "content_relevant_unverified_lead" for x in hit.get("content_inspection", [])):
+            continue
         for source in hit.get("retrieval_report", {}).get("sources", []):
             if source.get("retrieval_status") == "retrieved":
                 pinned[str(Path(source["saved_path"]).resolve())] = source

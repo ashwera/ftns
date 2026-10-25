@@ -6,8 +6,8 @@ import shutil
 import uuid
 
 from .config import ROOT
-from .investigation import run_investigation
-from .research_session import ResearchSessions, local_config, now, execute as execute_from_intake
+from .investigation import run_investigation, attach_planning_leads, write, write_report
+from .research_session import ResearchSessions, local_config, now, record_investigation_outcome, execute as execute_from_intake
 from .r1_research_investigator import load_evidence_ids, select_candidate, validate_plan
 
 
@@ -43,10 +43,17 @@ def resume(run_id, config=None):
     manifest.setdefault('recovery_history', []).append({'at':now(), 'from_status':manifest['status'],
         'from_stage':manifest['stage'], 'model':cfg.model, 'method':'Saved F1/R1 revalidated; completed search checkpoints reused; originals rehashed'})
     manifest.pop('finished_at', None)
+    if manifest.get('investigation'):
+        manifest['previous_report'] = {k:manifest['investigation'].get(k) for k in ('report_type','status','completed_at')}
+    manifest['investigation'] = None
     manifest['model'] = {'provider':cfg.provider,'model':cfg.model}
     def execute(folder, manifest, config, update):
         update('investigation', 'Resuming saved F1/R1 and completed source searches; exact evidence checks remain required.')
         result = run_investigation(folder, manifest['company'], manifest['prompt'], plan, cfg, update)
+        attach_planning_leads(result, plan)
+        write(folder/'investigation.json', result)
+        write_report(folder, result)
+        record_investigation_outcome(manifest, result)
         artifacts = [str(p.relative_to(folder)) for p in folder.glob('investigation*') if p.is_file()]
         update('complete', f"Report finished: {result['status']} / {result['evidence_strength']}; inspect actual execution record.", 'completed',
             investigation=result, artifacts=list(dict.fromkeys(manifest.get('artifacts', [])+artifacts)))
